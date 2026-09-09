@@ -144,7 +144,7 @@ const PLAN_MD = `## 一、基本信息
 
 // SSE：按 chunk 下发 markdown
 // 学案 markdown（SSE 流式下发，含分层任务与公式）
-const STUDY_PLAN_MD = `## 16.1 二次根式 · 学案（学生版）
+export const STUDY_PLAN_MD = `## 16.1 二次根式 · 学案（学生版）
 
 **学习目标**
 1. 理解二次根式的概念，会判断 $\\sqrt{a}$ 有意义的条件；

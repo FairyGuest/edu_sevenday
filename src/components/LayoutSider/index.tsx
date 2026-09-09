@@ -149,17 +149,30 @@ const SiderMenu = () => {
         }}
         items={[
           {
-            key: "/source",
+            key: "/learning-analysis",
             icon: (
               <img
                 src={
-                  location.pathname.split("/").at(1) == "source"
-                    ? require("@/assets/menu/resource-active.svg").default
-                    : require("@/assets/menu/resource.svg").default
+                  location.pathname.includes("/learning-analysis")
+                    ? require("@/assets/menu/course-active.svg").default
+                    : require("@/assets/menu/course.svg").default
                 }
               />
             ),
-            label: "资源平台",
+            label: "学情分析",
+          },
+          {
+            key: "/design",
+            icon: (
+              <img
+                src={
+                  location.pathname.includes("/design")
+                    ? require("@/assets/menu/teach_active.svg").default
+                    : require("@/assets/menu/teach.svg").default
+                }
+              />
+            ),
+            label: "教学设计",
           },
           {
             key: "/paperCompose",
@@ -201,30 +214,17 @@ const SiderMenu = () => {
             label: "作业批改",
           },
           {
-            key: "/design",
+            key: "/source",
             icon: (
               <img
                 src={
-                  location.pathname.includes("/design")
-                    ? require("@/assets/menu/teach_active.svg").default
-                    : require("@/assets/menu/teach.svg").default
+                  location.pathname.split("/").at(1) == "source"
+                    ? require("@/assets/menu/resource-active.svg").default
+                    : require("@/assets/menu/resource.svg").default
                 }
               />
             ),
-            label: "教学设计",
-          },
-          {
-            key: "/learning-analysis",
-            icon: (
-              <img
-                src={
-                  location.pathname.includes("/learning-analysis")
-                    ? require("@/assets/menu/course-active.svg").default
-                    : require("@/assets/menu/course.svg").default
-                }
-              />
-            ),
-            label: "学情分析",
+            label: "资源平台",
           },
         ]}
       />

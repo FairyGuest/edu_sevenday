@@ -53,6 +53,59 @@ const Selection = (props: any) => {
     getStage();
   }, []);
 
+  // 学情注入模式：从学情分析页携带班级跳转而来，自动填充学段学科/教材册别（教师免选）
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search);
+    const injectClassId = q.get("class_id");
+    if (!injectClassId || q.get("from") !== "analysis") return;
+    fetch("/api/teacher/classes")
+      .then(r => r.json())
+      .then(d => {
+        const cls = (d.data || []).find((c: any) => c.class_id === injectClassId);
+        if (!cls) return;
+        // g7/g8/g9 → 初中；c1-c3 → 高中
+        const stageName = /^g/.test(cls.grade || "") ? "初中" : "高中";
+        const subjectName = cls.subject || "数学";
+        const gradeNum = String(cls.grade || "").replace(/[^0-9]/g, "");
+        const volumeMap: Record<string, string> = { "7": "七年级下册", "8": "八年级下册", "9": "九年级下册" };
+        const volume = volumeMap[gradeNum] || "八年级下册";
+        form.setFieldsValue({ stage: [stageName, subjectName], subject: ["人教版", volume] });
+        setDvaVal({
+          gradeDocId: { doc_id: "doc-pep-g8b", grade: volume.replace("下册", ""), volume: "下册" },
+        });
+        // 与手动选择保持一致的联动
+        getSubject();
+        getCourseType();
+        postClassInfo();
+        // 班级学情自动设置：按该班画像推导四维（老师可在“设置班级学情”中修改）
+        fetch(`/api/teacher/profile/class?class_id=${injectClassId}&sources=`)
+          .then(r => r.json())
+          .then(async (pd) => {
+            if (pd.code !== 200) return;
+            const cards = pd.data?.cards || {};
+            const weakPct = Number(cards.weak_top_pct) || 0;
+            const avg = Number(cards.recent5_avg) || 60;
+            const derived = {
+              studies_degree: weakPct <= 20 ? "优秀" : weakPct <= 30 ? "中等" : "薄弱",
+              motivation_habit: avg >= 63 ? "主动" : avg >= 58 ? "一般" : "被动",
+              literacy_ability: weakPct <= 20 ? "较强" : weakPct <= 30 ? "中等" : "待提升",
+              class_learning_diff: weakPct <= 22 ? "较为均衡" : weakPct <= 30 ? "分化一般" : "分化明显",
+            };
+            // 推导班型（与弹窗内班型接口同规则）
+            const ct = await fetch("/api/teach_plan/class_type", {
+              method: "POST", headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ subject: subjectName, ...derived }),
+            }).then(r => r.json()).catch(() => null);
+            setDvaVal({
+              gradeDocId: { doc_id: "doc-pep-g8b", grade: volume.replace("下册", ""), volume: "下册" },
+              classInfo: { ...derived, ...(ct?.data || {}) },
+            });
+          })
+          .catch(() => {});
+      })
+      .catch(() => {});
+  }, []);
+
   useEffect(() => {
     if (gradeDocId?.doc_id) {
       getChapterList({ doc_id: gradeDocId.doc_id, type: type });

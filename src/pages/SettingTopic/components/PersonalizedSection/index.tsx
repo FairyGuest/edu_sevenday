@@ -184,7 +184,7 @@ const PersonalizedSection = ({ classes }: { classes: any[] }) => {
             allowClear onClear={() => { setHwId(""); setDetail(null); }}
             options={homeworkList.map(h => ({
               value: h.homework_id,
-              label: `${h.homework_id} · ${h.mode === "unified" ? "📖 教案同步" : "🎯 个性化"} · ${STATUS_ZH[h.status] || h.status} · ${h.n_students}人`,
+              label: `${h.homework_id} · ${h.mode === "unified" ? "📖 教案同步" : h.mode === "plan" ? "📘 教案作业" : h.mode === "chapter" ? "📗 章节作业" : "🎯 个性化"} · ${STATUS_ZH[h.status] || h.status} · ${h.n_students}人`,
             }))} />
           {hwId ? <>
             <Tooltip title="发布对象为生成时锁定的班级名单，不可修改">
@@ -228,21 +228,31 @@ const PersonalizedSection = ({ classes }: { classes: any[] }) => {
       {/* 抽样预览 + 报告 */}
       <Row gutter={10}>
         <Col span={report ? 10 : 24}>
-          <Card size="small" title="抽样预览（个性化作业不做全量预览/编辑）" extra={
+          <Card size="small" title={
+            detail?.unified_items
+              ? "查看作业（全班同卷 · 教案选题）"
+              : "抽样预览（个性化作业不做全量预览/编辑）"
+          } extra={
+            detail?.unified_items ? undefined : (
             <Select size="small" style={{ width: 160 }} showSearch optionFilterProp="label"
               value={studentId || undefined} onChange={setStudentId} placeholder="选择学生查看专属卷"
               options={detail?.students?.length
                 ? detail.students.map((x: any) => ({ value: x.sid, label: `${x.name}（${x.n}题）` }))
                 : Object.entries(detail?.papers || {}).map(([sid, p]: [string, any]) => ({
                     value: sid, label: `${p.name}（${p.items?.length || 0}题）`,
-                  }))} />
+                  }))} />)
           }>
             {detail ? (
-              <Table columns={paperCols} dataSource={paper?.items || []}
-                rowKey="qid" pagination={false} size="small" tableLayout="fixed"
-                locale={{ emptyText: studentId ? " " : "选择学生后展示其专属试卷" }} />
+              detail.unified_items ? (
+                <Table columns={paperCols} dataSource={detail.unified_items}
+                  rowKey="qid" pagination={false} size="small" tableLayout="fixed" />
+              ) : (
+                <Table columns={paperCols} dataSource={paper?.items || []}
+                  rowKey="qid" pagination={false} size="small" tableLayout="fixed"
+                  locale={{ emptyText: studentId ? " " : "选择学生后展示其专属试卷" }} />
+              )
             ) : (
-              <Alert type="info" message="选择作业后可按学生抽样预览" />
+              <Alert type="info" message="选择作业后可查看（教案/章节作业为全班同卷，个性化作业按学生抽样）" />
             )}
           </Card>
         </Col>

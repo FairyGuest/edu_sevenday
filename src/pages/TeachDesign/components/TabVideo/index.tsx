@@ -10,12 +10,11 @@ const TabVideo = (props: any) => {
   const dispatch = useDispatch();
 
   const stage = Form.useWatch("stage", form); // 学段学科值
-  const [activeKey, setActiveKey] = useState("1");
   const [dataList, setDataList] = useState([]);
 
   useEffect(() => {
     if (stage) getVideoList();
-  }, [stage, activeKey]);
+  }, [stage]);
 
   // 获取视频数据
   const getVideoList = async () => {
@@ -25,7 +24,6 @@ const TabVideo = (props: any) => {
       payload: {
         xueduan: stage[0],
         xueke: stage[1],
-        user_level: activeKey,
       },
     });
     if (code === 200) {
@@ -62,23 +60,13 @@ const TabVideo = (props: any) => {
 
   return (
     <div className="tab-video">
-      <Tabs
-        className="tab-video-tabs"
-        activeKey={activeKey}
-        centered
-        items={[
-          { label: "我是AI新手", key: "1" },
-          { label: "我是AI高手", key: "2" },
-        ]}
-        onChange={(key) => setActiveKey(key)}
-        tabBarExtraContent={
-          <Button
-            type="link"
-            icon={<ZYIcon type="up-top" />}
-            onClick={scrollClick}
-          />
-        }
-      />
+      <div className="tab-video-tabs" style={{ display: "flex", justifyContent: "flex-end", padding: "4px 0" }}>
+        <Button
+          type="link"
+          icon={<ZYIcon type="up-top" />}
+          onClick={scrollClick}
+        />
+      </div>
       <div className="tab-video-content">
         {dataList.map((item: any) => (
           <div

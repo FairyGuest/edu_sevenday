@@ -297,6 +297,24 @@ const CreateRight = (props: any) => {
   };
 
   // 全览收起
+  // 学案下发：教师查看学案内容后推送给全班（消息中心定时推送）
+  const issueStudyPlan = async () => {
+    try {
+      const res = await fetch("/api/teacher/teaching/plans", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ chapter: planParams?.title || "", class_id: planParams?.class_id || "" }),
+      });
+      const d = await res.json();
+      if (d.code === 200) {
+        message.success(`学案已下发（${d.data.targets} · ${d.data.issued_at}），学生将在消息中心收到`);
+      } else {
+        message.error(d.msg || "下发失败");
+      }
+    } catch {
+      message.error("下发失败，请重试");
+    }
+  };
+
   const onPreviewClick = () => {
     const collapseBtn = document.querySelector(
       ".ant-splitter-bar-collapse-bar",
@@ -337,6 +355,15 @@ const CreateRight = (props: any) => {
               >
                 保存
               </Button> */}
+              <Button
+                type="primary"
+                size="small"
+                disabled={planSseLoading}
+                onClick={issueStudyPlan}
+              >
+                学案下发
+              </Button>
+
               <Dropdown
                 disabled={planSseLoading}
                 onOpenChange={setDropdownOpen}

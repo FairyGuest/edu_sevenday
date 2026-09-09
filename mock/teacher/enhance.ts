@@ -1,6 +1,7 @@
 /** 教师端 · F5教学设计补差 + F6资源平台 mock */
 import * as fs from "fs";
 import * as path from "path";
+import { STUDY_PLAN_MD } from "../teachPlan";
 const D = path.join(__dirname, "data");
 const read = (f: string): any => JSON.parse(fs.readFileSync(path.join(D, f), "utf-8"));
 
@@ -60,16 +61,50 @@ export default {
     res.json({ code: 200, msg: "ok", data: rec });
   },
 
-  // 布置对应作业：将章节薄弱知识点的题目注入试卷
-  "POST /api/teacher/teaching/assign-homework": (req: any, res: any) => {
-    const { chapter, class_id } = req.body || {};
-    const inject = getInjectFile(chapter || "", class_id || "cls-g8-03");
-    const n = Math.max(3, (inject.rows || []).length + 2);
-    res.json({ code: 200, msg: "ok", data: {
-      homework_id: "hw-" + Date.now().toString(36),
-      chapter: chapter || "", class_id: class_id || "cls-g8-03",
-      n_questions: n, injected_from: "教案学情（薄弱知识点优先）",
-    } });
+
+  // 班级可用章节：来自该班画像的真实章节（学情驱动，随班变化）
+  "GET /api/teacher/teaching/class-chapters": (req: any, res: any) => {
+    const classId = req.query.class_id || "cls-g8-03";
+    try {
+      const prof = read(`class-profile-${classId}.json`);
+      const seen = new Set<string>();
+      const chapters: any[] = [];
+      for (const r of prof.cluster_rows || []) {
+        if (r.chapter && !seen.has(r.chapter)) { seen.add(r.chapter); chapters.push({ chapter: r.chapter }); }
+      }
+      return res.json({ code: 200, msg: "ok", data: chapters });
+    } catch {
+      res.json({ code: 200, msg: "ok", data: [] });
+    }
+  },
+
+  // 班级学情摘要：由画像推导四维（注入教学设计时自动设置班级学情用）
+  "GET /api/teacher/teaching/class-summary": (req: any, res: any) => {
+    const classId = req.query.class_id || "cls-g8-03";
+    try {
+      const prof = read(`class-profile-${classId}.json`);
+      const weakTotal = (prof.weak_ranking || []).reduce((a: number, r: any) => a + (r.weak_n || 0), 0);
+      const avg = prof.cards?.recent5_avg ?? 60;
+      // 学业程度：按掌握度均值
+      const degree = avg >= 66 ? "优秀" : avg >= 61 ? "中等" : "薄弱";
+      // 动机习惯：趋势向好 → 主动，平稳 → 一般，下降 → 被动
+      const trendUp = (prof.trend || []).slice(-3).every((t: any, i: number, arr: any[]) => i === 0 || t.value >= arr[i - 1].value - 1);
+      const habit = trendUp ? "主动" : "一般";
+      // 素养能力：按薄弱知识点总量
+      const literacy = weakTotal >= 80 ? "待提升" : weakTotal >= 40 ? "中等" : "较强";
+      // 班级差异：各簇薄弱人数的离散度
+      const weaks = (prof.weak_ranking || []).map((r: any) => r.weak_n);
+      const spread = weaks.length ? Math.max(...weaks) - Math.min(...weaks) : 0;
+      const diff = spread >= 6 ? "分化明显" : spread >= 3 ? "分化一般" : "较为均衡";
+      res.json({ code: 200, msg: "ok", data: {
+        class_id: classId, class_name: prof.class_name,
+        studies_degree: degree, motivation_habit: habit,
+        literacy_ability: literacy, class_learning_diff: diff,
+        basis: { recent5_avg: avg, weak_total: weakTotal, spread },
+      } });
+    } catch {
+      res.json({ code: 200, msg: "ok", data: null });
+    }
   },
 
   "GET /api/teacher/teaching/chapters": (_req: any, res: any) => {
@@ -96,13 +131,28 @@ export default {
 
   // ===== F6: 资源平台 =====
   "GET /api/teacher/resource/plans": (_req: any, res: any) => {
-    const plans = getTeachingPlans().map((p: any) => ({
-      plan_id: p.plan_id, chapter: p.chapter, version: p.version,
-      created_at: p.created_at, n_issues: p.issues?.length || 0,
-      homework_ids: p.homework_ids || [],
-      courseware: p.sections?.课件大纲 || [],
-    }));
+    const plans = getTeachingPlans().map((p: any) => {
+      const issues = [...(p.issues || []), ...(issuedRecords[p.plan_id] || [])];
+      return {
+        plan_id: p.plan_id, chapter: p.chapter, version: p.version,
+        created_at: p.created_at, n_issues: issues.length,
+        homework_ids: p.homework_ids || [],
+        courseware: p.sections?.课件大纲 || [],
+      };
+    });
     res.json({ code: 200, msg: "ok", data: plans });
+  },
+
+  // 教案详情：结构化全文 + 学案 + 下发记录（资源平台点开查看）
+  "GET /api/teacher/resource/plans/:id": (req: any, res: any) => {
+    const plan = getTeachingPlans().find((p: any) => p.plan_id === req.params.id);
+    if (!plan) return res.json({ code: 404, msg: "教案不存在", data: null });
+    const issues = [...(plan.issues || []), ...(issuedRecords[plan.plan_id] || [])];
+    res.json({ code: 200, msg: "ok", data: {
+      plan_id: plan.plan_id, chapter: plan.chapter, version: plan.version,
+      sections: plan.sections, homework_ids: plan.homework_ids || [],
+      issues, study_plan_md: STUDY_PLAN_MD,
+    } });
   },
 
   "GET /api/teacher/resource/personal-bank": (_req: any, res: any) => {

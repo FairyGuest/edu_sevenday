@@ -10,7 +10,9 @@ import {
   BulbOutlined,
   SafetyCertificateOutlined,
   RiseOutlined,
+  ExperimentOutlined,
 } from "@ant-design/icons";
+import { history } from "@umijs/max";
 
 import ClusterTable from "./components/ClusterTable";
 import ImportModal from "./components/ImportModal";
@@ -96,18 +98,12 @@ const TeacherProfile = (props: any) => {
 
   return (
     <div className="teacher_profile_container">
-      {/* ===== 筛选栏：班级 + 来源（独立醒目卡片）===== */}
+      {/* ===== 筛选栏：来源（班级切换统一由页头选择器负责）===== */}
       <Card size="small" className="teacher_profile_filter">
         <div className="filter-row">
-          <span className="filter-label">班级</span>
-          <Select
-            className="filter-select"
-            size="small"
-            value={classId || classList[0]?.class_id}
-            onChange={setClassId}
-            placeholder="选择班级"
-            options={classList.map((c: any) => ({ value: c.class_id, label: `${c.class_name} · ${c.n_students}人` }))}
-          />
+          <span className="filter-class-name">
+            {classList.find((c: any) => c.class_id === (classId || classList[0]?.class_id))?.class_name || ""}
+          </span>
           <div className="filter-spacer" />
           {profile?.updated_at ? (
             <span className="filter-updated">
@@ -137,6 +133,10 @@ const TeacherProfile = (props: any) => {
           </div>
           <div className="filter-spacer" />
           <div className="filter-actions">
+            <Button size="small" icon={<ExperimentOutlined />}
+              onClick={() => history.push({ pathname: '/design', search: `?class_id=${classId || classList[0]?.class_id || ''}&from=analysis` })}>
+              注入教学设计
+            </Button>
             <Button size="small" icon={<UploadOutlined />} onClick={() => setImportOpen(true)}>
               上传历史学情
             </Button>

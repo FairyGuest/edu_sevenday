@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useImperativeHandle } from "react";
 import { connect, useDispatch, useRequest, history } from "umi";
-import { MoreOutlined, LoadingOutlined } from "@ant-design/icons";
+import { MoreOutlined, LoadingOutlined, ThunderboltOutlined } from "@ant-design/icons";
 import {
   Divider,
   Button,
@@ -323,6 +323,28 @@ const CreateRight = (props: any) => {
     });
   };
 
+  // 布置作业：将教案「四、习题」选题注入试卷（PRD：生成教案的作业提供布置入口）
+  const assignHomeworkFromPlan = async () => {
+    try {
+      const res = await fetch("/api/teacher/teaching/assign-homework", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          from: "plan",
+          chapter: planParams?.title || planParams?.chapter_name || "",
+          class_id: planParams?.class_id || "",
+        }),
+      });
+      const d = await res.json();
+      if (d.code === 200) {
+        message.success(`已将教案 ${d.data.n_questions} 道习题注入试卷（${d.data.homework_id}），可到「作业布置」查看`);
+      } else {
+        message.error(d.msg || "布置失败");
+      }
+    } catch {
+      message.error("布置失败，请重试");
+    }
+  };
+
   const createPlanFn = () => {
     console.log("生成学案");
     if (planDetail?.has_study_plan) {
@@ -569,6 +591,15 @@ const CreateRight = (props: any) => {
           <div className="create-header">
             {planParams?.type === 1 && (
               <div className="create-header-right">
+                <Button
+                  color="primary"
+                  variant="solid"
+                  onClick={assignHomeworkFromPlan}
+                  disabled={planSseLoading}
+                  icon={<ThunderboltOutlined />}
+                >
+                  布置作业
+                </Button>
                 <Button
                   color="primary"
                   variant="outlined"

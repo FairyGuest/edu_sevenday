@@ -17,6 +17,33 @@ const STRATEGY_ZH: Record<string, string> = {
 
 // 会话级存储
 const homeworkStore: Record<string, any> = {};
+
+/** 教案/章节布置的作业入库（全班同卷，供作业下发查看） */
+export function recordPlanHomework(rec: any) {
+  // 按章节匹配簇选题，生成全班统一的试卷（教案作业固定取教案习题 4 题）
+  const questions = getQuestions();
+  const key = (rec.chapter || "").replace(/^[G\d下上]+\s*第?\d*章?\s*/, "").trim() || rec.chapter || "";
+  const pool = questions.filter((q: any) => key && (rec.chapter || "").includes(q.cluster));
+  const items = (pool.length >= (rec.n_questions || 4) ? pool : questions)
+    .slice(0, rec.n_questions || 4)
+    .map((q: any, i: number) => ({
+      qid: q.qid, stem: q.stem.slice(0, 120), cluster: q.cluster,
+      difficulty: q.difficulty_zh || "适中", form: q.form || "选择",
+      strategy: "plan", reason: rec.injected_from || "教案选题",
+    }));
+  homeworkStore[rec.homework_id] = {
+    homework_id: rec.homework_id,
+    class_id: rec.class_id || "cls-g8-03",
+    mode: rec.mode || "plan",
+    title: rec.title,
+    status: "published",
+    created_at: rec.published_at,
+    published_at: rec.published_at,
+    summary: { n_students: rec.n_students || 45, q_count: { min: items.length, max: items.length } },
+    unified_items: items,
+    papers: {},
+  };
+}
 let hwSeq = 100;
 
 function getQuestions(): any[] {
@@ -388,6 +415,7 @@ export default {
     // roster 为学生ID列表（发布篡改校验用）；students 供抽样预览按人选择
     res.json({ code: 200, msg: "ok", data: {
       ...summary,
+      unified_items: hw.unified_items || null,
       roster: Object.keys(papers),
       students: Object.entries(papers).map(([sid, p]: [string, any]) => ({
         sid, name: p.name, n: p.items?.length || 0,
@@ -402,6 +430,33 @@ export default {
     const paper = hw.papers[req.query.sid];
     if (!paper) return res.json({ code: 404, msg: "该学生不在名单快照中", data: null });
     res.json({ code: 200, msg: "ok", data: { ...paper, status: hw.status, notes: [] } });
+  },
+
+  // 教案/章节布置的作业（入库到作业记录，作业下发可查看）
+  "POST /api/teacher/teaching/assign-homework": (req: any, res: any) => {
+    const { chapter, class_id, from } = req.body || {};
+    const now = new Date().toISOString().replace("T", " ").slice(0, 19);
+    if (from === "plan") {
+      const rec = {
+        homework_id: "hw-plan-" + Date.now().toString(36),
+        chapter: chapter || "", class_id: class_id || "cls-g8-03",
+        n_questions: 4, injected_from: "教案「四、习题」选题", published_at: now,
+        mode: "plan", title: `教案作业 · ${chapter || "教案习题"}`,
+      };
+      recordPlanHomework(rec);
+      return res.json({ code: 200, msg: "ok", data: rec });
+    }
+    const { getInjectFile } = require("./enhance");
+    const inject = getInjectFile(chapter || "", class_id || "cls-g8-03");
+    const n = Math.max(3, (inject.rows || []).length + 2);
+    const rec2 = {
+      homework_id: "hw-ch-" + Date.now().toString(36),
+      chapter: chapter || "", class_id: class_id || "cls-g8-03",
+      n_questions: n, injected_from: "章节薄弱知识点选题", published_at: now,
+      mode: "chapter", title: `章节作业 · ${chapter || "薄弱知识点"}`,
+    };
+    recordPlanHomework(rec2);
+    res.json({ code: 200, msg: "ok", data: rec2 });
   },
 
   // 发布（对象锁定，扁平化 URL）
