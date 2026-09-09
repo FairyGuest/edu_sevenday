@@ -625,11 +625,11 @@ const Hour = (props: any) => {
       <Splitter
         onResize={handleResize}
       // onResizeEnd={handleResizeEnd}
-      >
+       layout={typeof window !== "undefined" && window.innerWidth <= 900 ? "vertical" : "horizontal"}>
         {<Splitter.Panel
           className="hour-design-left"
-          defaultSize={600}
-          min={434}
+          defaultSize={typeof window !== "undefined" && window.innerWidth <= 900 ? "50%" : 600}
+          min={typeof window !== "undefined" && window.innerWidth <= 900 ? "20%" : 434}
           // collapsible
           collapsible={{ start: true, end: true, showCollapsibleIcon: false }}
         >
@@ -681,7 +681,7 @@ const Hour = (props: any) => {
         <Splitter.Panel
           className="hour-design-right"
           collapsible={{ start: true, end: true, showCollapsibleIcon: false }}
-          min={560}
+          min={typeof window !== "undefined" && window.innerWidth <= 900 ? "20%" : 560}
         >
           <div ref={rightPanelRef}>
           </div>

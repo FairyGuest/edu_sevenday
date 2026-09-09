@@ -218,3 +218,21 @@
     transform: rotate(360deg);
   }
 }
+
+@media (max-width: 900px) {
+  .unit-design {
+    .ant-splitter { flex-direction: column !important; }
+    &-left, &-right { width: 100% !important; min-width: 0 !important; height: 50% !important; }
+  }
+}
+
+@media (max-width: 640px) {
+  .unit-design .markdown_container {
+    font-size: 14px;
+    h1 { font-size: 21px; padding: 18px 0 12px; }
+    h2 { font-size: 18px; padding: 22px 0 4px; }
+    h3 { font-size: 16px; padding: 20px 0 6px; }
+    p, li { line-height: 23px; }
+    table { display: block; overflow-x: auto; white-space: nowrap; }
+  }
+}

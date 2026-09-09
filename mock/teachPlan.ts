@@ -4,6 +4,11 @@
  * 仅 start:mock 模式生效（cogUrl=/api），生产构建不包含。
  */
 
+import { pickPlanMd, pickStudyPlanMd } from "./teachPlanContent";
+
+// 记录最近一次生成的小节（供学案生成复用章节语境）
+let lastChapterName = "16.1 二次根式";
+
 // 学段学科（Cascader：value/children）
 const STAGE_SUBJECT = [
   {
@@ -228,9 +233,14 @@ export default {
       data: {
         list: [
           { id: "tp-001", title: "16.1 二次根式", created_at: "2026-09-08 10:20", type: "课时教案" },
-          { id: "tp-002", title: "12.2 三角形全等的判定", created_at: "2026-09-06 15:41", type: "课时教案" },
+          { id: "tp-002", title: "16.2 二次根式的乘除", created_at: "2026-09-08 11:05", type: "课时教案" },
+          { id: "tp-003", title: "16.3 二次根式的加减", created_at: "2026-09-07 16:30", type: "课时教案" },
+          { id: "tp-004", title: "12.1 全等三角形", created_at: "2026-09-07 09:15", type: "课时教案" },
+          { id: "tp-005", title: "12.2 三角形全等的判定", created_at: "2026-09-06 15:41", type: "课时教案" },
+          { id: "tp-006", title: "14.2 乘法公式", created_at: "2026-09-05 14:20", type: "课时教案" },
+          { id: "tp-007", title: "14.3 因式分解", created_at: "2026-09-05 15:10", type: "课时教案" },
         ],
-        total: 2,
+        total: 7,
       },
     });
   },
@@ -253,24 +263,52 @@ export default {
     ] });
   },
 
+  // ===== 教案对话列表（生成后回显；携带 chat_history 的问答时间线）=====
+  "POST /api/teach_plan/get_temp_teach_plan_chat": (req: any, res: any) => {
+    const b = req.body || {};
+    const chapterName = b.chapter_name || b.title || lastChapterName;
+    const planMd = pickPlanMd(chapterName, { classType: b.class_type });
+    res.json({ code: 200, msg: "ok", data: [
+      {
+        id: "chat-init",
+        role: "assistant",
+        content_type: "md",
+        content: { end: { status: "success", chat_content: planMd } },
+      },
+    ] });
+  },
+
+  "POST /api/teach_plan/temp_child_teach_plan_chat": (req: any, res: any) => {
+    const b = req.body || {};
+    const planMd = pickPlanMd(b.chapter_name || lastChapterName, {});
+    res.json({ code: 200, msg: "ok", data: [
+      { id: "chat-child", role: "assistant", content_type: "md",
+        content: { end: { status: "success", chat_content: planMd } } },
+    ] });
+  },
+
   // ===== SSE 教案生成（结构化：学案/习题/课件大纲）=====
   "POST /api/teach_plan/teach_maker": (req: any, res: any) => {
     // 携带 chat 内容视为打磨修改，否则首次生成
     const isChat = !!(req.body?.chat || req.body?.content || req.body?.message);
     const b = req.body || {};
     const ctx = [b.studies_degree, b.motivation_habit, b.class_learning_diff].filter(Boolean).join(" · ");
-    const md = ctx ? PLAN_MD.replace("班级学情：中等 · 主动 · 较为均衡", `班级学情：${ctx}`) : PLAN_MD;
+    // 按所选章节/小节挑选结构化模板（每节有专属内容）
+    const chapterName = b.chapter_name || b.title || lastChapterName;
+    if (!isChat) lastChapterName = chapterName;
+    const md = pickPlanMd(chapterName, { classType: b.class_type, studyCtx: ctx || undefined });
     streamMarkdown(res, md, isChat);
   },
 
   "POST /api/teach_plan/single_teach_maker": (req: any, res: any) => {
-    streamMarkdown(res, PLAN_MD, !!(req.body?.chat || req.body?.content));
+    const md = pickPlanMd(req.body?.chapter_name || lastChapterName, {});
+    streamMarkdown(res, md, !!(req.body?.chat || req.body?.content));
   },
 
   // ===== SSE 学案生成 =====
   "POST /api/teach_plan/single_study_plan_maker": (req: any, res: any) => {
     const isChat = !!(req.body?.chat || req.body?.content);
-    streamMarkdown(res, STUDY_PLAN_MD, isChat);
+    streamMarkdown(res, pickStudyPlanMd(lastChapterName), isChat);
   },
 
   // 学案历史详情（保存后查看）

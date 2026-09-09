@@ -160,3 +160,38 @@
     }
   }
 }
+
+/* 窄屏：侧边栏自动收窄为图标栏（antd Sider 内联宽度需 !important 覆盖） */
+@media (max-width: 900px) {
+  .ant-layout-sider.main-sider,
+  .main-sider {
+    width: 64px !important;
+    min-width: 64px !important;
+    max-width: 64px !important;
+    flex: 0 0 64px !important;
+
+    .main-sider-logo {
+      margin: 0 8px;
+
+      .logo-text,
+      .logo-fold {
+        display: none;
+      }
+    }
+
+    .main-sider-menu {
+      .ant-menu-item {
+        padding-inline: 0 !important;
+        margin-inline: 8px !important;
+
+        .ant-menu-title-content {
+          display: none;
+        }
+      }
+    }
+
+    .main-sider-avatar {
+      padding-inline: 8px !important;
+    }
+  }
+}

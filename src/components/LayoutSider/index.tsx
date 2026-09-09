@@ -47,6 +47,15 @@ const SiderMenu = () => {
   }, []);
 
   const [collapsed, setCollapsed] = useState(false); // 侧边栏折叠状态
+  const [narrow, setNarrow] = useState(false); // 窄屏自动折叠（≤900px 收为图标栏）
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 900px)");
+    const apply = () => setNarrow(mq.matches);
+    apply();
+    mq.addEventListener?.("change", apply);
+    return () => mq.removeEventListener?.("change", apply);
+  }, []);
   const [openKeys, setOpenKeys] = useState([""]); // 当前展开的菜单项
   const [selectedKey, setSelectedKey] = useState([location.pathname]); // 当前选中的菜单项
 
@@ -109,7 +118,7 @@ const SiderMenu = () => {
       className="main-sider"
       trigger={null}
       collapsible
-      collapsed={collapsed}
+      collapsed={collapsed || narrow}
       width={240}
       collapsedWidth={60}
     >

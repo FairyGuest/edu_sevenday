@@ -208,3 +208,42 @@
     box-shadow: -8px 0 12px 0 rgba(0, 0, 0, 0.08);
   }
 }
+
+/* 教案阅读区响应式：窄屏下由左右双栏切换为上下阅读，避免输入区/正文被挤压 */
+@media (max-width: 900px) {
+  .hour-design {
+    .ant-splitter {
+      flex-direction: column !important;
+    }
+
+    &-left,
+    &-right {
+      width: 100% !important;
+      min-width: 0 !important;
+      height: 50% !important;
+    }
+
+    .design-chat-input {
+      margin-left: 8px;
+      margin-right: 8px;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .hour-design {
+    &-left,
+    &-right {
+      height: 50% !important;
+    }
+
+    .markdown_container {
+      font-size: 14px;
+      h1 { font-size: 21px; padding: 18px 0 12px; }
+      h2 { font-size: 18px; padding: 22px 0 4px; }
+      h3 { font-size: 16px; padding: 20px 0 6px; }
+      p, li { line-height: 23px; }
+      table { display: block; overflow-x: auto; white-space: nowrap; }
+    }
+  }
+}

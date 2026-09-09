@@ -558,11 +558,11 @@ const Unit = () => {
 
   return (
     <div className="unit-design drawer-element">
-      <Splitter onResize={setSizes}>
+      <Splitter onResize={setSizes} layout={typeof window !== "undefined" && window.innerWidth <= 900 ? "vertical" : "horizontal"}>
         <Splitter.Panel
           className="unit-design-left"
-          defaultSize={600}
-          min={434}
+          defaultSize={typeof window !== "undefined" && window.innerWidth <= 900 ? "50%" : 600}
+          min={typeof window !== "undefined" && window.innerWidth <= 900 ? "20%" : 434}
           collapsible
         >
           <UnitHeader
@@ -613,7 +613,7 @@ const Unit = () => {
             />
           )}
         </Splitter.Panel>
-        <Splitter.Panel className="unit-design-right" min={560} collapsible>
+        <Splitter.Panel className="unit-design-right" min={typeof window !== "undefined" && window.innerWidth <= 900 ? "20%" : 560} collapsible>
           <div ref={rightRef} style={{ height: "100%" }}>
             {!isInView && step === 1 && (
               <Tooltip placement="right" title={"课标对齐指南"}>
