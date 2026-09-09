@@ -1,0 +1,86 @@
+.pdf_fast_parse_container {
+
+    display: flex;
+    justify-content: flex-start;
+
+
+    .left_privew_container {
+        
+        width: 100%;
+        margin: 0 auto;
+        background-color: #fff;
+        margin-bottom: 40px;
+
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        .page_img {
+            user-select: none;
+            position: relative;
+            display: block;
+            vertical-align: middle;
+        }
+
+
+        .paragraph-block {
+            z-index: 2;
+            position: absolute;
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+
+            .copy_icon {
+                display: none;
+                // display: block;
+            }
+        }
+
+        .paragraph-block:hover {
+            background-color: rgba(0, 255, 0, 0.1);
+            --tw-border-opacity: 1;
+            border: 1px dashed #10b981;
+
+            .copy_icon {
+                display: block;
+                cursor: pointer;
+                --tw-text-opacity: 1;
+                color: rgb(75 85 99 / var(--tw-text-opacity, 1));
+                font-size: 1.125rem;
+                background-color: transparent;
+                position: absolute;
+                top: 50%;
+                right: -16px;
+                bottom: 50%;
+                margin-top: -8px;
+                padding-left: 8px;
+                
+            }
+
+            .copy_icon:hover {
+                display: block;
+            }
+        }
+
+
+    }
+
+
+    .right_edit_container {
+        // background-color: aquamarine;
+        border-left: 1px solid #99999954;
+        flex: 1;   /* 占据剩余空间 */
+        max-width: 526px;
+
+        .text_cart {
+            background: #e6f4ff;
+            border: 1px solid #91caff;
+            margin: 4px;
+            padding: 4px 8px;
+            border-radius: 6px;
+            word-wrap: break-word;
+        }
+    }
+}

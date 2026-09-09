@@ -1,0 +1,3805 @@
+{
+ "total": 420,
+ "items": [
+  {
+   "qid": "que-2761775e-eef6-42da-8f5e-9f140c5a5232",
+   "stem": "首阳水果店运进的香梨比苹果少$8$筐，运进的香梨筐数是苹果的$\\dfrac{5}{7}$。首阳水果店运进香梨和苹果各多少筐？",
+   "cluster": "二元一次方程组的概念",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-2efb66fe-5cab-11f1-b040-29f51c996ccc",
+   "stem": "解方程 3 ( x − 1 ) = 2 x + 1 3(x - 1) = 2x + 1 3 ( x − 1 ) = 2 x + 1 ，去括号正确的是",
+   "cluster": "二元一次方程组的概念",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-371be366-500f-11f1-af5f-43d2631ebd0f",
+   "stem": "《九章算术》中记载了这样一个数学问题：今有甲发长安，五日至齐，乙发齐，七日至长安，今乙发已先二日，甲仍发长安．问几何日相逢？译文：甲从长安出发， 5 日到齐国，乙从齐国出发， 7 日到长安，现乙先出发 2 日，甲才从长安出发．问甲经过多少日与乙相逢？设甲经过 x 日与乙相逢，可列方程为（       ）",
+   "cluster": "二元一次方程组的概念",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-5a5cfbfa-5fef-11f1-98a2-29f51c996ccc",
+   "stem": "有甲、乙两筐苹果，如果从甲筐苹果里取出 1 7 放入乙筐后，两筐苹果的质量相等，那么原来甲、乙两筐苹果的质量比是（         ）。",
+   "cluster": "二元一次方程组的概念",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-5a5d2647-5fef-11f1-a6c2-29f51c996ccc",
+   "stem": "中国尊是北京一处地标性建筑，它的外形是仿照我国古代用来盛酒的器具“尊”进行设计的，高度是528米，比广州塔矮$\\frac{3}{25}$。广州塔的高度是多少米？",
+   "cluster": "二元一次方程组的概念",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-5a5d2bf6-5fef-11f1-a9ee-29f51c996ccc",
+   "stem": "六一儿童节淘气和笑笑两名同学一起到游乐场玩《激流勇进》，他们共带了200元，买完票后还剩88元。 请根据下图中的票价优惠信息，判断他们玩的是哪个场次的《激流勇进》，并说明理由。",
+   "cluster": "二元一次方程组的概念",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "说理解释",
+   "variants": []
+  },
+  {
+   "qid": "que-5a5d3267-5fef-11f1-a311-29f51c996ccc",
+   "stem": "地球的水资源是有限的，所以我们要保护环境，节约每一滴水。某市对居民使用自来水实施阶梯收费，具体标准如下表。 （1）笑笑家全年用水量为200立方米，应缴纳水费多少钱？ （2）王阿姨家2025年全年缴纳水费970元，她家2025年用水多少立方米？",
+   "cluster": "二元一次方程组的概念",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-80c3dc3f-7459-11f1-880b-4d3314684b92",
+   "stem": "中国古代数学著作《算法统宗》中有这样一段记载:“三百七十八里关,初行健步不为难,次日脚痛减一半,六朝才得到其关.”其大意为“有一个人要去某关口,路程为378里,第一天健步行走,从第二天起因脚痛每天走的路程为前一天的一半,走了6天后到达目的地.”则该人第三天走的路程为",
+   "cluster": "二元一次方程组的概念",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-81bf7866-6a00-11f1-9c67-6530ede8be03",
+   "stem": "一支钢笔8元，一盏台灯降价3元后正好是钢笔价格的4倍，台灯的原价是多少元？设台灯的原价为x元，列出的方程是（）。",
+   "cluster": "二元一次方程组的概念",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-81bf8e69-6a00-11f1-87bc-6530ede8be03",
+   "stem": "箱子里有同样数目的乒乓球和羽毛球，每次取出5个乒乓球和3个羽毛球，取了x次后，乒乓球没有了，羽毛球还剩16个，下列方程错误的是（）。",
+   "cluster": "二元一次方程组的概念",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+   "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt; b^{2}$; (3)已知$a &gt; b &gt; c$,则$a + b &gt; c$; (4)若$a &gt; b &gt; 0$,$c &lt; d &lt; 0$,则$\\frac{a}{",
+   "cluster": "一元一次不等式组",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "证明",
+   "variants": []
+  },
+  {
+   "qid": "que-0be04193-08ad-48f2-ac1e-4f526dc8a26d",
+   "stem": "解不等式组： （1）$\\begin{cases} 4x - 5 &lt; 2 - 3x \\newline \\frac{4x+3}{5} &gt; -1 \\end{cases}$ . （2）$\\begin{cases} 5(x + 1) \\leq 7x + 13 \\newline x - 2 &lt; \\frac{2x - 5}{3} \\end{cases}$ . （3）$\\begin{cases}",
+   "cluster": "一元一次不等式组",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-0f4d9e26-96f1-4e65-acb8-d91978a25230",
+   "stem": "如果关于x的不等式组$\\begin{cases} \\frac{x+3}{2} \\geq x - 1 \\newline 3x + 6 &gt; a + 4 \\end{cases}$有且只有4个整数解，则a的取值范围是__________ .",
+   "cluster": "一元一次不等式组",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-196f6dbe-4fd9-471b-bd2b-038ed8fa5588",
+   "stem": "我们定义一个关于实数a，b的新运算，规定：$a b=3a-2b$，例如，$4 5=3×4-2×5$。若实数m满足$m*2&lt;1$，则m的取值范围是（）",
+   "cluster": "一元一次不等式组",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-19d728b1-8991-11f1-99ff-3b26a6f41ce2",
+   "stem": "不等式组$\\begin{cases} x + 1 &gt; 2 \\newline 2x - 4 \\leqslant x \\end{cases}$的解集在数轴上表示正确的是（）",
+   "cluster": "一元一次不等式组",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-19d7316b-8991-11f1-a606-3b26a6f41ce2",
+   "stem": "已知关于x的不等式组$\\begin{cases} X &gt; 2 \\newline X \\leqslant a - 1 \\end{cases}$，甲、乙两位同学分别得出以下结论：甲：如果不等式组有且仅有一个整数解$X=3$，那么a的取值范围是$3 \\leqslant a &lt; 4$；乙：如果$a \\leqslant 2$，那么此不等式组无解。其中下列判断正确的是（）",
+   "cluster": "一元一次不等式组",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-19d73d50-8991-11f1-91fb-3b26a6f41ce2",
+   "stem": "下面的框图（如图）表示小明解不等式$1 + X &lt; 3(X - 2)$的流程： 其中步骤“④”所用依据是____________________ .",
+   "cluster": "一元一次不等式组",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-19d7409f-8991-11f1-96b6-3b26a6f41ce2",
+   "stem": "如果关于x的不等式组$\\begin{cases} \\frac{x+3}{2} \\geqslant x - 1 \\newline 3x + 6 &gt; a + 4 \\end{cases}$有且只有4个整数解，则a的取值范围是__________ .",
+   "cluster": "一元一次不等式组",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-19d747d4-8991-11f1-965d-3b26a6f41ce2",
+   "stem": "解不等式组： （1）$\\begin{cases} 4x - 5 &lt; 2 - 3x \\newline \\frac{4x+3}{5} &gt; -1 \\end{cases}$ . （2）$\\begin{cases} 5(x + 1) \\leqslant 7x + 13 \\newline x - 2 &lt; \\frac{2x-5}{3} \\end{cases}$ . （3）$\\begin{cas",
+   "cluster": "一元一次不等式组",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-19d75320-8991-11f1-baa9-3b26a6f41ce2",
+   "stem": "定义：给定两个不等式组P和Q，若不等式组P的任意一个解，都是不等式组Q的一个解，则称不等式组P为不等式组Q的“子集”。 例如：不等式组：M：$\\begin{cases} X &gt; 2 \\newline X &gt; 1 \\end{cases}$是N：$\\begin{cases} X &gt; -2 \\newline X &gt; -1 \\end{cases}$的子集。 （1）若不等式组：A：$",
+   "cluster": "一元一次不等式组",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-148e3c7d-e6c2-44dc-af6a-26d845273505",
+   "stem": "在同一平面内，有三条不重合的直线a，b，c，（ ）",
+   "cluster": "相交线与平行线",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-14de6c52-49e7-444b-8387-28a589e94f61",
+   "stem": "如图，在同一平面内，线段AB的长为6，点$A,B$到直线$l$的距离分别为2和3，则符合条件的直线$l$共有（ ）",
+   "cluster": "相交线与平行线",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-1dd9d840-a6a0-4f7d-9877-83373a9e9636",
+   "stem": "如图，点P在 的边 上．按下列要求画出相应的图形。 （1）过点P画直线 ； （2）过点P分别画 ，垂足分别为点D、P， 交 于点E；",
+   "cluster": "相交线与平行线",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "作图",
+   "variants": []
+  },
+  {
+   "qid": "que-23197d5b-8364-4292-8e71-c6fefb6e580f",
+   "stem": "如图，点B、E分别在直线 和 上，若 ， ，可以证明 ．请完成下面证明过程中的各项“填空”。 证明： （理由：_______________ ） ​______________ （对顶角相等） ， （理由：__________________ ） ​_________ （理由：___________________ ） 又 ， ， ​______________ （理由：_____________",
+   "cluster": "相交线与平行线",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "证明",
+   "variants": []
+  },
+  {
+   "qid": "que-2639ba51-7e85-11f1-8aed-43742154f115",
+   "stem": "如图，在同一平面内，线段AB的长为6，点$A,B$到直线$l$的距离分别为2和3，则符合条件的直线$l$共有（ ）",
+   "cluster": "相交线与平行线",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-2639d996-7e85-11f1-b9fb-43742154f115",
+   "stem": "如图，点B、E分别在直线 和 上，若 ， ，可以证明 ．请完成下面证明过程中的各项“填空”。 证明： （理由：_______________ ） ​______________ （对顶角相等） ， （理由：__________________ ） ​_________ （理由：___________________ ） 又 ， ， ​______________ （理由：_____________",
+   "cluster": "相交线与平行线",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "证明",
+   "variants": []
+  },
+  {
+   "qid": "que-2639ddd6-7e85-11f1-9393-43742154f115",
+   "stem": "如图，点P在 的边 上．按下列要求画出相应的图形。 （1）过点P画直线 ； （2）过点P分别画 ，垂足分别为点D、P， 交 于点E；",
+   "cluster": "相交线与平行线",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "作图",
+   "variants": []
+  },
+  {
+   "qid": "que-2cc00cd5-7ccd-11f1-89eb-43742154f115",
+   "stem": "下列正三棱柱 中,若 为所在棱的中点,则可以得出 平面 的是 ( )",
+   "cluster": "相交线与平行线",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-2cc027dc-7ccd-11f1-9657-43742154f115",
+   "stem": "已知直线$l_{1}\\perp$平面$\\alpha$,直线$l_{2}\\subset$平面$\\alpha$,则下列结论一定不正确的是 ( )",
+   "cluster": "相交线与平行线",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-2cc04a97-7ccd-11f1-90bc-43742154f115",
+   "stem": "如图,已知四棱锥$S-ABCD$的底面为正方形,$SD\\perp$平面$ABCD$,则下列结论中正确的是 ( )",
+   "cluster": "相交线与平行线",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-02d9e3b6-04f1-40ea-8a37-33d1d14d1384",
+   "stem": "在平面直角坐标系中，已知点 在 y 轴上，则 a 的值是 ．",
+   "cluster": "用坐标描述平面内点的位置",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-07712daa-232b-44e4-b9e1-95c18a52f0bb",
+   "stem": "已知点 ， ，则 （ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "用坐标描述平面内点的位置",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-092fa857-8dd8-4794-a500-02e15edd40c6",
+   "stem": "已知平面直角坐标系中有一点 ． （1） 已知点 ，当 轴时，求点 的坐标和线段 的长； （2） 当点 到 轴的距离为 1 时，求点 的坐标．",
+   "cluster": "用坐标描述平面内点的位置",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-0a9e01d1-3f98-4d45-bc0d-9f2a9d170635",
+   "stem": "在平面直角坐标系$xOy$中，函数$y＝2x＋m$和函数$y＝mx（m≠0）$的图象相交于点$A$。 （1）当$m＝4$时，求点$A$的坐标； （2）当$x &lt; 2$时，对于$x$的每一个值，函数$y＝2x＋m$的值都大于函数$y＝mx（m≠0）$的值，直接写出$m$的取值范围。",
+   "cluster": "用坐标描述平面内点的位置",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-0ca5db1b-7e71-4bdb-9a66-7e861acecf2e",
+   "stem": "将点A先向下平移3个单位长度,再向右平移2个单位长度后得到点$B(-2,5)$,则点A的坐标为______。",
+   "cluster": "用坐标描述平面内点的位置",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-0dcecf19-7e82-4799-8bd9-0291a1703fe1",
+   "stem": "若点 向下平移 3 个单位后位于坐标原点，则 点坐标为 ．",
+   "cluster": "用坐标描述平面内点的位置",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-163e95b7-acf8-42ee-ad83-3483c188f0de",
+   "stem": "如图QM2-5,在平面直角坐标系中,点A从点 依次跳动到点 , , , , , , , , , , ,按此规律,则点 的坐标为",
+   "cluster": "用坐标描述平面内点的位置",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-16957502-835d-4174-959b-8554160c38bf",
+   "stem": "已知平面直角坐标系中有一点 ． （1） 已知点 ，当 轴时，求点 的坐标和线段 的长； （2） 当点 到 轴的距离为 1 时，求点 的坐标．",
+   "cluster": "用坐标描述平面内点的位置",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-2426283d-2513-483f-955c-45ee12a65c79",
+   "stem": "将三角形 的纵坐标乘以 ，原三角形 坐标分别为 ， ， 得新三角形 ，下列图象中正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "用坐标描述平面内点的位置",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-2a6c7d8d-a8fb-4f32-a0b1-d419ba7a550a",
+   "stem": "若点 向下平移 3 个单位后位于坐标原点，则 点坐标为 ．",
+   "cluster": "用坐标描述平面内点的位置",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-0008b871-ff35-425b-b275-775009c302e8",
+   "stem": "已知锐角△ABC的面积为 ，BC=4，CA=3，则角C的大小为",
+   "cluster": "列代数式表示数量关系",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-069169c2-9f50-4042-861b-f5514efd7d63",
+   "stem": "已知函数 $f(x)=\\sin\\omega x- \\cos\\omega x(\\omega&gt;0)$，$x\\in[0,\\pi]$的值域为$[-1,\\sqrt{2}]$，则$\\omega$的值不可能是（ ）",
+   "cluster": "列代数式表示数量关系",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-093daa66-4450-45d8-96eb-7ed404b478f1",
+   "stem": "如图，$A,B$是半径为2的圆周上的定点，$P$为圆周上的动点，$\\angle APB$是锐角，大小为$b$。图中阴影区域的面积的最大值为（ ）",
+   "cluster": "列代数式表示数量关系",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-0dc2a3e3-ba8d-406a-9dd0-e38cf60d4500",
+   "stem": "若 $a \\in (\\pi, \\frac{3}{2}\\pi)$，化简：$\\sqrt{\\frac{1}{2}+\\frac{1}{2}\\sqrt{\\frac{1}{2}+\\frac{1}{2}\\cos2a}} =$_____.",
+   "cluster": "列代数式表示数量关系",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-0e008395-b5e5-4f8d-8d10-8d1cafac6f2f",
+   "stem": "已知$\\alpha$是第二象限角，且$\\sin(\\pi+\\alpha)=-\\frac{3}{5}$，则$\\tan2\\alpha$的值为______.",
+   "cluster": "列代数式表示数量关系",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-0e03d4ac-7ae5-4979-82d4-499fce788c21",
+   "stem": "（1）若 $\\sin q = \\frac{3}{5}$，$\\frac{5\\pi}{2} &lt; q &lt; 3\\pi$，那么 $\\sin\\frac{q}{2} =$ . （2）若 $\\cos a = -\\frac{4}{5}$，$a$ 是第三象限的角，则 $\\frac{1+\\tan\\frac{a}{2}}{1-\\tan\\frac{a}{2}} =$ .",
+   "cluster": "列代数式表示数量关系",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-0fc5075d-6cc5-4ab4-825e-9c1010878057",
+   "stem": "已知$\\alpha$是第二象限角，且$\\sin(\\pi+\\alpha)=-\\frac{3}{5}$，则$\\tan2\\alpha$的值为______.",
+   "cluster": "列代数式表示数量关系",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-1c71a2e0-a667-4313-a421-d0c77842358b",
+   "stem": "已知函数 $f(x)=\\sin\\omega x- \\cos\\omega x(\\omega&gt;0)$，$x\\in[0,\\pi]$的值域为$[-1,\\sqrt{2}]$，则$\\omega$的值不可能是（ ）",
+   "cluster": "列代数式表示数量关系",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-1fb52a6b-175e-47b3-824f-911a5443a2f8",
+   "stem": "已知$\\tan\\beta = 3$，$\\tan(\\alpha - \\beta) = 5$，则$\\tan\\alpha$的值是（ ）",
+   "cluster": "列代数式表示数量关系",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-21de0703-7a7d-11f1-88e8-79056d4a98c5",
+   "stem": "在平面直角坐标系$xOy$中，角$a$与角$b$均以$Ox$为始边，它们的终边关于$y$轴对称。若$\\sin a = \\frac{1}{3}$，则$\\cos(a - b) =$______。",
+   "cluster": "列代数式表示数量关系",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-1f48e263-c450-453d-a307-24368d772173",
+   "stem": "如图，把左边的松树平移到右边，下面说法正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）。",
+   "cluster": "平面直角坐标系",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-2639b5a7-7e85-11f1-ad29-43742154f115",
+   "stem": "有下列说法：①掷铅球的成绩是两点之间的距离；②跳远的成绩是点到直线的距离；③在同一平面内，若两条直线都与第三条直线平行，则这两条直线也相互平行；④若∠A与∠B的两边分别互相垂直，且∠A比∠B的2倍少30°，则∠B是30°或70°，其中，说法正确的有（ ）",
+   "cluster": "平面直角坐标系",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-2639d29c-7e85-11f1-a089-43742154f115",
+   "stem": "如图1的“方胜”由两个全等正方形交错叠合而成，是中国古代象征同心吉祥的一种装饰图案．如图2，将正方形ABCD沿对角线AC方向平移得到正方形EFGH，形成“方胜”图案，如果平移距离为3，且 ，那么点A到点G的距离是__________；",
+   "cluster": "平面直角坐标系",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-2ba05e0a-258e-4766-a159-a552898137c4",
+   "stem": "完全相同的 4 个正方形面积之和是 100 ，则正方形的边长是",
+   "cluster": "平面直角坐标系",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-3841de79-dfdc-11f0-8760-03ae203f1cae",
+   "stem": "下列图形中，既是轴对称图形又是中心对称图形的是（     ）",
+   "cluster": "平面直角坐标系",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-399000ed-fdd1-4e49-aba8-02805aa3ea70",
+   "stem": "如图1的“方胜”由两个全等正方形交错叠合而成，是中国古代象征同心吉祥的一种装饰图案．如图2，将正方形ABCD沿对角线AC方向平移得到正方形EFGH，形成“方胜”图案，如果平移距离为3，且 ，那么点A到点G的距离是__________；",
+   "cluster": "平面直角坐标系",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-3de667f7-6869-11f1-a17d-3736bde35404",
+   "stem": "如图，两个直角三角形重叠在一起，将其中一个沿点B到点C的方向平移到△ DEF的位置，AB = 10，DH = 3，平移距离为5，则阴影部分的面积为________。",
+   "cluster": "平面直角坐标系",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-57fa4f73-ec79-47f6-aab1-d2bd6716189e",
+   "stem": "完全相同的 4 个正方形面积之和是 100 ，则正方形的边长是",
+   "cluster": "平面直角坐标系",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-61d3aafa-f595-460a-b2dd-64e89e250fe1",
+   "stem": "定义：在平面内，由若干条不在同一直线上的线段 相连组成的 图形叫做多边形，各边相等 也相等的多边形叫做正多边形．",
+   "cluster": "平面直角坐标系",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-6dd882c1-4143-4816-987d-8ecddc3a7c3e",
+   "stem": "在四棱锥 $P-ABCD$ 中,$PA \\perp$ 平面 $ABCD$,$PA=BC=1$,$AD=2$,$PB$ 与平面 $ABCD$ 所成的角为$\\frac{\\pi}{4}$,底面$ABCD$ 为直角梯形,$\\angle BAD=\\angle ABC=\\frac{\\pi}{2}$,则点 $A$ 到平面 $PBC$ 的距离为( )",
+   "cluster": "平面直角坐标系",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-070d2c44-6a22-11f1-b3c0-6530ede8be03",
+   "stem": "中国地势西高东低，复杂多样。据统计，各类地形所占比例大致是：山地33％，高原26％，盆地19％，丘陵10％，平原12％。为直观地表示出各类地形所占比例，最合适的统计图是",
+   "cluster": "用统计图描述数据",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-070d30b7-6a22-11f1-99db-6530ede8be03",
+   "stem": "某数学学习小组为了解本校同学日常“垃圾分类”投放情况，随机从本校同学中抽取部分同学进行调查，并将调查到的数据绘制成如图12-Z-1所示的扇形图，其中A:每次分类投放，B:经常分类投放，C:有时分类投放，D:从不分类投放，则下列说法中错误的是",
+   "cluster": "用统计图描述数据",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-070d3e77-6a22-11f1-970f-6530ede8be03",
+   "stem": "近年来，汽车工业不断进行技术改革和升级，新能源汽车走进千家万户，与之配套的充电设施也在不断建设中。从充电设施的应用场景看，充电设施可分为私人随车配建充电桩和公共充电桩。据新能源汽车国家大数据联盟统计，2018—2023年我国充电设施累计数量情况如图12-Z-3所示。 根据上述信息，给出下列四个结论： ①2018—2023年，每年充电设施累计数量呈上升趋势； ②2023年新增公共充电桩数量超过90万",
+   "cluster": "用统计图描述数据",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-070d519e-6a22-11f1-81b6-6530ede8be03",
+   "stem": "如图12-Z-6是某水产养殖户根据鱼塘里饲养鱼苗的种类绘制的扇形图，已知该鱼塘饲养草鱼240条，则饲养青鱼的数量为________条。",
+   "cluster": "用统计图描述数据",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-6177d056-573c-11f1-93f8-93727e70c2bd",
+   "stem": "以下四个散点图中，两个变量的关系适合用线性回归模型刻画的是（         ）",
+   "cluster": "用统计图描述数据",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-6b378eba-6dec-11f1-aae8-b9cf3fb9511f",
+   "stem": "某商场试销A,B两款型号的洗碗机,1~4月份共售出400台。试销结束后,该商场想从中选择一款洗碗机进行经销,请根据提供的两幅统计图解答下列问题。 (1)洗碗机4月份销量占总销量的百分比是______%； (2)通过计算补全洗碗机月销量折线图； (3)结合折线图,判断该商场应选择哪款洗碗机进行经销?请说明理由。",
+   "cluster": "用统计图描述数据",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "说理解释",
+   "variants": []
+  },
+  {
+   "qid": "que-7639c230-6199-46ef-a65f-f32e0931c032",
+   "stem": "以下四个散点图中，两个变量的关系适合用线性回归模型刻画的是（         ）",
+   "cluster": "用统计图描述数据",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-800b0481-59a0-11f1-baa6-93727e70c2bd",
+   "stem": "下面几种情况中，适合用复式折线统计图描述数据的是（         ）。",
+   "cluster": "用统计图描述数据",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-800b1470-59a0-11f1-8ff0-93727e70c2bd",
+   "stem": "红星小学对六（1）班、六（2）班同学各 50 人参加体育活动的情况进行了调查（六（1）班扇形图：足球 14%、篮球 26%、乒乓球 20%、羽毛球 40%；六（2）班柱状图：篮球 10 人、羽毛球 18 人、足球 13 人、乒乓球 9 人），下列说法中&nbsp; （&nbsp; &nbsp;）是正确的。",
+   "cluster": "用统计图描述数据",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-800b220b-59a0-11f1-a6f7-93727e70c2bd",
+   "stem": "六（2）班视力检查的结果如下表所示，下面四幅扇形统计图中，（ &nbsp;&nbsp; ）可能表示这一结果。 视力 5.0 及以上 4.8-4.9 4.6 － 4.7 4.6 及以下 人数 4 10 20 6",
+   "cluster": "用统计图描述数据",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-08cf2563-3c88-11f1-8bf8-09eb5fd0794e",
+   "stem": "已知 a ， b ， c ， d 是实数，若 a &gt; b ， c = d ，则（         ）",
+   "cluster": "不等式与不等式组",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-19d71a70-8991-11f1-ad77-3b26a6f41ce2",
+   "stem": "如果$x &lt; y$，那么下列不等式不成立的是（）",
+   "cluster": "不等式与不等式组",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-2efb4421-5cab-11f1-9877-29f51c996ccc",
+   "stem": "不等式 $-2x &gt; 4$，两边同时除以$-2$，得 $x &gt; -2$。",
+   "cluster": "不等式与不等式组",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-2efbd810-5cab-11f1-bd2e-29f51c996ccc",
+   "stem": "若 3 x − 1 2 = 1 ，则（         ）",
+   "cluster": "不等式与不等式组",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-30e57ce0-6ac4-11f1-a524-b9cf3fb9511f",
+   "stem": "若$a&lt;b$,则下列结论正确的是",
+   "cluster": "不等式与不等式组",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-4899301f-9ca4-4afd-bb62-421780439c5e",
+   "stem": "若 0&lt; a &lt; b ，则下列不等式一定成立的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "不等式与不等式组",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-54952e4c-7863-11f1-a2a0-1535b482f3d3",
+   "stem": "如果$x&lt;y$，那么下列不等式不成立的是（）",
+   "cluster": "不等式与不等式组",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-54954da2-7863-11f1-8bf5-1535b482f3d3",
+   "stem": "下面的框图（如图）表示小明解不等式 的流程： 其中步骤“④”所用依据是____________________ .",
+   "cluster": "不等式与不等式组",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-6bf37c91-769b-11f1-abca-4d3314684b92",
+   "stem": "已知$\\alpha,\\beta$满足$0 &lt; \\alpha \\leqslant \\beta &lt; \\frac{\\pi}{2}$,求$\\alpha - \\beta$,$\\frac{\\alpha}{\\beta}$的取值范围.",
+   "cluster": "不等式与不等式组",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-6bf385df-769b-11f1-b20c-4d3314684b92",
+   "stem": "已知$x &gt; y &gt; z$,$x + y + z = 0$,则下列不等式成立的是().",
+   "cluster": "不等式与不等式组",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-009101ca-73b2-4d75-beda-c67c7e114125",
+   "stem": "下列说法中，正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "有理数的乘法与除法",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-03cbe997-81c1-4844-a714-d5f93a7d6972",
+   "stem": "画出数轴，并在数轴上表示下列有理数： − 5 , 3.5 , − 7 2 , − 1 2 , 3 2 , 5 , 9 2 ．",
+   "cluster": "有理数的乘法与除法",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "作图",
+   "variants": []
+  },
+  {
+   "qid": "que-09e0ad77-919c-4f9e-9211-d952cc31506b",
+   "stem": "到原点的距离是2018个单位长度的点表示的数是()",
+   "cluster": "有理数的乘法与除法",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-1be1ac15-2b96-4770-acfb-4f321ec61d49",
+   "stem": "关于数轴，下列说法最准确的是()",
+   "cluster": "有理数的乘法与除法",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-21f011bc-39d0-48c6-94ef-4a9dcd0392d4",
+   "stem": "数轴上原点及原点左边的点表示()",
+   "cluster": "有理数的乘法与除法",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-291b6ad4-bae6-4aab-ad24-5fe04cbbfff5",
+   "stem": "在数轴上表示数－3，0，5，2，－1的点中，在原点右边的有()",
+   "cluster": "有理数的乘法与除法",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-37806fe9-acd0-49f3-9471-a20a2f82b77b",
+   "stem": "如图数轴的单位长度为1，如果点$A$表示的数是﹣2，那么点$B$表示的数是_______。",
+   "cluster": "有理数的乘法与除法",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-38c44f03-ca9b-42a2-93a0-e7ca19c0a443",
+   "stem": "下列是数轴的是()",
+   "cluster": "有理数的乘法与除法",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-38f7f669-e32a-4b21-8359-c4734e504de6",
+   "stem": "下列是数轴的是()",
+   "cluster": "有理数的乘法与除法",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-46fbc2ae-8334-415a-a31a-7a4c6c4ee427",
+   "stem": "如图，写出数轴上点A，B，C，D，E表示的数。",
+   "cluster": "有理数的乘法与除法",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-070d22c6-6a22-11f1-baf4-6530ede8be03",
+   "stem": "为了解游客对恭王府、北京大观园、北京动物园和景山公园四个旅游景区的满意率情况，某班实践活动小组的同学给出了以下几种调查方案： 方案一：在多家旅游公司随机调查400名导游； 方案二：在恭王府景区随机调查400名游客； 方案三：在北京动物园景区随机调查400名游客； 方案四：在上述四个景区各随机调查400名游客。 在这四种调查方案中，最合理的是",
+   "cluster": "统计调查",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-070d42cc-6a22-11f1-b3a4-6530ede8be03",
+   "stem": "对我国003号航母各零部件的调查，最适合采用的调查方式是________。(填“全面调查”或“抽样调查”)",
+   "cluster": "统计调查",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-070d5757-6a22-11f1-8c62-6530ede8be03",
+   "stem": "食品卫生部门从某区域3200户商家中随机抽选160户进行专项检查，发现2户存在过期食品仍然在售的情况，相关部门按要求处罚相应商家，并销毁过期食品。请你估计该区域有________户商家需要下架销毁过期食品。",
+   "cluster": "统计调查",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-30e58188-6ac4-11f1-a478-b9cf3fb9511f",
+   "stem": "下列调查方式,你认为最合适的是",
+   "cluster": "统计调查",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-45717082-998d-434b-bc92-181620d420da",
+   "stem": "某市准备建一个体育文化公园，针对公园中的体育设施，某社区采用分层随机抽样的方法对成年居民进行了调查．已知该社区青年居民有 840 人，中年居民有 700 人，老年居民有 560 人．若从中年居民中随机抽取了 100 人，则这次抽样调查抽取的总人数是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "统计调查",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-6b3746de-6dec-11f1-8ca0-b9cf3fb9511f",
+   "stem": "下列调查中,样本具有代表性的是",
+   "cluster": "统计调查",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-8e5226b3-e80f-4b76-88c8-53976837cba8",
+   "stem": "下列调查中,样本具有代表性的是",
+   "cluster": "统计调查",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-9c34c0bc-22a5-4b69-8b3f-18a55cfe13ed",
+   "stem": "下列调查方式,你认为最合适的是",
+   "cluster": "统计调查",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-a8deb7eb-5f87-4134-8b69-2410f06bc50a",
+   "stem": "某单位 200 名职工的年龄分布情况如图，现要从中抽取 40 名职工作样本，用系统抽样法，将全体职工随机按 1 － 200 编号，并按编号顺序平均分为 40 组（ 1 － 5 号， 6 － 10 号 … ， 196 － 200 号） . 若第 5 组抽出的号码为 22 ，则第 8 组抽出的号码应是 ．若用分层抽样方法，则 40 岁以下年龄段应抽取 人 .",
+   "cluster": "统计调查",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-ac2db788-6acb-11f1-99b9-b9cf3fb9511f",
+   "stem": "下列调查中，适宜采用全面调查的是（）",
+   "cluster": "统计调查",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-00666149-58c4-11f1-b598-93727e70c2bd",
+   "stem": "把一段圆柱形钢材削成一个最大的圆锥，削去的部分重 8 千克，这段圆柱形钢材重（         ）千克。",
+   "cluster": "几何图形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-00666997-58c4-11f1-9532-93727e70c2bd",
+   "stem": "一根长 2m 的圆柱形木头，横向截成两段后，表面积增加 48cm 2 ，这根圆柱形木头原来的体积是 （ ） cm 3 。",
+   "cluster": "几何图形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-006670a0-58c4-11f1-99e1-93727e70c2bd",
+   "stem": "一个圆柱和一个圆锥的体积和高都相等，圆柱底面积是 12cm 2 ，圆锥底面积是 cm 2 。",
+   "cluster": "几何图形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-006674bc-58c4-11f1-a194-93727e70c2bd",
+   "stem": "一个圆柱高 10cm ，将它切开、拼成一个近似的长方体（如下图），表面积增加 80 c m 2 。这个圆柱的体积是 （ ） c m 3 。",
+   "cluster": "几何图形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-0091c669-a3af-4c24-8390-886c4bfe6ac7",
+   "stem": "手工制作3个空间立体几何模型（棱锥，棱柱，圆锥，圆柱等），开学后展示交流。",
+   "cluster": "几何图形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-017a09b9-80e6-4541-b188-0d1366fa2168",
+   "stem": "(多选)下列图形中，是三棱柱展开图的是( )",
+   "cluster": "几何图形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-04312852-56b9-4375-bc68-6bc10f16369c",
+   "stem": "某同学制作了一个对面图案均相同的正方体礼品盒，如图所示，则这个正方体礼品盒的平面展开图应该为(对面是相同的图案)",
+   "cluster": "几何图形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-0454208d-7639-4a1f-8cef-17b5034ee6bc",
+   "stem": "某同学制作了一个对面图案均相同的正方体礼品盒，如图所示，则这个正方体礼品盒的平面展开图应该为(对面是相同的图案)",
+   "cluster": "几何图形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-0840db87-a180-47cb-8dd0-f03fc099a87a",
+   "stem": "四棱柱的体对角线的条数为( )",
+   "cluster": "几何图形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-0b91d89f-e278-4d11-a455-3da0f3d06eb5",
+   "stem": "如图所示，关于该几何体的正确说法有______．(填序号) ①这是一个六面体； ②这是一个四棱柱； ③此几何体可由三棱柱截去一个三棱柱得到； ④此几何体可由四棱柱截去一个三棱柱得到．",
+   "cluster": "几何图形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-03e5a3bb-ea33-4bef-870c-354049fbce18",
+   "stem": "在数轴上表示$−4$和3的两点的距离是________。",
+   "cluster": "几何图形初步",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-2639c809-7e85-11f1-8f29-43742154f115",
+   "stem": "如图，点B，O，D在同一直线上，若$\\angle AOC = \\angle COD = 100^\\circ$，则$\\angle AOB$的度数为__________。",
+   "cluster": "几何图形初步",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-2c184fac-9bb2-4b5f-8405-ac550a3d4230",
+   "stem": "已知点 ， ，则 （ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "几何图形初步",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-3971f341-8112-11f1-8acc-2d6e1a7b7ebb",
+   "stem": "在平面直角坐标系中，已知$A(a,0)$，$B(-2,0)$，$AB=8$，则$a=$______.",
+   "cluster": "几何图形初步",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-41662110-ff55-48db-9294-5b024f4cfe52",
+   "stem": "如图，点B，O，D在同一直线上，若$\\angle AOC = \\angle COD = 100^\\circ$，则$\\angle AOB$的度数为__________。",
+   "cluster": "几何图形初步",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-6c587b60-8334-4a3c-962d-82258025a4a4",
+   "stem": "在数轴上表示$−4$和3的两点的距离是________。",
+   "cluster": "几何图形初步",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-7672513b-456f-4f39-ad2f-7372c6f874ef",
+   "stem": "在数轴上表示$−4$和3的两点的距离是________。",
+   "cluster": "几何图形初步",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-7e2af857-8351-11f1-9acb-2d6e1a7b7ebb",
+   "stem": "在数轴上表示$−4$和3的两点的距离是________。",
+   "cluster": "几何图形初步",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-85019a21-01dd-4de4-9537-82fefa306d49",
+   "stem": "下列说法正确的是",
+   "cluster": "几何图形初步",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-8730e75a-4471-4e99-b85a-b93b3d4fc617",
+   "stem": "如图，点B，O，D在同一直线上，若$\\angle AOC = \\angle COD = 100^\\circ$，则$\\angle AOB$的度数为__________。",
+   "cluster": "几何图形初步",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-19d722c4-8991-11f1-86c8-3b26a6f41ce2",
+   "stem": "我们定义一个关于实数a，b的新运算，规定： a ∗ b = 3 a − 2 b a*b=3a-2b a ∗ b = 3 a − 2 b ，例如， 45 = 3 × 4 − 2 × 5 45=3\\times4-2\\times5 45 = 3 × 4 − 2 × 5 。若实数 m m m 满足 m ∗ 2 &lt; 1 m*2&lt;1 m ∗ 2 &lt; 1 ，则m的取值范围是（）",
+   "cluster": "代数式的值",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-19d7441c-8991-11f1-bb54-3b26a6f41ce2",
+   "stem": "对于任何数a，符号[a]表示不大于a的最大整数，例如：$[5.7] = 5$，$[5] = 5$，$[-1.5] = -2$. （1）$[\\frac{7}{2}] - [-2\\frac{1}{3}] =$________ . （2）如果$[\\frac{2x-3}{5}] = -4$，则满足条件的所有整数x的和为__________ .",
+   "cluster": "代数式的值",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-5204be57-ae5f-47f3-8d12-7290e7754f5b",
+   "stem": "为提高信息在传输中的抗干扰能力，通常在原信息中按一定规则加入相关数据组成传输信息。设定原信息为$a_0a_1a_2,a_i \\in \\{0,1\\}(i=0,1,2)$，传输信息为$h_0a_0a_1a_2h_1$，其中$h_0 = a_0 \\oplus a_1, h_1 = h_0 \\oplus a_2$，$\\oplus$运算规则为：$0 \\oplus 0 = 0, 0 \\oplus 1 = 1,",
+   "cluster": "代数式的值",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-549534e3-7863-11f1-bc35-1535b482f3d3",
+   "stem": "我们定义一个关于实数a，b的新运算，规定：$a b=3a-2b$，例如，$4 5=3×4-2×5$。若实数m满足$m*2&lt;1$，则m的取值范围是（）",
+   "cluster": "代数式的值",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-667ef4bb-8a68-4f57-a7cc-67802d0e836f",
+   "stem": "我们定义一个关于实数a，b的新运算，规定：$a b=3a-2b$，例如，$4 5=3×4-2×5$。若实数m满足$m*2&lt;1$，则m的取值范围是（）",
+   "cluster": "代数式的值",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-6b3768f6-6dec-11f1-a890-b9cf3fb9511f",
+   "stem": "定义一种法则“⊗”如下：$a\\otimes b=\\begin{cases} a(a&gt;b) \\ b(a\\leqslant b) \\end{cases}$,如:$1\\otimes 2=2$.若$(2m-5)\\otimes 3=3$,则m的取值范围是______。",
+   "cluster": "代数式的值",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-795ff728-76aa-11f1-a84f-4d3314684b92",
+   "stem": "为提高信息在传输中的抗干扰能力，通常在原信息中按一定规则加入相关数据组成传输信息。设定原信息为$a_0a_1a_2,a_i \\in \\{0,1\\}(i=0,1,2)$，传输信息为$h_0a_0a_1a_2h_1$，其中$h_0 = a_0 \\oplus a_1, h_1 = h_0 \\oplus a_2$，$\\oplus$运算规则为：$0 \\oplus 0 = 0, 0 \\oplus 1 = 1,",
+   "cluster": "代数式的值",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-bc50dcf2-692d-11f1-ada7-6530ede8be03",
+   "stem": "定义新运算：对于任意实数$a$，$b$都有$a※b=am-bn$，等式右边是通常的减法和乘法运算．规定，若$3※2=5$，$1※(-2)=-1$，则$(-3)※1$的值为 _______．",
+   "cluster": "代数式的值",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-e5dcd0d4-c48f-48fd-a79b-e77e268b984f",
+   "stem": "我们定义一个关于实数a，b的新运算，规定：$a b=3a-2b$，例如，$4 5=3×4-2×5$。若实数m满足$m*2&lt;1$，则m的取值范围是（）",
+   "cluster": "代数式的值",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-c08c26ed-82c4-4425-b2bd-7d13442435b9",
+   "stem": "若“ ”是一种数学运算符号，且 ， ， ， ， ，则 的值为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "代数式的值",
+   "difficulty": "easy_moderate",
+   "difficulty_zh": "较易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-6b375ebb-6dec-11f1-9578-b9cf3fb9511f",
+   "stem": "如图QM2-6,直线AB,CD相交于点O, 于点O.如果 ,那么 的度数是______。",
+   "cluster": "相交线",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-793fa6f6-7917-4194-acce-ac7d6fd58b58",
+   "stem": "下面是长方体$ABCD-A_{1}B_{1}C_{1}D_{1}$的几条棱，其中不符合条件“与直线$A_{1}D_{1}$既不相交也不平行”的是",
+   "cluster": "相交线",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-799debb4-3eb0-11f1-9fd5-3f42f5c2785b",
+   "stem": "如图，直线 a ， b 相交，若∠ 1 与∠ 2 互余，则∠ 3 ＝ ．",
+   "cluster": "相交线",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-ac2dcef2-6acb-11f1-b34a-b9cf3fb9511f",
+   "stem": "如图，直线AB，CD相交于点O，∠AOC:∠BOC=3:7，OE⊥AB于点O，∠DOE的度数为______°．",
+   "cluster": "相交线",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-b29a5604-8f7e-460f-9e46-9e8e1773f06b",
+   "stem": "下列说法中错误的有 ( )",
+   "cluster": "相交线",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-45ee1768-0e39-4b6d-aa55-44c69d403a8d",
+   "stem": "如图，直线 ， 相交于点 ， ，垂足为 ．若 ，则 的度数是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "相交线",
+   "difficulty": "easy_moderate",
+   "difficulty_zh": "较易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-82a23f44-2b36-4017-a777-f5bf18ae8738",
+   "stem": "若空间两条直线 a 和 b 没有公共点，则 a 与 b 的位置关系是（       ）",
+   "cluster": "相交线",
+   "difficulty": "easy_moderate",
+   "difficulty_zh": "较易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-d5141ecc-5530-460c-8f8b-d74c2f34dc23",
+   "stem": "如图，点 在 上，若 ，则 ． &nbsp;&nbsp;&nbsp;",
+   "cluster": "相交线",
+   "difficulty": "easy_moderate",
+   "difficulty_zh": "较易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-e5033298-72a5-4ff0-a91e-cab8130c3d7b",
+   "stem": "若空间两条直线 a 和 b 没有公共点，则 a 与 b 的位置关系是（       ）",
+   "cluster": "相交线",
+   "difficulty": "easy_moderate",
+   "difficulty_zh": "较易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-006e3b1d990c4a6c9770720fda9fa2d5",
+   "stem": "如图，点$C$在直线$AB$上，$\\angle ACD$的度数比$\\angle BCD$的度数的3倍少$20^{\\circ}$，设$\\angle ACD$的度数为$x^{\\circ}$，$\\angle BCD$的度数为$y^{\\circ}$，那么可列出关于$x、y$的方程组是$\\underline{\\quad\\quad}$。",
+   "cluster": "相交线",
+   "difficulty": "medium",
+   "difficulty_zh": "适中",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-00c561d1-7b6e-4ab2-9c05-ed1ac4560d97",
+   "stem": "下列各数中的无理数是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "二次根式",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-00f670e0-00f3-475c-ab2e-f2323ab4c550",
+   "stem": "下列函数中，既是偶函数又在 上单调递减的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "二次根式",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-0183318b-b192-4e7e-91b6-312fad75e12a",
+   "stem": "若 π 4 &lt; α &lt; π 2 ，以下不等式成立的是（         ）",
+   "cluster": "二次根式",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-0221a99e-6a7a-4057-a9ef-f19a5f2e7c78",
+   "stem": "某天，月球表面白天的最高温度为零上126 ℃，如果把它记作126 ℃，那么夜间的最低温度零下150 ℃记作____ ℃。",
+   "cluster": "二次根式",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-02e563bb-2738-4fc8-a892-5d91606a9a08",
+   "stem": "若$a - (-b) = 0$，则$a$与$b$的关系是________。",
+   "cluster": "二次根式",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-031e6fd4-548e-4914-bb03-bea3c0f89c08",
+   "stem": "若数轴上表示互为相反数的两点之间的距离是16，则这两个数是______________。",
+   "cluster": "二次根式",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-045f769f-0f45-497e-8a56-08a1abbf015e",
+   "stem": "下列各数中，最大的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "二次根式",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-05d7112e-07f5-48c9-afe2-632a9e30f129",
+   "stem": "检验4个工件，其中超过标准质量的克数记作正数，不足标准质量的克数记作负数，从轻重的角度看，最接近标准的工件是( )",
+   "cluster": "二次根式",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-0663f7f8-8621-40e2-af05-7ad6aec654ee",
+   "stem": "截至 年 月，全球 用户规模已达 户，数据 用科学记数法表示为 ．",
+   "cluster": "二次根式",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-06668db3-0d9b-43a7-861b-c956991d304e",
+   "stem": "在数轴上，绝对值为14，且在原点左边的点表示的数为__________。",
+   "cluster": "二次根式",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-053007b2-7b54-44ae-a19b-b70673bb78d9",
+   "stem": "一个两位数的十位上的数字与个位上的数字之和为 8 ，把这个数减去 36 后，结果恰好成为十位数字与个位数字对调后组成的两位数，则原来的两位数是",
+   "cluster": "一次函数的图象和性质",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-11dcdf67-ff09-49df-b46d-9955c7270310",
+   "stem": "已知关于x、y的二元一次方程组$\\begin{cases} 2x + 3y = m \\newline 3x + 5y = m + 2 \\end{cases}$，如果$x+y&gt;2$，那么m的取值范围是__________ .",
+   "cluster": "一次函数的图象和性质",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-19d7395d-8991-11f1-8a07-3b26a6f41ce2",
+   "stem": "已知关于x、y的二元一次方程组$\\begin{cases} 2x + 3y = m \\newline 3x + 5y = m + 2 \\end{cases}$，如果$x + y &gt; 2$，那么m的取值范围是__________ .",
+   "cluster": "一次函数的图象和性质",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-19d74bbd-8991-11f1-b930-3b26a6f41ce2",
+   "stem": "是否存在整数k，使方程组$\\begin{cases} 2x + y = k \\newline x - y = 1 \\end{cases}$的解中，x大于1，y不大于1，若存在，求出k的值，若不存在，说明理由.",
+   "cluster": "一次函数的图象和性质",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "说理解释",
+   "variants": []
+  },
+  {
+   "qid": "que-19d74f73-8991-11f1-837c-3b26a6f41ce2",
+   "stem": "列方程（组）或不等式（组）解决实际问题。 某汽车专卖店销售A，B两种型号的新能源汽车。上周售出1辆A型车和3辆B型车，销售额为96万元；本周已售出2辆A型车和1辆B型车，销售额为62万元。 （1）求每辆A型车和B型车的售价各为多少万元？ （2）甲公司拟向该店购买A，B两种型号的新能源汽车共6辆，购车费不少于130万元，且不超过140万元，通过计算说明共有几种购车方案。",
+   "cluster": "一次函数的图象和性质",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-1c9cbc21-5f2d-11f1-a76a-29f51c996ccc",
+   "stem": "函数 y = a x + b 和 y = a x 2 + b x + c 在同一直角坐标系内的图象可以是 （         ）",
+   "cluster": "一次函数的图象和性质",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-1ca3bc3c-5503-11f1-9383-8d59f08d439f",
+   "stem": "如图，在平面直角坐标系中，直线 l ： y = 3 x + 3 与两坐标轴交于 A 、 B 两点，以 A B 为边作等边 △ A B C ，将等边 △ A B C 沿射线 A B 方向作连续无滑动地翻滚．第一次翻滚：将等边三角形绕 B 点顺时针旋转 120 ° ，使点 C 落在直线 l 上，第二次翻滚：将等边三角形绕点 C 顺时针旋转 120 ° ，使点 A 落在直线 l 上 …… 当等边三角形翻",
+   "cluster": "一次函数的图象和性质",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-2033b8a4-5d9b-11f1-b7d6-69a7742d3f5f",
+   "stem": "已知点 − 1 ， y 1 ， 3 ， y 2 在一次函数 y = 2 x + 1 的图象上，则 y 1 ， y 2 的大小关系是（       ）",
+   "cluster": "一次函数的图象和性质",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-20344143-5d9b-11f1-a0c1-69a7742d3f5f",
+   "stem": "将直线 y ＝－ 2 x ＋ 1 向右平移 3 个单位长度，所得到的直线解析式为（ ）",
+   "cluster": "一次函数的图象和性质",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-2034b3ce-5d9b-11f1-aa88-69a7742d3f5f",
+   "stem": "在平面直角坐标系中画出一次函数 y = 2 x − 5 的图象，下列说法正确的是（         ）",
+   "cluster": "一次函数的图象和性质",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-05fdca0e-967e-4f2f-9938-020c52b0c90c",
+   "stem": "如图，在$\\Delta ABC$中，$\\angle A = 50^\\circ$，$CE$平分$\\angle ACB$，点D为BC延长线上一点，过点D作$DF \\parallel EC$交AB于点F，$\\angle D = 42^\\circ$，则$\\angle B = $____________________$^\\circ$。",
+   "cluster": "三角形的内角与外角",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-0903989f-c33e-4973-b421-4420b67048b7",
+   "stem": "已知 的内角 A ， B ， C 的对边分别为 a ， b ， c ，且 ，则 .",
+   "cluster": "三角形的内角与外角",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-0db872cb-fecd-4482-b428-c7f31841d043",
+   "stem": "$\\triangle ABC$是等边三角形，点$D$在边$AC$的延长线上，且$AD = 3CD$，$BD = 2\\sqrt{7}$，则$CD =$ ，$\\sin\\angle ABD =$ ___。",
+   "cluster": "三角形的内角与外角",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-21de2ad1-7a7d-11f1-b3ea-79056d4a98c5",
+   "stem": "$\\triangle ABC$是等边三角形，点$D$在边$AC$的延长线上，且$AD = 3CD$，$BD = 2\\sqrt{7}$，则$CD =$ ，$\\sin\\angle ABD =$ ___。",
+   "cluster": "三角形的内角与外角",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-2639a362-7e85-11f1-8b68-43742154f115",
+   "stem": "如图，点O在直线AB上，射线OC平分∠DOB，若∠DOC＝35°，则∠AOD等于（ ）",
+   "cluster": "三角形的内角与外角",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-2639bea5-7e85-11f1-9191-43742154f115",
+   "stem": "在螳螂的示意图中， ， ， ，则 __________．",
+   "cluster": "三角形的内角与外角",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-2639c22f-7e85-11f1-a071-43742154f115",
+   "stem": "如图，已知直线$AB,CD$相交于点O，$OA$平分$\\angle EOC$，$\\angle EOC = 100^\\circ 48'$， 则$\\angle AOE$的度数是__________； $\\angle AOC$的补角度数是__________； 与$\\angle AOD$相等的角有__________。",
+   "cluster": "三角形的内角与外角",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-2639cf58-7e85-11f1-aceb-43742154f115",
+   "stem": "如图，在$\\Delta ABC$中，$\\angle A = 50^\\circ$，$CE$平分$\\angle ACB$，点D为BC延长线上一点，过点D作$DF \\parallel EC$交AB于点F，$\\angle D = 42^\\circ$，则$\\angle B = $____________________$^\\circ$。",
+   "cluster": "三角形的内角与外角",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-2639e8a2-7e85-11f1-b99a-43742154f115",
+   "stem": "解决问题 （1）如图①， ， 与 的角平分线相交于点P，求 的大小； （2）如图②， ， ， 与 的平分线相交于点P，求 的大小； （3）如图， ， ， ， ， 与 的角平分线相交于点P，则 __________；（用 ， ， 的代数式表示）",
+   "cluster": "三角形的内角与外角",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-2b11bd04-6633-11f1-a2c3-3736bde35404",
+   "stem": "如图 13-X-1 所示，以 BC 为边的三角形共有（ ）",
+   "cluster": "三角形的内角与外角",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-0b2dcb0e-979b-4d30-b8ef-2f7353568d80",
+   "stem": "如图，直线$l_1∥l_2$， ∠1＝55°，∠2＝45°，则∠3的度数为（ ）",
+   "cluster": "四边形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-140ed4fe-a8a5-469f-9d5b-ead933fa8744",
+   "stem": "如图QM2-3,直线AB//CD,直线EF分别与直线AB,CD交于点E,F,点G在直线CD上,GE⊥EF.若 ,则 的大小为",
+   "cluster": "四边形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-16217106-64c1-4b0c-b840-e8a0353cd068",
+   "stem": "解决问题 （1）如图①， ， 与 的角平分线相交于点P，求 的大小； （2）如图②， ， ， 与 的平分线相交于点P，求 的大小； （3）如图， ， ， ， ， 与 的角平分线相交于点P，则 __________；（用 ， ， 的代数式表示）",
+   "cluster": "四边形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-1fedcb2b-7f5f-4449-bd12-d47cf3f4d6a2",
+   "stem": "如图， $A B / / C D$ ，直线 $E F$ 与直线 $A B, C D$ 分别交于点 $E, F$ ，直线 $E G$ 与直线 $C D$ 交于点 $G$ .若 $\\angle 1=70^{\\circ}$ ， $\\angle 2=50^{\\circ}$ ，则 $\\angle G E F$ 的度数为（&nbsp; ）",
+   "cluster": "四边形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-242c1654-fe41-4fcf-b8b0-21019e6059e1",
+   "stem": "某数学兴趣小组为探究平行线的有关性质，用一副三角尺按如图所示的方式摆放，其中点A，E，C，F在同一条直线上，$\\angle BAC = \\angle EDF = 90^\\circ$，$\\angle B = 45^\\circ$，$\\angle DEF = 60^\\circ$．当$AD\\parallel BC$时，求$\\angle ADE$的大小。",
+   "cluster": "四边形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "判断猜想",
+   "variants": []
+  },
+  {
+   "qid": "que-263996f4-7e85-11f1-8c18-43742154f115",
+   "stem": "如图所示，在四边形ABCD中，AD∥BC，射线CE与AD交于点F，连接BF．下列角中，与∠ECB相等的是（）",
+   "cluster": "四边形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-26399eba-7e85-11f1-9f29-43742154f115",
+   "stem": "如图，已知AB∥CD，且CD平分∠BCE，若∠A＝35°，则∠B的度数为（ ）",
+   "cluster": "四边形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-2639a7b2-7e85-11f1-8107-43742154f115",
+   "stem": "在同一平面内，有三条不重合的直线a，b，c，（ ）",
+   "cluster": "四边形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-2639ac1b-7e85-11f1-bb1e-43742154f115",
+   "stem": "如图，直线$l_1∥l_2$， ∠1＝55°，∠2＝45°，则∠3的度数为（ ）",
+   "cluster": "四边形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-2639b06b-7e85-11f1-a645-43742154f115",
+   "stem": "嘉嘉在证明“平行于同一条直线的两条直线平行”时，给出了如下证明过程，淇淇为保证嘉嘉的推理更严谨，想在“∴∠1＝∠5”和“∴b∥c”之间作补充，下列说法正确的是（ ） 已知：如图，b∥a，c∥a。 求证：b∥c。 证明：作直线DF分别交直线a，b，c于点D，E，F。 ∵a∥b，∴∠1＝∠4。 又∵a∥c，∴∠1＝∠5，∴b∥c。",
+   "cluster": "四边形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-0246bc0d-39bc-4ca0-8440-9a791dd5228b",
+   "stem": "－0.01表示A点，－0.1表示B点，则离原点较近的是____点．",
+   "cluster": "三角形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-05a395b6-fbf5-441b-8af5-ccc4e8c1113a",
+   "stem": "在足球比赛中，如果甲队进3个球，记作+3个，那么甲队失2个球，记作____个。",
+   "cluster": "三角形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-088c42a7-56ad-11f1-9011-93727e70c2bd",
+   "stem": "若 a − 4 有意义，则 a 的值可以是（         ）",
+   "cluster": "三角形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-088c4786-56ad-11f1-b01d-93727e70c2bd",
+   "stem": "若 x − 9 在实数范围内有意义，则实数 x 的取值范围是 ．",
+   "cluster": "三角形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-088c4b1e-56ad-11f1-a6a9-93727e70c2bd",
+   "stem": "当 x 是怎样的实数时，下列各式在实数范围内有意义？ （ 1 ） x 2 + 1 ； （ 2 ） ( x − 1 ) 2 ； （ 3 ） 1 x ； （ 4 ） 1 x + 1 ．",
+   "cluster": "三角形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-088c5768-56ad-11f1-8664-93727e70c2bd",
+   "stem": "若式子 2022 + x 有意义，则实数 x 的取值范围是 ．",
+   "cluster": "三角形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-088c5aac-56ad-11f1-a8e1-93727e70c2bd",
+   "stem": "若 x + 1 在实数范围内有意义，则实数 x 的取值范围是 ．",
+   "cluster": "三角形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-088c6606-56ad-11f1-b24f-93727e70c2bd",
+   "stem": "无论 x 取何实数，式子 x 2 + 6 x + m 都有意义，则 m 的取值范围为 ．",
+   "cluster": "三角形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-0be8fe70-2fb2-4a5f-8db6-e5fbaf87d1e6",
+   "stem": "使 有意义的 x 的取值范围是 ．",
+   "cluster": "三角形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-1052c5b8-d608-4351-a8e9-2ddeada78141",
+   "stem": "如果水位升高5m时水位变化记作 +5m，那么水位下降3m时水位变化记作____m，水位不升不降时水位变化记作________m。",
+   "cluster": "三角形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-3971fcb8-8112-11f1-9791-2d6e1a7b7ebb",
+   "stem": "如图，在$\\triangle ACB$中，$\\angle ACB=90^\\circ$，$AC=BC$，点$C$的坐标为$(-2,0)$，点A的坐标为$(-6,3)$，则$B$点的坐标是______.",
+   "cluster": "三角形全等的判定",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-91d6b4f6-8c85-11f1-8edb-6dc8d96b80b8",
+   "stem": "下面是 “ 作一个角使其等于 ∠ A O B ” 的尺规作图方法 . （ 1 ）如图，以点 O 为圆心，任意长为半径画弧，分别交 O A ， O B 于点 C ， D ； （ 2 ）作射线 O ′ A ′ ，以点 O ′ 为圆心， O C 长为半径画弧，交 O ′ A ′ 于点 C ′ ；以点 C ′ 为圆心， C D 长为半径画弧，两弧交于点 D ′ ； （ 3 ）过点 D ′ 作射线 O ′",
+   "cluster": "三角形全等的判定",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-35e91489-b1a7-4ee5-91b4-69d7535d78dc",
+   "stem": "在“小孔成像”实验中，如图所示， O 是小孔位置．同学们发现：当 为 ， 的中点（即 ， ），像 与蜡烛 大小相等，从数学角度分析，证明 的依据是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "三角形全等的判定",
+   "difficulty": "easy_moderate",
+   "difficulty_zh": "较易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-5e3a818b-b4b9-45e3-9fd0-349cb512d66c",
+   "stem": "如图，已知 且 ， ，则判定 的依据是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "三角形全等的判定",
+   "difficulty": "easy_moderate",
+   "difficulty_zh": "较易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-a513add3-5aa5-472b-9ac8-96e608c73df0",
+   "stem": "如图，已知 ， ， ，点 C 、 D 、 E 、 F 共线．则下列结论正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "三角形全等的判定",
+   "difficulty": "easy_moderate",
+   "difficulty_zh": "较易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-a8328600-0829-4a67-a948-7d3273959d77",
+   "stem": "据记载，历史上最早的风筝是古代匠人墨子用木头制成的木鸟，称为“木鸢”．后来随着造纸术的发明，人们开始用纸张和竹条制作风筝，使其更加轻便，易于放飞．在如图所示的“风筝”图案中， ， ， ，则可以直接判定（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "三角形全等的判定",
+   "difficulty": "easy_moderate",
+   "difficulty_zh": "较易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-cad5261f-f8fc-4512-a73f-fcf0290223b7",
+   "stem": "如图 是某博物馆中的铺首纹青釉点彩盘口壶，其示意图如图 所示，为了测量其底部内径 的长，考古学家将两根细木条的中点 固定在一起，则有 ，因此量出的 ， 两点之间的距离即为 的长，其中判定三角形全等的依据是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "三角形全等的判定",
+   "difficulty": "easy_moderate",
+   "difficulty_zh": "较易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-0112556684e64ed5a043c204e9e7c051",
+   "stem": "在 $\\triangle ABC$ 和 $\\triangle A'B'C'$ 中，$AB = A'B'$，$\\angle A = \\angle A'$，若要证 $\\triangle ABC \\cong \\triangle A'B'C'$，则还要从下列条件中补选一个，错误的选法是",
+   "cluster": "三角形全等的判定",
+   "difficulty": "medium",
+   "difficulty_zh": "适中",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-017f43ac90fa4e49b021299b4f2b274d",
+   "stem": "如图，$AD=BC$，$AC=BD$，若$\\angle ABC=50^\\circ$，则$\\angle DAB$的度数是（ ）",
+   "cluster": "三角形全等的判定",
+   "difficulty": "medium",
+   "difficulty_zh": "适中",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-0211172229554853a79db7a6b572e9ef",
+   "stem": "如图，已知$AD$，$AF$分别是$\\triangle ABC$和$\\triangle ABE$的高，$AD=AF$，$AC=AE$。求证： (1) $\\triangle ABD\\cong\\triangle ABF$； (2) $BC=BE$。",
+   "cluster": "三角形全等的判定",
+   "difficulty": "medium",
+   "difficulty_zh": "适中",
+   "form": "证明",
+   "variants": []
+  },
+  {
+   "qid": "que-2639e52d-7e85-11f1-b7cd-43742154f115",
+   "stem": "如图，在$\\Delta ABC$中，$AB = AC$，D是BC的中点，过A作$EF\\parallel BC$，且$AE = AF$．求证： （1）$DE = DF$； （2）$BG = CH$．",
+   "cluster": "勾股定理",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "证明",
+   "variants": []
+  },
+  {
+   "qid": "que-2b11f529-6633-11f1-8df7-3736bde35404",
+   "stem": "如图 13-X-9，将一块透明的三角形匀质薄板（记作△ABC）放入正方形网格中，其三个顶点都在网格线的交点上，在点 D,E,F,G（都在网格线的交点上）中，是该三角形薄板的重心的是（ ）",
+   "cluster": "勾股定理",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": [
+    {
+     "qid": "que-d52d1960b62b483182da56d7c45726cd",
+     "type": "近乎原题"
+    }
+   ]
+  },
+  {
+   "qid": "que-2b11fd21-6633-11f1-b8f3-3736bde35404",
+   "stem": "如图 13-ZH-1，用一个支点顶住一个三角形匀质薄板，慢慢调整薄板，使其能够在支点上保持平衡，则薄板与支点接触的点应该是（ ） &nbsp; &nbsp;",
+   "cluster": "勾股定理",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-3de63fc5-6869-11f1-a7b8-3736bde35404",
+   "stem": "如图，直角三角形ABC中，AB = 6，AC = 8，BC = 10，则点A到BC的距离为（ ）",
+   "cluster": "勾股定理",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-54f403aa-5fcc-11f1-963e-29f51c996ccc",
+   "stem": "如图，三角形 ABC 是一个等腰三角形， AB ＝ AC 。三角形 ABC 的三个内角各是多少度？",
+   "cluster": "勾股定理",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-54f4087d-5fcc-11f1-ba41-29f51c996ccc",
+   "stem": "如图所示，两个三角形都是等腰三角形，求∠ 3 的度数。",
+   "cluster": "勾股定理",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-54f40c02-5fcc-11f1-a2e1-29f51c996ccc",
+   "stem": "小嘉有一个等腰三角形的风筝，它的一个底角是 75 °，它的顶角是多少度？",
+   "cluster": "勾股定理",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-86aed46f-de92-4d95-859c-c1efc7e29179",
+   "stem": "如图，在$\\Delta ABC$中，$AB = AC$，D是BC的中点，过A作$EF\\parallel BC$，且$AE = AF$．求证： （1）$DE = DF$； （2）$BG = CH$．",
+   "cluster": "勾股定理",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "证明",
+   "variants": []
+  },
+  {
+   "qid": "que-87c096b1-c801-4f03-9210-e15005d9cb23",
+   "stem": "如图，在$\\Delta ABC$中，$AB = AC$，D是BC的中点，过A作$EF\\parallel BC$，且$AE = AF$．求证： （1）$DE = DF$； （2）$BG = CH$．",
+   "cluster": "勾股定理",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "证明",
+   "variants": []
+  },
+  {
+   "qid": "que-9295c733-7a78-11f1-8f8d-79056d4a98c5",
+   "stem": "17世纪德国著名的天文学家开普勒曾经这样说过：“几何学里有两件宝，一个是勾股定理，另一个是黄金分割.如果把勾股定理比作黄金矿的话，那么可以把黄金分割比作钻石矿.”黄金三角形有两种，其中底与腰之比为黄金分割比的黄金三角形被认为是最美的三角形，它是一个顶角为$36^\\circ$的等腰三角形（另一种是顶角为$108^\\circ$的等腰三角形）.例如，五角星由五个黄金三角形与一个正五边形组成，如图所示，在",
+   "cluster": "勾股定理",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-0b4b865f-7b49-11f1-8507-57b8371d822f",
+   "stem": "函数$f(x) = \\frac{x^2}{x - 3}$在$[1,2]$上的值域为__________.",
+   "cluster": "函数",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-0c3548d7-d0ef-4588-9eb0-7f54784c5f08",
+   "stem": "函数$y=f(x)$的图像与直线$x=a(a \\in \\mathbf{R})$的交点个数为（ ）。",
+   "cluster": "函数",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-118c5e2d-26dc-4e11-b9cd-890c7dd18535",
+   "stem": "已知函数 ，则 （1） 求 ， ， 的值； （2） 若 ，则 的值是多少？",
+   "cluster": "函数",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-128d625d-3a72-4960-9618-6cef2caeb5c3",
+   "stem": "已知函数$y=A\\sin(\\omega x+\\varphi)+m\\left(A&gt;0,\\omega&gt;0,|\\varphi|&lt;\\frac{\\pi}{2}\\right)$的最大值为4，最小值为0，且该函数图象的相邻两个对称轴之间的最短距离为$\\frac{\\pi}{2}$，直线$x=\\frac{\\pi}{6}$是该函数图象的一条对称轴，则该函数的解析式是（ ）",
+   "cluster": "函数",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-1b6b1682-522d-4857-b37d-dcf31614c4a4",
+   "stem": "已知函数f(x)=sin(ωx+φ ) - b(ω&gt;0, 0&lt;φ &lt;π)的图象的两相邻对称轴之间的距离$\\frac{\\pi}{2}$，若将f(x)的图象先向右平移$\\frac{\\pi}{6}$个单位，再向上平移$\\sqrt{3}$个单位，所得图象对应的函数为奇函数. (1)求f(x)的解析式并写出单增区间； (2)当$x\\in[0,\\frac{\\pi}{2}]$，f(x)+m-2",
+   "cluster": "函数",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-1c9cc62e-5f2d-11f1-9878-29f51c996ccc",
+   "stem": "已知幂函数 y = x a , y = x b , y = x c y=x^a,y=x^b,y=x^c y = x a , y = x b , y = x c 的部分图象如图所示,则点 ( a b − b , c 2 − c ) (ab-b,c^2-c) ( ab − b , c 2 − c ) 在( )",
+   "cluster": "函数",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-1ccfc01f-88a6-4f4e-9d16-b97389dcac1d",
+   "stem": "在$(0,2\\rho)$内,使$\\sin x&gt;\\cos x$成立的$x$的取值范围为（ ）",
+   "cluster": "函数",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-203bf543-6f1d-4eb1-89b3-b10f76afff97",
+   "stem": "已知图是函数 $y=2\\sin(\\omega x+\\varphi)(|\\varphi|&lt;\\frac{\\pi}{2})$ 的简图，那么()",
+   "cluster": "函数",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-2094c5d0-60c4-45ff-9162-8d5d01adbc33",
+   "stem": "下列说法中，不正确的是( )",
+   "cluster": "函数",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-21de1b5d-7a7d-11f1-8655-79056d4a98c5",
+   "stem": "用“五点法”作函数$f(x) = A\\sin(\\omega x + j)$的图象时，列表如下： $x$ $-\\frac{1}{4}$ $\\frac{1}{2}$ $\\frac{5}{4}$ $2$ $\\frac{11}{4}$ $\\omega x + j$ $0$ $\\frac{p}{2}$ $p$ $\\frac{3p}{2}$ $2p$ $f(x)$ $0$ $2$ $0$ $-2$ $0$ 则",
+   "cluster": "函数",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-0877ceb2-00be-4b70-bccd-b26912657c72",
+   "stem": "一个平行四边形的一条边长为 ，两条对角线的长分别为 和 ，则它的面积为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "特殊的平行四边形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-1ca3b33f-5503-11f1-9c2d-8d59f08d439f",
+   "stem": "如图，已知平面直角坐标系中的 ▱ A B C D ，点 A 1 , 4 ， C 3 , 0 ，坐标系内存在直线 l ： y = k x + b k ≠ 0 将 ▱ A B C D 分成面积相等的两部分，且这条直线与两坐标轴围成的三角形的面积为 1 ，则 k + b 的值为（         ）",
+   "cluster": "特殊的平行四边形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-2049c8aa-1d97-48c4-951f-1c664aaaa56d",
+   "stem": "李爷爷靠墙围一个长方形的菜园，菜园长 7 米，宽 4 米，至少需要多少米的栅栏？（请你画一画，再计算）",
+   "cluster": "特殊的平行四边形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "作图",
+   "variants": []
+  },
+  {
+   "qid": "que-2cc084a4-7ccd-11f1-a085-43742154f115",
+   "stem": "如图①,在矩形$ABCD$中,$AB=2$,$BC=\\sqrt{2}$,现将$\\triangle BCD$沿对角线$BD$折起形成三棱锥$C-ABD$(如图②),使$AC\\perp BC$,则点$C$到平面$ABD$的距离为$underline{\\quad}$.",
+   "cluster": "特殊的平行四边形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-3daddc04-45e6-430e-a6c7-b3dd973576c8",
+   "stem": "平行四边形 三个顶点坐标分别为 ，则顶点 的坐标为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "特殊的平行四边形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-54f3cc09-5fcc-11f1-9536-29f51c996ccc",
+   "stem": "四边形是由四条（ ）围成的图形 .",
+   "cluster": "特殊的平行四边形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-838f9897-805c-445d-b88c-22689e05fd37",
+   "stem": "一个平行四边形的一条边长为 ，两条对角线的长分别为 和 ，则它的面积为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "特殊的平行四边形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-8406499b-98de-47e3-ada5-0faa4d6b0ea2",
+   "stem": "如图，在菱形 中，对角线 与 相交于点 O ， ，垂足为点 E ，若 ， ，则 的长为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "特殊的平行四边形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-a3f32f3c-5ff9-11f1-8c19-29f51c996ccc",
+   "stem": "如图所示，将一个长方形框架向右拉，得到一个平行四边形框架， 平行四边形框架的面积是原来长方形框架的面积的 （ ） （ ） \\frac{（\\quad）}{（\\quad）} （ ） （ ） 。",
+   "cluster": "特殊的平行四边形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-fc7c893e-6303-11f1-9e40-5d8d559f33bf",
+   "stem": "在菱形 A B C D 中，若 ∠ A + ∠ C = 120 ° ， A C = 2 3 ，则菱形 A B C D 的周长为 .",
+   "cluster": "特殊的平行四边形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-1fce32e1-1c8e-49e9-9312-d9ddc22e322b",
+   "stem": "先化简，再求值$(a-1)^2-2a(a-1)+(2a+1)(2a-1)$,其中$a=\\sqrt{5}$.",
+   "cluster": "整式的乘法",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-2efb6095-5cab-11f1-b543-29f51c996ccc",
+   "stem": "化简 − 2 x y 2 x 2 y − x 3 y 的结果是（     ）",
+   "cluster": "整式的乘法",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-475e5b11-1fa4-424e-89df-ed50f751ce7d",
+   "stem": "先化简，再求值$(a-1)^2-2a(a-1)+(2a+1)(2a-1)$,其中$a=\\sqrt{5}$.",
+   "cluster": "整式的乘法",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-51e6c808-3465-4a59-974e-cabd082e3c22",
+   "stem": "先化简，再求值$(a-1)^2-2a(a-1)+(2a+1)(2a-1)$,其中$a=\\sqrt{5}$.",
+   "cluster": "整式的乘法",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-c5752c34-58f4-44b3-8d8b-3932ee1e0638",
+   "stem": "化简 − 2 x y 2 x 2 y − x 3 y 的结果是（     ）",
+   "cluster": "整式的乘法",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-51ffa14f-907f-11f1-a798-81a3ccb3a067",
+   "stem": "已知 ( 1 − 2 x ) 4 = a 0 − 2 a 1 x + 4 a 2 x 2 − 8 a 3 x 3 + 16 a 4 x 4 (1-2x)^{4}=a_{0}-2a_{1}x+4a_{2}x^{2}-8a_{3}x^{3}+16a_{4}x^{4} ( 1 − 2 x ) 4 = a 0 ​ − 2 a 1 ​ x + 4 a 2 ​ x 2 − 8 a 3 ​ x 3 + 16 a",
+   "cluster": "整式的乘法",
+   "difficulty": "easy_moderate",
+   "difficulty_zh": "较易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-9c335da5-909d-11f1-9b72-81a3ccb3a067",
+   "stem": "在$(x-\\sqrt{x})^4$的展开式中，$x^3$的系数为（ ）",
+   "cluster": "整式的乘法",
+   "difficulty": "easy_moderate",
+   "difficulty_zh": "较易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-00b5672eb41a40be964ec40dd98f7d0c",
+   "stem": "先化简，再求值：$3a(2a^{2}-4a+3)-2a^{2}(3a+4)$，其中$a=-2$。",
+   "cluster": "整式的乘法",
+   "difficulty": "medium",
+   "difficulty_zh": "适中",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-0678dabb5c934a40905b085a761030a6",
+   "stem": "1. 已知$(x+2)(2x-3)=2x^2+mx-6$，则常数$m$的值为$\\underline{}$； 2. 若$(x+m)(x+3)$的展开式中不含$x$的一次项，则常数$m$的值为$\\underline{}$； 3. 已知$(x-1)(x-2)=2$，则$2x^2-6x+4=\\underline{}$。",
+   "cluster": "整式的乘法",
+   "difficulty": "medium",
+   "difficulty_zh": "适中",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-0771247479b743d49496ff27dd8b87b8",
+   "stem": "计算：$6{x}^{2}y\\cdot (-2xy+y{}^{3})\\div xy{}^{2}$。",
+   "cluster": "整式的乘法",
+   "difficulty": "medium",
+   "difficulty_zh": "适中",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-0074c8dc-7e3c-4d10-aa53-c6d7a790d3d8",
+   "stem": "多项式4 x 2 ﹣4与多项式 x 2 ﹣2 x +1的公因式是（ ）",
+   "cluster": "用提公因式法分解因式",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-1b567cd4-598f-434a-96f1-c0d2f814ec75",
+   "stem": "分解因式： ．",
+   "cluster": "用提公因式法分解因式",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-23f74531-4e80-47ed-9786-c226d0295726",
+   "stem": "把多项式6a b -3a b -12a b 分解因式时，应提取的公因式是( )",
+   "cluster": "用提公因式法分解因式",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-2efb981f-5cab-11f1-a17b-29f51c996ccc",
+   "stem": "在下列各式中，能用平方差公式因式分解的是（         ）",
+   "cluster": "用提公因式法分解因式",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-4afc5ef5-15ac-4dfe-9211-2331602714c5",
+   "stem": "下列式子变形是因式分解的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "用提公因式法分解因式",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-5a591892-1837-4e4a-a3e0-a357bf01a7c2",
+   "stem": "下列等式中，从左到右的变形是因式分解的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "用提公因式法分解因式",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-9a48d27a-af0b-4e45-b6fe-634e7d860a27",
+   "stem": "下列各式从左到右的变形中，是因式分解的为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "用提公因式法分解因式",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-c58fa111-142f-42e2-81de-0d24d46e2319",
+   "stem": "分解因式： ．",
+   "cluster": "用提公因式法分解因式",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-2660df8e-0a9c-4e80-8a95-daf4802d408d",
+   "stem": "因式分解： ．",
+   "cluster": "用提公因式法分解因式",
+   "difficulty": "easy_moderate",
+   "difficulty_zh": "较易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-3f0b6b75-98dd-44c1-9e87-c3926ee40e65",
+   "stem": "在 中，可以先把 1 看成 （ ） ，最后得到 （ ） 。",
+   "cluster": "用提公因式法分解因式",
+   "difficulty": "easy_moderate",
+   "difficulty_zh": "较易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-2efb9c4d-5cab-11f1-90c6-29f51c996ccc",
+   "stem": "计算题。 1 2 2 - 1 + 1 4 2 - 1 + 1 6 2 - 1 + … + 1 100 2 - 1 （ 1 - 3 2 × 4 ） × （ 1 - 3 3 × 5 ） × （ 1 - 3 4 × 6 ） × … × （ 1 - 3 9 × 11 ） 1 2 × 4 × 6 + 1 4 × 6 × 8 + 1 6 × 8 × 10 + 1 8 × 10 × 12 + 1 10 × 12",
+   "cluster": "分式及其基本性质",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-6e15860b-37dc-4baa-b2c1-ba85429c4b9c",
+   "stem": "下列代数式中，是分式的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "分式及其基本性质",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-788d6e75-921a-471e-942c-464b91a9afdd",
+   "stem": "下列分式中，最简分式是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "分式及其基本性质",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-e7dddebc-2346-429c-82fd-ac6a7059ca7b",
+   "stem": "下列各式中，属于分式的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "分式及其基本性质",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-85e92420-d3fe-4fad-835a-ba3c62dfbc28",
+   "stem": "若把分式 中的 x 和 y 都扩大 2 倍，那么分式的值（ ）",
+   "cluster": "分式及其基本性质",
+   "difficulty": "easy_moderate",
+   "difficulty_zh": "较易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-bf9d000a-b752-4c1b-8068-f3f94f5824f8",
+   "stem": "先化简，再求值： ，其中 ．",
+   "cluster": "分式及其基本性质",
+   "difficulty": "easy_moderate",
+   "difficulty_zh": "较易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-0087a0c37803442fb1833e4915eb35ed",
+   "stem": "分式的分子与分母乘（或除以）同一个不等于$\\underline{\\quad}$的整式，分式的值$\\underline{\\quad}$，即$\\frac{A}{B}=\\frac{A\\cdot C}{B\\cdot C},\\frac{A}{B}=\\frac{A\\div C}{B\\div C}$，其中$A,B,C(C\\neq0)$是整式。注意：$B\\neq0$是隐含条件。 根据分式的基本性质，把一个分式的分",
+   "cluster": "分式及其基本性质",
+   "difficulty": "medium",
+   "difficulty_zh": "适中",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-0098961c41614115a277a93dc66078f4",
+   "stem": "先化简$\\frac{x^2 - 2x +1}{x^2 -1} \\div \\left(1 - \\frac{3}{x+1} \\right)$，再从$-4<x<4$的范围内选取一个合适的整数$x$代入求值。",
+   "cluster": "分式及其基本性质",
+   "difficulty": "medium",
+   "difficulty_zh": "适中",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-0170ab209e1e40f7893c0e588c205f8c",
+   "stem": "若$b>a>0$且$c>0$，则$\\frac{b+c}{a+c}>\\frac{b}{a}$",
+   "cluster": "分式及其基本性质",
+   "difficulty": "medium",
+   "difficulty_zh": "适中",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-04c1fd3fd2694965808246a6c7c49a06",
+   "stem": "先化简，再求值：$\\frac{x^2-y^2}{x^2+2xy+y^2}-\\frac{x+y}{x-y}$，其中$x=1,y=-3$。",
+   "cluster": "分式及其基本性质",
+   "difficulty": "medium",
+   "difficulty_zh": "适中",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-0d10b604-4a26-4377-9026-41ef0faca2e4",
+   "stem": "利用平移，绘制出如图所示的图案．",
+   "cluster": "课题学习 图案设计",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-30e570ed-6ac4-11f1-8896-b9cf3fb9511f",
+   "stem": "如图 QM1-1,国家节水标志是由水滴、手和地球变形而成的图案. 图 QM1-2 中可以通过平移节水标志得到的是",
+   "cluster": "课题学习 图案设计",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-30e5cb51-6ac4-11f1-a33a-b9cf3fb9511f",
+   "stem": "如图 QM1-11,在平面直角坐标系中, , , . 将三角形 ABC 平移至三角形 的位置,点 A 的对应点为 ,点 B 的对应点为 ,点 C 的对应点为 . (1)画出平移后的三角形 ,并写出点 , 的坐标; (2)求三角形 ABC 的面积; (3)点 P 在 y 轴上,且三角形 的面积等于三角形 ABC 的面积,直接写出点 P 的坐标.",
+   "cluster": "课题学习 图案设计",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "作图",
+   "variants": []
+  },
+  {
+   "qid": "que-4e1d7951-c8bd-4d19-9fbb-c8e21cf1f373",
+   "stem": "作图题 如图，平移三角形 ABC ，使点 A 移动到点 ，画出平移后的三角形 （不需要写作图步骤）．",
+   "cluster": "课题学习 图案设计",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "作图",
+   "variants": []
+  },
+  {
+   "qid": "que-4e55b0eb-a60b-460c-9bfd-977ebc01bd7f",
+   "stem": "如图 QM1-1,国家节水标志是由水滴、手和地球变形而成的图案. 图 QM1-2 中可以通过平移节水标志得到的是",
+   "cluster": "课题学习 图案设计",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-624dcfc9-e9cc-44f9-add4-8530fcce2e23",
+   "stem": "如图 QM1-11,在平面直角坐标系中, , , . 将三角形 ABC 平移至三角形 的位置,点 A 的对应点为 ,点 B 的对应点为 ,点 C 的对应点为 . (1)画出平移后的三角形 ,并写出点 , 的坐标; (2)求三角形 ABC 的面积; (3)点 P 在 y 轴上,且三角形 的面积等于三角形 ABC 的面积,直接写出点 P 的坐标.",
+   "cluster": "课题学习 图案设计",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "作图",
+   "variants": []
+  },
+  {
+   "qid": "que-87d80a01-5b59-11f1-a2ca-9550b7ca26a4",
+   "stem": "小明通过平移和旋转，将图①中的图形 N 与图形 M 实现了对接，如图②所示。在下面的操作中，（ ）可以把图①变换成图②。",
+   "cluster": "课题学习 图案设计",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-98ec686d-54c1-4803-ac30-9f270e5c3730",
+   "stem": "窗棂是中国传统木构建筑的框架结构．下列各样式的窗棂图案中，可以看作由一个“基本图案”经过平移得到的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "课题学习 图案设计",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-9e3e0618-7040-11f1-83cd-d1095ff16326",
+   "stem": "如下图，七巧板中的图形①移动了位置。 笑笑想通过平移和旋转将图形①移入相应的位置，使七巧板中的七个图形组成一个正方形。以下方法正确的是（ ）。",
+   "cluster": "课题学习 图案设计",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-b05a4a7e-148e-4896-8616-8e2d8acbdc82",
+   "stem": "将左边图案绕点 O 按顺时针方向旋转 ，得到的图案是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "课题学习 图案设计",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-088c5dec-56ad-11f1-8e8b-93727e70c2bd",
+   "stem": "已知当鸡蛋落地速度大于 1 .2m/s 时，鸡蛋会被摔碎．若鸡蛋从高处自由下落，其落地时的速度 v m/s 与开始下落时离地面的高度 h m 满足关系式 v 2 = 20 h ，现有一鸡蛋从 0 .15m 处自由下落，则鸡蛋 摔碎．（填“会”或者“不会”）",
+   "cluster": "分式",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-11298dfe-ef28-43d5-9917-1c7a758063eb",
+   "stem": "，则 ．",
+   "cluster": "分式",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-5a5d06b6-5fef-11f1-83f8-29f51c996ccc",
+   "stem": "观察右面数表中用框框出的5个数，如果中间的数用$a$表示，那么这5个数的和是（ ）。",
+   "cluster": "分式",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-5ddbba84-2073-4c79-8fea-453b97760b7d",
+   "stem": "刘老师 8 月份打在卡上的工资是 元（之前卡上的余额为零），同月用于买日用品取出 720 元， 9 月份打在卡上的工资是 元，同月用于买衣服和日用品取出 元，则此时刘老师的卡上还有 元．",
+   "cluster": "分式",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-6bf37609-769b-11f1-b73a-4d3314684b92",
+   "stem": "已知$a^{2} + b^{2} = 2$. (1)判断$\\frac{(a + 2)^{2} + b^{2}}{(a + 1)^{2} + b^{2}}$是不是常数,如果是,求出这个常数;如果不是,说明理由. (2)证明:$a + b + 2 \\geqslant 0$.",
+   "cluster": "分式",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "证明",
+   "variants": []
+  },
+  {
+   "qid": "que-75b5ace7-9c5c-46e4-b08f-43d6faaf623b",
+   "stem": "已知$ab=\\frac{a+b}{1-ab}$,有如下两个结论： ①存在$a&gt;0,b&gt;0$满足等式； ②存在$a&lt;0,b&lt;0$满足等式. 正确的结论是______.(填序号)",
+   "cluster": "分式",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-819a1f45-76a4-11f1-bab2-4d3314684b92",
+   "stem": "若$x &lt; 0$，则$x + \\frac{4}{x}$的()。",
+   "cluster": "分式",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-993ffbba-ef15-4887-bd45-4f76f631e007",
+   "stem": "按照如图所示的操作步骤，若输入 的值为 ，则输出的值为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "分式",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-a82a384a-6301-4eb5-aa33-0834ab9e6979",
+   "stem": "若实数 满足 ，则代数式 的值是 ．",
+   "cluster": "分式",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-aea967c7-faa4-4a62-aee7-da2cecfce3d4",
+   "stem": "若实数 满足 ，则代数式 的值是 ．",
+   "cluster": "分式",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-0104e790-1b4e-4f6c-849c-412d4295ee43",
+   "stem": "(2)已知全集$U=\\mathbf{R}$，集合$P=\\{x|x^2 \\leqslant 1\\}$，那么$\\complement_U P =$（）。",
+   "cluster": "二次函数与一元二次方程",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-0526b9c2-caed-41d9-a9bc-76933e5487fa",
+   "stem": "若抛物线 的顶点是 ，且经过点 ，则抛物线的函数关系式为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "二次函数与一元二次方程",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-056cc371-270a-453a-a87c-3a4d1ddf6624",
+   "stem": "抛物线 $y=4 x^{2}$ 沿 $x$ 轴翻折得到抛物线 $y=a x^{2}$ ，在抛物线 $y=a x^{2}$ 对称轴的右侧图象呈 (填＂上升＂或＂下降＂)趋势.",
+   "cluster": "二次函数与一元二次方程",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-0f4780ff-d654-4a67-99aa-edfd4937a309",
+   "stem": "在直角坐标系中将二次函数 的图像向左平移 1 个单位长度，再向上平移 1 个单位长度，则所得抛物线的顶点坐标为 ．",
+   "cluster": "二次函数与一元二次方程",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-114d1529-a038-4e93-9c79-d36094dbd9d8",
+   "stem": "一个运动员打高尔夫球，若球的飞行高度 y ( m ) 与水平距离 x ( m ) 之间的函数表达式为： y ( x ﹣ 25) 2 +12 ，则高尔夫球在飞行过程中的最大高度为 ( ) m ．",
+   "cluster": "二次函数与一元二次方程",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-1b2e2273-df66-436f-ada7-3b29fbbff318",
+   "stem": "已知$f(x)$为二次函数，且满足$f(0) = 1, f(x-1) - f(x) = 4x$，求$f(x)$的解析式。",
+   "cluster": "二次函数与一元二次方程",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-283fd237-c7e8-4b96-8b37-97cdc8aceac9",
+   "stem": "已知 $0\\leq x\\leq\\frac{\\pi}{2}$，求函数 $y=\\cos^2x-2a\\cos x$ 的最大值 $M(a)$ 与最小值 $m(a)$.",
+   "cluster": "二次函数与一元二次方程",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-29df829b-0f55-4d6f-8807-035d1514c952",
+   "stem": "抛物线 的对称轴是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "二次函数与一元二次方程",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-306d1b9f-ae0e-4fc3-aa9d-1430686c79df",
+   "stem": "已知二次函数 $y=-3(x-2)^{2}-3$ ，下列说法正确的是",
+   "cluster": "二次函数与一元二次方程",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-3841e682-dfdc-11f0-b109-03ae203f1cae",
+   "stem": "二次函数 y = 2 x - 1 2 + 3 的图象的顶点坐标是 (          )",
+   "cluster": "二次函数与一元二次方程",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-088c61da-56ad-11f1-8f0e-93727e70c2bd",
+   "stem": "若 m 2 + m = 0 ，则 m ；若 ( 1 − 3 a ) 2 = 3 a − 1 ，则 a ．",
+   "cluster": "一元二次方程",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-2399e59d-42f1-4033-9114-c2cb5f027861",
+   "stem": "用公式法解 时，先求出 、 、 的值，则 、 、 依次为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "一元二次方程",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-2efb6e77-5cab-11f1-b615-29f51c996ccc",
+   "stem": "关于 的一元二次方程 ，判别式的值为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）f(x)",
+   "cluster": "一元二次方程",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-2efbdbc3-5cab-11f1-b2e0-29f51c996ccc",
+   "stem": "解方程 （1） 解方程 x 2 − 2 x − 3 = 0 ； （2） 解方程 x + 3 x − 1 = 4 x − 4",
+   "cluster": "一元二次方程",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-39cb0347-18ce-4d54-ac8f-86b6cee7a7cb",
+   "stem": "已知变量 x ， y 具有相关关系，其回归方程为 y ^ = − 3 x + 1 ，则变量 x ， y 是（         ）",
+   "cluster": "一元二次方程",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-46f14670-0bd5-44e7-b95d-7c3b98e89884",
+   "stem": "一元二次方程 的常数项是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "一元二次方程",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-475d2f1c-406f-4b0a-98ad-8fc632d010b1",
+   "stem": "5G 技术在我国已经进入高速发展的阶段， 5G 手机的销量也逐渐上升，某手机商城统计了最近 5 个月手机的实际销量，如下表所示： 时间 x 1 2 3 4 5 销售量 y （千只） 0.5 0.8 1.0 1.2 1.5 若 y 与 x 线性相关，且经验回归方程为 y ^ = 0.24 x + a ^ ，则下列说法不正确的是（       ）",
+   "cluster": "一元二次方程",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-51ff9bd2-907f-11f1-b492-81a3ccb3a067",
+   "stem": "抛物线 y 2 = 2 p x ( p &gt; 0 ) y^{2}=2px(p&gt; 0) y 2 = 2 p x ( p &gt; 0 ) 的顶点到焦点的距离为3，则 p = p= p = &nbsp; ．",
+   "cluster": "一元二次方程",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-6177d77d-573c-11f1-b79f-93727e70c2bd",
+   "stem": "已知变量 x ， y 具有相关关系，其回归方程为 y ^ = − 3 x + 1 ，则变量 x ， y 是（         ）",
+   "cluster": "一元二次方程",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-6177e664-573c-11f1-ba01-93727e70c2bd",
+   "stem": "5G 技术在我国已经进入高速发展的阶段， 5G 手机的销量也逐渐上升，某手机商城统计了最近 5 个月手机的实际销量，如下表所示： 时间 x 1 2 3 4 5 销售量 y （千只） 0.5 0.8 1.0 1.2 1.5 若 y 与 x 线性相关，且经验回归方程为 y ^ = 0.24 x + a ^ ，则下列说法不正确的是（       ）",
+   "cluster": "一元二次方程",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-056877f2-0427-4b56-a16a-5bfc7e1f25a2",
+   "stem": "在△ABC中，$\\angle B=30^\\circ$， $AB=2\\sqrt{3}$， $AC=2$，则△ABC的面积是（ ）",
+   "cluster": "解直角三角形及其应用",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-05e9b1c4-4291-4c1b-ab63-60436a5cd96d",
+   "stem": "在△ABC中，$\\angle B=30^\\circ$， $AB=2\\sqrt{3}$， $AC=2$，则△ABC的面积是（ ）",
+   "cluster": "解直角三角形及其应用",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-1828e8e1-7a7a-11f1-9d5e-79056d4a98c5",
+   "stem": "在△ABC中，$\\angle B=30^\\circ$， $AB=2\\sqrt{3}$， $AC=2$，则△ABC的面积是（ ）",
+   "cluster": "解直角三角形及其应用",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-1ff82ded-08bd-4c1f-a5af-127a6b059b6b",
+   "stem": "六一儿童节快到了，超市准备将饼干和糖果配成大礼包销售。超市有饼干和糖果各 324 袋。请你帮忙算一算，最多能搭配成多少个大礼包？",
+   "cluster": "解直角三角形及其应用",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-2c5eab3b-7a82-11f1-a288-79056d4a98c5",
+   "stem": "在锐角$\\triangle ABC$中，角$A,B,C$的对边分别为$a,b,c$，设$\\triangle ABC$的面积为$S_{\\triangle ABC}$，已知$c = \\sqrt{7}$，再从条件①、条件②、条件③这三个条件中选择两个作为已知，求$a$与$\\sin C$的值. 条件①：$b = 3$；条件②：$S_{\\triangle ABC} = \\frac{3\\sqrt{3}}{2}",
+   "cluster": "解直角三角形及其应用",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-47dca249-de5a-4bd5-9736-9c00f63a5c0a",
+   "stem": "在△ABC中，$\\angle B=30^\\circ$， $AB=2\\sqrt{3}$， $AC=2$，则△ABC的面积是（ ）",
+   "cluster": "解直角三角形及其应用",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-61e97883-007e-4b10-a8d6-1d26ab5dcc4c",
+   "stem": "在平面直角坐标系$xOy$中，角$a$与角$b$均以$Ox$为始边，它们的终边关于$y$轴对称。若$\\sin a = \\frac{1}{3}$，则$\\cos(a - b) =$______。",
+   "cluster": "解直角三角形及其应用",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-661b3c7e-7a72-11f1-afd4-79056d4a98c5",
+   "stem": "计算： （I）已知角$a$的顶点在坐标原点，始边与$X$轴的正半轴重合，$(m,1)$，$(n,2)$是角$a$终边上两点，$\\sin a =\\frac{\\sqrt{3}}{3}$，求$|m- n|$； （II）已知$\\cos(\\frac{3}{2}\\rho - b)\\sqrt{1+\\tan^{2}b}=3$，求$\\sin b$.",
+   "cluster": "解直角三角形及其应用",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-6c4b4434-3b18-4506-a363-dfa9a0cb4468",
+   "stem": "在 中，已知 ， ， ，求最短边的边长 .",
+   "cluster": "解直角三角形及其应用",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-6c54f949-ebed-45a7-84b1-19cd93ce818e",
+   "stem": "若$\\alpha$是第一象限角，则$\\sin\\alpha+\\cos\\alpha$的值与1的大小关系是（ ）",
+   "cluster": "解直角三角形及其应用",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-04685f33-9e36-434e-bba2-cbbadcdef55e",
+   "stem": "若关于 的一元二次方程 中的 ， ， 满足 ，则方程必有根（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "实际问题与一元二次方程",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-11eb7030-98e2-4682-9e42-ab6a98713a4f",
+   "stem": "方程 的根是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "实际问题与一元二次方程",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-1fac09dd-3f33-492d-9224-8514769608fc",
+   "stem": "m ＝ 时，关于 x 的方程 是一元二次方程．",
+   "cluster": "实际问题与一元二次方程",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-2efba993-5cab-11f1-80a2-29f51c996ccc",
+   "stem": "一元二次方程 x 2 - 5 x + 6 = 0 的两根之和为 (    )",
+   "cluster": "实际问题与一元二次方程",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-38ee24fd-a3f7-42f1-a37f-05082d1f56b2",
+   "stem": "下列方程是关于 的一元二次方程的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "实际问题与一元二次方程",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-436e6ee5-c77c-4d47-ac5c-6347d4caccbe",
+   "stem": "如图，有一面积为 的长方形鸡场，鸡场的一边靠墙（墙长 ），另三边用竹篱笆围成，其中一边开有 的门，竹篱笆的总长为 ．设鸡场垂直于墙的一边为 ，则列方程正确的是( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ) &nbsp;&nbsp;&nbsp;",
+   "cluster": "实际问题与一元二次方程",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-504a380a-11ce-4fd3-b72f-8eb12375908f",
+   "stem": "一元二次方程 的根的情况是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "实际问题与一元二次方程",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-5d04c49f-7d27-4ffb-89ec-c07cab4a36a6",
+   "stem": "若 是关于 x 的一元二次方程，则 m 满足的条件是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "实际问题与一元二次方程",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-64f5ce9d-170e-43f1-a6fa-40ffe18ee962",
+   "stem": "已知 a ， b 是方程 x 2 ﹣ 3 x ﹣ 4 ＝ 0 的两根，则代数式 a + b 的值为（ ）",
+   "cluster": "实际问题与一元二次方程",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-789c10eb-d369-4450-8861-709ef2547265",
+   "stem": "关于 的一元二次方程 的根的情况是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "实际问题与一元二次方程",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": [
+    {
+     "qid": "que-819e1d5d-83f9-475e-aa65-30e53c2d3b22",
+     "type": "近乎原题"
+    }
+   ]
+  },
+  {
+   "qid": "que-049951ba-7b5e-11f1-9831-57b8371d822f",
+   "stem": "已知$\\alpha$为正实数，试比较$\\cos \\alpha$与$1 - \\frac{1}{2}\\alpha^2$的大小。",
+   "cluster": "圆",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-06748d54-7073-442c-a8e0-9639df224a3e",
+   "stem": "若已知$\\omega&gt;0$，函数$f(x)=\\cos\\left(\\omega x+\\frac{\\pi}{4}\\right)$在$\\left(\\frac{\\pi}{2},\\pi\\right)$上单调递增，则$\\omega$的取值范围是______.",
+   "cluster": "圆",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-0eae7bd0-3811-4c45-accb-56074bf69a13",
+   "stem": "函数$f（x） = \\sin（2x + \\frac{\\pi}{4}）$的最小正周期为____；若函数$f（x）$在区间$（0,\\alpha）$上单调递增，则$\\alpha$的最大值为______。",
+   "cluster": "圆",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-113e4e10-b34b-4d81-89f6-46e394240887",
+   "stem": "在△ABC中，“$\\cos A&gt;\\cos B$”是“$A&lt;B$”的( )",
+   "cluster": "圆",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-17c66ce6-1157-4b1c-be79-d4c99bc5aca1",
+   "stem": "王师傅有一块长方形的玻璃（如下图），他想从中割下一些做正方形的玻璃台面，而且做的台面要尽可能的大。 （ 1 ）玻璃台面边长最大是（         ）分米，王师傅最多能割出（         ）块这样的玻璃台面。 （ 2 ）割下这些玻璃台面后，剩下玻璃的周长是多少分米？（可以先在图中画一画，再解答）",
+   "cluster": "圆",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "作图",
+   "variants": []
+  },
+  {
+   "qid": "que-1828d511-7a7a-11f1-bc71-79056d4a98c5",
+   "stem": "在△ABC中，“$\\cos A&gt;\\cos B$”是“$A&lt;B$”的( )",
+   "cluster": "圆",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-1f09fe21-d281-4b02-a18e-3515e7a6d69f",
+   "stem": "若一扇形的圆心角为$108^{\\circ}$，半径为$10cm$，则扇形的面积为（ ）",
+   "cluster": "圆",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-200102f9-e010-4d1a-bc6e-a6588bb117c1",
+   "stem": "如图1的“方胜”由两个全等正方形交错叠合而成，是中国古代象征同心吉祥的一种装饰图案．如图2，将正方形ABCD沿对角线AC方向平移得到正方形EFGH，形成“方胜”图案，如果平移距离为3，且 ，那么点A到点G的距离是__________；",
+   "cluster": "圆",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-21de1f83-7a7d-11f1-a842-79056d4a98c5",
+   "stem": "已知函数$f(x) = 2\\sin(\\omega x + j)(\\omega&gt;0)$，曲线$y = f(x)$与直线$y = \\sqrt{3}$相交，若存在相邻两个交点间的距离为$\\frac{p}{6}$，则$\\omega$的所有可能值为____。",
+   "cluster": "圆",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-2360d0ae-41e5-47e2-9015-4f97114b08e6",
+   "stem": "若已知$\\omega&gt;0$，函数$f(x)=\\cos\\left(\\omega x+\\frac{\\pi}{4}\\right)$在$\\left(\\frac{\\pi}{2},\\pi\\right)$上单调递增，则$\\omega$的取值范围是______.",
+   "cluster": "圆",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-0f5ab0bd-08d6-4c0e-b0ce-5d7c64952633",
+   "stem": "计算： （I）已知角$a$的顶点在坐标原点，始边与$X$轴的正半轴重合，$(m,1)$，$(n,2)$是角$a$终边上两点，$\\sin a =\\frac{\\sqrt{3}}{3}$，求$|m- n|$； （II）已知$\\cos(\\frac{3}{2}\\rho - b)\\sqrt{1+\\tan^{2}b}=3$，求$\\sin b$.",
+   "cluster": "锐角三角函数",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-29ff7d35-d328-4b20-bf58-9c98d6d96fbc",
+   "stem": "函数 $f(x) = \\cos(\\frac{\\pi}{3} - x)\\cos(\\frac{\\pi}{6} + x) - \\sqrt{3}\\cos^2 x + \\frac{\\sqrt{3}}{2}$，则 $f(x)$ 的最小正周期和最大值分别为（ ）",
+   "cluster": "锐角三角函数",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-3334a72d-120b-4341-a183-42d397486970",
+   "stem": "17世纪德国著名的天文学家开普勒曾经这样说过：“几何学里有两件宝，一个是勾股定理，另一个是黄金分割.如果把勾股定理比作黄金矿的话，那么可以把黄金分割比作钻石矿.”黄金三角形有两种，其中底与腰之比为黄金分割比的黄金三角形被认为是最美的三角形，它是一个顶角为$36^\\circ$的等腰三角形（另一种是顶角为$108^\\circ$的等腰三角形）.例如，五角星由五个黄金三角形与一个正五边形组成，如图所示，在",
+   "cluster": "锐角三角函数",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-434cf44a-61d5-4ce6-9fca-67adb7a44e7a",
+   "stem": "已知$\\alpha$为锐角，$\\sin\\alpha = \\frac{1}{3}$，则（ ）",
+   "cluster": "锐角三角函数",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-439acb9c-3e66-457e-9f11-e2ba0722671b",
+   "stem": "若$\\alpha$是第一象限角，则$\\sin\\alpha+\\cos\\alpha$的值与1的大小关系是（ ）",
+   "cluster": "锐角三角函数",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-5610fae1-a329-42bc-9b51-61a7740dafe8",
+   "stem": "$\\omega&gt;0$ 函数 $f(x)=\\sin\\frac{\\omega x}{2}\\sin\\frac{\\pi+\\omega x}{2}$ 在 $[-\\frac{\\pi}{4},\\frac{\\pi}{3}]$ 上单调递增，则 $\\omega$ 的范围是",
+   "cluster": "锐角三角函数",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-5a5d160d-5fef-11f1-b65e-29f51c996ccc",
+   "stem": "甲、乙两个长方形互相重叠(如下图)，阴影部分的面积占甲的面积的 40% ，占乙的面积的 ，甲、乙两个长方形的面积比是 ．",
+   "cluster": "锐角三角函数",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-6970417f-0e0b-409e-a78c-6dadc6204135",
+   "stem": "若$\\alpha$是第一象限角，则$\\sin\\alpha+\\cos\\alpha$的值与1的大小关系是（ ）",
+   "cluster": "锐角三角函数",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-7cb243c0-8fa7-444d-851a-03fddfc93954",
+   "stem": "$\\triangle ABC$中，$\\cos A=\\frac{1}{4},AB=4,AC=2$，则$BC$边上中线$AD$的长为______.",
+   "cluster": "锐角三角函数",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-87551d89-1f24-42b3-91f0-e4ee25c67000",
+   "stem": "函数 $y=\\sin(x-\\frac{\\pi}{6})\\cos x$ 的最大值为（ ）",
+   "cluster": "锐角三角函数",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-3c456c0e-b68d-4b43-8042-56ef301d0c12",
+   "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+   "cluster": "相似三角形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-41c788f0-419b-4721-8c77-e4d5d24a5bd2",
+   "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+   "cluster": "相似三角形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-7d3c5dbe-d770-4021-a3b5-a9ead4ce5f8f",
+   "stem": "如图所示，某小区内有一扇形绿化带$OPQ$，其半径为2 m，圆心角为$\\frac{\\pi}{3}$.现欲在扇形弧上选择一点$C$将该绿化带分割成两块区域，拟在$\\triangle OPC$区域内种植郁金香，在$\\triangle OCQ$区域内种植薰衣草.若种植郁金香的费用为3千元/$\\textrm{m}^2$，种植薰衣草的费用为2千元/$\\textrm{m}^2$，记$\\angle COP =",
+   "cluster": "相似三角形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-8b8ba011-bbce-4567-9303-2897b596c2d7",
+   "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+   "cluster": "相似三角形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-bf0fb91b-41c4-462b-8d19-50a5ea5f2724",
+   "stem": "如图13-Z-8，$D$是$\\triangle ABC$的边$BC$上任意一点，$E,F$分别是$AD,CE$的中点，且$\\triangle ABC$的面积为$24$，则$\\triangle BEF$的面积为____。",
+   "cluster": "相似三角形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-e7d29b12-67da-4d35-be44-7a6939383eca",
+   "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+   "cluster": "相似三角形",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-1d423d5f-0440-4041-b799-d57efbedbda5",
+   "stem": "如图，△ ABC 中， DE ∥ BC ， DE =1 ， AD =2 ， DB =3 ，则 BC 的长是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "相似三角形",
+   "difficulty": "easy_moderate",
+   "difficulty_zh": "较易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-284e1c86-e736-4ae6-b3b2-b6e9283037a6",
+   "stem": "在 中，三个内角 的对边分别是 ，若 ， ， ，则此三角形的面积为 ．",
+   "cluster": "相似三角形",
+   "difficulty": "easy_moderate",
+   "difficulty_zh": "较易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-87b06378-1fe0-4953-8dba-445792237c5b",
+   "stem": "在 中，已知点 D 在 BC 边上， ， ， ， ，则 BD 的值为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ） &nbsp;&nbsp;&nbsp;",
+   "cluster": "相似三角形",
+   "difficulty": "easy_moderate",
+   "difficulty_zh": "较易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-8f3ee016-e9f1-48e4-acba-e0845fc84e50",
+   "stem": "在 中，三个内角 的对边分别是 ，若 ， ， ，则此三角形的面积为 ．",
+   "cluster": "相似三角形",
+   "difficulty": "easy_moderate",
+   "difficulty_zh": "较易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-54b69b56-9add-4050-8c2c-71ca2260da82",
+   "stem": "如图为某电火锅加热器的简化电路图，R₁、R₂均为发热电阻，开关S可以在“1”“2”间切换，从而选择不同的加热挡位。当开关S由“1”切换到“2”时，下列说法正确的是（ ）",
+   "cluster": "实际问题与反比例函数",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-5cc0444f-93c1-45b5-b9ac-8610e6a29e2b",
+   "stem": "在平面直角坐标系$xOy$中,过坐标原点的一条直线与函数$f(x)=\\frac{2}{x}$的图像交于$P,Q$两点,则线段$PQ$长的最小值是______.",
+   "cluster": "实际问题与反比例函数",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-61f8106a-e833-4e56-8826-6bec9a360fa3",
+   "stem": "关于如图所示的四个实验，描述错误的是（ ）",
+   "cluster": "实际问题与反比例函数",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-800b4cdd-59a0-11f1-a54d-93727e70c2bd",
+   "stem": "甲、乙两数的比是2：7，且它们的平均数是4.5，那么乙数是 ．",
+   "cluster": "实际问题与反比例函数",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-9e3e1f9e-7040-11f1-be15-d1095ff16326",
+   "stem": "在生活中，人们有时会用自己身体上的一些“长度”作为单位来测量物体的长度。例如，淘气和笑笑分别以自己的一拃为单位测量了同一根木条的长度，测量结果是：淘气用了4拃，笑笑用了5拃，如下图。 以下说法正确的（ ）。 ①如果在测量另一个物体的长度时淘气用了8拃，那么笑笑就要用10拃 ②淘气一拃与笑笑一拃的长度比是 ③笑笑一拃的长度比淘气一拃长度短",
+   "cluster": "实际问题与反比例函数",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-a3f35f8e-5ff9-11f1-8080-29f51c996ccc",
+   "stem": "生物在进化过程中，为了求得生存，动物的骨、植物的茎等都是空心的，而且内圆直径和外圆直径之比大约都是 8 ∶ 11 。研究表明，当一根空心管子底面的内圆直径和外圆直径之比是 8 ∶ 11 时最不容易弯曲。根据这个研究，人们制成了空心零件、自行车的车身架等，以达到耗费最少材料而使其最坚固的目的。 （1） 按照上面的研究，工人师傅制作了一种塑料零件（如下图）。这个零件底面的内圆直径是多少厘米？ （2）",
+   "cluster": "实际问题与反比例函数",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-b93c79ca-76a6-11f1-bc48-4d3314684b92",
+   "stem": "在平面直角坐标系$xOy$中,过坐标原点的一条直线与函数$f(x)=\\frac{2}{x}$的图像交于$P,Q$两点,则线段$PQ$长的最小值是______.",
+   "cluster": "实际问题与反比例函数",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-cc57fd66-6ae5-11f1-aa6d-b9cf3fb9511f",
+   "stem": "函数 $f(x)=\\frac{\\mathrm{e}^x-\\mathrm{e}^{-x}}{x^2}$ 的图象大致为( ).",
+   "cluster": "实际问题与反比例函数",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-d5891d6f-5f16-11f1-b65b-69a7742d3f5f",
+   "stem": "图形放大或缩小后与原图形形状相同，大小不同。一张长方形照片长 40 厘米、宽 32 厘米，按比例缩小后，长 5 厘米，宽应是 （ ） 厘米，缩小后的图形与原图形的面积比是 （ ） 。",
+   "cluster": "实际问题与反比例函数",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-d589b15b-5f16-11f1-9883-69a7742d3f5f",
+   "stem": "火药是我国古代四大发明之一，是一种可由火花、火焰等引起剧烈燃烧的药剂，成分是硝石、木炭和硫磺。古书中记载着“一硫二硝三木炭”，即火药中硫磺、硝石和木炭的质量比是 1 ∶ 2 ∶ 3 ，要制作 24 千克的火药，需要木炭 （ ） 千克，硝石 （ ） 千克，硫磺 （ ） 千克。",
+   "cluster": "实际问题与反比例函数",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-142c3040-4aea-41ee-a5a0-86471b8f81f7",
+   "stem": "如果函数 是二次函数，那么 k 的值一定是 ．",
+   "cluster": "实际问题与二次函数",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-1c9cb2d4-5f2d-11f1-a398-29f51c996ccc",
+   "stem": "已知函数 $y=x^2-2ax+3$ 在 $(-\\infty,3]$ 上单调递减,则实数 $a$ 的取值范围是( )",
+   "cluster": "实际问题与二次函数",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-b88fce73-5af2-11f1-8845-01e03380142c",
+   "stem": "把一个足球垂直地面向上踢， t （秒）后该足球的高度 h （米）适用公式 h = 20 t − 5 t 2 （1） 经多少秒后足球回到地面？ （2） 经多少秒时球的高度为 15 米？ （3） 当 h 达到最高时，求 t 的值．",
+   "cluster": "实际问题与二次函数",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-b893457a-5af2-11f1-af36-01e03380142c",
+   "stem": "若点 M - 2 , y 1 ， N - 1 , y 2 ， P 8 , y 3 在抛物线 y = - x 2 + 4 x 上，则下列结论正确的是（       ）",
+   "cluster": "实际问题与二次函数",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-b89712d8-5af2-11f1-b770-01e03380142c",
+   "stem": "已知二次函数 y = x 2 − 2 m x + 3 ，当 x &lt; 4 时， y 随 x 的增大而减小，则 m 的取值范围是 ．",
+   "cluster": "实际问题与二次函数",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-381a4a19-f634-4c61-9b36-cd01cd56b46d",
+   "stem": "二次函数 的图象如图所示，则关于 x 的一元二次方程 的根的情况是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "实际问题与二次函数",
+   "difficulty": "easy_moderate",
+   "difficulty_zh": "较易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-3afab149-7a93-11f1-ae94-79056d4a98c5",
+   "stem": "已知二次函数$f(x)=x^2-3x+p-1$，若在区间$[0,1]$内至少存在一个实数$c$，使$f(c)&gt;0$，则实数$p$的取值范围是____。",
+   "cluster": "实际问题与二次函数",
+   "difficulty": "easy_moderate",
+   "difficulty_zh": "较易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-6b2d8106-094c-4581-a34c-19ae3baa6f0b",
+   "stem": "已知二次函数$f(x)=ax^2+bx+c$，如果$f(x_1)=f(x_2)(x_1\\neq x_2)$，那么$f(x_1+x_2)$等于( )。",
+   "cluster": "实际问题与二次函数",
+   "difficulty": "easy_moderate",
+   "difficulty_zh": "较易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-a276a9a7-6d4d-46d6-b94a-aa23d0d96323",
+   "stem": "已知$y=ax^2+2(a-2)x+5$在区间$(4, +\\infty)$上是减函数，则$a$的范围是( ).",
+   "cluster": "实际问题与二次函数",
+   "difficulty": "easy_moderate",
+   "difficulty_zh": "较易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-186f63d192c54c8682a5666380ec9589",
+   "stem": "不等式$(x+1)(3-x)>0$和函数$y=-x^2+2x+3$及方程$-x^2+2x+3=0$的关系：①方程必有$\\Delta>0$；②方程有两根：$x_1=-1,x_2=3$；③函数图像与$x$轴交点横坐标分别为$-1,3$；④不等式的解集是$\\{x|x 3\\}$. 其中正确说法的个数是 A. 1 B. 2 C. 3 D. 4",
+   "cluster": "实际问题与二次函数",
+   "difficulty": "medium",
+   "difficulty_zh": "适中",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-10d866dd-81c3-488d-a41f-aec0a16efb92",
+   "stem": "已知圆 ： ， 圆 ： ，则下列说法正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）BC-AB",
+   "cluster": "点和圆、直线和圆的位置关系",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-6e602302-58b0-11f1-871b-93727e70c2bd",
+   "stem": "若两条直线 l 1 ： y = 2 x + m ， l 2 ： y = 2 x + n 与圆 x 2 + y 2 = 4 的四个交点能构成正方形，则 m − n = （       ）",
+   "cluster": "点和圆、直线和圆的位置关系",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-06329a5f40c3440084bbe8421582cca8",
+   "stem": "如图，$AB$为$\\odot O$的直径，$C$，$D$是$\\odot O$上的点，$P$是$\\odot O$外一点，$AC\\perp PD$于点$E$，$AD$平分$\\angle BAC$。求证：$PD$是$\\odot O$的切线。",
+   "cluster": "点和圆、直线和圆的位置关系",
+   "difficulty": "medium",
+   "difficulty_zh": "适中",
+   "form": "证明",
+   "variants": []
+  },
+  {
+   "qid": "que-06be707338ff4285851e93a70ca0f818",
+   "stem": "如果$\\odot O$的半径为$7cm$，圆心$O$到直线$l$的距离为$d$，且$d=5cm$，那么$\\odot O$和直线$l$的位置关系是（ ）",
+   "cluster": "点和圆、直线和圆的位置关系",
+   "difficulty": "medium",
+   "difficulty_zh": "适中",
+   "form": "选择",
+   "variants": [
+    {
+     "qid": "que-73c8a44dcf034ed5890b8e4e52cb7618",
+     "type": "条件增删"
+    }
+   ]
+  },
+  {
+   "qid": "que-0da6ba117f4447ea8814ae1071cc3639",
+   "stem": "1. 直线和圆的三种位置关系：相交、相切、相离 直线和圆有两个公共点，这时我们说这条直线和圆相交，这条直线叫圆的割线； 直线和圆有一个公共点，这时我们说这条直线和圆相切，这条直线叫圆的切线，这个点叫做切点； 直线和圆没有公共点，这时我们说这条直线和圆相离。 2. 直线与圆的位置关系 设$r$为圆的半径，$d$为圆心到直线的距离。 直线和圆相离$\\Leftrightarrow d>r$；直线和圆相切",
+   "cluster": "点和圆、直线和圆的位置关系",
+   "difficulty": "medium",
+   "difficulty_zh": "适中",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-0f765382fd1241a8a3c57c40d6cc39e6",
+   "stem": "直线$x - 2y - 3=0$与圆$C:(x - 2)^{2}+(y + 3)^{2}=9$交于$P$、$Q$两点，则$\\triangle PCQ$（$C$为圆心）的面积等于____。",
+   "cluster": "点和圆、直线和圆的位置关系",
+   "difficulty": "medium",
+   "difficulty_zh": "适中",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-1b8855f7c61b4c578548cdf04cc814de",
+   "stem": "如图，在四边形$ABCD$中，$AD\\parallel BC$，$AB=CD$，$\\odot O$与四边形$ABCD$各边都相切，连接$BD$，若$\\odot O$的半径为2，$CD=5$，则$BD$的值是（ ）.",
+   "cluster": "点和圆、直线和圆的位置关系",
+   "difficulty": "medium",
+   "difficulty_zh": "适中",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-1d3de711824e4175aa9af50312300016",
+   "stem": "已知直线$l:y=k(x-1)$与圆$C:(x-2)^2+y^2=1$交于$A,B$两点，能使$\\angle ACB$为锐角的$k$的一个取值为____。",
+   "cluster": "点和圆、直线和圆的位置关系",
+   "difficulty": "medium",
+   "difficulty_zh": "适中",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-27e92a7ec9cb4d739de277b0078cd4c1",
+   "stem": "如果直线$ax + by=4$与圆$C:x^{2}+y^{2}=4$有两个不同的交点，那么点$P(a,b)$与圆$C$的位置关系是____。",
+   "cluster": "点和圆、直线和圆的位置关系",
+   "difficulty": "medium",
+   "difficulty_zh": "适中",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-2b0fff0154884a37bf43f582b9b746a8",
+   "stem": "如图，$\\triangle ABC$中，$AB=AC$，以$AB$为直径的$\\odot O$交$BC$于点$D$，交$AC$于点$E$，过$D$作$DF\\perp AC$，垂足为$F$。求证：$DF$是$\\odot O$的切线。",
+   "cluster": "点和圆、直线和圆的位置关系",
+   "difficulty": "medium",
+   "difficulty_zh": "适中",
+   "form": "证明",
+   "variants": [
+    {
+     "qid": "que-56a73945cb6d49a283392aa3f2df7274",
+     "type": "条件增删"
+    }
+   ]
+  },
+  {
+   "qid": "que-4359e900-5523-4af8-9e88-3e864a5fdf87",
+   "stem": "现有一个底面是菱形的直四棱柱，它的体对角线长为9和15，高是5，求该直四棱柱的侧面积、表面积．",
+   "cluster": "投影与视图",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-4dc1615b-8f93-475a-97ca-eeaf74b76be1",
+   "stem": "下列命题中正确的是( )",
+   "cluster": "投影与视图",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-80bbc710-5fe7-11f1-8dd1-29f51c996ccc",
+   "stem": "有一个立体图形，如下图。从左面看到的形状是（ ）。",
+   "cluster": "投影与视图",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-80bbcdd4-5fe7-11f1-adeb-29f51c996ccc",
+   "stem": "下面立体图形从左面看是 的是（ ）。",
+   "cluster": "投影与视图",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-80bbd6ae-5fe7-11f1-8931-29f51c996ccc",
+   "stem": "下面是用四个小正方体摆放的立体图形，从正面和从右面看到的形状完全相同的是图（ ）。",
+   "cluster": "投影与视图",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-80bbf8dc-5fe7-11f1-92ac-29f51c996ccc",
+   "stem": "请在括号内填入相应的序号。 （1）从正面看到 的有（ ）。 （2）从上面看到 的有（ ）。 （3）从侧面看到 的有（ ）。 （4）从正面看到 ，从侧面看到 的有（ ）。",
+   "cluster": "投影与视图",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-80bc0bfe-5fe7-11f1-8e3c-29f51c996ccc",
+   "stem": "分别画出从正面、上面和右面看到的立体图形的形状。 正面 上面 右面",
+   "cluster": "投影与视图",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "作图",
+   "variants": []
+  },
+  {
+   "qid": "que-8783f00f-7a87-11f1-a815-79056d4a98c5",
+   "stem": "下列命题中正确的是( )",
+   "cluster": "投影与视图",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-8cc9e0fc-16a8-4149-8325-63c491580c2d",
+   "stem": "下列关于棱柱的说法中，正确的是",
+   "cluster": "投影与视图",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-aac565ed-3393-4d6e-8341-9c5dac949fab",
+   "stem": "底面为正方形的直棱柱，它的底面对角线长为$\\sqrt{2}$，体对角线长为$\\sqrt{6}$，则这个棱柱的侧面积是( )",
+   "cluster": "投影与视图",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-2a068496-8d47-4a51-84c9-07dce17ad56b",
+   "stem": "现有甲、乙、丙、丁、戊 5 种在线教学软件，若某学校要从中随机选取 3 种作为教师“停课不停学”的教学工具，则其中甲、乙、丙至多有 2 种被选取的概率为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "用列举法求概率",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-800b49a4-59a0-11f1-806e-93727e70c2bd",
+   "stem": "明明和亮亮在玩跳棋时，用掷骰子的方法决定谁先走。商定每人掷一次骰子，朝上的点数是质数明明先走，朝上的点数是合数亮亮先走。你认为这个游戏规则公平吗？ （ ） （在括号内填“公平”或“不公平”）。",
+   "cluster": "用列举法求概率",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-802f15d1-ef4d-43b0-b09c-eb04d76a44d9",
+   "stem": "已知甲、乙、丙、丁四人各自独立解决某一问题的概率分别是 0.5 ， 0.4 ， 0.3 ， a ，如果甲、乙、丙至少有一人解决该问题的概率不小于丁独立解决这一问题的概率，则 a 的最大值是 .",
+   "cluster": "用列举法求概率",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-7c8d4887-6458-4090-88c0-3bafd5e2274a",
+   "stem": "投壶是从先秦延续至清末的中国传统礼仪和宴饮游戏晋代在广泛开展投壶活动中，对投壶的壶也有所改进，即在壶口两旁增添两耳因此在投壶的花式上就多了许多名目，如 “ 贯耳 ( 投入壶耳 )”. 每一局投壶，每一位参赛者各有四支箭，投入壶口一次得 分 . 投入壶耳一次得 分，现有甲､乙两人进行投壶比赛 ( 两人投中壶口､壶耳是相互独立的 ) ，甲四支箭已投完，共得 分，乙投完 支箭，目前只得 分，乙投中壶口的",
+   "cluster": "用列举法求概率",
+   "difficulty": "easy_moderate",
+   "difficulty_zh": "较易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-8d8d074a-6758-42af-be66-99f4db5cd452",
+   "stem": "甲乙两队正在角逐排球联赛的冠军，在刚刚结束的前三局比赛中，甲队2胜1负暂时领先，若规定先胜三局者即为本次联赛冠军，已知两队在每局比赛中获胜的概率均为 ，且各局比赛结果相互独立，则甲队最终成为本次排球联赛冠军的概率为 .",
+   "cluster": "用列举法求概率",
+   "difficulty": "easy_moderate",
+   "difficulty_zh": "较易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-033bf8a6-0be5-4fe9-b013-eed57361d58c",
+   "stem": "现有甲、乙、丙三个人，需要执行某项试验任务，每个人至多执行一次。如果规定时间内某人完成任务，则试验成功，结束该任务；如果规定时间内某人不能完成任务，则撤回再由下一个人执行任务。若该项试验任务按照甲、乙、丙的顺序执行，且甲、乙、丙三人在规定时间内完成任务的概率分别为$\\frac{4}{5}$，$\\frac{3}{4}$，$\\frac{2}{3}$，每个人能否完成任务相互独立，则试验成功的概率为$\\u",
+   "cluster": "用列举法求概率",
+   "difficulty": "medium",
+   "difficulty_zh": "适中",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-0507232a8f394e4d8ba6c5b9b88a9ac7",
+   "stem": "某人需要先从A地到B地，再同站转车赶到C地，他能够选择的高铁车次的列车时刻表如下表所示，那么此人这天乘坐高铁列车从A地到C地不同的乘车方案总数为 A地至B地高铁列车时刻表 | 车次 | 发车时间 | 到站时间 | | ---- | -------- | -------- | | G87 | 07:00 | 08:01 | | G91 | 07:55 | 08:56 | | G93 | 09:00",
+   "cluster": "用列举法求概率",
+   "difficulty": "medium",
+   "difficulty_zh": "适中",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-174cff94-2714-42c2-9358-0a6310dba0e8",
+   "stem": "AI幻觉，是指AI模型生成看似合理但实际不正确或毫无事实依据的信息的现象。AI幻觉率是指AI模型产生AI幻觉的概率。现抽取了由甲、乙、丙、丁四个公司研发的14个使用率较高的AI模型，其幻觉率如下表所示： （Ⅰ）从表中提供的AI模型中任取一个，求该模型幻觉率低于2%的概率；&nbsp; （Ⅱ）从表中提供的幻觉率低于2%的AI模型中任取3个，用随机变量 X X X 表示其中幻觉率低于1.3%的模型个数",
+   "cluster": "用列举法求概率",
+   "difficulty": "medium",
+   "difficulty_zh": "适中",
+   "form": "证明",
+   "variants": []
+  },
+  {
+   "qid": "que-23415812-d898-4f80-bb15-2c11fb1d1123",
+   "stem": "AI幻觉，是指AI模型生成看似合理但实际不正确或毫无事实依据的信息的现象。AI幻觉率是指AI模型产生AI幻觉的概率。现抽取了由甲、乙、丙、丁四个公司研发的14个使用率较高的AI模型，其幻觉率如下表所示： （Ⅰ）从表中提供的AI模型中任取一个，求该模型幻觉率低于2%的概率；&nbsp; （Ⅱ）从表中提供的幻觉率低于2%的AI模型中任取3个，用随机变量 X X X 表示其中幻觉率低于1.3%的模型个数",
+   "cluster": "用列举法求概率",
+   "difficulty": "medium",
+   "difficulty_zh": "适中",
+   "form": "证明",
+   "variants": []
+  },
+  {
+   "qid": "que-2d199ad0fe8e4eb0b17c603563a755d9",
+   "stem": "已知盒中有6个灯泡，其中4个正品，2个次品。从中取出2个正品，每次取出1个，取出后不放回，直到取出2个正品为止。设$X$为取出的次数，则$P(X=3)=$（ ）",
+   "cluster": "用列举法求概率",
+   "difficulty": "medium",
+   "difficulty_zh": "适中",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-6867ce3b-44c3-4fec-a4e4-9be3727736b4",
+   "stem": "现实生活中，下列现象不属于平移的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "旋转",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-6dd0cb49-7dd6-4107-a19c-5cfbbe6ba331",
+   "stem": "填空： (1)将函数$y = \\frac{1}{x}$的图像上所有点的横坐标向右平移2个单位，得到函数____的图像； (2)将函数$y = \\log_2(3x - 1)$的图像上所有点的纵坐标向上平移2个单位，得到函数____的图像； (3)将函数$y = \\sqrt{x - 2}$的图像上所有点的横坐标伸长为原来的3倍(纵坐标不变)得到函数____的图像； (4)将函数$y = \\sin\\le",
+   "cluster": "旋转",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-71eb6d93-7b39-11f1-ae56-57b8371d822f",
+   "stem": "填空： (1)将函数$y = \\frac{1}{x}$的图像上所有点的横坐标向右平移2个单位，得到函数____的图像； (2)将函数$y = \\log_2(3x - 1)$的图像上所有点的纵坐标向上平移2个单位，得到函数____的图像； (3)将函数$y = \\sqrt{x - 2}$的图像上所有点的横坐标伸长为原来的3倍(纵坐标不变)得到函数____的图像； (4)将函数$y = \\sin\\le",
+   "cluster": "旋转",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-87d8416e-5b59-11f1-92c1-9550b7ca26a4",
+   "stem": "按要求在方格纸上画出图形 B、图形 C 和图形 D。 （1）将图形 A 向右平移 7 格得到图形 B。 （2）将图形 B 绕 O 点的对应点顺时针方向旋转 90° 得到图形 C。 （3） 图形 C 向上平移 3 格得到图形 D。",
+   "cluster": "旋转",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "作图",
+   "variants": []
+  },
+  {
+   "qid": "que-26741f92-f4cf-4a93-9417-79e1b37ec060",
+   "stem": "下列现象： 温度计中，液柱的变化； 电梯上下运动； 钟摆的摆动； 小方块在水平地面滑动，属于平移的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+   "cluster": "旋转",
+   "difficulty": "easy_moderate",
+   "difficulty_zh": "较易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-44945111-b40a-4e05-a5ba-283d4bb1c563",
+   "stem": "已知图像变换：①关于$y$轴对称；②关于$x$轴对称；③右移1个单位；④左移1个单位；⑤右移$\\frac{1}{2}$个单位；⑥左移$\\frac{1}{2}$个单位；⑦横坐标伸长为原来的2倍，纵坐标不变；⑧横坐标缩短为原来的一半，纵坐标不变。由$y = \\mathrm{e}^x$的图像经过上述某些变换可得$y = \\mathrm{e}^{1-2x}$的图像，这些变换可以依次是____。(请按顺序填",
+   "cluster": "旋转",
+   "difficulty": "easy_moderate",
+   "difficulty_zh": "较易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-71eb8e02-7b39-11f1-a096-57b8371d822f",
+   "stem": "已知图像变换：①关于$y$轴对称；②关于$x$轴对称；③右移1个单位；④左移1个单位；⑤右移$\\frac{1}{2}$个单位；⑥左移$\\frac{1}{2}$个单位；⑦横坐标伸长为原来的2倍，纵坐标不变；⑧横坐标缩短为原来的一半，纵坐标不变。由$y = \\mathrm{e}^x$的图像经过上述某些变换可得$y = \\mathrm{e}^{1-2x}$的图像，这些变换可以依次是____。(请按顺序填",
+   "cluster": "旋转",
+   "difficulty": "easy_moderate",
+   "difficulty_zh": "较易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-7dbd07a7-f8cc-43d3-86df-299b2c1d0591",
+   "stem": "如图所示，在数轴上有A，B，C三点．请回答： (1)将点A向右移动2个单位长度后，表示的有理数是____； (2)将点B向左移动3个单位长度后，表示的有理数是____； (3)将点C向左移动5个单位长度后，表示的有理数是____．",
+   "cluster": "旋转",
+   "difficulty": "easy_moderate",
+   "difficulty_zh": "较易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-ff6b88e8-7c08-11f1-8f96-57b8371d822f",
+   "stem": "把函数$y = \\sin\\left(2x+\\frac{\\pi}{4}\\right)$的图像向右平移$\\frac{\\pi}{8}$个单位，再把所得图像上各点的横坐标缩小到原来的$\\frac{1}{2}$，所得图像的函数解析式是（）。",
+   "cluster": "旋转",
+   "difficulty": "easy_moderate",
+   "difficulty_zh": "较易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-1969e8f76bf0430ca5359468027282dd",
+   "stem": "把一个函数图像按$\\vec{a}=（\\frac{\\pi}{4}，3）$平移，得到的函数图像的解析式为$y=\\sin（x+\\frac{\\pi}{4}）+3$，则原函数的解析式为",
+   "cluster": "旋转",
+   "difficulty": "medium",
+   "difficulty_zh": "适中",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-80bbd250-5fe7-11f1-a85a-29f51c996ccc",
+   "stem": "下图中，丽丽看到的是（ ）。",
+   "cluster": "三视图",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-80bbe839-5fe7-11f1-88b6-29f51c996ccc",
+   "stem": "淘气用4个同样大的正方体摆成一个立体图形。从上面看到的形状如下图，从左面看到的形状是（ ）。",
+   "cluster": "三视图",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-80bbecb6-5fe7-11f1-a5d3-29f51c996ccc",
+   "stem": "淘气用4个同样大的正方体摆成一个立体图形。从前面和左面看到的形状如下图，从上面看到的形状是（ ）。",
+   "cluster": "三视图",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-80bbf124-5fe7-11f1-a6c7-29f51c996ccc",
+   "stem": "填一填，下面的形状是立体图形从哪个面看到的形状（正面、上面或右面）。 请填空 （&nbsp; &nbsp; &nbsp; &nbsp; ） （&nbsp; &nbsp; &nbsp; &nbsp; ） （&nbsp; &nbsp; &nbsp; &nbsp; ）",
+   "cluster": "三视图",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-80bbf518-5fe7-11f1-bc9e-29f51c996ccc",
+   "stem": "哪两幅图从上面看到的形状是一样的？想一想，连一连。",
+   "cluster": "三视图",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-80bbfd34-5fe7-11f1-9ba5-29f51c996ccc",
+   "stem": "给右面的立体图形再添上1个同样的小正方体，使从上面看到的形状不发生改变，有（ ）种不同的方法。",
+   "cluster": "三视图",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "填空",
+   "variants": []
+  },
+  {
+   "qid": "que-80bc0fde-5fe7-11f1-8eda-29f51c996ccc",
+   "stem": "用3个正方体搭立体图形，从上面看是两个正方形。请试着搭出来，并画出你从上面、正面和左面看到的图形。 上面 正面 左面",
+   "cluster": "三视图",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "作图",
+   "variants": []
+  },
+  {
+   "qid": "que-80bc1394-5fe7-11f1-9a49-29f51c996ccc",
+   "stem": "移动1个小正方体，使立体图形从上面看到的形状为 请将需要移动的小正方体涂上阴影，并用“○”表示出它的新位置。",
+   "cluster": "三视图",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "解答计算",
+   "variants": []
+  },
+  {
+   "qid": "que-a3f309ac-5ff9-11f1-87a1-29f51c996ccc",
+   "stem": "下面4个图形都是由5个棱长为1厘米的小正方体搭建的。从右面看与其他3个不同的是（ ）。",
+   "cluster": "三视图",
+   "difficulty": "easy",
+   "difficulty_zh": "容易",
+   "form": "选择",
+   "variants": []
+  },
+  {
+   "qid": "que-002ea68c-4a8a-43fa-bd5a-888754fe7203",
+   "stem": "移动左图中的一个小正方体得到如图所示的几何体．移动前后几何体从三个不同方向看到的形状图不变的是（      ）",
+   "cluster": "三视图",
+   "difficulty": "medium",
+   "difficulty_zh": "适中",
+   "form": "选择",
+   "variants": []
+  }
+ ]
+}

@@ -1,0 +1,105 @@
+.teach-design-history {
+  width: 281px;
+  color: #67696e;
+  border-right: 1px solid #e2e6f0;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 44px;
+    padding-inline: 16px;
+    border-bottom: 1px solid #e2e6f0;
+    color: #646e8b;
+
+    .ant-btn {
+      width: 26px;
+      height: 26px;
+
+      &-icon {
+        font-size: 20px;
+        height: 24px;
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .list {
+    padding: 8px;
+    overflow: auto;
+    height: calc(100vh - 44px);
+    scrollbar-width: none;
+
+    &-item {
+      padding: 8px;
+      cursor: pointer;
+      border-radius: 6px;
+      display: flex;
+      justify-content: space-between;
+      gap: 6px;
+
+      &:hover {
+        background-color: #f2f5fa;
+
+        .list-item-btn {
+          width: 24px;
+          height: 24px;
+          display: block;
+        }
+      }
+
+      &-type {
+        font-size: 12px;
+        color: @primary-color;
+        height: 21px;
+        padding: 4px 8px;
+        border-radius: 4px;
+        background-color: #edf4ff;
+        flex: 0 0 auto;
+      }
+
+      .unit {
+        color: #1C6CFF;
+        background-color: #EDF4FF;
+      }
+
+      &-content {
+        flex: 1;
+        overflow: hidden;
+
+        .title {
+          color: #222;
+          line-height: 20px;
+          padding-bottom: 4px;
+          font-weight: 500;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+
+        .course_num {
+          &:before {
+            content: "|";
+            margin: 0 4px;
+            color: #e2e6f0;
+          }
+        }
+      }
+
+      &-btn {
+        display: none;
+      }
+    }
+
+    .empty-content {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .ant-empty-description {
+        color: #646e8b;
+      }
+    }
+  }
+}

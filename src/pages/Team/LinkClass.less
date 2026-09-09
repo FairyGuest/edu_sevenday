@@ -1,0 +1,159 @@
+.team_member_container {
+  padding: 0 24px 24px;
+  // background: url(~@/assets/chat_bg.png) no-repeat top center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow: scroll;
+  background-color: #fff;
+
+  .table {
+    margin-top: 16px;
+  }
+  .ant-pro-card .ant-pro-card-body {
+    padding-inline: 0;
+  }
+
+  .search-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .team_member_search {
+    padding-right: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .link_class_segmented {
+    background: #F2F5FA;
+  }
+
+  .team_member_header {
+    padding: 33px 0 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    .team_member_title {
+      color: #000;
+      font-family: "PingFang SC";
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 18px;
+      display: flex;
+      align-items: center;
+      .link_class_title {
+        margin-right: 8px;
+      }
+      .link_class_tag {
+        background-color: #EDF4FF;
+        color: #1C6CFF;
+        border: none;
+        font-weight: 400;
+      }
+    }
+
+    .link_class_manage_button {
+      position: absolute;
+      top: 32px;
+      right: 0;
+    }
+
+    .team_member_info {
+      height: 24px;
+      display: flex;
+      align-items: center;
+      margin: 4px 0 24px;
+      color: #475069;
+      font-family: "PingFang SC";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 16px;
+      text-transform: capitalize;
+      padding-left: 28px;
+
+      .team_member_infoAvatar {
+        height: 24px;
+        width: 24px;
+        margin-right: 8px;
+      }
+
+      .team_member_infoText {
+        color: var(---7-, #475069);
+        font-family: "PingFang SC";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  .team_member_left {
+    display: flex;
+    align-items: center;
+
+    .team_member_left_text {
+      color: #000;
+      font-family: "PingFang SC";
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+
+    }
+  }
+
+  .member_out_btn {
+    border: 1px solid #EF4444;
+    color: #EF4444;
+
+    &:hover {
+      border: 1px solid #EF4444 !important;
+      color: #EF4444 !important;
+    }
+  }
+}
+
+.team_member_list_box {
+  th {
+    &::before {
+      display: none !important;
+    }
+  }
+}
+
+// .team_member_option_box {
+//   display: flex;
+//   justify-content: space-between;
+
+//   .team_member_name {
+//     color: var(---, #1E253B);
+//     font-family: "PingFang SC";
+//     font-size: 14px;
+//     font-style: normal;
+//     font-weight: 400;
+//     line-height: normal;
+//   }
+
+//   .team_member_id,.team_member_phone {
+//     color: var(---, #646E8B);
+//     font-family: "PingFang SC";
+//     font-size: 14px;
+//     font-style: normal;
+//     font-weight: 400;
+//     line-height: normal;
+//   }
+
+//   .team_member_option_btn {
+//     display: flex;
+//     align-items: center;
+//   }
+//   .team_member_option_btn_css {
+//     width: 56px;
+//     height: 28px;
+//   }
+// }

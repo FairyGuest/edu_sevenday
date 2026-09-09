@@ -1,0 +1,32 @@
+.tree-skeleton {
+  padding: 8px 0;
+  
+  &-item {
+    margin-bottom: 12px;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  &-indent {
+    display: flex;
+    align-items: center;
+    
+    .ant-skeleton-button {
+      background: linear-gradient(90deg, #f5f5f5 25%, #e8e8e8 50%, #f5f5f5 75%);
+      background-size: 200% 100%;
+      animation: loading 1.5s infinite;
+      border-radius: 4px;
+    }
+  }
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

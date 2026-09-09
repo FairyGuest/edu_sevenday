@@ -1,0 +1,72 @@
+.com_file_upload_detail {
+  // padding: 0 24px;
+
+  // 1000px 是中间区域宽度 等同于上述width: 1000px;
+  // 263 是大屏左右边距
+  @media screen and (min-width: calc(1000px + 263px * 2)) {
+    .main_content {
+      width: 100%;
+      max-width: 1297px;
+    }
+  }
+
+  //   上传
+  .ant-upload.ant-upload-drag {
+    height: 160px;
+    // margin-bottom: 50px;
+    margin-bottom: 8px;
+    background-color: #fff;
+
+    .up_top {
+      position: relative;
+      width: 47px;
+      height: 58px;
+      margin: auto;
+      margin-bottom: 25px;
+
+      .docs_icon {
+        position: absolute;
+        bottom: 12px;
+        left: -10px;
+        width: 20px;
+        height: $width;
+        padding-top: 1px;
+        color: #fff;
+        background-color: #1C6CFF;
+      }
+
+      .up2 {
+        width: 100%;
+        height: 100%;
+      }
+
+      .excel_icon {
+        .docs_icon;
+        padding-top: 2px;
+        font-size: 11px;
+        background-color: #36ba43;
+      }
+    }
+
+    .up_text {
+      margin-bottom: 8px;
+      color: #202224;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 22px;
+
+      span {
+        color: rgba(71, 89, 197, 1);
+      }
+    }
+
+    .up_desc {
+      color: #86909c;
+    }
+
+    .up_desc_sub {
+      color: #86909c;
+      font-size: 12px;
+    }
+  }
+}

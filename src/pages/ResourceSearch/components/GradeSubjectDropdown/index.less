@@ -1,0 +1,99 @@
+.grade-subject-dropdown-trigger {
+  padding: 9px 16px;
+  background-color: #F2F5FA;
+  color: #1E253B;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+  .trigger-text{
+    min-width: 122px;
+  }
+}
+
+.grade-subject-dropdown-content {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+
+  // 学段选择 - Ant Design Tabs 样式覆盖
+  .grade-selector {
+    margin-bottom: 8px;
+
+    // 覆盖 Ant Design Tabs 默认样式
+    .ant-tabs-nav-wrap {
+      padding: 0 8px;
+      width: 100%;
+      justify-content: space-between;
+    }
+    .ant-tabs-nav {
+      margin-bottom: 0;
+      
+      &::before {
+        border-bottom: 1px solid #F2F5FA;
+      }
+    }
+    .ant-tabs-nav-list{
+      width: 100%;
+      justify-content: space-between;
+    }
+    .ant-tabs-tab {
+      padding: 8px 0;
+      font-size: 13px;
+      color: #6B7280;
+      font-weight: 400;
+      text-align: center;
+      line-height: 16px;
+
+      &:hover {
+        color: #1C6CFF;
+      }
+
+      &.ant-tabs-tab-active {
+        .ant-tabs-tab-btn {
+          color: #1C6CFF;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .ant-tabs-ink-bar {
+      background-color: #1C6CFF;
+      height: 2px;
+      border-radius: 1px;
+    }
+
+    .ant-tabs-content-holder {
+      display: none; // 隐藏内容区域，因为我们只使用 tabs 作为导航
+    }
+  }
+
+  // 学科选择 - 使用 Ant Design Flex，支持自动换行
+  .subject-selector {
+    max-height: 300px;
+    overflow-y: auto;
+
+    .subject-item {
+      font-size: 14px;
+      color: #475069;
+      text-align: center;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: all 0.3s;
+      font-weight: 400;
+      white-space: nowrap;
+      height: 28px;
+      line-height: 28px;
+      padding: 0 8px;
+      text-align: center;
+
+      &:hover, &.active {
+        color: #1C6CFF;
+        background-color: #EDF4FF;
+      }
+    }
+  }
+}

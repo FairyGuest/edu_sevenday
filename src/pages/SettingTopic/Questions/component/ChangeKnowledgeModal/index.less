@@ -1,0 +1,130 @@
+.setting-topic-knowledge-modal {
+  .setting-topic-knowledge-content {
+    display: flex;
+    justify-content: start;
+    gap: 16px;
+  }
+
+  .modal-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    .icon {
+      font-size: 88px;
+      color: #999;
+    }
+
+    .text {
+      font-size: 14px;
+      color: #646E8B;
+      margin-top: -12px;
+    }
+  }
+
+  .ant-drawer-body {
+    padding: 12px;
+  }
+
+  .modal-content-line {
+    border-left: 1px solid #F2F5FA;
+  }
+
+  .modal-content {
+    padding-left: 8px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    &-filter {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 12px;
+
+      .ant-select {
+        width: 175px;
+      }
+    }
+
+
+    &-title {
+      font-size: 16px;
+      color: #1E253B;
+      font-weight: 500;
+      padding-left: 12px;
+    }
+
+    &-css{
+      height: 100%;
+      overflow: scroll;
+      scrollbar-width: none;
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: 24px;
+
+      // height: 100%;
+      .question-item-box {
+        padding: 12px;
+        border: 0.5px solid transparent;
+
+        // border: 0.5px solid #E2E6F0;
+        &:hover {
+          box-shadow: 0 0 12px 0 rgba(226, 230, 240, 0.40);
+          border-radius: 12px;
+          border: 0.5px solid #E2E6F0;
+          background: #FFF;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .modal-skeleton {
+    padding: 0 14px;
+  }
+
+  .setting-topic-knowledge-content {
+    height: 100%;
+
+    .setting-topic-knowledge-content-tree {
+      height: calc(100vh - 130px);
+      overflow: auto;
+      scrollbar-width: none;
+      min-width: 260px !important;
+    }
+
+    .tree-node-title {
+      max-width: 135px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+    }
+  }
+
+  .question_drag_box_title_box {
+    display: flex;
+    // justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    .question_drag_box_title_box_left {
+      display: flex;
+      height: 24px;
+      padding: 8px;
+      align-items: center;
+      gap: 4px;
+      border-radius: 6px;
+      background: var(---50, #F0F5FF);
+      color: #1C6CFF;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+.no_data {
+  text-align: center;
+  width: 582px;
+  height: 582px;
+  background: url(~@/assets/ai_empty_bg.png) no-repeat center center;
+  background-size: 100% auto;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .no_data_name {
+    font-weight: 500;
+    font-size: 18px;
+    color: #192d4f;
+    line-height: 25px;
+  }
+
+  .no_data_desc {
+    color: #666666;
+    margin: 10px 0 20px;
+  }
+
+  .no_data_btn {
+    font-weight: bold;
+    color: @primary-color;
+    background-color: fade(@primary-color, 10%);
+    border: none;
+    text-shadow: none;
+    box-shadow: none;
+    &:hover {
+      color: #fff;
+      background-color: @primary-color;
+    }
+  }
+}

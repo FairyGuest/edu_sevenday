@@ -1,0 +1,2624 @@
+{
+ "homework_id": "hw-cls-g8-03-001",
+ "class_id": "cls-g8-03",
+ "mode": "personalized",
+ "title": "个性化作业 · 八年级(3)班",
+ "status": "generated",
+ "config": {
+  "ranges": {
+   "weak": [
+    2,
+    3
+   ],
+   "variant": [
+    1,
+    2
+   ],
+   "review": [
+    1,
+    2
+   ],
+   "challenge": [
+    1,
+    1
+   ]
+  },
+  "total": 6
+ },
+ "summary": {
+  "n_students": 45,
+  "q_count": {
+   "min": 5,
+   "max": 6
+  },
+  "fallback_students": 18,
+  "strategy_mix": {
+   "薄弱知识点练": 126,
+   "遗忘曲线复习": 68,
+   "错题变式": 1,
+   "选做挑战题": 0,
+   "均衡（默认）": 32
+  },
+  "top_clusters": [
+   [
+    "三角形全等的判定",
+    26
+   ],
+   [
+    "用提公因式法分解因式",
+    23
+   ],
+   [
+    "勾股定理",
+    20
+   ],
+   [
+    "四边形",
+    18
+   ],
+   [
+    "课题学习 图案设计",
+    17
+   ],
+   [
+    "分式及其基本性质",
+    17
+   ],
+   [
+    "整式的乘法",
+    16
+   ],
+   [
+    "一次函数的图象和性质",
+    16
+   ]
+  ],
+  "notes_sample": [
+   "学情冷启动学生 → 默认均衡卷（兜底）",
+   "错题变式覆盖有限 → 缺额转薄弱方针",
+   "薄弱方针实际配题不足（候选受限，显式降额）"
+  ]
+ },
+ "papers": {
+  "947bb83daabc33cf": {
+   "student_id": "947bb83daabc33cf",
+   "name": "徐丽",
+   "items": [
+    {
+     "qid": "que-0b4b865f-7b49-11f1-8507-57b8371d822f",
+     "stem": "函数$f(x) = \\frac{x^2}{x - 3}$在$[1,2]$上的值域为__________.",
+     "cluster": "函数",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「函数」掌握度 37%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0074c8dc-7e3c-4d10-aa53-c6d7a790d3d8",
+     "stem": "多项式4 x 2 ﹣4与多项式 x 2 ﹣2 x +1的公因式是（ ）",
+     "cluster": "用提公因式法分解因式",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「用提公因式法分解因式」掌握度 40%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0246bc0d-39bc-4ca0-8440-9a791dd5228b",
+     "stem": "－0.01表示A点，－0.1表示B点，则离原点较近的是____点．",
+     "cluster": "三角形",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「三角形」掌握度 40%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-6d92ebeb-1f1b-43c1-af19-7ce732f73c8f",
+     "stem": "如图，在 中， ，将 绕点 逆时针旋转得到 ，点 、 的对应点分别为 、 ，连接 ．当点 、 、 在同一条直线上时，下列结论不正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&",
+     "cluster": "课题学习 图案设计",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「课题学习 图案设计」距上次练习较久，预计掌握度衰减至 55%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-1d00668a-741a-4062-a5ee-76ba62c37852",
+     "stem": "菱形、矩形、正方形都具有的性质是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "特殊的平行四边形",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「特殊的平行四边形」距上次练习较久，预计掌握度衰减至 58%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "883ab5554975ea82": {
+   "student_id": "883ab5554975ea82",
+   "name": "李辉",
+   "items": [
+    {
+     "qid": "que-00c561d1-7b6e-4ab2-9c05-ed1ac4560d97",
+     "stem": "下列各数中的无理数是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "二次根式",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「二次根式」掌握度 28%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-2639e52d-7e85-11f1-b7cd-43742154f115",
+     "stem": "如图，在$\\Delta ABC$中，$AB = AC$，D是BC的中点，过A作$EF\\parallel BC$，且$AE = AF$．求证： （1）$DE = DF$； （2）$BG = CH$．",
+     "cluster": "勾股定理",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "weak",
+     "reason": "「勾股定理」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0b2dcb0e-979b-4d30-b8ef-2f7353568d80",
+     "stem": "如图，直线$l_1∥l_2$， ∠1＝55°，∠2＝45°，则∠3的度数为（ ）",
+     "cluster": "四边形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「四边形」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-11d6e1b3-c570-4906-99b7-94771695abe1",
+     "stem": "某公司去年 1 月— 3 月平均每月盈利 2 万元， 4 月— 6 月平均每月亏损 1.6 万元， 7 月— 10 月平均每月亏损 1.4 万元， 11 月— 12 月平均每月盈利 3.4 万元．假设",
+     "cluster": "三角形",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「三角形」距上次练习较久，预计掌握度衰减至 39%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-51ffa14f-907f-11f1-a798-81a3ccb3a067",
+     "stem": "已知 ( 1 − 2 x ) 4 = a 0 − 2 a 1 x + 4 a 2 x 2 − 8 a 3 x 3 + 16 a 4 x 4 (1-2x)^{4}=a_{0}-2a_{1}x+4a_{2",
+     "cluster": "整式的乘法",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「整式的乘法」距上次练习较久，预计掌握度衰减至 48%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "aa18e927903a0918": {
+   "student_id": "aa18e927903a0918",
+   "name": "黄明静",
+   "items": [
+    {
+     "qid": "que-0246bc0d-39bc-4ca0-8440-9a791dd5228b",
+     "stem": "－0.01表示A点，－0.1表示B点，则离原点较近的是____点．",
+     "cluster": "三角形",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「三角形」掌握度 24%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-2efb9c4d-5cab-11f1-90c6-29f51c996ccc",
+     "stem": "计算题。 1 2 2 - 1 + 1 4 2 - 1 + 1 6 2 - 1 + … + 1 100 2 - 1 （ 1 - 3 2 × 4 ） × （ 1 - 3 3 × 5 ） × （ 1 - 3",
+     "cluster": "分式及其基本性质",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「分式及其基本性质」掌握度 37%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0b2dcb0e-979b-4d30-b8ef-2f7353568d80",
+     "stem": "如图，直线$l_1∥l_2$， ∠1＝55°，∠2＝45°，则∠3的度数为（ ）",
+     "cluster": "四边形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「四边形」掌握度 43%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0fb324ef-9f0d-4987-b72c-221ace214694",
+     "stem": "下列 y 关于 x 的函数中，是正比例函数的为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "函数",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「函数」距上次练习较久，预计掌握度衰减至 37%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-2660df8e-0a9c-4e80-8a95-daf4802d408d",
+     "stem": "因式分解： ．",
+     "cluster": "用提公因式法分解因式",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「用提公因式法分解因式」距上次练习较久，预计掌握度衰减至 51%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "761e37bc80129fa0": {
+   "student_id": "761e37bc80129fa0",
+   "name": "梁怡",
+   "items": [
+    {
+     "qid": "que-1fce32e1-1c8e-49e9-9312-d9ddc22e322b",
+     "stem": "先化简，再求值$(a-1)^2-2a(a-1)+(2a+1)(2a-1)$,其中$a=\\sqrt{5}$.",
+     "cluster": "整式的乘法",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「整式的乘法」掌握度 40%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0b2dcb0e-979b-4d30-b8ef-2f7353568d80",
+     "stem": "如图，直线$l_1∥l_2$， ∠1＝55°，∠2＝45°，则∠3的度数为（ ）",
+     "cluster": "四边形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「四边形」掌握度 43%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0b4b865f-7b49-11f1-8507-57b8371d822f",
+     "stem": "函数$f(x) = \\frac{x^2}{x - 3}$在$[1,2]$上的值域为__________.",
+     "cluster": "函数",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「函数」掌握度 44%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-04e208f0-a723-467b-80f4-097cd93a8890",
+     "stem": "已知一个等腰三角形的两条边长分别为 、 ，则该等腰三角形的腰长为 ．",
+     "cluster": "勾股定理",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「勾股定理」距上次练习较久，预计掌握度衰减至 40%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-35e91489-b1a7-4ee5-91b4-69d7535d78dc",
+     "stem": "在“小孔成像”实验中，如图所示， O 是小孔位置．同学们发现：当 为 ， 的中点（即 ， ），像 与蜡烛 大小相等，从数学角度分析，证明 的依据是（ &nbsp;&nbsp;&nbsp;&nbsp;&",
+     "cluster": "三角形全等的判定",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「三角形全等的判定」距上次练习较久，预计掌握度衰减至 58%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "b2a7c9327638ebd7": {
+   "student_id": "b2a7c9327638ebd7",
+   "name": "孙琪明",
+   "items": [
+    {
+     "qid": "que-05fdca0e-967e-4f2f-9938-020c52b0c90c",
+     "stem": "如图，在$\\Delta ABC$中，$\\angle A = 50^\\circ$，$CE$平分$\\angle ACB$，点D为BC延长线上一点，过点D作$DF \\parallel EC$交AB于点F，$",
+     "cluster": "三角形的内角与外角",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「三角形的内角与外角」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-1fce32e1-1c8e-49e9-9312-d9ddc22e322b",
+     "stem": "先化简，再求值$(a-1)^2-2a(a-1)+(2a+1)(2a-1)$,其中$a=\\sqrt{5}$.",
+     "cluster": "整式的乘法",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「整式的乘法」掌握度 57%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-1d00668a-741a-4062-a5ee-76ba62c37852",
+     "stem": "菱形、矩形、正方形都具有的性质是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "特殊的平行四边形",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「特殊的平行四边形」距上次练习较久，预计掌握度衰减至 43%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-07564138-46c4-4b88-a64d-255a9b5df7c1",
+     "stem": "“五一”期间，一体育用品商店搞优惠促销活动，其活动内容是：“凡在该商店一次性购物超过 100 元者，超过 100 元的部分按九折优惠”在此活动中，小东到该商店为学校一次性购买单价为 70 元的篮球 个",
+     "cluster": "一次函数的图象和性质",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「一次函数的图象和性质」距上次练习较久，预计掌握度衰减至 52%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-3971fcb8-8112-11f1-9791-2d6e1a7b7ebb",
+     "stem": "如图，在$\\triangle ACB$中，$\\angle ACB=90^\\circ$，$AC=BC$，点$C$的坐标为$(-2,0)$，点A的坐标为$(-6,3)$，则$B$点的坐标是______.",
+     "cluster": "三角形全等的判定",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「三角形全等的判定」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "8dcf5f76483436c3": {
+   "student_id": "8dcf5f76483436c3",
+   "name": "罗勇",
+   "items": [
+    {
+     "qid": "que-0074c8dc-7e3c-4d10-aa53-c6d7a790d3d8",
+     "stem": "多项式4 x 2 ﹣4与多项式 x 2 ﹣2 x +1的公因式是（ ）",
+     "cluster": "用提公因式法分解因式",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「用提公因式法分解因式」掌握度 28%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-00c561d1-7b6e-4ab2-9c05-ed1ac4560d97",
+     "stem": "下列各数中的无理数是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "二次根式",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「二次根式」掌握度 33%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-053007b2-7b54-44ae-a19b-b70673bb78d9",
+     "stem": "一个两位数的十位上的数字与个位上的数字之和为 8 ，把这个数减去 36 后，结果恰好成为十位数字与个位数字对调后组成的两位数，则原来的两位数是",
+     "cluster": "一次函数的图象和性质",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「一次函数的图象和性质」掌握度 36%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-1d00668a-741a-4062-a5ee-76ba62c37852",
+     "stem": "菱形、矩形、正方形都具有的性质是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "特殊的平行四边形",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「特殊的平行四边形」距上次练习较久，预计掌握度衰减至 43%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-85e92420-d3fe-4fad-835a-ba3c62dfbc28",
+     "stem": "若把分式 中的 x 和 y 都扩大 2 倍，那么分式的值（ ）",
+     "cluster": "分式及其基本性质",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「分式及其基本性质」距上次练习较久，预计掌握度衰减至 52%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "e285baf106ac2747": {
+   "student_id": "e285baf106ac2747",
+   "name": "周娟",
+   "items": [
+    {
+     "qid": "que-2639e52d-7e85-11f1-b7cd-43742154f115",
+     "stem": "如图，在$\\Delta ABC$中，$AB = AC$，D是BC的中点，过A作$EF\\parallel BC$，且$AE = AF$．求证： （1）$DE = DF$； （2）$BG = CH$．",
+     "cluster": "勾股定理",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "weak",
+     "reason": "「勾股定理」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0074c8dc-7e3c-4d10-aa53-c6d7a790d3d8",
+     "stem": "多项式4 x 2 ﹣4与多项式 x 2 ﹣2 x +1的公因式是（ ）",
+     "cluster": "用提公因式法分解因式",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「用提公因式法分解因式」掌握度 54%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0877ceb2-00be-4b70-bccd-b26912657c72",
+     "stem": "一个平行四边形的一条边长为 ，两条对角线的长分别为 和 ，则它的面积为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "特殊的平行四边形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「特殊的平行四边形」掌握度 55%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-00c6cd42-2db1-4175-bd33-5f3f853f09e4",
+     "stem": "不改变原式的值，将$6-(+3)-(-7)+(-2)$中的减法改成加法并写成省略加号和的形式是（）",
+     "cluster": "二次根式",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「二次根式」距上次练习较久，预计掌握度衰减至 35%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-096db7b0-9534-4c8b-a60a-dbb7c9ca80ef",
+     "stem": "如图， ， ， ，则 的度数是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "四边形",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「四边形」距上次练习较久，预计掌握度衰减至 49%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-66031d3fcde94df58556524778df79f3",
+     "stem": "甲、乙两地相距a千米，现在甲、乙两地之间建一仓储站丙（甲、乙、丙三地在同一条直线上），丙与甲的距离为x千米。已知从甲到丙的运货费用为20元/千米，从乙到丙的运货费用为15元/千米，两地到丙的总运货费用",
+     "cluster": "分式",
+     "difficulty": "适中",
+     "form": "解答计算",
+     "strategy": "variant",
+     "reason": "错题变式：原题（分式）的「条件增删」变式",
+     "source_label": "错题本"
+    }
+   ]
+  },
+  "668681ce95c6ca5e": {
+   "student_id": "668681ce95c6ca5e",
+   "name": "周娟露",
+   "items": [
+    {
+     "qid": "que-0b4b865f-7b49-11f1-8507-57b8371d822f",
+     "stem": "函数$f(x) = \\frac{x^2}{x - 3}$在$[1,2]$上的值域为__________.",
+     "cluster": "函数",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「函数」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0d10b604-4a26-4377-9026-41ef0faca2e4",
+     "stem": "利用平移，绘制出如图所示的图案．",
+     "cluster": "课题学习 图案设计",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「课题学习 图案设计」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0877ceb2-00be-4b70-bccd-b26912657c72",
+     "stem": "一个平行四边形的一条边长为 ，两条对角线的长分别为 和 ，则它的面积为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "特殊的平行四边形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「特殊的平行四边形」掌握度 55%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-51ffa14f-907f-11f1-a798-81a3ccb3a067",
+     "stem": "已知 ( 1 − 2 x ) 4 = a 0 − 2 a 1 x + 4 a 2 x 2 − 8 a 3 x 3 + 16 a 4 x 4 (1-2x)^{4}=a_{0}-2a_{1}x+4a_{2",
+     "cluster": "整式的乘法",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「整式的乘法」距上次练习较久，预计掌握度衰减至 26%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-04e208f0-a723-467b-80f4-097cd93a8890",
+     "stem": "已知一个等腰三角形的两条边长分别为 、 ，则该等腰三角形的腰长为 ．",
+     "cluster": "勾股定理",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「勾股定理」距上次练习较久，预计掌握度衰减至 32%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "358f22c0c0bb9d3a": {
+   "student_id": "358f22c0c0bb9d3a",
+   "name": "曹婷",
+   "items": [
+    {
+     "qid": "que-088c5dec-56ad-11f1-8e8b-93727e70c2bd",
+     "stem": "已知当鸡蛋落地速度大于 1 .2m/s 时，鸡蛋会被摔碎．若鸡蛋从高处自由下落，其落地时的速度 v m/s 与开始下落时离地面的高度 h m 满足关系式 v 2 = 20 h ，现有一鸡蛋从 0 .1",
+     "cluster": "分式",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「分式」掌握度 37%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0877ceb2-00be-4b70-bccd-b26912657c72",
+     "stem": "一个平行四边形的一条边长为 ，两条对角线的长分别为 和 ，则它的面积为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "特殊的平行四边形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「特殊的平行四边形」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-053007b2-7b54-44ae-a19b-b70673bb78d9",
+     "stem": "一个两位数的十位上的数字与个位上的数字之和为 8 ，把这个数减去 36 后，结果恰好成为十位数字与个位数字对调后组成的两位数，则原来的两位数是",
+     "cluster": "一次函数的图象和性质",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「一次函数的图象和性质」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-00c6cd42-2db1-4175-bd33-5f3f853f09e4",
+     "stem": "不改变原式的值，将$6-(+3)-(-7)+(-2)$中的减法改成加法并写成省略加号和的形式是（）",
+     "cluster": "二次根式",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「二次根式」距上次练习较久，预计掌握度衰减至 28%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-3971fcb8-8112-11f1-9791-2d6e1a7b7ebb",
+     "stem": "如图，在$\\triangle ACB$中，$\\angle ACB=90^\\circ$，$AC=BC$，点$C$的坐标为$(-2,0)$，点A的坐标为$(-6,3)$，则$B$点的坐标是______.",
+     "cluster": "三角形全等的判定",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「三角形全等的判定」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "6c4898082f92b9af": {
+   "student_id": "6c4898082f92b9af",
+   "name": "马军",
+   "items": [
+    {
+     "qid": "que-0b2dcb0e-979b-4d30-b8ef-2f7353568d80",
+     "stem": "如图，直线$l_1∥l_2$， ∠1＝55°，∠2＝45°，则∠3的度数为（ ）",
+     "cluster": "四边形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「四边形」掌握度 24%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0074c8dc-7e3c-4d10-aa53-c6d7a790d3d8",
+     "stem": "多项式4 x 2 ﹣4与多项式 x 2 ﹣2 x +1的公因式是（ ）",
+     "cluster": "用提公因式法分解因式",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「用提公因式法分解因式」掌握度 40%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0246bc0d-39bc-4ca0-8440-9a791dd5228b",
+     "stem": "－0.01表示A点，－0.1表示B点，则离原点较近的是____点．",
+     "cluster": "三角形",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「三角形」掌握度 45%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-3971fcb8-8112-11f1-9791-2d6e1a7b7ebb",
+     "stem": "如图，在$\\triangle ACB$中，$\\angle ACB=90^\\circ$，$AC=BC$，点$C$的坐标为$(-2,0)$，点A的坐标为$(-6,3)$，则$B$点的坐标是______.",
+     "cluster": "三角形全等的判定",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「三角形全等的判定」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-1b567cd4-598f-434a-96f1-c0d2f814ec75",
+     "stem": "分解因式： ．",
+     "cluster": "用提公因式法分解因式",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "balanced",
+     "reason": "回填题：「用提公因式法分解因式」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "35be72f89ba8cd58": {
+   "student_id": "35be72f89ba8cd58",
+   "name": "高静明",
+   "items": [
+    {
+     "qid": "que-0d10b604-4a26-4377-9026-41ef0faca2e4",
+     "stem": "利用平移，绘制出如图所示的图案．",
+     "cluster": "课题学习 图案设计",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「课题学习 图案设计」掌握度 43%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0b2dcb0e-979b-4d30-b8ef-2f7353568d80",
+     "stem": "如图，直线$l_1∥l_2$， ∠1＝55°，∠2＝45°，则∠3的度数为（ ）",
+     "cluster": "四边形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「四边形」掌握度 44%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-1ca3b33f-5503-11f1-9c2d-8d59f08d439f",
+     "stem": "如图，已知平面直角坐标系中的 ▱ A B C D ，点 A 1 , 4 ， C 3 , 0 ，坐标系内存在直线 l ： y = k x + b k ≠ 0 将 ▱ A B C D 分成面积相等的两部分",
+     "cluster": "特殊的平行四边形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「特殊的平行四边形」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-07564138-46c4-4b88-a64d-255a9b5df7c1",
+     "stem": "“五一”期间，一体育用品商店搞优惠促销活动，其活动内容是：“凡在该商店一次性购物超过 100 元者，超过 100 元的部分按九折优惠”在此活动中，小东到该商店为学校一次性购买单价为 70 元的篮球 个",
+     "cluster": "一次函数的图象和性质",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「一次函数的图象和性质」距上次练习较久，预计掌握度衰减至 32%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-04e208f0-a723-467b-80f4-097cd93a8890",
+     "stem": "已知一个等腰三角形的两条边长分别为 、 ，则该等腰三角形的腰长为 ．",
+     "cluster": "勾股定理",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「勾股定理」距上次练习较久，预计掌握度衰减至 44%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "2bfbc5fb6c6f1c5a": {
+   "student_id": "2bfbc5fb6c6f1c5a",
+   "name": "何宁",
+   "items": [
+    {
+     "qid": "que-053007b2-7b54-44ae-a19b-b70673bb78d9",
+     "stem": "一个两位数的十位上的数字与个位上的数字之和为 8 ，把这个数减去 36 后，结果恰好成为十位数字与个位数字对调后组成的两位数，则原来的两位数是",
+     "cluster": "一次函数的图象和性质",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「一次函数的图象和性质」掌握度 22%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-00c561d1-7b6e-4ab2-9c05-ed1ac4560d97",
+     "stem": "下列各数中的无理数是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "二次根式",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「二次根式」掌握度 30%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-2639e52d-7e85-11f1-b7cd-43742154f115",
+     "stem": "如图，在$\\Delta ABC$中，$AB = AC$，D是BC的中点，过A作$EF\\parallel BC$，且$AE = AF$．求证： （1）$DE = DF$； （2）$BG = CH$．",
+     "cluster": "勾股定理",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "weak",
+     "reason": "「勾股定理」掌握度 33%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-1d00668a-741a-4062-a5ee-76ba62c37852",
+     "stem": "菱形、矩形、正方形都具有的性质是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "特殊的平行四边形",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「特殊的平行四边形」距上次练习较久，预计掌握度衰减至 52%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-3971fcb8-8112-11f1-9791-2d6e1a7b7ebb",
+     "stem": "如图，在$\\triangle ACB$中，$\\angle ACB=90^\\circ$，$AC=BC$，点$C$的坐标为$(-2,0)$，点A的坐标为$(-6,3)$，则$B$点的坐标是______.",
+     "cluster": "三角形全等的判定",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「三角形全等的判定」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "2134924d024a911c": {
+   "student_id": "2134924d024a911c",
+   "name": "宋涛静",
+   "items": [
+    {
+     "qid": "que-3971fcb8-8112-11f1-9791-2d6e1a7b7ebb",
+     "stem": "如图，在$\\triangle ACB$中，$\\angle ACB=90^\\circ$，$AC=BC$，点$C$的坐标为$(-2,0)$，点A的坐标为$(-6,3)$，则$B$点的坐标是______.",
+     "cluster": "三角形全等的判定",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「三角形全等的判定」掌握度 28%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-91d6b4f6-8c85-11f1-8edb-6dc8d96b80b8",
+     "stem": "下面是 “ 作一个角使其等于 ∠ A O B ” 的尺规作图方法 . （ 1 ）如图，以点 O 为圆心，任意长为半径画弧，分别交 O A ， O B 于点 C ， D ； （ 2 ）作射线 O ′ A",
+     "cluster": "三角形全等的判定",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「三角形全等的判定」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0074c8dc-7e3c-4d10-aa53-c6d7a790d3d8",
+     "stem": "多项式4 x 2 ﹣4与多项式 x 2 ﹣2 x +1的公因式是（ ）",
+     "cluster": "用提公因式法分解因式",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「用提公因式法分解因式」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0b2dcb0e-979b-4d30-b8ef-2f7353568d80",
+     "stem": "如图，直线$l_1∥l_2$， ∠1＝55°，∠2＝45°，则∠3的度数为（ ）",
+     "cluster": "四边形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「四边形」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0d10b604-4a26-4377-9026-41ef0faca2e4",
+     "stem": "利用平移，绘制出如图所示的图案．",
+     "cluster": "课题学习 图案设计",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "balanced",
+     "reason": "回填题：「课题学习 图案设计」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "81a4eecfb245c43b": {
+   "student_id": "81a4eecfb245c43b",
+   "name": "朱鑫",
+   "items": [
+    {
+     "qid": "que-2efb9c4d-5cab-11f1-90c6-29f51c996ccc",
+     "stem": "计算题。 1 2 2 - 1 + 1 4 2 - 1 + 1 6 2 - 1 + … + 1 100 2 - 1 （ 1 - 3 2 × 4 ） × （ 1 - 3 3 × 5 ） × （ 1 - 3",
+     "cluster": "分式及其基本性质",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「分式及其基本性质」掌握度 22%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-1fce32e1-1c8e-49e9-9312-d9ddc22e322b",
+     "stem": "先化简，再求值$(a-1)^2-2a(a-1)+(2a+1)(2a-1)$,其中$a=\\sqrt{5}$.",
+     "cluster": "整式的乘法",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「整式的乘法」掌握度 36%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-053007b2-7b54-44ae-a19b-b70673bb78d9",
+     "stem": "一个两位数的十位上的数字与个位上的数字之和为 8 ，把这个数减去 36 后，结果恰好成为十位数字与个位数字对调后组成的两位数，则原来的两位数是",
+     "cluster": "一次函数的图象和性质",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「一次函数的图象和性质」掌握度 36%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-3971fcb8-8112-11f1-9791-2d6e1a7b7ebb",
+     "stem": "如图，在$\\triangle ACB$中，$\\angle ACB=90^\\circ$，$AC=BC$，点$C$的坐标为$(-2,0)$，点A的坐标为$(-6,3)$，则$B$点的坐标是______.",
+     "cluster": "三角形全等的判定",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「三角形全等的判定」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0074c8dc-7e3c-4d10-aa53-c6d7a790d3d8",
+     "stem": "多项式4 x 2 ﹣4与多项式 x 2 ﹣2 x +1的公因式是（ ）",
+     "cluster": "用提公因式法分解因式",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「用提公因式法分解因式」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "85c7acbb3ffdffcf": {
+   "student_id": "85c7acbb3ffdffcf",
+   "name": "朱鑫雪",
+   "items": [
+    {
+     "qid": "que-05fdca0e-967e-4f2f-9938-020c52b0c90c",
+     "stem": "如图，在$\\Delta ABC$中，$\\angle A = 50^\\circ$，$CE$平分$\\angle ACB$，点D为BC延长线上一点，过点D作$DF \\parallel EC$交AB于点F，$",
+     "cluster": "三角形的内角与外角",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「三角形的内角与外角」掌握度 27%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-3971fcb8-8112-11f1-9791-2d6e1a7b7ebb",
+     "stem": "如图，在$\\triangle ACB$中，$\\angle ACB=90^\\circ$，$AC=BC$，点$C$的坐标为$(-2,0)$，点A的坐标为$(-6,3)$，则$B$点的坐标是______.",
+     "cluster": "三角形全等的判定",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「三角形全等的判定」掌握度 31%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-1fce32e1-1c8e-49e9-9312-d9ddc22e322b",
+     "stem": "先化简，再求值$(a-1)^2-2a(a-1)+(2a+1)(2a-1)$,其中$a=\\sqrt{5}$.",
+     "cluster": "整式的乘法",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「整式的乘法」掌握度 36%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-04e208f0-a723-467b-80f4-097cd93a8890",
+     "stem": "已知一个等腰三角形的两条边长分别为 、 ，则该等腰三角形的腰长为 ．",
+     "cluster": "勾股定理",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「勾股定理」距上次练习较久，预计掌握度衰减至 48%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-91d6b4f6-8c85-11f1-8edb-6dc8d96b80b8",
+     "stem": "下面是 “ 作一个角使其等于 ∠ A O B ” 的尺规作图方法 . （ 1 ）如图，以点 O 为圆心，任意长为半径画弧，分别交 O A ， O B 于点 C ， D ； （ 2 ）作射线 O ′ A",
+     "cluster": "三角形全等的判定",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「三角形全等的判定」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "098dd360cdcedab6": {
+   "student_id": "098dd360cdcedab6",
+   "name": "冯洋明",
+   "items": [
+    {
+     "qid": "que-00c561d1-7b6e-4ab2-9c05-ed1ac4560d97",
+     "stem": "下列各数中的无理数是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "二次根式",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（8 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-3971fcb8-8112-11f1-9791-2d6e1a7b7ebb",
+     "stem": "如图，在$\\triangle ACB$中，$\\angle ACB=90^\\circ$，$AC=BC$，点$C$的坐标为$(-2,0)$，点A的坐标为$(-6,3)$，则$B$点的坐标是______.",
+     "cluster": "三角形全等的判定",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "学情数据不足（8 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0074c8dc-7e3c-4d10-aa53-c6d7a790d3d8",
+     "stem": "多项式4 x 2 ﹣4与多项式 x 2 ﹣2 x +1的公因式是（ ）",
+     "cluster": "用提公因式法分解因式",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（8 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0b2dcb0e-979b-4d30-b8ef-2f7353568d80",
+     "stem": "如图，直线$l_1∥l_2$， ∠1＝55°，∠2＝45°，则∠3的度数为（ ）",
+     "cluster": "四边形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（8 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0d10b604-4a26-4377-9026-41ef0faca2e4",
+     "stem": "利用平移，绘制出如图所示的图案．",
+     "cluster": "课题学习 图案设计",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "balanced",
+     "reason": "学情数据不足（8 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0877ceb2-00be-4b70-bccd-b26912657c72",
+     "stem": "一个平行四边形的一条边长为 ，两条对角线的长分别为 和 ，则它的面积为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "特殊的平行四边形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（8 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "df5c55a79f94865b": {
+   "student_id": "df5c55a79f94865b",
+   "name": "林杰",
+   "items": [
+    {
+     "qid": "que-0b2dcb0e-979b-4d30-b8ef-2f7353568d80",
+     "stem": "如图，直线$l_1∥l_2$， ∠1＝55°，∠2＝45°，则∠3的度数为（ ）",
+     "cluster": "四边形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「四边形」掌握度 33%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-2efb9c4d-5cab-11f1-90c6-29f51c996ccc",
+     "stem": "计算题。 1 2 2 - 1 + 1 4 2 - 1 + 1 6 2 - 1 + … + 1 100 2 - 1 （ 1 - 3 2 × 4 ） × （ 1 - 3 3 × 5 ） × （ 1 - 3",
+     "cluster": "分式及其基本性质",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「分式及其基本性质」掌握度 45%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-1fce32e1-1c8e-49e9-9312-d9ddc22e322b",
+     "stem": "先化简，再求值$(a-1)^2-2a(a-1)+(2a+1)(2a-1)$,其中$a=\\sqrt{5}$.",
+     "cluster": "整式的乘法",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「整式的乘法」掌握度 56%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-51ffa14f-907f-11f1-a798-81a3ccb3a067",
+     "stem": "已知 ( 1 − 2 x ) 4 = a 0 − 2 a 1 x + 4 a 2 x 2 − 8 a 3 x 3 + 16 a 4 x 4 (1-2x)^{4}=a_{0}-2a_{1}x+4a_{2",
+     "cluster": "整式的乘法",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「整式的乘法」距上次练习较久，预计掌握度衰减至 47%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-1584e34e-9dfa-4c53-bb38-ce78dca1603f",
+     "stem": "一个等腰三角形的周长是 24 厘米，其中一条边长是 6 厘米，另两条边的长度是 厘米和 厘米．",
+     "cluster": "勾股定理",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「勾股定理」距上次练习较久，预计掌握度衰减至 53%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "3f913e2f549f9c8f": {
+   "student_id": "3f913e2f549f9c8f",
+   "name": "李明静",
+   "items": [
+    {
+     "qid": "que-05fdca0e-967e-4f2f-9938-020c52b0c90c",
+     "stem": "如图，在$\\Delta ABC$中，$\\angle A = 50^\\circ$，$CE$平分$\\angle ACB$，点D为BC延长线上一点，过点D作$DF \\parallel EC$交AB于点F，$",
+     "cluster": "三角形的内角与外角",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「三角形的内角与外角」掌握度 33%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0d10b604-4a26-4377-9026-41ef0faca2e4",
+     "stem": "利用平移，绘制出如图所示的图案．",
+     "cluster": "课题学习 图案设计",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「课题学习 图案设计」掌握度 33%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-3971fcb8-8112-11f1-9791-2d6e1a7b7ebb",
+     "stem": "如图，在$\\triangle ACB$中，$\\angle ACB=90^\\circ$，$AC=BC$，点$C$的坐标为$(-2,0)$，点A的坐标为$(-6,3)$，则$B$点的坐标是______.",
+     "cluster": "三角形全等的判定",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「三角形全等的判定」掌握度 42%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-51ffa14f-907f-11f1-a798-81a3ccb3a067",
+     "stem": "已知 ( 1 − 2 x ) 4 = a 0 − 2 a 1 x + 4 a 2 x 2 − 8 a 3 x 3 + 16 a 4 x 4 (1-2x)^{4}=a_{0}-2a_{1}x+4a_{2",
+     "cluster": "整式的乘法",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「整式的乘法」距上次练习较久，预计掌握度衰减至 19%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-00c6cd42-2db1-4175-bd33-5f3f853f09e4",
+     "stem": "不改变原式的值，将$6-(+3)-(-7)+(-2)$中的减法改成加法并写成省略加号和的形式是（）",
+     "cluster": "二次根式",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「二次根式」距上次练习较久，预计掌握度衰减至 35%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "622bfc15b689575a": {
+   "student_id": "622bfc15b689575a",
+   "name": "胡怡",
+   "items": [
+    {
+     "qid": "que-00c561d1-7b6e-4ab2-9c05-ed1ac4560d97",
+     "stem": "下列各数中的无理数是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "二次根式",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「二次根式」掌握度 40%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0246bc0d-39bc-4ca0-8440-9a791dd5228b",
+     "stem": "－0.01表示A点，－0.1表示B点，则离原点较近的是____点．",
+     "cluster": "三角形",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「三角形」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-1fce32e1-1c8e-49e9-9312-d9ddc22e322b",
+     "stem": "先化简，再求值$(a-1)^2-2a(a-1)+(2a+1)(2a-1)$,其中$a=\\sqrt{5}$.",
+     "cluster": "整式的乘法",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「整式的乘法」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-2660df8e-0a9c-4e80-8a95-daf4802d408d",
+     "stem": "因式分解： ．",
+     "cluster": "用提公因式法分解因式",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「用提公因式法分解因式」距上次练习较久，预计掌握度衰减至 46%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-3971fcb8-8112-11f1-9791-2d6e1a7b7ebb",
+     "stem": "如图，在$\\triangle ACB$中，$\\angle ACB=90^\\circ$，$AC=BC$，点$C$的坐标为$(-2,0)$，点A的坐标为$(-6,3)$，则$B$点的坐标是______.",
+     "cluster": "三角形全等的判定",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「三角形全等的判定」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "55f42d2a030c5a62": {
+   "student_id": "55f42d2a030c5a62",
+   "name": "陈琪明",
+   "items": [
+    {
+     "qid": "que-51ffa14f-907f-11f1-a798-81a3ccb3a067",
+     "stem": "已知 ( 1 − 2 x ) 4 = a 0 − 2 a 1 x + 4 a 2 x 2 − 8 a 3 x 3 + 16 a 4 x 4 (1-2x)^{4}=a_{0}-2a_{1}x+4a_{2",
+     "cluster": "整式的乘法",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「整式的乘法」距上次练习较久，预计掌握度衰减至 49%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-2660df8e-0a9c-4e80-8a95-daf4802d408d",
+     "stem": "因式分解： ．",
+     "cluster": "用提公因式法分解因式",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「用提公因式法分解因式」距上次练习较久，预计掌握度衰减至 52%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-3971fcb8-8112-11f1-9791-2d6e1a7b7ebb",
+     "stem": "如图，在$\\triangle ACB$中，$\\angle ACB=90^\\circ$，$AC=BC$，点$C$的坐标为$(-2,0)$，点A的坐标为$(-6,3)$，则$B$点的坐标是______.",
+     "cluster": "三角形全等的判定",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「三角形全等的判定」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0074c8dc-7e3c-4d10-aa53-c6d7a790d3d8",
+     "stem": "多项式4 x 2 ﹣4与多项式 x 2 ﹣2 x +1的公因式是（ ）",
+     "cluster": "用提公因式法分解因式",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「用提公因式法分解因式」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0b2dcb0e-979b-4d30-b8ef-2f7353568d80",
+     "stem": "如图，直线$l_1∥l_2$， ∠1＝55°，∠2＝45°，则∠3的度数为（ ）",
+     "cluster": "四边形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「四边形」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "d465b44049b2138d": {
+   "student_id": "d465b44049b2138d",
+   "name": "孙勇",
+   "items": [
+    {
+     "qid": "que-0877ceb2-00be-4b70-bccd-b26912657c72",
+     "stem": "一个平行四边形的一条边长为 ，两条对角线的长分别为 和 ，则它的面积为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "特殊的平行四边形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「特殊的平行四边形」掌握度 33%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-1fce32e1-1c8e-49e9-9312-d9ddc22e322b",
+     "stem": "先化简，再求值$(a-1)^2-2a(a-1)+(2a+1)(2a-1)$,其中$a=\\sqrt{5}$.",
+     "cluster": "整式的乘法",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「整式的乘法」掌握度 33%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-2639e52d-7e85-11f1-b7cd-43742154f115",
+     "stem": "如图，在$\\Delta ABC$中，$AB = AC$，D是BC的中点，过A作$EF\\parallel BC$，且$AE = AF$．求证： （1）$DE = DF$； （2）$BG = CH$．",
+     "cluster": "勾股定理",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "weak",
+     "reason": "「勾股定理」掌握度 42%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-6d92ebeb-1f1b-43c1-af19-7ce732f73c8f",
+     "stem": "如图，在 中， ，将 绕点 逆时针旋转得到 ，点 、 的对应点分别为 、 ，连接 ．当点 、 、 在同一条直线上时，下列结论不正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&",
+     "cluster": "课题学习 图案设计",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「课题学习 图案设计」距上次练习较久，预计掌握度衰减至 55%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-11d6e1b3-c570-4906-99b7-94771695abe1",
+     "stem": "某公司去年 1 月— 3 月平均每月盈利 2 万元， 4 月— 6 月平均每月亏损 1.6 万元， 7 月— 10 月平均每月亏损 1.4 万元， 11 月— 12 月平均每月盈利 3.4 万元．假设",
+     "cluster": "三角形",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「三角形」距上次练习较久，预计掌握度衰减至 57%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "a3a4c5ad7257c67b": {
+   "student_id": "a3a4c5ad7257c67b",
+   "name": "罗强",
+   "items": [
+    {
+     "qid": "que-2639e52d-7e85-11f1-b7cd-43742154f115",
+     "stem": "如图，在$\\Delta ABC$中，$AB = AC$，D是BC的中点，过A作$EF\\parallel BC$，且$AE = AF$．求证： （1）$DE = DF$； （2）$BG = CH$．",
+     "cluster": "勾股定理",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "weak",
+     "reason": "「勾股定理」掌握度 30%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-2efb9c4d-5cab-11f1-90c6-29f51c996ccc",
+     "stem": "计算题。 1 2 2 - 1 + 1 4 2 - 1 + 1 6 2 - 1 + … + 1 100 2 - 1 （ 1 - 3 2 × 4 ） × （ 1 - 3 3 × 5 ） × （ 1 - 3",
+     "cluster": "分式及其基本性质",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「分式及其基本性质」掌握度 33%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0246bc0d-39bc-4ca0-8440-9a791dd5228b",
+     "stem": "－0.01表示A点，－0.1表示B点，则离原点较近的是____点．",
+     "cluster": "三角形",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「三角形」掌握度 33%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0be28ee6-1385-4762-8d17-333974dacf78",
+     "stem": "如图， 平分 ， 平分 ， ， 交于点 ，连接 ．若 ， ，则 ．",
+     "cluster": "三角形的内角与外角",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「三角形的内角与外角」距上次练习较久，预计掌握度衰减至 27%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-1d00668a-741a-4062-a5ee-76ba62c37852",
+     "stem": "菱形、矩形、正方形都具有的性质是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "特殊的平行四边形",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「特殊的平行四边形」距上次练习较久，预计掌握度衰减至 59%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "d14cc66bb6b6e62e": {
+   "student_id": "d14cc66bb6b6e62e",
+   "name": "王娟",
+   "items": [
+    {
+     "qid": "que-0d10b604-4a26-4377-9026-41ef0faca2e4",
+     "stem": "利用平移，绘制出如图所示的图案．",
+     "cluster": "课题学习 图案设计",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「课题学习 图案设计」掌握度 36%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-088c5dec-56ad-11f1-8e8b-93727e70c2bd",
+     "stem": "已知当鸡蛋落地速度大于 1 .2m/s 时，鸡蛋会被摔碎．若鸡蛋从高处自由下落，其落地时的速度 v m/s 与开始下落时离地面的高度 h m 满足关系式 v 2 = 20 h ，现有一鸡蛋从 0 .1",
+     "cluster": "分式",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「分式」掌握度 36%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0b4b865f-7b49-11f1-8507-57b8371d822f",
+     "stem": "函数$f(x) = \\frac{x^2}{x - 3}$在$[1,2]$上的值域为__________.",
+     "cluster": "函数",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「函数」掌握度 36%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-04e208f0-a723-467b-80f4-097cd93a8890",
+     "stem": "已知一个等腰三角形的两条边长分别为 、 ，则该等腰三角形的腰长为 ．",
+     "cluster": "勾股定理",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「勾股定理」距上次练习较久，预计掌握度衰减至 37%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-35e91489-b1a7-4ee5-91b4-69d7535d78dc",
+     "stem": "在“小孔成像”实验中，如图所示， O 是小孔位置．同学们发现：当 为 ， 的中点（即 ， ），像 与蜡烛 大小相等，从数学角度分析，证明 的依据是（ &nbsp;&nbsp;&nbsp;&nbsp;&",
+     "cluster": "三角形全等的判定",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「三角形全等的判定」距上次练习较久，预计掌握度衰减至 47%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "d0bee916ab9e7fb0": {
+   "student_id": "d0bee916ab9e7fb0",
+   "name": "曹楠",
+   "items": [
+    {
+     "qid": "que-0074c8dc-7e3c-4d10-aa53-c6d7a790d3d8",
+     "stem": "多项式4 x 2 ﹣4与多项式 x 2 ﹣2 x +1的公因式是（ ）",
+     "cluster": "用提公因式法分解因式",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「用提公因式法分解因式」掌握度 33%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-053007b2-7b54-44ae-a19b-b70673bb78d9",
+     "stem": "一个两位数的十位上的数字与个位上的数字之和为 8 ，把这个数减去 36 后，结果恰好成为十位数字与个位数字对调后组成的两位数，则原来的两位数是",
+     "cluster": "一次函数的图象和性质",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「一次函数的图象和性质」掌握度 37%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-2efb9c4d-5cab-11f1-90c6-29f51c996ccc",
+     "stem": "计算题。 1 2 2 - 1 + 1 4 2 - 1 + 1 6 2 - 1 + … + 1 100 2 - 1 （ 1 - 3 2 × 4 ） × （ 1 - 3 3 × 5 ） × （ 1 - 3",
+     "cluster": "分式及其基本性质",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「分式及其基本性质」掌握度 40%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-3971fcb8-8112-11f1-9791-2d6e1a7b7ebb",
+     "stem": "如图，在$\\triangle ACB$中，$\\angle ACB=90^\\circ$，$AC=BC$，点$C$的坐标为$(-2,0)$，点A的坐标为$(-6,3)$，则$B$点的坐标是______.",
+     "cluster": "三角形全等的判定",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「三角形全等的判定」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-1b567cd4-598f-434a-96f1-c0d2f814ec75",
+     "stem": "分解因式： ．",
+     "cluster": "用提公因式法分解因式",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "balanced",
+     "reason": "回填题：「用提公因式法分解因式」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "ebafc6361d5e0043": {
+   "student_id": "ebafc6361d5e0043",
+   "name": "杨军",
+   "items": [
+    {
+     "qid": "que-2efb9c4d-5cab-11f1-90c6-29f51c996ccc",
+     "stem": "计算题。 1 2 2 - 1 + 1 4 2 - 1 + 1 6 2 - 1 + … + 1 100 2 - 1 （ 1 - 3 2 × 4 ） × （ 1 - 3 3 × 5 ） × （ 1 - 3",
+     "cluster": "分式及其基本性质",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「分式及其基本性质」掌握度 24%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0877ceb2-00be-4b70-bccd-b26912657c72",
+     "stem": "一个平行四边形的一条边长为 ，两条对角线的长分别为 和 ，则它的面积为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "特殊的平行四边形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「特殊的平行四边形」掌握度 36%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-053007b2-7b54-44ae-a19b-b70673bb78d9",
+     "stem": "一个两位数的十位上的数字与个位上的数字之和为 8 ，把这个数减去 36 后，结果恰好成为十位数字与个位数字对调后组成的两位数，则原来的两位数是",
+     "cluster": "一次函数的图象和性质",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「一次函数的图象和性质」掌握度 43%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-3971fcb8-8112-11f1-9791-2d6e1a7b7ebb",
+     "stem": "如图，在$\\triangle ACB$中，$\\angle ACB=90^\\circ$，$AC=BC$，点$C$的坐标为$(-2,0)$，点A的坐标为$(-6,3)$，则$B$点的坐标是______.",
+     "cluster": "三角形全等的判定",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「三角形全等的判定」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0074c8dc-7e3c-4d10-aa53-c6d7a790d3d8",
+     "stem": "多项式4 x 2 ﹣4与多项式 x 2 ﹣2 x +1的公因式是（ ）",
+     "cluster": "用提公因式法分解因式",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「用提公因式法分解因式」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "beeaccab58aaa752": {
+   "student_id": "beeaccab58aaa752",
+   "name": "高悦",
+   "items": [
+    {
+     "qid": "que-0b4b865f-7b49-11f1-8507-57b8371d822f",
+     "stem": "函数$f(x) = \\frac{x^2}{x - 3}$在$[1,2]$上的值域为__________.",
+     "cluster": "函数",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「函数」掌握度 24%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-2efb9c4d-5cab-11f1-90c6-29f51c996ccc",
+     "stem": "计算题。 1 2 2 - 1 + 1 4 2 - 1 + 1 6 2 - 1 + … + 1 100 2 - 1 （ 1 - 3 2 × 4 ） × （ 1 - 3 3 × 5 ） × （ 1 - 3",
+     "cluster": "分式及其基本性质",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「分式及其基本性质」掌握度 30%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-2639e52d-7e85-11f1-b7cd-43742154f115",
+     "stem": "如图，在$\\Delta ABC$中，$AB = AC$，D是BC的中点，过A作$EF\\parallel BC$，且$AE = AF$．求证： （1）$DE = DF$； （2）$BG = CH$．",
+     "cluster": "勾股定理",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "weak",
+     "reason": "「勾股定理」掌握度 36%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-096db7b0-9534-4c8b-a60a-dbb7c9ca80ef",
+     "stem": "如图， ， ， ，则 的度数是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "四边形",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「四边形」距上次练习较久，预计掌握度衰减至 52%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-3971fcb8-8112-11f1-9791-2d6e1a7b7ebb",
+     "stem": "如图，在$\\triangle ACB$中，$\\angle ACB=90^\\circ$，$AC=BC$，点$C$的坐标为$(-2,0)$，点A的坐标为$(-6,3)$，则$B$点的坐标是______.",
+     "cluster": "三角形全等的判定",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「三角形全等的判定」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "d5e7d15f8dd6d3a1": {
+   "student_id": "d5e7d15f8dd6d3a1",
+   "name": "张平",
+   "items": [
+    {
+     "qid": "que-0d10b604-4a26-4377-9026-41ef0faca2e4",
+     "stem": "利用平移，绘制出如图所示的图案．",
+     "cluster": "课题学习 图案设计",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「课题学习 图案设计」掌握度 44%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-053007b2-7b54-44ae-a19b-b70673bb78d9",
+     "stem": "一个两位数的十位上的数字与个位上的数字之和为 8 ，把这个数减去 36 后，结果恰好成为十位数字与个位数字对调后组成的两位数，则原来的两位数是",
+     "cluster": "一次函数的图象和性质",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「一次函数的图象和性质」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0246bc0d-39bc-4ca0-8440-9a791dd5228b",
+     "stem": "－0.01表示A点，－0.1表示B点，则离原点较近的是____点．",
+     "cluster": "三角形",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「三角形」掌握度 55%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0be28ee6-1385-4762-8d17-333974dacf78",
+     "stem": "如图， 平分 ， 平分 ， ， 交于点 ，连接 ．若 ， ，则 ．",
+     "cluster": "三角形的内角与外角",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「三角形的内角与外角」距上次练习较久，预计掌握度衰减至 51%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-2660df8e-0a9c-4e80-8a95-daf4802d408d",
+     "stem": "因式分解： ．",
+     "cluster": "用提公因式法分解因式",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「用提公因式法分解因式」距上次练习较久，预计掌握度衰减至 51%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "744167e47289e96e": {
+   "student_id": "744167e47289e96e",
+   "name": "何涛静",
+   "items": [
+    {
+     "qid": "que-0d10b604-4a26-4377-9026-41ef0faca2e4",
+     "stem": "利用平移，绘制出如图所示的图案．",
+     "cluster": "课题学习 图案设计",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「课题学习 图案设计」掌握度 37%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-00c561d1-7b6e-4ab2-9c05-ed1ac4560d97",
+     "stem": "下列各数中的无理数是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "二次根式",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「二次根式」掌握度 42%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-05fdca0e-967e-4f2f-9938-020c52b0c90c",
+     "stem": "如图，在$\\Delta ABC$中，$\\angle A = 50^\\circ$，$CE$平分$\\angle ACB$，点D为BC延长线上一点，过点D作$DF \\parallel EC$交AB于点F，$",
+     "cluster": "三角形的内角与外角",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「三角形的内角与外角」掌握度 44%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0fb324ef-9f0d-4987-b72c-221ace214694",
+     "stem": "下列 y 关于 x 的函数中，是正比例函数的为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "函数",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「函数」距上次练习较久，预计掌握度衰减至 40%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-096db7b0-9534-4c8b-a60a-dbb7c9ca80ef",
+     "stem": "如图， ， ， ，则 的度数是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "四边形",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「四边形」距上次练习较久，预计掌握度衰减至 43%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "9d4c7146ad0fa01f": {
+   "student_id": "9d4c7146ad0fa01f",
+   "name": "赵鑫",
+   "items": [
+    {
+     "qid": "que-3971fcb8-8112-11f1-9791-2d6e1a7b7ebb",
+     "stem": "如图，在$\\triangle ACB$中，$\\angle ACB=90^\\circ$，$AC=BC$，点$C$的坐标为$(-2,0)$，点A的坐标为$(-6,3)$，则$B$点的坐标是______.",
+     "cluster": "三角形全等的判定",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「三角形全等的判定」掌握度 40%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0d10b604-4a26-4377-9026-41ef0faca2e4",
+     "stem": "利用平移，绘制出如图所示的图案．",
+     "cluster": "课题学习 图案设计",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「课题学习 图案设计」掌握度 43%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-00c561d1-7b6e-4ab2-9c05-ed1ac4560d97",
+     "stem": "下列各数中的无理数是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "二次根式",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「二次根式」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-096db7b0-9534-4c8b-a60a-dbb7c9ca80ef",
+     "stem": "如图， ， ， ，则 的度数是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "四边形",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「四边形」距上次练习较久，预计掌握度衰减至 35%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-85e92420-d3fe-4fad-835a-ba3c62dfbc28",
+     "stem": "若把分式 中的 x 和 y 都扩大 2 倍，那么分式的值（ ）",
+     "cluster": "分式及其基本性质",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「分式及其基本性质」距上次练习较久，预计掌握度衰减至 52%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "8009419ca70611cd": {
+   "student_id": "8009419ca70611cd",
+   "name": "郑洋明",
+   "items": [
+    {
+     "qid": "que-053007b2-7b54-44ae-a19b-b70673bb78d9",
+     "stem": "一个两位数的十位上的数字与个位上的数字之和为 8 ，把这个数减去 36 后，结果恰好成为十位数字与个位数字对调后组成的两位数，则原来的两位数是",
+     "cluster": "一次函数的图象和性质",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「一次函数的图象和性质」掌握度 37%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-1fce32e1-1c8e-49e9-9312-d9ddc22e322b",
+     "stem": "先化简，再求值$(a-1)^2-2a(a-1)+(2a+1)(2a-1)$,其中$a=\\sqrt{5}$.",
+     "cluster": "整式的乘法",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「整式的乘法」掌握度 43%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0074c8dc-7e3c-4d10-aa53-c6d7a790d3d8",
+     "stem": "多项式4 x 2 ﹣4与多项式 x 2 ﹣2 x +1的公因式是（ ）",
+     "cluster": "用提公因式法分解因式",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「用提公因式法分解因式」掌握度 43%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0fb324ef-9f0d-4987-b72c-221ace214694",
+     "stem": "下列 y 关于 x 的函数中，是正比例函数的为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "函数",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「函数」距上次练习较久，预计掌握度衰减至 55%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-11d6e1b3-c570-4906-99b7-94771695abe1",
+     "stem": "某公司去年 1 月— 3 月平均每月盈利 2 万元， 4 月— 6 月平均每月亏损 1.6 万元， 7 月— 10 月平均每月亏损 1.4 万元， 11 月— 12 月平均每月盈利 3.4 万元．假设",
+     "cluster": "三角形",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「三角形」距上次练习较久，预计掌握度衰减至 57%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "5c3b87411787a1d7": {
+   "student_id": "5c3b87411787a1d7",
+   "name": "郑洋明明",
+   "items": [
+    {
+     "qid": "que-0d10b604-4a26-4377-9026-41ef0faca2e4",
+     "stem": "利用平移，绘制出如图所示的图案．",
+     "cluster": "课题学习 图案设计",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「课题学习 图案设计」掌握度 30%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0b2dcb0e-979b-4d30-b8ef-2f7353568d80",
+     "stem": "如图，直线$l_1∥l_2$， ∠1＝55°，∠2＝45°，则∠3的度数为（ ）",
+     "cluster": "四边形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「四边形」掌握度 36%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-2efb9c4d-5cab-11f1-90c6-29f51c996ccc",
+     "stem": "计算题。 1 2 2 - 1 + 1 4 2 - 1 + 1 6 2 - 1 + … + 1 100 2 - 1 （ 1 - 3 2 × 4 ） × （ 1 - 3 3 × 5 ） × （ 1 - 3",
+     "cluster": "分式及其基本性质",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「分式及其基本性质」掌握度 40%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-07564138-46c4-4b88-a64d-255a9b5df7c1",
+     "stem": "“五一”期间，一体育用品商店搞优惠促销活动，其活动内容是：“凡在该商店一次性购物超过 100 元者，超过 100 元的部分按九折优惠”在此活动中，小东到该商店为学校一次性购买单价为 70 元的篮球 个",
+     "cluster": "一次函数的图象和性质",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「一次函数的图象和性质」距上次练习较久，预计掌握度衰减至 48%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-3971fcb8-8112-11f1-9791-2d6e1a7b7ebb",
+     "stem": "如图，在$\\triangle ACB$中，$\\angle ACB=90^\\circ$，$AC=BC$，点$C$的坐标为$(-2,0)$，点A的坐标为$(-6,3)$，则$B$点的坐标是______.",
+     "cluster": "三角形全等的判定",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「三角形全等的判定」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "412dd61a08e3bdf2": {
+   "student_id": "412dd61a08e3bdf2",
+   "name": "刘晨",
+   "items": [
+    {
+     "qid": "que-0246bc0d-39bc-4ca0-8440-9a791dd5228b",
+     "stem": "－0.01表示A点，－0.1表示B点，则离原点较近的是____点．",
+     "cluster": "三角形",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「三角形」掌握度 33%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-2efb9c4d-5cab-11f1-90c6-29f51c996ccc",
+     "stem": "计算题。 1 2 2 - 1 + 1 4 2 - 1 + 1 6 2 - 1 + … + 1 100 2 - 1 （ 1 - 3 2 × 4 ） × （ 1 - 3 3 × 5 ） × （ 1 - 3",
+     "cluster": "分式及其基本性质",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「分式及其基本性质」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-053007b2-7b54-44ae-a19b-b70673bb78d9",
+     "stem": "一个两位数的十位上的数字与个位上的数字之和为 8 ，把这个数减去 36 后，结果恰好成为十位数字与个位数字对调后组成的两位数，则原来的两位数是",
+     "cluster": "一次函数的图象和性质",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「一次函数的图象和性质」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-04e208f0-a723-467b-80f4-097cd93a8890",
+     "stem": "已知一个等腰三角形的两条边长分别为 、 ，则该等腰三角形的腰长为 ．",
+     "cluster": "勾股定理",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「勾股定理」距上次练习较久，预计掌握度衰减至 44%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-35e91489-b1a7-4ee5-91b4-69d7535d78dc",
+     "stem": "在“小孔成像”实验中，如图所示， O 是小孔位置．同学们发现：当 为 ， 的中点（即 ， ），像 与蜡烛 大小相等，从数学角度分析，证明 的依据是（ &nbsp;&nbsp;&nbsp;&nbsp;&",
+     "cluster": "三角形全等的判定",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「三角形全等的判定」距上次练习较久，预计掌握度衰减至 49%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "79854a8afc3da277": {
+   "student_id": "79854a8afc3da277",
+   "name": "林辉",
+   "items": [
+    {
+     "qid": "que-0074c8dc-7e3c-4d10-aa53-c6d7a790d3d8",
+     "stem": "多项式4 x 2 ﹣4与多项式 x 2 ﹣2 x +1的公因式是（ ）",
+     "cluster": "用提公因式法分解因式",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「用提公因式法分解因式」掌握度 33%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-088c5dec-56ad-11f1-8e8b-93727e70c2bd",
+     "stem": "已知当鸡蛋落地速度大于 1 .2m/s 时，鸡蛋会被摔碎．若鸡蛋从高处自由下落，其落地时的速度 v m/s 与开始下落时离地面的高度 h m 满足关系式 v 2 = 20 h ，现有一鸡蛋从 0 .1",
+     "cluster": "分式",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「分式」掌握度 36%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-00c561d1-7b6e-4ab2-9c05-ed1ac4560d97",
+     "stem": "下列各数中的无理数是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "二次根式",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「二次根式」掌握度 37%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-6d92ebeb-1f1b-43c1-af19-7ce732f73c8f",
+     "stem": "如图，在 中， ，将 绕点 逆时针旋转得到 ，点 、 的对应点分别为 、 ，连接 ．当点 、 、 在同一条直线上时，下列结论不正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&",
+     "cluster": "课题学习 图案设计",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「课题学习 图案设计」距上次练习较久，预计掌握度衰减至 24%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-0be28ee6-1385-4762-8d17-333974dacf78",
+     "stem": "如图， 平分 ， 平分 ， ， 交于点 ，连接 ．若 ， ，则 ．",
+     "cluster": "三角形的内角与外角",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「三角形的内角与外角」距上次练习较久，预计掌握度衰减至 31%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "5829a8b6c9ce4ff0": {
+   "student_id": "5829a8b6c9ce4ff0",
+   "name": "黄怡",
+   "items": [
+    {
+     "qid": "que-0074c8dc-7e3c-4d10-aa53-c6d7a790d3d8",
+     "stem": "多项式4 x 2 ﹣4与多项式 x 2 ﹣2 x +1的公因式是（ ）",
+     "cluster": "用提公因式法分解因式",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「用提公因式法分解因式」掌握度 16%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-3971fcb8-8112-11f1-9791-2d6e1a7b7ebb",
+     "stem": "如图，在$\\triangle ACB$中，$\\angle ACB=90^\\circ$，$AC=BC$，点$C$的坐标为$(-2,0)$，点A的坐标为$(-6,3)$，则$B$点的坐标是______.",
+     "cluster": "三角形全等的判定",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「三角形全等的判定」掌握度 36%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0246bc0d-39bc-4ca0-8440-9a791dd5228b",
+     "stem": "－0.01表示A点，－0.1表示B点，则离原点较近的是____点．",
+     "cluster": "三角形",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「三角形」掌握度 40%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-07564138-46c4-4b88-a64d-255a9b5df7c1",
+     "stem": "“五一”期间，一体育用品商店搞优惠促销活动，其活动内容是：“凡在该商店一次性购物超过 100 元者，超过 100 元的部分按九折优惠”在此活动中，小东到该商店为学校一次性购买单价为 70 元的篮球 个",
+     "cluster": "一次函数的图象和性质",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「一次函数的图象和性质」距上次练习较久，预计掌握度衰减至 52%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-04e208f0-a723-467b-80f4-097cd93a8890",
+     "stem": "已知一个等腰三角形的两条边长分别为 、 ，则该等腰三角形的腰长为 ．",
+     "cluster": "勾股定理",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「勾股定理」距上次练习较久，预计掌握度衰减至 53%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "cd479e3e05145ac8": {
+   "student_id": "cd479e3e05145ac8",
+   "name": "邓琪明",
+   "items": [
+    {
+     "qid": "que-05fdca0e-967e-4f2f-9938-020c52b0c90c",
+     "stem": "如图，在$\\Delta ABC$中，$\\angle A = 50^\\circ$，$CE$平分$\\angle ACB$，点D为BC延长线上一点，过点D作$DF \\parallel EC$交AB于点F，$",
+     "cluster": "三角形的内角与外角",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「三角形的内角与外角」掌握度 40%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0b2dcb0e-979b-4d30-b8ef-2f7353568d80",
+     "stem": "如图，直线$l_1∥l_2$， ∠1＝55°，∠2＝45°，则∠3的度数为（ ）",
+     "cluster": "四边形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「四边形」掌握度 40%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-1fce32e1-1c8e-49e9-9312-d9ddc22e322b",
+     "stem": "先化简，再求值$(a-1)^2-2a(a-1)+(2a+1)(2a-1)$,其中$a=\\sqrt{5}$.",
+     "cluster": "整式的乘法",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「整式的乘法」掌握度 40%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-4e8f6b07-8cea-4578-a54d-aacf781e49d0",
+     "stem": "设 ，则 （ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "分式",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「分式」距上次练习较久，预计掌握度衰减至 36%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-04e208f0-a723-467b-80f4-097cd93a8890",
+     "stem": "已知一个等腰三角形的两条边长分别为 、 ，则该等腰三角形的腰长为 ．",
+     "cluster": "勾股定理",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「勾股定理」距上次练习较久，预计掌握度衰减至 47%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "6853638ac65f20c8": {
+   "student_id": "6853638ac65f20c8",
+   "name": "陈勇",
+   "items": [
+    {
+     "qid": "que-053007b2-7b54-44ae-a19b-b70673bb78d9",
+     "stem": "一个两位数的十位上的数字与个位上的数字之和为 8 ，把这个数减去 36 后，结果恰好成为十位数字与个位数字对调后组成的两位数，则原来的两位数是",
+     "cluster": "一次函数的图象和性质",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「一次函数的图象和性质」掌握度 25%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-05fdca0e-967e-4f2f-9938-020c52b0c90c",
+     "stem": "如图，在$\\Delta ABC$中，$\\angle A = 50^\\circ$，$CE$平分$\\angle ACB$，点D为BC延长线上一点，过点D作$DF \\parallel EC$交AB于点F，$",
+     "cluster": "三角形的内角与外角",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「三角形的内角与外角」掌握度 44%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-00c561d1-7b6e-4ab2-9c05-ed1ac4560d97",
+     "stem": "下列各数中的无理数是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "二次根式",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「二次根式」掌握度 55%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0fb324ef-9f0d-4987-b72c-221ace214694",
+     "stem": "下列 y 关于 x 的函数中，是正比例函数的为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "函数",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「函数」距上次练习较久，预计掌握度衰减至 48%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-1d00668a-741a-4062-a5ee-76ba62c37852",
+     "stem": "菱形、矩形、正方形都具有的性质是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "特殊的平行四边形",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「特殊的平行四边形」距上次练习较久，预计掌握度衰减至 49%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "f8222fae945c55f4": {
+   "student_id": "f8222fae945c55f4",
+   "name": "罗阳",
+   "items": [
+    {
+     "qid": "que-053007b2-7b54-44ae-a19b-b70673bb78d9",
+     "stem": "一个两位数的十位上的数字与个位上的数字之和为 8 ，把这个数减去 36 后，结果恰好成为十位数字与个位数字对调后组成的两位数，则原来的两位数是",
+     "cluster": "一次函数的图象和性质",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「一次函数的图象和性质」掌握度 27%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0b4b865f-7b49-11f1-8507-57b8371d822f",
+     "stem": "函数$f(x) = \\frac{x^2}{x - 3}$在$[1,2]$上的值域为__________.",
+     "cluster": "函数",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「函数」掌握度 36%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-2efb9c4d-5cab-11f1-90c6-29f51c996ccc",
+     "stem": "计算题。 1 2 2 - 1 + 1 4 2 - 1 + 1 6 2 - 1 + … + 1 100 2 - 1 （ 1 - 3 2 × 4 ） × （ 1 - 3 3 × 5 ） × （ 1 - 3",
+     "cluster": "分式及其基本性质",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「分式及其基本性质」掌握度 40%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-096db7b0-9534-4c8b-a60a-dbb7c9ca80ef",
+     "stem": "如图， ， ， ，则 的度数是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "四边形",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「四边形」距上次练习较久，预计掌握度衰减至 43%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-3971fcb8-8112-11f1-9791-2d6e1a7b7ebb",
+     "stem": "如图，在$\\triangle ACB$中，$\\angle ACB=90^\\circ$，$AC=BC$，点$C$的坐标为$(-2,0)$，点A的坐标为$(-6,3)$，则$B$点的坐标是______.",
+     "cluster": "三角形全等的判定",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「三角形全等的判定」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "6e86ce90b4b58dfc": {
+   "student_id": "6e86ce90b4b58dfc",
+   "name": "周露",
+   "items": [
+    {
+     "qid": "que-0b2dcb0e-979b-4d30-b8ef-2f7353568d80",
+     "stem": "如图，直线$l_1∥l_2$， ∠1＝55°，∠2＝45°，则∠3的度数为（ ）",
+     "cluster": "四边形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「四边形」掌握度 40%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-2639e52d-7e85-11f1-b7cd-43742154f115",
+     "stem": "如图，在$\\Delta ABC$中，$AB = AC$，D是BC的中点，过A作$EF\\parallel BC$，且$AE = AF$．求证： （1）$DE = DF$； （2）$BG = CH$．",
+     "cluster": "勾股定理",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "weak",
+     "reason": "「勾股定理」掌握度 43%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0b4b865f-7b49-11f1-8507-57b8371d822f",
+     "stem": "函数$f(x) = \\frac{x^2}{x - 3}$在$[1,2]$上的值域为__________.",
+     "cluster": "函数",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「函数」掌握度 43%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-85e92420-d3fe-4fad-835a-ba3c62dfbc28",
+     "stem": "若把分式 中的 x 和 y 都扩大 2 倍，那么分式的值（ ）",
+     "cluster": "分式及其基本性质",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「分式及其基本性质」距上次练习较久，预计掌握度衰减至 45%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-2660df8e-0a9c-4e80-8a95-daf4802d408d",
+     "stem": "因式分解： ．",
+     "cluster": "用提公因式法分解因式",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「用提公因式法分解因式」距上次练习较久，预计掌握度衰减至 52%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "8f6f14b9f8d0862b": {
+   "student_id": "8f6f14b9f8d0862b",
+   "name": "谢楠",
+   "items": [
+    {
+     "qid": "que-6e15860b-37dc-4baa-b2c1-ba85429c4b9c",
+     "stem": "下列代数式中，是分式的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "分式及其基本性质",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「分式及其基本性质」掌握度 55%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-2639e52d-7e85-11f1-b7cd-43742154f115",
+     "stem": "如图，在$\\Delta ABC$中，$AB = AC$，D是BC的中点，过A作$EF\\parallel BC$，且$AE = AF$．求证： （1）$DE = DF$； （2）$BG = CH$．",
+     "cluster": "勾股定理",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "weak",
+     "reason": "「勾股定理」掌握度 55%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0d10b604-4a26-4377-9026-41ef0faca2e4",
+     "stem": "利用平移，绘制出如图所示的图案．",
+     "cluster": "课题学习 图案设计",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「课题学习 图案设计」掌握度 55%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-00c6cd42-2db1-4175-bd33-5f3f853f09e4",
+     "stem": "不改变原式的值，将$6-(+3)-(-7)+(-2)$中的减法改成加法并写成省略加号和的形式是（）",
+     "cluster": "二次根式",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「二次根式」距上次练习较久，预计掌握度衰减至 32%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-11d6e1b3-c570-4906-99b7-94771695abe1",
+     "stem": "某公司去年 1 月— 3 月平均每月盈利 2 万元， 4 月— 6 月平均每月亏损 1.6 万元， 7 月— 10 月平均每月亏损 1.4 万元， 11 月— 12 月平均每月盈利 3.4 万元．假设",
+     "cluster": "三角形",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「三角形」距上次练习较久，预计掌握度衰减至 55%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "89446af7673f2ee0": {
+   "student_id": "89446af7673f2ee0",
+   "name": "谢楠晨",
+   "items": [
+    {
+     "qid": "que-088c5dec-56ad-11f1-8e8b-93727e70c2bd",
+     "stem": "已知当鸡蛋落地速度大于 1 .2m/s 时，鸡蛋会被摔碎．若鸡蛋从高处自由下落，其落地时的速度 v m/s 与开始下落时离地面的高度 h m 满足关系式 v 2 = 20 h ，现有一鸡蛋从 0 .1",
+     "cluster": "分式",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「分式」掌握度 43%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0877ceb2-00be-4b70-bccd-b26912657c72",
+     "stem": "一个平行四边形的一条边长为 ，两条对角线的长分别为 和 ，则它的面积为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "特殊的平行四边形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「特殊的平行四边形」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0d10b604-4a26-4377-9026-41ef0faca2e4",
+     "stem": "利用平移，绘制出如图所示的图案．",
+     "cluster": "课题学习 图案设计",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「课题学习 图案设计」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-04e208f0-a723-467b-80f4-097cd93a8890",
+     "stem": "已知一个等腰三角形的两条边长分别为 、 ，则该等腰三角形的腰长为 ．",
+     "cluster": "勾股定理",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「勾股定理」距上次练习较久，预计掌握度衰减至 48%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-3971fcb8-8112-11f1-9791-2d6e1a7b7ebb",
+     "stem": "如图，在$\\triangle ACB$中，$\\angle ACB=90^\\circ$，$AC=BC$，点$C$的坐标为$(-2,0)$，点A的坐标为$(-6,3)$，则$B$点的坐标是______.",
+     "cluster": "三角形全等的判定",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「三角形全等的判定」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "5ff411bc81196ff9": {
+   "student_id": "5ff411bc81196ff9",
+   "name": "马悦",
+   "items": [
+    {
+     "qid": "que-1fce32e1-1c8e-49e9-9312-d9ddc22e322b",
+     "stem": "先化简，再求值$(a-1)^2-2a(a-1)+(2a+1)(2a-1)$,其中$a=\\sqrt{5}$.",
+     "cluster": "整式的乘法",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「整式的乘法」掌握度 46%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0246bc0d-39bc-4ca0-8440-9a791dd5228b",
+     "stem": "－0.01表示A点，－0.1表示B点，则离原点较近的是____点．",
+     "cluster": "三角形",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「三角形」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-00c561d1-7b6e-4ab2-9c05-ed1ac4560d97",
+     "stem": "下列各数中的无理数是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "二次根式",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「二次根式」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-85e92420-d3fe-4fad-835a-ba3c62dfbc28",
+     "stem": "若把分式 中的 x 和 y 都扩大 2 倍，那么分式的值（ ）",
+     "cluster": "分式及其基本性质",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「分式及其基本性质」距上次练习较久，预计掌握度衰减至 25%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-07564138-46c4-4b88-a64d-255a9b5df7c1",
+     "stem": "“五一”期间，一体育用品商店搞优惠促销活动，其活动内容是：“凡在该商店一次性购物超过 100 元者，超过 100 元的部分按九折优惠”在此活动中，小东到该商店为学校一次性购买单价为 70 元的篮球 个",
+     "cluster": "一次函数的图象和性质",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「一次函数的图象和性质」距上次练习较久，预计掌握度衰减至 50%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "642180977c3b406c": {
+   "student_id": "642180977c3b406c",
+   "name": "高艳",
+   "items": [
+    {
+     "qid": "que-11298dfe-ef28-43d5-9917-1c7a758063eb",
+     "stem": "，则 ．",
+     "cluster": "分式",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「分式」掌握度 33%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-05fdca0e-967e-4f2f-9938-020c52b0c90c",
+     "stem": "如图，在$\\Delta ABC$中，$\\angle A = 50^\\circ$，$CE$平分$\\angle ACB$，点D为BC延长线上一点，过点D作$DF \\parallel EC$交AB于点F，$",
+     "cluster": "三角形的内角与外角",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「三角形的内角与外角」掌握度 36%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0246bc0d-39bc-4ca0-8440-9a791dd5228b",
+     "stem": "－0.01表示A点，－0.1表示B点，则离原点较近的是____点．",
+     "cluster": "三角形",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「三角形」掌握度 40%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-2660df8e-0a9c-4e80-8a95-daf4802d408d",
+     "stem": "因式分解： ．",
+     "cluster": "用提公因式法分解因式",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「用提公因式法分解因式」距上次练习较久，预计掌握度衰减至 47%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-3971fcb8-8112-11f1-9791-2d6e1a7b7ebb",
+     "stem": "如图，在$\\triangle ACB$中，$\\angle ACB=90^\\circ$，$AC=BC$，点$C$的坐标为$(-2,0)$，点A的坐标为$(-6,3)$，则$B$点的坐标是______.",
+     "cluster": "三角形全等的判定",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「三角形全等的判定」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "db06b38adc58d9f7": {
+   "student_id": "db06b38adc58d9f7",
+   "name": "张宁",
+   "items": [
+    {
+     "qid": "que-2efb9c4d-5cab-11f1-90c6-29f51c996ccc",
+     "stem": "计算题。 1 2 2 - 1 + 1 4 2 - 1 + 1 6 2 - 1 + … + 1 100 2 - 1 （ 1 - 3 2 × 4 ） × （ 1 - 3 3 × 5 ） × （ 1 - 3",
+     "cluster": "分式及其基本性质",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「分式及其基本性质」掌握度 33%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0b4b865f-7b49-11f1-8507-57b8371d822f",
+     "stem": "函数$f(x) = \\frac{x^2}{x - 3}$在$[1,2]$上的值域为__________.",
+     "cluster": "函数",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「函数」掌握度 37%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-1fce32e1-1c8e-49e9-9312-d9ddc22e322b",
+     "stem": "先化简，再求值$(a-1)^2-2a(a-1)+(2a+1)(2a-1)$,其中$a=\\sqrt{5}$.",
+     "cluster": "整式的乘法",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「整式的乘法」掌握度 42%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-2660df8e-0a9c-4e80-8a95-daf4802d408d",
+     "stem": "因式分解： ．",
+     "cluster": "用提公因式法分解因式",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「用提公因式法分解因式」距上次练习较久，预计掌握度衰减至 55%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-3971fcb8-8112-11f1-9791-2d6e1a7b7ebb",
+     "stem": "如图，在$\\triangle ACB$中，$\\angle ACB=90^\\circ$，$AC=BC$，点$C$的坐标为$(-2,0)$，点A的坐标为$(-6,3)$，则$B$点的坐标是______.",
+     "cluster": "三角形全等的判定",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「三角形全等的判定」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "8edbbe9ffe0b5dce": {
+   "student_id": "8edbbe9ffe0b5dce",
+   "name": "彭鑫",
+   "items": [
+    {
+     "qid": "que-2639e52d-7e85-11f1-b7cd-43742154f115",
+     "stem": "如图，在$\\Delta ABC$中，$AB = AC$，D是BC的中点，过A作$EF\\parallel BC$，且$AE = AF$．求证： （1）$DE = DF$； （2）$BG = CH$．",
+     "cluster": "勾股定理",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "weak",
+     "reason": "「勾股定理」掌握度 37%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-2efb9c4d-5cab-11f1-90c6-29f51c996ccc",
+     "stem": "计算题。 1 2 2 - 1 + 1 4 2 - 1 + 1 6 2 - 1 + … + 1 100 2 - 1 （ 1 - 3 2 × 4 ） × （ 1 - 3 3 × 5 ） × （ 1 - 3",
+     "cluster": "分式及其基本性质",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「分式及其基本性质」掌握度 37%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0d10b604-4a26-4377-9026-41ef0faca2e4",
+     "stem": "利用平移，绘制出如图所示的图案．",
+     "cluster": "课题学习 图案设计",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「课题学习 图案设计」掌握度 44%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-39d3182f-013c-4938-a8ca-8c1a959f322d",
+     "stem": "当 a 是任意有理数时，下列代数式的值一定为正数的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "分式",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「分式」距上次练习较久，预计掌握度衰减至 51%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-096db7b0-9534-4c8b-a60a-dbb7c9ca80ef",
+     "stem": "如图， ， ， ，则 的度数是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "四边形",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「四边形」距上次练习较久，预计掌握度衰减至 57%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "2911637062528a1f": {
+   "student_id": "2911637062528a1f",
+   "name": "朱洋明",
+   "items": [
+    {
+     "qid": "que-0d10b604-4a26-4377-9026-41ef0faca2e4",
+     "stem": "利用平移，绘制出如图所示的图案．",
+     "cluster": "课题学习 图案设计",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「课题学习 图案设计」掌握度 27%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-2639e52d-7e85-11f1-b7cd-43742154f115",
+     "stem": "如图，在$\\Delta ABC$中，$AB = AC$，D是BC的中点，过A作$EF\\parallel BC$，且$AE = AF$．求证： （1）$DE = DF$； （2）$BG = CH$．",
+     "cluster": "勾股定理",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "weak",
+     "reason": "「勾股定理」掌握度 33%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0074c8dc-7e3c-4d10-aa53-c6d7a790d3d8",
+     "stem": "多项式4 x 2 ﹣4与多项式 x 2 ﹣2 x +1的公因式是（ ）",
+     "cluster": "用提公因式法分解因式",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「用提公因式法分解因式」掌握度 40%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-11d6e1b3-c570-4906-99b7-94771695abe1",
+     "stem": "某公司去年 1 月— 3 月平均每月盈利 2 万元， 4 月— 6 月平均每月亏损 1.6 万元， 7 月— 10 月平均每月亏损 1.4 万元， 11 月— 12 月平均每月盈利 3.4 万元．假设",
+     "cluster": "三角形",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「三角形」距上次练习较久，预计掌握度衰减至 47%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-1d00668a-741a-4062-a5ee-76ba62c37852",
+     "stem": "菱形、矩形、正方形都具有的性质是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "特殊的平行四边形",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「特殊的平行四边形」距上次练习较久，预计掌握度衰减至 58%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  }
+ }
+}

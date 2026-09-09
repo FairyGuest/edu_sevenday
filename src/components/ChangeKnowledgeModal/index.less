@@ -1,0 +1,153 @@
+.knowledge-modal-box-css {
+  .knowledge-modal-box {
+    display: flex;
+    justify-content: start;
+  }
+
+  .knowledge-modal-box-line {
+    height: calc(100vh - 140px);
+    width: 1px;
+    background: #E2E6F0;
+  }
+
+  .knowledge-modal-tree {
+    width: 280px;
+    height: calc(100vh - 140px);
+    overflow: auto;
+    padding-right: 24px;
+    padding-left: 16px;
+    min-width: 280px;
+    scrollbar-width: none;
+  }
+
+  .knowledge-modal-tree-title {
+    display: flex;
+    align-items: center;
+    background: #F2F5FA;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    cursor: pointer
+  }
+
+  .knowledge-modal-tree-title-active {
+    color: var(---, #1C6CFF);
+    text-align: center;
+    font-family: "PingFang SC";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  .knowledge-modal-tree-title-zj,
+  .knowledge-modal-tree-title-zsd {
+    display: inline-block;
+    // border: 1px solid red;
+    width: 129px;
+    text-align: center;
+    padding: 6px 0px;
+  }
+
+  .knowledge-modal-tree-title-line {
+    width: 1px;
+    height: 14px;
+    background: var(---, #E2E6F0);
+  }
+
+  .knowledge-modal-tree-box {
+    height: calc(100vh - 190px);
+    overflow: auto;
+    scrollbar-width: none;
+  }
+
+  .tree-node-title {
+    max-width: 135px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .modal-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 240px);
+
+    .icon {
+      font-size: 88px;
+      color: #999;
+    }
+
+    .text {
+      font-size: 14px;
+      color: #646E8B;
+      margin-top: -12px;
+    }
+  }
+
+  .ant-drawer-body {
+    padding: 12px;
+  }
+
+  .modal-content {
+    // height: 100%;
+    // display: flex;
+    // flex-direction: column;
+    // gap: 24px;
+
+    // height: calc(100vh - 140px);
+    // overflow: auto;
+
+    &-filter {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 12px;
+
+      .ant-select {
+        width: 175px;
+      }
+    }
+
+    &-title {
+      font-size: 16px;
+      color: #1E253B;
+      font-weight: 500;
+      padding-left: 12px;
+    }
+
+    &-list {
+      // display: flex;
+      // flex-direction: column;
+      // flex-wrap: wrap;
+      // gap: 24px;
+      max-width: 850px;
+      padding-left: 16px;
+      overflow: auto;
+      scrollbar-width: none;
+      height: calc(100vh - 240px);
+      overflow: auto;
+
+      .question-item-box {
+        padding: 12px;
+        border: 0.5px solid transparent;
+
+        // border: 0.5px solid #E2E6F0;
+        &:hover {
+          box-shadow: 0 0 12px 0 rgba(226, 230, 240, 0.40);
+          border-radius: 12px;
+          border: 0.5px solid #E2E6F0;
+          background: #FFF;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .modal-skeleton {
+    padding: 0 14px;
+    max-width: 850px;
+  }
+}

@@ -1,0 +1,139 @@
+.unit-header {
+  width: 100%;
+  height: 60px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+
+  &-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+  }
+}
+
+.step {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+
+  &-item {
+    position: relative;
+
+    .ant-btn {
+      padding: 0 8px;
+      font-size: 16px;
+      color: #393e4a;
+
+      &:disabled {
+        color: #cbd2e1;
+      }
+    }
+
+    .ant-btn-variant-text:not(:disabled):hover {
+      color: @primary-color;
+      background: transparent;
+    }
+
+    &-line {
+      position: absolute;
+      top: 15px;
+      inset-inline-start: 100%;
+      display: block;
+      width: 20px;
+      height: 1px;
+      background: #e2e6f0;
+      content: "";
+    }
+  }
+
+  .active {
+    .ant-btn {
+      color: @primary-color;
+      font-weight: 500;
+    }
+  }
+}
+
+.plan-popover {
+  max-width: 420px;
+
+  .ant-popover-inner {
+    padding: 8px;
+  }
+
+  .ant-popover-title {
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 0;
+    max-height: 405px;
+    overflow: scroll;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .plan-item-tips {
+    padding: 4px 8px;
+    border-radius: 8px;
+    background: #edf4ff;
+    position: sticky;
+    top: 0;
+    color: @primary-color;
+    font-size: 12px;
+
+    span {
+      font-weight: 500;
+    }
+  }
+
+  .plan-item {
+    height: 32px;
+    padding: 6px 8px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+
+    &:hover {
+      background: #f7f9fc;
+    }
+
+    &-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex: 1;
+    }
+
+    &-icon {
+      padding-top: 2px;
+    }
+
+    &-title {
+      color: #94a0b8;
+      flex: 1;
+      max-width: 320px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    &-done {
+      cursor: pointer;
+
+      .plan-item-title {
+        color: #1e253b;
+      }
+    }
+
+    &-active {
+      background: #edf4ff;
+    }
+  }
+}

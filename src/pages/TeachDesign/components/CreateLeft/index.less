@@ -1,0 +1,80 @@
+.create-left {
+  height: 100%;
+
+  .create-content {
+    &-loading {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #1e253b;
+
+      .loading-lottie {
+        width: 38px;
+        height: 44px;
+      }
+    }
+
+    &-chat {
+      overflow: hidden;
+    }
+
+    &-mask {
+      position: relative;
+    }
+
+    &-overlay {
+      position: absolute;
+      top: -40px;
+      width: 100%;
+      height: 40px;
+      background: linear-gradient(180deg, rgba(252, 252, 255, 0.00) 0%, #fcfcff 100%);
+    }
+
+    &-expand {
+      display: flex;
+      justify-content: center;
+
+      .ant-btn {
+        color: @primary-color;
+        font-size: 12px;
+        gap: 4px;
+      }
+    }
+
+    &-error {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #ef4444;
+      padding: 5px 12px;
+      margin-top: 5px;
+      width: fit-content;
+      border-radius: 8px;
+      background: #ffeeeb;
+    }
+
+    &-final {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: @primary-color;
+      padding: 8px 12px;
+      margin-top: 5px;
+      width: fit-content;
+      border-radius: 8px;
+      background: #edf4ff;
+      cursor: pointer;
+
+      &:hover {
+        background: #e3edff;
+      }
+    }
+  }
+
+  .empty-content {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

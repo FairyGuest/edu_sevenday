@@ -1,0 +1,33 @@
+stages:          # List of stages for jobs, and their order of execution
+  - build
+  - deploy
+
+variables:
+  # 基础配置
+  REGISTRY: "uhub.service.ucloud.cn"
+  PROJECT_PATH: "aiworkflow"
+  IMAGE_NAME: "edu-7net-fe"
+
+  # 镜像版本管理
+  DOCKER_TAG: "${CI_COMMIT_SHORT_SHA}-${CI_PIPELINE_IID}"
+  FULL_IMAGE_NAME: "${REGISTRY}/${PROJECT_PATH}/${IMAGE_NAME}:${DOCKER_TAG}"
+  UHUB_REGISTRY_USER: "${UHUB_REGISTRY_USER}"
+  UHUB_REGISTRY_PASSWORD: "${UHUB_REGISTRY_PASSWORD}"
+
+build-job:       # This job runs in the build stage, which runs first.
+  stage: build
+  before_script:
+    - docker login -u "${UHUB_REGISTRY_USER}" -p "${UHUB_REGISTRY_PASSWORD}" "${REGISTRY}"
+  script:
+    - docker build -t "${FULL_IMAGE_NAME}" .
+    - docker push "${FULL_IMAGE_NAME}"
+  tags:
+    - edu-gitlab-runner
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main" || $CI_COMMIT_BRANCH == "test"'
+
+.cache:
+  key: "${CI_JOB_NAME}-${CI_COMMIT_REF_SLUG}"
+  paths:
+    - .git/
+    - /data/node_modules/

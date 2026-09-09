@@ -1,0 +1,137 @@
+.square_layout {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  min-width: 760px;
+}
+
+// 二级导航
+.side_sub {
+  flex-shrink: 0;
+  left: 77px;
+  border-radius: 8px;
+  z-index: 10;
+  background: #ffffff;
+  border: 1px solid #e9ebf1;
+  width: 160px;
+  height: calc(100vh - 20px);
+  margin-top: 10px;
+  overflow: hidden;
+
+  .side_sub_header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 40px;
+    font-weight: 500;
+    font-size: 14px;
+    color: #202224;
+    line-height: 20px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    padding: 8px;
+
+    .select_edit{
+      position: absolute;
+      right: 0;
+    }
+  }
+
+  .side_sub_item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 36px;
+    cursor: pointer;
+    padding: 0 8px;
+    margin-bottom: 4px;
+    color: #202224;
+
+    &:hover {
+      background-color: #f5f5f5;
+    }
+
+    .side_sub_item_icon {
+      font-size: 16px;
+      width: 21px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .side_sub_item_title {
+      font-size: 14px;
+      color: #202224;
+      line-height: 20px;
+    }
+  }
+
+  .side_sub_item_active{
+    background: #F2F3F7;
+  }
+
+}
+
+.square_content {
+  flex: 1;
+}
+
+.space_body {
+
+  &_title {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-family: PingFang SC;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: rgba(100, 110, 139, 1);
+  }
+
+  &_form {
+
+    font-family: PingFang SC;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    color: rgba(100, 110, 139, 1);
+    margin-bottom: -16px;
+  }
+}
+
+
+.space_item_container{
+  line-height: 24px;
+  // padding-right: 24px;
+  display: flex;
+  justify-content: space-between;
+  // .edit_icon{
+  //   // visibility: hidden;
+  //   visibility: visible;
+  //   position: absolute;
+  //   right: 4px;
+  //   top: 0px;
+  // }
+  // .del_icon {
+  //   visibility: visible;
+  //   position: absolute;
+  //   right: 4px;
+  //   top: 0px;
+  // }
+  .space_item_container_title {
+    display: inline-block;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.space_item_container:hover{
+  .edit_icon{
+    visibility: visible;
+  }
+  .del_icon{
+    visibility: visible;
+  }
+}

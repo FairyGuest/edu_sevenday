@@ -1,0 +1,153 @@
+.selection {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+
+  .ant-form {
+    gap: 6px;
+
+    &-item {
+      margin-inline-end: 0;
+    }
+
+    .ant-select-selector {
+      background: #edf4ff;
+      border: 1px solid #edf4ff;
+      padding: 0 8px;
+      font-size: 13px;
+    }
+
+    .ant-select-selection {
+      &-placeholder,
+      &-item {
+        color: @primary-color;
+      }
+    }
+
+    .ant-select-arrow {
+      color: @primary-color;
+      font-size: 18px;
+    }
+
+    .ant-input-number-input {
+      background: #edf4ff;
+      border: 1px solid #edf4ff;
+      color: @primary-color;
+
+      &::placeholder {
+        color: @primary-color;
+      }
+    }
+  }
+
+  .ant-btn {
+    font-size: 13px;
+    padding: 0 8px;
+    background: transparent;
+  }
+
+  .unselect-btn {
+    color: #333c55;
+    border: 1px solid #e2e6f0;
+
+    &:disabled {
+      color: #cbd2e1;
+    }
+
+    &:not(:disabled):hover {
+      color: @primary-color;
+      border-color: @primary-color;
+    }
+  }
+
+  .select-btn {
+    color: @primary-color;
+    border: 1px solid #b2cdff;
+
+    &:disabled {
+      color: #8eb6fe;
+    }
+
+    &:not(:disabled):hover {
+      color: @primary-color;
+      border-color: @primary-color;
+    }
+  }
+}
+
+.chapter-select {
+  width: 260px;
+
+  .ant-select-tree-node-content-wrapper {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &-type {
+    .ant-select-tree-switcher {
+      display: none;
+    }
+  }
+}
+
+.tooltip-content {
+  padding: 4px;
+  gap: 4px;
+  color: #1e253b;
+
+  .title {
+    color: #1f2329;
+    font-weight: 600;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #f2f5fa;
+  }
+
+  .subTitle {
+    font-weight: 600;
+  }
+}
+
+.custom-cascader {
+  .ant-cascader-menu {
+    // min-height: 160px;
+    max-height: 336px;
+    height: auto;
+
+    &-item-content {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+
+      .anticon-info-circle {
+        color: #94a08b;
+      }
+    }
+  }
+}
+
+.custom-tooltip {
+  max-width: 400px;
+
+  .tooltip-content {
+    max-height: 348px;
+    overflow: auto;
+  }
+}
+
+.custom-message {
+  .ant-message-notice-content {
+    border: 1px solid #b2cdff;
+    background: #edf4ff !important;
+    box-shadow: 0 4px 16px -6px rgba(0, 0, 0, 0.12), 0 0 1px 0 rgba(0, 0, 0, 0.12) !important;
+  }
+
+  .ant-message-custom-content {
+    color: @primary-color;
+
+    .svg-icon {
+      font-size: 24px;
+      margin-right: 8px;
+    }
+  }
+}

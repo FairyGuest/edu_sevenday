@@ -1,0 +1,1357 @@
+{
+ "class_id": "cls-g8-01",
+ "class_name": "八年级(1)班·数学",
+ "grade": "g8",
+ "n_students": 45,
+ "updated_at": "2026-09-05 16:40",
+ "cards": {
+  "weak_top": "二次根式待巩固占比",
+  "weak_top_pct": 16,
+  "support_suggestions": 5,
+  "mastered_all_count": 0,
+  "recent5_avg": 67.9
+ },
+ "cluster_rows": [
+  {
+   "cluster": "二次根式",
+   "chapter": "G8下 第16章 二次根式",
+   "n_students": 45,
+   "band_counts": {
+    "待巩固": 7,
+    "练习中": 28,
+    "较熟练": 6,
+    "已掌握": 4
+   },
+   "weak_n": 7,
+   "weak_pct": 16,
+   "trend": "向好↑",
+   "misconception": {
+    "label": "计算错误",
+    "share": 55,
+    "evidence": "加法计算错误，6+5.98正确结果应为11.98"
+   }
+  },
+  {
+   "cluster": "三角形全等的判定",
+   "chapter": "第12章 全等三角形",
+   "n_students": 45,
+   "band_counts": {
+    "待巩固": 7,
+    "练习中": 22,
+    "较熟练": 12,
+    "已掌握": 4
+   },
+   "weak_n": 7,
+   "weak_pct": 16,
+   "trend": "向好↑",
+   "misconception": {
+    "label": "概念混淆",
+    "share": 45,
+    "evidence": "你混淆了全等判定定理，选C是用ASA判定"
+   }
+  },
+  {
+   "cluster": "用提公因式法分解因式",
+   "chapter": "第14章 整式的乘法与因式分解",
+   "n_students": 45,
+   "band_counts": {
+    "待巩固": 7,
+    "练习中": 26,
+    "较熟练": 8,
+    "已掌握": 4
+   },
+   "weak_n": 7,
+   "weak_pct": 16,
+   "trend": "平稳",
+   "misconception": {
+    "label": "概念混淆",
+    "share": 42,
+    "evidence": "错误展开原式未分解"
+   }
+  },
+  {
+   "cluster": "四边形",
+   "chapter": "G8下 第18章 平行四边形",
+   "n_students": 43,
+   "band_counts": {
+    "待巩固": 7,
+    "练习中": 25,
+    "较熟练": 7,
+    "已掌握": 4
+   },
+   "weak_n": 7,
+   "weak_pct": 16,
+   "trend": "平稳",
+   "misconception": {
+    "label": "概念混淆",
+    "share": 39,
+    "evidence": "批改理由：需结合平行线、三角板角度计算。学生未能正确应用角度关系。"
+   }
+  },
+  {
+   "cluster": "课题学习 图案设计",
+   "chapter": "第13章 轴对称",
+   "n_students": 42,
+   "band_counts": {
+    "待巩固": 7,
+    "练习中": 24,
+    "较熟练": 7,
+    "已掌握": 4
+   },
+   "weak_n": 7,
+   "weak_pct": 17,
+   "trend": "向好↑",
+   "misconception": {
+    "label": "表达不完整",
+    "share": 48,
+    "evidence": "3）该小问未作答，需给出对应周长及面积结果。"
+   }
+  },
+  {
+   "cluster": "特殊的平行四边形",
+   "chapter": "G8下 第18章 平行四边形",
+   "n_students": 44,
+   "band_counts": {
+    "待巩固": 6,
+    "练习中": 26,
+    "较熟练": 8,
+    "已掌握": 4
+   },
+   "weak_n": 6,
+   "weak_pct": 14,
+   "trend": "连续下降",
+   "misconception": {
+    "label": "逻辑断裂",
+    "share": 38,
+    "evidence": "证明逻辑不完整，未先证BDEF是平行四边形，直接判定为矩形。"
+   }
+  },
+  {
+   "cluster": "分式及其基本性质",
+   "chapter": "第15章 分式",
+   "n_students": 44,
+   "band_counts": {
+    "待巩固": 6,
+    "练习中": 29,
+    "较熟练": 5,
+    "已掌握": 4
+   },
+   "weak_n": 6,
+   "weak_pct": 14,
+   "trend": "向好↑",
+   "misconception": {
+    "label": "表达不完整",
+    "share": 37,
+    "evidence": "学生作答为空"
+   }
+  },
+  {
+   "cluster": "三角形",
+   "chapter": "第11章 三角形",
+   "n_students": 45,
+   "band_counts": {
+    "待巩固": 5,
+    "练习中": 29,
+    "较熟练": 7,
+    "已掌握": 4
+   },
+   "weak_n": 5,
+   "weak_pct": 11,
+   "trend": "向好↑",
+   "misconception": {
+    "label": "表达不完整",
+    "share": 38,
+    "evidence": "学生仅给出'(1)真\\n(2)假…'等判断，未写出命题的否定过程"
+   }
+  },
+  {
+   "cluster": "勾股定理",
+   "chapter": "G8下 第17章 勾股定理",
+   "n_students": 44,
+   "band_counts": {
+    "待巩固": 5,
+    "练习中": 26,
+    "较熟练": 9,
+    "已掌握": 4
+   },
+   "weak_n": 5,
+   "weak_pct": 11,
+   "trend": "连续下降",
+   "misconception": {
+    "label": "表达不完整",
+    "share": 42,
+    "evidence": "学生作答为空；批改理由：未填写答案，不符合要求"
+   }
+  },
+  {
+   "cluster": "整式的乘法",
+   "chapter": "第14章 整式的乘法与因式分解",
+   "n_students": 43,
+   "band_counts": {
+    "待巩固": 5,
+    "练习中": 32,
+    "较熟练": 5,
+    "已掌握": 1
+   },
+   "weak_n": 5,
+   "weak_pct": 12,
+   "trend": "平稳",
+   "misconception": {
+    "label": "计算错误",
+    "share": 59,
+    "evidence": "漏加8a³b²，正确结果为2a³b²+10a³b³；漏乘y且x次数错误；化简计算错误"
+   }
+  },
+  {
+   "cluster": "三角形的内角与外角",
+   "chapter": "第11章 三角形",
+   "n_students": 44,
+   "band_counts": {
+    "待巩固": 3,
+    "练习中": 27,
+    "较熟练": 10,
+    "已掌握": 4
+   },
+   "weak_n": 3,
+   "weak_pct": 7,
+   "trend": "向好↑",
+   "misconception": {
+    "label": "表达不完整",
+    "share": 36,
+    "evidence": "未完成∠DAE求解，未得出正确结果14°"
+   }
+  },
+  {
+   "cluster": "一次函数的图象和性质",
+   "chapter": "G8下 第19章 一次函数",
+   "n_students": 43,
+   "band_counts": {
+    "待巩固": 3,
+    "练习中": 28,
+    "较熟练": 8,
+    "已掌握": 4
+   },
+   "weak_n": 3,
+   "weak_pct": 7,
+   "trend": "平稳",
+   "misconception": {
+    "label": "计算错误",
+    "share": 40,
+    "evidence": "第一问计算结果错误，差值约为7.0km且需精确到0.1"
+   }
+  },
+  {
+   "cluster": "函数",
+   "chapter": "G8下 第19章 一次函数",
+   "n_students": 44,
+   "band_counts": {
+    "待巩固": 2,
+    "练习中": 28,
+    "较熟练": 10,
+    "已掌握": 4
+   },
+   "weak_n": 2,
+   "weak_pct": 5,
+   "trend": "平稳",
+   "misconception": {
+    "label": "概念混淆",
+    "share": 55,
+    "evidence": "你混淆了原函数与反函数的自变量对应关系"
+   }
+  },
+  {
+   "cluster": "分式",
+   "chapter": "第15章 分式",
+   "n_students": 44,
+   "band_counts": {
+    "待巩固": 2,
+    "练习中": 30,
+    "较熟练": 8,
+    "已掌握": 4
+   },
+   "weak_n": 2,
+   "weak_pct": 5,
+   "trend": "连续下降",
+   "misconception": {
+    "label": "审题偏差",
+    "share": 33,
+    "evidence": "学生作答：n+3。未理解优惠规则为“价格最低的面包免费”，误以为仅免3元。"
+   }
+  }
+ ],
+ "weak_ranking": [
+  {
+   "cluster": "二次根式",
+   "chapter": "G8下 第16章 二次根式",
+   "n_students": 45,
+   "band_counts": {
+    "待巩固": 7,
+    "练习中": 28,
+    "较熟练": 6,
+    "已掌握": 4
+   },
+   "weak_n": 7,
+   "weak_pct": 16,
+   "trend": "向好↑",
+   "misconception": {
+    "label": "计算错误",
+    "share": 55,
+    "evidence": "加法计算错误，6+5.98正确结果应为11.98"
+   }
+  },
+  {
+   "cluster": "三角形全等的判定",
+   "chapter": "第12章 全等三角形",
+   "n_students": 45,
+   "band_counts": {
+    "待巩固": 7,
+    "练习中": 22,
+    "较熟练": 12,
+    "已掌握": 4
+   },
+   "weak_n": 7,
+   "weak_pct": 16,
+   "trend": "向好↑",
+   "misconception": {
+    "label": "概念混淆",
+    "share": 45,
+    "evidence": "你混淆了全等判定定理，选C是用ASA判定"
+   }
+  },
+  {
+   "cluster": "用提公因式法分解因式",
+   "chapter": "第14章 整式的乘法与因式分解",
+   "n_students": 45,
+   "band_counts": {
+    "待巩固": 7,
+    "练习中": 26,
+    "较熟练": 8,
+    "已掌握": 4
+   },
+   "weak_n": 7,
+   "weak_pct": 16,
+   "trend": "平稳",
+   "misconception": {
+    "label": "概念混淆",
+    "share": 42,
+    "evidence": "错误展开原式未分解"
+   }
+  },
+  {
+   "cluster": "四边形",
+   "chapter": "G8下 第18章 平行四边形",
+   "n_students": 43,
+   "band_counts": {
+    "待巩固": 7,
+    "练习中": 25,
+    "较熟练": 7,
+    "已掌握": 4
+   },
+   "weak_n": 7,
+   "weak_pct": 16,
+   "trend": "平稳",
+   "misconception": {
+    "label": "概念混淆",
+    "share": 39,
+    "evidence": "批改理由：需结合平行线、三角板角度计算。学生未能正确应用角度关系。"
+   }
+  },
+  {
+   "cluster": "课题学习 图案设计",
+   "chapter": "第13章 轴对称",
+   "n_students": 42,
+   "band_counts": {
+    "待巩固": 7,
+    "练习中": 24,
+    "较熟练": 7,
+    "已掌握": 4
+   },
+   "weak_n": 7,
+   "weak_pct": 17,
+   "trend": "向好↑",
+   "misconception": {
+    "label": "表达不完整",
+    "share": 48,
+    "evidence": "3）该小问未作答，需给出对应周长及面积结果。"
+   }
+  },
+  {
+   "cluster": "特殊的平行四边形",
+   "chapter": "G8下 第18章 平行四边形",
+   "n_students": 44,
+   "band_counts": {
+    "待巩固": 6,
+    "练习中": 26,
+    "较熟练": 8,
+    "已掌握": 4
+   },
+   "weak_n": 6,
+   "weak_pct": 14,
+   "trend": "连续下降",
+   "misconception": {
+    "label": "逻辑断裂",
+    "share": 38,
+    "evidence": "证明逻辑不完整，未先证BDEF是平行四边形，直接判定为矩形。"
+   }
+  },
+  {
+   "cluster": "分式及其基本性质",
+   "chapter": "第15章 分式",
+   "n_students": 44,
+   "band_counts": {
+    "待巩固": 6,
+    "练习中": 29,
+    "较熟练": 5,
+    "已掌握": 4
+   },
+   "weak_n": 6,
+   "weak_pct": 14,
+   "trend": "向好↑",
+   "misconception": {
+    "label": "表达不完整",
+    "share": 37,
+    "evidence": "学生作答为空"
+   }
+  },
+  {
+   "cluster": "三角形",
+   "chapter": "第11章 三角形",
+   "n_students": 45,
+   "band_counts": {
+    "待巩固": 5,
+    "练习中": 29,
+    "较熟练": 7,
+    "已掌握": 4
+   },
+   "weak_n": 5,
+   "weak_pct": 11,
+   "trend": "向好↑",
+   "misconception": {
+    "label": "表达不完整",
+    "share": 38,
+    "evidence": "学生仅给出'(1)真\\n(2)假…'等判断，未写出命题的否定过程"
+   }
+  }
+ ],
+ "source_mix": [
+  {
+   "source": "作业",
+   "n": 1987,
+   "pct": 52
+  },
+  {
+   "source": "自主练习",
+   "n": 1147,
+   "pct": 30
+  },
+  {
+   "source": "会话",
+   "n": 667,
+   "pct": 18
+  },
+  {
+   "source": "导入",
+   "n": 0,
+   "pct": 0
+  }
+ ],
+ "trend": [
+  {
+   "window": "06-01~06-11",
+   "value": 69.7
+  },
+  {
+   "window": "06-12~06-22",
+   "value": 72.3
+  },
+  {
+   "window": "06-23~07-04",
+   "value": 65
+  },
+  {
+   "window": "07-05~07-15",
+   "value": 66.6
+  },
+  {
+   "window": "07-16~07-26",
+   "value": 67.4
+  },
+  {
+   "window": "07-27~08-07",
+   "value": 66.4
+  },
+  {
+   "window": "08-08~08-18",
+   "value": 70.2
+  },
+  {
+   "window": "08-19~08-30",
+   "value": 68.8
+  }
+ ],
+ "students": [
+  {
+   "student_id": "6738633173303030",
+   "name": "彭媛",
+   "display_id": "edu01001",
+   "status": "5个知识点待巩固",
+   "status_level": "weak",
+   "weak_cnt": 5,
+   "week_delta": null
+  },
+  {
+   "student_id": "6738633173303031",
+   "name": "侯秀",
+   "display_id": "edu01002",
+   "status": "5个知识点待巩固",
+   "status_level": "weak",
+   "weak_cnt": 5,
+   "week_delta": null
+  },
+  {
+   "student_id": "6738633173303032",
+   "name": "宋瑞",
+   "display_id": "edu01003",
+   "status": "5个知识点待巩固",
+   "status_level": "weak",
+   "weak_cnt": 5,
+   "week_delta": -17
+  },
+  {
+   "student_id": "6738633173303033",
+   "name": "程远曦",
+   "display_id": "edu01004",
+   "status": "4个知识点待巩固",
+   "status_level": "weak",
+   "weak_cnt": 4,
+   "week_delta": 17
+  },
+  {
+   "student_id": "6738633173303034",
+   "name": "蔡然欣",
+   "display_id": "edu01005",
+   "status": "4个知识点待巩固",
+   "status_level": "weak",
+   "weak_cnt": 4,
+   "week_delta": null
+  },
+  {
+   "student_id": "6738633173303035",
+   "name": "姜瑞霞",
+   "display_id": "edu01006",
+   "status": "4个知识点待巩固",
+   "status_level": "weak",
+   "weak_cnt": 4,
+   "week_delta": null
+  },
+  {
+   "student_id": "6738633173303036",
+   "name": "冯思",
+   "display_id": "edu01007",
+   "status": "4个知识点待巩固",
+   "status_level": "weak",
+   "weak_cnt": 4,
+   "week_delta": 0
+  },
+  {
+   "student_id": "6738633173303037",
+   "name": "龙昊",
+   "display_id": "edu01008",
+   "status": "3个知识点待巩固",
+   "status_level": "weak",
+   "weak_cnt": 3,
+   "week_delta": 17
+  },
+  {
+   "student_id": "6738633173303038",
+   "name": "姚巧",
+   "display_id": "edu01009",
+   "status": "3个知识点待巩固",
+   "status_level": "weak",
+   "weak_cnt": 3,
+   "week_delta": 5
+  },
+  {
+   "student_id": "6738633173303039",
+   "name": "龚强",
+   "display_id": "edu01010",
+   "status": "3个知识点待巩固",
+   "status_level": "weak",
+   "weak_cnt": 3,
+   "week_delta": null
+  },
+  {
+   "student_id": "6738633173303130",
+   "name": "侯玲",
+   "display_id": "edu01011",
+   "status": "3个知识点待巩固",
+   "status_level": "weak",
+   "weak_cnt": 3,
+   "week_delta": 63
+  },
+  {
+   "student_id": "6738633173303131",
+   "name": "袁莺",
+   "display_id": "edu01012",
+   "status": "3个知识点待巩固",
+   "status_level": "weak",
+   "weak_cnt": 3,
+   "week_delta": -13
+  },
+  {
+   "student_id": "6738633173303132",
+   "name": "雷强",
+   "display_id": "edu01013",
+   "status": "3个知识点待巩固",
+   "status_level": "weak",
+   "weak_cnt": 3,
+   "week_delta": 25
+  },
+  {
+   "student_id": "6738633173303133",
+   "name": "周乐",
+   "display_id": "edu01014",
+   "status": "2个知识点待巩固",
+   "status_level": "weak",
+   "weak_cnt": 2,
+   "week_delta": 36
+  },
+  {
+   "student_id": "6738633173303134",
+   "name": "曹雨洋",
+   "display_id": "edu01015",
+   "status": "2个知识点待巩固",
+   "status_level": "weak",
+   "weak_cnt": 2,
+   "week_delta": 31
+  },
+  {
+   "student_id": "6738633173303135",
+   "name": "姚欣",
+   "display_id": "edu01016",
+   "status": "2个知识点待巩固",
+   "status_level": "weak",
+   "weak_cnt": 2,
+   "week_delta": 17
+  },
+  {
+   "student_id": "6738633173303136",
+   "name": "魏林静",
+   "display_id": "edu01017",
+   "status": "2个知识点待巩固",
+   "status_level": "weak",
+   "weak_cnt": 2,
+   "week_delta": 22
+  },
+  {
+   "student_id": "6738633173303137",
+   "name": "邓怡慧",
+   "display_id": "edu01018",
+   "status": "2个知识点待巩固",
+   "status_level": "weak",
+   "weak_cnt": 2,
+   "week_delta": 17
+  },
+  {
+   "student_id": "6738633173303138",
+   "name": "田博",
+   "display_id": "edu01019",
+   "status": "2个知识点待巩固",
+   "status_level": "weak",
+   "weak_cnt": 2,
+   "week_delta": null
+  },
+  {
+   "student_id": "6738633173303139",
+   "name": "田梓",
+   "display_id": "edu01020",
+   "status": "1个知识点待巩固",
+   "status_level": "weak",
+   "weak_cnt": 1,
+   "week_delta": null
+  },
+  {
+   "student_id": "6738633173303230",
+   "name": "闫杰",
+   "display_id": "edu01021",
+   "status": "1个知识点待巩固",
+   "status_level": "weak",
+   "weak_cnt": 1,
+   "week_delta": null
+  },
+  {
+   "student_id": "6738633173303231",
+   "name": "廖远明",
+   "display_id": "edu01022",
+   "status": "1个知识点待巩固",
+   "status_level": "weak",
+   "weak_cnt": 1,
+   "week_delta": 38
+  },
+  {
+   "student_id": "6738633173303232",
+   "name": "雷一",
+   "display_id": "edu01023",
+   "status": "1个知识点待巩固",
+   "status_level": "weak",
+   "weak_cnt": 1,
+   "week_delta": -21
+  },
+  {
+   "student_id": "6738633173303233",
+   "name": "宋宁伟",
+   "display_id": "edu01024",
+   "status": "全部较熟练以上",
+   "status_level": "ok",
+   "weak_cnt": 0,
+   "week_delta": null
+  },
+  {
+   "student_id": "6738633173303234",
+   "name": "白芳",
+   "display_id": "edu01025",
+   "status": "全部较熟练以上",
+   "status_level": "ok",
+   "weak_cnt": 0,
+   "week_delta": -5
+  },
+  {
+   "student_id": "6738633173303235",
+   "name": "吴洋梓",
+   "display_id": "edu01026",
+   "status": "全部较熟练以上",
+   "status_level": "ok",
+   "weak_cnt": 0,
+   "week_delta": null
+  },
+  {
+   "student_id": "6738633173303236",
+   "name": "秦彤媛",
+   "display_id": "edu01027",
+   "status": "全部较熟练以上",
+   "status_level": "ok",
+   "weak_cnt": 0,
+   "week_delta": null
+  },
+  {
+   "student_id": "6738633173303237",
+   "name": "谭峰",
+   "display_id": "edu01028",
+   "status": "全部较熟练以上",
+   "status_level": "ok",
+   "weak_cnt": 0,
+   "week_delta": null
+  },
+  {
+   "student_id": "6738633173303238",
+   "name": "崔凡",
+   "display_id": "edu01029",
+   "status": "全部较熟练以上",
+   "status_level": "ok",
+   "weak_cnt": 0,
+   "week_delta": null
+  },
+  {
+   "student_id": "6738633173303239",
+   "name": "马军",
+   "display_id": "edu01030",
+   "status": "全部较熟练以上",
+   "status_level": "ok",
+   "weak_cnt": 0,
+   "week_delta": 10
+  },
+  {
+   "student_id": "6738633173303330",
+   "name": "白思",
+   "display_id": "edu01031",
+   "status": "全部较熟练以上",
+   "status_level": "ok",
+   "weak_cnt": 0,
+   "week_delta": 7
+  },
+  {
+   "student_id": "6738633173303331",
+   "name": "尹林",
+   "display_id": "edu01032",
+   "status": "全部较熟练以上",
+   "status_level": "ok",
+   "weak_cnt": 0,
+   "week_delta": 30
+  },
+  {
+   "student_id": "6738633173303332",
+   "name": "王慧芳",
+   "display_id": "edu01033",
+   "status": "全部较熟练以上",
+   "status_level": "ok",
+   "weak_cnt": 0,
+   "week_delta": -36
+  },
+  {
+   "student_id": "6738633173303333",
+   "name": "钱桐怡",
+   "display_id": "edu01034",
+   "status": "全部较熟练以上",
+   "status_level": "ok",
+   "weak_cnt": 0,
+   "week_delta": null
+  },
+  {
+   "student_id": "6738633173303334",
+   "name": "孟岚",
+   "display_id": "edu01035",
+   "status": "全部较熟练以上",
+   "status_level": "ok",
+   "weak_cnt": 0,
+   "week_delta": 0
+  },
+  {
+   "student_id": "6738633173303335",
+   "name": "黄悦",
+   "display_id": "edu01036",
+   "status": "全部较熟练以上",
+   "status_level": "ok",
+   "weak_cnt": 0,
+   "week_delta": -33
+  },
+  {
+   "student_id": "6738633173303336",
+   "name": "杜华安",
+   "display_id": "edu01037",
+   "status": "全部较熟练以上",
+   "status_level": "ok",
+   "weak_cnt": 0,
+   "week_delta": 58
+  },
+  {
+   "student_id": "6738633173303337",
+   "name": "魏玲",
+   "display_id": "edu01038",
+   "status": "全部较熟练以上",
+   "status_level": "ok",
+   "weak_cnt": 0,
+   "week_delta": 18
+  },
+  {
+   "student_id": "6738633173303338",
+   "name": "林超",
+   "display_id": "edu01039",
+   "status": "全部较熟练以上",
+   "status_level": "ok",
+   "weak_cnt": 0,
+   "week_delta": null
+  },
+  {
+   "student_id": "6738633173303339",
+   "name": "贾天梓",
+   "display_id": "edu01040",
+   "status": "全部较熟练以上",
+   "status_level": "ok",
+   "weak_cnt": 0,
+   "week_delta": null
+  },
+  {
+   "student_id": "6738633173303430",
+   "name": "邵宇笑",
+   "display_id": "edu01041",
+   "status": "全部较熟练以上",
+   "status_level": "ok",
+   "weak_cnt": 0,
+   "week_delta": 10
+  },
+  {
+   "student_id": "6738633173303431",
+   "name": "林瑞",
+   "display_id": "edu01042",
+   "status": "全部较熟练以上",
+   "status_level": "ok",
+   "weak_cnt": 0,
+   "week_delta": null
+  },
+  {
+   "student_id": "6738633173303432",
+   "name": "尹杰英",
+   "display_id": "edu01043",
+   "status": "全部较熟练以上",
+   "status_level": "ok",
+   "weak_cnt": 0,
+   "week_delta": null
+  },
+  {
+   "student_id": "6738633173303433",
+   "name": "冯楠桂",
+   "display_id": "edu01044",
+   "status": "全部较熟练以上",
+   "status_level": "ok",
+   "weak_cnt": 0,
+   "week_delta": -22
+  },
+  {
+   "student_id": "6738633173303434",
+   "name": "郭博",
+   "display_id": "edu01045",
+   "status": "学情证据不足",
+   "status_level": "cold",
+   "weak_cnt": 0,
+   "week_delta": null
+  }
+ ],
+ "by_source": {
+  "作业": {
+   "totals": 2760,
+   "cluster_band": {
+    "特殊的平行四边形": {
+     "待巩固": 1,
+     "练习中": 33,
+     "较熟练": 6,
+     "已掌握": 4
+    },
+    "三角形的内角与外角": {
+     "待巩固": 5,
+     "练习中": 28,
+     "较熟练": 7,
+     "已掌握": 4
+    },
+    "用提公因式法分解因式": {
+     "待巩固": 10,
+     "练习中": 24,
+     "较熟练": 5,
+     "已掌握": 3
+    },
+    "二次根式": {
+     "待巩固": 7,
+     "练习中": 28,
+     "较熟练": 6,
+     "已掌握": 4
+    },
+    "三角形全等的判定": {
+     "待巩固": 7,
+     "练习中": 25,
+     "较熟练": 8,
+     "已掌握": 4
+    },
+    "整式的乘法": {
+     "待巩固": 5,
+     "练习中": 32,
+     "较熟练": 5,
+     "已掌握": 1
+    },
+    "勾股定理": {
+     "待巩固": 7,
+     "练习中": 25,
+     "较熟练": 6,
+     "已掌握": 4
+    },
+    "课题学习 图案设计": {
+     "待巩固": 5,
+     "练习中": 27,
+     "较熟练": 5,
+     "已掌握": 4
+    },
+    "一次函数的图象和性质": {
+     "待巩固": 5,
+     "练习中": 31,
+     "较熟练": 5,
+     "已掌握": 2
+    },
+    "分式": {
+     "待巩固": 5,
+     "练习中": 28,
+     "较熟练": 7,
+     "已掌握": 4
+    },
+    "三角形": {
+     "待巩固": 7,
+     "练习中": 28,
+     "较熟练": 6,
+     "已掌握": 4
+    },
+    "分式及其基本性质": {
+     "待巩固": 6,
+     "练习中": 26,
+     "较熟练": 8,
+     "已掌握": 4
+    },
+    "函数": {
+     "待巩固": 5,
+     "练习中": 26,
+     "较熟练": 8,
+     "已掌握": 4
+    },
+    "四边形": {
+     "待巩固": 9,
+     "练习中": 24,
+     "较熟练": 6,
+     "已掌握": 4
+    }
+   },
+   "cluster_students": {
+    "特殊的平行四边形": 44,
+    "三角形的内角与外角": 44,
+    "用提公因式法分解因式": 42,
+    "二次根式": 45,
+    "三角形全等的判定": 44,
+    "整式的乘法": 43,
+    "勾股定理": 42,
+    "课题学习 图案设计": 41,
+    "一次函数的图象和性质": 43,
+    "分式": 44,
+    "三角形": 45,
+    "分式及其基本性质": 44,
+    "函数": 43,
+    "四边形": 43
+   },
+   "trend_kn": [
+    [
+     238,
+     343
+    ],
+    [
+     220,
+     304
+    ],
+    [
+     204,
+     320
+    ],
+    [
+     267,
+     422
+    ],
+    [
+     227,
+     363
+    ],
+    [
+     206,
+     301
+    ],
+    [
+     242,
+     368
+    ],
+    [
+     232,
+     339
+    ]
+   ]
+  },
+  "自主练习": {
+   "totals": 695,
+   "cluster_band": {
+    "一次函数的图象和性质": {
+     "待巩固": 4,
+     "练习中": 22,
+     "较熟练": 5,
+     "已掌握": 2
+    },
+    "勾股定理": {
+     "待巩固": 1,
+     "练习中": 24,
+     "较熟练": 5,
+     "已掌握": 0
+    },
+    "二次根式": {
+     "待巩固": 2,
+     "练习中": 20,
+     "较熟练": 5,
+     "已掌握": 0
+    },
+    "三角形": {
+     "待巩固": 5,
+     "练习中": 17,
+     "较熟练": 5,
+     "已掌握": 1
+    },
+    "分式": {
+     "待巩固": 3,
+     "练习中": 19,
+     "较熟练": 5,
+     "已掌握": 0
+    },
+    "课题学习 图案设计": {
+     "待巩固": 6,
+     "练习中": 25,
+     "较熟练": 5,
+     "已掌握": 0
+    },
+    "整式的乘法": {
+     "待巩固": 0,
+     "练习中": 23,
+     "较熟练": 5,
+     "已掌握": 1
+    },
+    "三角形全等的判定": {
+     "待巩固": 3,
+     "练习中": 26,
+     "较熟练": 5,
+     "已掌握": 0
+    },
+    "四边形": {
+     "待巩固": 1,
+     "练习中": 19,
+     "较熟练": 5,
+     "已掌握": 2
+    },
+    "三角形的内角与外角": {
+     "待巩固": 0,
+     "练习中": 21,
+     "较熟练": 5,
+     "已掌握": 2
+    },
+    "分式及其基本性质": {
+     "待巩固": 6,
+     "练习中": 15,
+     "较熟练": 5,
+     "已掌握": 1
+    },
+    "函数": {
+     "待巩固": 0,
+     "练习中": 19,
+     "较熟练": 5,
+     "已掌握": 2
+    },
+    "特殊的平行四边形": {
+     "待巩固": 0,
+     "练习中": 24,
+     "较熟练": 5,
+     "已掌握": 1
+    },
+    "用提公因式法分解因式": {
+     "待巩固": 1,
+     "练习中": 25,
+     "较熟练": 5,
+     "已掌握": 0
+    }
+   },
+   "cluster_students": {
+    "一次函数的图象和性质": 33,
+    "勾股定理": 30,
+    "二次根式": 27,
+    "三角形": 28,
+    "分式": 27,
+    "课题学习 图案设计": 36,
+    "整式的乘法": 29,
+    "三角形全等的判定": 34,
+    "四边形": 27,
+    "三角形的内角与外角": 28,
+    "分式及其基本性质": 27,
+    "函数": 26,
+    "特殊的平行四边形": 30,
+    "用提公因式法分解因式": 31
+   },
+   "trend_kn": [
+    [
+     59,
+     86
+    ],
+    [
+     49,
+     63
+    ],
+    [
+     63,
+     87
+    ],
+    [
+     79,
+     118
+    ],
+    [
+     64,
+     82
+    ],
+    [
+     46,
+     84
+    ],
+    [
+     71,
+     99
+    ],
+    [
+     58,
+     76
+    ]
+   ]
+  },
+  "会话": {
+   "totals": 494,
+   "cluster_band": {
+    "二次根式": {
+     "待巩固": 0,
+     "练习中": 12,
+     "较熟练": 5,
+     "已掌握": 0
+    },
+    "特殊的平行四边形": {
+     "待巩固": 6,
+     "练习中": 15,
+     "较熟练": 5,
+     "已掌握": 0
+    },
+    "一次函数的图象和性质": {
+     "待巩固": 0,
+     "练习中": 19,
+     "较熟练": 5,
+     "已掌握": 1
+    },
+    "分式及其基本性质": {
+     "待巩固": 0,
+     "练习中": 23,
+     "较熟练": 5,
+     "已掌握": 0
+    },
+    "四边形": {
+     "待巩固": 0,
+     "练习中": 16,
+     "较熟练": 5,
+     "已掌握": 1
+    },
+    "三角形": {
+     "待巩固": 1,
+     "练习中": 20,
+     "较熟练": 5,
+     "已掌握": 1
+    },
+    "函数": {
+     "待巩固": 5,
+     "练习中": 10,
+     "较熟练": 5,
+     "已掌握": 0
+    },
+    "分式": {
+     "待巩固": 0,
+     "练习中": 15,
+     "较熟练": 5,
+     "已掌握": 3
+    },
+    "勾股定理": {
+     "待巩固": 1,
+     "练习中": 20,
+     "较熟练": 5,
+     "已掌握": 0
+    },
+    "整式的乘法": {
+     "待巩固": 1,
+     "练习中": 13,
+     "较熟练": 5,
+     "已掌握": 1
+    },
+    "三角形的内角与外角": {
+     "待巩固": 0,
+     "练习中": 17,
+     "较熟练": 5,
+     "已掌握": 3
+    },
+    "用提公因式法分解因式": {
+     "待巩固": 0,
+     "练习中": 16,
+     "较熟练": 5,
+     "已掌握": 0
+    },
+    "课题学习 图案设计": {
+     "待巩固": 2,
+     "练习中": 17,
+     "较熟练": 5,
+     "已掌握": 2
+    },
+    "三角形全等的判定": {
+     "待巩固": 0,
+     "练习中": 13,
+     "较熟练": 5,
+     "已掌握": 1
+    }
+   },
+   "cluster_students": {
+    "二次根式": 17,
+    "特殊的平行四边形": 26,
+    "一次函数的图象和性质": 25,
+    "分式及其基本性质": 28,
+    "四边形": 22,
+    "三角形": 27,
+    "函数": 20,
+    "分式": 23,
+    "勾股定理": 26,
+    "整式的乘法": 20,
+    "三角形的内角与外角": 25,
+    "用提公因式法分解因式": 21,
+    "课题学习 图案设计": 26,
+    "三角形全等的判定": 19
+   },
+   "trend_kn": [
+    [
+     50,
+     72
+    ],
+    [
+     31,
+     49
+    ],
+    [
+     23,
+     43
+    ],
+    [
+     52,
+     73
+    ],
+    [
+     44,
+     57
+    ],
+    [
+     46,
+     64
+    ],
+    [
+     59,
+     79
+    ],
+    [
+     38,
+     57
+    ]
+   ]
+  },
+  "导入": {
+   "totals": 0,
+   "cluster_band": {},
+   "cluster_students": {},
+   "trend_kn": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ]
+  }
+ }
+}

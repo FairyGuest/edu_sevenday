@@ -1,0 +1,383 @@
+.profile-container {
+
+  width: 560px;
+  padding: 60px 24px;
+
+}
+
+.profile_box {
+  padding-top: 32px;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  background: #fff;
+  border-radius: 12px;
+}
+
+.segmented {
+  margin: 24px 0 16px;
+  background-color: #F2F5FA;
+}
+
+.profile_box_center {
+  width: 960px;
+  margin: auto;
+
+  .profile_box_center_title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .profile_box_center_content {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #E2E6F0;
+    padding-bottom: 24px;
+  }
+
+  .profile_box_center_content_left {
+    margin-top: 30px;
+
+    .profile_box_center_content_left_left {
+      display: flex;
+      justify-content: start;
+    }
+
+    .profile_box_center_content_left_left_avatar {
+      margin-right: 24px;
+    }
+
+    .profile_box_center_content_left_left_info {
+      .profile_box_center_content_left_left_info_name {
+        color: var(---8--icon, #333C55);
+        font-family: "PingFang SC";
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+      }
+
+      .profile_box_center_content_left_left_info_school {
+        // border-radius: 12px;
+        // border: 1px solid #E2E6F0;
+        color: var(---7-, #475069);
+        font-family: "PingFang SC";
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        width: fit-content;
+        padding: 4px 0px;
+        margin: 8px 0px;
+
+        .select_box {}
+
+        .select_title {}
+
+        .ant-select {
+
+          .ant-select-selector {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+            border: 1px solid #DDD6FE;
+            background: @primary-color;
+            border-radius: 20px;
+            color: #FFF !important;
+            box-shadow: none;
+            padding: 4px 12px;
+          }
+
+          .ant-select-selection-item {
+            color: #fff !important;
+          }
+        }
+      }
+
+      .profile_box_center_content_left_left_info_way {
+        color: #667085;
+
+        font-family: "PingFang SC";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+      }
+
+      .line {
+        color: #E2E6F0;
+        display: inline-block;
+        margin: 0 16px;
+      }
+    }
+  }
+
+  .profile_box_center_content_right {
+    display: flex;
+    /* 启用 flex */
+    flex-direction: column;
+    padding: 16px;
+    position: relative;
+
+    .profile_box_center_content_right_content {
+      width: 120px;
+      position: absolute;
+      bottom: 0px;
+      right: 0px;
+
+      .ant-btn {
+        margin-left: 8px;
+        color: var(---8--icon, #333C55);
+        font-family: "PingFang SC";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        border-radius: 8px;
+        border: 1px solid var(---3, #E2E6F0);
+        background: var(---, #FFF);
+        box-shadow: none;
+
+        &:hover {
+          border: 1px solid #CBD2E1;
+        }
+      }
+    }
+  }
+
+  .profile_box_center_bottom {
+    .profile_box_center_bottom_title {
+      color: #333C55;
+      font-family: "PingFang SC";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      margin-top: 24px;
+      margin-bottom: 16px;
+    }
+
+    .profile_box_center_bottom_content {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 312px);
+      justify-content: start;
+      gap: 10px;
+      max-height: calc(100vh - 300px);
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+    .group_page_card_box {
+      height: 160px;
+    }
+
+    .profile_box_center_bottom_content_card {
+      display: flex;
+      height: 160px;
+      width: 312px;
+      padding: 16px 20px;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex: 1;
+      border-radius: 12px;
+      border: 1px solid var(---3, #E2E6F0);
+      background: #FFF;
+
+      .profile_box_center_bottom_content_class {
+        color: var(---11-, #020617);
+        font-family: "PingFang SC";
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+      }
+
+      .profile_box_center_bottom_content_info {
+        margin-top: -34px;
+        max-height: 100px;
+      }
+
+      .profile_box_center_bottom_content_member {
+        width: 100%;
+        color: var(---6-icon, #646E8B);
+        text-align: center;
+        font-family: "PingFang SC";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        display: flex;
+        justify-content: space-between;
+
+        .profile_box_center_bottom_content_member_btn {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .profile_box_center_bottom_content_empty {
+    width: 100%;
+    text-align: center;
+    margin-top: 200px;
+  }
+
+  .profile_icon_css {
+
+    &:hover {
+      border-radius: 4px;
+      background: rgba(0, 30, 119, 0.05);
+
+    }
+  }
+
+  .group_page_card {
+    border: 1px solid #E2E6F0;
+    border-radius: 12px;
+    height: 160px;
+
+    &:hover {
+      border: 1px solid #1C6CFF;
+      cursor: pointer;
+    }
+
+    .ant-card-body {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .team_page_cardTitle {
+      color: #020617;
+      font-family: "PingFang SC";
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      line-height: 34px;
+      display: flex;
+      justify-content: space-between;
+
+      .team_page_card_icon_box {
+        color: #020617;
+        font-family: "PingFang SC";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        line-height: 34px;
+      }
+
+      .team_page_card_edit {
+        display: inline-block;
+        margin-right: 16px;
+        cursor: pointer
+      }
+
+      .team_page_card_del {
+        cursor: pointer
+      }
+
+      .team_page_cardTitle_box {
+        white-space: nowrap;
+        word-break: normal;
+        word-wrap: normal;
+        width: 80%;
+        /* 设置容器宽度 */
+        overflow: hidden;
+        /* 超出部分隐藏 */
+        text-overflow: ellipsis;
+        /* 超出部分显示省略号 */
+        display: -webkit-box;
+        -webkit-line-clamp: 1 !important;
+        /* 限制显示1行 */
+        -webkit-box-orient: vertical;
+      }
+    }
+
+    .team_page_cardInfo {
+      margin: 8px 0;
+      color: #646E8B;
+      font-family: "PingFang SC";
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      min-height: 41px;
+      flex: 1;
+      width: 100%;
+      /* 设置容器宽度 */
+      overflow: hidden;
+      /* 超出部分隐藏 */
+      text-overflow: ellipsis;
+      /* 超出部分显示省略号 */
+      display: -webkit-box;
+      -webkit-line-clamp: 2 !important;
+      /* 限制显示2行 */
+      -webkit-box-orient: vertical;
+    }
+
+    .team_page_cardFoot_css {
+      height: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #646E8B;
+      text-align: center;
+      font-family: "PingFang SC";
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      // span {
+      //   cursor:pointer
+      // }
+    }
+
+    .team_page_class_css {
+      max-width: 160px;
+      white-space: nowrap;
+      /* 保证文本在一行内显示 */
+      overflow: hidden;
+      /* 隐藏超出部分 */
+      text-overflow: ellipsis;
+    }
+
+    .team_page_cardBtn {
+      height: 32px;
+      padding: 0 12px;
+      font-weight: 500;
+      color: #1E253B;
+      border: 1px solid #E2E6F0;
+      border-radius: 8px;
+
+      &:hover {
+        color: #444CE7;
+        border-color: #E2E6F0;
+
+        .anticon {
+          color: #444CE7;
+        }
+
+        svg {
+          stroke: #444CE7 !important;
+        }
+      }
+
+      .anticon {
+        font-size: 16px;
+        color: #1E253B;
+
+        svg {
+          stroke: #1E253B;
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,73 @@
+.pdf_precise_parse_container {
+
+    display: flex;
+    justify-content: flex-start;
+
+
+    .left_precise_container {
+
+        width: 100%;
+        margin: 0 auto;
+        background-color: #fff;
+        margin-bottom: 40px;
+        flex-shrink:0;
+
+        .paragraph-block {
+            z-index: 2;
+            position: absolute;
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 150ms;
+
+            .merge_container {
+                display: none;
+            }
+
+        }
+
+        .paragraph-block:hover {
+            background-color: rgba(0, 255, 0, 0.1);
+            --tw-border-opacity: 1;
+            border: 1px dashed #10b981;
+
+            .merge_container {
+                display: block;
+                position: absolute;
+                bottom: -16px;
+                left: 0px;
+                right: 0px;
+                text-align: center;
+                z-index: 1000;
+            }
+
+            .merge_container:hover {
+                display: block;
+            }
+
+        }
+    }
+
+    .right_edit_container {
+        border-left: 1px solid #99999954;
+        flex: 1;
+        max-width: 526px;
+
+        /* 占据剩余空间 */
+        .text_cart {
+            width: 100%;
+            background: #e6f4ff;
+            border: 1px solid #91caff;
+            margin: 4px;
+            padding: 4px 8px;
+            border-radius: 6px;
+            word-wrap: break-word;
+            white-space: pre-wrap; /* 保留空白符和换行符，并自动换行 */
+
+        }
+    }
+
+
+
+
+
+}

@@ -1,0 +1,66 @@
+// 班级学情预览卡片：与学情画像模块同一套卡片语言（圆角/边框/标题装饰条）
+.inject_preview_card {
+  background: #fff;
+  border: 1px solid #e7edf5;
+  border-radius: 14px;
+  box-shadow: 0 1px 3px rgba(23, 42, 80, 0.04);
+  padding: 12px 16px 14px;
+}
+
+.inject_preview_head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.inject_preview_title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 650;
+  color: #2a3346;
+
+  .accent {
+    width: 3px;
+    height: 13px;
+    border-radius: 2px;
+    background: linear-gradient(180deg, #4d8dff, #1c6cff);
+  }
+
+  .sub {
+    font-size: 11.5px;
+    font-weight: 400;
+    color: #9aa4b5;
+  }
+}
+
+.inject_preview_selects {
+  display: flex;
+  gap: 8px;
+
+  .ant-btn {
+    border-radius: 8px;
+  }
+}
+
+.inject_preview_body {
+  .ant-table-thead > tr > th {
+    font-size: 12.5px;
+  }
+}
+
+.inject_preview_actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 10px;
+
+  .ant-btn {
+    border-radius: 8px;
+    font-size: 13px;
+  }
+}

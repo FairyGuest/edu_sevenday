@@ -1,0 +1,147 @@
+.home_container {
+  height: calc(100vh - 48px);
+  overflow: auto;
+  scrollbar-width: none;
+  margin: 16px 24px;
+
+  .ant_skeleton_box {
+    padding-top: 10px;
+    margin-bottom: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 16px;
+    overflow-y: auto;
+  }
+
+  .ant-skeleton {
+    .ant-skeleton-image {
+      background: linear-gradient(90deg, rgb(242, 245, 250) 25%, rgb(242 245 250 / 20%) 37%, rgb(242 245 250) 100%);
+      background-size: 400% 100%;
+      width: 260px;
+      height: 160px;
+      border-radius: 12px;
+    }
+  }
+}
+
+.course_wrapper {
+  min-height: 98vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: -24px;
+
+
+  .course_header {
+    background-color: #f8f8ff;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding-bottom: 16px;
+  }
+
+  .course_title {
+    height: 34px;
+    margin-bottom: 16px;
+    color: #020617;
+    font-family: "PingFang SC";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .create_course_btn {
+      width: 102px;
+      border-radius: 8px;
+    }
+  }
+
+  .course_filter {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+
+    .filter_item {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      gap: 4px;
+      height: 28px;
+      padding: 3px 8px;
+      color: #475069;
+      border-radius: 4px;
+      background: rgba(226, 230, 240, 0.50);
+      cursor: pointer;
+
+      &:hover {
+        color: #fff;
+        background: @primary-color;
+      }
+
+      &.active {
+        color: #1C6CFF;
+        background: #EDF4FF;
+      }
+    }
+  }
+
+  .course_ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 16px;
+    overflow-y: auto;
+    padding-top: 4px;
+
+    .course_empty {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: calc(100vh - 220px);
+    }
+
+    // .ant-skeleton {
+    //   .ant-skeleton-image {
+    //     background: linear-gradient(90deg, rgb(242, 245, 250) 25%, rgb(242 245 250 / 20%) 37%, rgb(242 245 250) 100%);
+    //     background-size: 400% 100%;
+    //     width: 260px;
+    //     height: 160px;
+    //     border-radius: 12px;
+    //   }
+    // }
+  }
+}
+
+.course_empty_box {
+  text-align: center;
+
+  .course_empty_box_greetings {
+    color: var(---, #1E253B);
+    text-align: center;
+    font-family: "PingFang SC";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  .course_empty_box_tips {
+    color: var(---, #646E8B);
+    text-align: center;
+    font-family: "PingFang SC";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    margin: 14px 0;
+  }
+
+  .course_empty_box_btn {
+    width: 140px;
+    height: 38px;
+  }
+}

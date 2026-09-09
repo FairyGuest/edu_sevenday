@@ -1,0 +1,85 @@
+// .render_title_box_css {
+//   // margin-top: 8px;
+//   // padding: 0 16px;
+//   // display: flex;
+//   // justify-content: flex-start;
+//   overflow: hidden;
+//   > .qml-stem {
+//     // display: flex;
+//     // flex-direction: column;
+//     p {
+//       text-indent: 0 !important;
+//     }
+//   }
+// }
+
+// .english {
+//   // 完形填空处理选项号和选项不在一行的问题
+//   .qml-sq {
+//     .ques-no {
+//       margin-right: 10px;
+//     }
+//     .qml-stem {
+//       display: flex;
+//       flex-direction: row;
+//     }
+//   }
+// }
+
+// 解决 KaTeX 分数线上移、垂直对齐错乱 核心样式
+.katex_render_div_box_css {
+  // 全局统一行高，保证公式和文字对齐
+  line-height: 1.6 !important;
+
+  // 所有 KaTeX 元素强制正确对齐
+  :global(.katex) {
+    vertical-align: middle !important;
+    display: inline-block !important;
+    line-height: 0 !important;
+    margin: 0 0.1em !important;
+  }
+
+  // 修复分数、根号、上下标自动上移
+  :global(.katex-html) {
+    vertical-align: middle !important;
+  }
+
+  // 修复行内公式挤压、重叠
+  :global(.katex span) {
+    line-height: normal !important;
+  }
+
+  // wangEditor 表格预览样式（与编辑器保持一致）
+  .table-container {
+    margin-top: 10px;
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  table {
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+
+  table td,
+  table th {
+    border: 1px solid #ccc;
+    line-height: 1.5;
+    min-width: 30px;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    padding: 3px 5px;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+
+  table th {
+    background-color: #f5f2f0;
+    font-weight: 700;
+    text-align: center;
+  }
+}
+
+.underLine {
+  text-decoration: underline;
+}

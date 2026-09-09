@@ -1,0 +1,216 @@
+.file-catalog {
+  width: 100%;
+  height: calc(100% - 40px);
+  padding: 0px 8px 8px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #E2E6F0;
+
+
+  &-header {
+    height: 40px;
+    padding: 8px 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .btn-edit {
+      padding: 0 6px;
+      color: #333C55;
+      border: 1px solid #CBD2E1;
+    }
+
+    &-menu {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .menu-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 4px;
+      background-color: #F2F5FA;
+      cursor: pointer;
+      .svg-icon {
+        color: #474F69;
+      }
+      &:hover {
+        border: 1px solid #8eb6fe;
+        background: linear-gradient(0deg, #edf4ff 0%, #edf4ff 100%),
+        #F2F5FA;
+      }
+    }
+    .active {
+      border: 1px solid #8eb6fe;
+      background: linear-gradient(0deg, #edf4ff 0%, #edf4ff 100%),
+      #F2F5FA;
+      .svg-icon {
+        color: #1c6cff;
+      }
+    }
+  }
+
+  &-tree {
+    // height: calc(100% - 40px);
+    // flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+
+    .empty-tree {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .ant-empty-footer {
+        margin-top: 10px;
+      }
+      .parsing-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        .svg-icon {
+          font-size: 32px;
+        }
+        p {
+          color: #646E8B;
+        }
+      }
+    }
+    .skeleton-box {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .tree-edit-btns {
+      // display: flex;
+      // justify-content: space-between;
+      // position: absolute;
+      // bottom: 0;
+      // background-color: #fff;
+
+      .ant-btn {
+        width: 104px;
+      }
+    }
+    .ant-tree {
+      // height: 100%;
+      flex: 1;
+      overflow: auto;
+      background: transparent;
+
+      .ant-tree-switcher {
+        margin: 0;
+        margin-top: 8px;
+      }
+
+      .ant-tree-checkbox {
+        margin-top: 12px;
+      }
+      .ant-tree-node-content-wrapper {
+        padding: 8px;
+        display: block;
+        overflow: hidden;
+
+        &:hover {
+          color: #1c6cff !important;
+          font-weight: 500;
+          background-color: unset !important;
+        }
+      }
+
+      .ant-tree-node-selected {
+        color: #1c6cff;
+        font-weight: 500;
+        background-color: unset !important;
+      }
+
+      .ant-tree-treenode {
+        margin-bottom: 0;
+        overflow: hidden;
+      }
+      .ant-tree-title {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        .tree-node-title{
+          overflow: hidden; /* 隐藏溢出的内容 */
+          white-space: nowrap; /* 文本不换行 */
+          text-overflow: ellipsis; /* 显示省略号 */
+        }
+        .tree-node-btns {
+          display: none;
+          margin-right: -7px;
+        }
+      }
+      .tree-node-edit {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        &:hover {
+        .menu_page {
+          display: none;
+        }
+        .tree-node-btns {
+          display: flex;
+        }
+      }
+      }
+    }
+  }
+
+  .catalog-form {
+    width: 100%;
+
+    h2 {
+      color: #0F142A;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .form-btns {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+
+      .ant-btn {
+        width: 104px;
+      }
+    }
+    .ant-form-item {
+      margin-bottom: 12px;
+      &-label {
+        font-size: 15px;
+        > label {
+          align-items: baseline;
+        }
+        .label-tip {
+          color: #646E8B;
+          font-size: 12px;
+        }
+      }
+      .ant-input-number {
+        width: 100%;
+      }
+      &-explain-error {
+        margin-top: 4px;
+        font-size: 12px;
+      }
+      &-margin-offset {
+        margin: 0 !important;
+      }
+    }
+  }
+}
+
+.refresh-parsing {
+  .anticon {
+    color: #1C6CFF !important;
+  }
+}

@@ -1,0 +1,180 @@
+.transfer-modal {
+  &-box {
+    height: 100%;
+  }
+
+  &-book {
+    color: var(---9-, #1E253B);
+    font-family: "PingFang SC";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 8px;
+  }
+
+  &-top {}
+
+  &-bottom {}
+
+  &-left {
+    min-width: 320px;
+    min-height: 420px;
+    max-height: 500px;
+    border: 1px solid #E2E6F0;
+    border-radius: 8px;
+  }
+
+  &-left-title {
+    display: flex;
+    height: 40px;
+    padding: 0 12px;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border-bottom: 1px solid var(--3, #E2E6F0);
+    background: var(--1, #F7F9FC);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+
+  &-left-tree {
+    padding: 12px;
+    overflow: scroll;
+    // min-height: 300px;
+    // max-height: 600px;
+    height: 450px;
+    scrollbar-width: none !important;
+  }
+
+  .tree-node-title {
+    max-width: 230px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &-kpoint-tree.ant-tree {
+    .ant-tree-switcher-noop {
+      width: 0;
+      min-width: 0;
+      margin: 0;
+    }
+
+    .ant-tree-list-holder-inner {
+      padding-left: 0;
+    }
+
+    .ant-tree-treenode {
+      padding-left: 0;
+    }
+
+    .ant-tree-checkbox {
+      margin-inline-start: 0;
+    }
+  }
+
+  &-right {
+    width: 100%;
+    min-height: 420px;
+    max-height: 500px;
+    border-radius: 8px;
+  }
+
+  &-right-title {
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    padding-left: 12px;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    border-bottom: 1px solid var(--3, #E2E6F0);
+    background: var(--1, #F7F9FC);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+
+  &-right-delete {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    cursor: pointer
+  }
+
+  &-right-delete-button {
+    color: #333c55 !important;
+    &:hover {
+      color: #1C6CFF !important;
+    }
+  }
+
+  &-right-chapter {
+    padding: 12px;
+    // min-height: 300px;
+    // max-height: 600px;
+    height: 450px;
+    overflow: scroll;
+    scrollbar-width: none !important;
+
+    &-title {
+      display: block;
+      color: var(--9, #1E253B);
+      font-family: "PingFang SC";
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      margin-bottom: 8px;
+    }
+
+    &-tag {
+      // display: flex;
+      height: 28px;
+      padding: 3px 8px;
+      align-items: center;
+      gap: 4px;
+      border-radius: 4px;
+      background: #F2F5FA;
+      border: none;
+      margin-bottom: 8px;
+    }
+  }
+
+  &-right-box {
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed #E2E6F0;
+  }
+
+  .border {
+    border: 1px solid #E2E6F0;
+  }
+
+  .transfer-modal-bottom-box {
+    display: flex;
+    justify-content: start;
+    gap: 16px;
+    height: 100%;
+  }
+
+  &-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    // min-height: 350px;
+    height: 100%;
+
+    .icon {
+      font-size: 88px;
+      color: #999;
+    }
+
+    .text {
+      font-size: 14px;
+      color: #646E8B;
+      margin-top: -12px;
+    }
+  }
+}

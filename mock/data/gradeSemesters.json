@@ -1,0 +1,8 @@
+[
+  { "label": "七年级上学期", "value": "grade7_1" },
+  { "label": "七年级下学期", "value": "grade7_2" },
+  { "label": "八年级上学期", "value": "grade8_1" },
+  { "label": "八年级下学期", "value": "grade8_2" },
+  { "label": "九年级上学期", "value": "grade9_1" },
+  { "label": "九年级下学期", "value": "grade9_2" }
+]

@@ -1,0 +1,76 @@
+.query-card {
+  padding: 40px 0;
+  display: flex;
+
+  .query-content {
+    padding: 12px 16px;
+    border-radius: 8px;
+    background: #edf1f8;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &-file {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      .file-item {
+        padding: 8px 10px;
+        border-radius: 8px;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        position: relative;
+
+        &:hover .file-item-preview {
+          opacity: 1;
+        }
+
+        &-icon {
+          font-size: 16px;
+        }
+
+        &-name {
+          flex: 1;
+          color: #333c55;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        &-desc {
+          font-size: 12px;
+          color: #94a0b8;
+        }
+
+        &-preview {
+          cursor: pointer;
+          width: 24px;
+          height: 24px;
+          background: linear-gradient(270deg, #fff 75%, rgba(255, 255, 255, 0) 100%);
+          font-size: 24px;
+          position: absolute;
+          top: 5px;
+          right: 6px;
+          opacity: 0;
+        }
+      }
+    }
+
+    .markdown_container {
+      hr {
+        border: .5px dashed #cbd2e1;
+      }
+
+      ul {
+        padding-right: 24px;
+      }
+    }
+
+    &-text {
+      font-size: 16px;
+    }
+  }
+}

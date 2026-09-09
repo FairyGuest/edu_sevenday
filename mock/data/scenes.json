@@ -1,0 +1,11 @@
+[
+  { "label": "课堂练习", "value": "classroom" },
+  { "label": "课后作业", "value": "homework" },
+  { "label": "单元测试", "value": "unit_test" },
+  { "label": "期中考试", "value": "midterm" },
+  { "label": "期末考试", "value": "final" },
+  { "label": "模拟考试", "value": "mock_exam" },
+  { "label": "竞赛训练", "value": "competition" },
+  { "label": "专项练习", "value": "special" },
+  { "label": "综合复习", "value": "review" }
+]

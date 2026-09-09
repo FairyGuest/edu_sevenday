@@ -1,0 +1,420 @@
+.check_topic_right_css_right_div {
+  background: #fff;
+  height: calc(100vh - 60px);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.check_topic_right_css_right {
+  background: #fff;
+  // margin-left: 8px;
+  border-radius: 12px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+
+  .check_topic_right_css_right_title {
+    height: 40px;
+    width: 100%;
+    // background: #fff;
+    padding-left: 16px;
+    display: flex;
+    border-bottom: 1px solid #e2e6f0;
+
+    .tab {
+      padding: 6px 2px;
+      cursor: pointer;
+      color: black;
+      transition: color 0.3s;
+      font-size: 16px;
+      margin-right: 16px;
+    }
+
+    .tab.active {
+      color: #1C6CFF;
+      border-bottom: 4px solid #1C6CFF;
+    }
+
+    .tab:hover {
+      color: #1C6CFF;
+    }
+  }
+
+  .check_topic_right_css_right_content {
+    display: flex;
+    justify-content: start;
+    width: 100%;
+  }
+
+  .check_topic_right_css_right_left {
+    height: calc(100vh - 75px);
+    width: 168px;
+    background: #fff;
+    // margin-bottom: 8px;
+    border-radius: 8px;
+    border: 1px solid #e2e6f0;
+
+    .check_topic_right_css_right_left_top {
+      text-align: center;
+      padding: 8px 0;
+
+      .check_topic_right_css_right_left_select {
+        display: inline-block;
+        width: 152px;
+      }
+
+      .ant-select-selector {
+        border: 1px solid #e2e6f0;
+      }
+
+      .ant-select {
+        // border-radius: 50%;
+      }
+    }
+    &_download {
+      height: calc(100vh - 208px);
+      padding: 7px 7px;
+      text-align: left;
+      overflow: scroll;
+      padding-top: 0px;
+      .check_topic_right_css_right_left_content_title {
+        padding: 8px;
+        margin-bottom: 8px;
+        width: 100%;
+        border-radius: 4px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &:hover {
+          background: #f4f4ff;
+        }
+      }
+      .check_topic_right_css_right_left_content_title_active {
+        padding: 8px;
+        margin-bottom: 8px;
+        width: 100%;
+        border-radius: 4px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #f4f4ff;
+      }
+      .check_topic_right_css_right_left_content_baifen {
+        display: flex;
+        justify-content: flex-start;
+        font-size: 12px;
+        color: #9b9b9b;
+        padding: 8px;
+        margin-bottom: 0px;
+      }
+
+      .check_topic_right_css_right_left_content_name {
+        // height: 34px;
+        padding: 8px;
+        margin-bottom: 8px;
+        width: 100%;
+        height: 38px;
+        border-radius: 4px;
+        cursor: pointer;
+        display: flex;
+        &:hover {
+          background: #f4f4ff;
+        }
+      }
+
+      .check_topic_right_css_right_left_content_name_active {
+        height: 38px;
+        padding: 8px;
+        margin-bottom: 8px;
+        width: 100%;
+        border-radius: 8px;
+        cursor: pointer;
+        // border: 1px solid #DDD6FE;
+        background: #f4f4ff;
+      }
+
+      .check_topic_right_css_right_left_content_name_css {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        .student-name {
+          width: 70%;
+          // 超过部分隐藏变成省略号
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          display: flex;
+          align-items: center;
+        }
+        .student-nametow {
+          width: 50%;
+          // 超过部分隐藏变成省略号
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        .student-grade {
+          width: 30%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          text-align: right;
+        }
+        .student-gradetow {
+          width: 50%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          text-align: right;
+        }
+        .percentage {
+          color: #ef4444;
+        }
+        .percentage3 {
+          color: #10b981;
+        }
+      }
+    }
+    &_content {
+      height: calc(100vh - 141px);
+      padding: 7px 7px;
+      text-align: left;
+      overflow: scroll;
+      padding-top: 0px;
+      .check_topic_right_css_right_left_content_title {
+        padding: 8px;
+        margin-bottom: 8px;
+        width: 100%;
+        border-radius: 4px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &:hover {
+          background: #f4f4ff;
+        }
+      }
+      .check_topic_right_css_right_left_content_title_active {
+        padding: 8px;
+        margin-bottom: 8px;
+        width: 100%;
+        border-radius: 4px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #f4f4ff;
+      }
+      .check_topic_right_css_right_left_content_baifen {
+        display: flex;
+        justify-content: flex-start;
+        font-size: 12px;
+        color: #9b9b9b;
+        padding: 8px;
+        margin-bottom: 0px;
+      }
+
+      .check_topic_right_css_right_left_content_name {
+        height: 38px;
+        padding: 8px;
+        margin-bottom: 8px;
+        width: 100%;
+        border-radius: 4px;
+        cursor: pointer;
+
+        &:hover {
+          background: #f4f4ff;
+        }
+      }
+
+      .check_topic_right_css_right_left_content_name_active {
+        height: 38px;
+        padding: 8px;
+        margin-bottom: 8px;
+        width: 100%;
+        border-radius: 8px;
+        cursor: pointer;
+        // border: 1px solid #DDD6FE;
+        background: #f4f4ff;
+      }
+
+      .check_topic_right_css_right_left_content_name_css {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .student-name {
+          width: 70%;
+          // 超过部分隐藏变成省略号
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        .student-nametow {
+          width: 45%;
+          // 超过部分隐藏变成省略号
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        .student-grade {
+          width: 30%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          text-align: right;
+        }
+        .student-gradetow {
+          width: 55%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          text-align: right;
+        }
+        .percentage {
+          color: #ef4444;
+        }
+        .percentage3 {
+          color: #10b981;
+        }
+      }
+    }
+    .check_topic_right_css_right_left_button {
+      display: flex;
+      justify-content: center;
+      padding: 5px;
+      height: 70px;
+      // padding: 8px;
+      &_varder {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        &_but {
+          height: 36px;
+          width: 152px;
+        }
+        &_box {
+          display: flex;
+          justify-content: space-between;
+          &_but {
+            width: 75px;
+          }
+        }
+      }
+    }
+  }
+
+  .check_topic_right_css_right_left_right {
+    height: calc(100vh - 82px);
+    width: 100%;
+  }
+}
+
+.check_topic_right_loading_box {
+  height: calc(100vh - 105px);
+  background: #fff;
+  padding: 24px;
+}
+.accuracy_page {
+  width: calc(100vw - 672px);
+  height: calc(100vh - 82px);
+  background: #fff;
+  min-width: 665px;
+  // padding: 24px;
+}
+
+.check_topic_right_css_right_header_box {
+  padding-left: 8px;
+  padding-top: 8px;
+
+  .header_box {
+    display: inline-block;
+    border: 1px solid #e2e6f0 !important;
+    width: 189px;
+    padding: 8px;
+    padding-right: 0;
+    border-radius: 25px;
+    background-color: #fff;
+
+    .active-button {
+      background-color: @primary-color !important;
+      border-color: @primary-color;
+      color: white !important;
+      font-weight: bold;
+    }
+
+    .ant-btn {
+      height: 28px;
+      border-radius: 25px;
+      background-color: #fff;
+      color: #646e8b;
+      border: none;
+      // margin-right: 8px;
+      font-size: 14px;
+      box-shadow: none;
+
+      &:hover {
+        color: @primary-color;
+        background-color: #fff;
+        border: none;
+        box-shadow: none;
+      }
+    }
+
+    .active_button_css {
+      color: #1C6CFF;
+      background-color: #f7f5ff;
+    }
+  }
+}
+
+.selectType_box_2 {
+  width: 100%;
+  height: calc(100vh - 105px);
+
+  .switch_box_css_content {
+    display: flex;
+    justify-content: space-between;
+
+    .ant-btn {
+      margin-right: 32px;
+      height: 28px;
+      border-radius: 25px;
+      background-color: #1C6CFF;
+      color: #fff;
+      border: none;
+      // margin-right: 8px;
+      font-size: 14px;
+
+      &:hover {
+        color: @primary-color;
+        background-color: #f0f5ff;
+        border: none;
+      }
+    }
+  }
+
+  .switch_box_css {
+    padding-top: 16px;
+    padding-left: 32px;
+
+    .switch_box_css_font {
+      display: inline-block;
+      margin-left: 16px;
+    }
+
+    .ant-switch-checked {
+      background-color: #1C6CFF !important;
+    }
+  }
+
+  .switch_box_css_font_push_to {
+    padding-top: 16px;
+  }
+}
+.zyicon-weiwancheng {
+  color: #ef4444;
+}

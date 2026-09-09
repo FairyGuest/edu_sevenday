@@ -1,0 +1,45 @@
+.ai-config-info-input {
+  position: relative;
+  .example_content {
+    .example_btn {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      border: 1px dashed #999999;
+      border-radius: 8px;
+    }
+  }
+  .example_content_text {
+    max-width: 400px;
+    white-space: pre-line;
+  }
+  .tooltip {
+    position: absolute;
+    top: -28px;
+    left: 110px;
+    color: #1C6CFF;
+    font-size: 12px;
+    cursor: default;
+  }
+  .search_input_box {
+    flex: 1;
+    width: 100%;
+    min-height: 288px;
+    padding: 12px;
+    white-space: pre-line;
+    background-color: #f9fafd;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    .table_tab {
+      padding-top: 4px;
+      padding-bottom: 4px;
+    }
+  }
+
+  .search_input_box:empty::before {
+    color: #999;
+    white-space: pre-line;
+    content: attr(placeholder);
+  }
+}

@@ -1,0 +1,340 @@
+.catalog-container {
+  height: 100%;
+  overflow: hidden;
+  min-width: 0; // 防止内容撑开容器
+  // transition: width 0.2s ease-in-out;
+  // padding-right: 12px;
+  width: 258px; // 展开时的宽度
+  border-right: 1px solid #F2F5FA;
+  flex-shrink: 0;
+
+  // 折叠状态
+  &.collapsed {
+    width: 32px; // 折叠时的宽度
+    border-right: none;
+    border-left: 1px solid #F2F5FA;
+  }
+}
+// 折叠状态的目录条
+.catalog-close {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  // transition: all 0.3s ease-in-out;
+
+  .catalog-close-icon{
+    width: 32px;
+    height: 32px;
+    border-radius: 0 6px 6px 0;
+    background-color: #F2F5FA;
+    cursor: pointer;
+    &:hover {
+      background-color: #E2E6F0;
+    }
+    .unfold-icon {
+      font-size: 22px;
+      color: #646e8b;
+    }
+  }
+}
+
+.catalog-tree {
+  padding-right: 12px;
+}
+
+// 左侧目录树
+.catalog-tree-panel {
+  width: 258px;
+  height: 100%;
+  background-color: #fff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 0; // 防止内容撑开容器
+
+  .catalog-tabs-wrapper-individual {
+    background-color: #fff !important;
+  }
+
+  .catalog-tabs-wrapper {
+    height: auto;
+    gap: 8px;
+    width: 100%;
+
+    .catalog-tabs-row {
+      width: 100%;
+
+      .ant-dropdown-trigger {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .grade-subject-dropdown-trigger {
+        width: 100%;
+        height: 36px;
+        padding: 0 16px;
+        box-sizing: border-box;
+
+        .trigger-text {
+          flex: 1;
+          min-width: 0;
+        }
+      }
+    }
+  }
+
+  // 目录类型Tab + 折叠按钮容器
+  .catalog-tabs-wrapper-individual,
+  .catalog-tabs-wrapper .catalog-tabs-row {
+    gap: 4px;
+    // padding-left: 8px;
+    height: 36px;
+    line-height: 36px;
+
+    .icon-btn {
+      background-color: #F2F5FA;
+      height: 36px;
+      width: 32px;
+      border-radius: 6px 0 0 6px;
+      &:hover {
+        background-color: #E2E6F0;
+      }
+      .fold-icon {
+        font-size: 18px;
+        color: #646e8b;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        font-size: 22px;
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .catalog-tabs-wrapper-individual .custom-tabs,
+  .catalog-tabs-wrapper .custom-tabs {
+      flex: 1;
+      height: 36px;
+      line-height: 36px;
+      background-color: #EDF4FF;
+      border-radius: 6px;
+
+      .ant-cascader {
+        height: 36px;
+        .ant-select-selector {
+          background: transparent;
+          border: 1px solid #1C6CFF !important;
+        }
+      }
+      .tab-item {
+        flex: 1;
+        font-size: 14px;
+        font-weight: 400;
+        color: #646e8b;
+        cursor: pointer;
+        border-radius: 6px;
+        transition: all 0.3s ease-in-out;
+        position: relative;
+        white-space: nowrap;
+
+        &:hover {
+          color: #1C6CFF;
+        }
+        &.active{
+          color: #1C6CFF;
+          font-weight: 500;
+        }
+        &:not(:last-child)::after{
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 0;
+          display: block;
+          content: "";
+          border-right: 1px solid #E2E6F0;
+          width: 0;
+          height: 14px;
+        }
+      }
+  }
+
+  // 目录内容区（知识点目录和章节目录共用）
+  .catalog-content {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    padding-right: 8px;
+
+    // 章节选择器 - 参考 CheckTopic 样式
+    .chapter-selectors {
+      width: 100%;
+
+      .custom-select.ant-select {
+        flex: 1;
+        min-width: 0; // 防止内容撑开容器
+        height: 32px;
+
+        .ant-select-selector {
+          border: 1px solid #e2e6f0;
+          border-radius: 4px;
+
+          &:hover {
+            border-color: #1C6CFF;
+          }
+        }
+        &.ant-select-disabled  .ant-select-selector:hover{
+          border-color: #e2e6f0;
+        }
+
+        &.ant-select-focused .ant-select-selector {
+          border-color: #1C6CFF;
+          box-shadow: 0 0 0 2px rgba(91, 33, 182, 0.1);
+        }
+        .ant-select-selection-item {
+          font-weight: 400;
+          color: #1E253B;
+        }
+
+      }
+    }
+
+    // 搜索框 - underlined 样式
+    .search-input.ant-input-search {
+      .ant-input-affix-wrapper {
+        border: none;
+        border-bottom: 1px solid #F2F5FA;
+        border-radius: 0;
+        background: transparent;
+        padding-left: 0;
+        padding-right: 0;
+        box-shadow: none;
+        height: 32px;
+        line-height: 32px;
+
+        &:focus,
+        &:focus-within {
+          border-bottom-color: #1C6CFF;
+          // box-shadow: 0 1px 0 0 #1C6CFF;
+        }
+
+        &:hover {
+          border-bottom-color: #1C6CFF;
+        }
+
+        .ant-input-prefix {
+          margin-right: 8px;
+
+          .zyicon {
+            transition: color 0.3s ease-in-out;
+          }
+        }
+
+        .ant-input {
+          border: none;
+          background: transparent;
+          box-shadow: none;
+          padding: 0;
+
+          &::placeholder {
+            color: #94A0B8;
+          }
+        }
+      }
+
+      .ant-input-search-button {
+        display: none; // 隐藏默认的搜索按钮，因为我们使用了前置图标
+      }
+    }
+
+    // 树形组件容器
+    .tree-wrapper {
+      flex: 1;
+      overflow-y: auto;
+      min-height: 0;
+      position: relative;
+
+      // 骨架屏和搜索加载样式
+      .tree-skeleton,
+      .search-loading {
+        padding: 8px 0;
+      }
+
+      .ant-empty {
+        width: 80%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        .ant-empty-image{
+          width: 80px;
+          height: 48px;
+          margin: 0 auto;
+        }
+
+        .ant-empty-description {
+          color: #646e8b;
+          font-size: 14px;
+        }
+      }
+
+      // Tree 组件样式 - 参考 file-catalog-tree
+      .ant-tree {
+        flex: 1;
+        overflow: auto;
+        background: transparent;
+        scrollbar-width: none !important;
+
+        .ant-tree-switcher {
+          margin: 0;
+          margin-top: 8px;
+        }
+
+        .ant-tree-checkbox {
+          margin-top: 0;
+          align-self: center;
+        }
+
+        .ant-tree-node-content-wrapper {
+          padding: 8px;
+          display: block;
+          overflow: hidden;
+
+          &:hover {
+            color: #1C6CFF !important;
+            font-weight: 500;
+            background-color: unset !important;
+          }
+        }
+
+        .ant-tree-node-selected {
+          color: #1C6CFF;
+          font-weight: 500;
+          background-color: unset !important;
+        }
+
+        .ant-tree-treenode {
+          margin-bottom: 0;
+          overflow: hidden;
+          display: flex;
+          align-items: flex-start;
+          line-height: 24px;
+          position: relative;
+        }
+
+        .ant-tree-title {
+          width: 100%;
+        }
+
+        .tree-node-title {
+          max-width: 200px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}
+
+// 全局样式移到 src/global.less 中

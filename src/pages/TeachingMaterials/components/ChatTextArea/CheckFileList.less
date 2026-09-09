@@ -1,0 +1,40 @@
+.check_file_list_box {
+  .check_file_list_box_css {
+    display: flex;
+    justify-content: start;
+    padding: 8px 8px;
+    background-color: #F2F5FA;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    position: relative;
+    padding-right: 60px;
+
+    .check_file_list_box_left {
+      width: 30px;
+    }
+
+    .check_file_list_box_right {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      .check_file_list_box_doc_name {
+        max-width: 100%;
+        width: 100%;
+        white-space: nowrap;
+        /* 保证文本在一行内显示 */
+        overflow: hidden;
+        /* 隐藏超出部分 */
+        text-overflow: ellipsis;
+        /* 显示省略号 */
+      }
+    }
+
+    .check_file_list_box_close {
+      position: absolute;
+      right: 10px;
+      cursor: pointer
+    }
+  }
+}

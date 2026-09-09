@@ -1,0 +1,832 @@
+[
+  {
+    "id": "fcf37d88-07ae-469e-a92e-1df6cb58fa5e",
+    "parentCode": null,
+    "code": "J030342",
+    "name": "第1章 全等三角形",
+    "level": 1,
+    "sortNo": 315,
+    "children": [
+      {
+        "id": "531a74d4-c707-42c0-b4e4-ff51f3d379a1",
+        "parentCode": "J030342",
+        "code": "J0303420001",
+        "name": "1.1 全等三角形",
+        "level": 2,
+        "sortNo": 1,
+        "children": [
+          {
+            "id": "f3b84fd4-f754-43eb-96bf-abcde58e768c",
+            "parentCode": "J0303420001",
+            "code": "J03034200010001",
+            "name": "全等三角形对应边相等，对应角相等",
+            "level": 3,
+            "sortNo": 1,
+            "children": []
+          },
+          {
+            "id": "798e5d47-c6b8-4d32-8dc7-9a7ed22469df",
+            "parentCode": "J0303420001",
+            "code": "J03034200010002",
+            "name": "全等三角形周长相等，面积相等",
+            "level": 3,
+            "sortNo": 2,
+            "children": []
+          },
+          {
+            "id": "4b4c4964-dd27-4e3f-8bb9-c6faf2f3ea26",
+            "parentCode": "J0303420001",
+            "code": "J03034200010003",
+            "name": "全等三角形对应线段（角平分线、中线、高、中位线）相等",
+            "level": 3,
+            "sortNo": 3,
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "1dd1eb42-a5d0-43fd-97f4-1135f2e41548",
+        "parentCode": "J030342",
+        "code": "J0303420002",
+        "name": "1.2 怎样判定三角形全等",
+        "level": 2,
+        "sortNo": 2,
+        "children": [
+          {
+            "id": "49a0bfa4-49ff-4a28-9e4e-e1778a39cb9b",
+            "parentCode": "J0303420002",
+            "code": "J03034200020001",
+            "name": "SSS",
+            "level": 3,
+            "sortNo": 1,
+            "children": []
+          },
+          {
+            "id": "4eb17f99-dfea-4d62-b2c5-5dd375732a11",
+            "parentCode": "J0303420002",
+            "code": "J03034200020002",
+            "name": "ASA",
+            "level": 3,
+            "sortNo": 2,
+            "children": []
+          },
+          {
+            "id": "a175ed68-1073-4b80-be26-e15a2236647e",
+            "parentCode": "J0303420002",
+            "code": "J03034200020003",
+            "name": "AAS",
+            "level": 3,
+            "sortNo": 3,
+            "children": []
+          },
+          {
+            "id": "73de2e02-20f0-4bdf-a5bb-104a44c3376b",
+            "parentCode": "J0303420002",
+            "code": "J03034200020004",
+            "name": "SAS",
+            "level": 3,
+            "sortNo": 4,
+            "children": []
+          },
+          {
+            "id": "e78b8327-c298-4dab-9a06-0eb35fe0df5a",
+            "parentCode": "J0303420002",
+            "code": "J03034200020005",
+            "name": "HL（直角三角形）",
+            "level": 3,
+            "sortNo": 5,
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "1a9e7f6d-cacf-4e95-9d59-6763899fe422",
+        "parentCode": "J030342",
+        "code": "J0303420003",
+        "name": "1.3 尺规作图",
+        "level": 2,
+        "sortNo": 3,
+        "children": [
+          {
+            "id": "f7bb0d52-e50c-47a1-a88d-ae0597b99998",
+            "parentCode": "J0303420003",
+            "code": "J03034200030001",
+            "name": "五种基本作图",
+            "level": 3,
+            "sortNo": 1,
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "beb0365f-dae1-4a14-95c9-0fb4ce052a04",
+    "parentCode": null,
+    "code": "J030343",
+    "name": "第2章 图形的轴对称",
+    "level": 1,
+    "sortNo": 316,
+    "children": [
+      {
+        "id": "b6c6c58a-382a-4a3f-807d-db1c23bda3f1",
+        "parentCode": "J030343",
+        "code": "J0303430001",
+        "name": "2.1 图形的轴对称",
+        "level": 2,
+        "sortNo": 1,
+        "children": [
+          {
+            "id": "53d4f093-6a89-41c5-afb3-db0df62358fe",
+            "parentCode": "J0303430001",
+            "code": "J03034300010001",
+            "name": "对称轴",
+            "level": 3,
+            "sortNo": 1,
+            "children": []
+          },
+          {
+            "id": "9da61117-1f7a-44e2-a91e-46b659988a1e",
+            "parentCode": "J0303430001",
+            "code": "J03034300010002",
+            "name": "对称点",
+            "level": 3,
+            "sortNo": 2,
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "64f16656-0e16-4b2c-bfef-6f1da94351f2",
+        "parentCode": "J030343",
+        "code": "J0303430002",
+        "name": "2.2 轴对称的基本性质",
+        "level": 2,
+        "sortNo": 2,
+        "children": []
+      },
+      {
+        "id": "a5f4a54c-d0a0-49fe-abcf-81a112d52cf1",
+        "parentCode": "J030343",
+        "code": "J0303430003",
+        "name": "2.3 轴对称图形",
+        "level": 2,
+        "sortNo": 3,
+        "children": []
+      },
+      {
+        "id": "2bd87b54-adc4-4615-92a9-f0c0df936c9b",
+        "parentCode": "J030343",
+        "code": "J0303430004",
+        "name": "2.4 线段的垂直平分线",
+        "level": 2,
+        "sortNo": 4,
+        "children": [
+          {
+            "id": "0be0e5d4-3d31-4f55-8160-f198a86e73fb",
+            "parentCode": "J0303430004",
+            "code": "J03034300040001",
+            "name": "线段垂直平分线的性质定理",
+            "level": 3,
+            "sortNo": 1,
+            "children": []
+          },
+          {
+            "id": "586d590b-50d8-4d99-85ed-139740a4b616",
+            "parentCode": "J0303430004",
+            "code": "J03034300040002",
+            "name": "线段垂直平分线逆定理",
+            "level": 3,
+            "sortNo": 2,
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "173b303a-3176-47ab-83b0-bb3efc3feb3b",
+        "parentCode": "J030343",
+        "code": "J0303430005",
+        "name": "2.5 角平分线的性质",
+        "level": 2,
+        "sortNo": 5,
+        "children": [
+          {
+            "id": "8978fb89-87f6-4852-b80a-bfb6ae0bce32",
+            "parentCode": "J0303430005",
+            "code": "J03034300050001",
+            "name": "角平分线性质定理",
+            "level": 3,
+            "sortNo": 1,
+            "children": []
+          },
+          {
+            "id": "eef9ad76-2506-4e9a-a7ee-6e73853dabf2",
+            "parentCode": "J0303430005",
+            "code": "J03034300050002",
+            "name": "角平分线逆定理",
+            "level": 3,
+            "sortNo": 2,
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "604430ec-8347-43b5-8aae-83c96af7e43f",
+        "parentCode": "J030343",
+        "code": "J0303430006",
+        "name": "2.6 等腰三角形",
+        "level": 2,
+        "sortNo": 6,
+        "children": [
+          {
+            "id": "ca5e6936-50ed-4a54-9703-22eaacb4a583",
+            "parentCode": "J0303430006",
+            "code": "J03034300060001",
+            "name": "等腰三角形性质",
+            "level": 3,
+            "sortNo": 1,
+            "children": []
+          },
+          {
+            "id": "a7c42c0e-51b9-42eb-887e-82e70eb78d7b",
+            "parentCode": "J0303430006",
+            "code": "J03034300060002",
+            "name": "等腰三角形判定",
+            "level": 3,
+            "sortNo": 2,
+            "children": []
+          },
+          {
+            "id": "10b95fb7-9a71-429b-9c62-e8dc28daa044",
+            "parentCode": "J0303430006",
+            "code": "J03034300060003",
+            "name": "等边三角形性质",
+            "level": 3,
+            "sortNo": 3,
+            "children": []
+          },
+          {
+            "id": "60e1c467-91e3-45c5-ac64-f410edf7abe9",
+            "parentCode": "J0303430006",
+            "code": "J03034300060004",
+            "name": "等边三角形判定",
+            "level": 3,
+            "sortNo": 4,
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "8ad32dcd-912b-4c52-98ff-924cc180ec0c",
+    "parentCode": null,
+    "code": "J030344",
+    "name": "第3章 分式",
+    "level": 1,
+    "sortNo": 317,
+    "children": [
+      {
+        "id": "31730ec8-634f-49b5-bb2f-0d412815811b",
+        "parentCode": "J030344",
+        "code": "J0303440001",
+        "name": "3.1 分式的基本性质",
+        "level": 2,
+        "sortNo": 1,
+        "children": [
+          {
+            "id": "f45e4f1e-e578-4071-82eb-44a2cf38da85",
+            "parentCode": "J0303440001",
+            "code": "J03034400010001",
+            "name": "分式有意义的条件",
+            "level": 3,
+            "sortNo": 1,
+            "children": []
+          },
+          {
+            "id": "278e74ca-a388-4eae-81e4-93fab3690f25",
+            "parentCode": "J0303440001",
+            "code": "J03034400010002",
+            "name": "分式无意义的条件",
+            "level": 3,
+            "sortNo": 2,
+            "children": []
+          },
+          {
+            "id": "32c98e6f-fb99-4562-a85a-2ba8ef448d61",
+            "parentCode": "J0303440001",
+            "code": "J03034400010003",
+            "name": "分式值为零的条件",
+            "level": 3,
+            "sortNo": 3,
+            "children": []
+          },
+          {
+            "id": "9bd550fc-1da0-423e-afed-861af39eadc9",
+            "parentCode": "J0303440001",
+            "code": "J03034400010004",
+            "name": "分式与二次根式有意义的条件",
+            "level": 3,
+            "sortNo": 4,
+            "children": []
+          },
+          {
+            "id": "830b988b-eadb-4570-b6cb-a0301ac19dd1",
+            "parentCode": "J0303440001",
+            "code": "J03034400010005",
+            "name": "分子",
+            "level": 3,
+            "sortNo": 5,
+            "children": []
+          },
+          {
+            "id": "17ae9393-a4f7-4007-a230-5136e9348a8d",
+            "parentCode": "J0303440001",
+            "code": "J03034400010006",
+            "name": "分母",
+            "level": 3,
+            "sortNo": 6,
+            "children": []
+          },
+          {
+            "id": "f0356dea-9cfe-489c-a193-0aab950f11bd",
+            "parentCode": "J0303440001",
+            "code": "J03034400010007",
+            "name": "分式的基本性质",
+            "level": 3,
+            "sortNo": 7,
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "aae5417c-ceca-44e4-a802-b917bcca3e17",
+        "parentCode": "J030344",
+        "code": "J0303440002",
+        "name": "3.2 分式的约分",
+        "level": 2,
+        "sortNo": 2,
+        "children": [
+          {
+            "id": "4f5427a2-061b-4667-bec6-eda3480d8f57",
+            "parentCode": "J0303440002",
+            "code": "J03034400020001",
+            "name": "分式的化简",
+            "level": 3,
+            "sortNo": 1,
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "24718fa6-7ec2-4137-a869-6c708d7c4355",
+        "parentCode": "J030344",
+        "code": "J0303440003",
+        "name": "3.3 分式的乘法与除法",
+        "level": 2,
+        "sortNo": 3,
+        "children": [
+          {
+            "id": "11c77314-145b-41bc-962d-7b5ce023586e",
+            "parentCode": "J0303440003",
+            "code": "J03034400030001",
+            "name": "分式的四则运算",
+            "level": 3,
+            "sortNo": 1,
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "0e79b813-9b87-41d3-9d06-f36a96fe5bf9",
+        "parentCode": "J030344",
+        "code": "J0303440004",
+        "name": "3.4 分式的通分",
+        "level": 2,
+        "sortNo": 4,
+        "children": [
+          {
+            "id": "c864ef86-f2ac-40b0-b0f8-c99bf0dc8073",
+            "parentCode": "J0303440004",
+            "code": "J03034400040001",
+            "name": "分式的化简",
+            "level": 3,
+            "sortNo": 1,
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "fd49d415-9ae8-494f-ad99-6f1ec871dc9b",
+        "parentCode": "J030344",
+        "code": "J0303440005",
+        "name": "3.5 分式的加法与减法",
+        "level": 2,
+        "sortNo": 5,
+        "children": [
+          {
+            "id": "05bb5179-66b2-411e-bef9-f4172a755f5d",
+            "parentCode": "J0303440005",
+            "code": "J03034400050001",
+            "name": "分式的四则运算",
+            "level": 3,
+            "sortNo": 1,
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "a28740f4-e597-4059-9227-4baa76346b26",
+        "parentCode": "J030344",
+        "code": "J0303440006",
+        "name": "3.6 比和比例",
+        "level": 2,
+        "sortNo": 6,
+        "children": [
+          {
+            "id": "4d2bc6e9-4f7e-4814-94fb-1c4d5cfe550a",
+            "parentCode": "J0303440006",
+            "code": "J03034400060001",
+            "name": "比例的外项",
+            "level": 3,
+            "sortNo": 1,
+            "children": []
+          },
+          {
+            "id": "2b13a35c-a6d3-4c5f-a742-048928a9d4fb",
+            "parentCode": "J0303440006",
+            "code": "J03034400060002",
+            "name": "比例的内项",
+            "level": 3,
+            "sortNo": 2,
+            "children": []
+          },
+          {
+            "id": "e7dfc433-b3f9-410d-8ee6-a44c552b0585",
+            "parentCode": "J0303440006",
+            "code": "J03034400060003",
+            "name": "比例中项",
+            "level": 3,
+            "sortNo": 3,
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "9e50ea95-c30f-4216-830e-9fed54cd3104",
+        "parentCode": "J030344",
+        "code": "J0303440007",
+        "name": "3.7 可化为一元一次方程的分式方程",
+        "level": 2,
+        "sortNo": 7,
+        "children": []
+      }
+    ]
+  },
+  {
+    "id": "5938f06d-dc33-433d-99d7-8574ce647068",
+    "parentCode": null,
+    "code": "J030345",
+    "name": "第4章 数据分析",
+    "level": 1,
+    "sortNo": 318,
+    "children": [
+      {
+        "id": "b5c12afa-6140-4105-b897-ead966ce830e",
+        "parentCode": "J030345",
+        "code": "J0303450001",
+        "name": "4.1 加权平均数",
+        "level": 2,
+        "sortNo": 1,
+        "children": [
+          {
+            "id": "93f3259c-9245-4d9e-a4a5-d1cc21f6d6f4",
+            "parentCode": "J0303450001",
+            "code": "J03034500010001",
+            "name": "算术平均数",
+            "level": 3,
+            "sortNo": 1,
+            "children": []
+          },
+          {
+            "id": "251f8e07-b1b5-4379-8ea9-10e1432a260b",
+            "parentCode": "J0303450001",
+            "code": "J03034500010002",
+            "name": "加权平均数",
+            "level": 3,
+            "sortNo": 2,
+            "children": []
+          },
+          {
+            "id": "e142a8e0-e221-44a8-a911-85784d936ae0",
+            "parentCode": "J0303450001",
+            "code": "J03034500010003",
+            "name": "用计算器求平均数",
+            "level": 3,
+            "sortNo": 3,
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "d4c6f5eb-6213-4f5f-9732-6c244de91fcf",
+        "parentCode": "J030345",
+        "code": "J0303450002",
+        "name": "4.2 中位数",
+        "level": 2,
+        "sortNo": 2,
+        "children": [
+          {
+            "id": "6cfd3722-7993-4e5c-877e-4d2704a615f6",
+            "parentCode": "J0303450002",
+            "code": "J03034500020001",
+            "name": "中位数",
+            "level": 3,
+            "sortNo": 1,
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "7f94b949-31c9-4f17-9800-ff45e6725d82",
+        "parentCode": "J030345",
+        "code": "J0303450003",
+        "name": "4.3 众数",
+        "level": 2,
+        "sortNo": 3,
+        "children": [
+          {
+            "id": "181353c3-ec39-4309-89c5-358ad6e1a886",
+            "parentCode": "J0303450003",
+            "code": "J03034500030001",
+            "name": "众数",
+            "level": 3,
+            "sortNo": 1,
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "02e7e57a-533a-4294-b7f8-7ff0be46c419",
+        "parentCode": "J030345",
+        "code": "J0303450004",
+        "name": "4.4 数据的离散程序",
+        "level": 2,
+        "sortNo": 4,
+        "children": [
+          {
+            "id": "e47240bc-365f-47b7-8e3c-480d7e2bd017",
+            "parentCode": "J0303450004",
+            "code": "J03034500040001",
+            "name": "标准差",
+            "level": 3,
+            "sortNo": 1,
+            "children": []
+          },
+          {
+            "id": "8801ea6a-0422-4759-903a-a8fa15e98f22",
+            "parentCode": "J0303450004",
+            "code": "J03034500040002",
+            "name": "极差",
+            "level": 3,
+            "sortNo": 2,
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "b3e064b3-6185-4490-a183-081aeb7c4559",
+        "parentCode": "J030345",
+        "code": "J0303450005",
+        "name": "4.5 方差",
+        "level": 2,
+        "sortNo": 5,
+        "children": [
+          {
+            "id": "be40463a-3b23-436d-be7d-2ef9f55de00c",
+            "parentCode": "J0303450005",
+            "code": "J03034500050001",
+            "name": "方差概念",
+            "level": 3,
+            "sortNo": 1,
+            "children": []
+          },
+          {
+            "id": "32ca5a1e-2d01-4ca5-bcdc-28107df442f1",
+            "parentCode": "J0303450005",
+            "code": "J03034500050002",
+            "name": "方差意义",
+            "level": 3,
+            "sortNo": 2,
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "11813ffe-ce85-4596-afd0-e8548150691e",
+        "parentCode": "J030345",
+        "code": "J0303450006",
+        "name": "4.6 用计算器计算平均数和方差",
+        "level": 2,
+        "sortNo": 6,
+        "children": [
+          {
+            "id": "9f6850f8-3694-4b5b-a138-e4c5d9b5b88c",
+            "parentCode": "J0303450006",
+            "code": "J03034500060001",
+            "name": "用计算器求方差",
+            "level": 3,
+            "sortNo": 1,
+            "children": []
+          },
+          {
+            "id": "dcb6da4d-7ff1-47aa-8788-5f71ac07c902",
+            "parentCode": "J0303450006",
+            "code": "J03034500060002",
+            "name": "用计算器求平均数",
+            "level": 3,
+            "sortNo": 2,
+            "children": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2c92adb0-1b74-47bd-9599-70283ac6fdf9",
+    "parentCode": null,
+    "code": "J030346",
+    "name": "第5章 几何证明初步",
+    "level": 1,
+    "sortNo": 319,
+    "children": [
+      {
+        "id": "024a8c25-ef89-4e56-b10a-735ba0979923",
+        "parentCode": "J030346",
+        "code": "J0303460001",
+        "name": "5.1 定义与命题",
+        "level": 2,
+        "sortNo": 1,
+        "children": [
+          {
+            "id": "62b6629a-a1c8-4579-b298-c136d8487e0b",
+            "parentCode": "J0303460001",
+            "code": "J03034600010001",
+            "name": "真命题",
+            "level": 3,
+            "sortNo": 1,
+            "children": []
+          },
+          {
+            "id": "ab58aee2-6e70-4722-8da1-43d755db2706",
+            "parentCode": "J0303460001",
+            "code": "J03034600010002",
+            "name": "假命题",
+            "level": 3,
+            "sortNo": 2,
+            "children": []
+          },
+          {
+            "id": "f5ada130-847e-4db1-811a-0659bd31f338",
+            "parentCode": "J0303460001",
+            "code": "J03034600010003",
+            "name": "互逆命题",
+            "level": 3,
+            "sortNo": 3,
+            "children": []
+          },
+          {
+            "id": "3971bf8c-7613-429d-b412-ff005b028943",
+            "parentCode": "J0303460001",
+            "code": "J03034600010004",
+            "name": "定义",
+            "level": 3,
+            "sortNo": 4,
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "b6a8d49c-018e-43ca-8cf5-766da9559ffd",
+        "parentCode": "J030346",
+        "code": "J0303460002",
+        "name": "5.2 为什么要证明",
+        "level": 2,
+        "sortNo": 2,
+        "children": [
+          {
+            "id": "2234689d-a8d0-4879-8ffc-33e9d952303d",
+            "parentCode": "J0303460002",
+            "code": "J03034600020001",
+            "name": "反证法",
+            "level": 3,
+            "sortNo": 1,
+            "children": []
+          },
+          {
+            "id": "f3f8b5a9-ad16-4c24-82c9-8ab0d0cdd120",
+            "parentCode": "J0303460002",
+            "code": "J03034600020002",
+            "name": "直接证明法",
+            "level": 3,
+            "sortNo": 2,
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "650e3c2e-0110-4b85-924b-80407a08a73b",
+        "parentCode": "J030346",
+        "code": "J0303460003",
+        "name": "5.3 什么是几何证明",
+        "level": 2,
+        "sortNo": 3,
+        "children": [
+          {
+            "id": "95d0dde9-6edc-443e-bbf9-9fad2aec8a66",
+            "parentCode": "J0303460003",
+            "code": "J03034600030001",
+            "name": "反证法",
+            "level": 3,
+            "sortNo": 1,
+            "children": []
+          },
+          {
+            "id": "5cceba0f-4696-4c0f-b5e8-ae96f3236a46",
+            "parentCode": "J0303460003",
+            "code": "J03034600030002",
+            "name": "直接证明法",
+            "level": 3,
+            "sortNo": 2,
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "8732de85-18fb-4b72-ac6c-da1c2f474404",
+        "parentCode": "J030346",
+        "code": "J0303460004",
+        "name": "5.4 平行线的性质定理和判定定理",
+        "level": 2,
+        "sortNo": 4,
+        "children": [
+          {
+            "id": "3d7f9452-d050-4f48-aea4-a301b7d351fa",
+            "parentCode": "J0303460004",
+            "code": "J03034600040001",
+            "name": "同位角相等<=>两直线平行",
+            "level": 3,
+            "sortNo": 1,
+            "children": []
+          },
+          {
+            "id": "d1842ece-1f02-4e3e-9fa3-5027538e1c69",
+            "parentCode": "J0303460004",
+            "code": "J03034600040002",
+            "name": "内错角相等<=>两直线平行",
+            "level": 3,
+            "sortNo": 2,
+            "children": []
+          },
+          {
+            "id": "7eff537f-ff5c-4b0e-a4ae-2aa1d6d16a61",
+            "parentCode": "J0303460004",
+            "code": "J03034600040003",
+            "name": "同旁内角互补<=>两直线平行",
+            "level": 3,
+            "sortNo": 3,
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "beeeca07-9351-4939-b409-5802de1dcb53",
+        "parentCode": "J030346",
+        "code": "J0303460005",
+        "name": "5.5 三角形内角和定理",
+        "level": 2,
+        "sortNo": 5,
+        "children": [
+          {
+            "id": "4c8fc0ae-7e79-453e-998d-c163d471a4cc",
+            "parentCode": "J0303460005",
+            "code": "J03034600050001",
+            "name": "三角形内角和定理",
+            "level": 3,
+            "sortNo": 1,
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": "980b1b70-6384-41ab-9cf1-fd3ae3a3223d",
+        "parentCode": "J030346",
+        "code": "J0303460006",
+        "name": "5.6 几何证明举例",
+        "level": 2,
+        "sortNo": 6,
+        "children": []
+      }
+    ]
+  }
+]

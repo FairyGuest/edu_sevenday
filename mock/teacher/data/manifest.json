@@ -1,0 +1,28 @@
+{
+ "generated_at": "2026-09-08",
+ "class_ids": [
+  "cls-g8-03",
+  "cls-g7-01",
+  "cls-g9-02"
+ ],
+ "files": [
+  "batches.json",
+  "class-profile-cls-g7-01.json",
+  "class-profile-cls-g8-03.json",
+  "class-profile-cls-g9-02.json",
+  "class-students-cls-g7-01.json",
+  "class-students-cls-g8-03.json",
+  "class-students-cls-g9-02.json",
+  "classes.json",
+  "homework-cls-g7-01.json",
+  "homework-cls-g8-03.json",
+  "homework-cls-g9-02.json",
+  "homework-list.json",
+  "knowledge.json",
+  "manifest.json",
+  "personal-bank.json",
+  "plans.json",
+  "questions.json"
+ ],
+ "note": "教师端 P0 mock fixture（开发辅助）：3 班差异化画像 + 真实题库题干（LaTeX）+ 逐生个性化卷 + 教案/个人题库"
+}

@@ -1,0 +1,29 @@
+{
+ "classes": [
+  {
+   "class_id": "cls-g8-01",
+   "class_name": "八年级(1)班",
+   "grade": "g8",
+   "subject": "数学",
+   "feature": "整体较好：待巩固占比较低",
+   "n_students": 45
+  },
+  {
+   "class_id": "cls-g8-02",
+   "class_name": "八年级(2)班",
+   "grade": "g8",
+   "subject": "数学",
+   "feature": "中等水平：薄弱簇集中在计算类知识点",
+   "n_students": 45
+  },
+  {
+   "class_id": "cls-g8-03",
+   "class_name": "八年级(3)班",
+   "grade": "g8",
+   "subject": "数学",
+   "feature": "中等偏弱：存在明显薄弱簇（补弱主路径演示）",
+   "n_students": 45
+  }
+ ],
+ "note": "同一教师任教的八年级三个平行班（演示数据）"
+}

@@ -1,0 +1,171 @@
+.history-log-container {
+  width: 100%;
+  height: calc(100vh - 84px);
+  display: flex;
+  flex-direction: column;
+  .list-wrap {
+    flex: 1;
+    display: flex;
+    padding-right: 10px;
+    flex-direction: column;
+    overflow-y: auto;
+    scrollbar-width: 0;
+    .list-box {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding-bottom: 12px;
+      .date-item {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        &:last-child {
+          margin-bottom: 40px;
+        }
+        &-title {
+          font-size: 14px;
+          color: #94A0B8;
+          padding-left: 12px;
+          margin-top: 20px;
+        }
+        &-list {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          .list-item {
+            display: flex;
+            flex-direction: column;
+            border-radius: 12px;
+            border: 0.5px solid #E2E6F0;
+            &:hover {
+              box-shadow: 0 0 8px 0 rgba(197, 202, 215, 0.40);
+              cursor: pointer;
+            }
+            &-top {
+              display: flex;
+              align-items: flex-start;
+              gap: 12px;
+              padding: 9px 12px 6px;
+              .avatar {
+                width: 33px;
+                height: 33px;
+                border-radius: 17px;
+              }
+              .title-box {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 12px;
+                flex: 1;
+                min-height: 33px;
+                .title {
+                  flex: 1;
+                  font-size: 14px;
+                  color: #1E253B;
+                  font-weight: 600;
+                }
+                .topic-img {
+                  width: 32px;
+                  height: 32px;
+                  border: 0.5px solid #E2E6F0;
+                  border-radius: 6px;
+                  object-fit: cover;
+                }
+                .icon {
+                  font-size: 14px;
+                  color: #646E8B;
+                }
+              }
+            }
+            &-bottom {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              background: #F7F9FC;
+              padding: 8px 12px;
+              border-radius: 0 0 12px 12px;
+              .left {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                .practice-info {
+                  display: flex;
+                  gap: 10px;
+                  align-items: center;
+                  .icon {
+                    color: #646E8B;
+                  }
+                  .success {
+                    background: #E0F4EA;
+                    color: #027A48;
+                  }
+                  .error {
+                    background: #FEF3F2;
+                    color: #EF4444;
+                  }
+                  &-group {
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                  }
+                }
+              }
+              .right {
+                display: flex;
+                align-items: center;
+              }
+              .text {
+                font-size: 14px;
+                color: #646E8B;
+              }
+            }
+          }
+        }
+      }
+      .list-pagination {
+        margin-bottom: 18px;
+      }
+    }
+    .list-loading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      .anticon-spin {
+        display: inline-block;
+        animation: spin 1s linear infinite;
+        font-size: 30px;
+      }
+      .text {
+        font-size: 14px;
+        color: #646E8B;
+      }
+    }
+    .list-empty {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      .icon {
+        font-size: 80px;
+        margin-bottom: -15px
+      }
+      .text {
+        font-size: 14px;
+        color: #646E8B;
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

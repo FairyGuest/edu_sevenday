@@ -1,0 +1,803 @@
+[
+  {
+    "id": "f92cbb45-9fa9-4e83-94ac-fa1577744ce9",
+    "name": "八年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "青岛版2011课标",
+    "grade": "八年级",
+    "sortNo": 3
+  },
+  {
+    "id": "f44743da-1d5b-430c-9f05-9cd7a6bd9b99",
+    "name": "九年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "华师大版（2011课标）",
+    "grade": "九年级",
+    "sortNo": 5
+  },
+  {
+    "id": "f20e2bf2-6136-43f2-8651-f322ed707d07",
+    "name": "九年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "北师大版（2024课标）",
+    "grade": "九年级",
+    "sortNo": 5
+  },
+  {
+    "id": "ef3d808b-64d2-4ec2-b4d4-52ae29d64ada",
+    "name": "七年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "北师大版（2011课标）",
+    "grade": "七年级",
+    "sortNo": 1
+  },
+  {
+    "id": "e91f8a3c-e4ad-452e-87c9-a530ab1e44da",
+    "name": "九年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "北师大版（2011课标）",
+    "grade": "九年级",
+    "sortNo": 5
+  },
+  {
+    "id": "e7a05bdc-3b0d-4cc6-bfd2-ea2a3faff642",
+    "name": "七年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "浙教版（2011课标）",
+    "grade": "七年级",
+    "sortNo": 1
+  },
+  {
+    "id": "e4c4c7be-a14a-4c96-8021-f34afbfce4ea",
+    "name": "八年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "浙教版（2011课标）",
+    "grade": "八年级",
+    "sortNo": 4
+  },
+  {
+    "id": "e3feff8a-2012-4328-a16e-ec2f1953cedf",
+    "name": "九年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "北师大版（2024课标）",
+    "grade": "九年级",
+    "sortNo": 6
+  },
+  {
+    "id": "e2457f70-0469-493f-8d6a-963ec972accd",
+    "name": "七年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "青岛版2011课标",
+    "grade": "七年级",
+    "sortNo": 1
+  },
+  {
+    "id": "de28821b-f744-4bc0-a2b0-18e2905ade41",
+    "name": "八年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "浙教版（2024教材）",
+    "grade": "八年级",
+    "sortNo": 4
+  },
+  {
+    "id": "d6073739-1e88-4115-950e-917e7c241c71",
+    "name": "七年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "湘教版（2011课标）",
+    "grade": "七年级",
+    "sortNo": 1
+  },
+  {
+    "id": "d5720b67-437f-4ff3-84a1-4d8b5f5aaca7",
+    "name": "八年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "沪科版（2024课标）",
+    "grade": "八年级",
+    "sortNo": 4
+  },
+  {
+    "id": "cd23a9fa-f1c3-444e-843c-f81ade2970b2",
+    "name": "八年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "人教版（2024课标）",
+    "grade": "八年级",
+    "sortNo": 4
+  },
+  {
+    "id": "cba8c002-7218-46f8-b2ea-4dec8853b8fa",
+    "name": "九年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "沪科版（2011课标）",
+    "grade": "九年级",
+    "sortNo": 5
+  },
+  {
+    "id": "ca6c34e4-83ae-4ef2-977c-e5e08697b0ac",
+    "name": "九年级第一学期",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "沪教版2011课标",
+    "grade": "九年级",
+    "sortNo": 7
+  },
+  {
+    "id": "c5662dd4-4175-436c-a9d9-8eadfc089617",
+    "name": "九年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "华师大版（2011课标）",
+    "grade": "九年级",
+    "sortNo": 6
+  },
+  {
+    "id": "c44d67be-b33b-4ef5-9f88-d258127f86b5",
+    "name": "八年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "冀教版2011课标",
+    "grade": "八年级",
+    "sortNo": 4
+  },
+  {
+    "id": "c2be0ec3-38e1-457c-984c-bfbd3f9ba4bc",
+    "name": "九年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "浙教版（2011课标）",
+    "grade": "九年级",
+    "sortNo": 6
+  },
+  {
+    "id": "bcf65782-623d-4769-87d9-c404fb476ca8",
+    "name": "八年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "沪科版（2024课标）",
+    "grade": "八年级",
+    "sortNo": 3
+  },
+  {
+    "id": "b98d0c78-4fd3-4b50-a6f7-2fe177e0bad3",
+    "name": "九年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "鲁教版（2011课标）",
+    "grade": "九年级",
+    "sortNo": 7
+  },
+  {
+    "id": "b892bd62-4025-4499-84c0-0438452d1fc8",
+    "name": "九年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "人教版（2024课标）",
+    "grade": "九年级",
+    "sortNo": 6
+  },
+  {
+    "id": "b57b796a-ff66-4ac9-a692-f59929f588f8",
+    "name": "六年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "鲁教版（2011课标）",
+    "grade": "六年级",
+    "sortNo": 1
+  },
+  {
+    "id": "b381d77d-9040-43aa-aeee-f634487f7abe",
+    "name": "八年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "北京版2011课标",
+    "grade": "八年级",
+    "sortNo": 4
+  },
+  {
+    "id": "b24c2bee-0afe-4290-bdb3-7bd9c15a424b",
+    "name": "七年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "浙教版（2024教材）",
+    "grade": "七年级",
+    "sortNo": 1
+  },
+  {
+    "id": "ae1072a1-8ca0-4792-b25a-e779aa98f6f9",
+    "name": "八年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "浙教版（2011课标）",
+    "grade": "八年级",
+    "sortNo": 3
+  },
+  {
+    "id": "acbf802b-8c10-4f23-9f3d-3079faf8644b",
+    "name": "八年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "青岛版2011课标",
+    "grade": "八年级",
+    "sortNo": 4
+  },
+  {
+    "id": "ac190311-8d38-4798-abc6-c755557520f9",
+    "name": "七年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "沪科版（2024课标）",
+    "grade": "七年级",
+    "sortNo": 1
+  },
+  {
+    "id": "a9b75867-6e9f-4b51-b3c0-04d46cac5515",
+    "name": "九年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "青岛版2011课标",
+    "grade": "九年级",
+    "sortNo": 5
+  },
+  {
+    "id": "a3fd4093-14e2-4d9b-9f19-b49e09ab3a73",
+    "name": "七年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "沪科版（2024课标）",
+    "grade": "七年级",
+    "sortNo": 2
+  },
+  {
+    "id": "a1bd7e5b-f543-454c-95d6-e90d1e23e21a",
+    "name": "中考",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "人教版（2024课标）",
+    "grade": "九年级",
+    "sortNo": 7
+  },
+  {
+    "id": "9feb96c0-ae1f-4657-9f85-59cb7e84c3ae",
+    "name": "七年级第一学期",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "沪教版2011课标",
+    "grade": "七年级",
+    "sortNo": 3
+  },
+  {
+    "id": "9e9391f8-f8bc-4603-9d76-21653f1e9ae5",
+    "name": "七年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "浙教版（2024教材）",
+    "grade": "七年级",
+    "sortNo": 2
+  },
+  {
+    "id": "9d78055a-88cb-4739-80d6-5a9042bf45c7",
+    "name": "九年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "北京版2011课标",
+    "grade": "九年级",
+    "sortNo": 5
+  },
+  {
+    "id": "9775b65a-5f19-4fab-a0dc-bc5985d63f1d",
+    "name": "九年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "冀教版2011课标",
+    "grade": "九年级",
+    "sortNo": 6
+  },
+  {
+    "id": "92aee690-de67-42d3-a5ee-4da1075b43f0",
+    "name": "七年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "冀教版2011课标",
+    "grade": "七年级",
+    "sortNo": 1
+  },
+  {
+    "id": "91b2ee66-9997-4494-bffd-fd4194a0dd68",
+    "name": "八年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "浙教版（2024教材）",
+    "grade": "八年级",
+    "sortNo": 3
+  },
+  {
+    "id": "91200ad4-9ece-4ead-9d09-6c3bfbb81318",
+    "name": "九年级第二学期",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "沪教版2011课标",
+    "grade": "九年级",
+    "sortNo": 8
+  },
+  {
+    "id": "8a749aaa-bc45-466f-bc32-b662ae90fa85",
+    "name": "九年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "沪科版（2024课标）",
+    "grade": "九年级",
+    "sortNo": 5
+  },
+  {
+    "id": "8a73d1dd-3db3-4a0d-aa53-dbfeb52f46be",
+    "name": "八年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "北师大版（2011课标）",
+    "grade": "八年级",
+    "sortNo": 3
+  },
+  {
+    "id": "874a47e8-8e13-44c7-89ac-7423a46e1985",
+    "name": "八年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "华师大版（2011课标）",
+    "grade": "八年级",
+    "sortNo": 3
+  },
+  {
+    "id": "8432e94b-ae36-4595-97b9-9797ab1d960c",
+    "name": "九年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "北师大版（2011课标）",
+    "grade": "九年级",
+    "sortNo": 6
+  },
+  {
+    "id": "836a0606-92eb-406e-82b4-739978ea7347",
+    "name": "九年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "浙教版（2024教材）",
+    "grade": "九年级",
+    "sortNo": 6
+  },
+  {
+    "id": "813be31f-7fdc-490c-a1a4-3865db32b435",
+    "name": "七年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "鲁教版（2011课标）",
+    "grade": "七年级",
+    "sortNo": 3
+  },
+  {
+    "id": "7f4e5344-96c4-479c-a850-79f835e6bd20",
+    "name": "九年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "人教版（2024课标）",
+    "grade": "九年级",
+    "sortNo": 5
+  },
+  {
+    "id": "7a0916e0-bfd1-4b0d-a1fb-40a7d48d43ba",
+    "name": "八年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "湘教版（2011课标）",
+    "grade": "八年级",
+    "sortNo": 4
+  },
+  {
+    "id": "72f36770-a036-424f-88ca-20b9b81f0739",
+    "name": "八年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "北师大版（2024课标）",
+    "grade": "八年级",
+    "sortNo": 3
+  },
+  {
+    "id": "6f6d25bf-d761-43af-90b1-75daef2d0e68",
+    "name": "九年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "沪科版（2011课标）",
+    "grade": "九年级",
+    "sortNo": 6
+  },
+  {
+    "id": "6c38746e-0354-42cf-a617-3f492a4cc4f0",
+    "name": "七年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "鲁教版（2011课标）",
+    "grade": "七年级",
+    "sortNo": 4
+  },
+  {
+    "id": "6c1eae6c-0fc9-4f58-a03a-9b6cf253839a",
+    "name": "七年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "北师大版（2024课标）",
+    "grade": "七年级",
+    "sortNo": 2
+  },
+  {
+    "id": "68d1aa43-cc2b-4822-95ab-e0209167ddeb",
+    "name": "七年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "北京版2011课标",
+    "grade": "七年级",
+    "sortNo": 2
+  },
+  {
+    "id": "5a0c8988-e723-4fc5-9266-301bc4bb12f3",
+    "name": "八年级第二学期",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "沪教版2011课标",
+    "grade": "八年级",
+    "sortNo": 6
+  },
+  {
+    "id": "580145ed-cdda-45e5-a52e-8e733f442e0c",
+    "name": "七年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "冀教版2011课标",
+    "grade": "七年级",
+    "sortNo": 2
+  },
+  {
+    "id": "566f3b44-c651-470d-8009-aa5a055be5fb",
+    "name": "七年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "沪科版（2011课标）",
+    "grade": "七年级",
+    "sortNo": 1
+  },
+  {
+    "id": "55aaabf0-98db-45ea-97de-bbe674a586df",
+    "name": "七年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "人教版（2024课标）",
+    "grade": "七年级",
+    "sortNo": 2
+  },
+  {
+    "id": "52ba2e94-3044-46ae-aab1-83df487b6e44",
+    "name": "九年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "青岛版2011课标",
+    "grade": "九年级",
+    "sortNo": 6
+  },
+  {
+    "id": "4ed7c5a6-0f54-4327-a457-2ddfdd18465a",
+    "name": "九年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "湘教版（2011课标）",
+    "grade": "九年级",
+    "sortNo": 5
+  },
+  {
+    "id": "47b70142-88e4-40e4-91cf-a488073a4a7d",
+    "name": "九年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "浙教版（2011课标）",
+    "grade": "九年级",
+    "sortNo": 5
+  },
+  {
+    "id": "41db19e2-0ba2-4da7-a7c5-24b9b4f9ccf1",
+    "name": "六年级第一学期",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "沪教版2011课标",
+    "grade": "六年级",
+    "sortNo": 1
+  },
+  {
+    "id": "403d9e3b-f50c-46a5-a525-898f85a3b819",
+    "name": "七年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "沪科版（2011课标）",
+    "grade": "七年级",
+    "sortNo": 2
+  },
+  {
+    "id": "3ed7c76e-7776-401d-8f49-3300361ac64c",
+    "name": "七年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "北师大版（2011课标）",
+    "grade": "七年级",
+    "sortNo": 2
+  },
+  {
+    "id": "3e1e7f3e-e1e2-4472-81a9-2f757de9be0e",
+    "name": "六年级第二学期",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "沪教版2011课标",
+    "grade": "六年级",
+    "sortNo": 2
+  },
+  {
+    "id": "3ad4994d-af39-48c9-b3bc-8f80e316cfbc",
+    "name": "九年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "北京版2011课标",
+    "grade": "九年级",
+    "sortNo": 6
+  },
+  {
+    "id": "387b5c33-95cc-4b99-99ac-cd7297d83680",
+    "name": "九年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "冀教版2011课标",
+    "grade": "九年级",
+    "sortNo": 5
+  },
+  {
+    "id": "36d1c326-9b90-4b15-b512-56c55c2c1efd",
+    "name": "六年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "鲁教版（2011课标）",
+    "grade": "六年级",
+    "sortNo": 2
+  },
+  {
+    "id": "36b63563-34a0-412b-ae03-38d07d87e2b0",
+    "name": "八年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "沪科版（2011课标）",
+    "grade": "八年级",
+    "sortNo": 3
+  },
+  {
+    "id": "337a8668-bda7-4d7c-a6d8-675b8eee3468",
+    "name": "九年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "湘教版（2011课标）",
+    "grade": "九年级",
+    "sortNo": 6
+  },
+  {
+    "id": "329a9d23-b22e-4c5d-8de4-d9bdf430058e",
+    "name": "八年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "湘教版（2011课标）",
+    "grade": "八年级",
+    "sortNo": 3
+  },
+  {
+    "id": "2fb8a4b6-6772-4567-91d6-8948034d2275",
+    "name": "八年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "冀教版2011课标",
+    "grade": "八年级",
+    "sortNo": 3
+  },
+  {
+    "id": "2e5fe796-18d0-4abb-9edd-5626e291b018",
+    "name": "八年级第一学期",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "沪教版2011课标",
+    "grade": "八年级",
+    "sortNo": 5
+  },
+  {
+    "id": "2a6fe7f3-55a2-4ec2-bb45-6a3090e928bf",
+    "name": "八年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "鲁教版（2011课标）",
+    "grade": "八年级",
+    "sortNo": 6
+  },
+  {
+    "id": "276d1380-d924-4b8d-a758-f8248d01fa6e",
+    "name": "七年级第二学期",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "沪教版2011课标",
+    "grade": "七年级",
+    "sortNo": 4
+  },
+  {
+    "id": "2709fddb-256c-4ba8-b9ba-d7f2c5d4eeb6",
+    "name": "九年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "沪科版（2024课标）",
+    "grade": "九年级",
+    "sortNo": 6
+  },
+  {
+    "id": "25d0b77f-7f5a-4f34-83d5-7ac6dc536a85",
+    "name": "七年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "华师大版（2011课标）",
+    "grade": "七年级",
+    "sortNo": 2
+  },
+  {
+    "id": "21a0c7a2-65b9-45cf-9653-453932771105",
+    "name": "八年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "人教版（2024课标）",
+    "grade": "八年级",
+    "sortNo": 3
+  },
+  {
+    "id": "1cdb1b88-7a70-4184-b63b-9497527c6b0b",
+    "name": "八年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "北师大版（2024课标）",
+    "grade": "八年级",
+    "sortNo": 4
+  },
+  {
+    "id": "1b2be41d-ca54-4616-b433-d66b0bb68b41",
+    "name": "八年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "沪科版（2011课标）",
+    "grade": "八年级",
+    "sortNo": 4
+  },
+  {
+    "id": "1ab148b6-b78b-4719-a8f2-22ff995a7e40",
+    "name": "七年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "华师大版（2011课标）",
+    "grade": "七年级",
+    "sortNo": 1
+  },
+  {
+    "id": "1a9d196e-4c7c-4d7e-a370-5fc694eddf04",
+    "name": "七年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "青岛版2011课标",
+    "grade": "七年级",
+    "sortNo": 2
+  },
+  {
+    "id": "1a134cf3-7556-41cf-91d8-e0ecf38f150b",
+    "name": "七年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "湘教版（2011课标）",
+    "grade": "七年级",
+    "sortNo": 2
+  },
+  {
+    "id": "15c4329a-4246-4e3c-9caf-1c9748b5f3dc",
+    "name": "八年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "北师大版（2011课标）",
+    "grade": "八年级",
+    "sortNo": 4
+  },
+  {
+    "id": "1025115c-89e9-48ea-9f04-e8750a147ae6",
+    "name": "九年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "浙教版（2024教材）",
+    "grade": "九年级",
+    "sortNo": 5
+  },
+  {
+    "id": "0eec63e8-b2bc-4841-a6bd-eb0ad92bfc69",
+    "name": "八年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "鲁教版（2011课标）",
+    "grade": "八年级",
+    "sortNo": 5
+  },
+  {
+    "id": "0bfd5691-4722-4e13-adb6-7b0360ab6b94",
+    "name": "八年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "华师大版（2011课标）",
+    "grade": "八年级",
+    "sortNo": 4
+  },
+  {
+    "id": "08197ca8-eea9-4b51-a58f-dce28bd291bc",
+    "name": "九年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "鲁教版（2011课标）",
+    "grade": "九年级",
+    "sortNo": 8
+  },
+  {
+    "id": "07e1f65f-1cda-4d00-8ce4-7e85f45bd57d",
+    "name": "七年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "北京版2011课标",
+    "grade": "七年级",
+    "sortNo": 1
+  },
+  {
+    "id": "070cca17-dcbc-41e7-a43a-bd2abe5a4f7d",
+    "name": "八年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "北京版2011课标",
+    "grade": "八年级",
+    "sortNo": 3
+  },
+  {
+    "id": "025aa4f4-e26d-4da2-96d2-ead6280bd612",
+    "name": "七年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "北师大版（2024课标）",
+    "grade": "七年级",
+    "sortNo": 1
+  },
+  {
+    "id": "0201a6ad-9e85-4540-9a89-6b5426a13cdc",
+    "name": "七年级上册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "人教版（2024课标）",
+    "grade": "七年级",
+    "sortNo": 1
+  },
+  {
+    "id": "01024a5c-e314-4148-864b-4e11e9fd8963",
+    "name": "七年级下册",
+    "stage": "初中",
+    "subject": "数学",
+    "version": "浙教版（2011课标）",
+    "grade": "七年级",
+    "sortNo": 2
+  }
+]

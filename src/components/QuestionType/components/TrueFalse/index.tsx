@@ -1,0 +1,145 @@
+import React, { useEffect, useState, useRef } from "react";
+import {
+  Row,
+  Col,
+  Typography,
+  Button,
+  Skeleton,
+  Select,
+  Tag,
+  Spin,
+  Carousel,
+  Image as ImageCode,
+  message,
+  Progress,
+  Divider,
+  Dropdown,
+  Space,
+  Tooltip,
+} from "antd";
+import { LeftOutlined, RightOutlined } from "@ant-design/icons";
+import { connect, history, useDispatch } from "umi";
+import { formatStaticUrl, getSpaceInfo } from "@/utils";
+import MarkdownRender from "@/components/MarkdownRender";
+import ZYIcon from "../../../ZYIcon";
+
+import ButtonComponent from "./../ButtonComponent";
+import SourceComponent from "./../SourceComponent";
+import SimilarQuestionscomponent from "../SimilarQuestionscomponent";
+import AnswerLabel from "../AnswerLabel";
+
+import MathHtmlRenderer from '@/components/MathHtmlRenderer';
+
+import {
+  single_choice_list_name,
+  multiple_choice_list_name,
+  fill_in_the_blank_list_name,
+  short_answer_list_name,
+  true_false_list_name,
+} from "@/global";
+
+import dayjs from "dayjs";
+
+import "./../../index.less";
+
+const { Title } = Typography;
+const App = (props: any) => {
+  const {
+    row,
+    rowKey,
+    showAnswer,
+    studentAnswer,
+    items,
+    commonModel,
+    showSource = true,
+    download,
+    selectPrintType
+  } = props;
+
+  const markdownRenderFn = (str: any) => {
+    return (
+      <MathHtmlRenderer htmlString={str} row={row} />
+      // <div
+      //   className={`render_title_box ${row?.question_type === "cloze_test" ? "english" : ""}`}
+      //   dangerouslySetInnerHTML={{ __html: str }}
+      // />
+    );
+  };
+
+  return (
+    <div className="question_type_box_css">
+      {/* 判断题 */}
+        <>
+          <div className="question-item" key={row?.id}>
+            <div
+              {
+              ...download && {
+                style: {
+                  display: "flex",
+                  alignItems: "baseline",
+                }
+              }
+              }
+              className="question-title"
+            >
+              {/* {rowKey + 1}、{row?.question_text}{" "}
+               <span className="question-type">（{row?.type}）</span> */}
+              {/* <p>{`${rowKey + 1}.${row?.type}`}</p> */}
+              <span className="question_number">{rowKey + 1}.</span>
+              {markdownRenderFn(row?.question_text)}
+            </div>
+          </div>
+          {studentAnswer && (
+            <div
+              className={`answer_result ${row?.is_correct ? "correct" : "wrong"}`}
+            >
+              {markdownRenderFn(
+                `回答：${row?.studentAnswer === "true" ? "对" : "错"}`,
+              )}
+            </div>
+          )}
+          {
+            !download && (
+              <div
+                className={`question-answer  ${showAnswer ? "show_answer_question_css" : "none_show_answer_question_css"}`}
+              >
+                {row?.kgPointList?.length > 0 && (
+                  <SimilarQuestionscomponent {...props} />
+                )}
+                <AnswerLabel
+                  answer={row?.answer === "true" ? "对" : "错"}
+                  row={row}
+                />
+                <div className="answer-analysis">
+                  {markdownRenderFn(row?.explanation)}
+                </div>
+                <SourceComponent {...props} />
+                <ButtonComponent {...props} />
+              </div>
+            )
+          }
+          {
+            download && selectPrintType === "teacher" && (
+              <div
+                className={`question-answer  ${showAnswer ? "show_answer_question_css" : "none_show_answer_question_css"}`}
+              >
+                <AnswerLabel
+                  answer={row?.answer === "true" ? "对" : "错"}
+                  row={row}
+                />
+                <div className="answer-analysis">
+                  {markdownRenderFn(row?.explanation)}
+                </div>
+                <br />
+              </div>
+            )
+          }
+        </>
+    </div>
+  );
+};
+
+export default connect((state: any) => ({
+  setQuestionsModel: state.setQuestionsModel,
+  commonModel: state.commonModel,
+}))(App);

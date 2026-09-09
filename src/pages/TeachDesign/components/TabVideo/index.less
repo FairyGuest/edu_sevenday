@@ -1,0 +1,134 @@
+.tab-video {
+  width: 792px;
+  margin-top: 40px;
+
+  &-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  &-item {
+    width: 256px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 5px 10px 0 rgba(114, 122, 158, 0.05),
+      0 0 12px 0 rgba(148, 160, 184, 0.14);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+    .item-type {
+      position: absolute;
+      transform: rotate(45deg);
+      top: 4px;
+      right: -20px;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 1.6px 26px;
+      line-height: 22px;
+      text-align: center;
+    }
+    .item-type-long {
+      top: 13px;
+      right: -25px;
+      width: 100px;
+      padding: 1.6px 0;
+    }
+
+    .item-img {
+      width: 256px;
+      padding: 8px;
+
+      >img {
+        width: 240px;
+        height: 136px;
+        border-radius: 4px;
+      }
+    }
+
+    .item-desc {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 4px 16px 8px 0;
+
+      .tag {
+        border-radius: 0 12px 12px 0;
+        background: #edf4ff;
+        padding: 4px 12px 4px 16px;
+        color: @primary-color;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 16px;
+      }
+
+      .time {
+        color: #646e8b;
+        font-size: 12px;
+      }
+    }
+
+    .item-title {
+      padding: 16px;
+      padding-top: 0;
+      color: #1e253b;
+      font-weight: 400;
+      line-height: 20px;
+      font-family: "PingFang SC";
+    }
+  }
+
+  &-empty {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+
+    .empty-data {
+      width: 140px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      gap: 12px;
+
+      img {
+        width: 74px;
+      }
+    }
+    .empty-text {
+      color: #646e8b;
+      line-height: 20px;
+      text-align: center;
+    }
+  }
+
+  .ant-tabs-ink-bar {
+    height: 3px !important;
+  }
+
+  .ant-tabs-nav::before {
+    border-bottom: 0;
+  }
+
+  .ant-tabs-tab {
+    padding: 8px 0;
+  }
+
+  .ant-tabs-tab-active .ant-tabs-tab-btn {
+    font-weight: 600;
+  }
+
+  .ant-tabs-tab-btn {
+    font-size: 16px;
+    color: #646e8b;
+  }
+}

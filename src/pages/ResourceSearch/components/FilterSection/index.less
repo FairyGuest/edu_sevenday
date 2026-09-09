@@ -1,0 +1,203 @@
+// 筛选区域
+.filter-section {
+  background-color: #fff;
+  position: relative;
+
+  // 搜索行
+  .search-row {
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+
+    .ant-input-search {
+      .ant-input {
+        border-radius: 8px;
+        border-color: #d1d5db;
+        font-size: 16px;
+        height: 48px;
+
+        &:hover {
+          border-color: #1C6CFF;
+        }
+
+        &:focus {
+          border-color: #1C6CFF;
+          box-shadow: 0 0 0 2px rgba(91, 33, 182, 0.1);
+        }
+      }
+
+      .ant-input-search-button {
+        height: 48px;
+        border-radius: 0 8px 8px 0;
+      }
+    }
+
+    .ant-btn-primary {
+      background-color: #1C6CFF;
+      border-color: #1C6CFF;
+      border-radius: 8px;
+      font-weight: 500;
+      height: 48px;
+      padding: 0 24px;
+
+      &:hover {
+        background-color: #1C6CFF;
+        border-color: #1C6CFF;
+      }
+    }
+  }
+
+  // 筛选条件行
+  .filter-rows {
+    overflow: hidden;
+    width: 100%;
+
+    .filter-tags-row, .filter-select-row {
+      display: flex;
+      align-items: flex-start;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .filter-label {
+        font-size: 14px;
+        color: #374151;
+        white-space: nowrap;
+        font-weight: 500;
+        width: 42px;
+      }
+
+      .ant-select {
+        .ant-select-selector {
+          border-radius: 6px;
+          border-color: #d1d5db;
+
+          &:hover {
+            border-color: #1C6CFF;
+          }
+        }
+
+        &.ant-select-focused .ant-select-selector {
+          border-color: #1C6CFF;
+          box-shadow: 0 0 0 2px rgba(91, 33, 182, 0.1);
+        }
+      }
+    }
+
+    .filter-tags-row {
+      // height: 28px;
+      .filter-label {
+        line-height: 28px;
+      }
+    }
+
+    .filter-select-row {
+      .filter-label {
+        line-height: 32px;
+      }
+
+      .ant-flex:last-child {
+        flex: 1;
+      }
+    }
+  }
+
+  .filter-select, .filter-search {
+    min-width: 0;
+    .ant-input-affix-wrapper {
+      border-radius: 6px;
+    }
+    .ant-input-search-button {
+      display: none; // 隐藏默认的搜索按钮，因为我们使用了前置图标
+    }
+  }
+
+  // 新增自适应样式
+  .filter-select-adaptive, .filter-search-adaptive {
+    width: 100% !important; // 自适应宽度
+    min-width: 142px; // 最小宽度142px
+    .ant-input-affix-wrapper {
+      border-radius: 6px;
+    }
+    .ant-input-search-button {
+      display: none; // 隐藏默认的搜索按钮，因为我们使用了前置图标
+    }
+  }
+
+  // 响应式布局
+  .filter-component-row {
+    flex-wrap: wrap; // 允许换行
+
+    .filter-component-item {
+      min-width: 142px;
+      flex-grow: 0; // 禁止扩展
+      flex-shrink: 0; // 禁止收缩
+    }
+
+    .filter-placeholder {
+      visibility: hidden;
+    }
+
+    // 大屏幕：每行5个组件
+    @media (min-width: 1441px) {
+      .filter-component-item {
+        flex-basis: calc(20% - 6.4px); // 固定基础宽度，5个组件
+        width: calc(20% - 6.4px); // 明确设置宽度
+      }
+    }
+
+    // 中等屏幕：每行4个组件
+    @media (max-width: 1440px) {
+      .filter-component-item {
+        flex-basis: calc(25% - 6px); // 固定基础宽度，4个组件
+        width: calc(25% - 6px); // 明确设置宽度
+      }
+    }
+  }
+
+  // Select 多选样式优化
+  .filter-select, .filter-select-adaptive {
+    .ant-select-selector {
+      min-height: 32px;
+      padding-right: 24px; // 为下拉箭头留出更多空间
+    }
+  }
+  .filter-pos{
+    width: 118px;
+    height: 32px;
+    visibility: hidden;
+  }
+
+  .filter-button-placeholder {
+    width: 142px; // 与其他组件保持一致的宽度
+    height: 32px;
+    visibility: hidden; // 占位但不可见
+  }
+
+  .filter-options {
+    position: absolute;
+    right: 0;
+    width: 120px; // 减少宽度，给筛选组件更多空间
+    background: linear-gradient(to right, transparent, #fff 15%, #fff);
+    pointer-events: none; // 让背景不阻挡点击事件
+    z-index: 10; // 确保在其他元素之上
+
+    .ant-btn {
+      padding: 0;
+      color: #646E8B;
+      pointer-events: auto; // 但按钮本身可以点击
+      gap: 6px;
+      &:hover {
+        background: none;
+        color: #1C6CFF;
+      }
+    }
+  }
+  .ant-select-selection-item-content{
+    max-width: 110px;
+  }
+  .ant-select-selector:has(.ant-select-selection-overflow-item-rest) .ant-select-selection-item-content{
+    max-width: 50px;
+  }
+}

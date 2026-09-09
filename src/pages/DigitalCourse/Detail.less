@@ -1,0 +1,63 @@
+.digital-detail {
+  height: calc(100vh - 16px);
+  display: flex;
+  flex-direction: column;
+
+  &-header {
+    padding: 20px 13px;
+    border-bottom: 1px solid #f2f5fa;
+    display: flex;
+
+    .header-left {
+      color: #646E8B;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+    .svg-icon {
+      margin-right: 6px;
+    }
+  }
+  &-content {
+    flex: 1;
+    overflow: hidden;
+
+    .ant-splitter-panel {
+      position: relative;
+    }
+
+    // .edu-source-header {
+    //   .ant-btn {
+    //     display: none;
+    //   }
+    // }
+
+    // .edu-source-content {
+    //   .ant-dropdown-trigger {
+    //     display: none;
+    //   }
+    // }
+
+    // .catalog {
+    //   .catalog-content {
+    //     .ant-btn {
+    //       display: none;
+    //     }
+    //     .ant-dropdown-trigger {
+    //       display: none;
+    //     }
+    //   }
+    // }
+
+    .ant-splitter-panel {
+      background-color: #fff;
+      overflow: hidden;
+      padding: 0;
+      border-radius: 12px;
+    }
+
+    .ant-splitter-bar {
+      padding: 0 6px;
+    }
+  }
+}

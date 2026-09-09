@@ -1,0 +1,31 @@
+.setting_topic_search_box {
+  display: flex;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-content: start;
+    gap: 10px;
+  .setting_topic_search_box_item {
+    width: 100%;
+    .ant-select-selector {
+      border: 1px solid #e2e6f0;
+    }
+    .ant-select-selection-placeholder {
+      color: #94A0B8
+    }
+    .ant-picker {
+      border: 1px solid #e2e6f0;
+    }
+
+    .ant-picker-input > input::placeholder {
+      color: #94A0B8 !important; /* 自定义颜色，如浅灰 #999、淡蓝 #8cb7e8 等 */
+      opacity: 1; /* 确保颜色不透明，AntD 默认可能有透明度 */
+    }
+    .ant-input-affix-wrapper {
+      border: 1px solid #e2e6f0;
+    }
+    .ant-input::placeholder {
+      color: #94A0B8 !important;
+      opacity: 1;
+    }
+  }
+}

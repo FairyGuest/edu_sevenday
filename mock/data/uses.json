@@ -1,0 +1,7 @@
+[
+  { "label": "练习", "value": "practice" },
+  { "label": "复习", "value": "review" },
+  { "label": "预习", "value": "preview" },
+  { "label": "测试", "value": "test" },
+  { "label": "考试", "value": "exam" }
+]

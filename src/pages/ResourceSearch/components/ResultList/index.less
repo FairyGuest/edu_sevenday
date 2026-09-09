@@ -1,0 +1,97 @@
+// 全局样式：强制所有分页器相关的下拉菜单向上显示
+:global {
+  .ant-select-dropdown {
+    &[data-placement^="top"] {
+      .ant-select-dropdown-menu {
+        max-height: 200px;
+        overflow-y: auto;
+      }
+    }
+  }
+  
+  // 针对分页器的页面大小选择器
+  .ant-pagination-options .ant-select-dropdown {
+    transform: translateY(-100%) translateY(-8px) !important;
+    top: auto !important;
+    bottom: 100% !important;
+  }
+}
+
+// 试题列表区域
+.question-list-section {
+  flex: 1;
+  overflow-y: visible;
+  position: relative;
+
+  .result-info {
+    .latest-button {
+      padding: 0;
+      height: auto;
+      font-size: 14px;
+      color: #1C6CFF;
+      font-weight: 400;
+      width: 28px;
+      height: 28px;
+      line-height: 28px;
+    }
+    
+    .result-count {
+      font-size: 14px;
+      color: #646E8B;
+      font-weight: 400;
+    }
+  }
+  .ant-spin-nested-loading{
+    flex: 1;
+    .ant-spin-container{
+      height: 100%;
+      position: relative;
+    }
+    .ant-empty{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .ant-empty-description {
+      color: #646e8b;
+      font-size: 14px;
+    }
+  }
+}
+
+// 试卷列表区域
+.paper-list-section {
+  flex: 1;
+  overflow-y: visible;
+  position: relative;
+
+  .result-info {
+    .latest-button {
+      padding: 0;
+      height: auto;
+      font-size: 14px;
+      color: #1C6CFF;
+      font-weight: 400;
+      width: 28px;
+      height: 28px;
+      line-height: 28px;
+    }
+    
+    .result-count {
+      font-size: 14px;
+      color: #646E8B;
+      font-weight: 400;
+    }
+  }
+}
+
+.pagination-wrapper {
+  overflow: visible; // 改为 visible 以确保下拉菜单可见
+  text-align: center;
+  height: 60px; // 固定高度防止抖动
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-bottom: 40px;
+}

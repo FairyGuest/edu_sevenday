@@ -1,0 +1,154 @@
+.homework-time {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 16px;
+  .time-axis {
+    margin: 0 25px 0 90px;
+    margin-bottom: 8px;
+    position: relative;
+    height: 20px;
+    &-item {
+      position: absolute;
+      left: 0;
+      transform: translateX(-50%);
+      font-size: 12px;
+      color: #646E8B;
+    }
+  }
+  &-chart {
+    height: 560px;
+    overflow-y: auto;
+    direction: rtl;
+    padding-left: 15px;
+    margin-bottom: 0px; // Reduced margin to connect with slider
+    .echarts-for-react {
+      direction: ltr;
+    }
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: #F7F9FC;
+      border-radius: 4px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: #CBD2E166;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+      cursor: pointer;
+      
+      &:hover {
+        background: #CBD2E199;
+      }
+    }
+    
+    &::-webkit-scrollbar-corner {
+      background: #F7F9FC;
+    }
+  }
+  .slider-box {
+    margin: 2px 20px 0 85px;
+    margin-bottom: 8px;
+    .homework-time-slider {
+      .ant-slider-rail {
+        height: 10px;
+        background-color: #F7F9FC;
+      }
+      .ant-slider-track {
+        height: 10px;
+        background-color: #E5E9F1;
+      }
+      .ant-slider-handle {
+        &::after {
+          width: 24px;
+          height: 24px;
+          background-color: #fff;
+          border: 3px solid #CBD2E1;
+          box-shadow: 0 2px 6px #94A0B81a;
+          inset-inline-start: -4px;
+          inset-block-start: -4px;
+        }
+        &:hover::after,
+        &:focus::after {
+          border-color: #94A0B8;
+          outline: 4px solid rgba(148, 160, 184, 0.30);
+        }
+      }
+    }
+  }
+  &-legend {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    justify-content: center;
+    &-item {
+      text-align: center;
+      font-size: 14px;
+      color: #646E8B;
+      width: 110px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &::before {
+        content: '';
+        display: inline-block;
+        width: 12px;
+        height: 4px;
+        margin-right: 5px;
+      }
+      &:nth-child(1) {
+        &::before {
+          background-color: #4E83FD;
+        }
+      }
+      &:nth-child(2) {
+        &::before {
+          background-color: #FAD355;
+        }
+      }
+      &:nth-child(3) {
+        &::before {
+          background-color: #F76964;
+        }
+      }
+    }
+  }
+  .chart-wrapper-loading,
+  .chart-wrapper-empty {
+    height: 560px !important;
+  }
+}
+
+
+.analysis-h5 {
+  .homework-time {
+    &-title {
+        font-size: 18px;
+    }
+    .time-axis {
+      margin: 0 10px 0 58px;
+      &-item {
+        font-size: 10px;
+      }
+    }
+    &-chart {
+      height: 340px;
+      padding-left: 10px;
+    }
+    .slider-box {
+      margin: 0 2px 0 50px;
+    }
+    &-legend {
+      &-item {
+        font-size: 12px;
+      }
+    }
+    .chart-wrapper-loading,
+    .chart-wrapper-empty {
+      height: 340px !important;
+    }
+  }
+}

@@ -1,0 +1,81 @@
+.setting_topic_box {
+  // background-color: var(--page-bg-color);
+  background-color: #fff !important;
+  height: 100%;
+  padding: 16px 24px;
+
+  .setting_topic_title_box_css {
+    border-bottom: 1px solid #E2E6F0;
+  }
+
+  .setting_topic_search_box_css {
+    margin-top: 12px;
+  }
+
+  .setting_topic_list_box_css {
+    margin-top: 24px;
+    height: calc(100% - 164px);
+    // overflow: scroll;
+    // scrollbar-width: none;
+  }
+
+  .setting_topic_box_pagination_box {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    .ant-pagination-item a {
+      color: #94A0B8 !important; /* 自定义普通页码颜色 */
+    }
+
+    .ant-pagination-item-active a {
+      color: #94A0B8 !important;
+    }
+    .ant-pagination-prev,.ant-pagination-next {
+      color: #94A0B8 !important; /* 按钮文字/图标颜色 */
+    }
+    .ant-pagination-options-size-changer .ant-select-selector {
+      border-color: #e2e6f0 !important; /* 框体边框色 */
+      // background-color: #e2e6f0 !important; /* 框体背景色（可选） */
+      height: 32px !important; /* 框体高度（适配分页组件） */
+    }
+    .ant-pagination-options-size-changer .ant-select-selection-item {
+      color: #94A0B8 !important; /* 常规文字色 */
+    }
+
+    .ant-pagination-options-size-changer .ant-select-item-option-content {
+      color: #94A0B8 !important; /* 选项文字 */
+    }
+  }
+}
+
+.setting_questions_empty_box {
+  background-color: var(--page-bg-color);
+  height: 100%;
+  .course_empty_box {
+    text-align: center;
+
+    .course_empty_box_greetings {
+      color: var(---, #1E253B);
+      text-align: center;
+      font-family: "PingFang SC";
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    .course_empty_box_tips {
+      color: var(---, #646E8B);
+      text-align: center;
+      font-family: "PingFang SC";
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      margin: 14px 0;
+    }
+
+    .course_empty_box_btn {
+      width: 140px;
+      height: 38px;
+    }
+  }
+}

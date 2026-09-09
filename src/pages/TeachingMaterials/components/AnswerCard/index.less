@@ -1,0 +1,161 @@
+ .answer_card_container {
+   //  background-color: #fff;
+  //  padding-left: 12px;
+  .answer-card-border{
+    // border:1px solid #E2E6F0;
+    // border-radius: 12px;
+    // padding:8px 12px 6px 12px;
+    color: #333C55;
+   }
+   .assistant_basic {
+     display: flex;
+     justify-content: flex-start;
+     padding-bottom: 8px;
+     .assistant_basic_logo{
+      text-align: center;
+      line-height: 32px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background-color: #f2f5fa;
+     }
+
+     .assistant_avatar {
+       height: 24px;
+       width: 24px;
+       border-radius: 24px;
+     }
+
+     .assistant_avatar_activate {
+       height: 24px;
+       width: 24px;
+       border-radius: 24px;
+       animation: avatarAssistant 2s linear infinite;
+     }
+
+     .assistant_name {
+       line-height: 24px;
+       padding-left: 8px;
+       text-align: left;
+       font-size: 15px;
+       font-weight: 700;
+       color: #1a2029;
+     }
+   }
+
+   .assistant_answer_container {
+     background-color: #fff;
+     border-radius: 16px;
+     margin-left: 32px;
+     padding: 1px 16px;
+     margin-top: 8px;
+     color: #444;
+     padding-bottom: 8px;
+
+     .placeholder_container {
+       padding-top: 8px;
+       padding-bottom: 16px;
+
+       .table_submit {
+         text-align: end;
+       }
+     }
+   }
+
+   // 阻止生成显示
+   .chat_error_container {
+     padding-bottom: 8px;
+     padding-top: 8px;
+
+     .error_title {
+       color: #b0b7c0;
+     }
+
+     .error_restart {
+       margin-left: 32px;
+       cursor: pointer;
+       color: #1C6CFF;
+
+       span {
+         margin-left: 8px;
+       }
+     }
+   }
+
+   /* 添加旋转动画 */
+   @keyframes avatarAssistant {
+     from {
+       transform: rotate(0deg);
+     }
+
+     to {
+       transform: rotate(360deg);
+     }
+   }
+
+
+   .design_answer_content {
+    //  background-color: #F2F5FA;
+    //  padding: 8px 0;
+    //  border-radius: 8px;
+    //  margin-left: 16px;
+    // padding-bottom:12px;
+    p {
+      color: #333c55 !important;
+    }
+     
+   }
+
+
+   .design_action_container{
+    margin-left: 16px;
+    margin-top: 4px;
+    text-align: start;
+   }
+
+   .finish_container_block{
+    .actions{
+      gap: 16px;
+    }
+    .action{
+      gap: 4px;
+    }
+    .publish-btn{
+      font-size: 12px;
+      color: #333C55 !important;
+    }
+   }
+   .finish_container{
+    border-radius: 12px;
+    padding: 8px 12px;
+   }
+   .create-ppt-btn{
+    font-size: 12px;
+    background-color: #EDF4FF !important;
+    border: 1px solid #c4b5fd !important;
+    color: #1558CC !important;
+    border-radius: 6px !important;
+    box-shadow: none;
+    padding: 4px 12px !important;
+    width: fit-content;
+   }
+   .create-ppt-btn:hover{
+    background: #1C6CFF !important;
+    color: #fff !important;
+   }
+   .response-content-container{
+    // padding-left: 12px;
+    margin-top: 8px;
+   }
+   .left_publis_btn{
+    font-size: 12px !important;
+    color: #333C55 !important;
+    gap: 4px !important;
+    border: 0px !important;
+    box-shadow: none;
+   }
+   .left_publis_btn:hover{
+    color: #646E8B !important;
+    background: none !important;
+   }
+ }

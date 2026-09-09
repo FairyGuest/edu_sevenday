@@ -1,0 +1,28 @@
+{
+ "batches": [
+  {
+   "accepted": 4,
+   "rejected": 1,
+   "meta": {
+    "subject": "数学",
+    "comment": "转学生基础薄弱，需补几何"
+   },
+   "new_students": [
+    {
+     "name": "刘子涵",
+     "display_id": "edug9045",
+     "student_id": "batchdemo001"
+    }
+   ],
+   "errors": [
+    {
+     "row": 3,
+     "code": "DATE_IN_FUTURE",
+     "msg": "练习时间 2027-01-01 晚于画像基准日"
+    }
+   ],
+   "queued_for_tagging": [],
+   "time": "2026-08-30 11:20"
+  }
+ ]
+}

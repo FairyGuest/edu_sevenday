@@ -1,0 +1,319 @@
+.question-card {
+  margin-bottom: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  transition: all 0.3s;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: none !important;
+
+  &:hover {
+    // box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03),0 1px 6px -1px rgba(0, 0, 0, 0.02),0 2px 4px 0 rgba(0, 0, 0, 0.02) !important;
+    // box-shadow: 0px 0px 12px 0px #E2E6F066 !important;
+    border: 1px solid #1C6CFF !important;
+    box-shadow: none !important;
+  }
+
+  .ant-card-body {
+    padding: 12px 0 0;
+  }
+
+  .question-header {
+
+    .question-meta {
+      background-color: #EDF4FF;
+      color: #1C6CFF;
+      border-radius: 6px;
+      height: 24px;
+      line-height: 24px;
+      padding: 0 8px;
+      font-size: 14px;
+      font-weight: 400;
+
+      .question-meta-item:not(:first-child)::before {
+        content: "|";
+        margin: 0 8px;
+        color: #DDD6FE;
+      }
+    }
+
+    .question-fame {
+      background-color: #E1FAEB;
+      color: #027A48;
+      border-radius: 6px;
+      height: 24px;
+      line-height: 24px;
+      padding: 0 8px;
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    .question-right-info {
+      .update-time {
+        font-size: 14px;
+        font-weight: 400;
+        color: #646E8B;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .question-content {
+    padding: 0 12px;
+    margin-bottom: 18px;
+
+    .markdown_container {
+      p {
+        margin: 8px 0;
+        line-height: 20px;
+        color: #333C55;
+      }
+    }
+
+    .question-tags {
+      color: #646E8B;
+      border-radius: 6px;
+      height: 20px;
+      line-height: 20px;
+      font-size: 14px;
+      font-weight: 400;
+      overflow: hidden;
+
+      .question-tags-content {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .question-tag-item {
+        flex-shrink: 0;
+
+        &.question-tag-difficulty::before,
+        &.question-tag-knowledge::before {
+          content: "|";
+          margin: 0 8px;
+          color: #CBD2E1;
+        }
+
+        &.question-tag-knowledge {
+          flex: 1;
+          display: inline-block;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          word-spacing: 8px;
+          color: #646E8B;
+        }
+      }
+    }
+
+    .question-main {
+      cursor: pointer;
+
+      &.has-children {
+        cursor: default;
+      }
+    }
+
+    .question-stem {
+      display: flex;
+      align-items: flex-start;
+
+      .question-text {
+        font-size: 14px;
+        color: #1E253B;
+        line-height: 1.5;
+        font-weight: 500;
+        flex: 1;
+
+        p {
+          margin-bottom: 4px;
+        }
+
+        img {
+          display: inline;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    .question-audio {
+      padding-left: 26px;
+    }
+
+    .question-options {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      .option-item {
+        font-size: 14px;
+        color: 14px;
+        min-height: 20px;
+        line-height: 20px;
+        padding-left: 26px;
+
+        .option-label {
+          font-weight: 400;
+          margin-right: 2px;
+          flex-shrink: 0;
+          color: #333C55;
+        }
+
+        .option-content {
+          flex: 1;
+
+          img {
+            display: inline;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+
+  .question-answer {
+    padding-left: 20px;
+
+    .question-answer-main {
+      font-weight: 600;
+      color: #1E253B;
+
+      .safe-math-renderer {
+        .stem-wrapper {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .question-answer-detail {
+      font-weight: 400;
+      color: #333C55;
+    }
+  }
+
+  .question-footer {
+    background-color: #F2F5FA;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+
+    .question-source {
+      flex: 1;
+      height: 40px;
+
+      .reference-text {
+        display: inline-block;
+        color: #646E8B;
+        max-width: 500px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 14px;
+      }
+
+      .paper-reference-dropdown {
+        padding: 0;
+        height: auto;
+        font-size: 12px;
+        color: #9ca3af;
+
+        border: none;
+        box-shadow: none;
+
+        .reference-count {
+          color: #9ca3af;
+        }
+
+
+
+        .dropdown-icon {
+          font-size: 10px;
+          color: #9ca3af;
+          margin-left: 4px;
+          transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+        // 箭头图标过渡效果
+        .anticon {
+          transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+      }
+    }
+
+    .question-actions {
+      .ant-space {
+        .ant-btn {
+          gap: 6px;
+        }
+
+        .ant-btn-link {
+          padding: 0;
+          height: auto;
+          font-size: 14px;
+          color: #333C55;
+          font-weight: 400;
+
+          &:hover {
+            color: #1C6CFF;
+          }
+        }
+
+        .in-basket-btn {
+          padding: 0;
+          height: auto;
+          font-size: 14px;
+          color: #1C6CFF;
+          font-weight: 400;
+
+          &:hover {
+            color: #1C6CFF;
+          }
+        }
+      }
+    }
+  }
+}
+
+.paper-reference-dropdown-overlay {
+  background-color: #fff !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+  position: fixed !important;
+  max-width: 596px !important;
+
+  .ant-dropdown-menu {
+    border-radius: 8px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    border: 1px solid #e5e7eb !important;
+    padding: 8px 0 !important;
+    overflow-y: auto !important;
+    z-index: 1050 !important;
+    position: relative !important;
+    max-width: 596px !important;
+    max-height: 200px !important;
+
+    .ant-dropdown-menu-item {
+      padding: 5px 16px !important;
+      font-size: 13px !important;
+      line-height: 1.4 !important;
+      color: #374151 !important;
+      border-radius: 0 !important;
+      cursor: default !important;
+
+      &:hover,
+      &:active {
+        background-color: transparent !important;
+        color: #374151 !important;
+      }
+
+      span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: block;
+      }
+    }
+  }
+}

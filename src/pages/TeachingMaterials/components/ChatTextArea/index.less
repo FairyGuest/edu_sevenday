@@ -1,0 +1,131 @@
+.design_chat_textarea_contanier_teach {
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  .home_query_container {
+    position: relative;
+    margin: 0 auto;
+    max-width: 800px;
+    background-color: #fff;
+    padding: 12px;
+    flex: 1;
+    box-shadow: none;
+    // border: none;
+    outline: none;
+    overflow: auto;
+    scrollbar-width: none;
+    border-radius: 12px;
+
+    [contenteditable="true"]:empty:before {
+      content: attr(placeholder);
+      color: #ccc;
+      pointer-events: none;
+      /* 防止鼠标点击占位符 */
+    }
+
+    &:focus-within,
+    &:hover {
+      border-color: @primary-color;
+    }
+
+    // .upload-icon-wrapper {
+    //   align-self: flex-start;
+    //   cursor: pointer;
+    //   position: relative;
+    //   margin-right: 8px; // 调整与输入框的间距
+    // }
+    .search_home_input_box {
+      box-shadow: none;
+      border: none;
+      outline: none;
+      // padding-left: 18px;
+      min-height: 24px;
+      overflow: auto;
+      scrollbar-width: none;
+      margin-bottom: 12px;
+
+      .table_tab {
+        padding-top: 4px;
+        padding-bottom: 4px;
+      }
+    }
+
+    .suffix {
+      // cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 28px;
+
+      .upload-icon-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .icon_box {
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4px;
+        border-radius: 8px;
+        cursor: pointer;
+        background:#EDF4FF;
+        color: #A8C8FF;
+
+
+        &:hover,
+        &.active {
+          background:#1C6CFF;
+          color: #ffffff;
+        }
+      }
+      .icon_box.active {
+        background: #1C6CFF;
+        color: #ffffff;
+      }
+
+      .suffix_right {
+      }
+    }
+  }
+
+  .new_create_hidden {
+    visibility: hidden;
+  }
+
+  .new_create {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 103px;
+    height: 36px;
+    border-radius: 6px;
+    opacity: 1;
+    border: 1px solid #d4d7dc;
+    background: #ffffff;
+    // line-height: 36px;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-bottom: 8px;
+    padding-top: 6px;
+    padding-bottom: 8px;
+
+    img {
+      width: 18px;
+      height: 18px;
+      margin-right: 8px;
+      margin-top: -4px;
+    }
+
+    &:hover {
+      color: #1C6CFF;
+    }
+
+    &:active {
+      opacity: 0.8;
+    }
+  }
+}

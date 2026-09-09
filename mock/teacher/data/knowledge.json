@@ -1,0 +1,530 @@
+{
+ "grades": [
+  {
+   "grade": "g7",
+   "chapters": [
+    {
+     "chapter": "G7下 第5章 相交线与平行线",
+     "grade": "g7",
+     "clusters": [
+      {
+       "cluster": "相交线",
+       "n_questions": 146
+      },
+      {
+       "cluster": "相交线与平行线",
+       "n_questions": 1063
+      },
+      {
+       "cluster": "定义、命题、定理",
+       "n_questions": 23
+      },
+      {
+       "cluster": "平行线",
+       "n_questions": 51
+      }
+     ]
+    },
+    {
+     "chapter": "G7下 第6章 实数",
+     "grade": "g7",
+     "clusters": [
+      {
+       "cluster": "实数及其简单运算",
+       "n_questions": 7
+      }
+     ]
+    },
+    {
+     "chapter": "G7下 第6章 平面直角坐标系",
+     "grade": "g7",
+     "clusters": [
+      {
+       "cluster": "平面直角坐标系",
+       "n_questions": 379
+      },
+      {
+       "cluster": "用坐标描述平面内点的位置",
+       "n_questions": 1000
+      }
+     ]
+    },
+    {
+     "chapter": "G7下 第7章 不等式",
+     "grade": "g7",
+     "clusters": [
+      {
+       "cluster": "不等式",
+       "n_questions": 93
+      },
+      {
+       "cluster": "一元一次不等式组",
+       "n_questions": 1230
+      },
+      {
+       "cluster": "不等式与不等式组",
+       "n_questions": 318
+      }
+     ]
+    },
+    {
+     "chapter": "G7下 第8章 二元一次方程组",
+     "grade": "g7",
+     "clusters": [
+      {
+       "cluster": "二元一次方程组的概念",
+       "n_questions": 1565
+      },
+      {
+       "cluster": "消元——解二元一次方程组",
+       "n_questions": 8
+      }
+     ]
+    },
+    {
+     "chapter": "G7下 第9章 数据收集",
+     "grade": "g7",
+     "clusters": [
+      {
+       "cluster": "统计调查",
+       "n_questions": 292
+      },
+      {
+       "cluster": "用统计图描述数据",
+       "n_questions": 376
+      }
+     ]
+    },
+    {
+     "chapter": "第1章 有理数",
+     "grade": "g7",
+     "clusters": [
+      {
+       "cluster": "正数和负数",
+       "n_questions": 9
+      },
+      {
+       "cluster": "有理数及其大小比较",
+       "n_questions": 98
+      },
+      {
+       "cluster": "有理数的加法与减法",
+       "n_questions": 10
+      },
+      {
+       "cluster": "有理数的乘法与除法",
+       "n_questions": 299
+      }
+     ]
+    },
+    {
+     "chapter": "第2章 整式的加减",
+     "grade": "g7",
+     "clusters": [
+      {
+       "cluster": "整式",
+       "n_questions": 13
+      },
+      {
+       "cluster": "列代数式表示数量关系",
+       "n_questions": 547
+      },
+      {
+       "cluster": "代数式的值",
+       "n_questions": 166
+      },
+      {
+       "cluster": "整式的加法与减法",
+       "n_questions": 57
+      }
+     ]
+    },
+    {
+     "chapter": "第3章 一元一次方程",
+     "grade": "g7",
+     "clusters": [
+      {
+       "cluster": "实际问题与一元一次方程",
+       "n_questions": 25
+      },
+      {
+       "cluster": "方程",
+       "n_questions": 86
+      }
+     ]
+    },
+    {
+     "chapter": "第4章 几何图形初步",
+     "grade": "g7",
+     "clusters": [
+      {
+       "cluster": "几何图形",
+       "n_questions": 207
+      },
+      {
+       "cluster": "几何图形初步",
+       "n_questions": 200
+      },
+      {
+       "cluster": "直线、射线、线段",
+       "n_questions": 16
+      },
+      {
+       "cluster": "角",
+       "n_questions": 97
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "grade": "g8",
+   "chapters": [
+    {
+     "chapter": "G8下 第16章 二次根式",
+     "grade": "g8",
+     "clusters": [
+      {
+       "cluster": "二次根式",
+       "n_questions": 5461
+      },
+      {
+       "cluster": "二次根式及其性质",
+       "n_questions": 61
+      },
+      {
+       "cluster": "二次根式的加法与减法",
+       "n_questions": 73
+      }
+     ]
+    },
+    {
+     "chapter": "G8下 第17章 勾股定理",
+     "grade": "g8",
+     "clusters": [
+      {
+       "cluster": "勾股定理及其应用",
+       "n_questions": 4
+      },
+      {
+       "cluster": "勾股定理",
+       "n_questions": 368
+      },
+      {
+       "cluster": "勾股定理的逆定理及其应用",
+       "n_questions": 125
+      }
+     ]
+    },
+    {
+     "chapter": "G8下 第18章 平行四边形",
+     "grade": "g8",
+     "clusters": [
+      {
+       "cluster": "四边形",
+       "n_questions": 853
+      },
+      {
+       "cluster": "四边形及多边形",
+       "n_questions": 80
+      },
+      {
+       "cluster": "特殊的平行四边形",
+       "n_questions": 256
+      }
+     ]
+    },
+    {
+     "chapter": "G8下 第19章 一次函数",
+     "grade": "g8",
+     "clusters": [
+      {
+       "cluster": "一次函数的图象和性质",
+       "n_questions": 2215
+      },
+      {
+       "cluster": "函数",
+       "n_questions": 313
+      },
+      {
+       "cluster": "实际问题与一次函数",
+       "n_questions": 44
+      },
+      {
+       "cluster": "一次函数与方程 (组）不等式",
+       "n_questions": 6
+      },
+      {
+       "cluster": "函数的概念",
+       "n_questions": 8
+      }
+     ]
+    },
+    {
+     "chapter": "G8下 第20章 数据分析",
+     "grade": "g8",
+     "clusters": [
+      {
+       "cluster": "数据的集中趋势",
+       "n_questions": 91
+      },
+      {
+       "cluster": "数据的离散程度",
+       "n_questions": 23
+      },
+      {
+       "cluster": "数据的四分位数",
+       "n_questions": 5
+      },
+      {
+       "cluster": "数据的分析",
+       "n_questions": 43
+      }
+     ]
+    },
+    {
+     "chapter": "第11章 三角形",
+     "grade": "g8",
+     "clusters": [
+      {
+       "cluster": "三角形",
+       "n_questions": 568
+      },
+      {
+       "cluster": "三角形的内角与外角",
+       "n_questions": 1374
+      },
+      {
+       "cluster": "与三角形有关的线段",
+       "n_questions": 27
+      },
+      {
+       "cluster": "三角形的概念",
+       "n_questions": 92
+      }
+     ]
+    },
+    {
+     "chapter": "第12章 全等三角形",
+     "grade": "g8",
+     "clusters": [
+      {
+       "cluster": "全等三角形及其性质",
+       "n_questions": 41
+      },
+      {
+       "cluster": "三角形全等的判定",
+       "n_questions": 541
+      }
+     ]
+    },
+    {
+     "chapter": "第13章 轴对称",
+     "grade": "g8",
+     "clusters": [
+      {
+       "cluster": "轴对称",
+       "n_questions": 13
+      },
+      {
+       "cluster": "课题学习 图案设计",
+       "n_questions": 139
+      },
+      {
+       "cluster": "图形的轴对称",
+       "n_questions": 80
+      }
+     ]
+    },
+    {
+     "chapter": "第14章 整式的乘法与因式分解",
+     "grade": "g8",
+     "clusters": [
+      {
+       "cluster": "整式的乘法",
+       "n_questions": 193
+      },
+      {
+       "cluster": "幂的运算",
+       "n_questions": 124
+      },
+      {
+       "cluster": "乘法公式",
+       "n_questions": 11
+      },
+      {
+       "cluster": "用提公因式法分解因式",
+       "n_questions": 173
+      }
+     ]
+    },
+    {
+     "chapter": "第15章 分式",
+     "grade": "g8",
+     "clusters": [
+      {
+       "cluster": "分式及其基本性质",
+       "n_questions": 141
+      },
+      {
+       "cluster": "分式的乘法与除法",
+       "n_questions": 124
+      },
+      {
+       "cluster": "分式的加法与减法",
+       "n_questions": 70
+      },
+      {
+       "cluster": "分式",
+       "n_questions": 128
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "grade": "g9",
+   "chapters": [
+    {
+     "chapter": "G9上 第25章 概率",
+     "grade": "g9",
+     "clusters": [
+      {
+       "cluster": "随机事件与概率",
+       "n_questions": 16
+      },
+      {
+       "cluster": "用列举法求概率",
+       "n_questions": 32
+      },
+      {
+       "cluster": "用频率估计概率",
+       "n_questions": 17
+      }
+     ]
+    },
+    {
+     "chapter": "G9下 第26章 反比例函数",
+     "grade": "g9",
+     "clusters": [
+      {
+       "cluster": "实际问题与反比例函数",
+       "n_questions": 53
+      }
+     ]
+    },
+    {
+     "chapter": "G9下 第27章 相似",
+     "grade": "g9",
+     "clusters": [
+      {
+       "cluster": "相似三角形",
+       "n_questions": 71
+      },
+      {
+       "cluster": "图形的相似",
+       "n_questions": 27
+      }
+     ]
+    },
+    {
+     "chapter": "G9下 第28章 锐角三角函数",
+     "grade": "g9",
+     "clusters": [
+      {
+       "cluster": "锐角三角函数",
+       "n_questions": 100
+      },
+      {
+       "cluster": "解直角三角形及其应用",
+       "n_questions": 278
+      }
+     ]
+    },
+    {
+     "chapter": "G9下 第29章 投影与视图",
+     "grade": "g9",
+     "clusters": [
+      {
+       "cluster": "三视图",
+       "n_questions": 29
+      },
+      {
+       "cluster": "投影与视图",
+       "n_questions": 34
+      }
+     ]
+    },
+    {
+     "chapter": "第21章 一元二次方程",
+     "grade": "g9",
+     "clusters": [
+      {
+       "cluster": "一元二次方程",
+       "n_questions": 358
+      },
+      {
+       "cluster": "实际问题与一元二次方程",
+       "n_questions": 261
+      }
+     ]
+    },
+    {
+     "chapter": "第22章 二次函数",
+     "grade": "g9",
+     "clusters": [
+      {
+       "cluster": "二次函数的图象和性质",
+       "n_questions": 7
+      },
+      {
+       "cluster": "二次函数与一元二次方程",
+       "n_questions": 398
+      },
+      {
+       "cluster": "实际问题与二次函数",
+       "n_questions": 47
+      }
+     ]
+    },
+    {
+     "chapter": "第23章 旋转",
+     "grade": "g9",
+     "clusters": [
+      {
+       "cluster": "旋转",
+       "n_questions": 32
+      }
+     ]
+    },
+    {
+     "chapter": "第24章 圆",
+     "grade": "g9",
+     "clusters": [
+      {
+       "cluster": "圆",
+       "n_questions": 213
+      },
+      {
+       "cluster": "圆的有关性质",
+       "n_questions": 13
+      },
+      {
+       "cluster": "点和圆、直线和圆的位置关系",
+       "n_questions": 34
+      },
+      {
+       "cluster": "正多边形和圆",
+       "n_questions": 16
+      },
+      {
+       "cluster": "弧长和扇形面积",
+       "n_questions": 4
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "note": "义教数学 章节→知识点（题量充足的簇）"
+}

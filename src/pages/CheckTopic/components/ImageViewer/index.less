@@ -1,0 +1,49 @@
+.image-viewer {
+  .image-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    .image-item {
+      border-radius: 8px;
+      position: relative;
+      border: 2px solid transparent;
+      transition: all 0.3s @ease-base-out;
+      overflow: hidden;
+  
+      &:hover {
+        border-color: #1C6CFF;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      &.selected {
+        border-color: #1C6CFF;
+        box-shadow: 0 0 0 4px #DDD6FE;
+      }
+
+      .image-preview {
+        object-fit: cover;
+        width: 154px;
+        height: 154px;
+      }
+    
+      .preview-button {
+        cursor: pointer;
+        display: inline-flex;
+        padding: 4px 8px;
+        align-items: center;
+        gap: 6px;
+        background: rgba(0, 0, 0, 0.20);
+        position: absolute;
+        bottom: 8px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        z-index: 2;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .preview-container {
+    display: none;
+  }
+}

@@ -1,0 +1,150 @@
+.content-parser {
+  font-size: 14px;
+  color: #1E253B;
+  line-height: 2;
+  white-space: pre-wrap;
+  word-break: break-word;
+  // scroll-behavior: auto;
+
+  .highlighted-text {
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border-radius: 2px;
+    padding: 0 2px;
+    display: inline-block;
+    // overflow-anchor: none;
+
+    .text-content {
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s ease;
+      font-weight: 600;
+    }
+
+    .index-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: 500;
+      margin-left: 2px;
+      vertical-align: middle;
+      transition: all 0.2s ease;
+      background: transparent;
+    }
+
+    &.type_default {
+      .text-content {
+        border-style: dotted;
+        border-bottom-color: #646E8B;
+      }
+      .index-badge {
+        color: #646E8B;
+        background: #E2E6F0;
+      }
+      &:hover,
+      &.active {
+        .text-content {
+          background-color: #F2F5FA;
+        }
+        .index-badge {
+          background: #646E8B;
+          color: #fff;
+        }
+      }
+    }
+
+    &.type-mistake {
+      .text-content {
+        border-bottom-color: #EF4444;
+      }
+      .index-badge {
+        color: #EF4444;
+        background: #FEF3F2;
+      }
+      &:hover,
+      &.active {
+        .text-content {
+          background-color: rgba(245, 34, 45, 0.1);
+        }
+        .index-badge {
+          background: #EF4444;
+          color: #fff;
+        }
+      }
+    }
+
+    &.type-optimization {
+      .text-content {
+        border-bottom-color: #FFAD37;
+      }
+      .index-badge {
+        color: #FFAD37;
+        background: #FFF3E3;
+      }
+      &:hover,
+      &.active {
+        .text-content {
+          background-color: rgba(250, 140, 22, 0.1);
+        }
+        .index-badge {
+          background: #FFAD37;
+          color: #fff;
+        }
+      }
+    }
+
+    &.type-standout {
+      .text-content {
+        border-bottom-color: #00BC7B;
+      }
+      .index-badge {
+        color: #00BC7B;
+        background: #DFF7EB;
+      }
+      &:hover,
+      &.active {
+        .text-content {
+          background-color: rgba(82, 196, 26, 0.1);
+        }
+        .index-badge {
+          background: #00BC7B;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.content-parser-popover {
+  // 防止 Firefox 自动滚动
+  // overflow-anchor: none;
+  
+  .ant-popover-inner {
+    padding: 0;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .parser-popover-content {
+    min-width: 280px;
+    max-width: 400px;
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    .title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1E253B;
+    }
+    .content {
+      font-size: 14px;
+      color: #1E253B;
+    }
+  }
+}
+

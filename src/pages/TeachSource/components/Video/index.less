@@ -1,0 +1,65 @@
+.carousel-css-box-video {
+  scrollbar-width: none;
+  overflow: auto;
+  height: calc(100vh - 106px);
+  position: relative;
+
+  .btn {
+    position: absolute;
+    top: 2px;
+    right: 40px;
+    padding: 0px 12px;
+    border-radius: 24px;
+    display: flex;
+    gap: 6px;
+    border: 1px solid rgba(28, 108, 255, 0.12);
+    height: 28px;
+    font-size: 12px;
+    align-items: center;
+    cursor: pointer;
+    background: linear-gradient(90deg, #EBF1FF 0%, #F5EBFF 100%);
+    color: #1041F3;
+
+    img {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .ai-chat {
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    width: 400px;
+    height: calc(100vh - 60px);
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 6px 12px 0px rgba(16, 24, 40, 0.06),
+      0px 0px 6px 0px rgba(16, 24, 40, 0.08);
+  }
+
+  video::-webkit-media-controls-download-button {
+    display: none;
+  }
+
+  video::-internal-media-controls-download-button {
+    display: none;
+  }
+  .react_player_box {
+    width: 100%;
+    height: calc(100vh - 116px);
+    .react_player_img {
+      height: calc(100vh - 180px);
+    }
+  }
+  .react_player_mp3 {
+    height: 60px !important;
+  }
+  .react_player {
+    // border: 1px solid red;
+  }
+  .react_player_box_mp4 {
+    width: 100%;
+    height: 100%;
+  }
+}

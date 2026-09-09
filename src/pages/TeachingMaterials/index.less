@@ -1,0 +1,48 @@
+.teaching_materials_page_container {
+  background-color: var(--page-bg-color);
+  // margin: 8px;
+  border-radius: 4px;
+  // background: url(~@/assets/chat_bg.png) no-repeat top center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  position: relative;
+  height: 100%;
+
+  .teaching_materials_page_container_css {
+    // border: 1px solid red;
+    display: flex;
+
+    // justify-content: space-between;
+    .teaching_materials_page_container_left {
+      // min-width: 50%;
+      // display: flex;
+      // justify-content: start;
+
+
+      .teaching_materials_page_container_left_left {
+        min-width: 248px;
+        height: 100%;
+        border-right: 1px solid #E2E6F0;
+        // flex-grow: 1;
+      }
+
+      
+    }
+    .w-right-full{
+      width:calc(100% - 248px)
+    }
+
+    .teaching_materials_page_container_left_right {
+      width: 50%;
+      height: 100%;
+      flex-grow: 1;
+      min-width: 400px;
+      max-width: 500px;
+    }
+    .teaching_materials_page_container_right {
+      flex-grow: 1;
+      width: 50%;
+      min-width: 560px;
+    }
+  }
+}

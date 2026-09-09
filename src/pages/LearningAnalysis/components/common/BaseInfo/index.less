@@ -1,0 +1,79 @@
+.student-info {
+  display: flex;
+  align-items: flex-start;
+  padding: 24px;
+  background-color: #EDF4FF;
+  border-radius: 12px;
+  gap: 12px;
+  transform: all 0.3s ease;
+  &-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    &-title {
+      font-size: 28px;
+      font-weight: 600;
+      height: 39px;
+      line-height: 39px;
+      color: #333C55;
+    }
+    &-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      &-part {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        .item {
+          display: flex;
+          align-items: center;
+          margin-right: 60px;
+          .icon {
+            font-size: 14px;
+            color: #667085
+          }
+          .label {
+            font-size: 14px;
+            color: #667085;
+            width: auto;
+            min-width: 35px;
+            margin: 0 16px 0 8px;
+          }
+          .value {
+            font-size: 14px;
+            color: #1E253B
+          }
+        }
+      }
+    }
+  }
+}
+
+/* H5样式 */
+.analysis-h5 {
+  .student-info {
+    padding: 20px 16px 24px 16px;
+    &-box {
+      gap: 8px;
+      &-title {
+        height: auto;
+        margin-bottom: 17px;
+      }
+      &-items {
+        gap: 8px;
+        &-part {
+          gap: 8px;
+          .item {
+            margin-right: 0;
+            .label {
+              width: 64px;
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

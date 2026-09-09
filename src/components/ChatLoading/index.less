@@ -1,0 +1,62 @@
+.chatloading_box {
+  .assistant_basic {
+    display: flex;
+    justify-content: flex-start;
+    padding-bottom: 8px;
+
+    .assistant_basic_logo {
+      text-align: center;
+      line-height: 32px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background-color: rgba(242, 245, 250, 1);
+    }
+
+    .assistant_avatar {
+      height: 24px;
+      width: 24px;
+      border-radius: 24px;
+    }
+
+    .assistant_avatar_activate {
+      height: 24px;
+      width: 24px;
+      border-radius: 24px;
+      animation: avatarAssistant 2s linear infinite;
+    }
+
+    .assistant_name {
+      line-height: 24px;
+      padding-left: 8px;
+      text-align: left;
+      font-size: 15px;
+      font-weight: 700;
+      color: #1a2029;
+    }
+
+  }
+  .chatloading_box_query {
+    position: relative;
+    display: flex;
+  }
+
+  .answer_card_container_teaching_plan_content_skeleton {
+    margin-left: auto;
+    width: 300px;
+    direction: rtl;
+    margin-bottom: 32px;
+  }
+
+  .answer_card_container_chatloading_box_content_skeleton {
+    width: 300px;
+  }
+      .ant-skeleton {
+
+      .ant-skeleton-title,
+      .ant-skeleton-paragraph>li {
+        background: linear-gradient(90deg, rgb(242, 245, 250) 25%, rgb(242 245 250 / 20%) 37%, rgb(242 245 250) 100%);
+        background-size: 400% 100%;
+      }
+    }
+}

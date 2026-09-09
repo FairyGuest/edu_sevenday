@@ -1,0 +1,105 @@
+.answer_card_container {
+  //  background-color: #fff;
+  margin-bottom: 16px;
+  .assistant_basic {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 8px;
+
+    .assistant_avatar, .assistant_avatar_activate {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      line-height: 32px;
+      text-align: center;
+      background-color: #f2f5fa;
+    }
+
+    .assistant_avatar_activate {
+      // height: 24px;
+      // width: 24px;
+      // border-radius: 24px;
+      animation: avatarAssistant 2s linear infinite;
+    }
+
+    .assistant_name {
+      line-height: 24px;
+      padding-left: 8px;
+      text-align: left;
+      font-size: 15px;
+      font-weight: 700;
+      color: #1a2029;
+    }
+    .assistant_basic_logo {
+      text-align: center;
+      line-height: 32px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background-color: rgba(242, 245, 250, 1);
+    }
+  }
+
+  .assistant_answer_container {
+    background-color: #fff;
+    border-radius: 16px;
+    margin-left: 32px;
+    padding: 1px 16px;
+    margin-top: 8px;
+    color: #444;
+    padding-bottom: 8px;
+
+    .placeholder_container {
+      padding-top: 8px;
+      padding-bottom: 16px;
+
+      .table_submit {
+        text-align: end;
+      }
+    }
+  }
+
+  // 阻止生成显示
+  .chat_error_container {
+    padding-bottom: 8px;
+    padding-top: 8px;
+
+    .error_title {
+      color: #b0b7c0;
+    }
+
+    .error_restart {
+      margin-left: 32px;
+      cursor: pointer;
+      color: #1C6CFF;
+
+      span {
+        margin-left: 8px;
+      }
+    }
+  }
+
+  /* 添加旋转动画 */
+  @keyframes avatarAssistant {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .design_answer_content {
+    //  background-color: #F2F5FA;
+    //  padding: 16px;
+    border-radius: 8px;
+    //  margin-left: 16px;
+  }
+
+  .design_action_container {
+    margin-left: 16px;
+    margin-top: 4px;
+    text-align: start;
+  }
+}

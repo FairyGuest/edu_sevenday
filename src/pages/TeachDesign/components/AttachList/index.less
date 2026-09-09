@@ -1,0 +1,91 @@
+
+
+.file-content {
+  position: relative;
+}
+
+.file-list {
+  // position: relative;
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+  overflow: scroll;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .file-item {
+    width: 200px;
+    min-width: 200px;
+    padding: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    border-radius: 8px;
+    background: #f2f5fa;
+
+    &:hover {
+      .close-icon {
+        display: block;
+        flex-shrink: 0;
+      }
+    }
+
+    // &:not(:has(~ .file-item)) {
+    //   margin-right: 12px;
+    // }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      flex: 1;
+      overflow: hidden;
+
+      .name {
+        color: #1e253b;
+        font-size: 13px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      .desc {
+        font-size: 12px;
+        color: #646e8b;
+      }
+    }
+  }
+
+  .close-icon {
+    display: none;
+  }
+
+  .scroll-btn {
+    position: absolute;
+    top: 0;
+    padding: 12px;
+    display: none;
+    .ant-btn-variant-outlined:disabled {
+      background: #fff;
+    }
+
+    &-left {
+      left: 0;
+      background: linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+    }
+
+    &-right {
+      right: 0;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
+    }
+  }
+}
+
+.file-list-scroll:hover {
+  .scroll-btn {
+    display: block;
+  }
+}

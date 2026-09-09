@@ -1,0 +1,57 @@
+.quill-formula-editor {
+  width: 100%;
+  position: relative;
+
+  // 公式按钮
+  .formula-btn {
+    position: absolute;
+    top: 9px;
+    right: 8px;
+    z-index: 1;
+    &:hover,
+    &:active {
+      color: #6d28d9 !important;
+
+      .ant-btn-icon {
+        color: #6d28d9;
+      }
+    }
+  }
+
+  // 当存在公式工具栏时，调整 Quill 工具栏上边框
+  .quill-editor-wrapper {
+    // .ql-toolbar.ql-snow {
+    //   border-radius: 0;
+    //   border-top: none;
+    // }
+    .ql-container.ql-snow {
+      border-radius: 0 0 6px 6px;
+    }
+  }
+
+  // 只读模式：无公式工具栏，Quill 工具栏也被隐藏，容器正常显示
+  .quill-editor-wrapper .ql-toolbar.ql-snow.ql-hidden {
+    display: none;
+  }
+
+  // 公式 embed 样式
+  .ql-formula {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 2px;
+    cursor: pointer;
+    transition: box-shadow 0.15s;
+
+    // 编辑态选中
+    &.ql-formula-selected,
+    &:hover {
+      border-radius: 3px;
+      box-shadow: 0 0 0 2px #c4b5fd;
+    }
+
+    // KaTeX 内部元素保持 inline
+    .katex {
+      font-size: 1em;
+    }
+  }
+}

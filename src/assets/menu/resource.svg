@@ -1,0 +1,26 @@
+<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect y="1" width="16" height="14" rx="2" fill="#5A5590"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M18.8912 17.4125C21.6292 13.8955 21.3612 8.84406 18.0873 5.6275C14.5215 2.12417 8.74016 2.12417 5.17435 5.6275C1.60855 9.13082 1.60855 14.8108 5.17435 18.3142C8.44828 21.5307 13.5898 21.794 17.1695 19.1041L19.9292 21.8154C20.1798 22.0616 20.586 22.0616 20.8366 21.8154L21.6509 21.0154C21.9015 20.7692 21.9015 20.37 21.6509 20.1238L18.8912 17.4125Z" fill="#C3C0DC"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M18.8912 17.4125C21.6292 13.8955 21.3612 8.84406 18.0873 5.6275C14.5215 2.12417 8.74016 2.12417 5.17435 5.6275C1.60855 9.13082 1.60855 14.8108 5.17435 18.3142C8.44828 21.5307 13.5898 21.794 17.1695 19.1041L19.9292 21.8154C20.1798 22.0616 20.586 22.0616 20.8366 21.8154L21.6509 21.0154C21.9015 20.7692 21.9015 20.37 21.6509 20.1238L18.8912 17.4125Z" fill="url(#paint0_linear_167_30257)"/>
+<foreignObject x="0" y="0" width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(2.5px);height:100%;width:100%"></div></foreignObject><g data-figma-bg-blur-radius="5">
+<line x1="7.75" y1="9.25" x2="15.25" y2="9.25" stroke="white" stroke-width="0.5" stroke-linecap="round"/>
+<line x1="7.75" y1="9.25" x2="15.25" y2="9.25" stroke="#1C6CFF" stroke-width="0.5" stroke-linecap="round"/>
+<line x1="7.75" y1="9.25" x2="15.25" y2="9.25" stroke="#5A5590" stroke-width="0.5" stroke-linecap="round"/>
+</g>
+<foreignObject x="0" y="0" width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(2.5px);height:100%;width:100%"></div></foreignObject><g data-figma-bg-blur-radius="5">
+<line x1="7.75" y1="11.75" x2="15.25" y2="11.75" stroke="white" stroke-width="0.5" stroke-linecap="round"/>
+<line x1="7.75" y1="11.75" x2="15.25" y2="11.75" stroke="#1C6CFF" stroke-width="0.5" stroke-linecap="round"/>
+<line x1="7.75" y1="11.75" x2="15.25" y2="11.75" stroke="#5A5590" stroke-width="0.5" stroke-linecap="round"/>
+</g>
+<foreignObject x="0" y="0" width="0" height="0"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(2.5px);height:100%;width:100%"></div></foreignObject><g data-figma-bg-blur-radius="5">
+<line x1="7.75" y1="14.25" x2="11.25" y2="14.25" stroke="white" stroke-width="0.5" stroke-linecap="round"/>
+<line x1="7.75" y1="14.25" x2="11.25" y2="14.25" stroke="#1C6CFF" stroke-width="0.5" stroke-linecap="round"/>
+<line x1="7.75" y1="14.25" x2="11.25" y2="14.25" stroke="#5A5590" stroke-width="0.5" stroke-linecap="round"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_167_30257" x1="21.4762" y1="20.1" x2="11.0258" y2="4.07402" gradientUnits="userSpaceOnUse">
+<stop stop-color="#AFACD0" stop-opacity="0"/>
+<stop offset="1" stop-color="#A39FCA"/>
+</linearGradient>
+</defs>
+</svg>

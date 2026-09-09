@@ -1,0 +1,111 @@
+.upload_detail {
+  padding-top: 10px;
+
+  // 1000px 是中间区域宽度 等同于上述width: 1000px;
+  // 263 是大屏左右边距
+  @media screen and (min-width: calc(1000px + 263px * 2)) {
+    .main_content {
+      width: 100%;
+      max-width: 1297px;
+    }
+  }
+
+  .upload_list {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    gap: 8px;
+  }
+  .file_list {
+    color: #0F142A;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 8px 0;
+
+    .text {
+      margin: 0 6px;
+    }
+    .anticon-sync {
+      color: #1C6CFF;
+    }
+    .anticon-check-circle {
+      color: #52c41a;
+    }
+  }
+  .file_item {
+    height: 38px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &:hover {
+      background-color: #EF44440F;
+    }
+
+    &_name {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      .svg-icon {
+        width: 16px;
+        height: 16px;
+      }
+    }
+    &_content {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    &_progress{
+      display: flex;
+      align-items: center;
+      .ant-progress {
+        margin-top: -2px;
+      }
+      .text {
+        padding-left: 8px;
+      }
+    }
+  }
+  //   上传
+  .ant-upload-drag {
+    margin-bottom: 8px;
+    background-color: #F7F9FC;
+
+    .up_top {
+      margin-bottom: 8px;
+
+      .svg-icon {
+        font-size: 48px;
+      }
+    }
+
+    .up_text {
+      margin-bottom: 8px;
+      color: #202224;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 22px;
+
+      span {
+        color: #1C6CFF;
+      }
+    }
+
+    .up_desc,.up_desc_video {
+      color: #86909c;
+      max-width: 678px;
+
+      span {
+        text-align: left;
+        margin-left: 26px;
+        display: block;
+      }
+    }
+    .up_desc_video {
+      width: 520px;
+      margin: auto;
+    }
+  }
+}

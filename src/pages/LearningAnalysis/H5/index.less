@@ -1,0 +1,87 @@
+.analysis-h5 {
+  padding: 16px 16px 40px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 100vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+  .part-title {
+    font-size: 24px;
+    font-weight: 500;
+    color: #1E253B;
+    .ant-divider {
+      margin: 8px 0 0 0;
+    }
+  }
+  .loading-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+    height: 100%;
+    width: 100%;
+    .anticon-spin {
+      transform-origin: center center;
+      animation: rotate 1s linear infinite;
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    }
+    .text {
+      font-size: 14px;
+      color: #646E8B;
+    }
+  }
+  .empty-box {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+    .icon {
+      font-size: 80px;
+      margin-bottom: -15px
+    }
+    .text {
+      font-size: 14px;
+      color: #646E8B;
+    }
+  }
+  .homework-analysis-content-stage {
+    display: flex;
+    align-items: flex-start;
+    background: #F7F9FC;
+    padding: 16px;
+    border-radius: 8px;
+    gap: 7px;
+    .icon {
+      font-size: 12px;
+      margin-top: 5px;
+      color: #6445FF;
+      // background: linear-gradient(45deg, #444CE7, #8447FF);
+    }
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      .text {
+        font-size: 16px;
+        color: #1E253B;
+        line-height: 24px;
+      }
+      .tip {
+        font-size: 14px;
+        color: #94A0B8;
+      }
+    }
+  }
+}

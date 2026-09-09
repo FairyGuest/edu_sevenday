@@ -1,0 +1,113 @@
+.editor {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  &-container {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+  }
+  &-header {
+    display: flex;
+    justify-content: center;
+    &-btn {
+      padding: 4px 24px 0 8px;
+      display: flex;
+      gap: 12px;
+      .exercises .ant-btn-icon {
+        color: #F97316;
+      }
+      .math .ant-btn-icon {
+        color: #2454FF;
+      }
+    }
+    .w-e-bar {
+      &-show {
+        align-items: center;
+      }
+      &-divider {
+        height: 20px;
+      }
+    }
+  }
+  &-catalog {
+    margin: 8px 24px;
+    scrollbar-width: none;
+    overflow: auto;
+    &.open {
+      width: 192px;
+    }
+    &.close {
+      width: 16px;
+    }
+    &-header {
+      background-color: #FFF;
+      position: sticky;
+      top: 0;
+    }
+    &-list {
+      overflow: auto;
+      scrollbar-width: none;
+
+      div {
+        color: #646E8B;
+        margin: 10px 0;
+        cursor: pointer;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      div:hover {
+        color: #1C6CFF;
+      }
+
+      div[type="header1"] {
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      div[type="header2"] {
+        font-size: 14px;
+        // padding-left: 15px;
+        font-weight: 500;
+      }
+
+      div[type="header3"] {
+        font-size: 14px;
+        padding-left: 10px;
+      }
+
+      div[type="header4"] {
+        font-size: 12px;
+        padding-left: 45px;
+      }
+
+      div[type="header5"] {
+        font-size: 12px;
+        padding-left: 60px;
+      }
+    }
+  }
+  &-ref {
+    display: flex;
+    flex: 1;
+  }
+  &-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
+    .w-e-text-container {
+      width: 100%;
+      min-width: 528px;
+      max-width: 848px;
+      padding: 8px 24px;
+
+      a {
+        cursor: pointer;
+        color: #2454FF;
+      }
+    }
+  }
+}

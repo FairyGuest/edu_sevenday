@@ -1,0 +1,8 @@
+[
+  { "label": "理解能力", "value": "understanding" },
+  { "label": "应用能力", "value": "application" },
+  { "label": "分析能力", "value": "analysis" },
+  { "label": "综合能力", "value": "synthesis" },
+  { "label": "评价能力", "value": "evaluation" },
+  { "label": "创新能力", "value": "innovation" }
+]

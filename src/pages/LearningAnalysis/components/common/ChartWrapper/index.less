@@ -1,0 +1,55 @@
+.chart-wrapper {
+  &-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #1E253B;
+    margin-bottom: 16px;
+  }
+
+  &-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+
+    .anticon-spin {
+      display: inline-block;
+      animation: spin 1s linear infinite;
+      font-size: 20px;
+    }
+
+    .text {
+      font-size: 14px;
+      color: #646E8B;
+    }
+  }
+
+  &-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+
+    .icon {
+      font-size: 80px;
+      margin-bottom: -15px
+    }
+
+    .text {
+      font-size: 14px;
+      color: #646E8B;
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+

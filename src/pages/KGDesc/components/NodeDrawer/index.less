@@ -1,0 +1,192 @@
+// .headertab {
+//   .title {
+//     width: 100%;
+//     height: 35px;
+//     // background-color: antiquewhite;
+//     display: flex;
+//     justify-content: space-between;
+//     .title-box {
+//       display: flex;
+//       h1 {
+//         font-size: 24px;
+//         color: #000000;
+//         font-weight: 600;
+//       }
+//       .select-box {
+//         //   去掉边框
+//         border: none !important;
+//         margin-left: 10px;
+//         // 灰色背景色
+//         background-color: #f0f0f0 !important;
+//         // 圆角
+//         border-radius: 12px;
+//         // 字体颜色
+//         color: #646e8b !important;
+//         // 字体大小
+//         font-size: 14px;
+//         // 字体粗细
+//       }
+//       .ant-select-outlined:not(.ant-select-customize-input)
+//         .ant-select-selector {
+//         border: none !important;
+//         background-color: #f0f0f0 !important;
+//         color: #646e8b;
+//       }
+//     }
+//     .title-right {
+//       display: flex;
+//       align-items: center;
+//       gap: 10px;
+//       .inp {
+//         width: 240px;
+//         height: 32px;
+//       }
+//     }
+//   }
+// }
+// .title-tab {
+//   .ant-tabs .ant-tabs-tab {
+//     font-size: 16px;
+//   }
+// }
+// .tab-content {
+//   display: flex;
+//   align-items: baseline;
+//   gap: 8px;
+//   flex-wrap: wrap;
+//   // 鼠标换成手形
+//   .tab-content-item:hover {
+//     cursor: pointer;
+//   }
+//   .tab-content-item {
+//     border: 1px solid #ffffff;
+//     background-color: #f0f0f0;
+//     padding-left: 12px;
+//     padding-right: 12px;
+//     padding-top: 2px;
+//     padding-bottom: 2px;
+//     border-radius: 20px;
+//   }
+//   .tab-content-item-active {
+//     color: var(---800, #1C6CFF);
+//     border: 1px solid var(---200, #ddd6fe);
+//     background: var(---100, #EDF4FF);
+//     padding-left: 12px;
+//     padding-right: 12px;
+//     padding-top: 2px;
+//     padding-bottom: 2px;
+//     border-radius: 20px;
+//   }
+// }
+// // 给title-box设置最小宽度
+// .headertab .title .title-box {
+//   min-width: 300px;
+// }
+.select-drawer {
+  .add_btn_node {
+    position: absolute;
+    right: 16px;
+    margin-top: 16px;
+    z-index: 1000;
+  }
+
+  .items-materials {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    // 下方边框线
+    border-bottom: 1px solid #f2f5fa;
+    padding-bottom: 8px;
+    align-items: center;
+    &-title {
+    }
+    &-add {
+      font-weight: 600;
+      font-size: 12px;
+      color: #1C6CFF;
+      // 鼠标样式 变成手形
+      cursor: pointer;
+    }
+  }
+
+  .ant-col-20 {
+    --ant-display: block;
+    display: block;
+    display: var(--ant-display);
+    flex: none !important;
+    max-width: none !important;
+  }
+  .ant-form-item .ant-form-item-label > label::after {
+    content: ":";
+    position: relative;
+    margin-block: 0;
+    margin-inline-start: 0 !important;
+    margin-inline-end: 0 !important;
+  }
+  .ant-form-item .ant-form-item-label > label {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    max-width: 100%;
+    height: 32px;
+    color: rgba(0, 0, 0, 0.88);
+    font-size: 14px;
+    width: 100% !important;
+  }
+  .items-materials-list {
+    width: 100%;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    // 下方边框线
+    border-bottom: 1px solid #f2f5fa;
+    padding-bottom: 8px;
+    align-items: center;
+    &-item {
+      display: flex;
+      align-items: center;
+      &-img {
+        font-size: 30px;
+        width: 35px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+      &-content {
+        display: flex;
+        flex-direction: column;
+        &-name {
+          font-weight: 400;
+          font-size: 14px;
+          color: #333c55;
+        }
+        &-page {
+          font-weight: 400;
+          font-size: 12px;
+          color: #646e8b;
+        }
+      }
+    }
+  }
+
+  .items-materials-list:hover {
+    background-color: #f3f5fa;
+    border-radius: 8px;
+  }
+  .trash-icon {
+    margin-left: 8px;
+    opacity: 0; /* 初始隐藏 */
+    transition: opacity 0.2s ease;
+  }
+  .items-materials-list:hover .trash-icon {
+    opacity: 1; /*  hover 时显示（也可通过 React 状态控制，这里用 CSS 增强过渡） */
+  }
+  .ant-form-item .ant-form-item-control-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 0px !important;
+  }
+}
+

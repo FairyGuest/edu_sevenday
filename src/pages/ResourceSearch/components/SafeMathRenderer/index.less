@@ -1,0 +1,78 @@
+.safe-math-renderer {
+  // 整体样式
+  width: 100%;
+  box-sizing: border-box;
+
+  // 题干样式
+  &.safe-math-renderer--stem-bold .stem-wrapper {
+    display: inline-flex;
+    margin-bottom: 8px;
+    gap: 6px;
+    align-items: baseline;
+
+    .stem-content,
+    .stem-content * {
+      font-weight: 600;
+      color: #333c55;
+    }
+  }
+
+  .options-wrap {
+    margin-left: 30px;
+
+    span,
+    p {
+      color: #333C55;
+      font-weight: 400;
+      line-height: 30px;
+    }
+
+    // 处理上传搜题选择展示换行问题
+    .render_title_box {
+      span {
+        p {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  // .stem-content {
+  //   .katex .mfrac .frac-line {
+  //     position: relative;
+  //     bottom: 5px;
+  //   }
+  // }
+
+  // .options-wrap {
+  //   .katex .mfrac .frac-line {
+  //     position: relative;
+  //     bottom: 10px;
+  //   }
+  // }
+
+
+  // 行内公式样式
+  .inline-math {
+    margin: 0 2px;
+  }
+
+  // 块级公式样式
+  .math-display {
+    margin: 8px 0;
+    text-align: center;
+  }
+
+  // 选项样式
+  .choice-item {
+    display: inline-block;
+    margin-right: 30px;
+    margin-bottom: 4px;
+    color: #333C55;
+    margin-left: 22px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+.comment-entry {
+  position: absolute;
+	bottom: 32px;
+	right: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 6px;
+	background-color: #fff;
+	border: 1px solid #E2E6F0;
+	box-shadow: 0 2px 8px 0 #0000001F;
+	padding: 4px;
+	.button-box {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		padding: 6px 15px;
+		gap: 4px;
+		border-radius: 4px;
+		&:hover {
+			background-color: #F7F9FC;
+		}
+		&-icon {
+			display: flex;
+			font-size: 15px;
+			color: #646E8B;
+		}
+		.active {
+			color: #FFAA00;
+		}
+		&-text {
+			font-size: 12px;
+			color: #646E8B;
+			min-width: 9px;
+		}
+	}
+	.divider {
+		margin: 2px 4px 0;
+    height: 28px;
+		background-color: #E2E6F0;
+	}
+}

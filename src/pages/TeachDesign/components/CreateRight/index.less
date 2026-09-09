@@ -1,0 +1,286 @@
+.create-right {
+  height: 100%;
+  background: #f8faff;
+
+  .create-right-line {
+    height: 100%;
+    width: 1px;
+    position: relative;
+    .teach-plan-affix-img-box {
+      position: absolute;
+      bottom: 100px;
+      left: 30px;
+    }
+  }
+
+  .ant-dropdown-menu-submenu-expand-icon {
+    display: none;
+  }
+
+  .ant-drawer-right {
+    .ant-drawer-mask {
+      background-color: rgba(0, 0, 0, 0.01);
+    }
+  }
+
+  .empty-content {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .create-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .create-header {
+      // padding: 8px;
+      height: 60px;
+      padding: 12px 20px;
+      // border-bottom: 1px solid #f2f5fa;
+      display: flex;
+      justify-content: space-between;
+
+      &-left {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      &-right {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .ant-btn-variant-text {
+        color: #333c55;
+
+        &:hover {
+          color: #1e253b !important;
+        }
+
+        &:disabled {
+          color: #cbd2e1 !important;
+        }
+      }
+
+      .ant-tag {
+        margin-inline-end: 0;
+      }
+
+      .again-btn-css {
+        &:disabled {
+          color: #8eb6fe;
+        }
+      }
+
+      .evaluation-one {
+        &:disabled {
+          color: #fff;
+          background: #8eb6fe;
+          border-color: #8eb6fe;
+        }
+      }
+
+      .check-plan-css {
+        color: @primary-color;
+        border: 1px solid #8eb6fe;
+        box-shadow: none;
+
+        &:disabled {
+          color: #8eb6fe;
+          background: #fff;
+        }
+      }
+
+      .evaluate-btn-css {
+        color: @primary-color;
+
+        &:hover {
+          background: #edf4ff;
+        }
+
+        &:disabled {
+          color: #8eb6fe;
+        }
+      }
+    }
+
+    .create-content {
+      flex: 1;
+      border-radius: 12px 12px 0 0;
+      overflow: hidden scroll;
+      margin: 0 20px;
+      border: 1px solid #e9f0fe;
+      background: #fff;
+      box-shadow: 0 0 20px 0 rgba(0, 56, 208, 0.05);
+
+      &::-webkit-scrollbar-thumb {
+        background: #c0c3c9;
+      }
+
+      &-header {
+        height: 70px;
+        padding: 0 40px;
+        border-bottom: 1px solid #e2e6f0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .icon {
+          color: #646e8b;
+          font-size: 20px;
+          flex-shrink: 0;
+        }
+
+        .title {
+          color: #1e253b;
+          font-size: 16px;
+          font-weight: 600;
+          font-family: "PingFang SC";
+        }
+
+        .version {
+          color: #fff;
+          padding: 0 6px;
+          height: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          border-radius: 4px;
+          background: linear-gradient(0deg, #4888ff 0%, #c7dbff 100%);
+        }
+      }
+
+      &-wrapper {
+        padding: 24px 40px 0;
+
+        .error {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          color: #ef4444;
+          padding: 5px 12px;
+          margin: 16px 0;
+          border-radius: 8px;
+          background: #ffeeeb;
+        }
+
+        .markdown_container {
+          &:last-child {
+            padding-bottom: 40px;
+          }
+        }
+      }
+    }
+
+    .think {
+      padding-inline: 12px;
+      padding-bottom: 8px;
+      border-radius: 12px;
+      border: 1px solid #e2e6f0;
+      background: #fff;
+      overflow: scroll;
+      scrollbar-width: none;
+
+      &-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #646e8b;
+        font-weight: 500;
+        position: sticky;
+        top: 0;
+        padding-top: 8px;
+        background: #fff;
+      }
+
+      &-expand {
+        padding: 4px;
+        border-radius: 4px;
+        cursor: pointer;
+        background: #f2f5fa;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &-content {
+        padding-top: 8px;
+      }
+
+      .show {
+        display: block !important;
+      }
+
+      .unshow {
+        display: none !important;
+      }
+    }
+
+    .think-css {
+      max-height: 124px;
+      overflow: auto;
+      scrollbar-width: none;
+    }
+
+    // .teach-plan {
+    //   padding-top: 24px;
+    // }
+
+    .affix-btn {
+      .ant-affix {
+        display: flex;
+        justify-content: center;
+      }
+
+      .ant-btn {
+        border-color: #e2e6f0;
+        box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.08);
+      }
+    }
+
+    .more-btn-css {
+      color: #333c55;
+
+      &:hover {
+        color: #333c55 !important;
+      }
+      &:disabled {
+        color: #cbd2e1 !important;
+      }
+    }
+  }
+  .divider {
+    width: 1px;
+    height: 16px;
+    margin: 0 2px;
+    border-right: 1px solid rgba(71, 80, 105, 0.16);
+  }
+}
+
+.create-content-plan {
+  color: #ef4444;
+  font-family: "PingFang SC";
+  line-height: 22px;
+}
+
+.create-evaluate-loading {
+  color: #333c55;
+  font-family: "PingFang SC";
+  line-height: 20px;
+}

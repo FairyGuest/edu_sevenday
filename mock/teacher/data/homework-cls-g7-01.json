@@ -1,0 +1,2824 @@
+{
+ "homework_id": "hw-cls-g7-01-001",
+ "class_id": "cls-g7-01",
+ "mode": "personalized",
+ "title": "个性化作业 · 七年级(1)班",
+ "status": "generated",
+ "config": {
+  "ranges": {
+   "weak": [
+    2,
+    3
+   ],
+   "variant": [
+    1,
+    2
+   ],
+   "review": [
+    1,
+    2
+   ],
+   "challenge": [
+    1,
+    1
+   ]
+  },
+  "total": 6
+ },
+ "summary": {
+  "n_students": 46,
+  "q_count": {
+   "min": 5,
+   "max": 6
+  },
+  "fallback_students": 38,
+  "strategy_mix": {
+   "薄弱知识点练": 63,
+   "遗忘曲线复习": 71,
+   "错题变式": 0,
+   "选做挑战题": 14,
+   "均衡（默认）": 97
+  },
+  "top_clusters": [
+   [
+    "一元一次不等式组",
+    42
+   ],
+   [
+    "相交线",
+    38
+   ],
+   [
+    "列代数式表示数量关系",
+    23
+   ],
+   [
+    "不等式与不等式组",
+    22
+   ],
+   [
+    "用坐标描述平面内点的位置",
+    19
+   ],
+   [
+    "几何图形初步",
+    19
+   ],
+   [
+    "用统计图描述数据",
+    18
+   ],
+   [
+    "代数式的值",
+    15
+   ]
+  ],
+  "notes_sample": [
+   "学情冷启动学生 → 默认均衡卷（兜底）",
+   "错题变式覆盖有限 → 缺额转薄弱方针",
+   "薄弱方针实际配题不足（候选受限，显式降额）"
+  ]
+ },
+ "papers": {
+  "04c29dfa7b022e8a": {
+   "student_id": "04c29dfa7b022e8a",
+   "name": "林晨",
+   "items": [
+    {
+     "qid": "que-02d9e3b6-04f1-40ea-8a37-33d1d14d1384",
+     "stem": "在平面直角坐标系中，已知点 在 y 轴上，则 a 的值是 ．",
+     "cluster": "用坐标描述平面内点的位置",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「用坐标描述平面内点的位置」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-34fcb3d3-7cde-11f1-aba8-43742154f115",
+     "stem": "函数 $f(x) = 2\\sqrt{3}\\sin x\\cos x + \\cos 2x$ 的最小值为______。",
+     "cluster": "列代数式表示数量关系",
+     "difficulty": "较易",
+     "form": "填空",
+     "strategy": "review",
+     "reason": "遗忘复习：「列代数式表示数量关系」距上次练习较久，预计掌握度衰减至 47%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-057b298a-501e-4fd5-8da6-70fa4e4e9592",
+     "stem": "如图，点 D 、 B 、 C 在同一直线上， ，求 的度数．",
+     "cluster": "几何图形初步",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「几何图形初步」距上次练习较久，预计掌握度衰减至 49%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-000bc2756a3c413b9c2c2fe4b9d00f25",
+     "stem": "已知$a<b$，下列不等式中，正确的是（ ）",
+     "cluster": "不等式与不等式组",
+     "difficulty": "适中",
+     "form": "选择",
+     "strategy": "challenge",
+     "reason": "「不等式与不等式组」已掌握（86%），挑战进阶题（选做，可点亮掌握徽章）",
+     "source_label": "掌握徽章",
+     "optional": true
+    },
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6b375ebb-6dec-11f1-9578-b9cf3fb9511f",
+     "stem": "如图QM2-6,直线AB,CD相交于点O, 于点O.如果 ,那么 的度数是______。",
+     "cluster": "相交线",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「相交线」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "167c8c4d7a71f8a9": {
+   "student_id": "167c8c4d7a71f8a9",
+   "name": "林晨鑫",
+   "items": [
+    {
+     "qid": "que-070d2c44-6a22-11f1-b3c0-6530ede8be03",
+     "stem": "中国地势西高东低，复杂多样。据统计，各类地形所占比例大致是：山地33％，高原26％，盆地19％，丘陵10％，平原12％。为直观地表示出各类地形所占比例，最合适的统计图是",
+     "cluster": "用统计图描述数据",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「用统计图描述数据」掌握度 56%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-05d99760-0846-4c8c-90ce-60ada514da18",
+     "stem": "已知点 P （ a ， b ）， ab ＞ 0 ， a + b ＜ 0 ，则点 P 在（ ）",
+     "cluster": "用坐标描述平面内点的位置",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「用坐标描述平面内点的位置」距上次练习较久，预计掌握度衰减至 36%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-079b4183-bfdf-45a6-a805-f509acde34e8",
+     "stem": "下列问题中，（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）最适合用扇形统计图表示",
+     "cluster": "用统计图描述数据",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「用统计图描述数据」距上次练习较久，预计掌握度衰减至 44%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6b375ebb-6dec-11f1-9578-b9cf3fb9511f",
+     "stem": "如图QM2-6,直线AB,CD相交于点O, 于点O.如果 ,那么 的度数是______。",
+     "cluster": "相交线",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「相交线」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "7fd0e8d7e90be85c": {
+   "student_id": "7fd0e8d7e90be85c",
+   "name": "李辉",
+   "items": [
+    {
+     "qid": "que-03e5a3bb-ea33-4bef-870c-354049fbce18",
+     "stem": "在数轴上表示$−4$和3的两点的距离是________。",
+     "cluster": "几何图形初步",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「几何图形初步」掌握度 55%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-1f48e263-c450-453d-a307-24368d772173",
+     "stem": "如图，把左边的松树平移到右边，下面说法正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）。",
+     "cluster": "平面直角坐标系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「平面直角坐标系」掌握度 57%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-08cf2563-3c88-11f1-8bf8-09eb5fd0794e",
+     "stem": "已知 a ， b ， c ， d 是实数，若 a &gt; b ， c = d ，则（         ）",
+     "cluster": "不等式与不等式组",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「不等式与不等式组」掌握度 58%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6b375ebb-6dec-11f1-9578-b9cf3fb9511f",
+     "stem": "如图QM2-6,直线AB,CD相交于点O, 于点O.如果 ,那么 的度数是______。",
+     "cluster": "相交线",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「相交线」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "56f9d6e88e7502f9": {
+   "student_id": "56f9d6e88e7502f9",
+   "name": "胡浩",
+   "items": [
+    {
+     "qid": "que-05d99760-0846-4c8c-90ce-60ada514da18",
+     "stem": "已知点 P （ a ， b ）， ab ＞ 0 ， a + b ＜ 0 ，则点 P 在（ ）",
+     "cluster": "用坐标描述平面内点的位置",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「用坐标描述平面内点的位置」距上次练习较久，预计掌握度衰减至 52%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-079b4183-bfdf-45a6-a805-f509acde34e8",
+     "stem": "下列问题中，（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）最适合用扇形统计图表示",
+     "cluster": "用统计图描述数据",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「用统计图描述数据」距上次练习较久，预计掌握度衰减至 53%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6b375ebb-6dec-11f1-9578-b9cf3fb9511f",
+     "stem": "如图QM2-6,直线AB,CD相交于点O, 于点O.如果 ,那么 的度数是______。",
+     "cluster": "相交线",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「相交线」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0008b871-ff35-425b-b275-775009c302e8",
+     "stem": "已知锐角△ABC的面积为 ，BC=4，CA=3，则角C的大小为",
+     "cluster": "列代数式表示数量关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「列代数式表示数量关系」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "463036ace3cdf25f": {
+   "student_id": "463036ace3cdf25f",
+   "name": "邓磊",
+   "items": [
+    {
+     "qid": "que-070d2c44-6a22-11f1-b3c0-6530ede8be03",
+     "stem": "中国地势西高东低，复杂多样。据统计，各类地形所占比例大致是：山地33％，高原26％，盆地19％，丘陵10％，平原12％。为直观地表示出各类地形所占比例，最合适的统计图是",
+     "cluster": "用统计图描述数据",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「用统计图描述数据」掌握度 57%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-03e5a3bb-ea33-4bef-870c-354049fbce18",
+     "stem": "在数轴上表示$−4$和3的两点的距离是________。",
+     "cluster": "几何图形初步",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「几何图形初步」掌握度 57%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-057b298a-501e-4fd5-8da6-70fa4e4e9592",
+     "stem": "如图，点 D 、 B 、 C 在同一直线上， ，求 的度数．",
+     "cluster": "几何图形初步",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「几何图形初步」距上次练习较久，预计掌握度衰减至 29%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-0eea3a71-fcd2-42f8-83da-ec29d83e1cdb",
+     "stem": "下列变形中，不正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "不等式与不等式组",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「不等式与不等式组」距上次练习较久，预计掌握度衰减至 50%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-004c4294bb9446fdbc7f1ad5107d16f5",
+     "stem": "如图，$∠1$与$∠2$是对顶角的为（ ） A. B. C. D.",
+     "cluster": "相交线与平行线",
+     "difficulty": "适中",
+     "form": "填空",
+     "strategy": "challenge",
+     "reason": "「相交线与平行线」已掌握（89%），挑战进阶题（选做，可点亮掌握徽章）",
+     "source_label": "掌握徽章",
+     "optional": true
+    },
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "ee8cb808c96fc7c2": {
+   "student_id": "ee8cb808c96fc7c2",
+   "name": "罗勇",
+   "items": [
+    {
+     "qid": "que-2761775e-eef6-42da-8f5e-9f140c5a5232",
+     "stem": "首阳水果店运进的香梨比苹果少$8$筐，运进的香梨筐数是苹果的$\\dfrac{5}{7}$。首阳水果店运进香梨和苹果各多少筐？",
+     "cluster": "二元一次方程组的概念",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「二元一次方程组的概念」掌握度 57%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0ff47fc7-6708-40ac-96b4-d871e7ff8044",
+     "stem": "《算学启蒙》是我国古代的数学著作，其中有一道题：“今有良马日行二百四十里，驽马日行一百五十里．驽马先行一十二日，问良马几何日追及之．”意思是：跑得快的马每天走 240 里，跑得慢的马每天走 150 里",
+     "cluster": "二元一次方程组的概念",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「二元一次方程组的概念」距上次练习较久，预计掌握度衰减至 26%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-04994ddd-7b5e-11f1-9f6f-57b8371d822f",
+     "stem": "已知函数$f(x) = \\frac{1}{4}x^3 - x^2 + x$。当$x \\in [-2,4]$时，证明：$x - 6 \\leqslant f(x) \\leqslant x$。",
+     "cluster": "相交线与平行线",
+     "difficulty": "较易",
+     "form": "证明",
+     "strategy": "review",
+     "reason": "遗忘复习：「相交线与平行线」距上次练习较久，预计掌握度衰减至 43%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6b375ebb-6dec-11f1-9578-b9cf3fb9511f",
+     "stem": "如图QM2-6,直线AB,CD相交于点O, 于点O.如果 ,那么 的度数是______。",
+     "cluster": "相交线",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「相交线」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "78f0d984f389123b": {
+   "student_id": "78f0d984f389123b",
+   "name": "许强",
+   "items": [
+    {
+     "qid": "que-1f48e263-c450-453d-a307-24368d772173",
+     "stem": "如图，把左边的松树平移到右边，下面说法正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）。",
+     "cluster": "平面直角坐标系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「平面直角坐标系」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-070d22c6-6a22-11f1-baf4-6530ede8be03",
+     "stem": "为了解游客对恭王府、北京大观园、北京动物园和景山公园四个旅游景区的满意率情况，某班实践活动小组的同学给出了以下几种调查方案： 方案一：在多家旅游公司随机调查400名导游； 方案二：在恭王府景区随机调查",
+     "cluster": "统计调查",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「统计调查」掌握度 56%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-070d2c44-6a22-11f1-b3c0-6530ede8be03",
+     "stem": "中国地势西高东低，复杂多样。据统计，各类地形所占比例大致是：山地33％，高原26％，盆地19％，丘陵10％，平原12％。为直观地表示出各类地形所占比例，最合适的统计图是",
+     "cluster": "用统计图描述数据",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「用统计图描述数据」掌握度 57%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-079b4183-bfdf-45a6-a805-f509acde34e8",
+     "stem": "下列问题中，（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）最适合用扇形统计图表示",
+     "cluster": "用统计图描述数据",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「用统计图描述数据」距上次练习较久，预计掌握度衰减至 41%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-401c17aa-4393-49f9-96c0-cb3d40f920ff",
+     "stem": "某大学在其百年校庆上，对参加校庆的校友做了一项问卷调查，发现在 20 世纪最后 5 年间毕业的校友，他们 2018 年的平均年收入约为 35 万元 . 由此 （填 “ 能够 ” 或 “ 不能 ” ）推",
+     "cluster": "统计调查",
+     "difficulty": "较易",
+     "form": "说理解释",
+     "strategy": "review",
+     "reason": "遗忘复习：「统计调查」距上次练习较久，预计掌握度衰减至 45%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "73b95de5703b6d2c": {
+   "student_id": "73b95de5703b6d2c",
+   "name": "郭宇静",
+   "items": [
+    {
+     "qid": "que-2761775e-eef6-42da-8f5e-9f140c5a5232",
+     "stem": "首阳水果店运进的香梨比苹果少$8$筐，运进的香梨筐数是苹果的$\\dfrac{5}{7}$。首阳水果店运进香梨和苹果各多少筐？",
+     "cluster": "二元一次方程组的概念",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「二元一次方程组的概念」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-057b298a-501e-4fd5-8da6-70fa4e4e9592",
+     "stem": "如图，点 D 、 B 、 C 在同一直线上， ，求 的度数．",
+     "cluster": "几何图形初步",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「几何图形初步」距上次练习较久，预计掌握度衰减至 44%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-34fcb3d3-7cde-11f1-aba8-43742154f115",
+     "stem": "函数 $f(x) = 2\\sqrt{3}\\sin x\\cos x + \\cos 2x$ 的最小值为______。",
+     "cluster": "列代数式表示数量关系",
+     "difficulty": "较易",
+     "form": "填空",
+     "strategy": "review",
+     "reason": "遗忘复习：「列代数式表示数量关系」距上次练习较久，预计掌握度衰减至 52%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6b375ebb-6dec-11f1-9578-b9cf3fb9511f",
+     "stem": "如图QM2-6,直线AB,CD相交于点O, 于点O.如果 ,那么 的度数是______。",
+     "cluster": "相交线",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「相交线」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "396679d76c04a1c7": {
+   "student_id": "396679d76c04a1c7",
+   "name": "杨楠",
+   "items": [
+    {
+     "qid": "que-070d2c44-6a22-11f1-b3c0-6530ede8be03",
+     "stem": "中国地势西高东低，复杂多样。据统计，各类地形所占比例大致是：山地33％，高原26％，盆地19％，丘陵10％，平原12％。为直观地表示出各类地形所占比例，最合适的统计图是",
+     "cluster": "用统计图描述数据",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「用统计图描述数据」掌握度 57%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0eea3a71-fcd2-42f8-83da-ec29d83e1cdb",
+     "stem": "下列变形中，不正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "不等式与不等式组",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「不等式与不等式组」距上次练习较久，预计掌握度衰减至 41%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-079b4183-bfdf-45a6-a805-f509acde34e8",
+     "stem": "下列问题中，（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）最适合用扇形统计图表示",
+     "cluster": "用统计图描述数据",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「用统计图描述数据」距上次练习较久，预计掌握度衰减至 41%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6b375ebb-6dec-11f1-9578-b9cf3fb9511f",
+     "stem": "如图QM2-6,直线AB,CD相交于点O, 于点O.如果 ,那么 的度数是______。",
+     "cluster": "相交线",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「相交线」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "00056c251b70c417": {
+   "student_id": "00056c251b70c417",
+   "name": "杨楠晨",
+   "items": [
+    {
+     "qid": "que-1f48e263-c450-453d-a307-24368d772173",
+     "stem": "如图，把左边的松树平移到右边，下面说法正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）。",
+     "cluster": "平面直角坐标系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「平面直角坐标系」掌握度 55%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-009101ca-73b2-4d75-beda-c67c7e114125",
+     "stem": "下列说法中，正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "有理数的乘法与除法",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「有理数的乘法与除法」掌握度 56%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-02d9e3b6-04f1-40ea-8a37-33d1d14d1384",
+     "stem": "在平面直角坐标系中，已知点 在 y 轴上，则 a 的值是 ．",
+     "cluster": "用坐标描述平面内点的位置",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「用坐标描述平面内点的位置」掌握度 56%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-05d99760-0846-4c8c-90ce-60ada514da18",
+     "stem": "已知点 P （ a ， b ）， ab ＞ 0 ， a + b ＜ 0 ，则点 P 在（ ）",
+     "cluster": "用坐标描述平面内点的位置",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「用坐标描述平面内点的位置」距上次练习较久，预计掌握度衰减至 28%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-0eea3a71-fcd2-42f8-83da-ec29d83e1cdb",
+     "stem": "下列变形中，不正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "不等式与不等式组",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「不等式与不等式组」距上次练习较久，预计掌握度衰减至 38%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "607127f0a4dee1b5": {
+   "student_id": "607127f0a4dee1b5",
+   "name": "高静明",
+   "items": [
+    {
+     "qid": "que-0eea3a71-fcd2-42f8-83da-ec29d83e1cdb",
+     "stem": "下列变形中，不正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "不等式与不等式组",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「不等式与不等式组」距上次练习较久，预计掌握度衰减至 52%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6b375ebb-6dec-11f1-9578-b9cf3fb9511f",
+     "stem": "如图QM2-6,直线AB,CD相交于点O, 于点O.如果 ,那么 的度数是______。",
+     "cluster": "相交线",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「相交线」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0008b871-ff35-425b-b275-775009c302e8",
+     "stem": "已知锐角△ABC的面积为 ，BC=4，CA=3，则角C的大小为",
+     "cluster": "列代数式表示数量关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「列代数式表示数量关系」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-08cf2563-3c88-11f1-8bf8-09eb5fd0794e",
+     "stem": "已知 a ， b ， c ， d 是实数，若 a &gt; b ， c = d ，则（         ）",
+     "cluster": "不等式与不等式组",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「不等式与不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "5d413b610461f366": {
+   "student_id": "5d413b610461f366",
+   "name": "何宁",
+   "items": [
+    {
+     "qid": "que-057b298a-501e-4fd5-8da6-70fa4e4e9592",
+     "stem": "如图，点 D 、 B 、 C 在同一直线上， ，求 的度数．",
+     "cluster": "几何图形初步",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「几何图形初步」距上次练习较久，预计掌握度衰减至 44%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-0ff47fc7-6708-40ac-96b4-d871e7ff8044",
+     "stem": "《算学启蒙》是我国古代的数学著作，其中有一道题：“今有良马日行二百四十里，驽马日行一百五十里．驽马先行一十二日，问良马几何日追及之．”意思是：跑得快的马每天走 240 里，跑得慢的马每天走 150 里",
+     "cluster": "二元一次方程组的概念",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「二元一次方程组的概念」距上次练习较久，预计掌握度衰减至 57%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-00878c4dbe6e4f60880a600de6c7e16e",
+     "stem": "1. 为了估计某湿地公园中种候鸟，给它们戴上脚环，有8只带有脚环。假设在公园中这种候鸟的种群数 2. 在九年级的一次数学进行统计，绘制如下两选项C的总人数约有____ 3. 如图，某公司去年月份利润的",
+     "cluster": "统计调查",
+     "difficulty": "适中",
+     "form": "填空",
+     "strategy": "challenge",
+     "reason": "「统计调查」已掌握（86%），挑战进阶题（选做，可点亮掌握徽章）",
+     "source_label": "掌握徽章",
+     "optional": true
+    },
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6b375ebb-6dec-11f1-9578-b9cf3fb9511f",
+     "stem": "如图QM2-6,直线AB,CD相交于点O, 于点O.如果 ,那么 的度数是______。",
+     "cluster": "相交线",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「相交线」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0008b871-ff35-425b-b275-775009c302e8",
+     "stem": "已知锐角△ABC的面积为 ，BC=4，CA=3，则角C的大小为",
+     "cluster": "列代数式表示数量关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「列代数式表示数量关系」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "b89b9f27a8e1af00": {
+   "student_id": "b89b9f27a8e1af00",
+   "name": "宋涛静",
+   "items": [
+    {
+     "qid": "que-02d9e3b6-04f1-40ea-8a37-33d1d14d1384",
+     "stem": "在平面直角坐标系中，已知点 在 y 轴上，则 a 的值是 ．",
+     "cluster": "用坐标描述平面内点的位置",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「用坐标描述平面内点的位置」掌握度 58%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-401c17aa-4393-49f9-96c0-cb3d40f920ff",
+     "stem": "某大学在其百年校庆上，对参加校庆的校友做了一项问卷调查，发现在 20 世纪最后 5 年间毕业的校友，他们 2018 年的平均年收入约为 35 万元 . 由此 （填 “ 能够 ” 或 “ 不能 ” ）推",
+     "cluster": "统计调查",
+     "difficulty": "较易",
+     "form": "说理解释",
+     "strategy": "review",
+     "reason": "遗忘复习：「统计调查」距上次练习较久，预计掌握度衰减至 48%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-05d99760-0846-4c8c-90ce-60ada514da18",
+     "stem": "已知点 P （ a ， b ）， ab ＞ 0 ， a + b ＜ 0 ，则点 P 在（ ）",
+     "cluster": "用坐标描述平面内点的位置",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「用坐标描述平面内点的位置」距上次练习较久，预计掌握度衰减至 55%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-005e4209-6493-4e28-a319-263ef1441d4c",
+     "stem": "下列说法正确的是（ ）",
+     "cluster": "几何图形",
+     "difficulty": "适中",
+     "form": "选择",
+     "strategy": "challenge",
+     "reason": "「几何图形」已掌握（86%），挑战进阶题（选做，可点亮掌握徽章）",
+     "source_label": "掌握徽章",
+     "optional": true
+    },
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6b375ebb-6dec-11f1-9578-b9cf3fb9511f",
+     "stem": "如图QM2-6,直线AB,CD相交于点O, 于点O.如果 ,那么 的度数是______。",
+     "cluster": "相交线",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「相交线」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "6378a441a0f7f4f5": {
+   "student_id": "6378a441a0f7f4f5",
+   "name": "彭欣",
+   "items": [
+    {
+     "qid": "que-1f48e263-c450-453d-a307-24368d772173",
+     "stem": "如图，把左边的松树平移到右边，下面说法正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）。",
+     "cluster": "平面直角坐标系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「平面直角坐标系」掌握度 58%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0f098956-6d37-4216-8671-654345470e81",
+     "stem": "已知△ ABC 与△ A 1 B 1 C 1 是位似图形，位似比是 1 ： 3 ，则△ ABC 与△ A 1 B 1 C 1 的面积比（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&",
+     "cluster": "平面直角坐标系",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「平面直角坐标系」距上次练习较久，预计掌握度衰减至 34%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-04994ddd-7b5e-11f1-9f6f-57b8371d822f",
+     "stem": "已知函数$f(x) = \\frac{1}{4}x^3 - x^2 + x$。当$x \\in [-2,4]$时，证明：$x - 6 \\leqslant f(x) \\leqslant x$。",
+     "cluster": "相交线与平行线",
+     "difficulty": "较易",
+     "form": "证明",
+     "strategy": "review",
+     "reason": "遗忘复习：「相交线与平行线」距上次练习较久，预计掌握度衰减至 45%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6b375ebb-6dec-11f1-9578-b9cf3fb9511f",
+     "stem": "如图QM2-6,直线AB,CD相交于点O, 于点O.如果 ,那么 的度数是______。",
+     "cluster": "相交线",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「相交线」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "cde788b7e4a5137e": {
+   "student_id": "cde788b7e4a5137e",
+   "name": "朱鑫",
+   "items": [
+    {
+     "qid": "que-19d722c4-8991-11f1-86c8-3b26a6f41ce2",
+     "stem": "我们定义一个关于实数a，b的新运算，规定： a ∗ b = 3 a − 2 b a*b=3a-2b a ∗ b = 3 a − 2 b ，例如， 45 = 3 × 4 − 2 × 5 45=3\\tim",
+     "cluster": "代数式的值",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「代数式的值」掌握度 56%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-c08c26ed-82c4-4425-b2bd-7d13442435b9",
+     "stem": "若“ ”是一种数学运算符号，且 ， ， ， ， ，则 的值为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "代数式的值",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「代数式的值」距上次练习较久，预计掌握度衰减至 46%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-0ff47fc7-6708-40ac-96b4-d871e7ff8044",
+     "stem": "《算学启蒙》是我国古代的数学著作，其中有一道题：“今有良马日行二百四十里，驽马日行一百五十里．驽马先行一十二日，问良马几何日追及之．”意思是：跑得快的马每天走 240 里，跑得慢的马每天走 150 里",
+     "cluster": "二元一次方程组的概念",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「二元一次方程组的概念」距上次练习较久，预计掌握度衰减至 51%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6b375ebb-6dec-11f1-9578-b9cf3fb9511f",
+     "stem": "如图QM2-6,直线AB,CD相交于点O, 于点O.如果 ,那么 的度数是______。",
+     "cluster": "相交线",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「相交线」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "56082ec4168d0e25": {
+   "student_id": "56082ec4168d0e25",
+   "name": "徐晨",
+   "items": [
+    {
+     "qid": "que-0eea3a71-fcd2-42f8-83da-ec29d83e1cdb",
+     "stem": "下列变形中，不正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "不等式与不等式组",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「不等式与不等式组」距上次练习较久，预计掌握度衰减至 59%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-0000df610ebc46cdad5d5027cfe5b39c",
+     "stem": "在平面直角坐标系中，依次描出下列各点，并将各组内的点依次连接起来： (1) $(2,1)$，$(2,0)$，$(3,0)$，$(3,4)$； (2) $(3,6)$，$(0,4)$，$(6,4)$，$",
+     "cluster": "用坐标描述平面内点的位置",
+     "difficulty": "适中",
+     "form": "选择",
+     "strategy": "challenge",
+     "reason": "「用坐标描述平面内点的位置」已掌握（85%），挑战进阶题（选做，可点亮掌握徽章）",
+     "source_label": "掌握徽章",
+     "optional": true
+    },
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6b375ebb-6dec-11f1-9578-b9cf3fb9511f",
+     "stem": "如图QM2-6,直线AB,CD相交于点O, 于点O.如果 ,那么 的度数是______。",
+     "cluster": "相交线",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「相交线」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0008b871-ff35-425b-b275-775009c302e8",
+     "stem": "已知锐角△ABC的面积为 ，BC=4，CA=3，则角C的大小为",
+     "cluster": "列代数式表示数量关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「列代数式表示数量关系」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-08cf2563-3c88-11f1-8bf8-09eb5fd0794e",
+     "stem": "已知 a ， b ， c ， d 是实数，若 a &gt; b ， c = d ，则（         ）",
+     "cluster": "不等式与不等式组",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「不等式与不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "d3b7dae22430e6f0": {
+   "student_id": "d3b7dae22430e6f0",
+   "name": "徐晨阳",
+   "items": [
+    {
+     "qid": "que-19d722c4-8991-11f1-86c8-3b26a6f41ce2",
+     "stem": "我们定义一个关于实数a，b的新运算，规定： a ∗ b = 3 a − 2 b a*b=3a-2b a ∗ b = 3 a − 2 b ，例如， 45 = 3 × 4 − 2 × 5 45=3\\tim",
+     "cluster": "代数式的值",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「代数式的值」掌握度 56%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-00e987bc50b9475db118234c51cbb114",
+     "stem": "如图，△ABC沿BC所在直线向右平移得到△DEF，若EC=2，BF=8，则BE=____.",
+     "cluster": "平面直角坐标系",
+     "difficulty": "适中",
+     "form": "填空",
+     "strategy": "challenge",
+     "reason": "「平面直角坐标系」已掌握（87%），挑战进阶题（选做，可点亮掌握徽章）",
+     "source_label": "掌握徽章",
+     "optional": true
+    },
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6b375ebb-6dec-11f1-9578-b9cf3fb9511f",
+     "stem": "如图QM2-6,直线AB,CD相交于点O, 于点O.如果 ,那么 的度数是______。",
+     "cluster": "相交线",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「相交线」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0008b871-ff35-425b-b275-775009c302e8",
+     "stem": "已知锐角△ABC的面积为 ，BC=4，CA=3，则角C的大小为",
+     "cluster": "列代数式表示数量关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「列代数式表示数量关系」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-08cf2563-3c88-11f1-8bf8-09eb5fd0794e",
+     "stem": "已知 a ， b ， c ， d 是实数，若 a &gt; b ， c = d ，则（         ）",
+     "cluster": "不等式与不等式组",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「不等式与不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "0fbb596da8a85c89": {
+   "student_id": "0fbb596da8a85c89",
+   "name": "黄浩",
+   "items": [
+    {
+     "qid": "que-02d9e3b6-04f1-40ea-8a37-33d1d14d1384",
+     "stem": "在平面直角坐标系中，已知点 在 y 轴上，则 a 的值是 ．",
+     "cluster": "用坐标描述平面内点的位置",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「用坐标描述平面内点的位置」掌握度 58%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-079b4183-bfdf-45a6-a805-f509acde34e8",
+     "stem": "下列问题中，（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）最适合用扇形统计图表示",
+     "cluster": "用统计图描述数据",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「用统计图描述数据」距上次练习较久，预计掌握度衰减至 43%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-057b298a-501e-4fd5-8da6-70fa4e4e9592",
+     "stem": "如图，点 D 、 B 、 C 在同一直线上， ，求 的度数．",
+     "cluster": "几何图形初步",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「几何图形初步」距上次练习较久，预计掌握度衰减至 59%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6b375ebb-6dec-11f1-9578-b9cf3fb9511f",
+     "stem": "如图QM2-6,直线AB,CD相交于点O, 于点O.如果 ,那么 的度数是______。",
+     "cluster": "相交线",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「相交线」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "4b06fbd0cfafa148": {
+   "student_id": "4b06fbd0cfafa148",
+   "name": "黄浩帆",
+   "items": [
+    {
+     "qid": "que-19d722c4-8991-11f1-86c8-3b26a6f41ce2",
+     "stem": "我们定义一个关于实数a，b的新运算，规定： a ∗ b = 3 a − 2 b a*b=3a-2b a ∗ b = 3 a − 2 b ，例如， 45 = 3 × 4 − 2 × 5 45=3\\tim",
+     "cluster": "代数式的值",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「代数式的值」掌握度 57%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-c08c26ed-82c4-4425-b2bd-7d13442435b9",
+     "stem": "若“ ”是一种数学运算符号，且 ， ， ， ， ，则 的值为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "代数式的值",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「代数式的值」距上次练习较久，预计掌握度衰减至 53%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-005e4209-6493-4e28-a319-263ef1441d4c",
+     "stem": "下列说法正确的是（ ）",
+     "cluster": "几何图形",
+     "difficulty": "适中",
+     "form": "选择",
+     "strategy": "challenge",
+     "reason": "「几何图形」已掌握（86%），挑战进阶题（选做，可点亮掌握徽章）",
+     "source_label": "掌握徽章",
+     "optional": true
+    },
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6b375ebb-6dec-11f1-9578-b9cf3fb9511f",
+     "stem": "如图QM2-6,直线AB,CD相交于点O, 于点O.如果 ,那么 的度数是______。",
+     "cluster": "相交线",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「相交线」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0008b871-ff35-425b-b275-775009c302e8",
+     "stem": "已知锐角△ABC的面积为 ，BC=4，CA=3，则角C的大小为",
+     "cluster": "列代数式表示数量关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「列代数式表示数量关系」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "b018019b232f49b5": {
+   "student_id": "b018019b232f49b5",
+   "name": "邓敏",
+   "items": [
+    {
+     "qid": "que-079b4183-bfdf-45a6-a805-f509acde34e8",
+     "stem": "下列问题中，（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）最适合用扇形统计图表示",
+     "cluster": "用统计图描述数据",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「用统计图描述数据」距上次练习较久，预计掌握度衰减至 38%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-057b298a-501e-4fd5-8da6-70fa4e4e9592",
+     "stem": "如图，点 D 、 B 、 C 在同一直线上， ，求 的度数．",
+     "cluster": "几何图形初步",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「几何图形初步」距上次练习较久，预计掌握度衰减至 57%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6b375ebb-6dec-11f1-9578-b9cf3fb9511f",
+     "stem": "如图QM2-6,直线AB,CD相交于点O, 于点O.如果 ,那么 的度数是______。",
+     "cluster": "相交线",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「相交线」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0008b871-ff35-425b-b275-775009c302e8",
+     "stem": "已知锐角△ABC的面积为 ，BC=4，CA=3，则角C的大小为",
+     "cluster": "列代数式表示数量关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「列代数式表示数量关系」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "01baf211d200776b": {
+   "student_id": "01baf211d200776b",
+   "name": "陈琪明",
+   "items": [
+    {
+     "qid": "que-19d722c4-8991-11f1-86c8-3b26a6f41ce2",
+     "stem": "我们定义一个关于实数a，b的新运算，规定： a ∗ b = 3 a − 2 b a*b=3a-2b a ∗ b = 3 a − 2 b ，例如， 45 = 3 × 4 − 2 × 5 45=3\\tim",
+     "cluster": "代数式的值",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「代数式的值」掌握度 57%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-02d9e3b6-04f1-40ea-8a37-33d1d14d1384",
+     "stem": "在平面直角坐标系中，已知点 在 y 轴上，则 a 的值是 ．",
+     "cluster": "用坐标描述平面内点的位置",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「用坐标描述平面内点的位置」掌握度 57%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-c08c26ed-82c4-4425-b2bd-7d13442435b9",
+     "stem": "若“ ”是一种数学运算符号，且 ， ， ， ， ，则 的值为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "代数式的值",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「代数式的值」距上次练习较久，预计掌握度衰减至 41%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-05d99760-0846-4c8c-90ce-60ada514da18",
+     "stem": "已知点 P （ a ， b ）， ab ＞ 0 ， a + b ＜ 0 ，则点 P 在（ ）",
+     "cluster": "用坐标描述平面内点的位置",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「用坐标描述平面内点的位置」距上次练习较久，预计掌握度衰减至 43%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "e824b2d2e588492a": {
+   "student_id": "e824b2d2e588492a",
+   "name": "罗强",
+   "items": [
+    {
+     "qid": "que-0156816dddfa45b3a279eeb5f56ca5ab",
+     "stem": "尺规作图 用无刻度的直尺和圆规作图的方法称为尺规作图。",
+     "cluster": "几何图形初步",
+     "difficulty": "适中",
+     "form": "作图",
+     "strategy": "challenge",
+     "reason": "「几何图形初步」已掌握（87%），挑战进阶题（选做，可点亮掌握徽章）",
+     "source_label": "掌握徽章",
+     "optional": true
+    },
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6b375ebb-6dec-11f1-9578-b9cf3fb9511f",
+     "stem": "如图QM2-6,直线AB,CD相交于点O, 于点O.如果 ,那么 的度数是______。",
+     "cluster": "相交线",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「相交线」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0008b871-ff35-425b-b275-775009c302e8",
+     "stem": "已知锐角△ABC的面积为 ，BC=4，CA=3，则角C的大小为",
+     "cluster": "列代数式表示数量关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「列代数式表示数量关系」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-08cf2563-3c88-11f1-8bf8-09eb5fd0794e",
+     "stem": "已知 a ， b ， c ， d 是实数，若 a &gt; b ， c = d ，则（         ）",
+     "cluster": "不等式与不等式组",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「不等式与不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-03e5a3bb-ea33-4bef-870c-354049fbce18",
+     "stem": "在数轴上表示$−4$和3的两点的距离是________。",
+     "cluster": "几何图形初步",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「几何图形初步」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "0f00d5b5f9fd2552": {
+   "student_id": "0f00d5b5f9fd2552",
+   "name": "周宇静",
+   "items": [
+    {
+     "qid": "que-148e3c7d-e6c2-44dc-af6a-26d845273505",
+     "stem": "在同一平面内，有三条不重合的直线a，b，c，（ ）",
+     "cluster": "相交线与平行线",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（8 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "balanced",
+     "reason": "学情数据不足（8 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6b375ebb-6dec-11f1-9578-b9cf3fb9511f",
+     "stem": "如图QM2-6,直线AB,CD相交于点O, 于点O.如果 ,那么 的度数是______。",
+     "cluster": "相交线",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "学情数据不足（8 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0008b871-ff35-425b-b275-775009c302e8",
+     "stem": "已知锐角△ABC的面积为 ，BC=4，CA=3，则角C的大小为",
+     "cluster": "列代数式表示数量关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（8 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-08cf2563-3c88-11f1-8bf8-09eb5fd0794e",
+     "stem": "已知 a ， b ， c ， d 是实数，若 a &gt; b ， c = d ，则（         ）",
+     "cluster": "不等式与不等式组",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（8 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-03e5a3bb-ea33-4bef-870c-354049fbce18",
+     "stem": "在数轴上表示$−4$和3的两点的距离是________。",
+     "cluster": "几何图形初步",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "学情数据不足（8 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "a71cd53fd9d73d2e": {
+   "student_id": "a71cd53fd9d73d2e",
+   "name": "郭露",
+   "items": [
+    {
+     "qid": "que-02d9e3b6-04f1-40ea-8a37-33d1d14d1384",
+     "stem": "在平面直角坐标系中，已知点 在 y 轴上，则 a 的值是 ．",
+     "cluster": "用坐标描述平面内点的位置",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「用坐标描述平面内点的位置」掌握度 57%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-04994ddd-7b5e-11f1-9f6f-57b8371d822f",
+     "stem": "已知函数$f(x) = \\frac{1}{4}x^3 - x^2 + x$。当$x \\in [-2,4]$时，证明：$x - 6 \\leqslant f(x) \\leqslant x$。",
+     "cluster": "相交线与平行线",
+     "difficulty": "较易",
+     "form": "证明",
+     "strategy": "review",
+     "reason": "遗忘复习：「相交线与平行线」距上次练习较久，预计掌握度衰减至 41%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-079b4183-bfdf-45a6-a805-f509acde34e8",
+     "stem": "下列问题中，（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）最适合用扇形统计图表示",
+     "cluster": "用统计图描述数据",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「用统计图描述数据」距上次练习较久，预计掌握度衰减至 49%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-001f78911e62454d8c9eb4783fa23311",
+     "stem": "我们定义一个关于实数$a,b$的新运算，规定：$a*b=4a-3b$.例如：$5*6=4\\times5-3\\times6$若$m$满足$m*2<0$，则$m$的取值范围是（ ）",
+     "cluster": "代数式的值",
+     "difficulty": "适中",
+     "form": "选择",
+     "strategy": "challenge",
+     "reason": "「代数式的值」已掌握（85%），挑战进阶题（选做，可点亮掌握徽章）",
+     "source_label": "掌握徽章",
+     "optional": true
+    },
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6b375ebb-6dec-11f1-9578-b9cf3fb9511f",
+     "stem": "如图QM2-6,直线AB,CD相交于点O, 于点O.如果 ,那么 的度数是______。",
+     "cluster": "相交线",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「相交线」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "3a07b4fdc5844c5e": {
+   "student_id": "3a07b4fdc5844c5e",
+   "name": "马静明",
+   "items": [
+    {
+     "qid": "que-03e5a3bb-ea33-4bef-870c-354049fbce18",
+     "stem": "在数轴上表示$−4$和3的两点的距离是________。",
+     "cluster": "几何图形初步",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「几何图形初步」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-19d722c4-8991-11f1-86c8-3b26a6f41ce2",
+     "stem": "我们定义一个关于实数a，b的新运算，规定： a ∗ b = 3 a − 2 b a*b=3a-2b a ∗ b = 3 a − 2 b ，例如， 45 = 3 × 4 − 2 × 5 45=3\\tim",
+     "cluster": "代数式的值",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「代数式的值」掌握度 55%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-6b375ebb-6dec-11f1-9578-b9cf3fb9511f",
+     "stem": "如图QM2-6,直线AB,CD相交于点O, 于点O.如果 ,那么 的度数是______。",
+     "cluster": "相交线",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「相交线」掌握度 57%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-04994ddd-7b5e-11f1-9f6f-57b8371d822f",
+     "stem": "已知函数$f(x) = \\frac{1}{4}x^3 - x^2 + x$。当$x \\in [-2,4]$时，证明：$x - 6 \\leqslant f(x) \\leqslant x$。",
+     "cluster": "相交线与平行线",
+     "difficulty": "较易",
+     "form": "证明",
+     "strategy": "review",
+     "reason": "遗忘复习：「相交线与平行线」距上次练习较久，预计掌握度衰减至 40%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-34fcb3d3-7cde-11f1-aba8-43742154f115",
+     "stem": "函数 $f(x) = 2\\sqrt{3}\\sin x\\cos x + \\cos 2x$ 的最小值为______。",
+     "cluster": "列代数式表示数量关系",
+     "difficulty": "较易",
+     "form": "填空",
+     "strategy": "review",
+     "reason": "遗忘复习：「列代数式表示数量关系」距上次练习较久，预计掌握度衰减至 56%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "c0e4ce337a4efdd6": {
+   "student_id": "c0e4ce337a4efdd6",
+   "name": "韩艳",
+   "items": [
+    {
+     "qid": "que-08cf2563-3c88-11f1-8bf8-09eb5fd0794e",
+     "stem": "已知 a ， b ， c ， d 是实数，若 a &gt; b ， c = d ，则（         ）",
+     "cluster": "不等式与不等式组",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「不等式与不等式组」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-03e5a3bb-ea33-4bef-870c-354049fbce18",
+     "stem": "在数轴上表示$−4$和3的两点的距离是________。",
+     "cluster": "几何图形初步",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「几何图形初步」掌握度 56%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-6b375ebb-6dec-11f1-9578-b9cf3fb9511f",
+     "stem": "如图QM2-6,直线AB,CD相交于点O, 于点O.如果 ,那么 的度数是______。",
+     "cluster": "相交线",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「相交线」掌握度 58%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-057b298a-501e-4fd5-8da6-70fa4e4e9592",
+     "stem": "如图，点 D 、 B 、 C 在同一直线上， ，求 的度数．",
+     "cluster": "几何图形初步",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「几何图形初步」距上次练习较久，预计掌握度衰减至 24%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-34fcb3d3-7cde-11f1-aba8-43742154f115",
+     "stem": "函数 $f(x) = 2\\sqrt{3}\\sin x\\cos x + \\cos 2x$ 的最小值为______。",
+     "cluster": "列代数式表示数量关系",
+     "difficulty": "较易",
+     "form": "填空",
+     "strategy": "review",
+     "reason": "遗忘复习：「列代数式表示数量关系」距上次练习较久，预计掌握度衰减至 42%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "82b4570121a9d6a9": {
+   "student_id": "82b4570121a9d6a9",
+   "name": "韩艳杰",
+   "items": [
+    {
+     "qid": "que-02d9e3b6-04f1-40ea-8a37-33d1d14d1384",
+     "stem": "在平面直角坐标系中，已知点 在 y 轴上，则 a 的值是 ．",
+     "cluster": "用坐标描述平面内点的位置",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「用坐标描述平面内点的位置」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0008b871-ff35-425b-b275-775009c302e8",
+     "stem": "已知锐角△ABC的面积为 ，BC=4，CA=3，则角C的大小为",
+     "cluster": "列代数式表示数量关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「列代数式表示数量关系」掌握度 55%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-00666149-58c4-11f1-b598-93727e70c2bd",
+     "stem": "把一段圆柱形钢材削成一个最大的圆锥，削去的部分重 8 千克，这段圆柱形钢材重（         ）千克。",
+     "cluster": "几何图形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「几何图形」掌握度 56%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-45ee1768-0e39-4b6d-aa55-44c69d403a8d",
+     "stem": "如图，直线 ， 相交于点 ， ，垂足为 ．若 ，则 的度数是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "相交线",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「相交线」距上次练习较久，预计掌握度衰减至 23%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-c08c26ed-82c4-4425-b2bd-7d13442435b9",
+     "stem": "若“ ”是一种数学运算符号，且 ， ， ， ， ，则 的值为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "代数式的值",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「代数式的值」距上次练习较久，预计掌握度衰减至 50%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "c5f7d682e1ccf567": {
+   "student_id": "c5f7d682e1ccf567",
+   "name": "宋欣",
+   "items": [
+    {
+     "qid": "que-08cf2563-3c88-11f1-8bf8-09eb5fd0794e",
+     "stem": "已知 a ， b ， c ， d 是实数，若 a &gt; b ， c = d ，则（         ）",
+     "cluster": "不等式与不等式组",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「不等式与不等式组」掌握度 56%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-070d2c44-6a22-11f1-b3c0-6530ede8be03",
+     "stem": "中国地势西高东低，复杂多样。据统计，各类地形所占比例大致是：山地33％，高原26％，盆地19％，丘陵10％，平原12％。为直观地表示出各类地形所占比例，最合适的统计图是",
+     "cluster": "用统计图描述数据",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「用统计图描述数据」掌握度 58%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0eea3a71-fcd2-42f8-83da-ec29d83e1cdb",
+     "stem": "下列变形中，不正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "不等式与不等式组",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「不等式与不等式组」距上次练习较久，预计掌握度衰减至 41%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-079b4183-bfdf-45a6-a805-f509acde34e8",
+     "stem": "下列问题中，（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）最适合用扇形统计图表示",
+     "cluster": "用统计图描述数据",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「用统计图描述数据」距上次练习较久，预计掌握度衰减至 49%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-0029a9f6b103486e803f282697ebbb2f",
+     "stem": "解不等式组 $\\begin{cases}2x+1\\geq x,① \\\\ 5x+2<3(x+2).② \\end{cases}$",
+     "cluster": "一元一次不等式组",
+     "difficulty": "适中",
+     "form": "解答计算",
+     "strategy": "challenge",
+     "reason": "「一元一次不等式组」已掌握（86%），挑战进阶题（选做，可点亮掌握徽章）",
+     "source_label": "掌握徽章",
+     "optional": true
+    },
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "512e2d1192c733be": {
+   "student_id": "512e2d1192c733be",
+   "name": "彭雪",
+   "items": [
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "weak",
+     "reason": "「一元一次不等式组」掌握度 44%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-070d22c6-6a22-11f1-baf4-6530ede8be03",
+     "stem": "为了解游客对恭王府、北京大观园、北京动物园和景山公园四个旅游景区的满意率情况，某班实践活动小组的同学给出了以下几种调查方案： 方案一：在多家旅游公司随机调查400名导游； 方案二：在恭王府景区随机调查",
+     "cluster": "统计调查",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「统计调查」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-003c38ba-21cc-484e-8e00-79a62278d153",
+     "stem": "如图，数轴上点M表示的数可能是()",
+     "cluster": "有理数的乘法与除法",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「有理数的乘法与除法」距上次练习较久，预计掌握度衰减至 38%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-05d99760-0846-4c8c-90ce-60ada514da18",
+     "stem": "已知点 P （ a ， b ）， ab ＞ 0 ， a + b ＜ 0 ，则点 P 在（ ）",
+     "cluster": "用坐标描述平面内点的位置",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「用坐标描述平面内点的位置」距上次练习较久，预计掌握度衰减至 45%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-0be04193-08ad-48f2-ac1e-4f526dc8a26d",
+     "stem": "解不等式组： （1）$\\begin{cases} 4x - 5 &lt; 2 - 3x \\newline \\frac{4x+3}{5} &gt; -1 \\end{cases}$ . （2）$\\begi",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "12e1346c197754ed": {
+   "student_id": "12e1346c197754ed",
+   "name": "朱帆",
+   "items": [
+    {
+     "qid": "que-08cf2563-3c88-11f1-8bf8-09eb5fd0794e",
+     "stem": "已知 a ， b ， c ， d 是实数，若 a &gt; b ， c = d ，则（         ）",
+     "cluster": "不等式与不等式组",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「不等式与不等式组」掌握度 45%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-03e5a3bb-ea33-4bef-870c-354049fbce18",
+     "stem": "在数轴上表示$−4$和3的两点的距离是________。",
+     "cluster": "几何图形初步",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「几何图形初步」掌握度 56%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-19d722c4-8991-11f1-86c8-3b26a6f41ce2",
+     "stem": "我们定义一个关于实数a，b的新运算，规定： a ∗ b = 3 a − 2 b a*b=3a-2b a ∗ b = 3 a − 2 b ，例如， 45 = 3 × 4 − 2 × 5 45=3\\tim",
+     "cluster": "代数式的值",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「代数式的值」掌握度 58%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0ff47fc7-6708-40ac-96b4-d871e7ff8044",
+     "stem": "《算学启蒙》是我国古代的数学著作，其中有一道题：“今有良马日行二百四十里，驽马日行一百五十里．驽马先行一十二日，问良马几何日追及之．”意思是：跑得快的马每天走 240 里，跑得慢的马每天走 150 里",
+     "cluster": "二元一次方程组的概念",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「二元一次方程组的概念」距上次练习较久，预计掌握度衰减至 32%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-057b298a-501e-4fd5-8da6-70fa4e4e9592",
+     "stem": "如图，点 D 、 B 、 C 在同一直线上， ，求 的度数．",
+     "cluster": "几何图形初步",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「几何图形初步」距上次练习较久，预计掌握度衰减至 36%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "c803be740a0c447a": {
+   "student_id": "c803be740a0c447a",
+   "name": "刘晨",
+   "items": [
+    {
+     "qid": "que-005e4209-6493-4e28-a319-263ef1441d4c",
+     "stem": "下列说法正确的是（ ）",
+     "cluster": "几何图形",
+     "difficulty": "适中",
+     "form": "选择",
+     "strategy": "challenge",
+     "reason": "「几何图形」已掌握（86%），挑战进阶题（选做，可点亮掌握徽章）",
+     "source_label": "掌握徽章",
+     "optional": true
+    },
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6b375ebb-6dec-11f1-9578-b9cf3fb9511f",
+     "stem": "如图QM2-6,直线AB,CD相交于点O, 于点O.如果 ,那么 的度数是______。",
+     "cluster": "相交线",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「相交线」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0008b871-ff35-425b-b275-775009c302e8",
+     "stem": "已知锐角△ABC的面积为 ，BC=4，CA=3，则角C的大小为",
+     "cluster": "列代数式表示数量关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「列代数式表示数量关系」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-2efb4421-5cab-11f1-9877-29f51c996ccc",
+     "stem": "不等式 $-2x &gt; 4$，两边同时除以$-2$，得 $x &gt; -2$。",
+     "cluster": "不等式与不等式组",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "balanced",
+     "reason": "回填题：「不等式与不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-03e5a3bb-ea33-4bef-870c-354049fbce18",
+     "stem": "在数轴上表示$−4$和3的两点的距离是________。",
+     "cluster": "几何图形初步",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「几何图形初步」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "fdb21a823895016e": {
+   "student_id": "fdb21a823895016e",
+   "name": "徐杰",
+   "items": [
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "weak",
+     "reason": "「一元一次不等式组」掌握度 30%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-19d722c4-8991-11f1-86c8-3b26a6f41ce2",
+     "stem": "我们定义一个关于实数a，b的新运算，规定： a ∗ b = 3 a − 2 b a*b=3a-2b a ∗ b = 3 a − 2 b ，例如， 45 = 3 × 4 − 2 × 5 45=3\\tim",
+     "cluster": "代数式的值",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「代数式的值」掌握度 43%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-401c17aa-4393-49f9-96c0-cb3d40f920ff",
+     "stem": "某大学在其百年校庆上，对参加校庆的校友做了一项问卷调查，发现在 20 世纪最后 5 年间毕业的校友，他们 2018 年的平均年收入约为 35 万元 . 由此 （填 “ 能够 ” 或 “ 不能 ” ）推",
+     "cluster": "统计调查",
+     "difficulty": "较易",
+     "form": "说理解释",
+     "strategy": "review",
+     "reason": "遗忘复习：「统计调查」距上次练习较久，预计掌握度衰减至 51%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-079b4183-bfdf-45a6-a805-f509acde34e8",
+     "stem": "下列问题中，（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）最适合用扇形统计图表示",
+     "cluster": "用统计图描述数据",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「用统计图描述数据」距上次练习较久，预计掌握度衰减至 55%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-0be04193-08ad-48f2-ac1e-4f526dc8a26d",
+     "stem": "解不等式组： （1）$\\begin{cases} 4x - 5 &lt; 2 - 3x \\newline \\frac{4x+3}{5} &gt; -1 \\end{cases}$ . （2）$\\begi",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "42f6865e8833f796": {
+   "student_id": "42f6865e8833f796",
+   "name": "林辉",
+   "items": [
+    {
+     "qid": "que-148e3c7d-e6c2-44dc-af6a-26d845273505",
+     "stem": "在同一平面内，有三条不重合的直线a，b，c，（ ）",
+     "cluster": "相交线与平行线",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「相交线与平行线」掌握度 43%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0008b871-ff35-425b-b275-775009c302e8",
+     "stem": "已知锐角△ABC的面积为 ，BC=4，CA=3，则角C的大小为",
+     "cluster": "列代数式表示数量关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「列代数式表示数量关系」掌握度 58%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-05d99760-0846-4c8c-90ce-60ada514da18",
+     "stem": "已知点 P （ a ， b ）， ab ＞ 0 ， a + b ＜ 0 ，则点 P 在（ ）",
+     "cluster": "用坐标描述平面内点的位置",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「用坐标描述平面内点的位置」距上次练习较久，预计掌握度衰减至 47%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-34fcb3d3-7cde-11f1-aba8-43742154f115",
+     "stem": "函数 $f(x) = 2\\sqrt{3}\\sin x\\cos x + \\cos 2x$ 的最小值为______。",
+     "cluster": "列代数式表示数量关系",
+     "difficulty": "较易",
+     "form": "填空",
+     "strategy": "review",
+     "reason": "遗忘复习：「列代数式表示数量关系」距上次练习较久，预计掌握度衰减至 55%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "ab70ff4bbff4dc6e": {
+   "student_id": "ab70ff4bbff4dc6e",
+   "name": "李浩",
+   "items": [
+    {
+     "qid": "que-0008b871-ff35-425b-b275-775009c302e8",
+     "stem": "已知锐角△ABC的面积为 ，BC=4，CA=3，则角C的大小为",
+     "cluster": "列代数式表示数量关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「列代数式表示数量关系」掌握度 37%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-02d9e3b6-04f1-40ea-8a37-33d1d14d1384",
+     "stem": "在平面直角坐标系中，已知点 在 y 轴上，则 a 的值是 ．",
+     "cluster": "用坐标描述平面内点的位置",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「用坐标描述平面内点的位置」掌握度 56%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "weak",
+     "reason": "「一元一次不等式组」掌握度 57%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-05d99760-0846-4c8c-90ce-60ada514da18",
+     "stem": "已知点 P （ a ， b ）， ab ＞ 0 ， a + b ＜ 0 ，则点 P 在（ ）",
+     "cluster": "用坐标描述平面内点的位置",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「用坐标描述平面内点的位置」距上次练习较久，预计掌握度衰减至 46%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-0be04193-08ad-48f2-ac1e-4f526dc8a26d",
+     "stem": "解不等式组： （1）$\\begin{cases} 4x - 5 &lt; 2 - 3x \\newline \\frac{4x+3}{5} &gt; -1 \\end{cases}$ . （2）$\\begi",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "486e5cfdfd9bbc69": {
+   "student_id": "486e5cfdfd9bbc69",
+   "name": "梁敏",
+   "items": [
+    {
+     "qid": "que-45ee1768-0e39-4b6d-aa55-44c69d403a8d",
+     "stem": "如图，直线 ， 相交于点 ， ，垂足为 ．若 ，则 的度数是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "相交线",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「相交线」距上次练习较久，预计掌握度衰减至 36%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6b375ebb-6dec-11f1-9578-b9cf3fb9511f",
+     "stem": "如图QM2-6,直线AB,CD相交于点O, 于点O.如果 ,那么 的度数是______。",
+     "cluster": "相交线",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「相交线」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0008b871-ff35-425b-b275-775009c302e8",
+     "stem": "已知锐角△ABC的面积为 ，BC=4，CA=3，则角C的大小为",
+     "cluster": "列代数式表示数量关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「列代数式表示数量关系」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-08cf2563-3c88-11f1-8bf8-09eb5fd0794e",
+     "stem": "已知 a ， b ， c ， d 是实数，若 a &gt; b ， c = d ，则（         ）",
+     "cluster": "不等式与不等式组",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「不等式与不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "024b1e2c33c84aae": {
+   "student_id": "024b1e2c33c84aae",
+   "name": "邓琪明",
+   "items": [
+    {
+     "qid": "que-2761775e-eef6-42da-8f5e-9f140c5a5232",
+     "stem": "首阳水果店运进的香梨比苹果少$8$筐，运进的香梨筐数是苹果的$\\dfrac{5}{7}$。首阳水果店运进香梨和苹果各多少筐？",
+     "cluster": "二元一次方程组的概念",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「二元一次方程组的概念」掌握度 56%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-6b375ebb-6dec-11f1-9578-b9cf3fb9511f",
+     "stem": "如图QM2-6,直线AB,CD相交于点O, 于点O.如果 ,那么 的度数是______。",
+     "cluster": "相交线",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「相交线」掌握度 58%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-19d722c4-8991-11f1-86c8-3b26a6f41ce2",
+     "stem": "我们定义一个关于实数a，b的新运算，规定： a ∗ b = 3 a − 2 b a*b=3a-2b a ∗ b = 3 a − 2 b ，例如， 45 = 3 × 4 − 2 × 5 45=3\\tim",
+     "cluster": "代数式的值",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「代数式的值」掌握度 58%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-003c38ba-21cc-484e-8e00-79a62278d153",
+     "stem": "如图，数轴上点M表示的数可能是()",
+     "cluster": "有理数的乘法与除法",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「有理数的乘法与除法」距上次练习较久，预计掌握度衰减至 50%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-401c17aa-4393-49f9-96c0-cb3d40f920ff",
+     "stem": "某大学在其百年校庆上，对参加校庆的校友做了一项问卷调查，发现在 20 世纪最后 5 年间毕业的校友，他们 2018 年的平均年收入约为 35 万元 . 由此 （填 “ 能够 ” 或 “ 不能 ” ）推",
+     "cluster": "统计调查",
+     "difficulty": "较易",
+     "form": "说理解释",
+     "strategy": "review",
+     "reason": "遗忘复习：「统计调查」距上次练习较久，预计掌握度衰减至 58%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "de83fb9a7fd55946": {
+   "student_id": "de83fb9a7fd55946",
+   "name": "罗阳",
+   "items": [
+    {
+     "qid": "que-401c17aa-4393-49f9-96c0-cb3d40f920ff",
+     "stem": "某大学在其百年校庆上，对参加校庆的校友做了一项问卷调查，发现在 20 世纪最后 5 年间毕业的校友，他们 2018 年的平均年收入约为 35 万元 . 由此 （填 “ 能够 ” 或 “ 不能 ” ）推",
+     "cluster": "统计调查",
+     "difficulty": "较易",
+     "form": "说理解释",
+     "strategy": "review",
+     "reason": "遗忘复习：「统计调查」距上次练习较久，预计掌握度衰减至 34%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-45ee1768-0e39-4b6d-aa55-44c69d403a8d",
+     "stem": "如图，直线 ， 相交于点 ， ，垂足为 ．若 ，则 的度数是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "相交线",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「相交线」距上次练习较久，预计掌握度衰减至 52%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-0000df610ebc46cdad5d5027cfe5b39c",
+     "stem": "在平面直角坐标系中，依次描出下列各点，并将各组内的点依次连接起来： (1) $(2,1)$，$(2,0)$，$(3,0)$，$(3,4)$； (2) $(3,6)$，$(0,4)$，$(6,4)$，$",
+     "cluster": "用坐标描述平面内点的位置",
+     "difficulty": "适中",
+     "form": "选择",
+     "strategy": "challenge",
+     "reason": "「用坐标描述平面内点的位置」已掌握（85%），挑战进阶题（选做，可点亮掌握徽章）",
+     "source_label": "掌握徽章",
+     "optional": true
+    },
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6b375ebb-6dec-11f1-9578-b9cf3fb9511f",
+     "stem": "如图QM2-6,直线AB,CD相交于点O, 于点O.如果 ,那么 的度数是______。",
+     "cluster": "相交线",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「相交线」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0008b871-ff35-425b-b275-775009c302e8",
+     "stem": "已知锐角△ABC的面积为 ，BC=4，CA=3，则角C的大小为",
+     "cluster": "列代数式表示数量关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「列代数式表示数量关系」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "21780647cafbb4a7": {
+   "student_id": "21780647cafbb4a7",
+   "name": "王宇静",
+   "items": [
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6b375ebb-6dec-11f1-9578-b9cf3fb9511f",
+     "stem": "如图QM2-6,直线AB,CD相交于点O, 于点O.如果 ,那么 的度数是______。",
+     "cluster": "相交线",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「相交线」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0008b871-ff35-425b-b275-775009c302e8",
+     "stem": "已知锐角△ABC的面积为 ，BC=4，CA=3，则角C的大小为",
+     "cluster": "列代数式表示数量关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「列代数式表示数量关系」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-08cf2563-3c88-11f1-8bf8-09eb5fd0794e",
+     "stem": "已知 a ， b ， c ， d 是实数，若 a &gt; b ， c = d ，则（         ）",
+     "cluster": "不等式与不等式组",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「不等式与不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-03e5a3bb-ea33-4bef-870c-354049fbce18",
+     "stem": "在数轴上表示$−4$和3的两点的距离是________。",
+     "cluster": "几何图形初步",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「几何图形初步」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "bb1a496784c85223": {
+   "student_id": "bb1a496784c85223",
+   "name": "郭婷",
+   "items": [
+    {
+     "qid": "que-1f48e263-c450-453d-a307-24368d772173",
+     "stem": "如图，把左边的松树平移到右边，下面说法正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）。",
+     "cluster": "平面直角坐标系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「平面直角坐标系」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-03e5a3bb-ea33-4bef-870c-354049fbce18",
+     "stem": "在数轴上表示$−4$和3的两点的距离是________。",
+     "cluster": "几何图形初步",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「几何图形初步」掌握度 55%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-079b4183-bfdf-45a6-a805-f509acde34e8",
+     "stem": "下列问题中，（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）最适合用扇形统计图表示",
+     "cluster": "用统计图描述数据",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「用统计图描述数据」距上次练习较久，预计掌握度衰减至 48%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-05d99760-0846-4c8c-90ce-60ada514da18",
+     "stem": "已知点 P （ a ， b ）， ab ＞ 0 ， a + b ＜ 0 ，则点 P 在（ ）",
+     "cluster": "用坐标描述平面内点的位置",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「用坐标描述平面内点的位置」距上次练习较久，预计掌握度衰减至 49%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-005e4209-6493-4e28-a319-263ef1441d4c",
+     "stem": "下列说法正确的是（ ）",
+     "cluster": "几何图形",
+     "difficulty": "适中",
+     "form": "选择",
+     "strategy": "challenge",
+     "reason": "「几何图形」已掌握（86%），挑战进阶题（选做，可点亮掌握徽章）",
+     "source_label": "掌握徽章",
+     "optional": true
+    },
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "4ad6ca4b2b236736": {
+   "student_id": "4ad6ca4b2b236736",
+   "name": "曹军",
+   "items": [
+    {
+     "qid": "que-070d2c44-6a22-11f1-b3c0-6530ede8be03",
+     "stem": "中国地势西高东低，复杂多样。据统计，各类地形所占比例大致是：山地33％，高原26％，盆地19％，丘陵10％，平原12％。为直观地表示出各类地形所占比例，最合适的统计图是",
+     "cluster": "用统计图描述数据",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「用统计图描述数据」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6b375ebb-6dec-11f1-9578-b9cf3fb9511f",
+     "stem": "如图QM2-6,直线AB,CD相交于点O, 于点O.如果 ,那么 的度数是______。",
+     "cluster": "相交线",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「相交线」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0008b871-ff35-425b-b275-775009c302e8",
+     "stem": "已知锐角△ABC的面积为 ，BC=4，CA=3，则角C的大小为",
+     "cluster": "列代数式表示数量关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「列代数式表示数量关系」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-08cf2563-3c88-11f1-8bf8-09eb5fd0794e",
+     "stem": "已知 a ， b ， c ， d 是实数，若 a &gt; b ， c = d ，则（         ）",
+     "cluster": "不等式与不等式组",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「不等式与不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "d7bd456d64ed38be": {
+   "student_id": "d7bd456d64ed38be",
+   "name": "马悦",
+   "items": [
+    {
+     "qid": "que-2761775e-eef6-42da-8f5e-9f140c5a5232",
+     "stem": "首阳水果店运进的香梨比苹果少$8$筐，运进的香梨筐数是苹果的$\\dfrac{5}{7}$。首阳水果店运进香梨和苹果各多少筐？",
+     "cluster": "二元一次方程组的概念",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「二元一次方程组的概念」掌握度 54%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-009101ca-73b2-4d75-beda-c67c7e114125",
+     "stem": "下列说法中，正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "有理数的乘法与除法",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「有理数的乘法与除法」掌握度 57%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-1f48e263-c450-453d-a307-24368d772173",
+     "stem": "如图，把左边的松树平移到右边，下面说法正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）。",
+     "cluster": "平面直角坐标系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「平面直角坐标系」掌握度 58%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-003c38ba-21cc-484e-8e00-79a62278d153",
+     "stem": "如图，数轴上点M表示的数可能是()",
+     "cluster": "有理数的乘法与除法",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「有理数的乘法与除法」距上次练习较久，预计掌握度衰减至 44%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-079b4183-bfdf-45a6-a805-f509acde34e8",
+     "stem": "下列问题中，（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）最适合用扇形统计图表示",
+     "cluster": "用统计图描述数据",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「用统计图描述数据」距上次练习较久，预计掌握度衰减至 51%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "199e9a320ddd36e4": {
+   "student_id": "199e9a320ddd36e4",
+   "name": "张宁",
+   "items": [
+    {
+     "qid": "que-6b375ebb-6dec-11f1-9578-b9cf3fb9511f",
+     "stem": "如图QM2-6,直线AB,CD相交于点O, 于点O.如果 ,那么 的度数是______。",
+     "cluster": "相交线",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「相交线」掌握度 57%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-070d22c6-6a22-11f1-baf4-6530ede8be03",
+     "stem": "为了解游客对恭王府、北京大观园、北京动物园和景山公园四个旅游景区的满意率情况，某班实践活动小组的同学给出了以下几种调查方案： 方案一：在多家旅游公司随机调查400名导游； 方案二：在恭王府景区随机调查",
+     "cluster": "统计调查",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「统计调查」掌握度 57%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-45ee1768-0e39-4b6d-aa55-44c69d403a8d",
+     "stem": "如图，直线 ， 相交于点 ， ，垂足为 ．若 ，则 的度数是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "相交线",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「相交线」距上次练习较久，预计掌握度衰减至 35%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-0ff47fc7-6708-40ac-96b4-d871e7ff8044",
+     "stem": "《算学启蒙》是我国古代的数学著作，其中有一道题：“今有良马日行二百四十里，驽马日行一百五十里．驽马先行一十二日，问良马几何日追及之．”意思是：跑得快的马每天走 240 里，跑得慢的马每天走 150 里",
+     "cluster": "二元一次方程组的概念",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「二元一次方程组的概念」距上次练习较久，预计掌握度衰减至 53%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-001f78911e62454d8c9eb4783fa23311",
+     "stem": "我们定义一个关于实数$a,b$的新运算，规定：$a*b=4a-3b$.例如：$5*6=4\\times5-3\\times6$若$m$满足$m*2<0$，则$m$的取值范围是（ ）",
+     "cluster": "代数式的值",
+     "difficulty": "适中",
+     "form": "选择",
+     "strategy": "challenge",
+     "reason": "「代数式的值」已掌握（85%），挑战进阶题（选做，可点亮掌握徽章）",
+     "source_label": "掌握徽章",
+     "optional": true
+    },
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "c0bcfb91ff667266": {
+   "student_id": "c0bcfb91ff667266",
+   "name": "何欣",
+   "items": [
+    {
+     "qid": "que-009101ca-73b2-4d75-beda-c67c7e114125",
+     "stem": "下列说法中，正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "有理数的乘法与除法",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「有理数的乘法与除法」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-c08c26ed-82c4-4425-b2bd-7d13442435b9",
+     "stem": "若“ ”是一种数学运算符号，且 ， ， ， ， ，则 的值为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "代数式的值",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「代数式的值」距上次练习较久，预计掌握度衰减至 56%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-401c17aa-4393-49f9-96c0-cb3d40f920ff",
+     "stem": "某大学在其百年校庆上，对参加校庆的校友做了一项问卷调查，发现在 20 世纪最后 5 年间毕业的校友，他们 2018 年的平均年收入约为 35 万元 . 由此 （填 “ 能够 ” 或 “ 不能 ” ）推",
+     "cluster": "统计调查",
+     "difficulty": "较易",
+     "form": "说理解释",
+     "strategy": "review",
+     "reason": "遗忘复习：「统计调查」距上次练习较久，预计掌握度衰减至 57%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6b375ebb-6dec-11f1-9578-b9cf3fb9511f",
+     "stem": "如图QM2-6,直线AB,CD相交于点O, 于点O.如果 ,那么 的度数是______。",
+     "cluster": "相交线",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「相交线」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "05fe01c2acb81190": {
+   "student_id": "05fe01c2acb81190",
+   "name": "彭鑫",
+   "items": [
+    {
+     "qid": "que-401c17aa-4393-49f9-96c0-cb3d40f920ff",
+     "stem": "某大学在其百年校庆上，对参加校庆的校友做了一项问卷调查，发现在 20 世纪最后 5 年间毕业的校友，他们 2018 年的平均年收入约为 35 万元 . 由此 （填 “ 能够 ” 或 “ 不能 ” ）推",
+     "cluster": "统计调查",
+     "difficulty": "较易",
+     "form": "说理解释",
+     "strategy": "review",
+     "reason": "遗忘复习：「统计调查」距上次练习较久，预计掌握度衰减至 60%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6b375ebb-6dec-11f1-9578-b9cf3fb9511f",
+     "stem": "如图QM2-6,直线AB,CD相交于点O, 于点O.如果 ,那么 的度数是______。",
+     "cluster": "相交线",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「相交线」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0008b871-ff35-425b-b275-775009c302e8",
+     "stem": "已知锐角△ABC的面积为 ，BC=4，CA=3，则角C的大小为",
+     "cluster": "列代数式表示数量关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「列代数式表示数量关系」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-08cf2563-3c88-11f1-8bf8-09eb5fd0794e",
+     "stem": "已知 a ， b ， c ， d 是实数，若 a &gt; b ， c = d ，则（         ）",
+     "cluster": "不等式与不等式组",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「不等式与不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "3b0590115337312d": {
+   "student_id": "3b0590115337312d",
+   "name": "彭鑫雪",
+   "items": [
+    {
+     "qid": "que-148e3c7d-e6c2-44dc-af6a-26d845273505",
+     "stem": "在同一平面内，有三条不重合的直线a，b，c，（ ）",
+     "cluster": "相交线与平行线",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「相交线与平行线」掌握度 43%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0f098956-6d37-4216-8671-654345470e81",
+     "stem": "已知△ ABC 与△ A 1 B 1 C 1 是位似图形，位似比是 1 ： 3 ，则△ ABC 与△ A 1 B 1 C 1 的面积比（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&",
+     "cluster": "平面直角坐标系",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「平面直角坐标系」距上次练习较久，预计掌握度衰减至 50%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-003c38ba-21cc-484e-8e00-79a62278d153",
+     "stem": "如图，数轴上点M表示的数可能是()",
+     "cluster": "有理数的乘法与除法",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「有理数的乘法与除法」距上次练习较久，预计掌握度衰减至 56%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6b375ebb-6dec-11f1-9578-b9cf3fb9511f",
+     "stem": "如图QM2-6,直线AB,CD相交于点O, 于点O.如果 ,那么 的度数是______。",
+     "cluster": "相交线",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「相交线」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "9a9fe5aeaa7544b2": {
+   "student_id": "9a9fe5aeaa7544b2",
+   "name": "冯晨",
+   "items": [
+    {
+     "qid": "que-08cf2563-3c88-11f1-8bf8-09eb5fd0794e",
+     "stem": "已知 a ， b ， c ， d 是实数，若 a &gt; b ， c = d ，则（         ）",
+     "cluster": "不等式与不等式组",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「不等式与不等式组」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-070d2c44-6a22-11f1-b3c0-6530ede8be03",
+     "stem": "中国地势西高东低，复杂多样。据统计，各类地形所占比例大致是：山地33％，高原26％，盆地19％，丘陵10％，平原12％。为直观地表示出各类地形所占比例，最合适的统计图是",
+     "cluster": "用统计图描述数据",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「用统计图描述数据」掌握度 55%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-45ee1768-0e39-4b6d-aa55-44c69d403a8d",
+     "stem": "如图，直线 ， 相交于点 ， ，垂足为 ．若 ，则 的度数是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "相交线",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「相交线」距上次练习较久，预计掌握度衰减至 47%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-0b8c67c1-2574-4880-b8dc-99ca2f5dc423",
+     "stem": "判断下列命题的正误,正确的进行证明,不正确的举出反例: (1)若$a &gt; b$,则$ac \\geqslant bc$; (2)若$ac^{2} &gt; bc^{2}$,则$a^{2} &gt;",
+     "cluster": "一元一次不等式组",
+     "difficulty": "容易",
+     "form": "证明",
+     "strategy": "balanced",
+     "reason": "回填题：「一元一次不等式组」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6b375ebb-6dec-11f1-9578-b9cf3fb9511f",
+     "stem": "如图QM2-6,直线AB,CD相交于点O, 于点O.如果 ,那么 的度数是______。",
+     "cluster": "相交线",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「相交线」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  }
+ }
+}

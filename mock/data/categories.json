@@ -1,0 +1,8 @@
+[
+  { "label": "基础题", "value": "basic" },
+  { "label": "提高题", "value": "advanced" },
+  { "label": "综合题", "value": "comprehensive" },
+  { "label": "创新题", "value": "innovative" },
+  { "label": "经典题", "value": "classic" },
+  { "label": "热点题", "value": "trending" }
+]

@@ -1,0 +1,40 @@
+.carousel-css-box {
+  scrollbar-width: none;
+  overflow: auto;
+  height: calc(100vh - 106px);
+  position: relative;
+
+  .btn {
+    position: absolute;
+    top: 2px;
+    right: 40px;
+    padding: 0px 12px;
+    border-radius: 24px;
+    display: flex;
+    gap: 6px;
+    border: 1px solid rgba(28, 108, 255, 0.12);
+    height: 28px;
+    font-size: 12px;
+    align-items: center;
+    cursor: pointer;
+    background: linear-gradient(90deg, #EBF1FF 0%, #F5EBFF 100%);
+    color: #1041F3;
+    img {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .ai-chat {
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    width: 400px;
+    height: calc(100vh - 60px);
+    z-index: 1;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 6px 12px 0px rgba(16, 24, 40, 0.06),
+    0px 0px 6px 0px rgba(16, 24, 40, 0.08);
+  }
+}

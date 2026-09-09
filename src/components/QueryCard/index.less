@@ -1,0 +1,95 @@
+.user_chat_query_container {
+  width: 100%;
+  margin-bottom: 24px;
+  margin-top: 8px;
+  padding-left: 56px;
+  display: flex;
+
+  .user_basic {
+    display: flex;
+    justify-content: flex-start;
+
+    .user_avatar {
+      height: 24px;
+      width: 24px;
+      border-radius: 24px;
+    }
+
+    .user_name {
+      line-height: 24px;
+      padding-left: 8px;
+      text-align: left;
+      font-size: 15px;
+      font-weight: 700;
+      color: #1a2029;
+      // -webkit-user-select: none;
+      // -moz-user-select: none;
+      // user-select: none;
+    }
+  }
+
+  .user_content {
+    word-break: break-all;
+    margin-left: 32px;
+    margin-top: 8px;
+    // padding: 8px 16px 0px 16px;
+    padding: 8px 16px 8px 16px;
+    background: rgba(245, 243, 255, 1);
+    border-radius: 16px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #1E253B;
+    display: inline-block;
+    position: relative;
+        margin-left: auto;
+    .user_content_ReactMarkdown {
+      p:last-child {
+        margin-bottom: 0;
+      }
+      ::selection {
+        background: #3297fd;
+        color: #1E253B;
+      }
+
+      p{color: #1E253B}
+      h1{ color: #1E253B}
+      h2{ color: #1E253B}
+      h3{ color: #1E253B}
+      h4{ color: #1E253B}
+      h5{ color: #1E253B}
+
+    }
+
+    &:hover {
+      cursor: pointer;
+      // background: rgba(74, 90, 112, .06);
+      // background-color: fade(#F2F5FA, 80%);
+      .copy-btn {
+        display: flex;
+      }
+    }
+    .copy-btn {
+      display: none;
+      // display: flex;
+      position: absolute;
+      width: 105px;
+      left: 5px;
+      bottom: -40px;
+      height: 40px;
+      box-sizing: border-box;
+      padding: 0 12px;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      border-radius: 8px;
+      border: 1px solid var(--stroke_chat_box_grey_1, #eee);
+      background: var(--bg_floating_white_1, #fff);
+      z-index: 1000;
+      box-shadow: 0 4px 12px 0 rgba(17, 49, 95, 0.08);
+      color: #1a2029;
+      &:hover {
+        color: #1C6CFF;
+      }
+    }
+  }
+}

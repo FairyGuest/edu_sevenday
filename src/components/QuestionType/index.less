@@ -1,0 +1,447 @@
+.question_type_box_css {
+  // 划过样式
+  // padding: 24px 12px 4px;
+
+  .render_title_box {
+    // margin-top: 8px;
+    // padding: 0 16px;
+    overflow: hidden;
+
+    >.qml-stem {
+
+      // display: flex;
+      // flex-direction: column;
+      p {
+        text-indent: 0 !important;
+      }
+    }
+
+    >p {
+      display: block;
+    }
+  }
+
+  .english {
+
+    // 完形填空处理选项号和选项不在一行的问题
+    .qml-sq {
+      .ques-no {
+        margin-right: 10px;
+      }
+
+      .qml-stem {
+        display: flex;
+        flex-direction: row;
+      }
+    }
+  }
+
+  // &:hover {
+  //   border-radius: 12px;
+  //   background-color: #f7f9fc;
+  // }
+
+  .question-item {
+    // margin-bottom: 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    .question_number {
+      width: 24px;
+      margin-right: 4px;
+      flex-shrink: 0;
+      // position: absolute;
+      // left: -10px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .question-title {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 8px !important;
+    display: flex;
+    align-items: baseline;
+
+    // line-height: 1.5;
+    img {
+      display: inline;
+    }
+  }
+
+  .question-type {
+    font-size: 14px;
+    color: #999;
+    font-weight: normal;
+  }
+
+  .question-options {
+    // margin-bottom: 16px !important;
+    padding-left: 30px;
+
+    img {
+      display: inline;
+    }
+  }
+
+  .question-option {
+    margin-bottom: 8px !important;
+    padding: 5px 0;
+    line-height: 1.5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    // 处理上传搜题选择展示换行问题
+    .render_title_box {
+      p {
+        display: inline-block;
+      }
+    }
+
+    &.correct-answer {
+      // color: #52c41a;
+      color: #1A805E !important;
+
+      p {
+        // color: #52c41a;
+        color: #1A805E !important;
+      }
+    }
+
+    .question-option-progress {
+      height: 100%;
+      display: flex;
+    }
+  }
+
+  .question-dividernone {
+    display: none;
+  }
+
+  .question-answer {
+    // background-color: #f6ffed;
+    // border: 1px solid #b7eb8f;
+    background: #F7F9FC !important;
+    border: none !important;
+    border-radius: 8px;
+    padding: 12px;
+    // margin-bottom: 16px;
+    // width: 100%;
+    // display: flex;
+    // flex-direction: column;
+    // flex: 1;
+    width: calc(100% - 30px);
+    margin-left: 30px;
+    margin-top: 8px;
+
+    // p,
+    img {
+      display: inline;
+    }
+
+    .answer-label {
+      display: flex;
+      align-items: flex-start;
+      color: #1E253B !important;
+      font-weight: 400;
+      margin-bottom: 5px;
+
+      .answer-label-tag {
+        flex-shrink: 0;
+        line-height: 1.6;
+        color: #1E253B !important;
+      }
+
+      .answer-label-content {
+        flex: 1;
+        min-width: 0;
+
+        .render_title_box,
+        .katex_render_div_box_css {
+          margin-top: 0;
+          padding-top: 0;
+        }
+
+        p {
+          color: #1A805E !important;
+          font-weight: 400;
+          margin-bottom: 5px;
+
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+      }
+
+      p {
+        // color: #52c41a;
+        color: #1A805E !important;
+        font-weight: 400;
+        margin-bottom: 5px;
+      }
+    }
+
+    .answer-analysis {
+      color: #333c55;
+      font-size: 14px;
+      // padding-bottom: 8px;
+    }
+  }
+
+  .answer_result {
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+
+    img {
+      display: inline;
+    }
+
+    &.correct {
+      // background-color: #f6ffed;
+      // border: 1px solid #b7eb8f;
+      background: #F7F9FC !important;
+      border: none !important;
+      border-radius: 8px;
+
+      .answer_label {
+        // color: #52c41a;
+        color: #1A805E !important;
+      }
+    }
+
+    &.wrong {
+      // background-color: #fff2f0;
+      // border: 1px solid #ffccc7;
+      background: #FEF3F2 !important;
+      border: none !important;
+      border-radius: 8px;
+
+
+      .answer_label {
+        // color: #ff4d4f;
+        color: #EF4444;
+
+        p {
+          // color: #ff4d4f;
+          color: #EF4444;
+        }
+      }
+    }
+  }
+
+  .publis_css {
+    text-align: center;
+    font-size: 20px;
+    font-family: PingFang SC;
+  }
+
+  .question_hint {
+    background-color: #EDF4FF;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 14px;
+    color: rgba(31, 35, 41, 1);
+    position: relative;
+    padding-left: 32px;
+
+    .question_hint_icon {
+      position: absolute;
+      left: 8px;
+      top: 11px;
+    }
+
+    .question_hint_content {
+      vertical-align: middle;
+      display: inline-block;
+    }
+  }
+
+  .rendering_box {
+    font-weight: 400;
+    font-size: 14px;
+
+    img {
+      display: inline-block;
+      height: auto;
+      max-width: 50%;
+      max-height: 50%;
+      width: auto;
+    }
+  }
+
+  .imgCss {
+    display: inline-block;
+    height: auto;
+    max-width: 50%;
+    max-height: 50%;
+    width: auto;
+  }
+
+  .similar_questions_box {
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.06);
+  }
+
+  .difficulty_box_css {
+    overflow: hidden;
+    color: var(---, #646E8B);
+    display: flex;
+    align-items: center;
+    text-overflow: ellipsis;
+    font-family: "PingFang SC";
+    font-size: 14px;
+    font-style: normal;
+    line-height: 20px;
+    display: inline-block;
+    margin-right: 8px;
+
+    .icon {
+      margin-right: 4px;
+    }
+
+    /* 142.857% */
+  }
+
+  .difficulty_css {
+    overflow: hidden;
+    color: rgba(30, 37, 59, 0.57);
+    text-align: center;
+    text-overflow: ellipsis;
+    font-family: "PingFang SC";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    display: inline-block;
+    /* 142.857% */
+  }
+
+  .similar_questions_box_css {
+    // margin-top: 4px;
+  }
+
+  .similar_questions_box_item {
+    margin-right: 8px;
+    background-color: #EBEFF7;
+    border-radius: 4px;
+    display: inline-block;
+    color: #1E253B;
+    // margin-bottom: 8px;
+    // display: flex;
+    // height: 28px;
+    padding: 3px 8px;
+    color: #1E253B;
+    // align-items: center;
+    // gap: 6px;
+    margin-top: 4px;
+  }
+
+  .qml-answer {
+    display: inline-block;
+  }
+
+  .source-box {
+    margin-top: 10px;
+    border-top: 1px dashed #E5E7EB;
+    padding-top: 12px;
+    color: #646E8B;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+
+    .source-dropdown {
+      .text {
+        max-width: 300px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: inline-block;
+      }
+
+      &-text {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  .button-box {
+    border-top: 1px dashed #E5E7EB;
+    padding-top: 12px;
+    margin-top: 12px;
+  }
+
+  .button-box-change {
+    display: flex;
+    width: 74px;
+    padding: 6px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--hover, #1C6CFF);
+    color: #1C6CFF;
+    box-shadow: none !important;
+    background: #F7F9FC !important;
+
+    &:hover {
+      border: 1px solid var(--hover, #1C6CFF);
+      box-shadow: none !important;
+      color: #1C6CFF;
+      background: #F7F9FC !important;
+    }
+  }
+
+  .button-box-add {
+    display: flex;
+    width: 74px;
+    padding: 6px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--hover, #E2E6F0);
+    color: #475069;
+    box-shadow: none !important;
+    background: #F7F9FC !important;
+
+    &:hover {
+      border: 1px solid var(--hover, #E2E6F0);
+      box-shadow: none !important;
+      color: #1C6CFF;
+      background: #F7F9FC !important;
+    }
+  }
+}
+
+.show_answer_question_css {
+  display: inline-block;
+}
+
+.none_show_answer_question_css {
+  display: none;
+}
+
+// 全局样式控制Dropdown下拉菜单宽度
+:global {
+  .source-dropdown-overlay {
+    .ant-dropdown-menu {
+      max-width: 350px;
+    }
+
+    .ant-dropdown-menu-item {
+      max-width: 350px;
+      overflow: hidden;
+    }
+
+    .ant-dropdown-menu-title-content {
+      max-width: 100%;
+      overflow: hidden;
+    }
+  }
+}

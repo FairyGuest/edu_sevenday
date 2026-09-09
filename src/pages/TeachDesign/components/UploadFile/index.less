@@ -1,0 +1,106 @@
+.upload_detail {
+
+  .file_list {
+    color: #0F142A;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 8px 0;
+
+    .text {
+      margin: 0 6px;
+    }
+
+    .anticon-sync {
+      color: #1C6CFF;
+    }
+
+    .anticon-check-circle {
+      color: #52c41a;
+    }
+  }
+
+  .file_item {
+    height: 38px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:hover {
+      background-color: #edf4ff;
+    }
+
+    &_name {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .svg-icon {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    &_content {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    &_progress {
+      display: flex;
+      align-items: center;
+
+      .ant-progress {
+        margin-top: -2px;
+      }
+
+      .text {
+        padding-left: 8px;
+      }
+    }
+  }
+
+  //   上传
+  .ant-upload {
+    margin-bottom: 8px;
+    background-color: #F7F9FC;
+
+    .ant-upload-drag-container {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .up_top {
+      margin-bottom: 8px;
+
+      .svg-icon {
+        font-size: 48px;
+      }
+    }
+
+    .up_text {
+      margin-bottom: 8px;
+      color: #202224;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 22px;
+
+      span {
+        color: @primary-color;
+      }
+    }
+
+    .up_desc {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+    }
+
+    .up_desc_sub {
+      color: #86909c;
+    }
+  }
+}

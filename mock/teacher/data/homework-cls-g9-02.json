@@ -1,0 +1,2904 @@
+{
+ "homework_id": "hw-cls-g9-02-001",
+ "class_id": "cls-g9-02",
+ "mode": "personalized",
+ "title": "个性化作业 · 九年级(2)班",
+ "status": "generated",
+ "config": {
+  "ranges": {
+   "weak": [
+    2,
+    3
+   ],
+   "variant": [
+    1,
+    2
+   ],
+   "review": [
+    1,
+    2
+   ],
+   "challenge": [
+    1,
+    1
+   ]
+  },
+  "total": 6
+ },
+ "summary": {
+  "n_students": 48,
+  "q_count": {
+   "min": 5,
+   "max": 6
+  },
+  "fallback_students": 27,
+  "strategy_mix": {
+   "薄弱知识点练": 95,
+   "遗忘曲线复习": 67,
+   "错题变式": 3,
+   "选做挑战题": 2,
+   "均衡（默认）": 86
+  },
+  "top_clusters": [
+   [
+    "相似三角形",
+    46
+   ],
+   [
+    "旋转",
+    27
+   ],
+   [
+    "点和圆、直线和圆的位置关系",
+    25
+   ],
+   [
+    "二次函数与一元二次方程",
+    21
+   ],
+   [
+    "用列举法求概率",
+    20
+   ],
+   [
+    "解直角三角形及其应用",
+    18
+   ],
+   [
+    "三视图",
+    15
+   ],
+   [
+    "投影与视图",
+    14
+   ]
+  ],
+  "notes_sample": [
+   "学情冷启动学生 → 默认均衡卷（兜底）",
+   "错题变式覆盖有限 → 缺额转薄弱方针",
+   "薄弱方针实际配题不足（候选受限，显式降额）"
+  ]
+ },
+ "papers": {
+  "9b01ceb718a1369a": {
+   "student_id": "9b01ceb718a1369a",
+   "name": "徐丽",
+   "items": [
+    {
+     "qid": "que-0104e790-1b4e-4f6c-849c-412d4295ee43",
+     "stem": "(2)已知全集$U=\\mathbf{R}$，集合$P=\\{x|x^2 \\leqslant 1\\}$，那么$\\complement_U P =$（）。",
+     "cluster": "二次函数与一元二次方程",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「二次函数与一元二次方程」掌握度 37%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-142c3040-4aea-41ee-a5a0-86471b8f81f7",
+     "stem": "如果函数 是二次函数，那么 k 的值一定是 ．",
+     "cluster": "实际问题与二次函数",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「实际问题与二次函数」掌握度 40%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-04685f33-9e36-434e-bba2-cbbadcdef55e",
+     "stem": "若关于 的一元二次方程 中的 ， ， 满足 ，则方程必有根（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "实际问题与一元二次方程",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「实际问题与一元二次方程」掌握度 43%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-002ea68c-4a8a-43fa-bd5a-888754fe7203",
+     "stem": "移动左图中的一个小正方体得到如图所示的几何体．移动前后几何体从三个不同方向看到的形状图不变的是（      ）",
+     "cluster": "三视图",
+     "difficulty": "适中",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「三视图」距上次练习较久，预计掌握度衰减至 50%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-1c9c33d5-865a-11f1-814a-851d653de942",
+     "stem": "曲线$y = \\frac{1}{x}$在$x = 1$处的切线的斜率为__________.",
+     "cluster": "实际问题与反比例函数",
+     "difficulty": "较易",
+     "form": "填空",
+     "strategy": "review",
+     "reason": "遗忘复习：「实际问题与反比例函数」距上次练习较久，预计掌握度衰减至 59%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "3e0867ba74ae5b43": {
+   "student_id": "3e0867ba74ae5b43",
+   "name": "李辉",
+   "items": [
+    {
+     "qid": "que-41c788f0-419b-4721-8c77-e4d5d24a5bd2",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「相似三角形」掌握度 31%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-54b69b56-9add-4050-8c2c-71ca2260da82",
+     "stem": "如图为某电火锅加热器的简化电路图，R₁、R₂均为发热电阻，开关S可以在“1”“2”间切换，从而选择不同的加热挡位。当开关S由“1”切换到“2”时，下列说法正确的是（ ）",
+     "cluster": "实际问题与反比例函数",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「实际问题与反比例函数」掌握度 36%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-06329a5f40c3440084bbe8421582cca8",
+     "stem": "如图，$AB$为$\\odot O$的直径，$C$，$D$是$\\odot O$上的点，$P$是$\\odot O$外一点，$AC\\perp PD$于点$E$，$AD$平分$\\angle BAC$。求证：$",
+     "cluster": "点和圆、直线和圆的位置关系",
+     "difficulty": "适中",
+     "form": "证明",
+     "strategy": "weak",
+     "reason": "「点和圆、直线和圆的位置关系」掌握度 40%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-00a9b1a7-3c74-4dc7-affc-17e76b1f090b",
+     "stem": "在 中，内角 A ， B ， C 的对边分别为 a ， b ， c ，满足 ，且 ，则 （ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "解直角三角形及其应用",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「解直角三角形及其应用」距上次练习较久，预计掌握度衰减至 50%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-e5e1aba0162c427f868ea7b557abcb4e",
+     "stem": "如图，点A是$\\odot O$上一点，过点A作$\\odot O$的切线。 （1）①连接OA并延长，使$AB=OA$； ②作线段OB的垂直平分线：使用直尺和圆规，在图中作OB的垂直平分线$l$（保留作图",
+     "cluster": "点和圆、直线和圆的位置关系",
+     "difficulty": "适中",
+     "form": "证明",
+     "strategy": "variant",
+     "reason": "错题变式：原题（点和圆、直线和圆的位置关系）的「条件增删」变式",
+     "source_label": "错题本"
+    }
+   ]
+  },
+  "10c4ad37e3ae4da6": {
+   "student_id": "10c4ad37e3ae4da6",
+   "name": "李辉悦",
+   "items": [
+    {
+     "qid": "que-056877f2-0427-4b56-a16a-5bfc7e1f25a2",
+     "stem": "在△ABC中，$\\angle B=30^\\circ$， $AB=2\\sqrt{3}$， $AC=2$，则△ABC的面积是（ ）",
+     "cluster": "解直角三角形及其应用",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（3 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-3c456c0e-b68d-4b43-8042-56ef301d0c12",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（3 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6867ce3b-44c3-4fec-a4e4-9be3727736b4",
+     "stem": "现实生活中，下列现象不属于平移的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "旋转",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（3 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-10d866dd-81c3-488d-a41f-aec0a16efb92",
+     "stem": "已知圆 ： ， 圆 ： ，则下列说法正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）BC-AB",
+     "cluster": "点和圆、直线和圆的位置关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（3 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0104e790-1b4e-4f6c-849c-412d4295ee43",
+     "stem": "(2)已知全集$U=\\mathbf{R}$，集合$P=\\{x|x^2 \\leqslant 1\\}$，那么$\\complement_U P =$（）。",
+     "cluster": "二次函数与一元二次方程",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（3 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-2a068496-8d47-4a51-84c9-07dce17ad56b",
+     "stem": "现有甲、乙、丙、丁、戊 5 种在线教学软件，若某学校要从中随机选取 3 种作为教师“停课不停学”的教学工具，则其中甲、乙、丙至多有 2 种被选取的概率为（ &nbsp;&nbsp;&nbsp;&nbs",
+     "cluster": "用列举法求概率",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（3 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "f7ae2d4bcaf6319d": {
+   "student_id": "f7ae2d4bcaf6319d",
+   "name": "梁怡",
+   "items": [
+    {
+     "qid": "que-0104e790-1b4e-4f6c-849c-412d4295ee43",
+     "stem": "(2)已知全集$U=\\mathbf{R}$，集合$P=\\{x|x^2 \\leqslant 1\\}$，那么$\\complement_U P =$（）。",
+     "cluster": "二次函数与一元二次方程",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「二次函数与一元二次方程」掌握度 25%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-088c61da-56ad-11f1-8f0e-93727e70c2bd",
+     "stem": "若 m 2 + m = 0 ，则 m ；若 ( 1 − 3 a ) 2 = 3 a − 1 ，则 a ．",
+     "cluster": "一元二次方程",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「一元二次方程」掌握度 33%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-10d866dd-81c3-488d-a41f-aec0a16efb92",
+     "stem": "已知圆 ： ， 圆 ： ，则下列说法正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）BC-AB",
+     "cluster": "点和圆、直线和圆的位置关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「点和圆、直线和圆的位置关系」掌握度 36%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-26741f92-f4cf-4a93-9417-79e1b37ec060",
+     "stem": "下列现象： 温度计中，液柱的变化； 电梯上下运动； 钟摆的摆动； 小方块在水平地面滑动，属于平移的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "旋转",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「旋转」距上次练习较久，预计掌握度衰减至 34%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-1d423d5f-0440-4041-b799-d57efbedbda5",
+     "stem": "如图，△ ABC 中， DE ∥ BC ， DE =1 ， AD =2 ， DB =3 ，则 BC 的长是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb",
+     "cluster": "相似三角形",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「相似三角形」距上次练习较久，预计掌握度衰减至 54%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "dc293678f3d45bd0": {
+   "student_id": "dc293678f3d45bd0",
+   "name": "孙琪明",
+   "items": [
+    {
+     "qid": "que-056877f2-0427-4b56-a16a-5bfc7e1f25a2",
+     "stem": "在△ABC中，$\\angle B=30^\\circ$， $AB=2\\sqrt{3}$， $AC=2$，则△ABC的面积是（ ）",
+     "cluster": "解直角三角形及其应用",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（8 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-3c456c0e-b68d-4b43-8042-56ef301d0c12",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（8 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6867ce3b-44c3-4fec-a4e4-9be3727736b4",
+     "stem": "现实生活中，下列现象不属于平移的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "旋转",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（8 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-10d866dd-81c3-488d-a41f-aec0a16efb92",
+     "stem": "已知圆 ： ， 圆 ： ，则下列说法正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）BC-AB",
+     "cluster": "点和圆、直线和圆的位置关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（8 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0104e790-1b4e-4f6c-849c-412d4295ee43",
+     "stem": "(2)已知全集$U=\\mathbf{R}$，集合$P=\\{x|x^2 \\leqslant 1\\}$，那么$\\complement_U P =$（）。",
+     "cluster": "二次函数与一元二次方程",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（8 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-2a068496-8d47-4a51-84c9-07dce17ad56b",
+     "stem": "现有甲、乙、丙、丁、戊 5 种在线教学软件，若某学校要从中随机选取 3 种作为教师“停课不停学”的教学工具，则其中甲、乙、丙至多有 2 种被选取的概率为（ &nbsp;&nbsp;&nbsp;&nbs",
+     "cluster": "用列举法求概率",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（8 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "5cdf181004c486fc": {
+   "student_id": "5cdf181004c486fc",
+   "name": "罗勇",
+   "items": [
+    {
+     "qid": "que-056877f2-0427-4b56-a16a-5bfc7e1f25a2",
+     "stem": "在△ABC中，$\\angle B=30^\\circ$， $AB=2\\sqrt{3}$， $AC=2$，则△ABC的面积是（ ）",
+     "cluster": "解直角三角形及其应用",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（8 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-3c456c0e-b68d-4b43-8042-56ef301d0c12",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（8 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6867ce3b-44c3-4fec-a4e4-9be3727736b4",
+     "stem": "现实生活中，下列现象不属于平移的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "旋转",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（8 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-10d866dd-81c3-488d-a41f-aec0a16efb92",
+     "stem": "已知圆 ： ， 圆 ： ，则下列说法正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）BC-AB",
+     "cluster": "点和圆、直线和圆的位置关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（8 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0104e790-1b4e-4f6c-849c-412d4295ee43",
+     "stem": "(2)已知全集$U=\\mathbf{R}$，集合$P=\\{x|x^2 \\leqslant 1\\}$，那么$\\complement_U P =$（）。",
+     "cluster": "二次函数与一元二次方程",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（8 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-2a068496-8d47-4a51-84c9-07dce17ad56b",
+     "stem": "现有甲、乙、丙、丁、戊 5 种在线教学软件，若某学校要从中随机选取 3 种作为教师“停课不停学”的教学工具，则其中甲、乙、丙至多有 2 种被选取的概率为（ &nbsp;&nbsp;&nbsp;&nbs",
+     "cluster": "用列举法求概率",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（8 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "7c6bb918608b75c9": {
+   "student_id": "7c6bb918608b75c9",
+   "name": "周娟",
+   "items": [
+    {
+     "qid": "que-4359e900-5523-4af8-9e88-3e864a5fdf87",
+     "stem": "现有一个底面是菱形的直四棱柱，它的体对角线长为9和15，高是5，求该直四棱柱的侧面积、表面积．",
+     "cluster": "投影与视图",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「投影与视图」掌握度 57%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-31acaaac12904fcda727ffe086e98cc8",
+     "stem": "我国古代数学家刘徽用“牟合方盖”找到了球体体积 计算方法.“牟合方盖”是由两个圆柱分别从纵横两个方向嵌入一个正方体时两圆柱公共部分形成的几何体. 如图所示的几何体是可以形成“牟合方盖”的一种模型，它的",
+     "cluster": "投影与视图",
+     "difficulty": "适中",
+     "form": "填空",
+     "strategy": "review",
+     "reason": "遗忘复习：「投影与视图」距上次练习较久，预计掌握度衰减至 25%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-00a9b1a7-3c74-4dc7-affc-17e76b1f090b",
+     "stem": "在 中，内角 A ， B ， C 的对边分别为 a ， b ， c ，满足 ，且 ，则 （ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "解直角三角形及其应用",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「解直角三角形及其应用」距上次练习较久，预计掌握度衰减至 37%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-3c456c0e-b68d-4b43-8042-56ef301d0c12",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「相似三角形」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6867ce3b-44c3-4fec-a4e4-9be3727736b4",
+     "stem": "现实生活中，下列现象不属于平移的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "旋转",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「旋转」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "eb2ac79931c7c4b9": {
+   "student_id": "eb2ac79931c7c4b9",
+   "name": "周娟露",
+   "items": [
+    {
+     "qid": "que-5cc0444f-93c1-45b5-b9ac-8610e6a29e2b",
+     "stem": "在平面直角坐标系$xOy$中,过坐标原点的一条直线与函数$f(x)=\\frac{2}{x}$的图像交于$P,Q$两点,则线段$PQ$长的最小值是______.",
+     "cluster": "实际问题与反比例函数",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "weak",
+     "reason": "「实际问题与反比例函数」掌握度 55%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-3c456c0e-b68d-4b43-8042-56ef301d0c12",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「相似三角形」掌握度 57%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0f5ab0bd-08d6-4c0e-b0ce-5d7c64952633",
+     "stem": "计算： （I）已知角$a$的顶点在坐标原点，始边与$X$轴的正半轴重合，$(m,1)$，$(n,2)$是角$a$终边上两点，$\\sin a =\\frac{\\sqrt{3}}{3}$，求$|m- n|$",
+     "cluster": "锐角三角函数",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「锐角三角函数」掌握度 58%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-381a4a19-f634-4c61-9b36-cd01cd56b46d",
+     "stem": "二次函数 的图象如图所示，则关于 x 的一元二次方程 的根的情况是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "实际问题与二次函数",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「实际问题与二次函数」距上次练习较久，预计掌握度衰减至 45%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-26741f92-f4cf-4a93-9417-79e1b37ec060",
+     "stem": "下列现象： 温度计中，液柱的变化； 电梯上下运动； 钟摆的摆动； 小方块在水平地面滑动，属于平移的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "旋转",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「旋转」距上次练习较久，预计掌握度衰减至 55%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "1f1d2b4999fcf061": {
+   "student_id": "1f1d2b4999fcf061",
+   "name": "曹婷",
+   "items": [
+    {
+     "qid": "que-088c61da-56ad-11f1-8f0e-93727e70c2bd",
+     "stem": "若 m 2 + m = 0 ，则 m ；若 ( 1 − 3 a ) 2 = 3 a − 1 ，则 a ．",
+     "cluster": "一元二次方程",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「一元二次方程」掌握度 22%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-3c456c0e-b68d-4b43-8042-56ef301d0c12",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「相似三角形」掌握度 45%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-2a068496-8d47-4a51-84c9-07dce17ad56b",
+     "stem": "现有甲、乙、丙、丁、戊 5 种在线教学软件，若某学校要从中随机选取 3 种作为教师“停课不停学”的教学工具，则其中甲、乙、丙至多有 2 种被选取的概率为（ &nbsp;&nbsp;&nbsp;&nbs",
+     "cluster": "用列举法求概率",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「用列举法求概率」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-2e744d86-05a8-4d67-9a62-a2246878a759",
+     "stem": "一个几何体由若干大小相同的小立方块搭成，从上面看到的几何体的形状图如图所示，其中小正方形中的数字表示在该位置的小立方块的个数．从左面看到的这个几何体的形状图是（ &nbsp;&nbsp;&nbsp;&",
+     "cluster": "三视图",
+     "difficulty": "适中",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「三视图」距上次练习较久，预计掌握度衰减至 49%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-381a4a19-f634-4c61-9b36-cd01cd56b46d",
+     "stem": "二次函数 的图象如图所示，则关于 x 的一元二次方程 的根的情况是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "实际问题与二次函数",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「实际问题与二次函数」距上次练习较久，预计掌握度衰减至 50%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "d533ca07ca38c845": {
+   "student_id": "d533ca07ca38c845",
+   "name": "马军",
+   "items": [
+    {
+     "qid": "que-7d3c5dbe-d770-4021-a3b5-a9ead4ce5f8f",
+     "stem": "如图所示，某小区内有一扇形绿化带$OPQ$，其半径为2 m，圆心角为$\\frac{\\pi}{3}$.现欲在扇形弧上选择一点$C$将该绿化带分割成两块区域，拟在$\\triangle OPC$区域内种植郁",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「相似三角形」掌握度 25%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-049951ba-7b5e-11f1-9831-57b8371d822f",
+     "stem": "已知$\\alpha$为正实数，试比较$\\cos \\alpha$与$1 - \\frac{1}{2}\\alpha^2$的大小。",
+     "cluster": "圆",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「圆」掌握度 33%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-088c61da-56ad-11f1-8f0e-93727e70c2bd",
+     "stem": "若 m 2 + m = 0 ，则 m ；若 ( 1 − 3 a ) 2 = 3 a − 1 ，则 a ．",
+     "cluster": "一元二次方程",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「一元二次方程」掌握度 39%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0532cd78-29f7-477a-aa9f-44fcd4635eac",
+     "stem": "在△ ABC 中， BC ＝ a ， AC ＝ b ，且 a ， b 是方程 的两根， . （ 1 ）求角 的度数； （ 2 ）求 的长 .",
+     "cluster": "实际问题与一元二次方程",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「实际问题与一元二次方程」距上次练习较久，预计掌握度衰减至 50%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-0eab12cc-04f3-434b-b1fd-885b6e2658d1",
+     "stem": "在平面直角坐标系内，抛物线 与 轴的一个交点是 ，另一交点为 ，则 的长为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "二次函数与一元二次方程",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「二次函数与一元二次方程」距上次练习较久，预计掌握度衰减至 52%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "71d315fda3e1d670": {
+   "student_id": "71d315fda3e1d670",
+   "name": "张艳",
+   "items": [
+    {
+     "qid": "que-056877f2-0427-4b56-a16a-5bfc7e1f25a2",
+     "stem": "在△ABC中，$\\angle B=30^\\circ$， $AB=2\\sqrt{3}$， $AC=2$，则△ABC的面积是（ ）",
+     "cluster": "解直角三角形及其应用",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「解直角三角形及其应用」掌握度 43%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-3c456c0e-b68d-4b43-8042-56ef301d0c12",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「相似三角形」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-10d866dd-81c3-488d-a41f-aec0a16efb92",
+     "stem": "已知圆 ： ， 圆 ： ，则下列说法正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）BC-AB",
+     "cluster": "点和圆、直线和圆的位置关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「点和圆、直线和圆的位置关系」掌握度 56%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-06be707338ff4285851e93a70ca0f818",
+     "stem": "如果$\\odot O$的半径为$7cm$，圆心$O$到直线$l$的距离为$d$，且$d=5cm$，那么$\\odot O$和直线$l$的位置关系是（ ）",
+     "cluster": "点和圆、直线和圆的位置关系",
+     "difficulty": "适中",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「点和圆、直线和圆的位置关系」距上次练习较久，预计掌握度衰减至 44%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-0e90b3f7-4cd4-41bc-82c5-aa384a8256c3",
+     "stem": "在 中，已知 ， ， ，则 （ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "锐角三角函数",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「锐角三角函数」距上次练习较久，预计掌握度衰减至 47%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "a9b5ec68a04e1a15": {
+   "student_id": "a9b5ec68a04e1a15",
+   "name": "张艳楠",
+   "items": [
+    {
+     "qid": "que-0104e790-1b4e-4f6c-849c-412d4295ee43",
+     "stem": "(2)已知全集$U=\\mathbf{R}$，集合$P=\\{x|x^2 \\leqslant 1\\}$，那么$\\complement_U P =$（）。",
+     "cluster": "二次函数与一元二次方程",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「二次函数与一元二次方程」掌握度 33%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-3c456c0e-b68d-4b43-8042-56ef301d0c12",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「相似三角形」掌握度 37%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-4dc1615b-8f93-475a-97ca-eeaf74b76be1",
+     "stem": "下列命题中正确的是( )",
+     "cluster": "投影与视图",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「投影与视图」掌握度 40%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-00a9b1a7-3c74-4dc7-affc-17e76b1f090b",
+     "stem": "在 中，内角 A ， B ， C 的对边分别为 a ， b ， c ，满足 ，且 ，则 （ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "解直角三角形及其应用",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「解直角三角形及其应用」距上次练习较久，预计掌握度衰减至 50%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-41c788f0-419b-4721-8c77-e4d5d24a5bd2",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「相似三角形」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "1b0e39344eb45711": {
+   "student_id": "1b0e39344eb45711",
+   "name": "何宁",
+   "items": [
+    {
+     "qid": "que-54b69b56-9add-4050-8c2c-71ca2260da82",
+     "stem": "如图为某电火锅加热器的简化电路图，R₁、R₂均为发热电阻，开关S可以在“1”“2”间切换，从而选择不同的加热挡位。当开关S由“1”切换到“2”时，下列说法正确的是（ ）",
+     "cluster": "实际问题与反比例函数",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「实际问题与反比例函数」掌握度 36%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-6867ce3b-44c3-4fec-a4e4-9be3727736b4",
+     "stem": "现实生活中，下列现象不属于平移的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "旋转",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「旋转」掌握度 42%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-142c3040-4aea-41ee-a5a0-86471b8f81f7",
+     "stem": "如果函数 是二次函数，那么 k 的值一定是 ．",
+     "cluster": "实际问题与二次函数",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「实际问题与二次函数」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-3825e56e-7c0b-11f1-a7cc-57b8371d822f",
+     "stem": "若函数$y = A\\sin(\\omega x + \\varphi)(\\omega &gt; 0, \\varphi &gt; 0)$的图像的一个最高点为$(2,\\sqrt{2})$，它到与其相邻的一个最",
+     "cluster": "圆",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「圆」距上次练习较久，预计掌握度衰减至 38%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-002ea68c-4a8a-43fa-bd5a-888754fe7203",
+     "stem": "移动左图中的一个小正方体得到如图所示的几何体．移动前后几何体从三个不同方向看到的形状图不变的是（      ）",
+     "cluster": "三视图",
+     "difficulty": "适中",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「三视图」距上次练习较久，预计掌握度衰减至 53%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "13f95c7fdbca7a26": {
+   "student_id": "13f95c7fdbca7a26",
+   "name": "赵雪",
+   "items": [
+    {
+     "qid": "que-10d866dd-81c3-488d-a41f-aec0a16efb92",
+     "stem": "已知圆 ： ， 圆 ： ，则下列说法正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）BC-AB",
+     "cluster": "点和圆、直线和圆的位置关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「点和圆、直线和圆的位置关系」掌握度 43%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-2a068496-8d47-4a51-84c9-07dce17ad56b",
+     "stem": "现有甲、乙、丙、丁、戊 5 种在线教学软件，若某学校要从中随机选取 3 种作为教师“停课不停学”的教学工具，则其中甲、乙、丙至多有 2 种被选取的概率为（ &nbsp;&nbsp;&nbsp;&nbs",
+     "cluster": "用列举法求概率",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「用列举法求概率」掌握度 44%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-80bbd250-5fe7-11f1-a85a-29f51c996ccc",
+     "stem": "下图中，丽丽看到的是（ ）。",
+     "cluster": "三视图",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「三视图」掌握度 44%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-05421d0e-318e-4810-8168-a7bcbe7f3def",
+     "stem": "若 是关于 x 的方程 的解，则 a 的值为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "一元二次方程",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「一元二次方程」距上次练习较久，预计掌握度衰减至 38%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-0532cd78-29f7-477a-aa9f-44fcd4635eac",
+     "stem": "在△ ABC 中， BC ＝ a ， AC ＝ b ，且 a ， b 是方程 的两根， . （ 1 ）求角 的度数； （ 2 ）求 的长 .",
+     "cluster": "实际问题与一元二次方程",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「实际问题与一元二次方程」距上次练习较久，预计掌握度衰减至 39%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "ecada4db70418239": {
+   "student_id": "ecada4db70418239",
+   "name": "冯洋明",
+   "items": [
+    {
+     "qid": "que-056877f2-0427-4b56-a16a-5bfc7e1f25a2",
+     "stem": "在△ABC中，$\\angle B=30^\\circ$， $AB=2\\sqrt{3}$， $AC=2$，则△ABC的面积是（ ）",
+     "cluster": "解直角三角形及其应用",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（6 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-3c456c0e-b68d-4b43-8042-56ef301d0c12",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（6 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6dd0cb49-7dd6-4107-a19c-5cfbbe6ba331",
+     "stem": "填空： (1)将函数$y = \\frac{1}{x}$的图像上所有点的横坐标向右平移2个单位，得到函数____的图像； (2)将函数$y = \\log_2(3x - 1)$的图像上所有点的纵坐标向上平",
+     "cluster": "旋转",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "学情数据不足（6 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-10d866dd-81c3-488d-a41f-aec0a16efb92",
+     "stem": "已知圆 ： ， 圆 ： ，则下列说法正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）BC-AB",
+     "cluster": "点和圆、直线和圆的位置关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（6 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0104e790-1b4e-4f6c-849c-412d4295ee43",
+     "stem": "(2)已知全集$U=\\mathbf{R}$，集合$P=\\{x|x^2 \\leqslant 1\\}$，那么$\\complement_U P =$（）。",
+     "cluster": "二次函数与一元二次方程",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（6 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-2a068496-8d47-4a51-84c9-07dce17ad56b",
+     "stem": "现有甲、乙、丙、丁、戊 5 种在线教学软件，若某学校要从中随机选取 3 种作为教师“停课不停学”的教学工具，则其中甲、乙、丙至多有 2 种被选取的概率为（ &nbsp;&nbsp;&nbsp;&nbs",
+     "cluster": "用列举法求概率",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（6 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "99f97d60603c4bd3": {
+   "student_id": "99f97d60603c4bd3",
+   "name": "徐晨",
+   "items": [
+    {
+     "qid": "que-056877f2-0427-4b56-a16a-5bfc7e1f25a2",
+     "stem": "在△ABC中，$\\angle B=30^\\circ$， $AB=2\\sqrt{3}$， $AC=2$，则△ABC的面积是（ ）",
+     "cluster": "解直角三角形及其应用",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（5 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-3c456c0e-b68d-4b43-8042-56ef301d0c12",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（5 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6867ce3b-44c3-4fec-a4e4-9be3727736b4",
+     "stem": "现实生活中，下列现象不属于平移的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "旋转",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（5 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-10d866dd-81c3-488d-a41f-aec0a16efb92",
+     "stem": "已知圆 ： ， 圆 ： ，则下列说法正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）BC-AB",
+     "cluster": "点和圆、直线和圆的位置关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（5 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0104e790-1b4e-4f6c-849c-412d4295ee43",
+     "stem": "(2)已知全集$U=\\mathbf{R}$，集合$P=\\{x|x^2 \\leqslant 1\\}$，那么$\\complement_U P =$（）。",
+     "cluster": "二次函数与一元二次方程",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（5 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-2a068496-8d47-4a51-84c9-07dce17ad56b",
+     "stem": "现有甲、乙、丙、丁、戊 5 种在线教学软件，若某学校要从中随机选取 3 种作为教师“停课不停学”的教学工具，则其中甲、乙、丙至多有 2 种被选取的概率为（ &nbsp;&nbsp;&nbsp;&nbs",
+     "cluster": "用列举法求概率",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（5 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "00a2ae76c9e9d262": {
+   "student_id": "00a2ae76c9e9d262",
+   "name": "唐辉",
+   "items": [
+    {
+     "qid": "que-0104e790-1b4e-4f6c-849c-412d4295ee43",
+     "stem": "(2)已知全集$U=\\mathbf{R}$，集合$P=\\{x|x^2 \\leqslant 1\\}$，那么$\\complement_U P =$（）。",
+     "cluster": "二次函数与一元二次方程",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「二次函数与一元二次方程」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-6867ce3b-44c3-4fec-a4e4-9be3727736b4",
+     "stem": "现实生活中，下列现象不属于平移的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "旋转",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「旋转」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-10d866dd-81c3-488d-a41f-aec0a16efb92",
+     "stem": "已知圆 ： ， 圆 ： ，则下列说法正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）BC-AB",
+     "cluster": "点和圆、直线和圆的位置关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「点和圆、直线和圆的位置关系」掌握度 57%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-06329a5f40c3440084bbe8421582cca8",
+     "stem": "如图，$AB$为$\\odot O$的直径，$C$，$D$是$\\odot O$上的点，$P$是$\\odot O$外一点，$AC\\perp PD$于点$E$，$AD$平分$\\angle BAC$。求证：$",
+     "cluster": "点和圆、直线和圆的位置关系",
+     "difficulty": "适中",
+     "form": "证明",
+     "strategy": "review",
+     "reason": "遗忘复习：「点和圆、直线和圆的位置关系」距上次练习较久，预计掌握度衰减至 35%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-3825e56e-7c0b-11f1-a7cc-57b8371d822f",
+     "stem": "若函数$y = A\\sin(\\omega x + \\varphi)(\\omega &gt; 0, \\varphi &gt; 0)$的图像的一个最高点为$(2,\\sqrt{2})$，它到与其相邻的一个最",
+     "cluster": "圆",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「圆」距上次练习较久，预计掌握度衰减至 41%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "4e5a090fe3d36810": {
+   "student_id": "4e5a090fe3d36810",
+   "name": "李明静",
+   "items": [
+    {
+     "qid": "que-056877f2-0427-4b56-a16a-5bfc7e1f25a2",
+     "stem": "在△ABC中，$\\angle B=30^\\circ$， $AB=2\\sqrt{3}$， $AC=2$，则△ABC的面积是（ ）",
+     "cluster": "解直角三角形及其应用",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「解直角三角形及其应用」掌握度 55%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-8d8d074a-6758-42af-be66-99f4db5cd452",
+     "stem": "甲乙两队正在角逐排球联赛的冠军，在刚刚结束的前三局比赛中，甲队2胜1负暂时领先，若规定先胜三局者即为本次联赛冠军，已知两队在每局比赛中获胜的概率均为 ，且各局比赛结果相互独立，则甲队最终成为本次排球联",
+     "cluster": "用列举法求概率",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「用列举法求概率」距上次练习较久，预计掌握度衰减至 43%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-1d423d5f-0440-4041-b799-d57efbedbda5",
+     "stem": "如图，△ ABC 中， DE ∥ BC ， DE =1 ， AD =2 ， DB =3 ，则 BC 的长是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb",
+     "cluster": "相似三角形",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「相似三角形」距上次练习较久，预计掌握度衰减至 45%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-3c456c0e-b68d-4b43-8042-56ef301d0c12",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「相似三角形」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-71eb6d93-7b39-11f1-ae56-57b8371d822f",
+     "stem": "填空： (1)将函数$y = \\frac{1}{x}$的图像上所有点的横坐标向右平移2个单位，得到函数____的图像； (2)将函数$y = \\log_2(3x - 1)$的图像上所有点的纵坐标向上平",
+     "cluster": "旋转",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「旋转」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "c157f171d136fafd": {
+   "student_id": "c157f171d136fafd",
+   "name": "胡怡",
+   "items": [
+    {
+     "qid": "que-04685f33-9e36-434e-bba2-cbbadcdef55e",
+     "stem": "若关于 的一元二次方程 中的 ， ， 满足 ，则方程必有根（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "实际问题与一元二次方程",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「实际问题与一元二次方程」掌握度 37%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-05421d0e-318e-4810-8168-a7bcbe7f3def",
+     "stem": "若 是关于 x 的方程 的解，则 a 的值为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "一元二次方程",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「一元二次方程」距上次练习较久，预计掌握度衰减至 55%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-0e90b3f7-4cd4-41bc-82c5-aa384a8256c3",
+     "stem": "在 中，已知 ， ， ，则 （ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "锐角三角函数",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「锐角三角函数」距上次练习较久，预计掌握度衰减至 59%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-3c456c0e-b68d-4b43-8042-56ef301d0c12",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「相似三角形」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6867ce3b-44c3-4fec-a4e4-9be3727736b4",
+     "stem": "现实生活中，下列现象不属于平移的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "旋转",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「旋转」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "2211702825fcfe88": {
+   "student_id": "2211702825fcfe88",
+   "name": "邓敏",
+   "items": [
+    {
+     "qid": "que-3c456c0e-b68d-4b43-8042-56ef301d0c12",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「相似三角形」掌握度 30%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0f5ab0bd-08d6-4c0e-b0ce-5d7c64952633",
+     "stem": "计算： （I）已知角$a$的顶点在坐标原点，始边与$X$轴的正半轴重合，$(m,1)$，$(n,2)$是角$a$终边上两点，$\\sin a =\\frac{\\sqrt{3}}{3}$，求$|m- n|$",
+     "cluster": "锐角三角函数",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「锐角三角函数」掌握度 31%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-80bbe839-5fe7-11f1-88b6-29f51c996ccc",
+     "stem": "淘气用4个同样大的正方体摆成一个立体图形。从上面看到的形状如下图，从左面看到的形状是（ ）。",
+     "cluster": "三视图",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「三视图」掌握度 42%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-3825e56e-7c0b-11f1-a7cc-57b8371d822f",
+     "stem": "若函数$y = A\\sin(\\omega x + \\varphi)(\\omega &gt; 0, \\varphi &gt; 0)$的图像的一个最高点为$(2,\\sqrt{2})$，它到与其相邻的一个最",
+     "cluster": "圆",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「圆」距上次练习较久，预计掌握度衰减至 42%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-05421d0e-318e-4810-8168-a7bcbe7f3def",
+     "stem": "若 是关于 x 的方程 的解，则 a 的值为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "一元二次方程",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「一元二次方程」距上次练习较久，预计掌握度衰减至 44%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-6e3d8eda-f0fb-422b-9e61-f0e82aa5670b",
+     "stem": "若关于 x 的一元二次方程 有实数根，则 c 的值不可能是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "实际问题与一元二次方程",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "variant",
+     "reason": "错题变式：原题（实际问题与一元二次方程）的「条件增删」变式",
+     "source_label": "错题本"
+    }
+   ]
+  },
+  "ec62f5009f1a9411": {
+   "student_id": "ec62f5009f1a9411",
+   "name": "罗强",
+   "items": [
+    {
+     "qid": "que-056877f2-0427-4b56-a16a-5bfc7e1f25a2",
+     "stem": "在△ABC中，$\\angle B=30^\\circ$， $AB=2\\sqrt{3}$， $AC=2$，则△ABC的面积是（ ）",
+     "cluster": "解直角三角形及其应用",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（9 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-3c456c0e-b68d-4b43-8042-56ef301d0c12",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（9 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6867ce3b-44c3-4fec-a4e4-9be3727736b4",
+     "stem": "现实生活中，下列现象不属于平移的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "旋转",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（9 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-10d866dd-81c3-488d-a41f-aec0a16efb92",
+     "stem": "已知圆 ： ， 圆 ： ，则下列说法正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）BC-AB",
+     "cluster": "点和圆、直线和圆的位置关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（9 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0104e790-1b4e-4f6c-849c-412d4295ee43",
+     "stem": "(2)已知全集$U=\\mathbf{R}$，集合$P=\\{x|x^2 \\leqslant 1\\}$，那么$\\complement_U P =$（）。",
+     "cluster": "二次函数与一元二次方程",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（9 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-2a068496-8d47-4a51-84c9-07dce17ad56b",
+     "stem": "现有甲、乙、丙、丁、戊 5 种在线教学软件，若某学校要从中随机选取 3 种作为教师“停课不停学”的教学工具，则其中甲、乙、丙至多有 2 种被选取的概率为（ &nbsp;&nbsp;&nbsp;&nbs",
+     "cluster": "用列举法求概率",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（9 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "30b020c1c7e844a5": {
+   "student_id": "30b020c1c7e844a5",
+   "name": "罗强磊",
+   "items": [
+    {
+     "qid": "que-04685f33-9e36-434e-bba2-cbbadcdef55e",
+     "stem": "若关于 的一元二次方程 中的 ， ， 满足 ，则方程必有根（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "实际问题与一元二次方程",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「实际问题与一元二次方程」掌握度 43%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-4359e900-5523-4af8-9e88-3e864a5fdf87",
+     "stem": "现有一个底面是菱形的直四棱柱，它的体对角线长为9和15，高是5，求该直四棱柱的侧面积、表面积．",
+     "cluster": "投影与视图",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「投影与视图」掌握度 56%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-31acaaac12904fcda727ffe086e98cc8",
+     "stem": "我国古代数学家刘徽用“牟合方盖”找到了球体体积 计算方法.“牟合方盖”是由两个圆柱分别从纵横两个方向嵌入一个正方体时两圆柱公共部分形成的几何体. 如图所示的几何体是可以形成“牟合方盖”的一种模型，它的",
+     "cluster": "投影与视图",
+     "difficulty": "适中",
+     "form": "填空",
+     "strategy": "review",
+     "reason": "遗忘复习：「投影与视图」距上次练习较久，预计掌握度衰减至 28%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-0eab12cc-04f3-434b-b1fd-885b6e2658d1",
+     "stem": "在平面直角坐标系内，抛物线 与 轴的一个交点是 ，另一交点为 ，则 的长为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "二次函数与一元二次方程",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「二次函数与一元二次方程」距上次练习较久，预计掌握度衰减至 44%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-3c456c0e-b68d-4b43-8042-56ef301d0c12",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「相似三角形」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "67c109d4addb3559": {
+   "student_id": "67c109d4addb3559",
+   "name": "王娟",
+   "items": [
+    {
+     "qid": "que-056877f2-0427-4b56-a16a-5bfc7e1f25a2",
+     "stem": "在△ABC中，$\\angle B=30^\\circ$， $AB=2\\sqrt{3}$， $AC=2$，则△ABC的面积是（ ）",
+     "cluster": "解直角三角形及其应用",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（9 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-3c456c0e-b68d-4b43-8042-56ef301d0c12",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（9 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6867ce3b-44c3-4fec-a4e4-9be3727736b4",
+     "stem": "现实生活中，下列现象不属于平移的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "旋转",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（9 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-10d866dd-81c3-488d-a41f-aec0a16efb92",
+     "stem": "已知圆 ： ， 圆 ： ，则下列说法正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）BC-AB",
+     "cluster": "点和圆、直线和圆的位置关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（9 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0104e790-1b4e-4f6c-849c-412d4295ee43",
+     "stem": "(2)已知全集$U=\\mathbf{R}$，集合$P=\\{x|x^2 \\leqslant 1\\}$，那么$\\complement_U P =$（）。",
+     "cluster": "二次函数与一元二次方程",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（9 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-2a068496-8d47-4a51-84c9-07dce17ad56b",
+     "stem": "现有甲、乙、丙、丁、戊 5 种在线教学软件，若某学校要从中随机选取 3 种作为教师“停课不停学”的教学工具，则其中甲、乙、丙至多有 2 种被选取的概率为（ &nbsp;&nbsp;&nbsp;&nbs",
+     "cluster": "用列举法求概率",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（9 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "b5d39b1572e27d78": {
+   "student_id": "b5d39b1572e27d78",
+   "name": "谢婷",
+   "items": [
+    {
+     "qid": "que-10d866dd-81c3-488d-a41f-aec0a16efb92",
+     "stem": "已知圆 ： ， 圆 ： ，则下列说法正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）BC-AB",
+     "cluster": "点和圆、直线和圆的位置关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「点和圆、直线和圆的位置关系」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0f5ab0bd-08d6-4c0e-b0ce-5d7c64952633",
+     "stem": "计算： （I）已知角$a$的顶点在坐标原点，始边与$X$轴的正半轴重合，$(m,1)$，$(n,2)$是角$a$终边上两点，$\\sin a =\\frac{\\sqrt{3}}{3}$，求$|m- n|$",
+     "cluster": "锐角三角函数",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「锐角三角函数」掌握度 56%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-049951ba-7b5e-11f1-9831-57b8371d822f",
+     "stem": "已知$\\alpha$为正实数，试比较$\\cos \\alpha$与$1 - \\frac{1}{2}\\alpha^2$的大小。",
+     "cluster": "圆",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「圆」掌握度 56%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0e90b3f7-4cd4-41bc-82c5-aa384a8256c3",
+     "stem": "在 中，已知 ， ， ，则 （ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "锐角三角函数",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「锐角三角函数」距上次练习较久，预计掌握度衰减至 32%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-1d423d5f-0440-4041-b799-d57efbedbda5",
+     "stem": "如图，△ ABC 中， DE ∥ BC ， DE =1 ， AD =2 ， DB =3 ，则 BC 的长是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb",
+     "cluster": "相似三角形",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「相似三角形」距上次练习较久，预计掌握度衰减至 43%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "c08523c612bb5576": {
+   "student_id": "c08523c612bb5576",
+   "name": "曹楠",
+   "items": [
+    {
+     "qid": "que-80bbd250-5fe7-11f1-a85a-29f51c996ccc",
+     "stem": "下图中，丽丽看到的是（ ）。",
+     "cluster": "三视图",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「三视图」掌握度 57%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-00a9b1a7-3c74-4dc7-affc-17e76b1f090b",
+     "stem": "在 中，内角 A ， B ， C 的对边分别为 a ， b ， c ，满足 ，且 ，则 （ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "解直角三角形及其应用",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「解直角三角形及其应用」距上次练习较久，预计掌握度衰减至 49%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-002ea68c-4a8a-43fa-bd5a-888754fe7203",
+     "stem": "移动左图中的一个小正方体得到如图所示的几何体．移动前后几何体从三个不同方向看到的形状图不变的是（      ）",
+     "cluster": "三视图",
+     "difficulty": "适中",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「三视图」距上次练习较久，预计掌握度衰减至 50%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-243bed36838f46d196d527ce7618607d",
+     "stem": "函数$y=\\dfrac{3x-1}{x+2}$的图象关于点______对称.",
+     "cluster": "实际问题与反比例函数",
+     "difficulty": "适中",
+     "form": "填空",
+     "strategy": "challenge",
+     "reason": "「实际问题与反比例函数」已掌握（88%），挑战进阶题（选做，可点亮掌握徽章）",
+     "source_label": "掌握徽章",
+     "optional": true
+    },
+    {
+     "qid": "que-3c456c0e-b68d-4b43-8042-56ef301d0c12",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「相似三角形」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-71eb6d93-7b39-11f1-ae56-57b8371d822f",
+     "stem": "填空： (1)将函数$y = \\frac{1}{x}$的图像上所有点的横坐标向右平移2个单位，得到函数____的图像； (2)将函数$y = \\log_2(3x - 1)$的图像上所有点的纵坐标向上平",
+     "cluster": "旋转",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「旋转」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "487e83f1a5520c25": {
+   "student_id": "487e83f1a5520c25",
+   "name": "马静明",
+   "items": [
+    {
+     "qid": "que-3c456c0e-b68d-4b43-8042-56ef301d0c12",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「相似三角形」掌握度 40%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-80bbd250-5fe7-11f1-a85a-29f51c996ccc",
+     "stem": "下图中，丽丽看到的是（ ）。",
+     "cluster": "三视图",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「三视图」掌握度 44%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-2a068496-8d47-4a51-84c9-07dce17ad56b",
+     "stem": "现有甲、乙、丙、丁、戊 5 种在线教学软件，若某学校要从中随机选取 3 种作为教师“停课不停学”的教学工具，则其中甲、乙、丙至多有 2 种被选取的概率为（ &nbsp;&nbsp;&nbsp;&nbs",
+     "cluster": "用列举法求概率",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「用列举法求概率」掌握度 54%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-381a4a19-f634-4c61-9b36-cd01cd56b46d",
+     "stem": "二次函数 的图象如图所示，则关于 x 的一元二次方程 的根的情况是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "实际问题与二次函数",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「实际问题与二次函数」距上次练习较久，预计掌握度衰减至 51%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-1c9c33d5-865a-11f1-814a-851d653de942",
+     "stem": "曲线$y = \\frac{1}{x}$在$x = 1$处的切线的斜率为__________.",
+     "cluster": "实际问题与反比例函数",
+     "difficulty": "较易",
+     "form": "填空",
+     "strategy": "review",
+     "reason": "遗忘复习：「实际问题与反比例函数」距上次练习较久，预计掌握度衰减至 57%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "f2e2404a9e71d65e": {
+   "student_id": "f2e2404a9e71d65e",
+   "name": "韩艳",
+   "items": [
+    {
+     "qid": "que-0104e790-1b4e-4f6c-849c-412d4295ee43",
+     "stem": "(2)已知全集$U=\\mathbf{R}$，集合$P=\\{x|x^2 \\leqslant 1\\}$，那么$\\complement_U P =$（）。",
+     "cluster": "二次函数与一元二次方程",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「二次函数与一元二次方程」掌握度 55%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-6867ce3b-44c3-4fec-a4e4-9be3727736b4",
+     "stem": "现实生活中，下列现象不属于平移的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "旋转",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「旋转」掌握度 56%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0e90b3f7-4cd4-41bc-82c5-aa384a8256c3",
+     "stem": "在 中，已知 ， ， ，则 （ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "锐角三角函数",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「锐角三角函数」距上次练习较久，预计掌握度衰减至 43%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-26741f92-f4cf-4a93-9417-79e1b37ec060",
+     "stem": "下列现象： 温度计中，液柱的变化； 电梯上下运动； 钟摆的摆动； 小方块在水平地面滑动，属于平移的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "旋转",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「旋转」距上次练习较久，预计掌握度衰减至 44%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-3c456c0e-b68d-4b43-8042-56ef301d0c12",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「相似三角形」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "9a3d360c85016f2c": {
+   "student_id": "9a3d360c85016f2c",
+   "name": "宋欣",
+   "items": [
+    {
+     "qid": "que-0104e790-1b4e-4f6c-849c-412d4295ee43",
+     "stem": "(2)已知全集$U=\\mathbf{R}$，集合$P=\\{x|x^2 \\leqslant 1\\}$，那么$\\complement_U P =$（）。",
+     "cluster": "二次函数与一元二次方程",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「二次函数与一元二次方程」掌握度 55%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-04685f33-9e36-434e-bba2-cbbadcdef55e",
+     "stem": "若关于 的一元二次方程 中的 ， ， 满足 ，则方程必有根（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "实际问题与一元二次方程",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「实际问题与一元二次方程」掌握度 57%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-b893457a-5af2-11f1-af36-01e03380142c",
+     "stem": "若点 M - 2 , y 1 ， N - 1 , y 2 ， P 8 , y 3 在抛物线 y = - x 2 + 4 x 上，则下列结论正确的是（       ）",
+     "cluster": "实际问题与二次函数",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「实际问题与二次函数」掌握度 58%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-381a4a19-f634-4c61-9b36-cd01cd56b46d",
+     "stem": "二次函数 的图象如图所示，则关于 x 的一元二次方程 的根的情况是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "实际问题与二次函数",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「实际问题与二次函数」距上次练习较久，预计掌握度衰减至 41%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-0e90b3f7-4cd4-41bc-82c5-aa384a8256c3",
+     "stem": "在 中，已知 ， ， ，则 （ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "锐角三角函数",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「锐角三角函数」距上次练习较久，预计掌握度衰减至 45%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "965295b4761a748e": {
+   "student_id": "965295b4761a748e",
+   "name": "宋欣军",
+   "items": [
+    {
+     "qid": "que-056877f2-0427-4b56-a16a-5bfc7e1f25a2",
+     "stem": "在△ABC中，$\\angle B=30^\\circ$， $AB=2\\sqrt{3}$， $AC=2$，则△ABC的面积是（ ）",
+     "cluster": "解直角三角形及其应用",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（0 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-3c456c0e-b68d-4b43-8042-56ef301d0c12",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（0 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6867ce3b-44c3-4fec-a4e4-9be3727736b4",
+     "stem": "现实生活中，下列现象不属于平移的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "旋转",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（0 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-10d866dd-81c3-488d-a41f-aec0a16efb92",
+     "stem": "已知圆 ： ， 圆 ： ，则下列说法正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）BC-AB",
+     "cluster": "点和圆、直线和圆的位置关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（0 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0104e790-1b4e-4f6c-849c-412d4295ee43",
+     "stem": "(2)已知全集$U=\\mathbf{R}$，集合$P=\\{x|x^2 \\leqslant 1\\}$，那么$\\complement_U P =$（）。",
+     "cluster": "二次函数与一元二次方程",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（0 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-2a068496-8d47-4a51-84c9-07dce17ad56b",
+     "stem": "现有甲、乙、丙、丁、戊 5 种在线教学软件，若某学校要从中随机选取 3 种作为教师“停课不停学”的教学工具，则其中甲、乙、丙至多有 2 种被选取的概率为（ &nbsp;&nbsp;&nbsp;&nbs",
+     "cluster": "用列举法求概率",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（0 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "e8a826431f28f4a3": {
+   "student_id": "e8a826431f28f4a3",
+   "name": "朱帆",
+   "items": [
+    {
+     "qid": "que-3c456c0e-b68d-4b43-8042-56ef301d0c12",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「相似三角形」掌握度 37%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-80bbd250-5fe7-11f1-a85a-29f51c996ccc",
+     "stem": "下图中，丽丽看到的是（ ）。",
+     "cluster": "三视图",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「三视图」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-4359e900-5523-4af8-9e88-3e864a5fdf87",
+     "stem": "现有一个底面是菱形的直四棱柱，它的体对角线长为9和15，高是5，求该直四棱柱的侧面积、表面积．",
+     "cluster": "投影与视图",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「投影与视图」掌握度 56%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-31acaaac12904fcda727ffe086e98cc8",
+     "stem": "我国古代数学家刘徽用“牟合方盖”找到了球体体积 计算方法.“牟合方盖”是由两个圆柱分别从纵横两个方向嵌入一个正方体时两圆柱公共部分形成的几何体. 如图所示的几何体是可以形成“牟合方盖”的一种模型，它的",
+     "cluster": "投影与视图",
+     "difficulty": "适中",
+     "form": "填空",
+     "strategy": "review",
+     "reason": "遗忘复习：「投影与视图」距上次练习较久，预计掌握度衰减至 47%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-41c788f0-419b-4721-8c77-e4d5d24a5bd2",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「相似三角形」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "a9b8f97de7ad4f9a": {
+   "student_id": "a9b8f97de7ad4f9a",
+   "name": "郑洋明",
+   "items": [
+    {
+     "qid": "que-033bf8a6-0be5-4fe9-b013-eed57361d58c",
+     "stem": "现有甲、乙、丙三个人，需要执行某项试验任务，每个人至多执行一次。如果规定时间内某人完成任务，则试验成功，结束该任务；如果规定时间内某人不能完成任务，则撤回再由下一个人执行任务。若该项试验任务按照甲、乙",
+     "cluster": "用列举法求概率",
+     "difficulty": "适中",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「用列举法求概率」掌握度 40%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-088c61da-56ad-11f1-8f0e-93727e70c2bd",
+     "stem": "若 m 2 + m = 0 ，则 m ；若 ( 1 − 3 a ) 2 = 3 a − 1 ，则 a ．",
+     "cluster": "一元二次方程",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「一元二次方程」掌握度 43%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-6867ce3b-44c3-4fec-a4e4-9be3727736b4",
+     "stem": "现实生活中，下列现象不属于平移的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "旋转",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「旋转」掌握度 45%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-1c9c33d5-865a-11f1-814a-851d653de942",
+     "stem": "曲线$y = \\frac{1}{x}$在$x = 1$处的切线的斜率为__________.",
+     "cluster": "实际问题与反比例函数",
+     "difficulty": "较易",
+     "form": "填空",
+     "strategy": "review",
+     "reason": "遗忘复习：「实际问题与反比例函数」距上次练习较久，预计掌握度衰减至 40%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-002ea68c-4a8a-43fa-bd5a-888754fe7203",
+     "stem": "移动左图中的一个小正方体得到如图所示的几何体．移动前后几何体从三个不同方向看到的形状图不变的是（      ）",
+     "cluster": "三视图",
+     "difficulty": "适中",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「三视图」距上次练习较久，预计掌握度衰减至 43%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "97ad3f362ac9e91b": {
+   "student_id": "97ad3f362ac9e91b",
+   "name": "刘晨",
+   "items": [
+    {
+     "qid": "que-3c456c0e-b68d-4b43-8042-56ef301d0c12",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「相似三角形」掌握度 37%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-10d866dd-81c3-488d-a41f-aec0a16efb92",
+     "stem": "已知圆 ： ， 圆 ： ，则下列说法正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）BC-AB",
+     "cluster": "点和圆、直线和圆的位置关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「点和圆、直线和圆的位置关系」掌握度 38%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0f5ab0bd-08d6-4c0e-b0ce-5d7c64952633",
+     "stem": "计算： （I）已知角$a$的顶点在坐标原点，始边与$X$轴的正半轴重合，$(m,1)$，$(n,2)$是角$a$终边上两点，$\\sin a =\\frac{\\sqrt{3}}{3}$，求$|m- n|$",
+     "cluster": "锐角三角函数",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「锐角三角函数」掌握度 43%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0532cd78-29f7-477a-aa9f-44fcd4635eac",
+     "stem": "在△ ABC 中， BC ＝ a ， AC ＝ b ，且 a ， b 是方程 的两根， . （ 1 ）求角 的度数； （ 2 ）求 的长 .",
+     "cluster": "实际问题与一元二次方程",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「实际问题与一元二次方程」距上次练习较久，预计掌握度衰减至 36%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-1c9c33d5-865a-11f1-814a-851d653de942",
+     "stem": "曲线$y = \\frac{1}{x}$在$x = 1$处的切线的斜率为__________.",
+     "cluster": "实际问题与反比例函数",
+     "difficulty": "较易",
+     "form": "填空",
+     "strategy": "review",
+     "reason": "遗忘复习：「实际问题与反比例函数」距上次练习较久，预计掌握度衰减至 38%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "4750d3a3f96cd5f6": {
+   "student_id": "4750d3a3f96cd5f6",
+   "name": "林辉",
+   "items": [
+    {
+     "qid": "que-6867ce3b-44c3-4fec-a4e4-9be3727736b4",
+     "stem": "现实生活中，下列现象不属于平移的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "旋转",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「旋转」掌握度 20%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-056877f2-0427-4b56-a16a-5bfc7e1f25a2",
+     "stem": "在△ABC中，$\\angle B=30^\\circ$， $AB=2\\sqrt{3}$， $AC=2$，则△ABC的面积是（ ）",
+     "cluster": "解直角三角形及其应用",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「解直角三角形及其应用」掌握度 27%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-54b69b56-9add-4050-8c2c-71ca2260da82",
+     "stem": "如图为某电火锅加热器的简化电路图，R₁、R₂均为发热电阻，开关S可以在“1”“2”间切换，从而选择不同的加热挡位。当开关S由“1”切换到“2”时，下列说法正确的是（ ）",
+     "cluster": "实际问题与反比例函数",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「实际问题与反比例函数」掌握度 30%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-7c8d4887-6458-4090-88c0-3bafd5e2274a",
+     "stem": "投壶是从先秦延续至清末的中国传统礼仪和宴饮游戏晋代在广泛开展投壶活动中，对投壶的壶也有所改进，即在壶口两旁增添两耳因此在投壶的花式上就多了许多名目，如 “ 贯耳 ( 投入壶耳 )”. 每一局投壶，每一",
+     "cluster": "用列举法求概率",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「用列举法求概率」距上次练习较久，预计掌握度衰减至 45%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-1d423d5f-0440-4041-b799-d57efbedbda5",
+     "stem": "如图，△ ABC 中， DE ∥ BC ， DE =1 ， AD =2 ， DB =3 ，则 BC 的长是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb",
+     "cluster": "相似三角形",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「相似三角形」距上次练习较久，预计掌握度衰减至 53%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "9832fbda5f0bd252": {
+   "student_id": "9832fbda5f0bd252",
+   "name": "李浩",
+   "items": [
+    {
+     "qid": "que-2a068496-8d47-4a51-84c9-07dce17ad56b",
+     "stem": "现有甲、乙、丙、丁、戊 5 种在线教学软件，若某学校要从中随机选取 3 种作为教师“停课不停学”的教学工具，则其中甲、乙、丙至多有 2 种被选取的概率为（ &nbsp;&nbsp;&nbsp;&nbs",
+     "cluster": "用列举法求概率",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「用列举法求概率」掌握度 37%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-049951ba-7b5e-11f1-9831-57b8371d822f",
+     "stem": "已知$\\alpha$为正实数，试比较$\\cos \\alpha$与$1 - \\frac{1}{2}\\alpha^2$的大小。",
+     "cluster": "圆",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「圆」掌握度 40%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-10d866dd-81c3-488d-a41f-aec0a16efb92",
+     "stem": "已知圆 ： ， 圆 ： ，则下列说法正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）BC-AB",
+     "cluster": "点和圆、直线和圆的位置关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「点和圆、直线和圆的位置关系」掌握度 40%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-284e1c86-e736-4ae6-b3b2-b6e9283037a6",
+     "stem": "在 中，三个内角 的对边分别是 ，若 ， ， ，则此三角形的面积为 ．",
+     "cluster": "相似三角形",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「相似三角形」距上次练习较久，预计掌握度衰减至 49%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-3c456c0e-b68d-4b43-8042-56ef301d0c12",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「相似三角形」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "613cab8344a4169d": {
+   "student_id": "613cab8344a4169d",
+   "name": "胡磊",
+   "items": [
+    {
+     "qid": "que-6867ce3b-44c3-4fec-a4e4-9be3727736b4",
+     "stem": "现实生活中，下列现象不属于平移的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "旋转",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「旋转」掌握度 37%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-049951ba-7b5e-11f1-9831-57b8371d822f",
+     "stem": "已知$\\alpha$为正实数，试比较$\\cos \\alpha$与$1 - \\frac{1}{2}\\alpha^2$的大小。",
+     "cluster": "圆",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「圆」掌握度 47%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-54b69b56-9add-4050-8c2c-71ca2260da82",
+     "stem": "如图为某电火锅加热器的简化电路图，R₁、R₂均为发热电阻，开关S可以在“1”“2”间切换，从而选择不同的加热挡位。当开关S由“1”切换到“2”时，下列说法正确的是（ ）",
+     "cluster": "实际问题与反比例函数",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「实际问题与反比例函数」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-3c456c0e-b68d-4b43-8042-56ef301d0c12",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「相似三角形」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6dd0cb49-7dd6-4107-a19c-5cfbbe6ba331",
+     "stem": "填空： (1)将函数$y = \\frac{1}{x}$的图像上所有点的横坐标向右平移2个单位，得到函数____的图像； (2)将函数$y = \\log_2(3x - 1)$的图像上所有点的纵坐标向上平",
+     "cluster": "旋转",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「旋转」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "b8f15da49a0e957f": {
+   "student_id": "b8f15da49a0e957f",
+   "name": "孙强",
+   "items": [
+    {
+     "qid": "que-088c61da-56ad-11f1-8f0e-93727e70c2bd",
+     "stem": "若 m 2 + m = 0 ，则 m ；若 ( 1 − 3 a ) 2 = 3 a − 1 ，则 a ．",
+     "cluster": "一元二次方程",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「一元二次方程」掌握度 33%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0f5ab0bd-08d6-4c0e-b0ce-5d7c64952633",
+     "stem": "计算： （I）已知角$a$的顶点在坐标原点，始边与$X$轴的正半轴重合，$(m,1)$，$(n,2)$是角$a$终边上两点，$\\sin a =\\frac{\\sqrt{3}}{3}$，求$|m- n|$",
+     "cluster": "锐角三角函数",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「锐角三角函数」掌握度 40%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-049951ba-7b5e-11f1-9831-57b8371d822f",
+     "stem": "已知$\\alpha$为正实数，试比较$\\cos \\alpha$与$1 - \\frac{1}{2}\\alpha^2$的大小。",
+     "cluster": "圆",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「圆」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-381a4a19-f634-4c61-9b36-cd01cd56b46d",
+     "stem": "二次函数 的图象如图所示，则关于 x 的一元二次方程 的根的情况是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "实际问题与二次函数",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「实际问题与二次函数」距上次练习较久，预计掌握度衰减至 44%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-002ea68c-4a8a-43fa-bd5a-888754fe7203",
+     "stem": "移动左图中的一个小正方体得到如图所示的几何体．移动前后几何体从三个不同方向看到的形状图不变的是（      ）",
+     "cluster": "三视图",
+     "difficulty": "适中",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「三视图」距上次练习较久，预计掌握度衰减至 52%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "c5bbec181a24f8a2": {
+   "student_id": "c5bbec181a24f8a2",
+   "name": "许娟",
+   "items": [
+    {
+     "qid": "que-0f5ab0bd-08d6-4c0e-b0ce-5d7c64952633",
+     "stem": "计算： （I）已知角$a$的顶点在坐标原点，始边与$X$轴的正半轴重合，$(m,1)$，$(n,2)$是角$a$终边上两点，$\\sin a =\\frac{\\sqrt{3}}{3}$，求$|m- n|$",
+     "cluster": "锐角三角函数",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「锐角三角函数」掌握度 33%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-4359e900-5523-4af8-9e88-3e864a5fdf87",
+     "stem": "现有一个底面是菱形的直四棱柱，它的体对角线长为9和15，高是5，求该直四棱柱的侧面积、表面积．",
+     "cluster": "投影与视图",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「投影与视图」掌握度 44%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-2a068496-8d47-4a51-84c9-07dce17ad56b",
+     "stem": "现有甲、乙、丙、丁、戊 5 种在线教学软件，若某学校要从中随机选取 3 种作为教师“停课不停学”的教学工具，则其中甲、乙、丙至多有 2 种被选取的概率为（ &nbsp;&nbsp;&nbsp;&nbs",
+     "cluster": "用列举法求概率",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「用列举法求概率」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-05421d0e-318e-4810-8168-a7bcbe7f3def",
+     "stem": "若 是关于 x 的方程 的解，则 a 的值为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "一元二次方程",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「一元二次方程」距上次练习较久，预计掌握度衰减至 28%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-002ea68c-4a8a-43fa-bd5a-888754fe7203",
+     "stem": "移动左图中的一个小正方体得到如图所示的几何体．移动前后几何体从三个不同方向看到的形状图不变的是（      ）",
+     "cluster": "三视图",
+     "difficulty": "适中",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「三视图」距上次练习较久，预计掌握度衰减至 37%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "493e28a2b22d3c90": {
+   "student_id": "493e28a2b22d3c90",
+   "name": "周露",
+   "items": [
+    {
+     "qid": "que-80bbd250-5fe7-11f1-a85a-29f51c996ccc",
+     "stem": "下图中，丽丽看到的是（ ）。",
+     "cluster": "三视图",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「三视图」掌握度 31%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-10d866dd-81c3-488d-a41f-aec0a16efb92",
+     "stem": "已知圆 ： ， 圆 ： ，则下列说法正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）BC-AB",
+     "cluster": "点和圆、直线和圆的位置关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「点和圆、直线和圆的位置关系」掌握度 33%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-088c61da-56ad-11f1-8f0e-93727e70c2bd",
+     "stem": "若 m 2 + m = 0 ，则 m ；若 ( 1 − 3 a ) 2 = 3 a − 1 ，则 a ．",
+     "cluster": "一元二次方程",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「一元二次方程」掌握度 35%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-1d423d5f-0440-4041-b799-d57efbedbda5",
+     "stem": "如图，△ ABC 中， DE ∥ BC ， DE =1 ， AD =2 ， DB =3 ，则 BC 的长是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb",
+     "cluster": "相似三角形",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「相似三角形」距上次练习较久，预计掌握度衰减至 53%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-1c9c33d5-865a-11f1-814a-851d653de942",
+     "stem": "曲线$y = \\frac{1}{x}$在$x = 1$处的切线的斜率为__________.",
+     "cluster": "实际问题与反比例函数",
+     "difficulty": "较易",
+     "form": "填空",
+     "strategy": "review",
+     "reason": "遗忘复习：「实际问题与反比例函数」距上次练习较久，预计掌握度衰减至 55%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "5c11f43a5e211679": {
+   "student_id": "5c11f43a5e211679",
+   "name": "周露敏",
+   "items": [
+    {
+     "qid": "que-056877f2-0427-4b56-a16a-5bfc7e1f25a2",
+     "stem": "在△ABC中，$\\angle B=30^\\circ$， $AB=2\\sqrt{3}$， $AC=2$，则△ABC的面积是（ ）",
+     "cluster": "解直角三角形及其应用",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「解直角三角形及其应用」掌握度 40%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-10d866dd-81c3-488d-a41f-aec0a16efb92",
+     "stem": "已知圆 ： ， 圆 ： ，则下列说法正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）BC-AB",
+     "cluster": "点和圆、直线和圆的位置关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「点和圆、直线和圆的位置关系」掌握度 43%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0104e790-1b4e-4f6c-849c-412d4295ee43",
+     "stem": "(2)已知全集$U=\\mathbf{R}$，集合$P=\\{x|x^2 \\leqslant 1\\}$，那么$\\complement_U P =$（）。",
+     "cluster": "二次函数与一元二次方程",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「二次函数与一元二次方程」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-3825e56e-7c0b-11f1-a7cc-57b8371d822f",
+     "stem": "若函数$y = A\\sin(\\omega x + \\varphi)(\\omega &gt; 0, \\varphi &gt; 0)$的图像的一个最高点为$(2,\\sqrt{2})$，它到与其相邻的一个最",
+     "cluster": "圆",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「圆」距上次练习较久，预计掌握度衰减至 37%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-3c456c0e-b68d-4b43-8042-56ef301d0c12",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「相似三角形」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "9ae0a38be2e04c3f": {
+   "student_id": "9ae0a38be2e04c3f",
+   "name": "杨静明",
+   "items": [
+    {
+     "qid": "que-41c788f0-419b-4721-8c77-e4d5d24a5bd2",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「相似三角形」掌握度 28%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-4359e900-5523-4af8-9e88-3e864a5fdf87",
+     "stem": "现有一个底面是菱形的直四棱柱，它的体对角线长为9和15，高是5，求该直四棱柱的侧面积、表面积．",
+     "cluster": "投影与视图",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「投影与视图」掌握度 33%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0104e790-1b4e-4f6c-849c-412d4295ee43",
+     "stem": "(2)已知全集$U=\\mathbf{R}$，集合$P=\\{x|x^2 \\leqslant 1\\}$，那么$\\complement_U P =$（）。",
+     "cluster": "二次函数与一元二次方程",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「二次函数与一元二次方程」掌握度 36%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0e90b3f7-4cd4-41bc-82c5-aa384a8256c3",
+     "stem": "在 中，已知 ， ， ，则 （ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "锐角三角函数",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「锐角三角函数」距上次练习较久，预计掌握度衰减至 52%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-7d3c5dbe-d770-4021-a3b5-a9ead4ce5f8f",
+     "stem": "如图所示，某小区内有一扇形绿化带$OPQ$，其半径为2 m，圆心角为$\\frac{\\pi}{3}$.现欲在扇形弧上选择一点$C$将该绿化带分割成两块区域，拟在$\\triangle OPC$区域内种植郁",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "balanced",
+     "reason": "回填题：「相似三角形」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "c72efcc40d071099": {
+   "student_id": "c72efcc40d071099",
+   "name": "杨静明涛",
+   "items": [
+    {
+     "qid": "que-4359e900-5523-4af8-9e88-3e864a5fdf87",
+     "stem": "现有一个底面是菱形的直四棱柱，它的体对角线长为9和15，高是5，求该直四棱柱的侧面积、表面积．",
+     "cluster": "投影与视图",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「投影与视图」掌握度 50%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-80bbd250-5fe7-11f1-a85a-29f51c996ccc",
+     "stem": "下图中，丽丽看到的是（ ）。",
+     "cluster": "三视图",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「三视图」掌握度 53%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-3c456c0e-b68d-4b43-8042-56ef301d0c12",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「相似三角形」掌握度 56%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-1d423d5f-0440-4041-b799-d57efbedbda5",
+     "stem": "如图，△ ABC 中， DE ∥ BC ， DE =1 ， AD =2 ， DB =3 ，则 BC 的长是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb",
+     "cluster": "相似三角形",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「相似三角形」距上次练习较久，预计掌握度衰减至 48%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-0e90b3f7-4cd4-41bc-82c5-aa384a8256c3",
+     "stem": "在 中，已知 ， ， ，则 （ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "锐角三角函数",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「锐角三角函数」距上次练习较久，预计掌握度衰减至 51%",
+     "source_label": "遗忘曲线"
+    }
+   ]
+  },
+  "4bf612415761c26c": {
+   "student_id": "4bf612415761c26c",
+   "name": "高艳",
+   "items": [
+    {
+     "qid": "que-2a068496-8d47-4a51-84c9-07dce17ad56b",
+     "stem": "现有甲、乙、丙、丁、戊 5 种在线教学软件，若某学校要从中随机选取 3 种作为教师“停课不停学”的教学工具，则其中甲、乙、丙至多有 2 种被选取的概率为（ &nbsp;&nbsp;&nbsp;&nbs",
+     "cluster": "用列举法求概率",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「用列举法求概率」掌握度 57%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-7c8d4887-6458-4090-88c0-3bafd5e2274a",
+     "stem": "投壶是从先秦延续至清末的中国传统礼仪和宴饮游戏晋代在广泛开展投壶活动中，对投壶的壶也有所改进，即在壶口两旁增添两耳因此在投壶的花式上就多了许多名目，如 “ 贯耳 ( 投入壶耳 )”. 每一局投壶，每一",
+     "cluster": "用列举法求概率",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「用列举法求概率」距上次练习较久，预计掌握度衰减至 24%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-3825e56e-7c0b-11f1-a7cc-57b8371d822f",
+     "stem": "若函数$y = A\\sin(\\omega x + \\varphi)(\\omega &gt; 0, \\varphi &gt; 0)$的图像的一个最高点为$(2,\\sqrt{2})$，它到与其相邻的一个最",
+     "cluster": "圆",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「圆」距上次练习较久，预计掌握度衰减至 40%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-3c456c0e-b68d-4b43-8042-56ef301d0c12",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「相似三角形」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6867ce3b-44c3-4fec-a4e4-9be3727736b4",
+     "stem": "现实生活中，下列现象不属于平移的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "旋转",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「旋转」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "0e9b007fa8a1b512": {
+   "student_id": "0e9b007fa8a1b512",
+   "name": "张宁",
+   "items": [
+    {
+     "qid": "que-4359e900-5523-4af8-9e88-3e864a5fdf87",
+     "stem": "现有一个底面是菱形的直四棱柱，它的体对角线长为9和15，高是5，求该直四棱柱的侧面积、表面积．",
+     "cluster": "投影与视图",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「投影与视图」掌握度 28%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0f5ab0bd-08d6-4c0e-b0ce-5d7c64952633",
+     "stem": "计算： （I）已知角$a$的顶点在坐标原点，始边与$X$轴的正半轴重合，$(m,1)$，$(n,2)$是角$a$终边上两点，$\\sin a =\\frac{\\sqrt{3}}{3}$，求$|m- n|$",
+     "cluster": "锐角三角函数",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「锐角三角函数」掌握度 37%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-54b69b56-9add-4050-8c2c-71ca2260da82",
+     "stem": "如图为某电火锅加热器的简化电路图，R₁、R₂均为发热电阻，开关S可以在“1”“2”间切换，从而选择不同的加热挡位。当开关S由“1”切换到“2”时，下列说法正确的是（ ）",
+     "cluster": "实际问题与反比例函数",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「实际问题与反比例函数」掌握度 37%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-3825e56e-7c0b-11f1-a7cc-57b8371d822f",
+     "stem": "若函数$y = A\\sin(\\omega x + \\varphi)(\\omega &gt; 0, \\varphi &gt; 0)$的图像的一个最高点为$(2,\\sqrt{2})$，它到与其相邻的一个最",
+     "cluster": "圆",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「圆」距上次练习较久，预计掌握度衰减至 53%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-3c456c0e-b68d-4b43-8042-56ef301d0c12",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「相似三角形」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "2e098976367092a6": {
+   "student_id": "2e098976367092a6",
+   "name": "宋雪",
+   "items": [
+    {
+     "qid": "que-056877f2-0427-4b56-a16a-5bfc7e1f25a2",
+     "stem": "在△ABC中，$\\angle B=30^\\circ$， $AB=2\\sqrt{3}$， $AC=2$，则△ABC的面积是（ ）",
+     "cluster": "解直角三角形及其应用",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（0 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-3c456c0e-b68d-4b43-8042-56ef301d0c12",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（0 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6867ce3b-44c3-4fec-a4e4-9be3727736b4",
+     "stem": "现实生活中，下列现象不属于平移的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "旋转",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（0 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-10d866dd-81c3-488d-a41f-aec0a16efb92",
+     "stem": "已知圆 ： ， 圆 ： ，则下列说法正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）BC-AB",
+     "cluster": "点和圆、直线和圆的位置关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（0 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0104e790-1b4e-4f6c-849c-412d4295ee43",
+     "stem": "(2)已知全集$U=\\mathbf{R}$，集合$P=\\{x|x^2 \\leqslant 1\\}$，那么$\\complement_U P =$（）。",
+     "cluster": "二次函数与一元二次方程",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（0 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-2a068496-8d47-4a51-84c9-07dce17ad56b",
+     "stem": "现有甲、乙、丙、丁、戊 5 种在线教学软件，若某学校要从中随机选取 3 种作为教师“停课不停学”的教学工具，则其中甲、乙、丙至多有 2 种被选取的概率为（ &nbsp;&nbsp;&nbsp;&nbs",
+     "cluster": "用列举法求概率",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（0 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "56a86e4e438f9a00": {
+   "student_id": "56a86e4e438f9a00",
+   "name": "赵帆",
+   "items": [
+    {
+     "qid": "que-056877f2-0427-4b56-a16a-5bfc7e1f25a2",
+     "stem": "在△ABC中，$\\angle B=30^\\circ$， $AB=2\\sqrt{3}$， $AC=2$，则△ABC的面积是（ ）",
+     "cluster": "解直角三角形及其应用",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（5 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-3c456c0e-b68d-4b43-8042-56ef301d0c12",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（5 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6867ce3b-44c3-4fec-a4e4-9be3727736b4",
+     "stem": "现实生活中，下列现象不属于平移的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "旋转",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（5 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-10d866dd-81c3-488d-a41f-aec0a16efb92",
+     "stem": "已知圆 ： ， 圆 ： ，则下列说法正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）BC-AB",
+     "cluster": "点和圆、直线和圆的位置关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（5 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-0104e790-1b4e-4f6c-849c-412d4295ee43",
+     "stem": "(2)已知全集$U=\\mathbf{R}$，集合$P=\\{x|x^2 \\leqslant 1\\}$，那么$\\complement_U P =$（）。",
+     "cluster": "二次函数与一元二次方程",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（5 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-2a068496-8d47-4a51-84c9-07dce17ad56b",
+     "stem": "现有甲、乙、丙、丁、戊 5 种在线教学软件，若某学校要从中随机选取 3 种作为教师“停课不停学”的教学工具，则其中甲、乙、丙至多有 2 种被选取的概率为（ &nbsp;&nbsp;&nbsp;&nbs",
+     "cluster": "用列举法求概率",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "学情数据不足（5 条），按班级高频薄弱考点均衡布置（默认策略）",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "7e3f407fc4dbfc3c": {
+   "student_id": "7e3f407fc4dbfc3c",
+   "name": "朱洋明",
+   "items": [
+    {
+     "qid": "que-381a4a19-f634-4c61-9b36-cd01cd56b46d",
+     "stem": "二次函数 的图象如图所示，则关于 x 的一元二次方程 的根的情况是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "实际问题与二次函数",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「实际问题与二次函数」距上次练习较久，预计掌握度衰减至 45%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-31acaaac12904fcda727ffe086e98cc8",
+     "stem": "我国古代数学家刘徽用“牟合方盖”找到了球体体积 计算方法.“牟合方盖”是由两个圆柱分别从纵横两个方向嵌入一个正方体时两圆柱公共部分形成的几何体. 如图所示的几何体是可以形成“牟合方盖”的一种模型，它的",
+     "cluster": "投影与视图",
+     "difficulty": "适中",
+     "form": "填空",
+     "strategy": "review",
+     "reason": "遗忘复习：「投影与视图」距上次练习较久，预计掌握度衰减至 53%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-002ea68c-4a8a-43fa-bd5a-888754fe7203",
+     "stem": "移动左图中的一个小正方体得到如图所示的几何体．移动前后几何体从三个不同方向看到的形状图不变的是（      ）",
+     "cluster": "三视图",
+     "difficulty": "适中",
+     "form": "选择",
+     "strategy": "challenge",
+     "reason": "「三视图」已掌握（85%），挑战进阶题（选做，可点亮掌握徽章）",
+     "source_label": "掌握徽章",
+     "optional": true
+    },
+    {
+     "qid": "que-3c456c0e-b68d-4b43-8042-56ef301d0c12",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「相似三角形」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6dd0cb49-7dd6-4107-a19c-5cfbbe6ba331",
+     "stem": "填空： (1)将函数$y = \\frac{1}{x}$的图像上所有点的横坐标向右平移2个单位，得到函数____的图像； (2)将函数$y = \\log_2(3x - 1)$的图像上所有点的纵坐标向上平",
+     "cluster": "旋转",
+     "difficulty": "容易",
+     "form": "填空",
+     "strategy": "balanced",
+     "reason": "回填题：「旋转」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-10d866dd-81c3-488d-a41f-aec0a16efb92",
+     "stem": "已知圆 ： ， 圆 ： ，则下列说法正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）BC-AB",
+     "cluster": "点和圆、直线和圆的位置关系",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「点和圆、直线和圆的位置关系」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "ff4318f3a192952b": {
+   "student_id": "ff4318f3a192952b",
+   "name": "徐辉",
+   "items": [
+    {
+     "qid": "que-04685f33-9e36-434e-bba2-cbbadcdef55e",
+     "stem": "若关于 的一元二次方程 中的 ， ， 满足 ，则方程必有根（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "实际问题与一元二次方程",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "weak",
+     "reason": "「实际问题与一元二次方程」掌握度 57%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-4359e900-5523-4af8-9e88-3e864a5fdf87",
+     "stem": "现有一个底面是菱形的直四棱柱，它的体对角线长为9和15，高是5，求该直四棱柱的侧面积、表面积．",
+     "cluster": "投影与视图",
+     "difficulty": "容易",
+     "form": "解答计算",
+     "strategy": "weak",
+     "reason": "「投影与视图」掌握度 57%（待巩固），按难度递进补弱",
+     "source_label": "诊断报告"
+    },
+    {
+     "qid": "que-0532cd78-29f7-477a-aa9f-44fcd4635eac",
+     "stem": "在△ ABC 中， BC ＝ a ， AC ＝ b ，且 a ， b 是方程 的两根， . （ 1 ）求角 的度数； （ 2 ）求 的长 .",
+     "cluster": "实际问题与一元二次方程",
+     "difficulty": "较易",
+     "form": "解答计算",
+     "strategy": "review",
+     "reason": "遗忘复习：「实际问题与一元二次方程」距上次练习较久，预计掌握度衰减至 45%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-41c904c45f6f481fbf6294c190bb48af",
+     "stem": "操作题。 1. 右面各图形分别从哪个面可以看到左面的形状？填一填。 （ ）面 （ ）面 （ ）面 2. 下图中有（ ）个直角三角形。",
+     "cluster": "投影与视图",
+     "difficulty": "适中",
+     "form": "填空",
+     "strategy": "review",
+     "reason": "遗忘复习：「投影与视图」距上次练习较久，预计掌握度衰减至 45%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-3c456c0e-b68d-4b43-8042-56ef301d0c12",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「相似三角形」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  },
+  "f25e04b4e89eecc4": {
+   "student_id": "f25e04b4e89eecc4",
+   "name": "徐辉浩",
+   "items": [
+    {
+     "qid": "que-0eab12cc-04f3-434b-b1fd-885b6e2658d1",
+     "stem": "在平面直角坐标系内，抛物线 与 轴的一个交点是 ，另一交点为 ，则 的长为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "二次函数与一元二次方程",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「二次函数与一元二次方程」距上次练习较久，预计掌握度衰减至 39%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-05421d0e-318e-4810-8168-a7bcbe7f3def",
+     "stem": "若 是关于 x 的方程 的解，则 a 的值为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "一元二次方程",
+     "difficulty": "较易",
+     "form": "选择",
+     "strategy": "review",
+     "reason": "遗忘复习：「一元二次方程」距上次练习较久，预计掌握度衰减至 39%",
+     "source_label": "遗忘曲线"
+    },
+    {
+     "qid": "que-56a73945cb6d49a283392aa3f2df7274",
+     "stem": "如图，$\\triangle ABC$中，$AB=AC$，以$AB$为直径的$\\odot O$交$BC$于点$D$，交$AC$于点$E$，过$D$作$DF\\perp AC$，垂足为$F$。求证：$DF$",
+     "cluster": "点和圆、直线和圆的位置关系",
+     "difficulty": "适中",
+     "form": "证明",
+     "strategy": "variant",
+     "reason": "错题变式：原题（点和圆、直线和圆的位置关系）的「条件增删」变式",
+     "source_label": "错题本"
+    },
+    {
+     "qid": "que-3c456c0e-b68d-4b43-8042-56ef301d0c12",
+     "stem": "将直角三角形三条边的长度都扩大同样的倍数后得到的三角形 ( )",
+     "cluster": "相似三角形",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「相似三角形」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    },
+    {
+     "qid": "que-6867ce3b-44c3-4fec-a4e4-9be3727736b4",
+     "stem": "现实生活中，下列现象不属于平移的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
+     "cluster": "旋转",
+     "difficulty": "容易",
+     "form": "选择",
+     "strategy": "balanced",
+     "reason": "回填题：「旋转」班级高频考点巩固练习",
+     "source_label": "默认策略"
+    }
+   ]
+  }
+ }
+}

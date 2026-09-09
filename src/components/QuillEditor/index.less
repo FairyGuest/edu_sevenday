@@ -1,0 +1,105 @@
+.quill-editor-wrapper {
+  // Snow 主题自带边框，这里微调圆角与项目风格统一
+  .ql-toolbar.ql-snow {
+    border-radius: 6px 6px 0 0;
+    border-color: #d9d9d9;
+
+    // 工具栏悬停及选中态
+    button:hover,
+    button.ql-active,
+    .ql-picker-label:hover,
+    .ql-picker-label.ql-active,
+    .ql-picker-item:hover,
+    .ql-picker-item.ql-selected {
+      color: #6d28d9;
+
+      .ql-stroke {
+        stroke: #6d28d9;
+      }
+
+      .ql-fill {
+        fill: #6d28d9;
+      }
+    }
+  }
+
+  .ql-container.ql-snow {
+    position: relative;
+    border-radius: 0 0 6px 6px;
+    border-color: #d9d9d9;
+    font-size: 14px;
+
+    .ql-editor {
+      position: relative;
+    }
+  }
+
+  // 只读模式：工具栏按钮置灰禁用
+  &.quill-editor-readonly {
+    .ql-toolbar.ql-snow {
+      pointer-events: none;
+
+      .ql-picker-label,
+      .ql-picker-item {
+        color: #999;
+      }
+      .ql-formats {
+        opacity: 0.5;
+      }
+    }
+
+    .ql-formula {
+      cursor: text;
+      &:hover {
+        box-shadow: none;
+      }
+    }
+
+    .ql-editor img.ql-image-selected {
+      outline: none;
+    }
+
+    .ql-image-resize-handle {
+      display: none !important;
+    }
+
+    .ql-container.ql-snow {
+      border-radius: 6px;
+      border-color: #d9d9d9;
+    }
+  }
+
+  // 隐藏工具栏（Quill 内部触发的隐藏）
+  .ql-toolbar.ql-snow.ql-hidden {
+    display: none;
+  }
+
+  // 编辑器内图片样式
+  .ql-editor img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .ql-editor img.ql-image-selected {
+    outline: 2px solid #6d28d9;
+    outline-offset: 1px;
+  }
+
+  .ql-image-resize-handle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #6d28d9;
+    border: 1px solid #fff;
+    cursor: nwse-resize;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+    z-index: 2;
+  }
+
+  // 占位文本颜色
+  .ql-editor.ql-blank::before {
+    color: #bfbfbf;
+    font-style: normal;
+  }
+}

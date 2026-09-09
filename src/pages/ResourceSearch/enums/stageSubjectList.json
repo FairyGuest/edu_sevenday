@@ -1,0 +1,40 @@
+{
+  "stage_subject_list": [
+    {
+      "stage_name": "小学",
+      "subject_list": [
+        { "id": 1, "name": "数学" },
+        { "id": 2, "name": "语文" },
+        { "id": 3, "name": "英语" }
+      ]
+    },
+    {
+      "stage_name": "初中",
+      "subject_list": [
+        { "id": 4, "name": "数学" },
+        { "id": 5, "name": "语文" },
+        { "id": 6, "name": "英语" },
+        { "id": 7, "name": "物理" },
+        { "id": 8, "name": "化学" },
+        { "id": 9, "name": "生物学" },
+        { "id": 10, "name": "道德与法治" },
+        { "id": 11, "name": "历史" },
+        { "id": 12, "name": "地理" }
+      ]
+    },
+    {
+      "stage_name": "高中",
+      "subject_list": [
+        { "id": 13, "name": "数学" },
+        { "id": 14, "name": "语文" },
+        { "id": 15, "name": "英语" },
+        { "id": 16, "name": "物理" },
+        { "id": 17, "name": "化学" },
+        { "id": 18, "name": "生物学" },
+        { "id": 19, "name": "思想政治" },
+        { "id": 20, "name": "历史" },
+        { "id": 21, "name": "地理" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+.markmap-container {
+  width: 100%;
+  height: 600px;
+  min-height: 600px;
+  overflow: auto;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  .mind-map-svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    :global {
+        .markmap-node {
+          cursor: pointer;
+          
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+        
+        .markmap-link {
+          fill: none;
+          stroke: #999;
+          stroke-width: 1.5px;
+        }
+        
+        .markmap-node-circle {
+          fill: #fff;
+          stroke-width: 2px;
+        }
+        
+        .markmap-node-text {
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+          font-size: 14px;
+          fill: #333;
+        }
+      }
+  }
+}

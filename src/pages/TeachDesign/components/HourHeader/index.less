@@ -1,0 +1,60 @@
+.hour-header {
+  height: 60px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  // border-bottom: 1px solid #e2e6f0;
+
+  &-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+  }
+
+  .step {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+
+    &-item {
+      position: relative;
+
+      .ant-btn {
+        padding: 0 8px;
+        font-size: 16px;
+        color: #393e4a;
+
+        &:disabled {
+          color: #cbd2e1;
+        }
+      }
+
+      .ant-btn-variant-text:not(:disabled):hover {
+        color: @primary-color;
+        background: transparent;
+      }
+
+      &-line {
+        position: absolute;
+        top: 15px;
+        inset-inline-start: 100%;
+        display: block;
+        width: 20px;
+        height: 1px;
+        background: #e2e6f0;
+        content: "";
+      }
+    }
+
+    .active {
+      .ant-btn {
+        color: @primary-color;
+        font-weight: 500;
+      }
+    }
+  }
+}

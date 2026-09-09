@@ -1,0 +1,11 @@
+[
+  { "label": "选择题", "value": "multiple_choice" },
+  { "label": "填空题", "value": "fill_blank" },
+  { "label": "判断题", "value": "true_false" },
+  { "label": "计算题", "value": "calculation" },
+  { "label": "解答题", "value": "solution" },
+  { "label": "证明题", "value": "proof" },
+  { "label": "应用题", "value": "application" },
+  { "label": "作图题", "value": "drawing" },
+  { "label": "实验题", "value": "experiment" }
+]

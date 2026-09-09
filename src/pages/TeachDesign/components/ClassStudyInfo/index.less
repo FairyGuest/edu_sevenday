@@ -1,0 +1,66 @@
+.study-info {
+  .title {
+    color: #1f2329;
+    margin-bottom: 8px;
+
+    .required {
+      color: #f00;
+      font-weight: 500;
+    }
+  }
+
+  .type {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    align-self: stretch;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 16px;
+
+    &-item {
+      color: #475069;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: #f2f5fa;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+
+      .tooltip-icon {
+        color: #c3cad9;
+      }
+    }
+
+    .active,
+    .type-item:hover {
+      color: @primary-color;
+      background: #edf4ff;
+      .tooltip-icon {
+        color: #abc9ff;
+      }
+    }
+  }
+}
+
+.class-info {
+  color: #222;
+  border-radius: 8px;
+  background: #f7f9fc;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+  min-height: 100px;
+
+  .title {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .subtitle {
+    font-weight: 500;
+  }
+}

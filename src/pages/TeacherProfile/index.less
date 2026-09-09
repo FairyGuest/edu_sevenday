@@ -1,0 +1,346 @@
+// 直接选择器（不嵌套），确保与 JSX className 完全匹配
+.teacher_profile_card {
+  background: #fff;
+  border: 1px solid #e7edf5;
+  border-radius: 14px;
+  box-shadow: 0 1px 3px rgba(23, 42, 80, 0.04);
+  padding: 18px 20px 16px;
+  margin-bottom: 16px;
+}
+
+.teacher_profile_card_num {
+  font-size: 30px;
+  font-weight: 750;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 4px;
+}
+
+.teacher_profile_card_label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #2a3346;
+  margin-bottom: 2px;
+}
+
+.teacher_profile_card_sub {
+  font-size: 11.5px;
+  color: #9aa4b5;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.teacher_profile_legend_card {
+  padding: 10px 14px !important;
+  background: #fbfcfe !important;
+}
+
+.teacher_profile_chart_title {
+  margin: 0 0 10px;
+  font-size: 13px;
+  font-weight: 650;
+  color: #2a3346;
+  display: flex;
+  align-items: center;
+
+  &::before {
+    content: "";
+    width: 3px;
+    height: 13px;
+    border-radius: 2px;
+    background: linear-gradient(180deg, #4d8dff, #1c6cff);
+    margin-right: 8px;
+  }
+}
+
+/* ===== 筛选卡片 ===== */
+.teacher_profile_filter {
+  margin-bottom: 12px;
+  border: 1px solid #e7edf5 !important;
+  border-radius: 14px !important;
+  box-shadow: 0 1px 3px rgba(23, 42, 80, 0.04);
+
+  .ant-card-body {
+    padding: 12px 16px;
+  }
+
+  .filter-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    min-height: 30px;
+  }
+
+  .filter-spacer {
+    flex: 1;
+  }
+
+  .filter-label {
+    color: #5f6b81;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .filter-select {
+    width: 220px;
+  }
+
+  .filter-updated {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: #f5f8fd;
+    border: 1px solid #e7edf5;
+    color: #8a94a8;
+    font-size: 11.5px;
+
+    .anticon {
+      font-size: 11px;
+      color: #b3bdd0;
+    }
+  }
+
+  .filter-split {
+    height: 1px;
+    margin: 10px 0;
+    background: linear-gradient(90deg, transparent, #e7edf5 12%, #e7edf5 88%, transparent);
+  }
+
+  .filter-source-head {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    .icon {
+      color: #1c6cff;
+      font-size: 13px;
+    }
+    .title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #2a3346;
+    }
+    .hint {
+      color: #9aa4b5;
+      font-size: 11.5px;
+    }
+  }
+
+  .filter-chips {
+    display: flex;
+    gap: 8px;
+    margin-left: 6px;
+  }
+
+  .source-chip {
+    appearance: none;
+    border: 1px solid #dfe5f0;
+    background: #fff;
+    color: #5f6b81;
+    font-size: 12.5px;
+    line-height: 1;
+    padding: 6px 16px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.22s ease;
+
+    &:hover {
+      border-color: #1c6cff;
+      color: #1c6cff;
+    }
+
+    &.on {
+      border-color: transparent;
+      background: linear-gradient(135deg, #4d8dff, #1c6cff);
+      color: #fff;
+      font-weight: 500;
+      box-shadow: 0 3px 8px rgba(28, 108, 255, 0.28);
+    }
+  }
+
+  .filter-actions {
+    display: flex;
+    gap: 8px;
+
+    .ant-btn {
+      border-radius: 8px;
+    }
+  }
+}
+
+/* ===== 指标卡 ===== */
+.stat_card {
+  position: relative;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(23, 42, 80, 0.08);
+  }
+
+  .stat_badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+
+    &.danger {
+      background: #fdeeee;
+      color: #e05d62;
+    }
+    &.blue {
+      background: #edf4ff;
+      color: #1c6cff;
+    }
+    &.cyan {
+      background: #e8f7f4;
+      color: #27a38c;
+    }
+    &.green {
+      background: #e9f7ec;
+      color: #4f9e70;
+    }
+  }
+
+  .stat_trend {
+    font-size: 15px;
+    font-weight: 600;
+    color: #4f9e70;
+    margin-left: 3px;
+  }
+}
+
+.teacher_profile_chart_card {
+  background: #fff;
+  border: 1px solid #e7edf5;
+  border-radius: 14px;
+  box-shadow: 0 1px 3px rgba(23, 42, 80, 0.04);
+  padding: 16px 18px 14px;
+  margin-bottom: 14px;
+}
+
+// 嵌套选择器（容器级样式）
+.teacher_profile_container {
+  padding: 18px 22px 48px;
+
+  &_label {
+    color: #5f6b81;
+    font-size: 13px;
+  }
+
+  &_divider {
+    width: 1px;
+    height: 18px;
+    background: #e7edf5;
+  }
+
+  &_subtext {
+    color: #8a94a8;
+    font-size: 11.5px;
+  }
+
+  &_cards {
+    margin-bottom: 14px;
+  }
+}
+
+// 以下为组件实际使用的类名（平级选择器，勿再嵌套进 container，否则选择器不匹配）
+.teacher_profile_stackbar {
+  display: flex;
+  height: 8px;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #eff3f9;
+  min-width: 110px;
+
+  i {
+    display: block;
+    height: 100%;
+  }
+}
+
+.teacher_profile_legend_dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+}
+
+.teacher_profile_row {
+  cursor: pointer;
+}
+
+.teacher_profile_row_cold {
+  cursor: pointer;
+  color: #8a94a8;
+  background: #fafbfd;
+}
+
+.teacher_profile_kpi_row {
+  margin-bottom: 4px;
+}
+
+.teacher_profile_kpi {
+  background: #f7f9fc;
+  border: 1px solid #e7edf5;
+  border-radius: 10px;
+  padding: 8px 12px;
+
+  small {
+    display: block;
+    color: #8a94a8;
+    font-size: 11px;
+  }
+
+  b {
+    font-size: 20px;
+    font-weight: 700;
+  }
+}
+
+.teacher_profile_cold_tip {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: #fdf6e6;
+  border-radius: 8px;
+  color: #9a6b00;
+  font-size: 12.5px;
+}
+
+// 题干 markdown 容器（学生抽屉/导入弹窗/个性化作业共用）
+.teacher_profile_stem {
+  color: #5f6b81;
+
+  .markdown_container {
+    font-size: 12.5px;
+    color: #5f6b81;
+    line-height: 20px;
+
+    > :first-child { margin-top: 0; }
+    > :last-child { margin-bottom: 0; }
+
+    p { margin: 0 0 3px; }
+    .katex { font-size: 1.02em; }
+  }
+}
+
+// 导入弹窗：选中题目后在选择器下方完整展示题干
+.import_row_stem {
+  margin-top: 5px;
+  padding: 6px 9px;
+  background: #f7f9fc;
+  border: 1px solid #eef1f6;
+  border-radius: 6px;
+}

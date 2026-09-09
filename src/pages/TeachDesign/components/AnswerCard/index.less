@@ -1,0 +1,123 @@
+.answer-card {
+
+  .answer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .answer-content-start {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    color: #1E253B;
+
+    .loading-lottie {
+      width: 38px;
+      height: 44px;
+    }
+  }
+
+  .answer-content-end {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .end-title {
+      font-size: 16px;
+    }
+
+    .end-card {
+      display: flex;
+      justify-content: flex-end;
+      width: 340px;
+      height: 80px;
+      padding: 12px 0 0 12px;
+      border-radius: 8px;
+      position: relative;
+      border: 1px solid #f2f5fa;
+      background: linear-gradient(124deg, #fff 54.04%, #f1f5ff 93.44%), #fff;
+      overflow: hidden;
+
+      &-right {
+        width: 130px;
+        height: 80px;
+        position: absolute;
+        top: 0;
+      }
+
+      &-left {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        width: 220px;
+
+        .title {
+          color: #333c55;
+          font-weight: 500;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+        }
+
+        .desc,
+        .time {
+          color: #646e8b;
+          font-size: 12px;
+          display: flex;
+          align-items: center;
+          margin-left: 18px;
+        }
+
+        .error {
+          color: #EF4444;
+          font-size: 12px;
+          margin-left: 18px;
+          display: flex;
+          align-items: center;
+
+          .ant-btn {
+            color: #1C6CFF;
+            font-size: 12px;
+            padding: 0 8px;
+            height: 24px;
+            gap: 6px;
+          }
+        }
+      }
+
+      &-version {
+        width: 40px;
+        height: 18px;
+        color: #94a0b8;
+        font-size: 12px;
+        font-weight: 700;
+        text-align: center;
+        padding-left: 8px;
+        background: linear-gradient(180deg, #f1f4f9 0%, #dbe2f2 100%);
+        position: absolute;
+        top: 0;
+        right: 0;
+        clip-path: path("M0 0H40V18H19.4C14.8 18 12.5 18 10.7 16.9 8.8 15.8 7.7 13.8 5.4 9.8L0 0Z");
+      }
+    }
+
+    .end-card-active {
+      cursor: pointer;
+      border: 1px solid #e2e6f0;
+      background: linear-gradient(124deg, #fff 54.04%, #f1f5ff 93.44%), #fff;
+      box-shadow: 0 2px 12px 0 rgba(204, 214, 255, 0.30);
+
+      &:hover {
+        transform: translateY(-2px);
+        border: 1px solid @primary-color;
+      }
+
+      .end-card-version {
+        color: #fff;
+        background: linear-gradient(0deg, #4888ff 0%, #c7dbff 100%);
+      }
+    }
+  }
+}

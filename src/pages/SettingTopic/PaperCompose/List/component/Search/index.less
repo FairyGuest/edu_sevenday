@@ -1,0 +1,22 @@
+.paper_compose_search_box {
+  display: grid;
+  grid-template-columns: 280px 320px;
+  gap: 10px;
+
+  .paper_compose_search_box_item {
+    width: 100%;
+
+    .ant-select-selector,
+    .ant-picker,
+    .ant-input-affix-wrapper {
+      border: 1px solid #e2e6f0;
+    }
+
+    .ant-select-selection-placeholder,
+    .ant-picker-input > input::placeholder,
+    .ant-input::placeholder {
+      color: #94a0b8 !important;
+      opacity: 1;
+    }
+  }
+}

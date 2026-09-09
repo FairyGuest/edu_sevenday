@@ -1,0 +1,182 @@
+[
+    {
+        "id": "b257eb70-2467-487b-b9e5-7fe83e51b9f7",
+        "timestamp": "1765138711437792296",
+        "stem": "<p>阅读下列材料，解答(1)～(3)小题。</p><p>明代学者方以智在《阳燧倒影》中记载：&ldquo;凡宝石面凸，则光成一条，有数棱则必有一面五色&rdquo;，表明白光通过多棱晶体折射会发生色散现象。如图所示，一束复色光通过三棱镜后分解成两束单色光<i>a</i>、<i>b</i>。</p><p><img src='https://file.xinjiaoyu.com/prod/question/image/20240812/29112940/image116.png' width='167' height='94' /></p>",
+        "answer": null,
+        "options": null,
+        "quesAudio": null,
+        "quesVideo": null,
+        "stage": "高中",
+        "subject": "物理",
+        "grade": "",
+        "quesType": "单选题",
+        "difficulty": "较易",
+        "year": "2025",
+        "scene": "",
+        "area": "",
+        "kgPoints": [
+            {
+                "id": "1941841e-2321-440a-9542-f7a6c0085865",
+                "code": "S04001300030004",
+                "name": "生活中的圆周运动——竖直"
+            },
+            {
+                "id": "1e2e1d1a-b282-49ae-86bd-2c48836138df",
+                "code": "S040016000200040002",
+                "name": "人船模型问题"
+            },
+            {
+                "id": "24413336-2d07-4fdc-a459-9624634856ca",
+                "code": "S0400120001",
+                "name": "牛顿第一定律"
+            },
+            {
+                "id": "3cf06e50-35f5-4371-88e7-9e3324c1d8d0",
+                "code": "S040027000100010006",
+                "name": "折射定律的应用"
+            },
+            {
+                "id": "8e3f1a74-4f60-49b8-88fe-36d8b1a6488c",
+                "code": "S040027000100010005",
+                "name": "折射率"
+            },
+            {
+                "id": "f78aba68-c5a9-423d-ae51-859f1f63c455",
+                "code": "S040027000100010005",
+                "name": "折射率"
+            },
+            {
+                "id": "51640394-9eb7-4a9f-9135-f08d29ba4b46",
+                "code": "S040014000200020006",
+                "name": "天体质量的计算"
+            }
+        ],
+        "chapters": [
+            {
+                "id": "14b53b3d-dd99-4848-b902-2912d79c6b0b",
+                "code": "S040573",
+                "name": "第四章 光"
+            },
+            {
+                "id": "1e3da2f1-9be8-4c0a-8f54-52fcf36652f1",
+                "code": "S04051400060004",
+                "name": "饱和汽与饱和汽压的定义"
+            },
+            {
+                "id": "1e6edf82-d190-4160-94a8-7904ee712f27",
+                "code": "S04056000030015",
+                "name": "磁通量的概念"
+            },
+            {
+                "id": "1f4e57f1-fd2f-4480-a43e-fbb6b0731654",
+                "code": "S04057800030002",
+                "name": "力传感器的应用-电子秤"
+            },
+            {
+                "id": "227859eb-5224-4b4a-b92d-1b07b16cb3ae",
+                "code": "S0406330006",
+                "name": "5.光的折射"
+            },
+            {
+                "id": "4d9e54a7-dde1-4a86-a946-e34c440bd34c",
+                "code": "S04056900060003",
+                "name": "弹性碰撞的实例分析"
+            }
+        ],
+        "createTime": "2024-08-12T09:25:03",
+        "updateTime": "2024-08-12T09:25:03",
+        "hasChild": true,
+        "childrenCount": 3,
+        "children": [
+            {
+                "id": "002d06dc-5b92-4aff-8371-d86a8357cfec",
+                "timestamp": "1765138711437792297",
+                "stem": "<p>如果光束<i>a</i>是蓝光，则光束<i>b</i>可能(　　)</p>",
+                "answer": [
+                    "紫光"
+                ],
+                "options": [
+                    "红光",
+                    "黄光",
+                    "绿光",
+                    "紫光"
+                ],
+                "quesAudio": null,
+                "quesVideo": null,
+                "stage": "高中",
+                "subject": "物理",
+                "grade": "",
+                "quesType": "单选题",
+                "difficulty": "容易",
+                "year": "2025",
+                "scene": "",
+                "area": "",
+                "createTime": "2024-08-12T09:25:03",
+                "updateTime": "2024-08-12T15:07:46",
+                "hasChild": false,
+                "childrenCount": 0,
+                "parentId": "b257eb70-2467-487b-b9e5-7fe83e51b9f7"
+            },
+            {
+                "id": "55d526bb-26ad-4510-910f-bcb2a62a47b8",
+                "timestamp": "1765138711437792298",
+                "stem": "<p>已知入射角<i>i</i>＝60&deg;，<i>b</i>光在三棱镜中的折射角<i>r</i>＝45&deg;，该三棱镜对<i>b</i>光的折射率为(　　)</p>",
+                "answer": [
+                    "<img src='https://file.xinjiaoyu.com/prod/question/image/20240812/29112943/image117.png' width='20' height='33' />"
+                ],
+                "options": [
+                    "<img src='https://file.xinjiaoyu.com/prod/question/image/20240812/29113009/image52.png' width='9' height='29' />",
+                    "<img src='https://file.xinjiaoyu.com/prod/question/image/20240812/29113029/image67.png' width='9' height='29' />",
+                    "<img src='https://file.xinjiaoyu.com/prod/question/image/20240812/29112943/image117.png' width='20' height='33' />",
+                    "<img src='https://file.xinjiaoyu.com/prod/question/image/20240812/29112944/image118.png' width='20' height='33' />"
+                ],
+                "quesAudio": null,
+                "quesVideo": null,
+                "stage": "高中",
+                "subject": "物理",
+                "grade": "",
+                "quesType": "单选题",
+                "difficulty": "较易",
+                "year": "2025",
+                "scene": "",
+                "area": "",
+                "createTime": "2024-08-12T09:25:03",
+                "updateTime": "2024-08-12T15:07:49",
+                "hasChild": false,
+                "childrenCount": 0,
+                "parentId": "b257eb70-2467-487b-b9e5-7fe83e51b9f7"
+            },
+            {
+                "id": "812d6590-d041-4d3a-8769-543580531962",
+                "timestamp": "1765138711437792299",
+                "stem": "<p>某同学分别用<i>a</i>光和<i>b</i>光进行双缝干涉实验，实验装置完全相同。其中如图为<i>b</i>光的干涉条纹，则下图所示的条纹中可能是<i>a</i>光的干涉条纹的是(　　)</p><p><img src='https://file.xinjiaoyu.com/prod/question/image/20240812/29112946/image120.png' width='106' height='86' /></p>",
+                "answer": [
+                    "<img src='https://file.xinjiaoyu.com/prod/question/image/20240812/29112947/image121.png' width='132' height='98' />"
+                ],
+                "options": [
+                    "<img src='https://file.xinjiaoyu.com/prod/question/image/20240812/29112947/image121.png' width='132' height='98' />",
+                    "<img src='https://file.xinjiaoyu.com/prod/question/image/20240812/29112948/image122.png' width='117' height='97' />",
+                    "<img src='https://file.xinjiaoyu.com/prod/question/image/20240812/29112949/image123.png' width='121' height='114' />",
+                    "<img src='https://file.xinjiaoyu.com/prod/question/image/20240812/29112951/image124.png' width='120' height='114' />"
+                ],
+                "quesAudio": null,
+                "quesVideo": null,
+                "stage": "高中",
+                "subject": "物理",
+                "grade": "",
+                "quesType": "单选题",
+                "difficulty": "较易",
+                "year": "2025",
+                "scene": "",
+                "area": "",
+                "createTime": "2024-08-12T09:25:03",
+                "updateTime": "2024-08-12T15:07:53",
+                "hasChild": false,
+                "childrenCount": 0,
+                "parentId": "b257eb70-2467-487b-b9e5-7fe83e51b9f7"
+            }
+        ],
+        "is_favorite": false
+    }
+]

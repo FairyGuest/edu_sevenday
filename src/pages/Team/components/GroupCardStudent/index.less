@@ -1,0 +1,171 @@
+  .group_page_card {
+    border: 1px solid #E2E6F0;
+    border-radius: 12px;
+    height: 160px;
+    // &:hover {
+    //   border: 1px solid #1C6CFF;
+    // }
+
+    .ant-card-body {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .team_page_cardTitle {
+      color: #020617;
+      font-family: "PingFang SC";
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      line-height: 34px;
+      display: flex;
+      justify-content: space-between;
+
+      .team_page_card_icon_box {
+        color: #020617;
+        font-family: "PingFang SC";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        line-height: 34px;
+      }
+
+      .team_page_card_edit {
+        display: inline-block;
+        margin-right: 16px;
+        cursor: pointer
+      }
+
+      .team_page_card_del {
+        cursor: pointer
+      }
+
+      .team_page_cardTitle_box {
+        white-space: nowrap;
+        word-break: normal;
+        word-wrap: normal;
+        width: 80%;
+        /* 设置容器宽度 */
+        overflow: hidden;
+        /* 超出部分隐藏 */
+        text-overflow: ellipsis;
+        /* 超出部分显示省略号 */
+        display: -webkit-box;
+        -webkit-line-clamp: 1 !important;
+        /* 限制显示1行 */
+        -webkit-box-orient: vertical;
+      }
+    }
+
+    .team_page_cardInfo {
+      margin: 8px 0;
+      color: #646E8B;
+      font-family: "PingFang SC";
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      min-height: 41px;
+      flex: 1;
+      width: 100%;
+      /* 设置容器宽度 */
+      overflow: hidden;
+      /* 超出部分隐藏 */
+      text-overflow: ellipsis;
+      /* 超出部分显示省略号 */
+      display: -webkit-box;
+      -webkit-line-clamp: 2 !important;
+      /* 限制显示2行 */
+      -webkit-box-orient: vertical;
+    }
+
+    .team_page_cardFoot {
+      height: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #646E8B;
+      text-align: center;
+      font-family: "PingFang SC";
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+
+      span {
+        cursor: pointer
+      }
+    }
+
+    .team_page_cardBtn {
+      height: 32px;
+      padding: 0 12px;
+      font-weight: 500;
+      color: #1E253B;
+      border: 1px solid #E2E6F0;
+      border-radius: 8px;
+
+      &:hover {
+        color: #444CE7;
+        border-color: #E2E6F0;
+
+        .anticon {
+          color: #444CE7;
+        }
+
+        svg {
+          stroke: #444CE7 !important;
+        }
+      }
+
+      .anticon {
+        font-size: 16px;
+        color: #1E253B;
+
+        svg {
+          stroke: #1E253B;
+        }
+      }
+    }
+  }
+
+  .group_pagination_box {
+    padding-top: 24px;
+    text-align: right;
+
+    .ant-pagination {
+      display: inline-block;
+    }
+  }
+
+  .class_group_box {
+    max-height: calc(100vh - 274px);
+    overflow: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 395px);
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .class_group_empty_box {
+    height: calc(100vh - 274px);
+
+    .class_group_empty_kong {
+      transform: translateX(4px);
+    }
+  }
+
+  .group_card_student {
+    position: relative;
+    padding-top: 16px;
+  }
+
+  .group_card_student_add {
+    position: absolute;
+    right: 0;
+    top: -32px;
+  }

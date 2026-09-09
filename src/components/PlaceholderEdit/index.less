@@ -1,0 +1,61 @@
+.placeholder_edit_container {
+  .placeholder_title_continer {
+    display: flex;
+    // justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    .place_label {
+      margin-right: 10px;
+      color: rgba(0, 0, 0, 0.85);
+      font-weight: bold;
+      font-size: 14px;
+    }
+  }
+
+  .placeholder_custom_textarea_container {
+    position: relative;
+    .btn-insert {
+      position: absolute;
+      top: 5px;
+      right: 0px;
+      font-size: 12px;
+    }
+    .btn-delete {
+      position: absolute;
+      right: 15px;
+      bottom: 10px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .constent_edit {
+      min-height: 66px;
+      margin-bottom: 16px;
+      padding: 8px 75px 8px 8px;
+      // margin-top: 16px;
+      padding-bottom: 40px;
+      word-break: break-all;
+      background: #f9fafd;
+      border-radius: 8px;
+    }
+
+    // .edit_text{
+    //   margin: 0px 1px;
+    // }
+
+    .constent_edit:focus-visible {
+      outline: none;
+      outline-width: 0;
+    }
+
+    .constent_edit:empty::before {
+      color: #bfbfbf;
+      content: attr(placeholder);
+    }
+  }
+
+  .custom_textarea_container:focus-visible {
+    outline: none;
+    outline-width: 0;
+  }
+}

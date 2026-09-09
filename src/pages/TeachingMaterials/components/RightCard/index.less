@@ -1,0 +1,268 @@
+.teaching_materials_right {
+
+  .design_outline_header_container_box {
+    background-color: #fff;
+    border: 1px solid #E2E6F0;
+    position: relative;
+    margin: 16px;
+    margin-left: 0px;
+    // position: relative;
+    border-radius: 8px;
+    height: calc(100vh - 60px);
+
+    .design_right_card_container_box_content {
+      // position: absolute;
+      // top: 42%;
+      // font-size: 20px;
+      // left: 0;
+      // right: 0;
+      // // margin: auto;
+      // text-align: center;
+      
+    }
+    .loadding_bg{
+      background: #F7F9FC;
+    }
+
+    .design_right_card_container_box_title {
+      border-bottom: 1px solid #E2E6F0;
+      padding-left: 16px;
+      padding-right: 16px;
+      height: 44px;
+
+      .design_right_card_container_box_title_content {
+        font-size: 14px;
+        font-weight: 400;
+        color: #646E8B;
+      }
+      .tab{
+        background-color: #F2F5FA;
+        border-radius: 100px;
+        box-shadow: 0px 0px 4px 0px #00000005;
+        padding:3px 3px;
+        gap:2px;
+      }
+      .tabItem{
+        padding: 4px 16px;
+        color: #475069;
+        font-size: 14px;
+        
+      }
+      .tabItemActive,.tabItemHover:hover{
+        background:#FFFFFF;
+          color:#1C6CFF;
+          font-weight: 500;
+          border-radius: 100px;
+      }
+      .tabItemDisabled{
+        color: #4750694D;
+        cursor: not-allowed;
+      }
+      .publishBtn{
+        border: 1px solid #A8C8FF;
+        padding-left: 12px;
+        padding-right: 12px;
+        color:#1C6CFF;
+        height: 28px;
+        border-radius: 25px;
+        gap:4px;
+      }
+
+      .action_container {
+        float: right;
+      }
+    }
+
+    .design_right_card_container {
+      background-color: #fff;
+      overflow: auto;
+      padding-left: 8px;
+      padding-bottom: 24px;
+      height: calc(100vh - 0px);
+      overflow: scroll;
+    }
+
+    .design_outline_header_container {
+      display: flex;
+      justify-content: end;
+      // background-color: #fff;
+      // padding-bottom: 8px;
+      // border-bottom: 1px solid #f2f5fa;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      // padding: 4px 16px;
+      // right: 20px;
+      // top: 80px;
+      // position: fixed;
+      // z-index: 100;
+
+      h3 {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      .action_btn {
+        margin-right: 4px;
+        margin-left: 4px;
+      }
+
+      .header-box {
+        // border: 1px solid #e2e6f0;
+        // padding: 8px;
+        padding-right: 0;
+        // border-radius: 25px;
+        // background-color: #fff;
+        margin-top: 8px;
+
+        .active-button {
+          background-color: @primary-color !important;
+          border-color: @primary-color;
+          color: white !important;
+          font-weight: bold;
+        }
+
+        .ant-btn {
+          height: 28px;
+          border-radius: 25px;
+          background-color: #f2f5fa;
+          color: #646e8b;
+          border: none;
+          margin-right: 8px;
+          font-size: 14px;
+
+          &:hover {
+            color: @primary-color;
+            background-color: #f0f5ff;
+            border: none;
+          }
+        }
+
+        .active_button_css {
+          color: #1C6CFF;
+          background-color: #F7F5FF;
+        }
+      }
+    }
+
+
+    .skeleton_box {
+      margin-top: 70px;
+      text-align: center;
+    }
+  }
+
+  .ppt-preview-modal {
+    .ant-modal-content {
+      background-color: transparent;
+      box-shadow: none;
+      padding: 0;
+    }
+
+    .close {
+      position: absolute;
+      right: 0;
+      top: -48px;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      z-index: 1001;
+
+      &:hover {
+        border-radius: 8px;
+        background: hsla(0, 0%, 100%, 0.12);
+      }
+    }
+  }
+
+  .iframe_box_css {
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow-x: hidden;
+    width: 100%;
+    height: calc(100% - 62px);
+    display: flex;
+    flex-direction: column;
+    // gap: 16px;
+
+    .spin_box {
+      text-align: center;
+      padding-bottom: 18px;
+    }
+  }
+  .iframe_box_css>div:last-child{
+    padding-bottom: 10px !important;
+    margin-bottom: 10px;
+  }
+
+   .create_ppt_btn_css{
+    border: 1px solid #1C6CFF !important;
+    color: #1C6CFF !important;
+    background-color: #fff !important;
+    border-radius: 8px;
+    font-size: 14px !important;
+    height: 28px !important;
+    padding: 4px 12px;
+    gap: 4px;
+   }
+   .create_ppt_btn_css:hover{
+    background: #1C6CFF !important;
+    color: #fff !important;
+   }
+}
+
+.markdown-prose :where(blockquote):not(:where([class~=not-prose],[class~=not-prose] *)) {
+  margin-block: calc(var(--spacing, .25rem) * 0);
+  --tw-border-style: none;
+  padding-left: calc(var(--spacing, .25rem) * 1);
+  --tw-font-weight: var(--font-weight-normal, 400);
+  font-weight: var(--font-weight-normal, 400);
+  border-style: none;
+  color: #00000080;
+  border-inline-start-color: #e8e9eb;
+}
+.markdown-prose :where(ol):not(:where([class~=not-prose],[class~=not-prose] *)), .markdown-prose :where(ul):not(:where([class~=not-prose],[class~=not-prose] *)), .markdown-prose :where(li):not(:where([class~=not-prose],[class~=not-prose] *)) {
+  margin-block: calc(var(--spacing, .25rem) * 3);
+}
+.markdown-prose  :where(ol):not(:where([class~=not-prose],[class~=not-prose] *)){
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+  -webkit-padding-start: 1.625em;
+  padding-inline-start: 1.625em;
+  list-style-type: decimal;
+}
+.markdown-prose :where(p):not(:where([class~=not-prose],[class~=not-prose] *)) {
+  margin-block: calc(var(--spacing, .25rem) * 3);
+}
+
+.markdown-prose :where(p):not(:where([class~=not-prose],[class~=not-prose] *)) {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+.markdown-prose :where(ul):not(:where([class~=not-prose],[class~=not-prose] *)) {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+  -webkit-padding-start: 1.625em !important;
+  padding-inline-start: 1.625em !important;
+  list-style-type: disc;
+}
+.markdown-prose :where(ol):not(:where([class~=not-prose],[class~=not-prose] *)), .markdown-prose :where(ul):not(:where([class~=not-prose],[class~=not-prose] *)), .markdown-prose :where(li):not(:where([class~=not-prose],[class~=not-prose] *)) {
+  margin-block: calc(var(--spacing, .25rem) * 3);
+}
+
+.markdown-prose :where(ul ul,ul ol,ol ul,ol ol):not(:where([class~=not-prose],[class~=not-prose] *)) {
+  margin-top: .75em;
+  margin-bottom: .75em;
+}  
+.markdown-prose{
+  p{
+    margin-block: calc(var(--spacing, .25rem) * 3);
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+  }
+}

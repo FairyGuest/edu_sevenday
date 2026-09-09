@@ -1,0 +1,176 @@
+.set_topic_chat_text_area_drawer_box_less_top {
+
+  // .ant-input-number-group-addon{
+  //   border: 1px solid #E2E6F0;
+  //   background-color: #fff;
+  // }
+  // .ant-input-number-outlined {
+  //   border: 1px solid #E2E6F0;
+  //   border-left:  none;
+  // }
+  // position: absolute;
+  // top: -37px;
+  // width: 100%;
+
+  .chat_text_area_drawer_box {
+    // transform: translateY(20px);
+    // background-color: #F0F5FF;
+
+    border-radius: 8px;
+    // border: 1px solid #E6E9F0;
+    padding-bottom: 20px;
+
+    .chat_text_area_drawer_box_top {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px;
+      cursor: pointer;
+
+      .chat_text_area_drawer_box_top_font {
+        color: #1C6CFF;
+
+        span {
+          display: inline-block;
+          margin-right: 2px;
+          color: #1C6CFF;
+          transform: translateY(-1px);
+        }
+      }
+    }
+
+    .chat_text_area_drawer_box_content {
+      width: 100%;
+      background-color: #fff;
+      // padding: 8px;
+      padding-bottom: "4px";
+      padding-top: "4px";
+      border-top-right-radius: 8px;
+      border-top-left-radius: 8px;
+      font-size: 12px;
+      color: #646E8B;
+      padding-bottom: 8px;
+
+      .chat_text_area_drawer_box_content_middle {
+        margin-top: 16px;
+        font-size: 12px;
+        color: #646E8B;
+      }
+
+      .chat_text_area_drawer_box_content_bottom {
+        .pdf_box {
+          width: 100%;
+          background-color: #F7F9FC;
+          display: flex;
+          justify-content: space-between;
+          border-radius: 8px;
+          padding: 8px;
+          margin: 8px 0;
+
+          .pdf_box_left {
+            display: flex;
+            justify-content: space-between;
+
+            .pdf_box_left_img {
+              vertical-align: middle;
+              height: 24px;
+              width: 24px;
+              // border: 1px solid red;
+              // transform: translateY(10px);
+            }
+
+            .pdf_box_left_center {
+              margin-left: 16px;
+              vertical-align: middle;
+
+              .pdf_box_left_center_top {}
+            }
+          }
+
+        }
+      }
+    }
+
+    .question_set_new_box_less {
+      padding: 8px;
+      // background-color: #F7F9FC;
+      border-radius: 8px;
+      // margin-bottom: 8px;
+      padding-bottom: 16px;
+      padding-left: 0;
+      // padding-top: 16px;
+
+
+
+      .question_set_new_box_top {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 3px;
+
+        .question_set_new_box_top_left {
+          color: var(---9-, #1E253B);
+          font-family: "PingFang SC";
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 18px;
+          /* 128.571% */
+          text-transform: capitalize;
+        }
+
+        .question_set_new_box_top_left_right {
+          display: inline-block;
+          margin-left: 8px;
+          // color: #646E8B;
+          color: var(---6-icon, #646E8B);
+          font-family: "PingFang SC";
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 18px;
+          /* 128.571% */
+          text-transform: capitalize;
+        }
+
+        .question_set_new_box_top_right {
+          color: #1c6cff;
+          cursor: pointer;
+
+          &:hover {
+            color: #3d82ff;
+          }
+        }
+
+        .question_set_new_box_top_right_less {
+          color: #94b4ff;
+          cursor: pointer;
+        }
+      }
+
+      .question_set_new_box_bottom {
+        margin: 8px 0;
+        display: grid;
+        grid-template-columns: repeat(5, 19%);
+        /* 三列，每列等宽 */
+        gap: 10px;
+        /* 可选：设置间距 */
+
+
+        .question_set_new_box_bottom_css_input_num {
+          margin-right: 16px;
+          width: 100% !important;
+          border: none !important;
+          background: #F2F5FA !important;
+
+          // &:focus {
+          //   box-shadow: none !important;
+          // }
+
+          // max-width: 149px;
+          .ant-input-number-handler {
+            background: #F2F5FA !important;
+          }
+        }
+      }
+    }
+  }
+}
