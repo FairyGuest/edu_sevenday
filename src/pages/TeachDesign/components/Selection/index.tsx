@@ -29,6 +29,7 @@ const Selection = (props: any) => {
     gradeDocId,
     chapterInfo,
     expandedKeys,
+    injectClassId,
   } = props.teachDesginModel
 
   const dispatch = useDispatch();
@@ -72,6 +73,7 @@ const Selection = (props: any) => {
         form.setFieldsValue({ stage: [stageName, subjectName], subject: ["人教版", volume] });
         setDvaVal({
           gradeDocId: { doc_id: "doc-pep-g8b", grade: volume.replace("下册", ""), volume: "下册" },
+          injectClassId: cls.class_id,
         });
         // 与手动选择保持一致的联动
         getSubject();
@@ -122,6 +124,8 @@ const Selection = (props: any) => {
       return {
         ...chapterInfo,
         ...gradeDocId,
+        // 学情注入的班级：布置作业等后续动作按此班级下发
+        class_id: injectClassId || "",
         study_info: classInfo,
         studies_degree: classInfo?.studies_degree || "",
         motivation_habit: classInfo?.motivation_habit || "",

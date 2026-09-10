@@ -33,7 +33,7 @@ export function recordPlanHomework(rec: any) {
     }));
   homeworkStore[rec.homework_id] = {
     homework_id: rec.homework_id,
-    class_id: rec.class_id || "cls-g8-03",
+    class_id: rec.class_id,
     mode: rec.mode || "plan",
     title: rec.title,
     status: "published",
@@ -435,6 +435,9 @@ export default {
   // 教案/章节布置的作业（入库到作业记录，作业下发可查看）
   "POST /api/teacher/teaching/assign-homework": (req: any, res: any) => {
     const { chapter, class_id, from } = req.body || {};
+    if (!class_id) {
+      return res.json({ code: 400, msg: "缺少发布班级：请从学情分析注入班级后布置，或选择班级", data: null });
+    }
     const now = new Date().toISOString().replace("T", " ").slice(0, 19);
     if (from === "plan") {
       const rec = {
