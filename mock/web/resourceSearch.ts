@@ -10,6 +10,20 @@
  */
 import * as fs from "fs";
 import * as path from "path";
+import { tagQuestion } from "../teacher/questionTags";
+
+/** 多维过滤（C1）：question_type/difficulties/scene/province/ability/literacy */
+function applyTagFilters(list: any[], b: any) {
+  let out = list.map(tagQuestion);
+  const inArr = (v: any) => Array.isArray(v) && v.filter(Boolean).length > 0;
+  if (inArr(b.question_type)) out = out.filter(q => b.question_type.includes(q.form));
+  if (inArr(b.difficulties)) out = out.filter(q => b.difficulties.includes(q.difficulty_zh || q.difficulty));
+  if (inArr(b.scene)) out = out.filter(q => b.scene.includes(q.scene));
+  if (inArr(b.province)) out = out.filter(q => b.province.includes(q.region));
+  if (inArr(b.ability)) out = out.filter(q => b.ability.includes(q.ability));
+  if (inArr(b.literacy)) out = out.filter(q => b.literacy.includes(q.literacy));
+  return out;
+}
 
 const D = path.join(__dirname, "..", "data");
 const read = (f: string): any => JSON.parse(fs.readFileSync(path.join(D, f), "utf-8"));
@@ -59,12 +73,15 @@ export default {
 
   // 个人题库试题分页
   "POST /api/web/personalQuestion/findPersonalQuestionPage": (req: any, res: any) => {
-    res.json({ code: 200, msg: "ok", data: paginate(personalQuestions, req.body) });
+    res.json({ code: 200, msg: "ok", data: paginate(applyTagFilters(personalQuestions, req.body), req.body) });
   },
 
   // 公共题库试题分页
   "POST /api/web/publicQuestion/findPublicQuestionPage": (req: any, res: any) => {
-    res.json({ code: 200, msg: "ok", data: paginate(publicQuestions, req.body) });
+    const kw = String(req.body?.keyword || "").trim();
+    const pool = applyTagFilters(publicQuestions, req.body);
+    const filtered = kw ? pool.filter(q => q.stem.includes(kw)) : pool;
+    res.json({ code: 200, msg: "ok", data: paginate(filtered, req.body) });
   },
 
   // 相似题

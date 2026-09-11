@@ -200,6 +200,27 @@ const StudyRight = (props: any) => {
     },
     { manual: true }, // 手动触发
   );
+  // D3 学案下发：统一推送全班（消息中心定时推送），学生按分层任务自主选做
+  const issueStudyPlan = async () => {
+    try {
+      const res = await fetch("/api/teacher/teaching/plans", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chapter: itemData?.title || planParams?.title || "",
+          class_id: planParams?.class_id || "",
+        }),
+      });
+      const d = await res.json();
+      if (d.code === 200) {
+        message.success(`学案已下发（${d.data.targets} · ${d.data.issued_at}），学生将在消息中心收到`);
+      } else {
+        message.error(d.msg || "下发失败");
+      }
+    } catch {
+      message.error("下发失败，请重试");
+    }
+  };
+
   // 下载按钮点击事件
   const onDownloadClick = async (e: any) => {
     let type = e.key === "pdf" ? "pdf" : "word";
@@ -318,6 +339,15 @@ const StudyRight = (props: any) => {
               >
                 保存
               </Button> */}
+              <Button
+                type="primary"
+                size="small"
+                disabled={studyPlanLoading || !teachPlanContent}
+                onClick={issueStudyPlan}
+              >
+                学案下发
+              </Button>
+
               <Dropdown
                 disabled={studyPlanLoading}
                 menu={{

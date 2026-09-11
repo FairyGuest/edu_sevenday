@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { Tabs } from "antd";
 import List from "./List";
-import PersonalizedSection from "./components/PersonalizedSection";
+import ReuseAssign from "./components/ReuseAssign";
 
 /**
- * 作业布置（F4+F3 合并版）：
- * - 统一布置（存量 List 组件）
- * - 个性化布置（F3 PersonalizedSection：四方针引擎/逐生组卷/发布锁定/KP报告）
+ * 作业下发（E1/E2 后的定位）：
+ * - 统一布置：存量 List
+ * - 跨班复用：其他班级生成的作业一键下发到本班（个性化按本班学情重算）
+ * 注：个性化组卷入口已前移至「作业组卷」（先组卷 → 组完即下发）
  */
 const SettingTopic = () => {
   const [tab, setTab] = useState("normal");
@@ -23,7 +24,7 @@ const SettingTopic = () => {
     <div style={{ padding: "12px 16px" }}>
       <Tabs activeKey={tab} onChange={setTab} items={[
         { key: "normal", label: "📝 统一布置", children: <List /> },
-        { key: "personalized", label: "🎯 个性化布置（每人一单）", children: <PersonalizedSection classes={classes} /> },
+        { key: "reuse", label: "🔁 跨班复用下发", children: <ReuseAssign classes={classes} /> },
       ]} />
     </div>
   );

@@ -5,11 +5,12 @@
  */
 import * as fs from "fs";
 import * as path from "path";
+import { computeDimensions, clusterLevel, applyTimeWindow, applyDateRange, TimeRange } from "./dimensions";
 
 const D = path.join(__dirname, "data");
 const read = (f: string): any => JSON.parse(fs.readFileSync(path.join(D, f), "utf-8"));
 const BANDS = ["待巩固", "练习中", "较熟练", "已掌握"];
-const ALL_SOURCES = ["作业", "会话", "自主练习", "导入"];
+const ALL_SOURCES = ["作业记录", "历史会话", "自主练习", "考试记录"];
 
 /** 按勾选来源合并班级画像（重算 band 分布/趋势/来源构成/学生状态） */
 function mergeProfile(prof: any, studentsFile: any[], sources: string[]) {
@@ -87,16 +88,53 @@ export default {
   "GET /api/teacher/profile/class": (req: any, res: any) => {
     const classId = req.query.class_id || classesData()[0].class_id;
     const sources: string[] = req.query.sources ? String(req.query.sources).split(",") : [];
-    const prof = read(`class-profile-${classId}.json`);
+    const timeRange: TimeRange = req.query.time_range === "week" ? "week" : "month";
+    let prof = read(`class-profile-${classId}.json`);
     const studentsFile = read(`class-students-${classId}.json`);
-    res.json({ code: 200, msg: "ok", data: mergeProfile(prof, studentsFile, sources) });
+    const merged = mergeProfile(prof, studentsFile, sources);
+    // 自定义起止日期优先；否则按周/月预设
+    prof = (req.query.start_date && req.query.end_date)
+      ? applyDateRange(merged, String(req.query.start_date), String(req.query.end_date), String(classId))
+      : applyTimeWindow(merged, timeRange, String(classId));
+    // A2：知识点挂课标能力等级；A4：样本题数（<3 题=证据不足口径，确定性生成）
+    const hsh = (str: string) => { let h = 7; for (const ch of str) h = (h * 31 + ch.charCodeAt(0)) % 997; return h; };
+    prof.cluster_rows = (prof.cluster_rows || []).map((r: any) => ({
+      ...r,
+      level: clusterLevel(r.cluster),
+      n_sample: r.weak_pct >= 25 ? 4 + (hsh(r.cluster) % 5) : 1 + (hsh(r.cluster) % 3), // 薄弱簇样本更足；少数簇不足3题
+    }));
+    // A1：能力/素养多维块（按簇掌握度合成班级 cells，n=覆盖人数）
+    const classCells = (prof.cluster_rows || []).map((r: any) => ({
+      cluster: r.cluster,
+      p: Math.max(20, Math.min(98, Math.round(100 - (r.weak_pct || 0) * 2))),
+      n: r.n_students || 3,
+    }));
+    prof.dimensions = computeDimensions(classCells);
+    // A1+图谱：知识点掌握网络（层=章内序号；边=同章相邻+素养同源关联）
+    prof.kgraph = buildKnowledgeGraph(prof.cluster_rows || []);
+    res.json({ code: 200, msg: "ok", data: prof });
   },
 
   "GET /api/teacher/profile/student": (req: any, res: any) => {
     const { class_id: cid, student_id: sid } = req.query;
     const one = read(`class-students-${cid}.json`).find((s: any) => s.student_id === sid);
     if (!one) return res.json({ code: 404, msg: "学生不存在", data: null });
-    res.json({ code: 200, msg: "ok", data: one });
+    // A1/A2：个人画像扩展能力/素养维度（cells 已含样本量门槛字段 n）
+    const dims = computeDimensions(one.cells || []);
+    // 个人知识点图谱：cells 即节点（p 掌握度着色，n=作答题量），关联沿用班级结构
+    const prof = read(`class-profile-${cid}.json`);
+    const personalGraph = buildKnowledgeGraph(
+      (one.cells || []).map((c: any) => ({ ...c, weak_pct: 100 - 2 * c.p, n_students: c.n, chapter: null })),
+    );
+    const levels = (one.cells || []).filter((c: any) => c.n >= 3).map((c: any) => ({
+      cluster: c.cluster, level: clusterLevel(c.cluster), p: c.p,
+    }));
+    res.json({ code: 200, msg: "ok", data: { ...one, dimensions: dims, levels, kgraph: personalGraph } });
+  },
+
+  "GET /api/teacher/interactions": (req: any, res: any) => {
+    const classId = req.query.class_id || classesData()[0].class_id;
+    res.json({ code: 200, msg: "ok", data: interactionRecords(String(classId)) });
   },
 
   "GET /api/teacher/profile/student/evidence": (req: any, res: any) => {
@@ -111,3 +149,69 @@ export default {
     res.json({ code: 200, msg: "ok", data: ev.slice(0, 40) });
   },
 };
+
+/** 知识点图谱：节点=知识点（大小=覆盖人数、色=掌握度红→绿、红描边=薄弱），层=章内序号 */
+function buildKnowledgeGraph(rows: any[]) {
+  const chapOf = (r: any) => (r.chapter || "").replace(/G\d+[上下]?\s*/, "");
+  const seen = new Map<string, number>();
+  const nodes = rows.map((r: any) => {
+    const chap = chapOf(r);
+    const layer = seen.get(chap) ?? 0;
+    seen.set(chap, layer + 1);
+    const p = Math.max(15, Math.min(95, Math.round(100 - (r.weak_pct || 0) * 2.2)));
+    const hue = p * 1.05; // 15%→红 95%→绿
+    return {
+      id: r.cluster,
+      chapter: chap,
+      layer,
+      p,
+      n: r.n_students || 30,
+      weak: (r.weak_pct || 0) >= 25,
+      fill: `hsl(${hue}, 62%, 46%)`,
+    };
+  });
+  const edges: { src: string; tgt: string; kind: string }[] = [];
+  const byId = new Map(nodes.map((n: any) => [n.id, n]));
+  // 同章相邻连边（章内脉络）
+  const byChap = new Map<string, any[]>();
+  nodes.forEach((n: any) => { (byChap.get(n.chapter) || byChap.set(n.chapter, []).get(n.chapter)!).push(n); });
+  for (const list of byChap.values()) {
+    for (let i = 0; i + 1 < list.length; i++) edges.push({ src: list[i].id, tgt: list[i + 1].id, kind: "chapter" });
+  }
+  // 跨章同素养主维连边（素养同源），限量避免糊
+  const { clusterLiteracy } = require("./dimensions");
+  const litGroups = new Map<string, any[]>();
+  nodes.forEach((n: any) => {
+    const [main] = clusterLiteracy(n.id);
+    (litGroups.get(main) || litGroups.set(main, []).get(main)!).push(n);
+  });
+  for (const g of litGroups.values()) {
+    for (let i = 0; i + 1 < g.length && i < 3; i++) {
+      if (!byChap.has(g[i].id) || chapOf({ chapter: "" }) === "") { /* noop */ }
+      edges.push({ src: g[i].id, tgt: g[i + 1].id, kind: "literacy" });
+    }
+  }
+  return { nodes: nodes.map(({ id, chapter, layer, p, n, weak, fill }: any) => ({ id, chapter, layer, p, n, weak, fill })), edges: edges.filter((e) => byId.has(e.src) && byId.has(e.tgt)) };
+}
+
+/** B3 人机交互明细：该班学生与 AI 的问答记录（来源=历史会话 的证据聚合） */
+function interactionRecords(classId: string) {
+  try {
+    const students = read(`class-students-${classId}.json`);
+    const rows: any[] = [];
+    for (const stu of students) {
+      for (const ev of stu.evidence || []) {
+        if (ev.source === "历史会话") {
+          rows.push({
+            student: stu.name,
+            cluster: ev.cluster,
+            time: ev.date,
+            question: (ev.stem || "").slice(0, 60),
+            correct: ev.correct,
+          });
+        }
+      }
+    }
+    return rows.sort((a, b) => (b.time || "").localeCompare(a.time || "")).slice(0, 30);
+  } catch { return []; }
+}

@@ -127,6 +127,8 @@ const Unit = () => {
     } else {
       unitMakerClick(planParams);
       getUnitChatList(planParams);
+      // 新生成同样提供学案列表（含各课时生成状态），供「学案」步骤进入
+      getStudyPlan();
     }
     // if (planParams?.doc_id) {
     //   getCourseList();
@@ -388,6 +390,7 @@ const Unit = () => {
       sseUrl: `${cogUrl}/teach_plan/single_study_plan_maker`,
       plan_id: currStudy?.plan_id,
       id: currStudy?.study_plan_id || null,
+      chapter_name: currStudy?.title || planParams?.title || "",
     };
     setStudyDetailData({ status: 0 });
     sseRequset(payload, (res: any) => studyRightRef.current?.handleData(res));

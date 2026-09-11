@@ -53,6 +53,8 @@ export default function ImportModal({ open, onClose, onDone, students, classId }
   const [rows, setRows] = useState<PracticeRow[]>([]);
   const [comment, setComment] = useState("");
   const [receipt, setReceipt] = useState<Receipt | null>(null);
+  const [examName, setExamName] = useState("2026 秋季期中考试");
+  const [examDate, setExamDate] = useState(() => new Date().toISOString().slice(0, 10));
   const [submitting, setSubmitting] = useState(false);
   const [isNewStudent, setIsNewStudent] = useState(false);
   const [batches, setBatches] = useState<any[]>([]);
@@ -146,6 +148,8 @@ export default function ImportModal({ open, onClose, onDone, students, classId }
         })),
         source: "导入",
         class_id: classId,
+        exam_name: examName.trim() || "未命名考试",
+        exam_date: examDate.trim(),
         subject: "数学",
         comment: comment.trim() || undefined,
         ...(isNewStudent ? { allow_new_students: true } : {}),
@@ -259,7 +263,7 @@ export default function ImportModal({ open, onClose, onDone, students, classId }
       open={open}
       onCancel={onClose}
       width={720}
-      title="上传历史学情"
+      title="导入考试记录"
       styles={{ body: { maxHeight: "65vh", overflowY: "auto" } }}
       footer={
         tab === "form" ? (
@@ -318,7 +322,15 @@ export default function ImportModal({ open, onClose, onDone, students, classId }
                 </Form.Item>
               </Col>
               <Col span={10}>
-                <Form.Item label="教师备注（选填）" style={{ marginBottom: 8 }}>
+                <Form.Item label="考试名称" required>
+            <Input size="small" placeholder="如：2026 秋季期中考试" value={examName}
+              onChange={(e) => setExamName(e.target.value)} />
+          </Form.Item>
+          <Form.Item label="考试日期" required>
+            <Input size="small" placeholder="YYYY-MM-DD" value={examDate}
+              onChange={(e) => setExamDate(e.target.value)} />
+          </Form.Item>
+          <Form.Item label="教师备注（选填）" style={{ marginBottom: 8 }}>
                   <Input
                     placeholder="如：基础薄弱，需补几何"
                     value={comment}
@@ -396,6 +408,11 @@ export default function ImportModal({ open, onClose, onDone, students, classId }
             <p style={{ fontSize: 11, color: "#5f6b81", marginBottom: 6 }}>
               拆解入库：{receipt.mastery_updated.clusters.join("、")}
             </p>
+          ) : null}
+
+          {receipt.meta?.exam_name ? (
+            <Alert type="info" showIcon style={{ marginBottom: 8 }}
+              message={`考试：${receipt.meta.exam_name}（${receipt.meta.exam_date || "未填日期"}）`} />
           ) : null}
 
           {receipt.meta?.comment ? (

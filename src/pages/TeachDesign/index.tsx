@@ -8,6 +8,7 @@ import InjectPreview from "./components/InjectPreview";
 import AttachList from "./components/AttachList";
 import UploadFile from "./components/UploadFile";
 import TabVideo from "./components/TabVideo";
+import GuidedFlow from "./components/GuidedFlow";
 import { ZYIcon } from "@/components";
 import { addNewTracking, getOrgId, scrollTop } from "@/utils";
 import courseImg from "@/assets/course_desc.svg";
@@ -30,6 +31,8 @@ const TeachDesign = (props: any) => {
   const [open, setOpen] = useState(false); // 抽屉显示隐藏
   const stage = Form.useWatch("stage", form); // 学段学科值
   const [userRequire, setUserRequire] = useState(""); // 个性化诉求
+  const [guideOpen, setGuideOpen] = useState(false); // D1 启发式引导
+  const guideCtxRef = useRef<any>({}); // 引导上下文（表单+学情快照）
   const [fileList, setFileList] = useState<any>([]); // 附件列表
 
   const setDvaVal = async (payload: any) => {
@@ -55,7 +58,7 @@ const TeachDesign = (props: any) => {
     const newFileList = fileList.filter((item: any) => item.id !== dele.id);
     setFileList(newFileList);
   };
-  // 确定提交
+  // 确定提交（入口）：校验通过后先进入 D1 启发式引导，完成/跳过后执行真正生成
   const onFinish = async (values?: any) => {
     form.validateFields().then(async (values) => {
       const formValues = {
@@ -70,30 +73,44 @@ const TeachDesign = (props: any) => {
         message.error("请先设置班级学情");
         return;
       }
-      const data = {
-        ...formValues,
-        ...selection,
-        type,
-        user_require: userRequire,
-        org_id: getOrgId(),
-        file_ids: fileList.map((item: any) => item.id),
-        teach_guide: "",
-        title: selection?.chapter_name,
+      // 引导上下文：章节/课型/学情（供 AI 提问）
+      guideCtxRef.current = {
+        chapter: selection?.chapter_name || "",
+        class_type: formValues.class_type,
+        studies_degree: selection?.studies_degree || "",
+        motivation_habit: selection?.motivation_habit || "",
+        class_learning_diff: selection?.class_learning_diff || "",
+        study_ctx: [selection?.studies_degree, selection?.motivation_habit, selection?.class_learning_diff].filter(Boolean).join(" · "),
+        // 生成上下文快照（真正生成时复用，避免表单变动）
+        gen: {
+          ...formValues,
+          ...selection,
+          type,
+          user_require: userRequire,
+          org_id: getOrgId(),
+          file_ids: fileList.map((item: any) => item.id),
+          teach_guide: "",
+          title: selection?.chapter_name,
+        },
       };
-
-      console.log(data);
-
-      await dispatch({
-        type: "teachDesginModel/setData",
-        payload: { planParams: { ...data } },
-      });
-
-      if (type == 1) {
-        history.push("/design/hour");
-      } else {
-        history.push("/design/unit");
-      }
+      setGuideOpen(true);
     });
+  };
+
+  // 真正生成：guidance 为 D1 引导产物（跳过时为 null）
+  const doGenerate = async (guidance: any) => {
+    setGuideOpen(false);
+    const data = { ...guideCtxRef.current.gen };
+    if (guidance) data.guidance = guidance;
+    await dispatch({
+      type: "teachDesginModel/setData",
+      payload: { planParams: { ...data } },
+    });
+    if (type == 1) {
+      history.push("/design/hour");
+    } else {
+      history.push("/design/unit");
+    }
   };
 
   // 滚动到顶部
@@ -239,6 +256,13 @@ const TeachDesign = (props: any) => {
                     }}
                   />
                 </div>
+                <GuidedFlow
+                  open={guideOpen}
+                  params={guideCtxRef.current}
+                  onComplete={(g) => doGenerate(g)}
+                  onSkip={() => doGenerate(null)}
+                  onClose={() => setGuideOpen(false)}
+                />
                 <UploadFile
                   onRef={uploadFileRef}
                   dataList={fileList}

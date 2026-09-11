@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { useSelector, history } from "@umijs/max";
-import { Button, Popover, Tooltip, message } from "antd";
+import { Button, Modal, Popover, Tooltip, message } from "antd";
 import { ZYIcon } from "@/components";
 
 import "./index.less";
@@ -26,6 +26,7 @@ const UnitHeader = (props: any) => {
     leftChatLoading,
   } = useSelector((state: any) => state.teachDesginModel);
   const [messageApi, contextHolder] = message.useMessage();
+  const { confirm } = Modal;
   const [openClass, setOpenClass] = useState(false);
   const [openStudy, setOpenStudy] = useState(false);
 
@@ -128,6 +129,22 @@ const UnitHeader = (props: any) => {
   // 课时、学案点击
   const planSelectClick = (item: any, step: number) => {
     if (!item?.has_plan && !item?.has_study_plan) {
+      // D3：学案支持单元内直接生成（教案仍引导到规划表）
+      if (step === 3) {
+        confirm({
+          title: `为「${item?.title}」生成学案？`,
+          content: "将以该课时教案为依据生成学生版学案（含分层任务）。",
+          okText: "生成学案",
+          cancelText: "取消",
+          onOk: () => {
+            setCurrClass({});
+            setCurrStudy({ plan_id: item?.plan_id || item?.id, title: item?.title });
+            setOpenStudy(false);
+            setStep(3);
+          },
+        });
+        return;
+      }
       messageApi.error("请先生成对应教案或学案，才可以查看");
       return;
     }

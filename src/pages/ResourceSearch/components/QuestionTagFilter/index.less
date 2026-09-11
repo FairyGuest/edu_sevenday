@@ -1,0 +1,230 @@
+// 差异化智能筛选：独有维（能力阶梯+素养徽章）+ 常规维次级区
+.ds_filter {
+  background: var(--g-surface);
+  border: 1px solid var(--g-border);
+  border-radius: var(--g-radius-lg);
+  box-shadow: var(--g-shadow);
+  padding: 10px 16px 12px;
+  margin-bottom: 12px;
+}
+
+.ds_head {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f0f2f6;
+
+  .ds_icon { color: var(--g-accent); font-size: 14px; }
+  .ds_title { font-size: 13.5px; font-weight: 650; color: var(--g-text); }
+  .ds_badge {
+    font-size: 10.5px;
+    font-weight: 600;
+    color: var(--g-accent-deep);
+    background: linear-gradient(135deg, rgba(77, 141, 255, 0.14), rgba(28, 108, 255, 0.1));
+    border: 1px solid rgba(28, 108, 255, 0.22);
+    border-radius: 999px;
+    padding: 1px 9px;
+  }
+  .ds_count { font-size: 11.5px; color: var(--g-faint); margin-left: 6px; }
+  .ant-btn { margin-left: auto; padding: 0; font-size: 11.5px; }
+}
+
+/* ===== 独有维区（浅底突出） ===== */
+.ds_hero {
+  margin: 10px 0;
+  padding: 10px 12px 11px;
+  background: linear-gradient(180deg, #f8faff 0%, #f4f7fd 100%);
+  border: 1px solid #e8eefb;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ds_hero_row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.ds_hero_label {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 650;
+  color: var(--g-text);
+
+  .anticon { color: var(--g-accent); font-size: 12.5px; }
+
+  .ds_q {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 1px solid var(--g-border-strong);
+    color: var(--g-faint);
+    font-size: 9.5px;
+    line-height: 12px;
+    text-align: center;
+    cursor: help;
+  }
+}
+
+/* 能力阶梯：逐级升高的色块 */
+.ds_steps {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.ds_step {
+  appearance: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 5px 12px 6px;
+  border-radius: 8px;
+  border: 1px solid var(--g-border);
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.18s ease;
+
+  &:hover:not(:disabled) { border-color: var(--g-accent); transform: translateY(-1px); }
+  &:disabled { opacity: 0.45; cursor: not-allowed; }
+
+  .ds_step_bar {
+    width: 100%;
+    min-width: 26px;
+    height: var(--h, 10px);
+    border-radius: 3px;
+    background: #dfe7f5;
+    transition: all 0.18s ease;
+  }
+
+  .ds_step_lv { font-size: 12px; font-weight: 700; color: var(--g-muted); line-height: 1; }
+  .ds_step_name { font-size: 10.5px; color: var(--g-faint); line-height: 1; }
+
+  &.inrange {
+    border-color: rgba(28, 108, 255, 0.35);
+    background: var(--g-accent-soft);
+    .ds_step_bar { background: rgba(28, 108, 255, 0.45); }
+  }
+
+  &.on {
+    border-color: var(--g-accent);
+    background: var(--g-accent-soft);
+    box-shadow: 0 2px 8px rgba(28, 108, 255, 0.18);
+    .ds_step_bar {
+      background: linear-gradient(180deg, #4d8dff, #1c6cff);
+    }
+    .ds_step_lv { color: var(--g-accent-deep); }
+  }
+}
+
+.ds_mode {
+  margin-left: auto;
+  border-radius: 8px;
+}
+
+/* 素养徽章：六色，同维度跨页同色 */
+.ds_lits {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+.ds_lit {
+  appearance: none;
+  position: relative;
+  border: 1.5px solid var(--c, var(--g-border-strong));
+  color: var(--c, var(--g-muted));
+  background: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 6px 13px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 2.5px;
+    background: var(--c);
+    margin-right: 6px;
+    vertical-align: 1px;
+  }
+
+  &:hover { transform: translateY(-1px); box-shadow: 0 3px 8px rgba(23, 39, 64, 0.1); }
+
+  &.on {
+    background: var(--c);
+    border-color: var(--c);
+    color: #fff;
+    box-shadow: 0 3px 10px rgba(23, 39, 64, 0.22);
+
+    &::before { background: rgba(255, 255, 255, 0.85); }
+  }
+}
+
+/* ===== 常规维（一行一维，竖排） ===== */
+.ds_normal {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 8px;
+  border-top: 1px dashed #eef1f6;
+}
+
+.ds_nrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  padding: 3px 0;
+
+  & + .ds_nrow { border-top: 1px dashed #f3f5f9; }
+}
+
+.ds_nlabel {
+  flex: none;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--g-faint);
+}
+
+.ds_nopts {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 1px 2px;
+}
+
+.ds_nopt {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: var(--g-muted);
+  font-size: 12px;
+  line-height: 22px;
+  padding: 0 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+
+  &:hover { color: var(--g-accent); background: var(--g-accent-soft); }
+
+  &.on {
+    color: var(--g-accent-deep);
+    background: var(--g-accent-soft);
+    font-weight: 600;
+  }
+}

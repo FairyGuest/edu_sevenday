@@ -1,4 +1,4 @@
-import { Progress, Table, Tag } from "antd";
+import { Table } from "antd";
 import type { ColumnsType } from "antd/es/table";
 
 /** F1.3 学生列表（全宽）：仅显示待巩固数不打等级；冷启动置底；点击行查看个人学情 */
@@ -15,26 +15,22 @@ export default function StudentList({ students, onOpen }: { students: any[]; onO
     {
       title: "掌握状态", dataIndex: "status", width: 180,
       render: (t: string, r: any) => {
-        if (r.status_level === "cold") return <Tag color="default">{t}</Tag>;
-        if (r.status_level === "ok") return <Tag color="success">{t}</Tag>;
-        return <Tag color="error">{t}</Tag>;
+        if (r.status_level === "cold") return <span className="g-chip">{t}</span>;
+        if (r.status_level === "ok") return <span className="g-chip g-chip--ok">{t}</span>;
+        return <span className="g-chip g-chip--bad">{t}</span>;
       },
     },
     {
       title: "待巩固知识点", dataIndex: "weak_cnt", width: 130,
       render: (t: number, r: any) => {
         if (r.status_level === "cold") return <span style={{ color: "#c3c9d4" }}>—</span>;
+        const color = t > 3 ? "var(--g-bad)" : "var(--g-warn)";
         return (
-          <span style={{ display: "flex", alignItems: "center", gap: 6 }}>
-            <span style={{ width: 24, fontSize: 12, fontWeight: 600, color: t > 3 ? "#e05d62" : "#e8a23d" }}>{t}</span>
-            <Progress
-              percent={Math.min(t * 12, 100)}
-              showInfo={false}
-              size="small"
-              strokeColor={t > 3 ? "#e58a8e" : "#eec27e"}
-              trailColor="#f0f2f6"
-              style={{ width: 56, margin: 0 }}
-            />
+          <span style={{ display: "flex", alignItems: "center", gap: 8 }}>
+            <span style={{ width: 20, fontSize: 12, fontWeight: 700, color, fontVariantNumeric: "tabular-nums" }}>{t}</span>
+            <span className="g-minibar" style={{ width: 56 }}>
+              <i style={{ width: `${Math.min(t * 12, 100)}%`, background: color }} />
+            </span>
           </span>
         );
       },
@@ -43,7 +39,7 @@ export default function StudentList({ students, onOpen }: { students: any[]; onO
       title: "本周进步", dataIndex: "week_delta", width: 90,
       render: (t: any) =>
         t == null ? <span style={{ color: "#c3c9d4" }}>—</span> : (
-          <span style={{ color: t >= 0 ? "#4f9e70" : "#e05d62", fontWeight: 600 }}>
+          <span className={`g-chip ${t >= 0 ? "g-chip--ok" : "g-chip--bad"}`}>
             {t >= 0 ? `↑${t}` : `↓${Math.abs(t)}`}
           </span>
         ),

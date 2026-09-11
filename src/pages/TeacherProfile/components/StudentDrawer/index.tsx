@@ -1,7 +1,8 @@
 import { useEffect } from "react";
-import { Col, Drawer, Empty, Row, Spin, Table, Tag } from "antd";
+import { Col, Drawer, Empty, Row, Spin, Table, Tag, Tooltip } from "antd";
 import type { ColumnsType } from "antd/es/table";
 import MarkdownRender from "@/components/MarkdownRender";
+import KnowledgeGraph from "../KnowledgeGraph";
 
 /** F1.4 个人画像抽屉：掌握明细（含遗忘到期）+ 作答证据下钻 */
 export default function StudentDrawer({ open, detail, evidence, loading, onClose }: {
@@ -11,7 +12,9 @@ export default function StudentDrawer({ open, detail, evidence, loading, onClose
 
   const cellCols: ColumnsType<any> = [
     { title: "知识点", dataIndex: "cluster" },
-    { title: "掌握度", dataIndex: "p", width: 84, render: (t: number) => <b>{t}%</b> },
+    { title: "掌握度", dataIndex: "p", width: 84,
+      render: (t: number, r: any) =>
+        r.n >= 3 ? <b>{t}%</b> : <Tooltip title={`仅 ${r.n} 题样本（门槛 3 题）`}><span className="g-chip g-chip--warn">证据不足</span></Tooltip> },
     {
       title: "状态", dataIndex: "band", width: 92,
       render: (t: string) => (
@@ -57,6 +60,38 @@ export default function StudentDrawer({ open, detail, evidence, loading, onClose
             </Row>
             {detail.cold_start ? (
               <div className="teacher_profile_cold_tip">⏳ {detail.cold_start[1]}</div>
+            ) : null}
+            <p className="teacher_profile_chart_title" style={{ marginTop: 14 }}>知识图谱 · 个人掌握网络</p>
+            <KnowledgeGraph graph={detail.kgraph} />
+
+            {detail.dimensions ? (
+              <>
+                <p className="teacher_profile_chart_title" style={{ marginTop: 14 }}>素养掌握 · 六大素养</p>
+                <div className="drawer_lit_row_wrap">
+                  {(detail.dimensions.literacy || []).map((d: any) => (
+                    <div key={d.key} className="drawer_lit_row">
+                      <i className="g-dot" style={{ background: d.color }} />
+                      <span className="name">{d.name}</span>
+                      <span className="g-minibar" style={{ flex: 1 }}>
+                        <i style={{ width: `${d.value ?? 0}%`, background: d.color }} />
+                      </span>
+                      <b>{d.value != null ? `${d.value}%` : "—"}</b>
+                    </div>
+                  ))}
+                </div>
+                {detail.levels?.length ? (
+                  <>
+                    <p className="teacher_profile_chart_title" style={{ marginTop: 12 }}>能力等级（个人视角）</p>
+                    <div className="drawer_level_chips">
+                      {detail.levels.slice(0, 10).map((l: any) => (
+                        <span key={l.cluster} className="g-chip">
+                          {l.cluster} · {l.level} · {l.p}%
+                        </span>
+                      ))}
+                    </div>
+                  </>
+                ) : null}
+              </>
             ) : null}
             <p className="teacher_profile_chart_title" style={{ marginTop: 14 }}>知识点掌握明细</p>
             <Table rowKey="cluster" size="small" columns={cellCols} dataSource={detail.cells.slice(0, 16)} pagination={false} />

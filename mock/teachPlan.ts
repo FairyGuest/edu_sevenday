@@ -6,8 +6,9 @@
 
 import { pickPlanMd, pickStudyPlanMd } from "./teachPlanContent";
 
-// 记录最近一次生成的小节（供学案生成复用章节语境）
+// 记录最近一次生成的小节（供学案生成复用章节语境）；D5：同时记录启发式规划供学案呼应
 let lastChapterName = "16.1 二次根式";
+let lastGuidance: any = null;
 
 // 学段学科（Cascader：value/children）
 const STAGE_SUBJECT = [
@@ -174,6 +175,33 @@ export const STUDY_PLAN_MD = `## 16.1 二次根式 · 学案（学生版）
 **课后巩固**
 完成配套练习"二次根式概念 10 题"（系统已按你的薄弱点个性化推荐）。`;
 
+/** D1 启发式引导产物 → 教案头部规划块（生成与对话列表共用） */
+function withGuidance(md: string, g: any): string {
+  if (!g?.modules?.length) return md;
+  const modTitle: Record<string, string> = {
+    learning_goals: "学习目标", study_tasks: "学案任务", exercises: "习题配置", courseware: "课件大纲",
+  };
+  const lines = [
+    "## 〇、教学设计规划（启发式引导确认）",
+    "> 以下方向由 AI 与教师问答确认，本教案按此生成：",
+    "",
+  ];
+  for (const m of g.modules) {
+    const pts = (m.points || []).filter(Boolean);
+    if (!m.direction && !pts.length) continue;
+    lines.push(`- **${modTitle[m.key] || m.title || m.key}**：${m.direction || ""}`);
+    pts.forEach((pt) => lines.push(`  - ${pt}`));
+  }
+  const qa = Object.entries(g.answers || {}).filter(([, v]) => v);
+  if (qa.length) {
+    lines.push("", "<details><summary>教师作答记录</summary>", "");
+    qa.forEach(([k, v], i) => lines.push(`${i + 1}. ${v}`));
+    lines.push("", "</details>");
+  }
+  lines.push("", "---", "");
+  return lines.join("\n") + "\n\n" + md;
+}
+
 function streamMarkdown(res: any, md: string, editMode = false) {
   res.writeHead(200, {
     "Content-Type": "text/event-stream",
@@ -267,7 +295,7 @@ export default {
   "POST /api/teach_plan/get_temp_teach_plan_chat": (req: any, res: any) => {
     const b = req.body || {};
     const chapterName = b.chapter_name || b.title || lastChapterName;
-    const planMd = pickPlanMd(chapterName, { classType: b.class_type });
+    const planMd = withGuidance(pickPlanMd(chapterName, { classType: b.class_type }), b.guidance);
     res.json({ code: 200, msg: "ok", data: [
       {
         id: "chat-init",
@@ -296,7 +324,9 @@ export default {
     // 按所选章节/小节挑选结构化模板（每节有专属内容）
     const chapterName = b.chapter_name || b.title || lastChapterName;
     if (!isChat) lastChapterName = chapterName;
-    const md = pickPlanMd(chapterName, { classType: b.class_type, studyCtx: ctx || undefined });
+    let md = pickPlanMd(chapterName, { classType: b.class_type, studyCtx: ctx || undefined });
+    if (b.guidance?.modules?.length && !isChat) lastGuidance = b.guidance;
+    md = withGuidance(md, b.guidance);
     streamMarkdown(res, md, isChat);
   },
 
@@ -308,16 +338,59 @@ export default {
   // ===== SSE 学案生成 =====
   "POST /api/teach_plan/single_study_plan_maker": (req: any, res: any) => {
     const isChat = !!(req.body?.chat || req.body?.content);
-    streamMarkdown(res, pickStudyPlanMd(lastChapterName), isChat);
+    const chapter = req.body?.chapter_name || lastChapterName;
+    if (chapter && !isChat) lastChapterName = chapter;
+    let sd = pickStudyPlanMd(chapter);
+    // D5 学案-教案相关性：呼应本课教案的启发式模块规划
+    const g = lastGuidance;
+    if (g?.modules?.length && !isChat) {
+      const map: Record<string, string> = {
+        learning_goals: "课前预习（目标对齐）",
+        study_tasks: "课中任务 · 分层任务",
+        exercises: "课后巩固（题目同源）",
+        courseware: "课堂节奏（与课件同步）",
+      };
+      const titleMap: Record<string, string> = { learning_goals: "学习目标", study_tasks: "学案任务", exercises: "习题配置", courseware: "课件大纲" };
+      const lines = ["## 与本课教案的对应关系", ""];
+      for (const m of g.modules) {
+        lines.push(`- **${titleMap[m.key] || m.title}** → ${map[m.key] || "学案相应环节"}：${m.direction || ""}`);
+        (m.points || []).slice(0, 2).forEach((pt) => lines.push(`  - ${pt}`));
+      }
+      lines.push("", "> 学案任务由教案生成时的教师确认规划驱动，保证教-学-练一致。", "");
+      sd = lines.join("\n") + "\n" + sd;
+    }
+    streamMarkdown(res, sd, isChat);
   },
 
   // 学案历史详情（保存后查看）
   "GET /api/teach_plan/study_plan_history/:id": (_req: any, res: any) => {
     res.json({ code: 200, msg: "ok", data: {
       id: _req.params.id, status: 1,
+      // 课时页消费 chat_history；单元 StudyRight 消费 studay_plan_content（历史拼写如此，保持契约）
       chat_history: [
         { role: "assistant", content: STUDY_PLAN_MD },
       ],
+      studay_plan_thinking: "",
+      studay_plan_content: STUDY_PLAN_MD,
     } });
+  },
+
+  // ===== D3 单元学案 =====
+  // 学案列表（按单元下的课时返回，含生成状态）
+  "POST /api/teach_plan/study_plan_generate_info": (req: any, res: any) => {
+    const planId = req.body?.plan_id || "unit-default";
+    res.json({ code: 200, msg: "ok", data: [
+      { id: `${planId}-c1`, plan_id: `${planId}-c1`, title: "16.1 二次根式", has_study_plan: true, study_plan_id: `sp-${planId}-c1` },
+      { id: `${planId}-c2`, plan_id: `${planId}-c2`, title: "16.2 二次根式的乘除", has_study_plan: false },
+      { id: `${planId}-c3`, plan_id: `${planId}-c3`, title: "16.3 二次根式的加减", has_study_plan: false },
+    ] });
+  },
+
+  // 临时学案对话（生成后的时间线回显）
+  "POST /api/teach_plan/temp_study_plan_chat": (_req: any, res: any) => {
+    res.json({ code: 200, msg: "ok", data: [
+      { id: "sp-chat-1", role: "assistant", content_type: "md",
+        content: { end: { status: "success", chat_content: pickStudyPlanMd(lastChapterName) } } },
+    ] });
   },
 };

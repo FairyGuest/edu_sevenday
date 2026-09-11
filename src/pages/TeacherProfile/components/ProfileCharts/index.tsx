@@ -1,7 +1,10 @@
+import { useState } from "react";
+import { Button, Modal, Table } from "antd";
+import { MessageOutlined } from "@ant-design/icons";
 import ReactECharts from "echarts-for-react";
 
 const SRC_COLORS: Record<string, string> = {
-  作业: "#4f7df0", 自主练习: "#4f9e70", 会话: "#8e7ce0", 导入: "#e0a05e",
+  作业记录: "#4f7df0", 自主练习: "#4f9e70", 历史会话: "#8e7ce0", 考试记录: "#e0a05e",
 };
 const BAND_COLORS: Record<string, string> = {
   待巩固: "#e58a8e", 练习中: "#eec27e", 较熟练: "#cfc07a", 已掌握: "#6cbf93",
@@ -11,9 +14,20 @@ const BAND_RANGES: Record<string, string> = {
 };
 
 /** F1.2 右列三图 + 四级掌握度图例（图例从分布表上方移至此处） */
-export default function ProfileCharts({ trend, sourceMix, weakRanking }: {
-  trend: any[]; sourceMix: any[]; weakRanking: any[];
+export default function ProfileCharts({ trend, sourceMix, weakRanking, classId }: {
+  trend: any[]; sourceMix: any[]; weakRanking: any[]; classId?: string;
 }) {
+  // B3 人机交互明细（来源=历史会话 的问答记录）
+  const [iaOpen, setIaOpen] = useState(false);
+  const [iaRows, setIaRows] = useState<any[]>([]);
+  const [iaLoading, setIaLoading] = useState(false);
+  const openInteractions = () => {
+    setIaOpen(true); setIaLoading(true);
+    fetch(`/api/teacher/interactions?class_id=${classId || ""}`)
+      .then(r => r.json())
+      .then(d => { if (d.code === 200) setIaRows(d.data || []); })
+      .finally(() => setIaLoading(false));
+  };
   const lineOption = {
     grid: { left: 40, right: 16, top: 24, bottom: 26 },
     xAxis: { type: "category", data: trend.map((_, i) => `${i + 1}`), axisLabel: { color: "#8a94a8" } },
@@ -64,11 +78,30 @@ export default function ProfileCharts({ trend, sourceMix, weakRanking }: {
       <div className="teacher_profile_chart_card">
         <p className="teacher_profile_chart_title">数据来源构成</p>
         <ReactECharts option={pieOption} style={{ height: 182 }} notMerge />
+        <Button size="small" type="link" icon={<MessageOutlined />} className="ia_link" onClick={openInteractions}>
+          查看人机交互明细
+        </Button>
       </div>
       <div className="teacher_profile_chart_card">
         <p className="teacher_profile_chart_title">薄弱知识点排行</p>
         <ReactECharts option={barOption} style={{ height: 158 }} notMerge />
       </div>
+      {/* B3 人机交互明细弹窗 */}
+      <Modal open={iaOpen} onCancel={() => setIaOpen(false)} footer={null} width={640}
+        title="人机交互明细 · 学生与 AI 的问答记录（来源：历史会话）">
+        <Table loading={iaLoading} size="small" rowKey={(r: any) => r.student + r.time + r.question}
+          pagination={{ pageSize: 8, size: "small" }}
+          columns={[
+            { title: "学生", dataIndex: "student", width: 80 },
+            { title: "知识点", dataIndex: "cluster", width: 130, ellipsis: true },
+            { title: "提问/练习内容", dataIndex: "question", ellipsis: true },
+            { title: "时间", dataIndex: "time", width: 100 },
+            { title: "对错", dataIndex: "correct", width: 60,
+              render: (t: boolean) => <span style={{ color: t ? "#4f9e70" : "#e05d62" }}>{t ? "✓" : "✗"}</span> },
+          ]}
+          dataSource={iaRows} />
+      </Modal>
+
       {/* 四级掌握度图例（从分布表上方移至此处） */}
       <div className="teacher_profile_chart_card teacher_profile_legend_card">
         <div style={{ display: "flex", justifyContent: "space-around", alignItems: "center", padding: "2px 0" }}>

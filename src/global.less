@@ -988,3 +988,149 @@ body {
     margin-bottom: 32px;
   }
 }
+
+/* ============================================================
+   设计系统令牌与工具类（参考 graph4rec 双工作台体系 v02）
+   原则：令牌集中、语义色 + 柔色底、维度即颜色（跨页面同维度同色）
+   ============================================================ */
+:root {
+  /* 品牌主色（沿用品牌蓝，补充 deep/soft 层级） */
+  --g-accent: #1c6cff;
+  --g-accent-deep: #174680;
+  --g-accent-soft: #eef4fb;
+  /* 语义色（结论级） */
+  --g-ok: #178a4c;
+  --g-ok-soft: #e9f6ee;
+  --g-warn: #a16207;
+  --g-warn-soft: #fdf4e3;
+  --g-bad: #b42323;
+  --g-bad-soft: #fdeeee;
+  /* 中性 */
+  --g-bg: #f5f6f8;
+  --g-surface: #ffffff;
+  --g-border: #e3e7ec;
+  --g-border-strong: #c9d1da;
+  --g-text: #1f2733;
+  --g-muted: #565f6b;
+  --g-faint: #6e7784;
+  --g-radius: 8px;
+  --g-radius-lg: 10px;
+  --g-shadow: 0 1px 2px rgba(23, 39, 64, 0.05);
+  /* 学科维度色板（同维度跨页面同色） */
+  --dim-knowledge: #2563eb;   /* 知识内容 */
+  --dim-task: #7c3aed;        /* 任务目标/素养 */
+  --dim-cognitive: #db2777;   /* 认知要求/能力 */
+  --dim-method: #ea580c;      /* 方法过程 */
+  --dim-context: #0e9265;     /* 表征情境/来源 */
+  --dim-structure: #52607a;   /* 结构复杂度 */
+}
+
+/* 语义徽章（pill） */
+.g-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 11px;
+  line-height: 16px;
+  background: #eef1f5;
+  color: var(--g-muted);
+  border: none;
+  white-space: nowrap;
+}
+.g-chip--ok { background: var(--g-ok-soft); color: var(--g-ok); }
+.g-chip--warn { background: var(--g-warn-soft); color: var(--g-warn); }
+.g-chip--bad { background: var(--g-bad-soft); color: var(--g-bad); }
+.g-chip--accent { background: var(--g-accent-soft); color: var(--g-accent-deep); }
+
+/* KV 指标格（faint 标签 + 值） */
+.g-kv {
+  background: #fafbfc;
+  border: 1px solid var(--g-border);
+  border-radius: 7px;
+  padding: 7px 10px;
+  min-width: 0;
+}
+.g-kv small {
+  display: block;
+  font-size: 10.5px;
+  color: var(--g-faint);
+  margin-bottom: 2px;
+}
+.g-kv b {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--g-text);
+  font-variant-numeric: tabular-nums;
+}
+
+/* 面板头（图标块 + 标题 + hint + count） */
+.g-panel-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+.g-panel-head__icon {
+  width: 22px;
+  height: 22px;
+  flex: none;
+  border-radius: 6px;
+  background: var(--g-accent-soft);
+  color: var(--g-accent-deep);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+.g-panel-head h3,
+.g-panel-head .g-title {
+  margin: 0;
+  font-size: 13.5px;
+  font-weight: 650;
+  color: var(--g-text);
+}
+.g-panel-head .g-hint { color: var(--g-faint); font-size: 11.5px; }
+.g-panel-head .g-count { margin-left: auto; color: var(--g-muted); font-size: 11.5px; font-variant-numeric: tabular-nums; }
+
+/* 依据列表（诊断可解释性） */
+.g-basis {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12.5px;
+}
+.g-basis li { display: flex; gap: 8px; align-items: baseline; }
+.g-basis b { flex: none; color: var(--g-accent-deep); font-size: 12px; }
+.g-basis__note {
+  color: var(--g-faint);
+  font-size: 11.5px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--g-border);
+}
+
+/* 维度点/条（同维度同色） */
+.g-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 3px;
+  flex: none;
+}
+.g-minibar {
+  height: 4px;
+  border-radius: 2px;
+  background: var(--g-border);
+  overflow: hidden;
+  min-width: 40px;
+}
+.g-minibar i {
+  display: block;
+  height: 100%;
+  border-radius: 2px;
+  background: var(--g-accent);
+}

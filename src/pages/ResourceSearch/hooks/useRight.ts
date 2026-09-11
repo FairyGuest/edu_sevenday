@@ -85,6 +85,8 @@ export const useRight = () => {
       size: pageSize || pagination.pageSize,
       difficulty: processedFilters.difficulties,
       question_type: processedFilters.questionTypes,
+      ability: processedFilters.abilities,
+      literacy: processedFilters.literacies,
       subject_name: xkwSubjectName,
       stage_name: xkwStageName,
       // catalogue_list: checkedChapter?.length > 0 ? checkedChapter : chapterKeys,
@@ -106,6 +108,8 @@ export const useRight = () => {
       grade_name: processedFilters.gradeSemesters,
       scene: processedFilters.scenes,
       province: processedFilters.regions,
+      ability: processedFilters.abilities,
+      literacy: processedFilters.literacies,
       keyword: searchText,
       bank_source: 1
     };

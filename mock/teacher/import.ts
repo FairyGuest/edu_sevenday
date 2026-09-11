@@ -16,7 +16,7 @@ let newStudentSeq = 100; // 新学生学号自增
 
 /** 题目选择池（从 questions.json 按学科筛选，默认取数学前 100 题） */
 let questionPool: any[] | null = null;
-function getQuestions(subject?: string) {
+export function getQuestions(subject?: string) {
   if (!questionPool) {
     const q = read("questions.json");
     // fixture 全部为义教数学；subject 参数为未来扩展预留（非数学题会被过滤）
@@ -53,7 +53,7 @@ function getClassStudents(classId: string): any[] {
 
 /** 模拟导入校验+入库，返回 PRD 回执 */
 function processImport(body: any) {
-  const { rows = [], source = "导入", allow_new_students = false, subject, comment } = body;
+  const { rows = [], source = "导入", allow_new_students = false, subject, comment, exam_name, exam_date } = body;
   const classId = body.class_id || "cls-g8-03";
   const classStudents = getClassStudents(classId);
   const knownIds = new Set(classStudents.map((s) => s.student_id));
@@ -134,7 +134,7 @@ function processImport(body: any) {
     queued_for_tagging: queued,
     new_students: newStudents,
     mastery_updated: { n_clusters: touched.size, clusters: [...touched].slice(0, 10) },
-    meta: { subject, comment },
+    meta: { subject, comment, exam_name, exam_date },
     source,
     class_id: classId,
     time: new Date().toISOString().replace("T", " ").slice(0, 19),
@@ -175,3 +175,12 @@ export default {
     res.json({ code: 200, msg: "ok", data: list.slice(0, 20) });
   },
 };
+
+// ===== C1 题库多维标签（差异化筛选：能力/素养/区域/题型/难度/场景）=====
+import { tagQuestion, tagFacets, filterQuestions } from "./questionTags";
+
+function taggedPool() {
+  return getQuestions().map(tagQuestion);
+}
+
+export { taggedPool, filterQuestions };

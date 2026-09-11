@@ -6,6 +6,8 @@
 import * as fs from "fs";
 import * as path from "path";
 
+import { tagQuestion } from "./questionTags";
+
 const D = path.join(__dirname, "data");
 const read = (f: string): any => JSON.parse(fs.readFileSync(path.join(D, f), "utf-8"));
 
@@ -403,6 +405,8 @@ export default {
         homework_id: h.homework_id, mode: h.mode, title: h.title,
         status: h.status, n_students: h.summary?.n_students || 0,
         created_at: h.created_at, q_count: h.summary?.q_count?.min || 0,
+        class_id: h.class_id,
+        class_name: getClasses().find((c) => c.class_id === h.class_id)?.class_name || h.class_id,
       }));
     res.json({ code: 200, msg: "ok", data: list });
   },
@@ -415,6 +419,7 @@ export default {
     // roster 为学生ID列表（发布篡改校验用）；students 供抽样预览按人选择
     res.json({ code: 200, msg: "ok", data: {
       ...summary,
+      class_name: getClasses().find((c) => c.class_id === hw.class_id)?.class_name || hw.class_id,
       unified_items: hw.unified_items || null,
       roster: Object.keys(papers),
       students: Object.entries(papers).map(([sid, p]: [string, any]) => ({
@@ -430,6 +435,55 @@ export default {
     const paper = hw.papers[req.query.sid];
     if (!paper) return res.json({ code: 404, msg: "该学生不在名单快照中", data: null });
     res.json({ code: 200, msg: "ok", data: { ...paper, status: hw.status, notes: [] } });
+  },
+
+  // ===== C1 题库多维筛选（能力/素养/区域/题型/难度/场景）=====
+  "GET /api/teacher/questions/facets": (_req: any, res: any) => {
+    // 聚合公共题库列表的真实数据（chips 计数/值域与列表严格一致）
+    const publicList = JSON.parse(fs.readFileSync(path.join(D, "..", "data", "questions.json"), "utf-8"));
+    const items = (Array.isArray(publicList) ? publicList : publicList.items || []).map(tagQuestion);
+    const forms = new Map<string, number>();
+    const diffs = new Map<string, number>();
+    for (const it of items) {
+      forms.set(it.form, (forms.get(it.form) || 0) + 1);
+      diffs.set(it.difficulty_zh || it.difficulty, (diffs.get(it.difficulty_zh || it.difficulty) || 0) + 1);
+    }
+    const toArr = (m: Map<string, number>) => [...m.entries()].map(([value, n]) => ({ value, n })).sort((a, b) => b.n - a.n);
+    const count = (key: string) => { const m = new Map<string, number>(); for (const it of items) m.set(it[key], (m.get(it[key]) || 0) + 1); return [...m.entries()].map(([value, n]) => ({ value, n })).sort((a, b) => b.n - a.n); };
+    const nz = (arr: { value: string; n: number }[]) => arr.filter(x => x.n > 0);
+    const f = { abilities: nz(count("ability")), literacies: nz(count("literacy")), regions: nz(count("region")), scenes: nz(count("scene")) };
+    res.json({ code: 200, msg: "ok", data: {
+      abilities: f.abilities, literacies: f.literacies,
+      regions: f.regions, scenes: f.scenes,
+      forms: toArr(forms).filter((x: any) => x.n > 0), difficulties: toArr(diffs).filter((x: any) => x.n > 0),
+    } });
+  },
+
+  "POST /api/teacher/questions/search": (req: any, res: any) => {
+    const items = read("questions.json").items.map(tagQuestion);
+    const fq = (arr: any[], filters: Record<string, string[]>) =>
+      arr.filter((it) => Object.entries(filters).every(([k, vals]) => !vals?.length || vals.includes(it[k])));
+    const f = req.body || {};
+    // 学科网兼容字段映射：question_type→form、difficulties→difficulty_zh
+    const norm: Record<string, string[]> = {
+      ability: f.ability || [],
+      literacy: f.literacy || [],
+      region: f.region || [],
+      scene: f.scene || [],
+      form: f.question_type?.length ? f.question_type : (f.form || []),
+      difficulty_zh: f.difficulties?.length ? f.difficulties : (f.difficulty_zh || []),
+    };
+    const keyword = (f.keyword || "").trim();
+    let out = fq(items, norm);
+    if (keyword) out = out.filter((q: any) => q.stem.includes(keyword) || q.cluster.includes(keyword));
+    const page = Math.max(1, Number(f.current) || 1);
+    const size = Math.min(50, Number(f.size) || 10);
+    res.json({ code: 200, msg: "ok", data: {
+      records: out.slice((page - 1) * size, page * size).map((q: any) => ({
+        ...q, stem: q.stem.slice(0, 120),
+      })),
+      current: page, size, total: out.length,
+    } });
   },
 
   // 教案/章节布置的作业（入库到作业记录，作业下发可查看）
@@ -460,6 +514,50 @@ export default {
     };
     recordPlanHomework(rec2);
     res.json({ code: 200, msg: "ok", data: rec2 });
+  },
+
+  // E1/E2 跨班复用下发：个性化按目标班学情重算每人一单（复用组卷配置），同卷原样复制
+  "POST /api/teacher/recommend/assign-to-class": (req: any, res: any) => {
+    const { homework_id, target_class_id } = req.body || {};
+    const src = homeworkStore[homework_id];
+    if (!src) return res.json({ code: 404, msg: "原作业不存在", data: null });
+    const target = getClasses().find((c) => c.class_id === target_class_id);
+    if (!target) return res.json({ code: 400, msg: "目标班级不存在", data: null });
+    if (target.class_id === src.class_id) {
+      return res.json({ code: 400, msg: "目标班级与来源班级相同，请选择其他班级", data: null });
+    }
+    const students = getStudents(target.class_id);
+    const hwSeqLocal = ++hwSeq;
+    const newId = `hw-r-${String(hwSeqLocal).padStart(3, "0")}`;
+    const isPersonal = src.mode === "personalized";
+    const newHw: any = {
+      homework_id: newId,
+      class_id: target.class_id,
+      mode: src.mode,
+      title: src.title?.replace(/·.*$/, `· ${target.class_name}`) || `复用作业 · ${target.class_name}`,
+      status: "published",
+      created_at: new Date().toISOString().replace("T", " ").slice(0, 19),
+      config: src.config || {},
+      summary: { n_students: students.length, q_count: src.summary?.q_count || { min: 4, max: 6 } },
+      papers: {},
+    };
+    if (!isPersonal && src.unified_items) {
+      newHw.unified_items = src.unified_items;
+    } else {
+      // 个性化：按目标班学情重算（复用 generateHomework 的引擎）
+      const regen = generateHomework(target.class_id, src.config || {});
+      newHw.papers = regen.papers;
+      newHw.summary = regen.summary;
+    }
+    homeworkStore[newId] = newHw;
+    res.json({ code: 200, msg: "ok", data: {
+      homework_id: newId,
+      target_class_id: target.class_id,
+      target_class_name: target.class_name,
+      n_students: students.length,
+      mode: src.mode,
+      regenerated: isPersonal,
+    } });
   },
 
   // 发布（对象锁定，扁平化 URL）

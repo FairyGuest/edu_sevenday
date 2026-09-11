@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { connect } from "@umijs/max";
-import { Button, Card, Col, message, Row, Select, Spin, Tag, Upload } from "antd";
+import { Button, Card, Col, DatePicker, message, Row, Select, Spin, Tag, Upload } from "antd";
 import {
   ReloadOutlined,
   UploadOutlined,
@@ -13,15 +13,17 @@ import {
   ExperimentOutlined,
 } from "@ant-design/icons";
 import { history } from "@umijs/max";
+import dayjs, { Dayjs } from "dayjs";
 
 import ClusterTable from "./components/ClusterTable";
 import ImportModal from "./components/ImportModal";
 import ProfileCharts from "./components/ProfileCharts";
 import StudentList from "./components/StudentList";
 import StudentDrawer from "./components/StudentDrawer";
+import DimensionCards from "./components/DimensionCards";
 import "./index.less";
 
-const ALL_SOURCES = ["作业", "会话", "自主练习", "导入"];
+const ALL_SOURCES = ["作业记录", "历史会话", "自主练习", "考试记录"];
 
 /**
  * 学情画像（F1+F2）：班级/个人画像查看 + 历史学情导入。
@@ -34,6 +36,11 @@ const TeacherProfile = (props: any) => {
   const { classes, profile, loading, studentDetail, evidence, detailLoading, dispatch, analysisModel } = props;
   const [classId, setClassId] = useState<string>("");
   const [sources, setSources] = useState<string[]>(ALL_SOURCES);
+  // A5 时间维度：自定义起止日期（默认本月）
+  const [dateRange, setDateRange] = useState<[Dayjs | null, Dayjs | null]>([
+    dayjs().startOf("month"),
+    dayjs(),
+  ]);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [importOpen, setImportOpen] = useState(false);
   const classList = classes || [];
@@ -54,10 +61,15 @@ const TeacherProfile = (props: any) => {
     dispatch({
       type: "teacherProfileModel/getData",
       apiUrl: "classProfileUrl",
-      payload: { class_id: cid, sources: sources.join(",") },
+      payload: {
+        class_id: cid,
+        sources: sources.join(","),
+        start_date: dateRange?.[0]?.format("YYYY-MM-DD") || "",
+        end_date: dateRange?.[1]?.format("YYYY-MM-DD") || "",
+      },
       mTitle: "profile",
     });
-  }, [classes, classId]);
+  }, [classes, classId, dateRange]);
 
   const toggleSource = (src: string) => {
     setSources((prev) => {
@@ -104,6 +116,18 @@ const TeacherProfile = (props: any) => {
           <span className="filter-class-name">
             {classList.find((c: any) => c.class_id === (classId || classList[0]?.class_id))?.class_name || ""}
           </span>
+          <DatePicker.RangePicker
+            size="small"
+            allowEmpty={[false, false]}
+            value={dateRange as any}
+            onChange={(vals) => setDateRange(vals as [Dayjs | null, Dayjs | null])}
+            presets={[
+              { label: "本周", value: [dayjs().startOf("week"), dayjs()] },
+              { label: "本月", value: [dayjs().startOf("month"), dayjs()] },
+              { label: "近三个月", value: [dayjs().subtract(3, "month"), dayjs()] },
+              { label: "本学期", value: [dayjs().subtract(6, "month"), dayjs()] },
+            ]}
+          />
           <div className="filter-spacer" />
           {profile?.updated_at ? (
             <span className="filter-updated">
@@ -127,6 +151,7 @@ const TeacherProfile = (props: any) => {
                 className={`source-chip ${sources.includes(s) ? "on" : ""}`}
                 onClick={() => toggleSource(s)}
               >
+                <i className="g-dot" style={{ background: sources.includes(s) ? "#fff" : "var(--dim-context)" }} />
                 {s}
               </button>
             ))}
@@ -138,7 +163,7 @@ const TeacherProfile = (props: any) => {
               注入教学设计
             </Button>
             <Button size="small" icon={<UploadOutlined />} onClick={() => setImportOpen(true)}>
-              上传历史学情
+              导入考试记录
             </Button>
             <Button size="small" type="primary" icon={<ReloadOutlined />} onClick={recalc} loading={loading}>
               重新计算
@@ -154,15 +179,21 @@ const TeacherProfile = (props: any) => {
             <Row gutter={16} className="teacher_profile_cards">
               <Col span={6}>
                 <div className="teacher_profile_card stat_card">
-                  <span className="stat_badge danger"><AlertOutlined /></span>
-                  <div className="teacher_profile_card_num" style={{ color: "#e05d62" }}>{cards.weak_top_pct}%</div>
+                  <div className="stat_head">
+                    <span className="stat_badge danger"><AlertOutlined /></span>
+                    <span className="g-chip g-chip--bad">需干预</span>
+                  </div>
+                  <div className="teacher_profile_card_num" style={{ color: "var(--g-bad)" }}>{cards.weak_top_pct}%</div>
                   <div className="teacher_profile_card_label">待巩固占比</div>
                   <div className="teacher_profile_card_sub">{cards.weak_top?.replace("待巩固占比", "") || "—"}</div>
                 </div>
               </Col>
               <Col span={6}>
                 <div className="teacher_profile_card stat_card">
-                  <span className="stat_badge blue"><BulbOutlined /></span>
+                  <div className="stat_head">
+                    <span className="stat_badge blue"><BulbOutlined /></span>
+                    <span className="g-chip g-chip--warn">补弱方向</span>
+                  </div>
                   <div className="teacher_profile_card_num">{cards.support_suggestions}</div>
                   <div className="teacher_profile_card_label">支援建议</div>
                   <div className="teacher_profile_card_sub">优先补弱方向</div>
@@ -170,7 +201,10 @@ const TeacherProfile = (props: any) => {
               </Col>
               <Col span={6}>
                 <div className="teacher_profile_card stat_card">
-                  <span className="stat_badge cyan"><SafetyCertificateOutlined /></span>
+                  <div className="stat_head">
+                    <span className="stat_badge cyan"><SafetyCertificateOutlined /></span>
+                    <span className="g-chip g-chip--ok">达标</span>
+                  </div>
                   <div className="teacher_profile_card_num">{cards.mastered_all_count}</div>
                   <div className="teacher_profile_card_label">全员已掌握</div>
                   <div className="teacher_profile_card_sub">全班 ≥85% 的知识点</div>
@@ -178,7 +212,10 @@ const TeacherProfile = (props: any) => {
               </Col>
               <Col span={6}>
                 <div className="teacher_profile_card stat_card">
-                  <span className="stat_badge green"><RiseOutlined /></span>
+                  <div className="stat_head">
+                    <span className="stat_badge green"><RiseOutlined /></span>
+                    <span className="g-chip g-chip--ok">向好</span>
+                  </div>
                   <div className="teacher_profile_card_num">
                     {cards.recent5_avg ?? "—"}<span className="stat_trend">↑</span>
                   </div>
@@ -187,6 +224,10 @@ const TeacherProfile = (props: any) => {
                 </div>
               </Col>
             </Row>
+
+            {/* ===== A1/A2 多维标签：能力等级 + 素养 ===== */}
+            <DimensionCards dimensions={profile.dimensions} />
+            {profile.window_note ? <p className="window_note">⏱ {profile.window_note}</p> : null}
 
             {/* ===== 分析区：左分布表 + 右图表 ===== */}
             <Row gutter={16}>
@@ -197,7 +238,7 @@ const TeacherProfile = (props: any) => {
                 </div>
               </Col>
               <Col span={10}>
-                <ProfileCharts trend={profile.trend || []} sourceMix={profile.source_mix || []} weakRanking={profile.weak_ranking || []} />
+                <ProfileCharts trend={profile.trend || []} sourceMix={profile.source_mix || []} weakRanking={profile.weak_ranking || []} classId={classId || classList[0]?.class_id} />
               </Col>
             </Row>
 

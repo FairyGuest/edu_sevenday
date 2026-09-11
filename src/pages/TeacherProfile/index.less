@@ -1,20 +1,21 @@
-// 直接选择器（不嵌套），确保与 JSX className 完全匹配
+// 卡片统一走设计令牌（graph4rec v02 体系）：更轻的描边与阴影
 .teacher_profile_card {
-  background: #fff;
-  border: 1px solid #e7edf5;
-  border-radius: 14px;
-  box-shadow: 0 1px 3px rgba(23, 42, 80, 0.04);
-  padding: 18px 20px 16px;
-  margin-bottom: 16px;
+  background: var(--g-surface);
+  border: 1px solid var(--g-border);
+  border-radius: var(--g-radius-lg);
+  box-shadow: var(--g-shadow);
+  padding: 16px 18px 14px;
+  margin-bottom: 14px;
 }
 
 .teacher_profile_card_num {
-  font-size: 30px;
-  font-weight: 750;
-  line-height: 1.15;
-  letter-spacing: -0.5px;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.4px;
   font-variant-numeric: tabular-nums;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
+  color: var(--g-text);
 }
 
 .teacher_profile_card_label {
@@ -42,7 +43,7 @@
   margin: 0 0 10px;
   font-size: 13px;
   font-weight: 650;
-  color: #2a3346;
+  color: var(--g-text);
   display: flex;
   align-items: center;
 
@@ -137,6 +138,9 @@
 
   .source-chip {
     appearance: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     border: 1px solid #dfe5f0;
     background: #fff;
     color: #5f6b81;
@@ -174,11 +178,19 @@
 /* ===== 指标卡 ===== */
 .stat_card {
   position: relative;
-  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+
+  .stat_head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
 
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(23, 42, 80, 0.08);
+    border-color: var(--g-border-strong);
   }
 
   .stat_badge {
@@ -340,4 +352,267 @@
   background: #f7f9fc;
   border: 1px solid #eef1f6;
   border-radius: 6px;
+}
+
+/* ===== A1/A2 多维标签卡（能力等级 + 素养） ===== */
+.dim_cards_row {
+  margin-bottom: 12px;
+
+  .ant-col { display: flex; flex-direction: column; }
+  .dim_card { flex: 1; }
+}
+
+.dim_card {
+  margin-bottom: 0;
+  height: 100%;
+}
+
+.dim_level_list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.dim_level_row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.dim_verb {
+  flex: none;
+  width: 118px;
+  font-size: 10.5px;
+  color: var(--g-faint);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dim_n {
+  flex: none;
+  font-size: 11px;
+  color: var(--g-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.dim_avg {
+  flex: none;
+  font-size: 11px;
+  color: var(--g-text);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.dim_note {
+  margin: 10px 0 0;
+  padding-top: 8px;
+  border-top: 1px dashed var(--g-border);
+  font-size: 10.5px;
+  color: var(--g-faint);
+}
+
+.dim_lit_list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.dim_lit_row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.dim_lit_name {
+  flex: none;
+  width: 56px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--g-text);
+}
+
+.dim_lit_val {
+  flex: none;
+  width: 36px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--g-text);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.dim_lit_subs {
+  flex: none;
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  max-width: 220px;
+}
+
+.dim_lit_sub {
+  font-size: 10px;
+  color: var(--g-faint);
+  background: #f4f6f9;
+  border-radius: 999px;
+  padding: 1px 7px;
+  white-space: nowrap;
+}
+
+/* A5 时间窗提示 */
+.window_note {
+  margin: 8px 0 0;
+  font-size: 10.5px;
+  color: var(--g-warn);
+}
+
+/* 学生抽屉 · 素养/能力 */
+.drawer_lit_row_wrap { display: flex; flex-direction: column; gap: 7px; margin-bottom: 4px; }
+.drawer_lit_row { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.drawer_lit_row .name { flex: none; width: 58px; font-size: 12px; font-weight: 600; color: var(--g-text); }
+.drawer_lit_row b { flex: none; width: 34px; font-size: 12px; text-align: right; font-variant-numeric: tabular-nums; }
+.drawer_level_chips { display: flex; flex-wrap: wrap; gap: 5px; }
+
+/* 素养雷达：左主图 + 右二级维度图例 */
+.dim_radar_row {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+
+  @media (max-width: 1200px) { flex-direction: column; }
+}
+
+.dim_radar_main {
+  flex: 1;
+  min-width: 0;
+
+  > div { width: 100% !important; }
+}
+
+.dim_radar_legend {
+  flex: none;
+  width: 208px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5px;
+  @media (max-width: 1200px) { width: 100%; }
+}
+
+.dim_rl_item {
+  padding: 4px 9px 5px;
+  background: #fafbfd;
+  border: 1px solid #eef1f6;
+  border-radius: 8px;
+}
+
+.dim_rl_head {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  .dim_rl_name { flex: 1; font-size: 12px; font-weight: 600; color: var(--g-text); }
+  .dim_rl_val { font-size: 13px; font-weight: 700; color: var(--g-text); font-variant-numeric: tabular-nums; }
+}
+
+.dim_rl_subs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px 5px;
+  margin-top: 4px;
+}
+
+.dim_rl_sub {
+  font-size: 10px;
+  color: var(--g-faint);
+  background: #fff;
+  border: 1px solid #eef1f6;
+  border-radius: 999px;
+  padding: 1px 7px;
+  white-space: nowrap;
+}
+
+/* ===== 知识点掌握图谱 ===== */
+.kg_wrap {
+  position: relative;
+  width: 100%;
+}
+
+.kg_toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.kg_hint {
+  font-size: 11px;
+  color: var(--g-faint);
+}
+
+.kg_search {
+  width: 190px;
+  margin-left: auto;
+  border-radius: 8px;
+}
+
+.kg_reset {
+  color: var(--g-muted);
+  cursor: pointer;
+  font-size: 14px;
+  &:hover { color: var(--g-accent); }
+}
+
+.kg_svg {
+  display: block;
+  max-width: 100%;
+  touch-action: none;
+  cursor: grab;
+  background: linear-gradient(180deg, #fafbfd 0%, #f4f6fa 100%);
+  border: 1px solid var(--g-border);
+  border-radius: 10px;
+}
+
+.kg_label {
+  fill: var(--g-muted);
+  pointer-events: none;
+}
+
+.kg_zoom {
+  position: absolute;
+  right: 10px;
+  bottom: 8px;
+  font-size: 10px;
+  color: var(--g-faint);
+  font-variant-numeric: tabular-nums;
+}
+
+.kg_tip {
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 11px;
+  background: #fff;
+  border: 1px solid var(--g-border);
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(23, 39, 64, 0.1);
+  font-size: 11.5px;
+  color: var(--g-muted);
+  pointer-events: none;
+
+  b { color: var(--g-text); font-size: 12.5px; }
+  i { font-style: normal; font-weight: 700; }
+  em { font-style: normal; color: var(--g-bad); font-weight: 600; }
+}
+
+/* 人机交互明细入口 */
+.ia_link {
+  padding: 0;
+  margin-top: 4px;
+  font-size: 11.5px;
 }
