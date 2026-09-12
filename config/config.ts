@@ -8,7 +8,7 @@ const {
   NODE_ENV, // Node 环境，是否为本地开发
 } = process.env;
 
-let base = "/";
+let base = process.env.DEPLOY_BASE || "/";
 
 export default defineConfig({
   hash: true,
