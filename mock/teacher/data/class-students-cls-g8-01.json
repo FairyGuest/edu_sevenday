@@ -225,6 +225,26 @@
     "wrong_qids": [
      "que-b94e8160db9a4de0995fde13320004e5"
     ]
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 3,
+    "k": 1,
+    "p": 35,
+    "band": "待巩固",
+    "p_eff": 17,
+    "due": true,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 3,
+    "k": 2,
+    "p": 50,
+    "band": "练习中",
+    "p_eff": 35,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 6,
@@ -240,7 +260,7 @@
     "weak_cnt": 0,
     "has_ev": true
    },
-   "历史会话": {
+   "人机交互": {
     "n": 14,
     "weak_cnt": 0,
     "has_ev": true
@@ -254,7 +274,7 @@
   "evidence": [
    {
     "date": "2026-08-27",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "分式",
     "correct": true,
     "stem": "若$0<a<1$，$0<b<1$，$a\\neq b$，则$a+b$，$2\\sqrt{ab}$，$2ab$，$a^2+b^2$中最大的一个是____。",
@@ -350,7 +370,7 @@
    },
    {
     "date": "2026-08-22",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "一次函数的图象和性质",
     "correct": true,
     "stem": "某年级在居家学习期间组织“抗击疫情，致敬最美的人”手抄报展示活动。其中，一班与二班共制作手抄报65份，一班的手抄报份数比二班的手抄报份数的2倍少25份，求一班和二班各制作手抄报多少份？",
@@ -398,7 +418,7 @@
    },
    {
     "date": "2026-08-10",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "四边形",
     "correct": false,
     "stem": "如图，某同学将一块含$30{}^{\\circ }$角的直角三角板叠放在直尺上，则$\\angle 1+\\angle 2=$（） A. $70{}^{\\circ }$; B. $80{}^{\\circ }$; C. $90{",
@@ -438,7 +458,7 @@
    },
    {
     "date": "2026-08-10",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "函数",
     "correct": true,
     "stem": "函数$f(x)=A\\cos(\\omega x+\\varphi)(A>0,\\omega>0,|\\varphi|<\\frac{\\pi}{2})$的部分图象如图所示，则下列叙述错误的是（ ）",
@@ -746,6 +766,26 @@
      "que-a6e0b5413ae84300924a84ae28e8a7e0",
      "que-fb824d4fe1d64a928f59e1dd4d4df0b3"
     ]
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 4,
+    "k": 2,
+    "p": 48,
+    "band": "待巩固",
+    "p_eff": 30,
+    "due": false,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 4,
+    "k": 2,
+    "p": 63,
+    "band": "练习中",
+    "p_eff": 48,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 1,
@@ -761,7 +801,7 @@
     "weak_cnt": 2,
     "has_ev": true
    },
-   "历史会话": {
+   "人机交互": {
     "n": 11,
     "weak_cnt": 0,
     "has_ev": false
@@ -799,7 +839,7 @@
    },
    {
     "date": "2026-08-29",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "分式及其基本性质",
     "correct": false,
     "stem": "6. 当$x$取什么值时，下列分式的值为零？ (1) $\\frac{|x|-7}{x-7}$； (2) $\\frac{2x-6}{x-3}$； (3) $\\frac{1-x^2}{x-1}$.",
@@ -815,7 +855,7 @@
    },
    {
     "date": "2026-08-27",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "四边形",
     "correct": false,
     "stem": "左侧，连接$ AD, AE $，满足$ \\angle AED = \\angle DAE $。过点$ A $的直线交$ l_2 $于点$ B $，点$ C $在线段$ BA $的延长线上。点$ M $在$ l_2 $上，且",
@@ -871,7 +911,7 @@
    },
    {
     "date": "2026-08-24",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "四边形",
     "correct": true,
     "stem": "如图，点D，E，F分别是三角形ABC的边BC，CA，AB上的点，DE∥BA，∠FDE=∠A。求证：DF∥CA",
@@ -903,7 +943,7 @@
    },
    {
     "date": "2026-08-22",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "特殊的平行四边形",
     "correct": true,
     "stem": "如图，在$\\square ABCD$中，$E$，$F$分别是$AB$，$CD$的中点，求证：$AF=CE$。 （有对应示意图）",
@@ -927,7 +967,7 @@
    },
    {
     "date": "2026-08-10",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "分式及其基本性质",
     "correct": true,
     "stem": "3. 已知$A=\\frac{a^2-2a+1}{2a}\\div\\frac{a-1}{a}$，先化简$A$，再求当$a=17$时$A$的值.",
@@ -943,7 +983,7 @@
    },
    {
     "date": "2026-08-10",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形的内角与外角",
     "correct": true,
     "stem": "将一个三角形纸片剪开分成两个三角形，这两个三角形不可能",
@@ -1015,7 +1055,7 @@
    },
    {
     "date": "2026-07-26",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "函数",
     "correct": true,
     "stem": "函数$y = \\frac{2x}{x^2 + x^{-2}}$的图象大致为（ ）",
@@ -1277,6 +1317,26 @@
     "wrong_qids": [
      "que-b2f8c4346e0b47108dc2b10d2e0f20d4"
     ]
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 5,
+    "k": 2,
+    "p": 61,
+    "band": "练习中",
+    "p_eff": 43,
+    "due": false,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 5,
+    "k": 3,
+    "p": 76,
+    "band": "练习中",
+    "p_eff": 61,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 5,
@@ -1292,7 +1352,7 @@
     "weak_cnt": 0,
     "has_ev": true
    },
-   "历史会话": {
+   "人机交互": {
     "n": 7,
     "weak_cnt": 0,
     "has_ev": false
@@ -1330,7 +1390,7 @@
    },
    {
     "date": "2026-08-22",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "课题学习 图案设计",
     "correct": true,
     "stem": "如图，在 中， ，将 绕点 逆时针旋转得到 ，点 、 的对应点分别为 、 ，连接 ．当点 、 、 在同一条直线上时，下列结论不正确的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp",
@@ -1370,7 +1430,7 @@
    },
    {
     "date": "2026-08-18",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "二次根式",
     "correct": false,
     "stem": "$\\left(-\\frac{3}{5}\\right)\\times8\\times\\left(-1\\frac{2}{3}\\right)=$",
@@ -1378,7 +1438,7 @@
    },
    {
     "date": "2026-08-18",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形全等的判定",
     "correct": false,
     "stem": "#### 阅读材料 1.\"边角边\":两边和它们的夹角分别相等的两个三角形全等(可以简写为\"边角边\"或\"$\\boldsymbol{SAS}$\")。 2.易错提醒:\"边角边\"中的角必须是两条边的夹角。 1. 如图，已知$\\a",
@@ -1418,7 +1478,7 @@
    },
    {
     "date": "2026-08-14",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "课题学习 图案设计",
     "correct": false,
     "stem": "如图，在6×3的方格纸中，格点三角形①经过一次旋转后得到格点三角形②，则旋转中心是（ ）",
@@ -1775,6 +1835,26 @@
     "due": false,
     "last_observed": "2026-08-22",
     "wrong_qids": []
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 6,
+    "k": 2,
+    "p": 74,
+    "band": "较熟练",
+    "p_eff": 56,
+    "due": false,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 3,
+    "k": 3,
+    "p": 89,
+    "band": "练习中",
+    "p_eff": 74,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 3,
@@ -1790,7 +1870,7 @@
     "weak_cnt": 1,
     "has_ev": true
    },
-   "历史会话": {
+   "人机交互": {
     "n": 4,
     "weak_cnt": 0,
     "has_ev": false
@@ -1900,7 +1980,7 @@
    },
    {
     "date": "2026-08-03",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "一次函数的图象和性质",
     "correct": true,
     "stem": "（2） $\\begin{cases}x - y = 2\\\\2x + y = 4\\end{cases}$",
@@ -1916,7 +1996,7 @@
    },
    {
     "date": "2026-08-02",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形全等的判定",
     "correct": false,
     "stem": "如图，$BD,CE$均是$\\triangle ABC$的高，且$BE=CD$。求证：$\\triangle BEC\\cong\\triangle CDB$。",
@@ -2290,6 +2370,26 @@
     "due": false,
     "last_observed": "2026-07-23",
     "wrong_qids": []
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 3,
+    "k": 2,
+    "p": 42,
+    "band": "待巩固",
+    "p_eff": 24,
+    "due": false,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 4,
+    "k": 2,
+    "p": 57,
+    "band": "练习中",
+    "p_eff": 42,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 0,
@@ -2305,7 +2405,7 @@
     "weak_cnt": 2,
     "has_ev": true
    },
-   "历史会话": {
+   "人机交互": {
     "n": 19,
     "weak_cnt": 0,
     "has_ev": true
@@ -2343,7 +2443,7 @@
    },
    {
     "date": "2026-08-28",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "整式的乘法",
     "correct": true,
     "stem": "1. 计算： (1) $-x\\cdot (x-y)$ (2) $3x\\cdot (2x^{2}-x)$ (3) $4ab(\\frac {1}{2}a+1)$ (2) $(-2a^{2})\\cdot (3ab^{2}-5a",
@@ -2367,7 +2467,7 @@
    },
    {
     "date": "2026-08-16",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "分式及其基本性质",
     "correct": true,
     "stem": "计算题。 1 2 2 - 1 + 1 4 2 - 1 + 1 6 2 - 1 + … + 1 100 2 - 1 （ 1 - 3 2 × 4 ） × （ 1 - 3 3 × 5 ） × （ 1 - 3 4 × 6 ） ×",
@@ -2471,7 +2571,7 @@
    },
    {
     "date": "2026-08-12",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "课题学习 图案设计",
     "correct": true,
     "stem": "如图所示的图案是一些汽车的车标，可以看作由“基本图案”经过平移得到的是（ ）",
@@ -2511,7 +2611,7 @@
    },
    {
     "date": "2026-08-07",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形全等的判定",
     "correct": false,
     "stem": "图1,在$\\triangle ABC$中,$AB=AC,EB=EC$,则由“SSS”可以判定 （ ）",
@@ -2527,7 +2627,7 @@
    },
    {
     "date": "2026-08-07",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "二次根式",
     "correct": true,
     "stem": "解决问题。 1. 萱萱的公交卡里还有20元，她每乘一次公交车花0.8元，上学和放学都要乘坐公交车，如果妙想一天往返两次，这些钱够她一周（5天）上学和放学用吗？ 2. 某市原有绿化面积213平方千米，随着人们环保意识的提高",
@@ -2535,7 +2635,7 @@
    },
    {
     "date": "2026-08-07",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形全等的判定",
     "correct": true,
     "stem": "如图，$AB=DB$，$BC=BE$，欲证$\\triangle ABE\\cong\\triangle DBC$，则需补充的条件可以是",
@@ -2583,7 +2683,7 @@
    },
    {
     "date": "2026-07-31",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形的内角与外角",
     "correct": false,
     "stem": "如中图6，已知$\\triangle ABE≌\\triangle ACD$，$\\angle 1=\\angle 2$，$\\angle B=\\angle C$，则下列等式中不正确的是（ ）",
@@ -2599,7 +2699,7 @@
    },
    {
     "date": "2026-07-31",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "四边形",
     "correct": true,
     "stem": "将一副直角三角板按如图所示放在一组平行线间，则 的度数为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
@@ -2832,6 +2932,26 @@
     "wrong_qids": [
      "que-dd8a5118c37c45449c0954f370c55a65"
     ]
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 4,
+    "k": 2,
+    "p": 55,
+    "band": "练习中",
+    "p_eff": 37,
+    "due": true,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 5,
+    "k": 3,
+    "p": 70,
+    "band": "练习中",
+    "p_eff": 55,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 6,
@@ -2847,7 +2967,7 @@
     "weak_cnt": 1,
     "has_ev": true
    },
-   "历史会话": {
+   "人机交互": {
     "n": 11,
     "weak_cnt": 1,
     "has_ev": true
@@ -2973,7 +3093,7 @@
    },
    {
     "date": "2026-08-22",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "课题学习 图案设计",
     "correct": false,
     "stem": "在平面直角坐标系$xOy$中，$\\triangle ABC$的三个顶点分别是$A(-4,2)$，$B(-2,-1)$，$C(-1,1)$。将$\\triangle ABC$向右平移3个单位长度，再向下平移2个单位长度，得到",
@@ -3029,7 +3149,7 @@
    },
    {
     "date": "2026-08-20",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "用提公因式法分解因式",
     "correct": false,
     "stem": "因式分解：$xy-4x=$",
@@ -3141,7 +3261,7 @@
    },
    {
     "date": "2026-08-01",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "分式及其基本性质",
     "correct": true,
     "stem": "化简求值：$\\left(\\frac{2xy^2}{x+y}\\right)^3 \\div \\left(\\frac{xy^3}{x^2-y^2}\\right)^2 \\cdot \\left[\\frac{1}{2(x-y)}\\r",
@@ -3360,6 +3480,26 @@
     "wrong_qids": [
      "que-39ec982f-cdae-48bf-9ad7-37735f482c80"
     ]
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 5,
+    "k": 2,
+    "p": 68,
+    "band": "练习中",
+    "p_eff": 50,
+    "due": false,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 3,
+    "k": 3,
+    "p": 83,
+    "band": "练习中",
+    "p_eff": 68,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 0,
@@ -3375,7 +3515,7 @@
     "weak_cnt": 0,
     "has_ev": true
    },
-   "历史会话": {
+   "人机交互": {
     "n": 15,
     "weak_cnt": 0,
     "has_ev": true
@@ -3477,7 +3617,7 @@
    },
    {
     "date": "2026-08-22",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "一次函数的图象和性质",
     "correct": true,
     "stem": "端午节前夕，某校为学生购买了A、B两种品牌的粽子共400个，已知B品牌粽子的单价比A品牌粽子的单价的2倍少6元．当买A品牌100个，B品牌粽子300个时，学校所花费用为4500元．求A、B两种品牌粽子各自的单价．",
@@ -3517,7 +3657,7 @@
    },
    {
     "date": "2026-08-22",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形全等的判定",
     "correct": true,
     "stem": "如图， 是 的中线， 、 分别是 和 延长线上的点，且 ，连接 、 ，下列说法正确的有（ ）",
@@ -3581,7 +3721,7 @@
    },
    {
     "date": "2026-08-17",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "整式的乘法",
     "correct": true,
     "stem": "化简： 1. $(\\frac{1}{6}x-\\frac{4}{3}xy^2)\\cdot12xy$ 2. $(-2a^2)\\cdot(3ab^2-5ab^3)+8a^3b^2$",
@@ -3605,7 +3745,7 @@
    },
    {
     "date": "2026-08-17",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "函数",
     "correct": false,
     "stem": "将一把直尺与一把三角尺按如图所示的方式放置，若$\\sin\\angle1=\\frac{\\sqrt{3}}{2}$，则$\\angle2$的度数为__________．",
@@ -3881,6 +4021,26 @@
     "due": true,
     "last_observed": "2026-07-01",
     "wrong_qids": []
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 6,
+    "k": 1,
+    "p": 36,
+    "band": "待巩固",
+    "p_eff": 18,
+    "due": false,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 4,
+    "k": 2,
+    "p": 51,
+    "band": "练习中",
+    "p_eff": 36,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 0,
@@ -3896,7 +4056,7 @@
     "weak_cnt": 0,
     "has_ev": true
    },
-   "历史会话": {
+   "人机交互": {
     "n": 13,
     "weak_cnt": 0,
     "has_ev": true
@@ -3982,7 +4142,7 @@
    },
    {
     "date": "2026-07-29",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形全等的判定",
     "correct": true,
     "stem": "如图，$OA=OB$，$OC=OD$，$AD=BC$，$\\angle O=50^\\circ$，$\\angle D=35^\\circ$，则$\\angle DBC$的度数为",
@@ -3990,7 +4150,7 @@
    },
    {
     "date": "2026-07-29",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形的内角与外角",
     "correct": true,
     "stem": "如图，点C在直 设$\\angle ACD$的度数 组是",
@@ -4006,7 +4166,7 @@
    },
    {
     "date": "2026-07-19",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "课题学习 图案设计",
     "correct": false,
     "stem": "如图所示的图案是一些汽车的车标，可以看作由“基本图案”经过平移得到的是（ ）",
@@ -4070,7 +4230,7 @@
    },
    {
     "date": "2026-07-14",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形全等的判定",
     "correct": true,
     "stem": "如图所示的仪器中,$OD=OE$,$CD=CE$.小州把这个仪器放在直线$l$上,使点$D$,$E$落在直线$l$上,作直线$OC$,则$OC\\perp l$,其中蕴含的道理是____。",
@@ -4118,7 +4278,7 @@
    },
    {
     "date": "2026-07-12",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "分式",
     "correct": false,
     "stem": "甲、乙两地相距$a$千米，现在甲、乙两地之间建一仓储站丙（甲、乙、丙三地在同一条直线上），丙与甲的距离为$x$千米。已知从甲到丙的运货费用为20元/千米，从乙到丙的运货费用为15元/千米，两地到丙的总运货费用为1000元",
@@ -4182,7 +4342,7 @@
    },
    {
     "date": "2026-07-11",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "用提公因式法分解因式",
     "correct": true,
     "stem": "因式分解：$xy-4x=$",
@@ -4404,6 +4564,26 @@
     "due": false,
     "last_observed": "2026-08-29",
     "wrong_qids": []
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 3,
+    "k": 2,
+    "p": 49,
+    "band": "待巩固",
+    "p_eff": 31,
+    "due": false,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 5,
+    "k": 2,
+    "p": 64,
+    "band": "练习中",
+    "p_eff": 49,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 1,
@@ -4419,7 +4599,7 @@
     "weak_cnt": 2,
     "has_ev": true
    },
-   "历史会话": {
+   "人机交互": {
     "n": 15,
     "weak_cnt": 1,
     "has_ev": true
@@ -4481,7 +4661,7 @@
    },
    {
     "date": "2026-08-21",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "函数",
     "correct": false,
     "stem": "若$\\sin\\theta\\cdot\\cos\\theta>0$，则$\\theta$在",
@@ -4529,7 +4709,7 @@
    },
    {
     "date": "2026-08-20",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形",
     "correct": true,
     "stem": "命题$p$：$\\forall x > 0, \\text{e}^x > 1$，则$\\neg p$是( )。",
@@ -4585,7 +4765,7 @@
    },
    {
     "date": "2026-08-20",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "分式及其基本性质",
     "correct": true,
     "stem": "先化简，再求值：$(\\frac{2x^2+2x}{x^2-1} - \\frac{x^2 - x}{x^2 - 2x + 1}) \\div \\frac{x}{x+1}$，其中$x=3$。",
@@ -4649,7 +4829,7 @@
    },
    {
     "date": "2026-08-10",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形全等的判定",
     "correct": true,
     "stem": "利用“边边边”判定三角形全等 1. “边边边”：三边分别相等的两个三角形____（可以简写为“边边边”或“____”）。 2. 尺规作图 用无刻度的直尺和圆规作图的方法称为尺规作图。",
@@ -4657,7 +4837,7 @@
    },
    {
     "date": "2026-07-30",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "整式的乘法",
     "correct": true,
     "stem": "计算： 1. $-x\\cdot (x-y)$； 2. $3x\\cdot (2x^{2}-x)$； 3. $4ab\\left(\\frac{1}{2}a+1\\right)$； 4. $(-2a^{2})\\cdot (3ab^",
@@ -4697,7 +4877,7 @@
    },
    {
     "date": "2026-07-22",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形全等的判定",
     "correct": false,
     "stem": "要点归纳 1.“角边角”：两角和它们的______分别相等的两个三角形全等(可以简写成“角边角”或“______”). 2.“角角边”：两角分别相等且其中一组等角的______相等的两个三角形全等(可以简写成“角角边”或",
@@ -4933,6 +5113,26 @@
     "wrong_qids": [
      "que-fa1f2ab3928b440481252d3311db81cb"
     ]
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 4,
+    "k": 2,
+    "p": 62,
+    "band": "练习中",
+    "p_eff": 44,
+    "due": false,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 3,
+    "k": 3,
+    "p": 77,
+    "band": "练习中",
+    "p_eff": 62,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 4,
@@ -4948,7 +5148,7 @@
     "weak_cnt": 0,
     "has_ev": false
    },
-   "历史会话": {
+   "人机交互": {
     "n": 13,
     "weak_cnt": 0,
     "has_ev": false
@@ -4962,7 +5162,7 @@
   "evidence": [
    {
     "date": "2026-08-30",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "二次根式",
     "correct": false,
     "stem": "$(-6)×(-0.5+\\frac{1}{3})=$",
@@ -5042,7 +5242,7 @@
    },
    {
     "date": "2026-08-27",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形的内角与外角",
     "correct": false,
     "stem": "如图13.3-9，在$\\triangle ABC$中，$\\angle A=70{}^{\\circ },\\angle C=30{}^{\\circ }$，$BD$平分$\\angle ABC$，交$AC$于点$D,DE\\par",
@@ -5106,7 +5306,7 @@
    },
    {
     "date": "2026-08-19",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形全等的判定",
     "correct": true,
     "stem": "如图，在$\\triangle ABC$中，$AB=AC$，$BE=CE$，则可以直接由“SSS”判定（ ）",
@@ -5154,7 +5354,7 @@
    },
    {
     "date": "2026-08-17",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "分式及其基本性质",
     "correct": true,
     "stem": "分式为最简分式的是",
@@ -5170,7 +5370,7 @@
    },
    {
     "date": "2026-08-17",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "二次根式",
     "correct": false,
     "stem": "列竖式计算 $18.2-8.67=$ $15.7+8.43=$ $0.35×0.14=$",
@@ -5443,6 +5643,26 @@
     "due": false,
     "last_observed": "2026-08-27",
     "wrong_qids": []
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 5,
+    "k": 2,
+    "p": 75,
+    "band": "较熟练",
+    "p_eff": 57,
+    "due": true,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 4,
+    "k": 3,
+    "p": 90,
+    "band": "练习中",
+    "p_eff": 75,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 2,
@@ -5458,7 +5678,7 @@
     "weak_cnt": 0,
     "has_ev": true
    },
-   "历史会话": {
+   "人机交互": {
     "n": 10,
     "weak_cnt": 1,
     "has_ev": true
@@ -5536,7 +5756,7 @@
    },
    {
     "date": "2026-08-27",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "分式及其基本性质",
     "correct": true,
     "stem": "分式为最简分式的是",
@@ -5552,7 +5772,7 @@
    },
    {
     "date": "2026-08-23",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "四边形",
     "correct": false,
     "stem": "已知：如图，三角形$ABC$中，$DE\\parallel BC$，$\\angle EDC = \\angle BFG$. 求证：$DC\\parallel GF$. （请把以下证明过程补充完整） 证明：$\\because D",
@@ -5592,7 +5812,7 @@
    },
    {
     "date": "2026-08-14",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "特殊的平行四边形",
     "correct": true,
     "stem": "如图，$AE \\parallel BF$，$AC$平分$\\angle BAE$，交$BF$于点$C$。$BD$平分$\\angle ABF$，交$AE$于点$D$，连接$CD$，$DG \\perp BD$于点$D$，交$B",
@@ -5608,7 +5828,7 @@
    },
    {
     "date": "2026-08-14",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "勾股定理",
     "correct": true,
     "stem": "如图，在$\\triangle ABC$中，$AB=AC$，$AD$是边$BC$上的中线。 求证：$AD$是$\\triangle ABC$的角平分线。",
@@ -5688,7 +5908,7 @@
    },
    {
     "date": "2026-08-07",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "勾股定理",
     "correct": false,
     "stem": "如图，$AB=AC$，$DE\\parallel AC$。求证：$\\triangle DBE$是等腰三角形。",
@@ -5744,7 +5964,7 @@
    },
    {
     "date": "2026-07-17",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形全等的判定",
     "correct": true,
     "stem": "如图，在四边形$ABCD$中,$\\angle B=\\angle D=90^\\circ$,$BC=DC$,点$E,F$分别在$AB,AD$上,$AE=AF$,求证:$CE=CF$.",
@@ -5752,7 +5972,7 @@
    },
    {
     "date": "2026-07-17",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "勾股定理",
     "correct": true,
     "stem": "已知一个等腰三角形的两条边长分别为 、 ，则该等腰三角形的腰长为 ．",
@@ -5981,6 +6201,26 @@
     "due": false,
     "last_observed": "2026-08-25",
     "wrong_qids": []
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 6,
+    "k": 2,
+    "p": 43,
+    "band": "待巩固",
+    "p_eff": 25,
+    "due": false,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 5,
+    "k": 2,
+    "p": 58,
+    "band": "练习中",
+    "p_eff": 43,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 5,
@@ -5996,7 +6236,7 @@
     "weak_cnt": 0,
     "has_ev": false
    },
-   "历史会话": {
+   "人机交互": {
     "n": 10,
     "weak_cnt": 1,
     "has_ev": true
@@ -6034,7 +6274,7 @@
    },
    {
     "date": "2026-08-25",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "勾股定理",
     "correct": true,
     "stem": "如图，$\\triangle ABC$是等腰三角形，$AD$是$\\angle BAC$的平分线。若$AB=5\\ \\text{cm}$，$BD=4\\ \\text{cm}$，则$\\triangle ABC$的周长是$\\unde",
@@ -6058,7 +6298,7 @@
    },
    {
     "date": "2026-08-23",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "勾股定理",
     "correct": false,
     "stem": "11. 如图，网格中的每个小正方形的边长都是1，每个小正方形的顶点叫格点，请在下图的网格中画出符合条件的格点三角形。 (1) 在图①中画出以AB为边且面积为2的等腰$\\triangle ABC$； (2) 在图②中画出以",
@@ -6146,7 +6386,7 @@
    },
    {
     "date": "2026-08-17",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "函数",
     "correct": false,
     "stem": "直接写出得数。 $0.12×1000=$ $8.3÷10=$ $1.25×100=$ $6.97÷100=$ $0.08×100=$ $11.5÷1000=$ $18.2÷100=$ $20.5×100=$",
@@ -6170,7 +6410,7 @@
    },
    {
     "date": "2026-08-16",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "课题学习 图案设计",
     "correct": true,
     "stem": "如图，A、B两点在直线l的同侧，在l上求作一点M，使AM+BM最小.小明的做法是：作点A关于直线l的对称点A'，连接A'B，交直线l于点M，点M即为所求.请你写出小明这样作图的依据：____",
@@ -6387,6 +6627,26 @@
     "due": false,
     "last_observed": "2026-08-14",
     "wrong_qids": []
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 3,
+    "k": 2,
+    "p": 56,
+    "band": "练习中",
+    "p_eff": 38,
+    "due": false,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 3,
+    "k": 3,
+    "p": 71,
+    "band": "练习中",
+    "p_eff": 56,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 1,
@@ -6402,7 +6662,7 @@
     "weak_cnt": 0,
     "has_ev": false
    },
-   "历史会话": {
+   "人机交互": {
     "n": 0,
     "weak_cnt": 0,
     "has_ev": false
@@ -6723,6 +6983,26 @@
     "due": false,
     "last_observed": "2026-08-17",
     "wrong_qids": []
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 4,
+    "k": 2,
+    "p": 69,
+    "band": "练习中",
+    "p_eff": 51,
+    "due": false,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 4,
+    "k": 3,
+    "p": 84,
+    "band": "练习中",
+    "p_eff": 69,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 5,
@@ -6738,7 +7018,7 @@
     "weak_cnt": 0,
     "has_ev": true
    },
-   "历史会话": {
+   "人机交互": {
     "n": 13,
     "weak_cnt": 1,
     "has_ev": true
@@ -6824,7 +7104,7 @@
    },
    {
     "date": "2026-08-20",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "一次函数的图象和性质",
     "correct": false,
     "stem": "如图，在平面直角坐标系$xOy$中，如果一个点的坐标可以用来表示关于$x$、$y$的二元一次方程组 $$\\begin{cases} a_1x + b_1y = c_1 \\\\ a_2x + b_2y = c_2 \\end{",
@@ -6832,7 +7112,7 @@
    },
    {
     "date": "2026-08-20",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "一次函数的图象和性质",
     "correct": false,
     "stem": "甲、乙两位同学在解关于x、y的方程组$\\begin{cases}2ax - by = -2① \\\\ax + by = 7② \\end{cases}$时，甲看错了方程①，解得$\\begin{cases}x = 1 \\\\y ",
@@ -6840,7 +7120,7 @@
    },
    {
     "date": "2026-08-19",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "分式",
     "correct": true,
     "stem": "已知 ， ，若 ，则 （ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
@@ -6944,7 +7224,7 @@
    },
    {
     "date": "2026-08-17",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "勾股定理",
     "correct": true,
     "stem": "如图，点$D,E$在$\\triangle ABC$的边$BC$上，$AB=AC$，$BD=CE$，$F$为$DE$的中点，求证：$AF\\perp BC$。",
@@ -6976,7 +7256,7 @@
    },
    {
     "date": "2026-08-17",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形的内角与外角",
     "correct": false,
     "stem": "如图，已知△ABC。 （1）CD是△ABC的高，则∠ADC=____=90°，$S_{\\triangle ABC}=$____； （2）CE是△ABC的中线，则AE=____=$\\frac{1}{2}$____，$S_{",
@@ -7008,7 +7288,7 @@
    },
    {
     "date": "2026-08-11",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形的内角与外角",
     "correct": true,
     "stem": "如图，已知$\\triangle ABC$。 1. $CD$是$\\triangle ABC$的高，则$\\angle ADC=$____$=90^\\circ$，$S_{\\triangle ABC}=$____； 2. $CE",
@@ -7290,6 +7570,26 @@
      "que-2c8c9ffb-1a44-4d76-8cf6-8f404ed45830",
      "que-8a905141d9d045a7b160a7785b9fe4a0"
     ]
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 5,
+    "k": 1,
+    "p": 37,
+    "band": "待巩固",
+    "p_eff": 19,
+    "due": false,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 5,
+    "k": 2,
+    "p": 52,
+    "band": "练习中",
+    "p_eff": 37,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 7,
@@ -7305,7 +7605,7 @@
     "weak_cnt": 3,
     "has_ev": true
    },
-   "历史会话": {
+   "人机交互": {
     "n": 20,
     "weak_cnt": 3,
     "has_ev": true
@@ -7335,7 +7635,7 @@
    },
    {
     "date": "2026-08-30",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "特殊的平行四边形",
     "correct": true,
     "stem": "在矩形 A B C D 中， ∠ B A D 的角平分线交 B C 于点 E ，连接 E D ，若 E D = 5 ， C E = 3 ，则线段 A E 的长为 .",
@@ -7359,7 +7659,7 @@
    },
    {
     "date": "2026-08-29",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形全等的判定",
     "correct": true,
     "stem": "如图所示的仪器中，$OD=OE$，$CD=CE$.小州把这个仪器放在直线$l$上，使点$D,E$落在直线$l$上，作直线$OC$，则$OC\\perp l$，其中蕴含的道理是$\\underline{\\quad\\quad}$",
@@ -7399,7 +7699,7 @@
    },
    {
     "date": "2026-08-20",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "函数",
     "correct": false,
     "stem": "$a、b$是正数，且$\\sin x=\\frac{a+b}{2\\sqrt{ab}}$，（ ）",
@@ -7407,7 +7707,7 @@
    },
    {
     "date": "2026-08-20",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形全等的判定",
     "correct": false,
     "stem": "如图所示，点$ D $在$ AB $上，点$ E $在$ AC $上，$AB=AC,AD=AE$，则$\\underline{\\quad\\quad}\\cong\\triangle AEB$，理由是$\\underline{\\q",
@@ -7423,7 +7723,7 @@
    },
    {
     "date": "2026-08-20",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "特殊的平行四边形",
     "correct": false,
     "stem": "两个（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）的三角形一定可以拼成一个平行四边形。",
@@ -7455,7 +7755,7 @@
    },
    {
     "date": "2026-08-18",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "特殊的平行四边形",
     "correct": false,
     "stem": "下列命题正确的是（ ）",
@@ -7527,7 +7827,7 @@
    },
    {
     "date": "2026-08-10",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "课题学习 图案设计",
     "correct": true,
     "stem": "如图，在正方形网格中有两个三角形，把其中一个三角形先横向平移 x 格，再纵向平移 y 格，就能与另一个三角形拼成一个四边形，那么 （ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ",
@@ -7551,7 +7851,7 @@
    },
    {
     "date": "2026-08-09",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "函数",
     "correct": false,
     "stem": "函数$y=x^{2}-2x$的定义域为$\\{0,1,2,3\\}$，那么其值域为（） (A) $\\{-1,0,3\\}$ (B) $\\{0,1,2,3\\}$ (C) $\\{y\\mid -1\\leqslant y\\leqsla",
@@ -7559,7 +7859,7 @@
    },
    {
     "date": "2026-08-09",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "函数",
     "correct": false,
     "stem": "已知函数$f(x)=A\\sin\\left(\\omega x+\\frac{\\pi}{3}\\right)+B$，其中$A>0$，$\\omega>0$，直线$y=m$与$y=f(x)$的图象相交，其中两个相邻交点分别是$M(x",
@@ -7703,6 +8003,26 @@
     "due": true,
     "last_observed": "2026-07-10",
     "wrong_qids": []
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 6,
+    "k": 2,
+    "p": 50,
+    "band": "练习中",
+    "p_eff": 32,
+    "due": true,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 3,
+    "k": 3,
+    "p": 65,
+    "band": "练习中",
+    "p_eff": 50,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 0,
@@ -7718,7 +8038,7 @@
     "weak_cnt": 0,
     "has_ev": false
    },
-   "历史会话": {
+   "人机交互": {
     "n": 1,
     "weak_cnt": 0,
     "has_ev": false
@@ -7732,7 +8052,7 @@
   "evidence": [
    {
     "date": "2026-07-31",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "勾股定理",
     "correct": false,
     "stem": "如图，某同学用圆规 画一个半径为 的圆，测得此时 ，为了画一个半径更大的同心圆，固定 端不动，将 端向左移至 处，此时测得 ，则 的长为（ ）",
@@ -7999,6 +8319,26 @@
     "wrong_qids": [
      "que-76652f94-63b8-4c44-889b-d5d25efb0b46"
     ]
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 3,
+    "k": 2,
+    "p": 63,
+    "band": "练习中",
+    "p_eff": 45,
+    "due": false,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 4,
+    "k": 3,
+    "p": 78,
+    "band": "练习中",
+    "p_eff": 63,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 2,
@@ -8014,7 +8354,7 @@
     "weak_cnt": 0,
     "has_ev": true
    },
-   "历史会话": {
+   "人机交互": {
     "n": 17,
     "weak_cnt": 0,
     "has_ev": true
@@ -8052,7 +8392,7 @@
    },
    {
     "date": "2026-08-26",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "一次函数的图象和性质",
     "correct": true,
     "stem": "在平面直角坐标系$xOy$中，直线$l:y=mx+n$（$m$，$n$为常数，且$m\\ne0$）上的两点的横坐标和纵坐标的对应值如表： | $x$ | $-1$ | $2$ | | ---- | ---- | ---- ",
@@ -8180,7 +8520,7 @@
    },
    {
     "date": "2026-08-12",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形的内角与外角",
     "correct": true,
     "stem": "已知线段OA，请你用量角器作$\\angle BOA=60^\\circ$，作$\\angle BOA$的角平分线OC，在OC上取一点D，作$DE\\parallel OA$，交OB于E。求证：$\\angle BOC=\\angl",
@@ -8204,7 +8544,7 @@
    },
    {
     "date": "2026-08-10",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形",
     "correct": true,
     "stem": "某种药品的说明书上标明保存温度是（20±2）℃，由此可知在____℃~____℃范围内保存才合适。",
@@ -8284,7 +8624,7 @@
    },
    {
     "date": "2026-08-05",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形全等的判定",
     "correct": true,
     "stem": "如图所示,$AD$与$BC$相交于点$E$,$CE=DE$,$EA=EB$,$AC=BD$.求证:$\\triangle ABC\\cong\\triangle BAD$.",
@@ -8300,7 +8640,7 @@
    },
    {
     "date": "2026-08-05",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "课题学习 图案设计",
     "correct": true,
     "stem": "如图，将 △ ABC 向右平移 3 个单位长度，再向上平移 2 个单位长度，可以得到 ． (1) 画出平移后的 ； (2) 写出 三个顶点的坐标； (3) 已知点 P 在 x 轴上，以 A 1 、 B 1 、 P 为顶点",
@@ -8523,6 +8863,26 @@
     "wrong_qids": [
      "que-f41ed51ab30743b1aa63d6ec8c6d8a38"
     ]
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 4,
+    "k": 2,
+    "p": 76,
+    "band": "较熟练",
+    "p_eff": 58,
+    "due": false,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 5,
+    "k": 3,
+    "p": 91,
+    "band": "练习中",
+    "p_eff": 76,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 5,
@@ -8538,7 +8898,7 @@
     "weak_cnt": 0,
     "has_ev": false
    },
-   "历史会话": {
+   "人机交互": {
     "n": 6,
     "weak_cnt": 0,
     "has_ev": false
@@ -8552,7 +8912,7 @@
   "evidence": [
    {
     "date": "2026-08-24",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "一次函数的图象和性质",
     "correct": true,
     "stem": "如图，用形状、大小完全相同的小长方形墙砖拼成一个大长方形，设每个小长方形墙砖长和宽分别为$x\\ cm$和$y\\ cm$，则依题意可列方程组为（ ） A. $\\begin{cases}x + 2y = 22 \\\\y = 3",
@@ -8568,7 +8928,7 @@
    },
    {
     "date": "2026-08-24",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形全等的判定",
     "correct": false,
     "stem": "已知：如图，$AC$与$BD$相交于点$O$，且$OA=OC,OB=OD$。求证：$\\triangle AOB\\cong\\triangle COD$。",
@@ -8688,7 +9048,7 @@
    },
    {
     "date": "2026-08-12",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "特殊的平行四边形",
     "correct": false,
     "stem": "如图，在$\\square ABCD$中，$E$，$F$分别是$AB$，$CD$的中点，求证：$AF=CE$。",
@@ -9054,6 +9414,26 @@
     "due": false,
     "last_observed": "2026-08-27",
     "wrong_qids": []
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 5,
+    "k": 2,
+    "p": 44,
+    "band": "待巩固",
+    "p_eff": 26,
+    "due": false,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 3,
+    "k": 2,
+    "p": 59,
+    "band": "练习中",
+    "p_eff": 44,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 1,
@@ -9069,7 +9449,7 @@
     "weak_cnt": 0,
     "has_ev": false
    },
-   "历史会话": {
+   "人机交互": {
     "n": 15,
     "weak_cnt": 0,
     "has_ev": true
@@ -9107,7 +9487,7 @@
    },
    {
     "date": "2026-08-27",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "课题学习 图案设计",
     "correct": true,
     "stem": "如图，点$E$，$F$分别在长方形纸片$ABCD$的边$AD$，$BC$上，将纸片沿$EF$对折，点$C$，$D$分别落在点$C_1$，$D_1$，$FC_1$交$AD$于点$G$。若$\\angle GFE=\\alpha",
@@ -9283,7 +9663,7 @@
    },
    {
     "date": "2026-08-18",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "分式",
     "correct": true,
     "stem": "设 ，用含 、 的式子表示 ，下列表示正确的是",
@@ -9299,7 +9679,7 @@
    },
    {
     "date": "2026-08-14",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "勾股定理",
     "correct": false,
     "stem": "如图，在$\\triangle ABC$中，$AB=AC=12$，$\\angle BAC=120^\\circ$，则底边上的中线$AD$的长为____。",
@@ -9558,6 +9938,26 @@
     "due": false,
     "last_observed": "2026-08-30",
     "wrong_qids": []
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 6,
+    "k": 2,
+    "p": 57,
+    "band": "练习中",
+    "p_eff": 39,
+    "due": false,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 4,
+    "k": 3,
+    "p": 72,
+    "band": "练习中",
+    "p_eff": 57,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 0,
@@ -9573,7 +9973,7 @@
     "weak_cnt": 0,
     "has_ev": true
    },
-   "历史会话": {
+   "人机交互": {
     "n": 16,
     "weak_cnt": 0,
     "has_ev": true
@@ -9595,7 +9995,7 @@
    },
    {
     "date": "2026-08-30",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "一次函数的图象和性质",
     "correct": false,
     "stem": "已知方程组$\\begin{cases}x-y=1+3a, \\newline x+y=-7-a \\end{cases}$的解中,$x$为非正数,$y$为负数. (1) 求$a$的取值范围 (2) 当$a$为何整数时,不等式",
@@ -9787,7 +10187,7 @@
    },
    {
     "date": "2026-08-14",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "勾股定理",
     "correct": true,
     "stem": "如图，$\\triangle ABC$中，$AB=AC$，$\\angle A=36^\\circ$，$AB$的垂直平分线交$AC$于点$D$，交$AB$于点$M$，求证：$\\triangle BCD$是等腰三角形。",
@@ -9843,7 +10243,7 @@
    },
    {
     "date": "2026-08-12",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "整式的乘法",
     "correct": true,
     "stem": "化简： 1. $\\left(\\frac{1}{6}x-\\frac{4}{3}xy^{2}\\right)\\cdot 12xy$；",
@@ -9851,7 +10251,7 @@
    },
    {
     "date": "2026-08-12",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "分式",
     "correct": true,
     "stem": "“ 的倒数的平方与 的差”用代数式表示为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
@@ -10102,6 +10502,26 @@
     "due": false,
     "last_observed": "2026-08-24",
     "wrong_qids": []
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 3,
+    "k": 2,
+    "p": 70,
+    "band": "较熟练",
+    "p_eff": 52,
+    "due": true,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 5,
+    "k": 3,
+    "p": 85,
+    "band": "练习中",
+    "p_eff": 70,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 3,
@@ -10117,7 +10537,7 @@
     "weak_cnt": 0,
     "has_ev": false
    },
-   "历史会话": {
+   "人机交互": {
     "n": 15,
     "weak_cnt": 1,
     "has_ev": true
@@ -10235,7 +10655,7 @@
    },
    {
     "date": "2026-08-24",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "二次根式",
     "correct": true,
     "stem": "直接写出得数。 $1-0.7=$ $25×0.2=$ $0.36+4=$ $4.25-3.75=$ $5.7-0.9=$ $0.8×0.7=$ $1.25×8=$ $4.4+0.56=$",
@@ -10315,7 +10735,7 @@
    },
    {
     "date": "2026-08-15",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "勾股定理",
     "correct": false,
     "stem": "1. 在$\\text{Rt}\\triangle ABC$中，$\\angle C=90^{\\circ}$，$\\angle B=36^{\\circ}$，则$\\angle A$的度数为____°。 2. 下列条件:①$\\ang",
@@ -10323,7 +10743,7 @@
    },
    {
     "date": "2026-08-15",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "课题学习 图案设计",
     "correct": true,
     "stem": "如图所示的图案是一些汽车的车标，可以看作由“基本图案”经过平移得到的是（ ）",
@@ -10636,6 +11056,26 @@
     "wrong_qids": [
      "que-1a575b75-2ab2-474b-a319-8b9adf54312c"
     ]
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 4,
+    "k": 1,
+    "p": 38,
+    "band": "待巩固",
+    "p_eff": 20,
+    "due": false,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 3,
+    "k": 2,
+    "p": 53,
+    "band": "练习中",
+    "p_eff": 38,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 5,
@@ -10651,7 +11091,7 @@
     "weak_cnt": 2,
     "has_ev": true
    },
-   "历史会话": {
+   "人机交互": {
     "n": 5,
     "weak_cnt": 0,
     "has_ev": false
@@ -10785,7 +11225,7 @@
    },
    {
     "date": "2026-08-09",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "二次根式",
     "correct": false,
     "stem": "设函数$f(x)=\\frac{2x^2 -x +1}{x}(x<0)$，则函数$f(x)$",
@@ -10857,7 +11297,7 @@
    },
    {
     "date": "2026-07-26",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "一次函数的图象和性质",
     "correct": true,
     "stem": "如图，在平面直角坐标系中，直线 l ： y = 3 x + 3 与两坐标轴交于 A 、 B 两点，以 A B 为边作等边 △ A B C ，将等边 △ A B C 沿射线 A B 方向作连续无滑动地翻滚．第一次翻滚：将等",
@@ -11174,6 +11614,26 @@
     "wrong_qids": [
      "que-a487910872564ca3bc73b0c74c84a153"
     ]
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 5,
+    "k": 2,
+    "p": 51,
+    "band": "练习中",
+    "p_eff": 33,
+    "due": false,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 4,
+    "k": 3,
+    "p": 66,
+    "band": "练习中",
+    "p_eff": 51,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 6,
@@ -11189,7 +11649,7 @@
     "weak_cnt": 0,
     "has_ev": true
    },
-   "历史会话": {
+   "人机交互": {
     "n": 13,
     "weak_cnt": 1,
     "has_ev": true
@@ -11235,7 +11695,7 @@
    },
    {
     "date": "2026-08-25",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形",
     "correct": true,
     "stem": "命题“$\\exists x>0,x^2+2x+5>0$”的否定是（ ）",
@@ -11251,7 +11711,7 @@
    },
    {
     "date": "2026-08-19",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形的内角与外角",
     "correct": true,
     "stem": "[作图通关] 过A，B，C，D，E五个点中任意三点画三角形。 （1）如图①，其中以AB为一边可以画出____个三角形，并画出图形。 （2）如图②，其中以C为顶点可以画出____个三角形，并画出图形。",
@@ -11363,7 +11823,7 @@
    },
    {
     "date": "2026-08-04",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "整式的乘法",
     "correct": true,
     "stem": "#### 阅读材料 多项式与多项式相乘，先用一个多项式的每一项乘另一个多项式的每一项，再把所得的积相加，即$(a+b)(m+n)=am+an+bm+bn$。 1. 计算： (1) $(x-5)(x-1)$ (2) $(2",
@@ -11379,7 +11839,7 @@
    },
    {
     "date": "2026-08-04",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "四边形",
     "correct": true,
     "stem": "如图，$AB\\parallel CD$，$AC⊥BC$，图中与$∠CAB$互余的角有（ ）",
@@ -11443,7 +11903,7 @@
    },
    {
     "date": "2026-07-31",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "课题学习 图案设计",
     "correct": false,
     "stem": "如果一个图形是轴对称图形或两个图形成轴对称，其对称轴就是任意一对对应点所连线段的____。",
@@ -11704,6 +12164,26 @@
     "due": false,
     "last_observed": "2026-08-26",
     "wrong_qids": []
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 6,
+    "k": 2,
+    "p": 64,
+    "band": "练习中",
+    "p_eff": 46,
+    "due": false,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 5,
+    "k": 3,
+    "p": 79,
+    "band": "练习中",
+    "p_eff": 64,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 8,
@@ -11719,7 +12199,7 @@
     "weak_cnt": 1,
     "has_ev": true
    },
-   "历史会话": {
+   "人机交互": {
     "n": 7,
     "weak_cnt": 0,
     "has_ev": false
@@ -11797,7 +12277,7 @@
    },
    {
     "date": "2026-08-28",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形",
     "correct": false,
     "stem": "已知同一平 A. 如果$a$ C 如果$a$",
@@ -11821,7 +12301,7 @@
    },
    {
     "date": "2026-08-26",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "用提公因式法分解因式",
     "correct": false,
     "stem": "下列由左边到右边的变形，是因式分解的是（ ）",
@@ -11837,7 +12317,7 @@
    },
    {
     "date": "2026-08-26",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形全等的判定",
     "correct": true,
     "stem": "如图，点$B,E,C,F$在同一直线上，$BE=CF$，$AB=DE$，$AC=DF$。求证：$\\triangle ABC\\cong\\triangle DEF$。",
@@ -11877,7 +12357,7 @@
    },
    {
     "date": "2026-07-24",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形的内角与外角",
     "correct": true,
     "stem": "如图，O为直线AB上一点，OE平分∠BOC，OD⊥OE于点O，若∠BOC=80°，则∠AOD的度数是（ ）",
@@ -12228,6 +12708,26 @@
     "due": false,
     "last_observed": "2026-07-31",
     "wrong_qids": []
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 3,
+    "k": 2,
+    "p": 77,
+    "band": "较熟练",
+    "p_eff": 59,
+    "due": false,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 3,
+    "k": 3,
+    "p": 92,
+    "band": "练习中",
+    "p_eff": 77,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 3,
@@ -12243,7 +12743,7 @@
     "weak_cnt": 0,
     "has_ev": true
    },
-   "历史会话": {
+   "人机交互": {
     "n": 8,
     "weak_cnt": 0,
     "has_ev": false
@@ -12409,7 +12909,7 @@
    },
    {
     "date": "2026-07-31",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "函数",
     "correct": true,
     "stem": "将函数$y=\\sin x$图象上的所有点的横坐标扩大到原来的2倍，纵坐标不变，再把所得函数的图象向左平移$\\frac{\\pi}{3}$个单位长度，得到函数$y=f(x)$的图象，则$f(x)=$____",
@@ -12769,6 +13269,26 @@
     "wrong_qids": [
      "que-b407e84125474cd3a193cf4275304b9a"
     ]
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 4,
+    "k": 2,
+    "p": 45,
+    "band": "待巩固",
+    "p_eff": 27,
+    "due": true,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 4,
+    "k": 2,
+    "p": 60,
+    "band": "练习中",
+    "p_eff": 45,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 7,
@@ -12784,7 +13304,7 @@
     "weak_cnt": 0,
     "has_ev": false
    },
-   "历史会话": {
+   "人机交互": {
     "n": 13,
     "weak_cnt": 1,
     "has_ev": true
@@ -12806,7 +13326,7 @@
    },
    {
     "date": "2026-08-30",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "特殊的平行四边形",
     "correct": false,
     "stem": "如图，在菱形 中， ，点 分别在边 上，且 ，若菱形边长为 ，则四边形 的面积为 ．",
@@ -12926,7 +13446,7 @@
    },
    {
     "date": "2026-08-14",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "二次根式",
     "correct": true,
     "stem": "计算： (1) $\\left(\\frac{b}{a}\\right)^{-2}\\cdot\\left(\\frac{a}{b}\\right)^2$ (2) $a^{-2}b^3\\cdot(a^2b^{-2})^{-3}$ (3",
@@ -12982,7 +13502,7 @@
    },
    {
     "date": "2026-08-05",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形",
     "correct": false,
     "stem": "已知角$\\alpha$的终边经过点$\\left(\\frac{1}{2}, -\\frac{1}{2}\\right)$，则$\\cos\\alpha =$",
@@ -13030,7 +13550,7 @@
    },
    {
     "date": "2026-08-01",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "课题学习 图案设计",
     "correct": false,
     "stem": "在正方形网格中，每个小正方形的边长均为1个单位长度，$\\triangle ABC$三个顶点的位置如图所示。现将$\\triangle ABC$平移，使点$A$与点$D$重合。点$E$，$F$分别是点$B$，$C$的对应点。",
@@ -13280,6 +13800,26 @@
     "due": false,
     "last_observed": "2026-08-29",
     "wrong_qids": []
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 5,
+    "k": 2,
+    "p": 58,
+    "band": "练习中",
+    "p_eff": 40,
+    "due": false,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 5,
+    "k": 3,
+    "p": 73,
+    "band": "练习中",
+    "p_eff": 58,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 1,
@@ -13295,7 +13835,7 @@
     "weak_cnt": 0,
     "has_ev": true
    },
-   "历史会话": {
+   "人机交互": {
     "n": 7,
     "weak_cnt": 0,
     "has_ev": false
@@ -13349,7 +13889,7 @@
    },
    {
     "date": "2026-08-28",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "课题学习 图案设计",
     "correct": false,
     "stem": "如图所示的图案是一些汽车的车标，可以看作由“基本图案”经过平移得到的是（） 选项为四个车标图案",
@@ -13477,7 +14017,7 @@
    },
    {
     "date": "2026-08-14",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "用提公因式法分解因式",
     "correct": true,
     "stem": "把一个多项式化为几个整式的____的形式，叫作这个多项式的因式分解。",
@@ -13541,7 +14081,7 @@
    },
    {
     "date": "2026-08-05",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "一次函数的图象和性质",
     "correct": false,
     "stem": "每年的4月23日是世界读书日。某校为响应“全民阅读”的号召，计划购入A、B两种规格的书柜用于放置图书。经市场调查发现，若购买A种书柜3个、B种书柜2个，共需资金1020元；若购买A种书柜5个、B种书柜3个，共需资金162",
@@ -13557,7 +14097,7 @@
    },
    {
     "date": "2026-08-05",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形",
     "correct": true,
     "stem": "若$\\sqrt{x-3}$在实数范围内有意义，则实数$x$的取值范围是____。",
@@ -13806,6 +14346,26 @@
     "wrong_qids": [
      "que-d470fcecc6bc45bd84b247a46e7bb5cd"
     ]
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 6,
+    "k": 2,
+    "p": 71,
+    "band": "较熟练",
+    "p_eff": 53,
+    "due": false,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 3,
+    "k": 3,
+    "p": 86,
+    "band": "练习中",
+    "p_eff": 71,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 4,
@@ -13821,7 +14381,7 @@
     "weak_cnt": 0,
     "has_ev": true
    },
-   "历史会话": {
+   "人机交互": {
     "n": 8,
     "weak_cnt": 0,
     "has_ev": false
@@ -13987,7 +14547,7 @@
    },
    {
     "date": "2026-07-24",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "分式",
     "correct": false,
     "stem": "已知$a$、$b$为正实数，$A=\\frac{a+b}{2},\\frac{2}{H}=\\frac{1}{a}+\\frac{1}{b},G=\\sqrt{ab}$，则（ ）",
@@ -14325,6 +14885,26 @@
     "due": false,
     "last_observed": "2026-07-24",
     "wrong_qids": []
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 3,
+    "k": 1,
+    "p": 39,
+    "band": "待巩固",
+    "p_eff": 21,
+    "due": false,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 4,
+    "k": 2,
+    "p": 54,
+    "band": "练习中",
+    "p_eff": 39,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 2,
@@ -14340,7 +14920,7 @@
     "weak_cnt": 0,
     "has_ev": true
    },
-   "历史会话": {
+   "人机交互": {
     "n": 12,
     "weak_cnt": 0,
     "has_ev": false
@@ -14370,7 +14950,7 @@
    },
    {
     "date": "2026-08-18",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "函数",
     "correct": false,
     "stem": "计算：$\\sin30^\\circ+\\tan45^\\circ-2\\cos60^\\circ=$__________．",
@@ -14394,7 +14974,7 @@
    },
    {
     "date": "2026-08-16",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "分式及其基本性质",
     "correct": true,
     "stem": "当$x$取什么值时，下列分式的值为零？ 1. $\\frac{|x|-7}{x-7}$； 2. $\\frac{2x-6}{x-3}$； 3. $\\frac{1-x^2}{x-1}$。",
@@ -14474,7 +15054,7 @@
    },
    {
     "date": "2026-07-28",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "特殊的平行四边形",
     "correct": true,
     "stem": "如图，在$\\square ABCD$中，$E$，$F$分别是$AB$，$CD$的中点，求证：$AF=CE$。",
@@ -14530,7 +15110,7 @@
    },
    {
     "date": "2026-07-24",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "分式",
     "correct": true,
     "stem": "已知汽车的速度为$v$千米/时，甲、乙两地的路程是$s$千米。 (1)该汽车行驶$t$时的路程是____千米，从甲地到乙地需行驶____时； (2)如果该汽车的速度加快$a$千米/时，那么____。",
@@ -14538,7 +15118,7 @@
    },
    {
     "date": "2026-07-24",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "分式及其基本性质",
     "correct": true,
     "stem": "函数$y=\\frac{x^2+x+3}{x-2}(x>2)$的最小值为____。",
@@ -14843,6 +15423,26 @@
     "due": false,
     "last_observed": "2026-08-14",
     "wrong_qids": []
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 4,
+    "k": 2,
+    "p": 52,
+    "band": "练习中",
+    "p_eff": 34,
+    "due": false,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 5,
+    "k": 3,
+    "p": 67,
+    "band": "练习中",
+    "p_eff": 52,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 5,
@@ -14858,7 +15458,7 @@
     "weak_cnt": 0,
     "has_ev": true
    },
-   "历史会话": {
+   "人机交互": {
     "n": 8,
     "weak_cnt": 0,
     "has_ev": true
@@ -14928,7 +15528,7 @@
    },
    {
     "date": "2026-08-22",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "整式的乘法",
     "correct": false,
     "stem": "计算$8a^3\\div(-2a)$的结果是$\\underline{}$。",
@@ -14984,7 +15584,7 @@
    },
    {
     "date": "2026-08-16",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "函数",
     "correct": false,
     "stem": "函数 $f(x)=\\frac{2x-3}{3x+1}$ 的值域",
@@ -15016,7 +15616,7 @@
    },
    {
     "date": "2026-08-16",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形",
     "correct": true,
     "stem": "滑轮组绕线改变时，滑轮组的机械效率和省力情况均不变。",
@@ -15072,7 +15672,7 @@
    },
    {
     "date": "2026-08-14",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形",
     "correct": true,
     "stem": "某同学在假期计划每天做 6 道数学题，其中十天做题数量记录如下（超过的记为正数，不足的记为负数，单位：道）： ， 2 ， ， 1 ， 0 ， ， 8 ， 7 ．他这十天共做了数学题（ &nbsp;&nbsp;&nbsp;",
@@ -15128,7 +15728,7 @@
    },
    {
     "date": "2026-08-10",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "函数",
     "correct": false,
     "stem": "已知函数$f(x) = 2\\sin(\\omega x + j)(\\omega&gt;0)$，曲线$y = f(x)$与直线$y = \\sqrt{3}$相交，若存在相邻两个交点间的距离为$\\frac{p}{6}$，则$\\o",
@@ -15374,6 +15974,26 @@
     "wrong_qids": [
      "que-546074cb-1642-4ab9-9a4e-1fb35523f9cb"
     ]
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 5,
+    "k": 2,
+    "p": 65,
+    "band": "练习中",
+    "p_eff": 47,
+    "due": true,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 3,
+    "k": 3,
+    "p": 80,
+    "band": "练习中",
+    "p_eff": 65,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 6,
@@ -15389,7 +16009,7 @@
     "weak_cnt": 1,
     "has_ev": true
    },
-   "历史会话": {
+   "人机交互": {
     "n": 8,
     "weak_cnt": 0,
     "has_ev": false
@@ -15403,7 +16023,7 @@
   "evidence": [
    {
     "date": "2026-08-28",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "分式及其基本性质",
     "correct": true,
     "stem": "函数$y=\\frac{x^2+x+3}{x-2}(x>2)$的最小值为____。",
@@ -15443,7 +16063,7 @@
    },
    {
     "date": "2026-08-18",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "分式",
     "correct": false,
     "stem": "已知数表$A_{2n} = \\begin{pmatrix} a_{11} &amp; a_{12} &amp; \\dots &amp; a_{1n} \\\\ a_{21} &amp; a_{22} &amp; \\dots ",
@@ -15515,7 +16135,7 @@
    },
    {
     "date": "2026-08-11",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形的内角与外角",
     "correct": true,
     "stem": "性质：①等边三角形的三个内角都____，并且每一个角都等于____。②等边三角形是____图形，它有____条对称轴。③等边三角形是特殊的等腰三角形，它具有等腰三角形的一切性质。 2.判定：①____都相等的三角形是等边",
@@ -15547,7 +16167,7 @@
    },
    {
     "date": "2026-08-11",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "课题学习 图案设计",
     "correct": false,
     "stem": "如图所示的车标，可以看作由“基本图案”经过平移得到的是（ ）",
@@ -15571,7 +16191,7 @@
    },
    {
     "date": "2026-08-10",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "分式及其基本性质",
     "correct": false,
     "stem": "已知正实数$a$、$b$满足$\\frac{1}{a}+\\frac{1}{b}=m$，若$\\left(a+\\frac{1}{b}\\right)\\left(b+\\frac{1}{a}\\right)$的最小值为4，则实数$m$",
@@ -15899,6 +16519,26 @@
     "wrong_qids": [
      "que-1b4260f0096e45ba92174328629750ed"
     ]
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 6,
+    "k": 2,
+    "p": 78,
+    "band": "较熟练",
+    "p_eff": 60,
+    "due": false,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 4,
+    "k": 3,
+    "p": 93,
+    "band": "练习中",
+    "p_eff": 78,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 1,
@@ -15914,7 +16554,7 @@
     "weak_cnt": 0,
     "has_ev": true
    },
-   "历史会话": {
+   "人机交互": {
     "n": 11,
     "weak_cnt": 0,
     "has_ev": false
@@ -16016,7 +16656,7 @@
    },
    {
     "date": "2026-08-13",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "课题学习 图案设计",
     "correct": false,
     "stem": "下列图形中，不能通过其中一个四边形平移得到的是（） A. B. C. D.",
@@ -16080,7 +16720,7 @@
    },
    {
     "date": "2026-08-11",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "特殊的平行四边形",
     "correct": true,
     "stem": "如图，四边形$ABCD$，$AC$、$BD$交于点$O$，$0^\\circ < \\angle ABC < 90^\\circ$，$AB\\parallel CD$，$AD\\parallel BC$，下列结论正确的是 ①$\\a",
@@ -16136,7 +16776,7 @@
    },
    {
     "date": "2026-08-04",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "分式及其基本性质",
     "correct": false,
     "stem": "先化简，再求值：$\\left( \\frac{2x^2+2x}{x^2-1} - \\frac{x^2-x}{x^2-2x+1} \\right) \\div \\frac{x}{x+1}$，其中$x=3$。",
@@ -16160,7 +16800,7 @@
    },
    {
     "date": "2026-08-04",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形全等的判定",
     "correct": false,
     "stem": "根据图中所给定的条件，全等三角形是（ ）",
@@ -16168,7 +16808,7 @@
    },
    {
     "date": "2026-08-04",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "特殊的平行四边形",
     "correct": false,
     "stem": "如图，校园中有一扇中式古典花窗，其内部有一个菱形图案。若该菱形的周长为40分米，一条对角线长12分米，则另一条对角线的长为____分米。",
@@ -16184,7 +16824,7 @@
    },
    {
     "date": "2026-08-01",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形的内角与外角",
     "correct": true,
     "stem": "如图，已知$AD$是$\\triangle ABC$的中线，点$E$为线段$AD$的中点，$AB=12\\mathrm{cm}$，$AC=9\\mathrm{cm}$。 （1）若$\\triangle ACD$的周长为$25\\m",
@@ -16208,7 +16848,7 @@
    },
    {
     "date": "2026-07-26",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "一次函数的图象和性质",
     "correct": false,
     "stem": "有大小两种容器，已知5个大容器和1个小容器的总容量为3斛，1个大容器和5个小容器的总容量为2斛。若设1个大容器的容量为$x$斛，1个小容器的容量为$y$斛，则列方程组为 A. $\\begin{cases}5x+y=2\\\\",
@@ -16429,6 +17069,26 @@
     "wrong_qids": [
      "que-167b1a7a77fa4c3e816f4fdeeff9151b"
     ]
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 3,
+    "k": 2,
+    "p": 46,
+    "band": "待巩固",
+    "p_eff": 28,
+    "due": false,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 5,
+    "k": 2,
+    "p": 61,
+    "band": "练习中",
+    "p_eff": 46,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 6,
@@ -16444,7 +17104,7 @@
     "weak_cnt": 1,
     "has_ev": true
    },
-   "历史会话": {
+   "人机交互": {
     "n": 9,
     "weak_cnt": 0,
     "has_ev": false
@@ -16538,7 +17198,7 @@
    },
    {
     "date": "2026-08-12",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形",
     "correct": true,
     "stem": "下列命题中，是假命题的是（ ）",
@@ -16546,7 +17206,7 @@
    },
    {
     "date": "2026-08-12",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形全等的判定",
     "correct": false,
     "stem": "如图，四边形$ABCD$中，已知$AB=AD$，$DC=BC$。求证：$\\angle B=\\angle D$。 下面是两位同学的对话： 方方说：“根据条件，找不到全等三角形。” 圆圆说：“如果添加辅助线，就可以找到全等三",
@@ -16554,7 +17214,7 @@
    },
    {
     "date": "2026-08-12",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "分式",
     "correct": false,
     "stem": "已知$x=2+\\sqrt{3}$，$y=2-\\sqrt{3}$，求代数式$x^2-y^2$的值。",
@@ -16738,7 +17398,7 @@
    },
    {
     "date": "2026-07-24",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形全等的判定",
     "correct": true,
     "stem": "“边角边”：两边和它们的夹角分别相等的两个三角形全等（可以简写为“边角边”或“____”）。 易错提醒：“边角边”中的角必须是两条边的夹角。",
@@ -16967,6 +17627,26 @@
     "wrong_qids": [
      "que-4c1b8179-51a9-4c42-8d3f-69e506003121"
     ]
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 4,
+    "k": 2,
+    "p": 59,
+    "band": "练习中",
+    "p_eff": 41,
+    "due": false,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 3,
+    "k": 3,
+    "p": 74,
+    "band": "练习中",
+    "p_eff": 59,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 7,
@@ -16982,7 +17662,7 @@
     "weak_cnt": 4,
     "has_ev": true
    },
-   "历史会话": {
+   "人机交互": {
     "n": 8,
     "weak_cnt": 0,
     "has_ev": true
@@ -16996,7 +17676,7 @@
   "evidence": [
    {
     "date": "2026-08-29",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "分式",
     "correct": true,
     "stem": "看图列式并计算",
@@ -17028,7 +17708,7 @@
    },
    {
     "date": "2026-08-29",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "二次根式",
     "correct": true,
     "stem": "已知$\\alpha \\in (0, \\frac{\\pi}{2})$，且$\\sin\\alpha = \\frac{3}{5}$. (1)则$\\cos(\\alpha + \\frac{\\pi}{4})=$____________",
@@ -17172,7 +17852,7 @@
    },
    {
     "date": "2026-07-17",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "分式",
     "correct": true,
     "stem": "甲、乙两地相距$a$千米，现在甲、乙两地之间建一仓储站丙（甲、乙、丙三地在同一条直线上），丙与甲的距离为$x$千米。已知从甲到丙的运货费用为20元/千米，从乙到丙的运货费用为15元/千米，两地到丙的总运货费用为1000元",
@@ -17220,7 +17900,7 @@
    },
    {
     "date": "2026-07-12",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "分式及其基本性质",
     "correct": true,
     "stem": "先化简$\\frac{x^2 - 2x + 1}{x^2 - 1} \\div \\left( 1 - \\frac{3}{x+1} \\right)$，再从$-4 < x < 4$的范围内选取一个合适的整数$x$代入求值。",
@@ -17260,7 +17940,7 @@
    },
    {
     "date": "2026-07-08",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "分式",
     "correct": true,
     "stem": "已知$x,y \\in \\mathrm{R}$，且$x^2+y^2=2$，$|x|\\neq|y|$，则$\\frac{1}{(x+y)^2} + \\frac{1}{(x-y)^2}$的最小值为____。",
@@ -17507,6 +18187,26 @@
      "que-61ab5f4472124a0fa92368f3455e74f2",
      "que-e04b6f2a4fbe4ac48b0913b41a391349"
     ]
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 5,
+    "k": 2,
+    "p": 72,
+    "band": "较熟练",
+    "p_eff": 54,
+    "due": false,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 4,
+    "k": 3,
+    "p": 87,
+    "band": "练习中",
+    "p_eff": 72,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 7,
@@ -17522,7 +18222,7 @@
     "weak_cnt": 0,
     "has_ev": false
    },
-   "历史会话": {
+   "人机交互": {
     "n": 12,
     "weak_cnt": 0,
     "has_ev": true
@@ -17664,7 +18364,7 @@
    },
    {
     "date": "2026-08-25",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "整式的乘法",
     "correct": true,
     "stem": "1. 化简：$(\\frac{1}{6}x-\\frac{4}{3}xy^2) \\cdot 12xy$ 2. 计算：$(-2a^2) \\cdot (3ab^2-5ab^3)+8a^3b^2$ 3. 先化简，再求值：$3a(2",
@@ -17672,7 +18372,7 @@
    },
    {
     "date": "2026-08-14",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "二次根式",
     "correct": true,
     "stem": "一、直接写出得数 $3.5×4=$$1.8×\\frac{1}{3}=0.6$$0.8×\\frac{3}{4}=5.4$ $9-\\frac{3}{5}=8\\frac{2}{5}$$0.6+\\frac{2}{5}=1$$\\f",
@@ -17728,7 +18428,7 @@
    },
    {
     "date": "2026-08-07",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "二次根式",
     "correct": true,
     "stem": "已知随机变量$X$服从二项分布，$X\\sim B\\left(3,\\frac{1}{3}\\right)$，则$X$的数学期望是",
@@ -17800,7 +18500,7 @@
    },
    {
     "date": "2026-07-30",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形的内角与外角",
     "correct": false,
     "stem": "[规范作答] 如图，已知$\\triangle ABC$. 1. $CD$是$\\triangle ABC$的高，则$\\angle ADC=$ $\\angle BDC=90^\\circ$，$S_{\\triangle ABC}",
@@ -17816,7 +18516,7 @@
    },
    {
     "date": "2026-07-30",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "分式",
     "correct": true,
     "stem": "当 a 是任意有理数时，下列代数式的值一定为正数的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
@@ -18025,6 +18725,26 @@
     "due": false,
     "last_observed": "2026-08-20",
     "wrong_qids": []
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 6,
+    "k": 2,
+    "p": 40,
+    "band": "待巩固",
+    "p_eff": 22,
+    "due": true,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 5,
+    "k": 2,
+    "p": 55,
+    "band": "练习中",
+    "p_eff": 40,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 2,
@@ -18040,7 +18760,7 @@
     "weak_cnt": 0,
     "has_ev": true
    },
-   "历史会话": {
+   "人机交互": {
     "n": 12,
     "weak_cnt": 0,
     "has_ev": false
@@ -18086,7 +18806,7 @@
    },
    {
     "date": "2026-08-24",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形全等的判定",
     "correct": false,
     "stem": "如图，$OA=OB$，$OC=OD$，$AD=BC$，$\\angle O=50^\\circ$，$\\angle D=35^\\circ$，则$\\angle DBC$的度数为",
@@ -18102,7 +18822,7 @@
    },
    {
     "date": "2026-08-20",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "课题学习 图案设计",
     "correct": true,
     "stem": "如图，在等腰 中，顶角 ，点 为 边上一定点， ， 分别为边 和 上两动点，当 的值最小时， 的大小是 ．",
@@ -18142,7 +18862,7 @@
    },
    {
     "date": "2026-08-19",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "分式及其基本性质",
     "correct": false,
     "stem": "机械的有用功越多，机械效率越高。",
@@ -18174,7 +18894,7 @@
    },
    {
     "date": "2026-08-16",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "用提公因式法分解因式",
     "correct": true,
     "stem": "多项式$2a^2b^2c+6ab$中各项的公因式是____.",
@@ -18564,6 +19284,26 @@
     "wrong_qids": [
      "que-8d6ea3eb7fad4564804586b5f9979c82"
     ]
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 3,
+    "k": 2,
+    "p": 53,
+    "band": "练习中",
+    "p_eff": 35,
+    "due": false,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 3,
+    "k": 3,
+    "p": 68,
+    "band": "练习中",
+    "p_eff": 53,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 8,
@@ -18579,7 +19319,7 @@
     "weak_cnt": 2,
     "has_ev": true
    },
-   "历史会话": {
+   "人机交互": {
     "n": 8,
     "weak_cnt": 0,
     "has_ev": false
@@ -18665,7 +19405,7 @@
    },
    {
     "date": "2026-08-12",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "特殊的平行四边形",
     "correct": true,
     "stem": "平行四边形有（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）条边。",
@@ -18753,7 +19493,7 @@
    },
    {
     "date": "2026-07-26",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "四边形",
     "correct": true,
     "stem": "如图，已知$\\text{AB}\\parallel \\text{CD}\\parallel \\text{EF}$，则$x$、$y$、$z$三者之间的关系是（ ） A. $\\text{x+y+z}=180^\\circ$ B. ",
@@ -18777,7 +19517,7 @@
    },
    {
     "date": "2026-07-23",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "分式",
     "correct": true,
     "stem": "当$x=-1$，$y=-\\frac{1}{2}$时，$x- y=$________。",
@@ -19084,6 +19824,26 @@
     "due": false,
     "last_observed": "2026-08-15",
     "wrong_qids": []
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 4,
+    "k": 2,
+    "p": 66,
+    "band": "练习中",
+    "p_eff": 48,
+    "due": false,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 4,
+    "k": 3,
+    "p": 81,
+    "band": "练习中",
+    "p_eff": 66,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 4,
@@ -19099,7 +19859,7 @@
     "weak_cnt": 1,
     "has_ev": true
    },
-   "历史会话": {
+   "人机交互": {
     "n": 17,
     "weak_cnt": 0,
     "has_ev": true
@@ -19145,7 +19905,7 @@
    },
    {
     "date": "2026-08-29",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "四边形",
     "correct": true,
     "stem": "如图，点D，E，F分别是三角形ABC的边BC，CA，AB上的点，$DE\\parallel BA$，$DF\\parallel CA$。图中与∠A不一定相等的角是 A. $∠BFD$ B. $∠CED$ C. $∠AED$ ",
@@ -19161,7 +19921,7 @@
    },
    {
     "date": "2026-08-25",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形的内角与外角",
     "correct": true,
     "stem": "如上右图所示，在$\\triangle ABC$中，$\\angle ACB=90^\\circ$，$BE$平分$\\angle ABC$，交$AC$于点$E$，$ED\\perp AB$于点$D$。如果$AC=3$，那么$AE+",
@@ -19193,7 +19953,7 @@
    },
    {
     "date": "2026-08-15",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形的内角与外角",
     "correct": true,
     "stem": "有两个形状如图13.3-10所示的零件，按照规定，$AB$所在直线和$CD$所在直线的夹角为$40{}^{\\circ }$的零件为合格零件，小明测出其中一个零件的$\\angle B=65{}^{\\circ },\\angl",
@@ -19265,7 +20025,7 @@
    },
    {
     "date": "2026-08-05",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "用提公因式法分解因式",
     "correct": true,
     "stem": "分解因式： ．",
@@ -19273,7 +20033,7 @@
    },
    {
     "date": "2026-08-05",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "一次函数的图象和性质",
     "correct": true,
     "stem": "某中学为了响应习主席提出的“足球进校园”的号召，开设了“足球大课间活动”，为此购买$A$种品牌的足球25个，$B$种品牌的足球50个，共花费4500元；已知$A$种品牌足球的单价比$B$种品牌足球的单价高30元。 （1）",
@@ -19305,7 +20065,7 @@
    },
    {
     "date": "2026-08-05",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "二次根式",
     "correct": true,
     "stem": "直接写出得数。 $0.9×6=$ $2.4×0.2=$ $0.125×8=$ $0.12×6=$ $1.5×0.3=$ $0.9×20=$ $1.5×5=$ $1.1×0.4=$",
@@ -19337,7 +20097,7 @@
    },
    {
     "date": "2026-08-01",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形的内角与外角",
     "correct": true,
     "stem": "要使五边形木架不变形，需要再钉上木条的根数至少为",
@@ -19601,6 +20361,26 @@
     "due": false,
     "last_observed": "2026-08-28",
     "wrong_qids": []
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 5,
+    "k": 2,
+    "p": 79,
+    "band": "较熟练",
+    "p_eff": 61,
+    "due": false,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 5,
+    "k": 3,
+    "p": 94,
+    "band": "练习中",
+    "p_eff": 79,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 0,
@@ -19616,7 +20396,7 @@
     "weak_cnt": 0,
     "has_ev": true
    },
-   "历史会话": {
+   "人机交互": {
     "n": 18,
     "weak_cnt": 0,
     "has_ev": true
@@ -19638,7 +20418,7 @@
    },
    {
     "date": "2026-08-28",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "一次函数的图象和性质",
     "correct": true,
     "stem": "关于$x$、$y$的二元一次方程：$ax+y+2a-4=0$（$a>0$），则下列四个结论： ①无论$a$为何值时，该方程都有一组解$\\begin{cases}x=-2\\\\y=4\\end{cases}$； ②若$a=1$",
@@ -19694,7 +20474,7 @@
    },
    {
     "date": "2026-08-28",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形的内角与外角",
     "correct": true,
     "stem": "如图，$BD$为$\\triangle ABC$的角平分线，$\\angle ABC=60^\\circ$，$\\angle CDB=110^\\circ$，$E$为线段$BC$上一点。当$\\triangle DCE$为直角三角形",
@@ -19742,7 +20522,7 @@
    },
    {
     "date": "2026-08-28",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形的内角与外角",
     "correct": true,
     "stem": "若三角形两边的长分别为 和 ，设第三边的长为 ，则 的取值范围是（ &nbsp;&nbsp;&nbsp; ）",
@@ -19806,7 +20586,7 @@
    },
    {
     "date": "2026-08-18",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "用提公因式法分解因式",
     "correct": true,
     "stem": "因式分解： 1. $x^2-2025x$； 2. $a^2b+ab^2$； 3. $-2x^2+12x-28$； 4. $4a^2b^3+8ab^2c$； 5. $3a(b+c)-2(b+c)$； 6. $(a+b)(a",
@@ -19822,7 +20602,7 @@
    },
    {
     "date": "2026-08-18",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "函数",
     "correct": true,
     "stem": "将函数$y = \\cos 2x$的图像向右平移$\\frac{\\pi}{4}$个单位，所得图像的函数解析式为（）。",
@@ -19830,7 +20610,7 @@
    },
    {
     "date": "2026-08-18",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "函数",
     "correct": true,
     "stem": "下列实数是有理数的是（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
@@ -19870,7 +20650,7 @@
    },
    {
     "date": "2026-08-05",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形的内角与外角",
     "correct": true,
     "stem": "三角形内角和定理：三角形的内角和等于$\\underline{180^{\\circ}}$。 在$\\triangle ABC$中， 1. 已知$\\angle A=87^{\\circ}$，$\\angle B=23^{\\circ",
@@ -19910,7 +20690,7 @@
    },
    {
     "date": "2026-07-10",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "四边形",
     "correct": true,
     "stem": "如图，在 中， ，直线 经过点 A ，且 ．若 ，则 的度数为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
@@ -20112,6 +20892,26 @@
     "due": false,
     "last_observed": "2026-08-24",
     "wrong_qids": []
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 6,
+    "k": 2,
+    "p": 47,
+    "band": "待巩固",
+    "p_eff": 29,
+    "due": false,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 3,
+    "k": 2,
+    "p": 62,
+    "band": "练习中",
+    "p_eff": 47,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 1,
@@ -20127,7 +20927,7 @@
     "weak_cnt": 0,
     "has_ev": false
    },
-   "历史会话": {
+   "人机交互": {
     "n": 3,
     "weak_cnt": 0,
     "has_ev": false
@@ -20309,7 +21109,7 @@
    },
    {
     "date": "2026-08-06",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形",
     "correct": false,
     "stem": "某种药品的说明书上标明保存温度是（20±2）℃，由此可知在____℃~____℃范围内保存才合适。",
@@ -20621,6 +21421,26 @@
     "due": false,
     "last_observed": "2026-08-22",
     "wrong_qids": []
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 3,
+    "k": 2,
+    "p": 60,
+    "band": "练习中",
+    "p_eff": 42,
+    "due": true,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 4,
+    "k": 3,
+    "p": 75,
+    "band": "练习中",
+    "p_eff": 60,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 1,
@@ -20636,7 +21456,7 @@
     "weak_cnt": 0,
     "has_ev": false
    },
-   "历史会话": {
+   "人机交互": {
     "n": 11,
     "weak_cnt": 0,
     "has_ev": false
@@ -20666,7 +21486,7 @@
    },
    {
     "date": "2026-08-22",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "分式",
     "correct": true,
     "stem": "试比较下列组式子的大小： (1)$\\sqrt{x+1}-\\sqrt{x}$与$\\sqrt{x}-\\sqrt{x-1}$，其中$x>1$； (2)$M=\\frac{a}{1+a}+\\frac{b}{1+b}$与$N=\\fr",
@@ -20690,7 +21510,7 @@
    },
    {
     "date": "2026-08-18",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "四边形",
     "correct": false,
     "stem": "如右图，$AB\\parallel CD$，$\\angle 1=50^\\circ$，则$\\angle 2=$ ____ $^\\circ$。",
@@ -20778,7 +21598,7 @@
    },
    {
     "date": "2026-08-17",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "四边形",
     "correct": true,
     "stem": "如右图,由$AB\\parallel DC$可以得到",
@@ -20794,7 +21614,7 @@
    },
    {
     "date": "2026-08-17",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "特殊的平行四边形",
     "correct": true,
     "stem": "1. 证明：四边形$AFCE$为矩形 2. 若$\\angle ABC=60^\\circ$，$BF$平分$\\angle ABC$，$AB=6$，求平行四边形$ABCD$的面积。",
@@ -20810,7 +21630,7 @@
    },
    {
     "date": "2026-08-17",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形",
     "correct": true,
     "stem": "纽约与北京的时差为﹣13小时（正数表示同一时刻比北京时间早的时数，负数表示同一时刻比北京时间晚的时数），当北京时间1月7日8时时，纽约的时间是（ ）",
@@ -20818,7 +21638,7 @@
    },
    {
     "date": "2026-08-16",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "一次函数的图象和性质",
     "correct": true,
     "stem": "已知二元一次方程组 $\\begin{cases}2x-y=-1 \\\\ x-2y=4 \\end{cases}$则$x-y$的值为 A. $-5$ B. $-2$ C. $-1$ D. $1$",
@@ -20834,7 +21654,7 @@
    },
    {
     "date": "2026-08-16",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形",
     "correct": true,
     "stem": "如果水位升高5m时水位变化记作 +5m，那么水位下降3m时水位变化记作____m，水位不升不降时水位变化记作________m。",
@@ -21171,6 +21991,26 @@
     "due": false,
     "last_observed": "2026-08-09",
     "wrong_qids": []
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 4,
+    "k": 2,
+    "p": 73,
+    "band": "较熟练",
+    "p_eff": 55,
+    "due": false,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 5,
+    "k": 3,
+    "p": 88,
+    "band": "练习中",
+    "p_eff": 73,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 8,
@@ -21186,7 +22026,7 @@
     "weak_cnt": 2,
     "has_ev": true
    },
-   "历史会话": {
+   "人机交互": {
     "n": 13,
     "weak_cnt": 0,
     "has_ev": false
@@ -21240,7 +22080,7 @@
    },
    {
     "date": "2026-08-25",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "分式及其基本性质",
     "correct": false,
     "stem": "已知$A=\\frac{a^2-2a+1}{2a} \\div \\frac{a-1}{a}$，先化简$A$，再求当$a=17$时$A$的值。",
@@ -21368,7 +22208,7 @@
    },
    {
     "date": "2026-08-09",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "课题学习 图案设计",
     "correct": false,
     "stem": "如图，点$E$，$F$分别在长方形纸片$ABCD$的边$AD$，$BC$上，将纸片沿$EF$对折，点$C$，$D$分别落在点$C_1$，$D_1$，$FC_1$交$AD$于点$G$。若$\\angle GFE=\\alpha",
@@ -21376,7 +22216,7 @@
    },
    {
     "date": "2026-08-09",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "用提公因式法分解因式",
     "correct": true,
     "stem": "7x(3−x)=4(x−3)；",
@@ -21424,7 +22264,7 @@
    },
    {
     "date": "2026-08-06",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "勾股定理",
     "correct": true,
     "stem": "如图，AB=AC，DB=DC，连接AD，交BC于点E.若∠ABC=60°，BE=3cm，则AB=____cm",
@@ -21440,7 +22280,7 @@
    },
    {
     "date": "2026-08-06",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "四边形",
     "correct": true,
     "stem": "如图，$AB\\parallel CD$，$CE$平分$\\angle ACD$，若$\\angle A=110^\\circ$，则$\\angle AEC=$____$^\\circ$。",
@@ -21707,6 +22547,26 @@
     "wrong_qids": [
      "que-9073df9b26414832af1af9665992b289"
     ]
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 5,
+    "k": 2,
+    "p": 41,
+    "band": "待巩固",
+    "p_eff": 23,
+    "due": false,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 3,
+    "k": 2,
+    "p": 56,
+    "band": "练习中",
+    "p_eff": 41,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 6,
@@ -21722,7 +22582,7 @@
     "weak_cnt": 0,
     "has_ev": true
    },
-   "历史会话": {
+   "人机交互": {
     "n": 12,
     "weak_cnt": 0,
     "has_ev": true
@@ -21792,7 +22652,7 @@
    },
    {
     "date": "2026-08-24",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "整式的乘法",
     "correct": false,
     "stem": "1. 计算： (1) $-x\\cdot (x-y)$ (2) $3x\\cdot (2x^{2}-x)$ (3) $4ab(\\frac {1}{2}a+1)$ (2) $(-2a^{2})\\cdot (3ab^{2}-5a",
@@ -21808,7 +22668,7 @@
    },
    {
     "date": "2026-08-19",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "用提公因式法分解因式",
     "correct": true,
     "stem": "因式分解： (1)$x^2-2025x$； (2)$a^2b+ab^2$； (3)$-2x^2+12x-28$； (4)$4a^2b^3+8ab^2c$； (5)$3a(b+c)-2(b+c)$； (6)$(a+b)(a",
@@ -21912,7 +22772,7 @@
    },
    {
     "date": "2026-08-08",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "分式",
     "correct": true,
     "stem": "甲、乙两地相距a千米，现在甲、乙两地之间建一仓储站丙（甲、乙、丙三地在同一条直线上），丙与甲的距离为x千米。已知从甲到丙的运货费用为20元/千米，从乙到丙的运货费用为15元/千米，两地到丙的总运货费用为1000元。 (1",
@@ -22229,6 +23089,26 @@
     "wrong_qids": [
      "que-9851a9d3e0474f11bb04f60e68964e3a"
     ]
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 6,
+    "k": 2,
+    "p": 54,
+    "band": "练习中",
+    "p_eff": 36,
+    "due": false,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 4,
+    "k": 3,
+    "p": 69,
+    "band": "练习中",
+    "p_eff": 54,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 4,
@@ -22244,7 +23124,7 @@
     "weak_cnt": 1,
     "has_ev": true
    },
-   "历史会话": {
+   "人机交互": {
     "n": 12,
     "weak_cnt": 0,
     "has_ev": true
@@ -22306,7 +23186,7 @@
    },
    {
     "date": "2026-08-24",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "函数",
     "correct": true,
     "stem": "将函数 的图象向左平移 个单位后得到的图象解析式为（ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ）",
@@ -22362,7 +23242,7 @@
    },
    {
     "date": "2026-08-12",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形",
     "correct": true,
     "stem": "若 x + 1 在实数范围内有意义，则实数 x 的取值范围是 ．",
@@ -22410,7 +23290,7 @@
    },
    {
     "date": "2026-08-11",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "一次函数的图象和性质",
     "correct": true,
     "stem": "若$\\begin{cases}x=2 \\\\ y=-1\\end{cases}$是二元一次方程$ax+y=5$的解，则$a$的值为____．",
@@ -22474,7 +23354,7 @@
    },
    {
     "date": "2026-08-03",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形的内角与外角",
     "correct": true,
     "stem": "在$\\triangle ABC$中，$AM$是$BC$边上的中线，$AB=2022\\mathrm{cm}$，$AC=2021\\mathrm{cm}$，那么$\\triangle ABM$与$\\triangle ACM$的周",
@@ -22506,7 +23386,7 @@
    },
    {
     "date": "2026-07-27",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形的内角与外角",
     "correct": false,
     "stem": "在$\\text{Rt}\\triangle ABC$中,$\\angle C=90^\\circ$,$\\angle ABC$的平分线$BD$交$AC$于点$D$,$M$是线段$AB$上的一个动点.若$CD=3$,则$DM$的最",
@@ -22538,7 +23418,7 @@
    },
    {
     "date": "2026-07-27",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "三角形全等的判定",
     "correct": true,
     "stem": "如上图所示，$AB$与$CD$相交于点$O$，$\\angle A=\\angle B$，$AO=BO$。又因为$\\underline{\\quad\\quad}=\\underline{\\quad\\quad}$，所以$\\tria",
@@ -22756,6 +23636,26 @@
     "due": false,
     "last_observed": "2026-08-05",
     "wrong_qids": []
+   },
+   {
+    "cluster": "用样本估计总体",
+    "n": 3,
+    "k": 2,
+    "p": 67,
+    "band": "练习中",
+    "p_eff": 49,
+    "due": false,
+    "last_observed": "2026-08-20"
+   },
+   {
+    "cluster": "数据的收集与整理",
+    "n": 5,
+    "k": 3,
+    "p": 82,
+    "band": "练习中",
+    "p_eff": 67,
+    "due": false,
+    "last_observed": "2026-08-25"
    }
   ],
   "weak_cnt": 3,
@@ -22771,7 +23671,7 @@
     "weak_cnt": 2,
     "has_ev": true
    },
-   "历史会话": {
+   "人机交互": {
     "n": 14,
     "weak_cnt": 0,
     "has_ev": true
@@ -22801,7 +23701,7 @@
    },
    {
     "date": "2026-08-30",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "四边形",
     "correct": true,
     "stem": "如下图，$AB\\parallel CD$，$\\angle 1=50^\\circ$，则$\\angle 2=\\underline{\\quad}^\\circ$。",
@@ -22865,7 +23765,7 @@
    },
    {
     "date": "2026-08-18",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "勾股定理",
     "correct": false,
     "stem": "如图，在 $\\text{Rt}\\triangle ABC$ 中，$\\angle ACB=90^\\circ$，$\\angle B=60^\\circ$，$CD$ 是 $\\triangle ABC$ 的高，且 $BD=1$，则",
@@ -22897,7 +23797,7 @@
    },
    {
     "date": "2026-08-17",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "整式的乘法",
     "correct": true,
     "stem": "单项式与多项式相乘，用单项式去乘多项式的每一项，再把所得的积相加，用字母表示为$\\overset{\\rightharpoonup}{m(a+b)=}$____。",
@@ -22921,7 +23821,7 @@
    },
    {
     "date": "2026-08-13",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "用提公因式法分解因式",
     "correct": true,
     "stem": "利用因式分解计算：$17\\times0.11+37\\times0.11+46\\times0.11$。",
@@ -23025,7 +23925,7 @@
    },
    {
     "date": "2026-07-21",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "四边形",
     "correct": true,
     "stem": "已知：如图，$DE \\parallel BC$，$\\angle 1=\\angle 2$。求证：$BE \\parallel FG$。",
@@ -23033,7 +23933,7 @@
    },
    {
     "date": "2026-07-21",
-    "source": "历史会话",
+    "source": "人机交互",
     "cluster": "分式及其基本性质",
     "correct": false,
     "stem": "约分： 1. $\\frac{24ab^2}{4ab}$； 2. $\\frac{-4x^2y}{8xy^2}$； 3. $\\frac{12xy}{18x^3y^2}$； 4. $\\frac{(a-2b)^2}{a^2-4b",

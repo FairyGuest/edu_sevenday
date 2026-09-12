@@ -4,7 +4,7 @@ import { MessageOutlined } from "@ant-design/icons";
 import ReactECharts from "echarts-for-react";
 
 const SRC_COLORS: Record<string, string> = {
-  作业记录: "#4f7df0", 自主练习: "#4f9e70", 历史会话: "#8e7ce0", 考试记录: "#e0a05e",
+  作业记录: "#4f7df0", 自主练习: "#4f9e70", 人机交互: "#8e7ce0", 考试记录: "#e0a05e",
 };
 const BAND_COLORS: Record<string, string> = {
   待巩固: "#e58a8e", 练习中: "#eec27e", 较熟练: "#cfc07a", 已掌握: "#6cbf93",
@@ -17,7 +17,7 @@ const BAND_RANGES: Record<string, string> = {
 export default function ProfileCharts({ trend, sourceMix, weakRanking, classId }: {
   trend: any[]; sourceMix: any[]; weakRanking: any[]; classId?: string;
 }) {
-  // B3 人机交互明细（来源=历史会话 的问答记录）
+  // B3 人机交互明细（来源=人机交互 的问答记录）
   const [iaOpen, setIaOpen] = useState(false);
   const [iaRows, setIaRows] = useState<any[]>([]);
   const [iaLoading, setIaLoading] = useState(false);
@@ -70,25 +70,25 @@ export default function ProfileCharts({ trend, sourceMix, weakRanking, classId }
   };
 
   return (
-    <div className="teacher_profile_charts">
+    <div className="teacher_profile_charts analysis_charts">
       <div className="teacher_profile_chart_card">
         <p className="teacher_profile_chart_title">班级掌握度趋势 · 近8次评估</p>
-        <ReactECharts option={lineOption} style={{ height: 165 }} notMerge />
+        <ReactECharts option={lineOption} style={{ height: 212 }} notMerge />
       </div>
       <div className="teacher_profile_chart_card">
         <p className="teacher_profile_chart_title">数据来源构成</p>
-        <ReactECharts option={pieOption} style={{ height: 182 }} notMerge />
+        <ReactECharts option={pieOption} style={{ height: 228 }} notMerge />
         <Button size="small" type="link" icon={<MessageOutlined />} className="ia_link" onClick={openInteractions}>
           查看人机交互明细
         </Button>
       </div>
       <div className="teacher_profile_chart_card">
         <p className="teacher_profile_chart_title">薄弱知识点排行</p>
-        <ReactECharts option={barOption} style={{ height: 158 }} notMerge />
+        <ReactECharts option={barOption} style={{ height: 204 }} notMerge />
       </div>
       {/* B3 人机交互明细弹窗 */}
       <Modal open={iaOpen} onCancel={() => setIaOpen(false)} footer={null} width={640}
-        title="人机交互明细 · 学生与 AI 的问答记录（来源：历史会话）">
+        title="人机交互明细 · 学生与 AI 的问答记录（来源：人机交互）">
         <Table loading={iaLoading} size="small" rowKey={(r: any) => r.student + r.time + r.question}
           pagination={{ pageSize: 8, size: "small" }}
           columns={[
@@ -102,18 +102,6 @@ export default function ProfileCharts({ trend, sourceMix, weakRanking, classId }
           dataSource={iaRows} />
       </Modal>
 
-      {/* 四级掌握度图例（从分布表上方移至此处） */}
-      <div className="teacher_profile_chart_card teacher_profile_legend_card">
-        <div style={{ display: "flex", justifyContent: "space-around", alignItems: "center", padding: "2px 0" }}>
-          {Object.entries(BAND_COLORS).map(([band, color]) => (
-            <div key={band} style={{ display: "flex", alignItems: "center", gap: 5 }}>
-              <span style={{ width: 10, height: 10, borderRadius: 3, background: color, flexShrink: 0 }} />
-              <span style={{ fontSize: 12, color: "#2a3346", fontWeight: 550 }}>{band}</span>
-              <span style={{ fontSize: 10.5, color: "#a0a8b8" }}>{BAND_RANGES[band]}</span>
-            </div>
-          ))}
-        </div>
-      </div>
     </div>
   );
 }

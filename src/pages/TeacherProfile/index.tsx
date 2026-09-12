@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { connect } from "@umijs/max";
-import { Button, Card, Col, DatePicker, message, Row, Select, Spin, Tag, Upload } from "antd";
+import { Button, Card, Col, DatePicker, message, Row, Select, Spin, Tag, Tooltip, Upload } from "antd";
 import {
   ReloadOutlined,
   UploadOutlined,
@@ -21,9 +21,22 @@ import ProfileCharts from "./components/ProfileCharts";
 import StudentList from "./components/StudentList";
 import StudentDrawer from "./components/StudentDrawer";
 import DimensionCards from "./components/DimensionCards";
+import OverviewGrid from "./components/OverviewGrid";
 import "./index.less";
 
-const ALL_SOURCES = ["作业记录", "历史会话", "自主练习", "考试记录"];
+const ALL_SOURCES = ["作业记录", "人机交互", "自主练习", "考试记录"];
+const LEVEL_LEGEND = [
+  { short: "L1", label: "了解", color: "#52607a", verb: "了解 / 知道 / 识别", desc: "能再认再现，识别基本概念与符号" },
+  { short: "L2", label: "理解", color: "#2563eb", verb: "理解 / 描述 / 说明", desc: "能解释含义、举例说明，明白为什么" },
+  { short: "L3", label: "掌握", color: "#7c3aed", verb: "掌握 / 运用 / 计算", desc: "能在熟悉情境中独立使用与计算" },
+  { short: "L4", label: "综合", color: "#db2777", verb: "综合 / 迁移 / 建模", desc: "能在新情境中组合应用、建模探究" },
+];
+const BAND_LEGEND: [string, string, string][] = [
+  ["待巩固", "<50", "#e05d62"],
+  ["练习中", "50–70", "#e8a23d"],
+  ["较熟练", "70–85", "#c0a83e"],
+  ["已掌握", "≥85", "#4f9e70"],
+];
 
 /**
  * 学情画像（F1+F2）：班级/个人画像查看 + 历史学情导入。
@@ -175,69 +188,43 @@ const TeacherProfile = (props: any) => {
       <Spin spinning={loading && !profile}>
         {profile ? (
           <>
-            {/* ===== 四指标卡（数字为主·标签为辅·留白充足）===== */}
-            <Row gutter={16} className="teacher_profile_cards">
-              <Col span={6}>
-                <div className="teacher_profile_card stat_card">
-                  <div className="stat_head">
-                    <span className="stat_badge danger"><AlertOutlined /></span>
-                    <span className="g-chip g-chip--bad">需干预</span>
-                  </div>
-                  <div className="teacher_profile_card_num" style={{ color: "var(--g-bad)" }}>{cards.weak_top_pct}%</div>
-                  <div className="teacher_profile_card_label">待巩固占比</div>
-                  <div className="teacher_profile_card_sub">{cards.weak_top?.replace("待巩固占比", "") || "—"}</div>
-                </div>
-              </Col>
-              <Col span={6}>
-                <div className="teacher_profile_card stat_card">
-                  <div className="stat_head">
-                    <span className="stat_badge blue"><BulbOutlined /></span>
-                    <span className="g-chip g-chip--warn">补弱方向</span>
-                  </div>
-                  <div className="teacher_profile_card_num">{cards.support_suggestions}</div>
-                  <div className="teacher_profile_card_label">支援建议</div>
-                  <div className="teacher_profile_card_sub">优先补弱方向</div>
-                </div>
-              </Col>
-              <Col span={6}>
-                <div className="teacher_profile_card stat_card">
-                  <div className="stat_head">
-                    <span className="stat_badge cyan"><SafetyCertificateOutlined /></span>
-                    <span className="g-chip g-chip--ok">达标</span>
-                  </div>
-                  <div className="teacher_profile_card_num">{cards.mastered_all_count}</div>
-                  <div className="teacher_profile_card_label">全员已掌握</div>
-                  <div className="teacher_profile_card_sub">全班 ≥85% 的知识点</div>
-                </div>
-              </Col>
-              <Col span={6}>
-                <div className="teacher_profile_card stat_card">
-                  <div className="stat_head">
-                    <span className="stat_badge green"><RiseOutlined /></span>
-                    <span className="g-chip g-chip--ok">向好</span>
-                  </div>
-                  <div className="teacher_profile_card_num">
-                    {cards.recent5_avg ?? "—"}<span className="stat_trend">↑</span>
-                  </div>
-                  <div className="teacher_profile_card_label">掌握度均值</div>
-                  <div className="teacher_profile_card_sub">近5次评估</div>
-                </div>
-              </Col>
-            </Row>
+            {/* ===== 语义概览网格（graph4rec cockpit 范式）===== */}
+            <OverviewGrid cards={cards} trend={profile.trend || []} />
 
             {/* ===== A1/A2 多维标签：能力等级 + 素养 ===== */}
             <DimensionCards dimensions={profile.dimensions} />
             {profile.window_note ? <p className="window_note">⏱ {profile.window_note}</p> : null}
 
             {/* ===== 分析区：左分布表 + 右图表 ===== */}
-            <Row gutter={16}>
-              <Col span={14}>
+            <Row gutter={16} className="analysis_row" align="stretch">
+              <Col flex="1 1 620px" style={{ minWidth: 0 }}>
                 <div className="teacher_profile_card">
-                  <p className="teacher_profile_chart_title">知识点掌握分布 · 四级状态人数占比</p>
+                    <div className="ct_header">
+                    <p className="teacher_profile_chart_title" style={{ marginBottom: 0 }}>知识点掌握分布</p>
+                    <div className="ct_legend">
+                      <span className="ct_legend_group">
+                        {LEVEL_LEGEND.map(l => (
+                          <Tooltip key={l.short} title={`${l.short}＝${l.label}（${l.verb}）：${l.desc}`} color="#fff" overlayClassName="ct_lv_tip">
+                            <span className="ct_th_lv" style={{ ["--c" as any]: l.color }}>
+                              <b>{l.short}</b>{l.label}
+                            </span>
+                          </Tooltip>
+                        ))}
+                      </span>
+                      <span className="ct_legend_divider" />
+                      {BAND_LEGEND.map(([band, range, color]) => (
+                        <span key={band} className="ct_legend_item">
+                          <i style={{ background: color }} />
+                          {band}
+                          <em>{range}</em>
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                   <ClusterTable rows={profile.cluster_rows || []} />
                 </div>
               </Col>
-              <Col span={10}>
+              <Col flex="0 0 312px" style={{ minWidth: 0 }} className="analysis_right">
                 <ProfileCharts trend={profile.trend || []} sourceMix={profile.source_mix || []} weakRanking={profile.weak_ranking || []} classId={classId || classList[0]?.class_id} />
               </Col>
             </Row>

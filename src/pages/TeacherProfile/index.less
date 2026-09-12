@@ -365,6 +365,11 @@
 .dim_card {
   margin-bottom: 0;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  > .g-panel-head { flex: none; }
+  > .dim_radar_row { flex: 1; }
 }
 
 .dim_level_list {
@@ -479,7 +484,9 @@
 .dim_radar_row {
   display: flex;
   gap: 8px;
-  align-items: stretch;
+  align-items: stretch;   /* 雷达列拉伸填满行高，画布随行伸缩 */
+  flex: 1;
+  min-height: 0;
 
   @media (max-width: 1200px) { flex-direction: column; }
 }
@@ -487,22 +494,53 @@
 .dim_radar_main {
   flex: 1;
   min-width: 0;
-
-  > div { width: 100% !important; }
-}
-
-.dim_radar_legend {
-  flex: none;
-  width: 208px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 5px;
+  justify-content: center;   /* echarts 画布在本列内垂直居中 */
+
+  > div { width: 100% !important; height: 100% !important; }
+}
+
+.dim_radar_side {
+  flex: none;
+  width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   @media (max-width: 1200px) { width: 100%; }
 }
 
+.dim_side_stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.dim_side_stat {
+  padding: 7px 9px;
+  background: #fafbfd;
+  border: 1px solid #eef1f6;
+  border-top: 2.5px solid var(--c, #1c6cff);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  small { font-size: 9.5px; color: var(--g-faint); }
+  b { font-size: 11.5px; font-weight: 650; color: var(--g-text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  em { font-style: normal; font-size: 15px; font-weight: 750; color: var(--c, #1c6cff); font-variant-numeric: tabular-nums; }
+}
+
+.dim_radar_legend {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  @media (max-width: 1200px) { grid-template-columns: repeat(3, 1fr); }
+}
+
 .dim_rl_item {
-  padding: 4px 9px 5px;
+  padding: 6px 11px 7px;
   background: #fafbfd;
   border: 1px solid #eef1f6;
   border-radius: 8px;
@@ -615,4 +653,350 @@
   padding: 0;
   margin-top: 4px;
   font-size: 11.5px;
+}
+
+/* ===== 语义概览网格（graph4rec cockpit 范式） ===== */
+.ov_grid {
+  margin-bottom: 12px;
+
+  .ant-col { display: flex; }
+}
+
+.ov_cell {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  background: var(--g-surface);
+  border: 1px solid var(--g-border);
+  border-radius: 10px;
+  box-shadow: var(--g-shadow);
+  padding: 12px 14px;
+  overflow: hidden;
+
+  .ov_bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3.5px;
+  }
+
+  .ov_body { flex: 1; min-width: 0; }
+
+  .ov_top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .ov_value {
+    font-size: 26px;
+    font-weight: 750;
+    line-height: 1.05;
+    letter-spacing: -0.4px;
+    color: var(--g-text);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .ov_spark { flex: none; }
+
+  .ov_label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--g-text);
+    margin-top: 3px;
+  }
+
+  .ov_sub {
+    font-size: 10.5px;
+    color: var(--g-faint);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .ov_icon {
+    flex: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+  }
+}
+
+/* Wilson 区间条（graph4rec ability-bar 范式） */
+.ci_bar {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 100px;
+  height: 8px;
+  background: #e6ebf3;
+  border-radius: 4px;
+  cursor: help;
+
+  .ci_bar_range {
+    position: absolute;
+    top: 1px;
+    height: 6px;
+    background: var(--c, var(--g-accent));
+    opacity: 0.3;
+    border-radius: 3px;
+  }
+
+  .ci_bar_mark {
+    position: absolute;
+    top: -2.5px;
+    width: 2.5px;
+    height: 13px;
+    border-radius: 1px;
+    background: var(--c, var(--g-accent));
+  }
+}
+
+/* 能力等级：行式区间条 + 知识点胶囊 */
+.dim_level_row {
+  display: grid;
+  grid-template-columns: 68px 1fr 44px 44px;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+}
+
+.dim_level_chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--g-border);
+}
+
+.dim_lv_chip {
+  font-size: 10px;
+  color: var(--c, var(--g-muted));
+  border: 1px solid color-mix(in srgb, var(--c, #999) 35%, transparent);
+  background: color-mix(in srgb, var(--c, #999) 6%, #fff);
+  border-radius: 999px;
+  padding: 1px 8px;
+  white-space: nowrap;
+}
+
+/* 个人抽屉：图谱融入（浅底圆角容器，不突兀） */
+.drawer_graph_wrap {
+  background: linear-gradient(180deg, #f8faff, #f4f7fd);
+  border: 1px solid #e8eefb;
+  border-radius: 10px;
+  padding: 6px 8px 8px;
+  margin-top: 6px;
+}
+
+/* 分布表头 + 内嵌图例 */
+.ct_header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.ct_legend {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+  padding: 3px 12px;
+  background: #f7f9fc;
+  border: 1px solid #eef1f6;
+  border-radius: 999px;
+}
+
+.ct_legend_item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--g-text);
+
+  i { width: 9px; height: 9px; border-radius: 3px; }
+  em { font-style: normal; font-weight: 400; font-size: 10px; color: var(--g-faint); }
+}
+
+/* 能力等级：单条堆叠横条 + 行内微统计 */
+.dim_lv_stack {
+  display: flex;
+  height: 14px;
+  border-radius: 7px;
+  overflow: hidden;
+  background: #eef1f6;
+  margin: 4px 0 8px;
+
+  i {
+    display: block;
+    height: 100%;
+    cursor: help;
+    transition: width 0.4s ease;
+  }
+}
+
+.dim_lv_inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+}
+
+.dim_lv_stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  color: var(--g-muted);
+
+  .g-dot { background: var(--c); }
+
+  b {
+    font-size: 13px;
+    font-weight: 750;
+    color: var(--c);
+    font-variant-numeric: tabular-nums;
+  }
+
+  em {
+    font-style: normal;
+    font-size: 10px;
+    color: var(--g-faint);
+  }
+}
+
+/* 知识点单元格：等级迷你标签 */
+.ct_kp_name {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+
+  > span:first-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.ct_lv {
+  flex: none;
+  font-size: 9px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--c);
+  border: 1px solid color-mix(in srgb, var(--c) 45%, transparent);
+  background: color-mix(in srgb, var(--c) 7%, #fff);
+  border-radius: 4px;
+  padding: 1.5px 4px;
+  font-variant-numeric: tabular-nums;
+}
+
+/* 素养雷达整行卡 */
+.dim_card_full { margin-bottom: 12px; }
+
+/* 分析行：右栏填满左卡高度，三图均分（总高恒等于左卡） */
+.analysis_row {
+  align-items: stretch;
+}
+
+.analysis_row .analysis_right {
+  display: flex;
+  flex-direction: column;
+}
+
+.analysis_charts {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .teacher_profile_chart_card {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+
+    > p { flex: none; }
+    > div, > .echarts-for-react {
+      flex: 1;
+      min-height: 0;
+    }
+  }
+}
+
+/* 表头等级图例（常显小字） */
+.ct_th {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.ct_th_levels {
+  display: inline-flex;
+  gap: 4px;
+
+  .ct_th_lv {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 9.5px;
+    color: var(--g-muted);
+    background: #f0f3f8;
+    border: 1px solid color-mix(in srgb, var(--c) 25%, transparent);
+    border-radius: 5px;
+    padding: 1.5px 6px;
+    cursor: help;
+    line-height: 1.4;
+
+    b {
+      font-size: 9px;
+      font-weight: 800;
+      color: var(--c);
+      font-variant-numeric: tabular-nums;
+    }
+  }
+}
+
+/* 等级 tooltip 文案 */
+.ct_lv_tip .ant-tooltip-inner {
+  color: #1f2733;
+  font-size: 11.5px;
+  line-height: 1.6;
+  white-space: pre-line;
+  text-align: left;
+}
+
+/* CI 列：区间条 + 数值同行 */
+.ct_ci_cell {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.ct_ci_p {
+  font-size: 12px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* 表头图例分组：L1-L4 | 分级 */
+.ct_legend_group {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.ct_legend_divider {
+  width: 1px;
+  height: 14px;
+  background: #dfe5f0;
 }

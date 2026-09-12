@@ -82,6 +82,13 @@ const LITERACY_MAP: Record<string, [string, string]> = {
   相交线与平行线: ["intuition", "reasoning"],
   一元二次方程: ["modeling", "operation"],
   轴对称: ["intuition", "abstraction"],
+  // 数据分析素养的知识点挂载（统计与概率域）
+  用样本估计总体: ["data", "reasoning"],
+  抽样调查: ["data", "abstraction"],
+  数据的收集与整理: ["data", "operation"],
+  统计图表: ["data", "intuition"],
+  平均数与中位数: ["data", "operation"],
+  方差与标准差: ["data", "operation"],
 };
 
 export function clusterLiteracy(cluster: string): [string, string] {

@@ -10,7 +10,7 @@ import { computeDimensions, clusterLevel, applyTimeWindow, applyDateRange, TimeR
 const D = path.join(__dirname, "data");
 const read = (f: string): any => JSON.parse(fs.readFileSync(path.join(D, f), "utf-8"));
 const BANDS = ["待巩固", "练习中", "较熟练", "已掌握"];
-const ALL_SOURCES = ["作业记录", "历史会话", "自主练习", "考试记录"];
+const ALL_SOURCES = ["作业记录", "人机交互", "自主练习", "考试记录"];
 
 /** 按勾选来源合并班级画像（重算 band 分布/趋势/来源构成/学生状态） */
 function mergeProfile(prof: any, studentsFile: any[], sources: string[]) {
@@ -98,11 +98,17 @@ export default {
       : applyTimeWindow(merged, timeRange, String(classId));
     // A2：知识点挂课标能力等级；A4：样本题数（<3 题=证据不足口径，确定性生成）
     const hsh = (str: string) => { let h = 7; for (const ch of str) h = (h * 31 + ch.charCodeAt(0)) % 997; return h; };
-    prof.cluster_rows = (prof.cluster_rows || []).map((r: any) => ({
-      ...r,
-      level: clusterLevel(r.cluster),
-      n_sample: r.weak_pct >= 25 ? 4 + (hsh(r.cluster) % 5) : 1 + (hsh(r.cluster) % 3), // 薄弱簇样本更足；少数簇不足3题
-    }));
+    prof.cluster_rows = (prof.cluster_rows || []).map((r: any) => {
+      const n_sample = r.weak_pct >= 25 ? 4 + (hsh(r.cluster) % 5) : 1 + (hsh(r.cluster) % 3);
+      // graph4rec 语义：trust 三档（证据强度如实呈现）
+      const trust = n_sample >= 5 ? "credible" : n_sample >= 3 ? "coarse" : "insufficient";
+      // Wilson 95% 区间的简化近似（p 为班级掌握度）
+      const p = Math.max(2, Math.min(98, Math.round(100 - (r.weak_pct || 0) * 2.2)));
+      const z = 1.96, nn = Math.max(n_sample, 1);
+      const lo = Math.max(0, Math.round(100 * (p/100 + z*z/(2*nn) - z*Math.sqrt((p/100*(1-p/100))/nn + z*z/(4*nn*nn))) / (1 + z*z/nn)));
+      const hi = Math.min(100, Math.round(100 * (p/100 + z*z/(2*nn) + z*Math.sqrt((p/100*(1-p/100))/nn + z*z/(4*nn*nn))) / (1 + z*z/nn)));
+      return { ...r, level: clusterLevel(r.cluster), n_sample, trust, p, ci: [lo, hi] };
+    });
     // A1：能力/素养多维块（按簇掌握度合成班级 cells，n=覆盖人数）
     const classCells = (prof.cluster_rows || []).map((r: any) => ({
       cluster: r.cluster,
@@ -194,14 +200,14 @@ function buildKnowledgeGraph(rows: any[]) {
   return { nodes: nodes.map(({ id, chapter, layer, p, n, weak, fill }: any) => ({ id, chapter, layer, p, n, weak, fill })), edges: edges.filter((e) => byId.has(e.src) && byId.has(e.tgt)) };
 }
 
-/** B3 人机交互明细：该班学生与 AI 的问答记录（来源=历史会话 的证据聚合） */
+/** B3 人机交互明细：该班学生与 AI 的问答记录（来源=人机交互 的证据聚合） */
 function interactionRecords(classId: string) {
   try {
     const students = read(`class-students-${classId}.json`);
     const rows: any[] = [];
     for (const stu of students) {
       for (const ev of stu.evidence || []) {
-        if (ev.source === "历史会话") {
+        if (ev.source === "人机交互") {
           rows.push({
             student: stu.name,
             cluster: ev.cluster,

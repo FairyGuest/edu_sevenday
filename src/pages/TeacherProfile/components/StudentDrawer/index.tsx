@@ -62,7 +62,9 @@ export default function StudentDrawer({ open, detail, evidence, loading, onClose
               <div className="teacher_profile_cold_tip">⏳ {detail.cold_start[1]}</div>
             ) : null}
             <p className="teacher_profile_chart_title" style={{ marginTop: 14 }}>知识图谱 · 个人掌握网络</p>
-            <KnowledgeGraph graph={detail.kgraph} />
+            <div className="drawer_graph_wrap">
+              <KnowledgeGraph graph={detail.kgraph} />
+            </div>
 
             {detail.dimensions ? (
               <>
