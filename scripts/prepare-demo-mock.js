@@ -64,7 +64,18 @@ function splitArgs(inner) {
 
 function transformFile(file) {
   let code = fs.readFileSync(file, "utf-8");
-  if (!/from ["']fs["']/.test(code) && !/from ["']path["']/.test(code)) return false;
+
+  // Buffer.from(x).toString("base64") → btoa(x)（浏览器无 Buffer，无论是否 import fs 都要处理）
+  const beforeBuffer = code;
+  code = code.replace(/Buffer\.from\(([^)]+)\)\.toString\("base64"\)/g, (_m, expr) => `btoa(${expr})`);
+
+  if (!/from ["']fs["']/.test(code) && !/from ["']path["']/.test(code)) {
+    if (code !== beforeBuffer) {
+      fs.writeFileSync(file, code); // 仅需 Buffer 替换的文件
+      return true;
+    }
+    return false;
+  }
 
   // 文件自身目录（相对复制目标根，与 mock 结构一致）段，作为 ".." 解析基准
   const fileDir = path.relative(DEST, path.dirname(file)).split(path.sep).filter(Boolean);
@@ -87,9 +98,11 @@ function transformFile(file) {
   const jsonKeys = new Set();
 
   // 3. 先替换 read 工具函数（其内部 path.join(D, f) 的 f 是变量，需整行替换为查表）
+  //    read 调用点传入的是相对 D 的文件名，查表需补上 D 的前缀
+  const readPrefix = dirSegs.length ? `${dirSegs.join("/")}/` : "";
   code = code.replace(
     /const\s+read\s*=\s*\([^)]*\)\s*:\s*any\s*=>\s*JSON\.parse\(fs\.readFileSync\(path\.join\(D,\s*f\),\s*["']utf-8["']\)\);?/g,
-    "const read = (f: string): any => __jsonMap[f];",
+    `const read = (f: string): any => __jsonMap[${JSON.stringify(readPrefix)} + f];`,
   );
 
   // 4. 再替换字面量 readFileSync 调用：JSON.parse(fs.readFileSync(path.join(...), "utf-8"))
@@ -126,8 +139,8 @@ function transformFile(file) {
     `\nconst __jsonMap: Record<string, any> = {\n${entries.join("\n")}\n};\n\n`;
   code = header + code;
 
-  // 7. 兜底校验：不允许残留 fs/path 引用
-  if (/fs\.readFileSync|path\.join|from ["']fs["']|from ["']path["']/.test(code)) {
+  // 7. 兜底校验：不允许残留 fs/path/Buffer 引用
+  if (/fs\.readFileSync|path\.join|from ["']fs["']|from ["']path["']|Buffer\./.test(code)) {
     throw new Error(`${file} 转换后仍残留 fs/path 引用，请人工检查`);
   }
 
