@@ -7,6 +7,12 @@ import "dayjs/locale/zh-cn";
 import "./markdown-body.less";
 import "@/components/useSiderTour/index.less";
 import { setStorageToken } from "@/utils";
+import { installDemoMock } from "@/demoMock";
+
+// demo 静态部署模式（build:demo）：浏览器端拦截 /api 请求返回 mock 数据
+if (REACT_APP_ENV === "demo") {
+  installDemoMock();
+}
 
 declare global {
   interface Window {

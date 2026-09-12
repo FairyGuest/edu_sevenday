@@ -40,3 +40,5 @@ screenshot
 build
 .DS_Store
 
+
+src/demo-mock/

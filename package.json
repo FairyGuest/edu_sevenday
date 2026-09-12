@@ -11,6 +11,7 @@
     "build:test": "cross-env REACT_APP_ENV=test max build",
     "build:prod": "cross-env REACT_APP_ENV=prod max build",
     "build:wujie": "cross-env REACT_APP_ENV=prod WUJIE=true max build",
+    "build:demo": "node scripts/prepare-demo-mock.js && cross-env REACT_APP_ENV=demo max build",
     "postinstall": "max setup",
     "prettier": "prettier -c --write \"src/**/*\"",
     "start:mock": "max dev"
