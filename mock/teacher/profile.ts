@@ -116,8 +116,8 @@ export default {
       n: r.n_students || 3,
     }));
     prof.dimensions = computeDimensions(classCells);
-    // A1+图谱：知识点掌握网络（层=章内序号；边=同章相邻+素养同源关联）
-    prof.kgraph = buildKnowledgeGraph(prof.cluster_rows || []);
+    // A1+图谱：知识点掌握网络（节点=全量目录细粒度；层=L1~L4；边=同章脉络+素养同源）
+    prof.kgraph = buildKnowledgeGraph(prof.cluster_rows || [], prof.grade);
     res.json({ code: 200, msg: "ok", data: prof });
   },
 
@@ -131,6 +131,7 @@ export default {
     const prof = read(`class-profile-${cid}.json`);
     const personalGraph = buildKnowledgeGraph(
       (one.cells || []).map((c: any) => ({ ...c, weak_pct: 100 - 2 * c.p, n_students: c.n, chapter: null })),
+      prof.grade,
     );
     const levels = (one.cells || []).filter((c: any) => c.n >= 3).map((c: any) => ({
       cluster: c.cluster, level: clusterLevel(c.cluster), p: c.p,
@@ -156,24 +157,45 @@ export default {
   },
 };
 
-/** 知识点图谱：节点=知识点（大小=覆盖人数、色=掌握度红→绿、红描边=薄弱），层=章内序号 */
-function buildKnowledgeGraph(rows: any[]) {
+/** 知识点图谱：节点=全量知识点目录（≤本年级，knowledge.json），细粒度呈现；
+ *  有学情数据的节点（大小=覆盖人数、填充=掌握度红→绿、红虚线圈=薄弱），
+ *  无数据的为灰色小节点（未测/未学）；层=L1~L4；边=同章脉络(实线)+素养同源(虚线)。 */
+function buildKnowledgeGraph(rows: any[], grade?: string) {
   const chapOf = (r: any) => (r.chapter || "").replace(/G\d+[上下]?\s*/, "");
-  const seen = new Map<string, number>();
-  const nodes = rows.map((r: any) => {
-    const chap = chapOf(r);
-    const layer = seen.get(chap) ?? 0;
-    seen.set(chap, layer + 1);
-    const p = Math.max(15, Math.min(95, Math.round(100 - (r.weak_pct || 0) * 2.2)));
+  // 1) 全量目录：该年级及之前的所有章节知识点（目录序=章内脉络序）
+  const kn = read("knowledge.json");
+  const gOrder = ["g7", "g8", "g9"];
+  const upto = Math.max(0, gOrder.indexOf(grade || "g8"));
+  const catalog = new Map<string, { chapter: string; layer: number }>();
+  for (const g of kn.grades) {
+    if (gOrder.indexOf(g.grade) > upto) continue;
+    for (const ch of g.chapters) {
+      const chap = chapOf({ chapter: ch.chapter });
+      ch.clusters.forEach((c: any, i: number) => {
+        if (!catalog.has(c.cluster)) catalog.set(c.cluster, { chapter: chap, layer: i });
+      });
+    }
+  }
+  // 2) 学情数据；目录外出现过的知识点也补入
+  const rowMap = new Map(rows.map((r: any) => [r.cluster, r]));
+  for (const r of rows) {
+    if (!catalog.has(r.cluster)) catalog.set(r.cluster, { chapter: chapOf(r), layer: 0 });
+  }
+  const nodes = [...catalog.entries()].map(([id, meta]) => {
+    const r = rowMap.get(id);
+    const hasData = !!r;
+    const p = hasData ? Math.max(15, Math.min(95, Math.round(100 - (r.weak_pct || 0) * 2.2))) : 0;
     const hue = p * 1.05; // 15%→红 95%→绿
     return {
-      id: r.cluster,
-      chapter: chap,
-      layer,
-      p,
-      n: r.n_students || 30,
-      weak: (r.weak_pct || 0) >= 25,
-      fill: `hsl(${hue}, 62%, 46%)`,
+      id,
+      chapter: meta.chapter,
+      layer: meta.layer,
+      level: clusterLevel(id),
+      p: hasData ? p : 0,
+      n: hasData ? (r.n_students || 30) : 0,
+      weak: hasData && (r.weak_pct || 0) >= 25,
+      nodata: !hasData,
+      fill: hasData ? `hsl(${hue}, 62%, 46%)` : "#c8d2dc",
     };
   });
   const edges: { src: string; tgt: string; kind: string }[] = [];
@@ -197,7 +219,7 @@ function buildKnowledgeGraph(rows: any[]) {
       edges.push({ src: g[i].id, tgt: g[i + 1].id, kind: "literacy" });
     }
   }
-  return { nodes: nodes.map(({ id, chapter, layer, p, n, weak, fill }: any) => ({ id, chapter, layer, p, n, weak, fill })), edges: edges.filter((e) => byId.has(e.src) && byId.has(e.tgt)) };
+  return { nodes: nodes.map(({ id, chapter, layer, level, p, n, weak, nodata, fill }: any) => ({ id, chapter, layer, level, p, n, weak, nodata, fill })), edges: edges.filter((e) => byId.has(e.src) && byId.has(e.tgt)) };
 }
 
 /** B3 人机交互明细：该班学生与 AI 的问答记录（来源=人机交互 的证据聚合） */

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { connect } from "@umijs/max";
-import { Button, Card, Col, DatePicker, message, Row, Select, Spin, Tag, Tooltip, Upload } from "antd";
+import { Button, Card, Col, DatePicker, message, Row, Segmented, Select, Spin, Tag, Tooltip, Upload } from "antd";
 import {
   ReloadOutlined,
   UploadOutlined,
@@ -17,6 +17,7 @@ import dayjs, { Dayjs } from "dayjs";
 
 import ClusterTable from "./components/ClusterTable";
 import ImportModal from "./components/ImportModal";
+import KnowledgeGraph from "./components/KnowledgeGraph";
 import ProfileCharts from "./components/ProfileCharts";
 import StudentList from "./components/StudentList";
 import StudentDrawer from "./components/StudentDrawer";
@@ -46,6 +47,7 @@ const BAND_LEGEND: [string, string, string][] = [
  * - 学业诊断（错因分析）
  */
 const TeacherProfile = (props: any) => {
+  const { variant } = props; // variant: "full"(默认=版本一) | "kgraph"(版本二子页面)
   const { classes, profile, loading, studentDetail, evidence, detailLoading, dispatch, analysisModel } = props;
   const [classId, setClassId] = useState<string>("");
   const [sources, setSources] = useState<string[]>(ALL_SOURCES);
@@ -56,6 +58,8 @@ const TeacherProfile = (props: any) => {
   ]);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [importOpen, setImportOpen] = useState(false);
+  // 知识点掌握分布（版本一默认表格；版本二为"知识图谱"tab 独立子页面，这里保留快速切换）
+  const [distView, setDistView] = useState<"graph" | "table">("table");
   const classList = classes || [];
 
   useEffect(() => {
@@ -120,6 +124,37 @@ const TeacherProfile = (props: any) => {
   };
 
   const cards = profile?.cards || {};
+
+  // ===== 版本二：知识图谱子页面（独立 tab 入口，只渲染图谱大图）=====
+  if (variant === "kgraph") {
+    return (
+      <div className="teacher_profile_container">
+        <Spin spinning={loading && !profile}>
+          {profile ? (
+            <div className="teacher_profile_card">
+              <div className="ct_header">
+                <p className="teacher_profile_chart_title" style={{ marginBottom: 0 }}>
+                  知识点掌握图谱 · L1~L4 分层
+                </p>
+                <div className="ct_legend">
+                  <span className="ct_legend_group">
+                    {LEVEL_LEGEND.map((l) => (
+                      <Tooltip key={l.short} title={`${l.short}＝${l.label}（${l.verb}）：${l.desc}`} color="#fff" overlayClassName="ct_lv_tip">
+                        <span className="ct_th_lv" style={{ ["--c" as any]: l.color }}>
+                          <b>{l.short}</b>{l.label}
+                        </span>
+                      </Tooltip>
+                    ))}
+                  </span>
+                </div>
+              </div>
+              <KnowledgeGraph graph={profile.kgraph} height={660} />
+            </div>
+          ) : null}
+        </Spin>
+      </div>
+    );
+  }
 
   return (
     <div className="teacher_profile_container">
@@ -201,6 +236,16 @@ const TeacherProfile = (props: any) => {
                 <div className="teacher_profile_card">
                     <div className="ct_header">
                     <p className="teacher_profile_chart_title" style={{ marginBottom: 0 }}>知识点掌握分布</p>
+                    <Segmented
+                      size="small"
+                      value={distView}
+                      onChange={(v) => setDistView(v as "graph" | "table")}
+                      options={[
+                        { label: "知识图谱", value: "graph" },
+                        { label: "分布表格", value: "table" },
+                      ]}
+                      style={{ margin: "0 10px" }}
+                    />
                     <div className="ct_legend">
                       <span className="ct_legend_group">
                         {LEVEL_LEGEND.map(l => (
@@ -221,7 +266,11 @@ const TeacherProfile = (props: any) => {
                       ))}
                     </div>
                   </div>
-                  <ClusterTable rows={profile.cluster_rows || []} />
+                  {distView === "graph" ? (
+                    <KnowledgeGraph graph={profile.kgraph} />
+                  ) : (
+                    <ClusterTable rows={profile.cluster_rows || []} />
+                  )}
                 </div>
               </Col>
               <Col flex="0 0 312px" style={{ minWidth: 0 }} className="analysis_right">

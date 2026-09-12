@@ -591,6 +591,13 @@
   color: var(--g-faint);
 }
 
+.kg_onlydata {
+  font-size: 11.5px;
+  color: var(--g-muted);
+  margin-left: 4px;
+  user-select: none;
+}
+
 .kg_search {
   width: 190px;
   margin-left: auto;
@@ -603,6 +610,41 @@
   font-size: 14px;
   &:hover { color: var(--g-accent); }
 }
+
+/* L1~L4 分布概要行：等级 × 数量 × 平均掌握度 × 薄弱数 */
+.kg_lvstats {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 0 0 8px;
+}
+
+.kg_lvstat {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  font-size: 11px;
+  color: var(--g-muted);
+  background: #fff;
+  border: 1px solid color-mix(in srgb, var(--c, #8fa3b5) 35%, #fff);
+  border-left: 3px solid var(--c, #8fa3b5);
+  border-radius: 7px;
+  cursor: default;
+
+  b { color: var(--c, #52607a); font-size: 11.5px; }
+  em { font-style: normal; color: var(--g-text); font-weight: 600; }
+  i { font-style: normal; font-weight: 700; font-variant-numeric: tabular-nums; }
+  u { text-decoration: none; color: var(--g-bad); font-weight: 600; }
+}
+
+.kg_lvtotal {
+  font-size: 11px;
+  color: var(--g-faint);
+  margin-left: auto;
+}
+
 
 .kg_svg {
   display: block;

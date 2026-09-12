@@ -6,32 +6,52 @@ import {
 import { drag } from "d3-drag";
 import { select } from "d3-selection";
 import { zoom, zoomIdentity, type D3ZoomEvent } from "d3-zoom";
+import "d3-transition";
 import { ReloadOutlined, SearchOutlined } from "@ant-design/icons";
-import { Input, Tooltip } from "antd";
+import { Checkbox, Input, Tooltip } from "antd";
 
 /**
  * 知识点掌握图谱（借鉴 graph4rec ForceGraph 的交互范式）：
  * 力导向布局 + 滚轮缩放/拖拽平移 + 点节点聚焦邻接 + 搜索定位飞行 + 悬停 tooltip。
- * 视觉编码：圆大小=班级人数、颜色=掌握度（红→绿）、红描边=薄弱、层列=章节。
+ * 节点=全量知识点目录（细粒度，≤本年级）：有学情数据的（大小=覆盖人数、填充=掌握度红→绿、
+ * 红虚线圈=薄弱），无数据的灰色小点；外环色=L1~L4 等级；四列=L1→L4 分布；
+ * 连线=同章脉络(实线)/素养同源(虚线)；可一键只看有学情数据的节点。
  */
 
+type Level = "L1" | "L2" | "L3" | "L4";
+const LEVELS: { key: Level; label: string; verb: string; color: string; desc: string }[] = [
+  { key: "L1", label: "了解", verb: "了解 / 知道 / 识别", color: "#52607a", desc: "能再认再现，识别基本概念与符号" },
+  { key: "L2", label: "理解", verb: "理解 / 描述 / 说明", color: "#2563eb", desc: "能解释含义、举例说明，明白为什么" },
+  { key: "L3", label: "掌握", verb: "掌握 / 运用 / 计算", color: "#7c3aed", desc: "能在熟悉情境中独立使用与计算" },
+  { key: "L4", label: "综合", verb: "综合 / 迁移 / 建模", color: "#db2777", desc: "能在新情境中组合应用、建模探究" },
+];
+const LEVEL_COLOR: Record<string, string> = Object.fromEntries(LEVELS.map((l) => [l.key, l.color]));
+const levelOf = (n: any): Level => {
+  const i = LEVELS.findIndex((l) => l.key === n.level);
+  return i >= 0 ? LEVELS[i].key : "L2";
+};
+
 interface GNode extends SimulationNodeDatum {
-  id: string; chapter: string; layer: number;
-  p: number; n: number; weak: boolean; fill: string;
+  id: string; chapter: string; layer: number; level?: Level;
+  p: number; n: number; weak: boolean; nodata?: boolean; fill: string;
 }
 interface GLink extends SimulationLinkDatum<GNode> { kind: string }
 
 interface Props {
   graph?: { nodes: any[]; edges: { src: string; tgt: string; kind: string }[] };
   onNodeClick?: (cluster: string) => void;
+  height?: number;
 }
 
-const HEIGHT = 430;
+const HEIGHT = 620;
+const COL_TOP = 46; // 列头文字下方起点
 
-export default function KnowledgeGraph({ graph, onNodeClick }: Props) {
+export default function KnowledgeGraph({ graph, onNodeClick, height }: Props) {
+  const H = height ?? HEIGHT;
   const wrapRef = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
   const nodeEls = useRef<(SVGGElement | null)[]>([]);
+  const circleEls = useRef<(SVGCircleElement | null)[]>([]);
   const edgeEls = useRef<(SVGLineElement | null)[]>([]);
   const labelEls = useRef<(SVGTextElement | null)[]>([]);
   const simRef = useRef<Simulation<GNode, GLink> | null>(null);
@@ -39,12 +59,18 @@ export default function KnowledgeGraph({ graph, onNodeClick }: Props) {
   const viewRef = useRef({ k: 1, x: 0, y: 0 });
   const zoomRef = useRef<any>(null);
   const draggingRef = useRef(false);
+  const selectedRef = useRef<string | null>(null);
+  const drawRef = useRef<(() => void) | null>(null);
   const [width, setWidth] = useState(860);
   const [tip, setTip] = useState<{ x: number; y: number; node: GNode } | null>(null);
   const [viewK, setViewK] = useState(1);
   const [selected, setSelected] = useState<string | null>(null);
   const [search, setSearch] = useState("");
+  const [onlyData, setOnlyData] = useState(false);
   const matchIdx = useRef(0);
+  selectedRef.current = selected;
+  // 选中态变化时立即重绘（让选中节点标签马上显示）
+  useEffect(() => { drawRef.current?.(); }, [selected]);
 
   useEffect(() => {
     const el = wrapRef.current;
@@ -56,57 +82,95 @@ export default function KnowledgeGraph({ graph, onNodeClick }: Props) {
 
   const model = useMemo(() => {
     if (!graph) return null;
-    const ns: GNode[] = graph.nodes.map((n) => ({
-      id: n.id, chapter: n.chapter, layer: n.layer ?? 0,
-      p: n.p ?? 50, n: n.n ?? 30, weak: !!n.weak,
-      fill: n.fill || "#8fa3b5",
+    const all: GNode[] = graph.nodes.map((n) => ({
+      id: n.id, chapter: n.chapter, layer: n.layer ?? 0, level: n.level,
+      p: n.p ?? 50, n: n.n ?? 30, weak: !!n.weak, nodata: !!n.nodata,
+      // 无数据节点用更深的灰，保证在浅色背景上可见
+      fill: n.nodata ? "#9aa7b5" : (n.fill || "#8fa3b5"),
     }));
+    // "仅看有学情"过滤：隐藏无数据节点及其关联边
+    const ns = onlyData ? all.filter((d) => !d.nodata) : all;
+    const keep = new Set(ns.map((d) => d.id));
     const byId = new Map(ns.map((d) => [d.id, d]));
     const ls: GLink[] = graph.edges
-      .filter((e) => byId.has(e.src) && byId.has(e.tgt))
+      .filter((e) => keep.has(e.src) && keep.has(e.tgt))
       .map((e) => ({ source: e.src, target: e.tgt, kind: e.kind }));
     const adj = new Map<string, Set<string>>();
     for (const e of graph.edges) {
-      if (!byId.has(e.src) || !byId.has(e.tgt)) continue;
+      if (!keep.has(e.src) || !keep.has(e.tgt)) continue;
       (adj.get(e.src) ?? adj.set(e.src, new Set()).get(e.src)!).add(e.tgt);
       (adj.get(e.tgt) ?? adj.set(e.tgt, new Set()).get(e.tgt)!).add(e.src);
     }
-    // 层号按全局排序分列
-    const layerIdx = [...new Set(ns.map((d) => d.layer))].sort((a, b) => a - b);
-    return { ns, ls, byId, adj, layerIdx };
-  }, [graph]);
+    // 每级分布概要（数量含全部节点；均值只算有学情的）
+    const stats = LEVELS.map((l) => {
+      const group = ns.filter((d) => levelOf(d) === l.key);
+      const dataGroup = group.filter((d) => !d.nodata);
+      const avg = dataGroup.length ? Math.round(dataGroup.reduce((s, d) => s + d.p, 0) / dataGroup.length) : 0;
+      return { ...l, count: group.length, dataCount: dataGroup.length, avg, weakCount: dataGroup.filter((d) => d.weak).length };
+    });
+    return { ns, ls, byId, adj, stats, dataTotal: all.filter((d) => !d.nodata).length };
+  }, [graph, onlyData]);
 
-  const layerX = useMemo(() => {
-    if (!model) return (l: number) => 0;
-    const pad = Math.max(50, Math.min(84, width * 0.07));
-    const li = model.layerIdx;
-    const span = (li[li.length - 1] ?? 0) - (li[0] ?? 0);
-    return (l: number) => (span > 0 ? pad + ((l - li[0]) / span) * (width - 2 * pad) : width / 2);
-  }, [model, width]);
+  const colX = useMemo(() => {
+    const pad = Math.max(70, Math.min(110, width * 0.11));
+    return (i: number) => pad + (i * (width - 2 * pad)) / (LEVELS.length - 1);
+  }, [width]);
 
   useEffect(() => {
     const svg = svgRef.current;
     if (!svg || !model || width < 60) return;
     const { ns, ls } = model;
-    const radius = (d: GNode) => 7 + 9 * Math.sqrt(Math.min(d.n, 50) / 50);
+    const radius = (d: GNode) => (d.nodata ? 8.5 : 9 + 8 * Math.sqrt(Math.min(d.n, 50) / 50));
 
-    for (const d of ns) {
-      d.x = layerX(d.layer) + (Math.random() - 0.5) * 90;
-      d.y = HEIGHT / 2 + (Math.random() - 0.5) * HEIGHT * 0.7;
-      d.vx = 0; d.vy = 0;
-      (d as any).r = radius(d);
+    // 初始化：每列内数据节点均匀铺到各槽位、灰点填充其余，避免"灰点堆顶、大点沉底"
+    const colBuckets: GNode[][] = LEVELS.map(() => []);
+    for (const d of ns) colBuckets[LEVELS.findIndex((l) => l.key === levelOf(d))].push(d);
+    const usable = H - COL_TOP - 26;
+    for (const bucket of colBuckets) {
+      const dataNodes = bucket.filter((d) => !d.nodata);
+      const grayNodes = bucket.filter((d) => d.nodata);
+      const slots: (GNode | null)[] = new Array(bucket.length).fill(null);
+      // 数据节点等距落位（含首尾），灰点按序填空
+      dataNodes.forEach((d, k) => {
+        const idx = dataNodes.length === 1
+          ? Math.floor(bucket.length / 2)
+          : Math.round((k * (bucket.length - 1)) / (dataNodes.length - 1));
+        let j = idx;
+        while (slots[j] !== null) j = (j + 1) % bucket.length; // 撞位顺延
+        slots[j] = d;
+      });
+      let gi = 0;
+      for (let s = 0; s < slots.length; s++) if (!slots[s]) slots[s] = grayNodes[gi++] ?? null;
+      const li = LEVELS.findIndex((l) => l.key === levelOf(bucket[0]));
+      slots.forEach((d, i) => {
+        if (!d) return;
+        d.x = colX(li) + (Math.random() - 0.5) * 46;
+        d.y = COL_TOP + ((i + 0.5) / bucket.length) * usable + (Math.random() - 0.5) * 10;
+        (d as any).slotY = d.y; // 目标槽位：模拟中持续拉回，保持数据/灰点交错分布
+        d.vx = 0; d.vy = 0;
+        (d as any).r = radius(d);
+      });
     }
 
     const draw = () => {
-      const k = viewRef.current.k;
       for (let i = 0; i < ns.length; i++) {
         const el = nodeEls.current[i];
         if (el) el.setAttribute("transform", `translate(${ns[i].x ?? 0},${ns[i].y ?? 0})`);
+        // 半径同步（React 只渲染初始值，力导向过程中统一由 draw 维护）
+        const circle = circleEls.current[i];
+        if (circle) circle.setAttribute("r", String((ns[i] as any).r ?? 10));
+        const halo = el?.querySelector("circle.kg-halo");
+        if (halo) halo.setAttribute("r", String(((ns[i] as any).r ?? 10) + 3.5));
         const lb = labelEls.current[i];
         if (lb) {
-          lb.setAttribute("x", String((ns[i].x ?? 0) + ((ns[i] as any).r ?? 10) + 4));
-          lb.setAttribute("y", String((ns[i].y ?? 0) + 3.5));
-          lb.style.display = k >= 1.5 || ((ns[i] as any).r ?? 0) > 12 ? "" : "none";
+          // 标签是节点 g(translate) 的子元素，坐标系相对节点圆心：x=r+4, y=3.5
+          // （若写绝对坐标会被 g 的 translate 二次叠加，文字飞到两倍坐标处）
+          lb.setAttribute("x", String(((ns[i] as any).r ?? 10) + 4));
+          lb.setAttribute("y", "3.5");
+          // 标签常显（用户偏好：灰点也带字，不空荡）；灰点标签小一号淡一档
+          lb.style.display = "";
+          lb.style.fill = ns[i].nodata ? "#8e99a8" : "#33445c";
+          lb.setAttribute("font-size", ns[i].nodata ? "9" : "10");
         }
       }
       for (let i = 0; i < ls.length; i++) {
@@ -121,15 +185,17 @@ export default function KnowledgeGraph({ graph, onNodeClick }: Props) {
 
     const sim = forceSimulation<GNode>(ns)
       .force("link", forceLink<GNode, GLink>(ls).id((d) => d.id)
-        .distance((l) => 46 + (((l.source as GNode).n ?? 30) % 20))
-        .strength(0.2))
-      .force("charge", forceManyBody<GNode>().strength(-150))
-      .force("collide", forceCollide<GNode>((d) => ((d as any).r ?? 10) + 3).iterations(2))
-      .force("layerX", forceX<GNode>((d) => layerX(d.layer)).strength(0.09))
-      .force("centerY", forceY<GNode>(HEIGHT / 2).strength(0.06))
+        .distance((l) => 40 + (((l.source as GNode).n ?? 30) % 20))
+        .strength(0.14))
+      .force("charge", forceManyBody<GNode>().strength(-120))
+      .force("collide", forceCollide<GNode>((d) => ((d as any).r ?? 10) + (d.nodata ? 5 : 4)).iterations(2))
+      .force("colX", forceX<GNode>((d) => colX(LEVELS.findIndex((l) => l.key === levelOf(d)))).strength(0.14))
+      .force("slotY", forceY<GNode>((d) => (d as any).slotY ?? (H + COL_TOP) / 2).strength(0.22))
+      .force("centerY", forceY<GNode>((H + COL_TOP) / 2).strength(0.05))
       .alphaDecay(0.022);
     simRef.current = sim;
     sim.on("tick", draw);
+    drawRef.current = draw;
     draw();
 
     const dragBeh = drag<SVGCircleElement, GNode>()
@@ -151,7 +217,7 @@ export default function KnowledgeGraph({ graph, onNodeClick }: Props) {
     select(svg).call(zoomBeh).on("dblclick.zoom", null);
 
     return () => { sim.on("tick", null); sim.stop(); simRef.current = null; select(svg).on(".zoom", null); };
-  }, [model, layerX, width]);
+  }, [model, colX, width]);
 
   const resetView = () => {
     const svg = svgRef.current;
@@ -160,16 +226,22 @@ export default function KnowledgeGraph({ graph, onNodeClick }: Props) {
     setViewK(1);
     worldRef.current?.setAttribute("transform", "translate(0,0) scale(1)");
     setSelected(null);
+    drawRef.current?.(); // 标签可见性按新缩放级别重算
   };
 
   const flyTo = (id: string) => {
     const node = model?.byId.get(id);
     if (!node || !zoomRef.current) return;
-    const scale = 1.9;
+    // 无数据灰点标签 2.5× 起显示，定位时放大到 2.6 保证可见
+    const scale = node.nodata ? 2.6 : 1.9;
     const tx = width / 2 - (node.x ?? 0) * scale;
-    const ty = HEIGHT / 2 - (node.y ?? 0) * scale;
+    const ty = H / 2 - (node.y ?? 0) * scale;
     const target = zoomIdentity.translate(tx, ty).scale(scale);
-    select(svgRef.current).transition().duration(700).call(zoomRef.current.transform, target);
+    try {
+      select(svgRef.current).transition().duration(700).call(zoomRef.current.transform, target);
+    } catch {
+      select(svgRef.current).call(zoomRef.current.transform, target);
+    }
     setSelected(id);
   };
 
@@ -197,12 +269,20 @@ export default function KnowledgeGraph({ graph, onNodeClick }: Props) {
   };
 
   if (!model || !model.ns.length) return null;
+  const total = model.ns.length;
 
   return (
     <div ref={wrapRef} className="kg_wrap">
       <div className="kg_toolbar">
-        <span className="kg_hint">圆大小 = 班级人数 · 颜色 = 掌握度（红 → 绿）· 红描边 = 薄弱</span>
+        <span className="kg_hint">圆大小 = 覆盖人数 · 填充 = 掌握度（红 → 绿）· 外环 = L1~L4 · 灰点 = 无学情数据</span>
         <span className="kg_hint">滚轮缩放 · 拖拽平移 · 点节点聚焦</span>
+        <Checkbox
+          className="kg_onlydata"
+          checked={onlyData}
+          onChange={(e) => setOnlyData(e.target.checked)}
+        >
+          仅看有学情
+        </Checkbox>
         <Input
           size="small" allowClear
           prefix={<SearchOutlined style={{ color: "#8a94a8" }} />}
@@ -214,13 +294,37 @@ export default function KnowledgeGraph({ graph, onNodeClick }: Props) {
         />
         <Tooltip title="复位视图"><ReloadOutlined className="kg_reset" onClick={resetView} /></Tooltip>
       </div>
-      <svg ref={svgRef} width={width} height={HEIGHT} viewBox={`0 0 ${width} ${HEIGHT}`} className="kg_svg">
+      {/* L1~L4 分布概要：等级 × 数量 × 平均掌握度（hover 看等级动词释义） */}
+      <div className="kg_lvstats">
+        {model.stats.map((s) => (
+          <Tooltip key={s.key} color="#fff" overlayClassName="ct_lv_tip" title={`${s.key}＝${s.label}（${s.verb}）：${s.desc}`}>
+            <span className="kg_lvstat" style={{ ["--c" as any]: s.color }}>
+              <b>{s.key}</b>{s.label}
+              <em>{s.count} 个{s.dataCount < s.count ? `（${s.dataCount} 有学情）` : ""}</em>
+              <i style={{ color: s.dataCount ? `hsl(${Math.max(15, Math.min(95, s.avg)) * 1.05}, 62%, 46%)` : "#9aa4b5" }}>
+                {s.dataCount ? `均 ${s.avg}%` : "暂无学情"}
+              </i>
+              {s.weakCount ? <u>{s.weakCount} 薄弱</u> : null}
+            </span>
+          </Tooltip>
+        ))}
+        <span className="kg_lvtotal">共 {total} 个知识点 · {model.dataTotal} 个有学情数据</span>
+      </div>
+      <svg ref={svgRef} width={width} height={H} viewBox={`0 0 ${width} ${H}`} className="kg_svg">
         <g ref={worldRef}>
-          {model.layerIdx.map((l) => {
-            const x = layerX(l);
+          {LEVELS.map((l, i) => {
+            const x = colX(i);
+            const st = model.stats[i];
             return (
-              <g key={`L${l}`}>
-                <line x1={x} y1={26} x2={x} y2={HEIGHT - 30} strokeDasharray="2 7" style={{ stroke: "#9aa4b5", strokeOpacity: 0.35 }} />
+              <g key={l.key}>
+                <line x1={x} y1={COL_TOP - 8} x2={x} y2={H - 24} strokeDasharray="2 7" style={{ stroke: "#9aa4b5", strokeOpacity: 0.35 }} />
+                <circle cx={x - 44} cy={18} r={4} style={{ fill: l.color }} />
+                <text x={x - 36} y={21.5} fontSize={11.5} fontWeight={700} style={{ fill: "#33445c" }}>
+                  {l.key} {l.label}
+                </text>
+                <text x={x - 36} y={35} fontSize={9.5} style={{ fill: "#8a94a8" }}>
+                  {st.dataCount ? `${st.count} 个 · 均 ${st.avg}%` : `${st.count} 个 · 无学情`}
+                </text>
               </g>
             );
           })}
@@ -245,17 +349,23 @@ export default function KnowledgeGraph({ graph, onNodeClick }: Props) {
               const hovered = tip?.node.id === d.id;
               const dim = focusSet ? !focusSet.has(d.id) : false;
               const isSel = selected === d.id;
+              const lvColor = LEVEL_COLOR[levelOf(d)] ?? "#8fa3b5";
+              const r = (d as any).r ?? 10;
               return (
                 <g key={d.id} ref={(el) => { nodeEls.current[i] = el; }} opacity={dim ? 0.14 : 1}>
+                  {d.weak ? (
+                    <circle className="kg-halo" r={r + 3.5} fill="none" stroke="var(--g-bad)" strokeWidth={1.2} strokeDasharray="3 3" style={{ pointerEvents: "none" }} />
+                  ) : null}
                   <circle
                     className="kg-node"
-                    r={(d as any).r ?? 10}
+                    ref={(el) => { circleEls.current[i] = el; }}
+                    r={r}
                     style={{
                       fill: d.fill,
-                      stroke: isSel ? "var(--g-accent-deep)" : hovered ? "var(--g-accent)" : d.weak ? "var(--g-bad)" : "#fff",
-                      strokeWidth: isSel ? 2.6 : d.weak ? 1.8 : 1,
+                      stroke: isSel ? "var(--g-accent-deep)" : hovered ? "var(--g-accent)" : lvColor,
+                      strokeWidth: isSel ? 3 : d.nodata ? 1.4 : 2.2,
                       cursor: "grab",
-                      filter: "drop-shadow(0 1px 2px rgba(23,39,64,0.18))",
+                      filter: d.nodata ? undefined : "drop-shadow(0 1px 2px rgba(23,39,64,0.18))",
                     }}
                     onPointerEnter={hover(i)}
                     onPointerMove={hover(i)}
@@ -274,10 +384,17 @@ export default function KnowledgeGraph({ graph, onNodeClick }: Props) {
       </svg>
       <span className="kg_zoom">×{viewK.toFixed(1)}</span>
       {tip ? (
-        <div className="kg_tip" style={{ left: Math.min(tip.x + 14, Math.max(0, width - 190)), top: Math.max(6, tip.y - 56) }}>
+        <div className="kg_tip" style={{ left: Math.min(tip.x + 14, Math.max(0, width - 200)), top: Math.max(6, tip.y - 72) }}>
           <b>{tip.node.id}</b>
           <span>{tip.node.chapter}</span>
-          <span>掌握度 <i style={{ color: tip.node.fill }}>{tip.node.p}%</i> · {tip.node.n} 人</span>
+          <span style={{ color: LEVEL_COLOR[levelOf(tip.node)] }}>
+            {levelOf(tip.node)} {LEVELS.find((l) => l.key === levelOf(tip.node))?.label} · {LEVELS.find((l) => l.key === levelOf(tip.node))?.verb}
+          </span>
+          {tip.node.nodata ? (
+            <em style={{ color: "#8a94a8" }}>暂无学情数据（未测/未学）</em>
+          ) : (
+            <span>掌握度 <i style={{ color: tip.node.fill }}>{tip.node.p}%</i> · {tip.node.n} 人</span>
+          )}
           {tip.node.weak ? <em>薄弱：建议优先干预</em> : null}
         </div>
       ) : null}

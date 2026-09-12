@@ -72,10 +72,12 @@ const LearningAnalysis = (props: any) => {
             }}
             items={[
               { key: 'profile', label: '📊 画像总览' },
+              { key: 'kgraph', label: '🕸 知识图谱' },
               { key: 'homework', label: '📝 作业分析' },
             ]}
           />
           {activeKey === 'profile' && <TeacherProfile />}
+          {activeKey === 'kgraph' && <TeacherProfile variant="kgraph" />}
           {activeKey === 'homework' && <HomeworkAnalysis />}
         </div>
       </div>
