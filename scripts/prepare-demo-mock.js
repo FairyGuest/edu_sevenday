@@ -97,46 +97,30 @@ function transformFile(file) {
 
   const jsonKeys = new Set();
 
-  // 3. 先替换 read 工具函数（其内部 path.join(D, f) 的 f 是变量，需整行替换为查表）
-  //    read 调用点传入的是相对 D 的文件名，查表需补上 D 的前缀
+  // 3. 先替换 read 工具函数：查全量注册表（带 D 前缀，兼容动态 key）
   const readPrefix = dirSegs.length ? `${dirSegs.join("/")}/` : "";
   code = code.replace(
     /const\s+read\s*=\s*\([^)]*\)\s*:\s*any\s*=>\s*JSON\.parse\(fs\.readFileSync\(path\.join\(D,\s*f\),\s*["']utf-8["']\)\);?/g,
-    `const read = (f: string): any => __jsonMap[${JSON.stringify(readPrefix)} + f];`,
+    `const read = (f: string): any => jsonRegistry[${JSON.stringify(readPrefix)} + f];`,
   );
 
-  // 4. 再替换字面量 readFileSync 调用：JSON.parse(fs.readFileSync(path.join(...), "utf-8"))
+  // 4. 再替换字面量 readFileSync 调用
   code = code.replace(
     /JSON\.parse\(fs\.readFileSync\(path\.join\(([^)]*)\),\s*["']utf-8["']\)\)/g,
     (_m, inner) => {
       const segs = resolveJoinArgs(splitArgs(inner), dirSegs);
       const key = segs.join("/");
       jsonKeys.add(key);
-      return `__jsonMap[${JSON.stringify(key)}]`;
+      return `jsonRegistry[${JSON.stringify(key)}]`;
     },
   );
 
-  // 5. 收集 read("xxx.json") 调用点（key = 数据目录绝对段 + 文件名）
-  for (const m of code.matchAll(/\bread\((["'])([^"']+?\.(?:json))\1\)/g)) {
-    jsonKeys.add(dirSegs.length ? `${dirSegs.join("/")}/${m[2]}` : m[2]);
-  }
-
-  // 6. 生成静态 import 与查表 map，插到文件头部（import 路径按文件位置换算相对路径）
-  const imports = [];
-  const entries = [];
-  [...jsonKeys].sort().forEach((key, i) => {
-    const target = key.split("/");
-    let dir = toRelative(fileDir, target.slice(0, -1));
-    if (dir === ".") dir = "./";
-    else if (!dir.startsWith("..")) dir = "./" + dir;
-    const importPath = `${dir}/${target[target.length - 1]}`;
-    imports.push(`import __json${i} from ${JSON.stringify(importPath)};`);
-    entries.push(`  ${JSON.stringify(key)}: __json${i},`);
-  });
+  // 5. 生成头部：引入全量 JSON 注册表（路径按文件位置换算）
+  let regRel = toRelative(fileDir, []);
+  const regPath = `${regRel || "."}/__jsonRegistry`;
   const header =
-    `// [prepare-demo-mock] 由 scripts/prepare-demo-mock.js 生成：fs 读取已改为静态 JSON import\n` +
-    imports.join("\n") +
-    `\nconst __jsonMap: Record<string, any> = {\n${entries.join("\n")}\n};\n\n`;
+    `// [prepare-demo-mock] 由 scripts/prepare-demo-mock.js 生成：fs 读取已改为注册表查询\n` +
+    `import { jsonRegistry } from ${JSON.stringify(regPath)};\n\n`;
   code = header + code;
 
   // 7. 兜底校验：不允许残留 fs/path/Buffer 引用
@@ -149,6 +133,24 @@ function transformFile(file) {
 }
 
 copyDir(SRC, DEST);
+
+// 生成全量 JSON 注册表：read(`xxx-${id}.json`) 等动态 key 也能命中
+const allJson = [];
+(function collect(dir) {
+  for (const name of fs.readdirSync(dir)) {
+    const p = path.join(dir, name);
+    if (fs.statSync(p).isDirectory()) collect(p);
+    else if (name.endsWith(".json")) allJson.push(path.relative(DEST, p).split(path.sep).join("/"));
+  }
+})(DEST);
+const regImports = allJson.map((k, i) => `import __j${i} from ${JSON.stringify("./" + k)};`).join("\n");
+const regEntries = allJson.map((k, i) => `  ${JSON.stringify(k)}: __j${i},`).join("\n");
+fs.writeFileSync(
+  path.join(DEST, "__jsonRegistry.ts"),
+  `// [prepare-demo-mock] 自动生成：全量 JSON 注册表（支持动态 key 查询）\n` +
+    regImports +
+    `\nexport const jsonRegistry: Record<string, any> = {\n${regEntries}\n};\n`,
+);
 
 let transformed = 0;
 function walk(dir) {
