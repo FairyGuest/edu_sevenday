@@ -12,6 +12,9 @@ let base = process.env.DEPLOY_BASE || "/";
 
 export default defineConfig({
   hash: true,
+  // hash 路由用于 GitHub Pages 等无 SPA 回退的纯静态托管（DEPLOY_HASH=1），
+  // 深层路由刷新/直开不再 404；默认 browser 路由不变
+  history: { type: process.env.DEPLOY_HASH === "1" ? "hash" : "browser" },
   model: {},
   esbuildMinifyIIFE: true,
   initialState: {
