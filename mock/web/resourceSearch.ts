@@ -12,14 +12,16 @@ import * as fs from "fs";
 import * as path from "path";
 import { tagQuestion } from "../teacher/questionTags";
 
-/** 多维过滤（C1）：question_type/difficulties/scene/province/ability/literacy */
+/** 多维过滤（v2.0-L）：question_type/来源类别/省/市/年份/教材版本/ability/literacy；难度不外显（内部字段保留兼容） */
 function applyTagFilters(list: any[], b: any) {
   let out = list.map(tagQuestion);
   const inArr = (v: any) => Array.isArray(v) && v.filter(Boolean).length > 0;
   if (inArr(b.question_type)) out = out.filter(q => b.question_type.includes(q.form));
-  if (inArr(b.difficulties)) out = out.filter(q => b.difficulties.includes(q.difficulty_zh || q.difficulty));
   if (inArr(b.scene)) out = out.filter(q => b.scene.includes(q.scene));
-  if (inArr(b.province)) out = out.filter(q => b.province.includes(q.region));
+  if (inArr(b.province)) out = out.filter(q => b.province.includes(q.province));
+  if (inArr(b.city)) out = out.filter(q => b.city.includes(q.city));
+  if (inArr(b.year)) out = out.filter(q => b.year.map(String).includes(String(q.year)));
+  if (inArr(b.textbook_version)) out = out.filter(q => b.textbook_version.includes(q.textbook_version));
   if (inArr(b.ability)) out = out.filter(q => b.ability.includes(q.ability));
   if (inArr(b.literacy)) out = out.filter(q => b.literacy.includes(q.literacy));
   return out;
@@ -30,8 +32,21 @@ const read = (f: string): any => JSON.parse(fs.readFileSync(path.join(D, f), "ut
 
 const questionTypes = read("questionTypes.json");
 const personalQuestions = read("personalQuestions.json");
-const publicQuestions = read("questions.json");
 const textbooksList = read("textbooksList.json");
+// 公共题库与 facets（/api/teacher/questions/facets）同源：teacher 题库 420 题，
+// 避免出现「facets 显示有能力分布、列表过滤却为 0」的双源口径不一致
+const publicQuestions = JSON.parse(fs.readFileSync(path.join(D, "..", "teacher", "data", "questions.json"), "utf-8")).items.map((q: any) => ({
+  ...q,
+  // 题卡兼容字段（选项/答案在演示库中留空）
+  id: q.qid,
+  kgPoints: [{ id: q.qid, code: "", name: q.cluster }],
+  quesType: q.form,
+  options: [],
+  answer: [],
+  stage: "初中",
+  subject: "数学",
+  grade: "八年级",
+}));
 
 /** fixture 的 {id,name,level,children} → 解析器需要的 {id,title,type:'catalog',children} */
 const toCatalogNode = (n: any): any => ({

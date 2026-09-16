@@ -71,7 +71,7 @@ const App = (props: any) => {
     } else if (itype == 'submit') {
       if (selectedItem.request_id) {
         dispatch({
-          type: 'teachingModel/postData',
+          type: 'designModel/postData',
           apiUrl: "updateOutlineText",
           payload: {
             id: selectedItem.request_id,

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { memo, useEffect, useMemo, useRef, useState } from "react";
 import {
   forceCollide, forceLink, forceManyBody, forceSimulation, forceX, forceY,
   type Simulation, type SimulationLinkDatum, type SimulationNodeDatum,
@@ -34,6 +34,7 @@ const levelOf = (n: any): Level => {
 interface GNode extends SimulationNodeDatum {
   id: string; chapter: string; layer: number; level?: Level;
   p: number; n: number; weak: boolean; nodata?: boolean; fill: string;
+  literacy?: string; gradeName?: string;
 }
 interface GLink extends SimulationLinkDatum<GNode> { kind: string }
 
@@ -41,12 +42,14 @@ interface Props {
   graph?: { nodes: any[]; edges: { src: string; tgt: string; kind: string }[] };
   onNodeClick?: (cluster: string) => void;
   height?: number;
+  /** mastery=学情掌握图（默认）；catalog=知识目录图（v2.0-K 资源平台：素养着色、无学情口径） */
+  variant?: "mastery" | "catalog";
 }
 
 const HEIGHT = 620;
 const COL_TOP = 46; // 列头文字下方起点
 
-export default function KnowledgeGraph({ graph, onNodeClick, height }: Props) {
+function KnowledgeGraph({ graph, onNodeClick, height, variant = "mastery" }: Props) {
   const H = height ?? HEIGHT;
   const wrapRef = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
@@ -82,9 +85,10 @@ export default function KnowledgeGraph({ graph, onNodeClick, height }: Props) {
 
   const model = useMemo(() => {
     if (!graph) return null;
-    const all: GNode[] = graph.nodes.map((n) => ({
+    const all: GNode[] = (Array.isArray(graph.nodes) ? graph.nodes : []).filter((n) => n?.id).map((n) => ({
       id: n.id, chapter: n.chapter, layer: n.layer ?? 0, level: n.level,
       p: n.p ?? 50, n: n.n ?? 30, weak: !!n.weak, nodata: !!n.nodata,
+      literacy: n.literacy, gradeName: n.gradeName,
       // 无数据节点用更深的灰，保证在浅色背景上可见
       fill: n.nodata ? "#9aa7b5" : (n.fill || "#8fa3b5"),
     }));
@@ -92,12 +96,13 @@ export default function KnowledgeGraph({ graph, onNodeClick, height }: Props) {
     const ns = onlyData ? all.filter((d) => !d.nodata) : all;
     const keep = new Set(ns.map((d) => d.id));
     const byId = new Map(ns.map((d) => [d.id, d]));
-    const ls: GLink[] = graph.edges
-      .filter((e) => keep.has(e.src) && keep.has(e.tgt))
+    const edges = Array.isArray(graph.edges) ? graph.edges : [];
+    const ls: GLink[] = edges
+      .filter((e) => e && keep.has(e.src) && keep.has(e.tgt))
       .map((e) => ({ source: e.src, target: e.tgt, kind: e.kind }));
     const adj = new Map<string, Set<string>>();
-    for (const e of graph.edges) {
-      if (!keep.has(e.src) || !keep.has(e.tgt)) continue;
+    for (const e of edges) {
+      if (!e || !keep.has(e.src) || !keep.has(e.tgt)) continue;
       (adj.get(e.src) ?? adj.set(e.src, new Set()).get(e.src)!).add(e.tgt);
       (adj.get(e.tgt) ?? adj.set(e.tgt, new Set()).get(e.tgt)!).add(e.src);
     }
@@ -127,6 +132,8 @@ export default function KnowledgeGraph({ graph, onNodeClick, height }: Props) {
     for (const d of ns) colBuckets[LEVELS.findIndex((l) => l.key === levelOf(d))].push(d);
     const usable = H - COL_TOP - 26;
     for (const bucket of colBuckets) {
+      // 该能力级在本图无节点（如九年级目录无 L1 知识点）：空桶跳过，避免 levelOf(undefined) 崩溃
+      if (!bucket.length) continue;
       const dataNodes = bucket.filter((d) => !d.nodata);
       const grayNodes = bucket.filter((d) => d.nodata);
       const slots: (GNode | null)[] = new Array(bucket.length).fill(null);
@@ -274,15 +281,21 @@ export default function KnowledgeGraph({ graph, onNodeClick, height }: Props) {
   return (
     <div ref={wrapRef} className="kg_wrap">
       <div className="kg_toolbar">
-        <span className="kg_hint">圆大小 = 覆盖人数 · 填充 = 掌握度（红 → 绿）· 外环 = L1~L4 · 灰点 = 无学情数据</span>
-        <span className="kg_hint">滚轮缩放 · 拖拽平移 · 点节点聚焦</span>
-        <Checkbox
-          className="kg_onlydata"
-          checked={onlyData}
-          onChange={(e) => setOnlyData(e.target.checked)}
-        >
-          仅看有学情
-        </Checkbox>
+        <span className="kg_hint">
+          {variant === "catalog"
+            ? "填充 = 主素养 · 外环 = L1~L4 能力等级 · 实线 = 章内脉络 · 虚线 = 素养同源"
+            : "圆大小 = 覆盖人数 · 填充 = 掌握度（红 → 绿）· 外环 = L1~L4 · 灰点 = 无学情数据"}
+        </span>
+        <span className="kg_hint">滚轮缩放 · 拖拽平移 · 点节点{variant === "catalog" ? "看解释" : "聚焦"}</span>
+        {variant === "mastery" ? (
+          <Checkbox
+            className="kg_onlydata"
+            checked={onlyData}
+            onChange={(e) => setOnlyData(e.target.checked)}
+          >
+            仅看有学情
+          </Checkbox>
+        ) : null}
         <Input
           size="small" allowClear
           prefix={<SearchOutlined style={{ color: "#8a94a8" }} />}
@@ -301,14 +314,18 @@ export default function KnowledgeGraph({ graph, onNodeClick, height }: Props) {
             <span className="kg_lvstat" style={{ ["--c" as any]: s.color }}>
               <b>{s.key}</b>{s.label}
               <em>{s.count} 个{s.dataCount < s.count ? `（${s.dataCount} 有学情）` : ""}</em>
-              <i style={{ color: s.dataCount ? `hsl(${Math.max(15, Math.min(95, s.avg)) * 1.05}, 62%, 46%)` : "#9aa4b5" }}>
-                {s.dataCount ? `均 ${s.avg}%` : "暂无学情"}
-              </i>
+              {variant === "mastery" ? (
+                <i style={{ color: s.dataCount ? `hsl(${Math.max(15, Math.min(95, s.avg)) * 1.05}, 62%, 46%)` : "#9aa4b5" }}>
+                  {s.dataCount ? `均 ${s.avg}%` : "暂无学情"}
+                </i>
+              ) : null}
               {s.weakCount ? <u>{s.weakCount} 薄弱</u> : null}
             </span>
           </Tooltip>
         ))}
-        <span className="kg_lvtotal">共 {total} 个知识点 · {model.dataTotal} 个有学情数据</span>
+        <span className="kg_lvtotal">
+          {variant === "catalog" ? `共 ${total} 个知识点` : `共 ${total} 个知识点 · ${model.dataTotal} 个有学情数据`}
+        </span>
       </div>
       <svg ref={svgRef} width={width} height={H} viewBox={`0 0 ${width} ${H}`} className="kg_svg">
         <g ref={worldRef}>
@@ -323,7 +340,9 @@ export default function KnowledgeGraph({ graph, onNodeClick, height }: Props) {
                   {l.key} {l.label}
                 </text>
                 <text x={x - 36} y={35} fontSize={9.5} style={{ fill: "#8a94a8" }}>
-                  {st.dataCount ? `${st.count} 个 · 均 ${st.avg}%` : `${st.count} 个 · 无学情`}
+                  {variant === "catalog"
+                    ? `${st.count} 个`
+                    : st.dataCount ? `${st.count} 个 · 均 ${st.avg}%` : `${st.count} 个 · 无学情`}
                 </text>
               </g>
             );
@@ -386,18 +405,23 @@ export default function KnowledgeGraph({ graph, onNodeClick, height }: Props) {
       {tip ? (
         <div className="kg_tip" style={{ left: Math.min(tip.x + 14, Math.max(0, width - 200)), top: Math.max(6, tip.y - 72) }}>
           <b>{tip.node.id}</b>
-          <span>{tip.node.chapter}</span>
+          <span>{tip.node.gradeName ? `${tip.node.gradeName} · ` : ""}{tip.node.chapter}</span>
           <span style={{ color: LEVEL_COLOR[levelOf(tip.node)] }}>
             {levelOf(tip.node)} {LEVELS.find((l) => l.key === levelOf(tip.node))?.label} · {LEVELS.find((l) => l.key === levelOf(tip.node))?.verb}
           </span>
-          {tip.node.nodata ? (
-            <em style={{ color: "#8a94a8" }}>暂无学情数据（未测/未学）</em>
-          ) : (
-            <span>掌握度 <i style={{ color: tip.node.fill }}>{tip.node.p}%</i> · {tip.node.n} 人</span>
-          )}
+          {tip.node.literacy ? <span>主素养：{tip.node.literacy}</span> : null}
+          {variant === "mastery" ? (
+            tip.node.nodata ? (
+              <em style={{ color: "#8a94a8" }}>暂无学情数据（未测/未学）</em>
+            ) : (
+              <span>掌握度 <i style={{ color: tip.node.fill }}>{tip.node.p}%</i> · {tip.node.n} 人</span>
+            )
+          ) : null}
           {tip.node.weak ? <em>薄弱：建议优先干预</em> : null}
         </div>
       ) : null}
     </div>
   );
 }
+
+export default memo(KnowledgeGraph);

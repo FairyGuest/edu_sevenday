@@ -7,10 +7,11 @@ import { useLeft } from "./hooks/useLeft";
 import { useRight } from "./hooks/useRight";
 import { getIndependentTabView, isIndependentTab } from "./components/Header";
 import "./index.less";
-import { useSelector } from "umi";
+import { useDispatch, useSelector } from "umi";
 import { useEffect } from "react";
 
 const ResourceSearch = () => {
+  const dispatch = useDispatch();
 
   // 获取hooks中的状态变更操作
   const { initData } = useHeader();
@@ -22,6 +23,7 @@ const ResourceSearch = () => {
     gradeName,
     subjectName,
     activeTab,
+    searchText,
     filters,
     catalogueTree,
     pagination,
@@ -34,6 +36,7 @@ const ResourceSearch = () => {
 
   const independentTabView = getIndependentTabView(activeTab);
   const independent = isIndependentTab(activeTab);
+  useEffect(() => () => { dispatch({ type: "resourceSearchModel/invalidateQuestions" }); }, [activeTab]);
 
   // 初始化数据：字典数据、用户选择数据（没有前置依赖，只需要加载一次）
   useEffect(() => {
@@ -72,7 +75,7 @@ const ResourceSearch = () => {
       return;
     }
     loadQuestionList(checkedKnowledge, arr, 1);
-  }, [activeTab, filters, subjectName, independent, catalogueTree, xkwStageName, xkwSubjectName]);
+  }, [activeTab, filters, gradeName, subjectName, searchText, independent, catalogueTree, xkwStageName, xkwSubjectName]);
 
   // 试题篮暂时隐藏，不再拉取试题篮数据
   // useEffect(() => {

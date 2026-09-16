@@ -64,13 +64,17 @@ function splitArgs(inner) {
 
 function transformFile(file) {
   let code = fs.readFileSync(file, "utf-8");
+  const originalCode = code;
+  // Static demos use the existing deterministic AI fallback; never ship server credentials
+  // or wait for a remote model from the browser.
+  code = code.replace(/^const API_KEY = .*;$/gm, 'const API_KEY = "";');
+  code = code.replace(/(async function askAI\([^\n]+\{)/g, '$1\n  if (!API_KEY) return null;');
 
   // Buffer.from(x).toString("base64") → btoa(x)（浏览器无 Buffer，无论是否 import fs 都要处理）
-  const beforeBuffer = code;
   code = code.replace(/Buffer\.from\(([^)]+)\)\.toString\("base64"\)/g, (_m, expr) => `btoa(${expr})`);
 
   if (!/from ["']fs["']/.test(code) && !/from ["']path["']/.test(code)) {
-    if (code !== beforeBuffer) {
+    if (code !== originalCode) {
       fs.writeFileSync(file, code); // 仅需 Buffer 替换的文件
       return true;
     }

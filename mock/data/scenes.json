@@ -1,11 +1,38 @@
 [
-  { "label": "课堂练习", "value": "classroom" },
-  { "label": "课后作业", "value": "homework" },
-  { "label": "单元测试", "value": "unit_test" },
-  { "label": "期中考试", "value": "midterm" },
-  { "label": "期末考试", "value": "final" },
-  { "label": "模拟考试", "value": "mock_exam" },
-  { "label": "竞赛训练", "value": "competition" },
-  { "label": "专项练习", "value": "special" },
-  { "label": "综合复习", "value": "review" }
+  {
+    "label": "真题",
+    "value": "real"
+  },
+  {
+    "label": "模拟题",
+    "value": "mock"
+  },
+  {
+    "label": "月考卷",
+    "value": "monthly"
+  },
+  {
+    "label": "期中卷",
+    "value": "midterm"
+  },
+  {
+    "label": "期末卷",
+    "value": "final"
+  },
+  {
+    "label": "单元测试",
+    "value": "unit_test"
+  },
+  {
+    "label": "同步练习",
+    "value": "sync_practice"
+  },
+  {
+    "label": "专项练习",
+    "value": "special"
+  },
+  {
+    "label": "竞赛拓展",
+    "value": "competition"
+  }
 ]

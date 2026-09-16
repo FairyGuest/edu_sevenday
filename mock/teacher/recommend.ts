@@ -5,11 +5,12 @@
  */
 import * as fs from "fs";
 import * as path from "path";
+import { readTeacherFixture as read, memoizeMock } from "./fixtures";
 
-import { tagQuestion } from "./questionTags";
+import { tagQuestion, tagFacets, filterQuestions } from "./questionTags";
 
 const D = path.join(__dirname, "data");
-const read = (f: string): any => JSON.parse(fs.readFileSync(path.join(D, f), "utf-8"));
+const facetCache = memoizeMock<any>(1);
 
 const DIFF_ZH = { easy: "容易", easy_moderate: "较易", medium: "适中", moderate_hard: "较难", hard: "困难" };
 const STRATEGY_ZH: Record<string, string> = {
@@ -437,44 +438,34 @@ export default {
     res.json({ code: 200, msg: "ok", data: { ...paper, status: hw.status, notes: [] } });
   },
 
-  // ===== C1 题库多维筛选（能力/素养/区域/题型/难度/场景）=====
+  // ===== v2.0-L 题库多维筛选：能力/素养/来源类别/题型/年份/教材版本/省市二级；难度已下线（L1）=====
   "GET /api/teacher/questions/facets": (_req: any, res: any) => {
+    const data = facetCache("public", () => {
     // 聚合公共题库列表的真实数据（chips 计数/值域与列表严格一致）
     const publicList = JSON.parse(fs.readFileSync(path.join(D, "..", "data", "questions.json"), "utf-8"));
     const items = (Array.isArray(publicList) ? publicList : publicList.items || []).map(tagQuestion);
-    const forms = new Map<string, number>();
-    const diffs = new Map<string, number>();
-    for (const it of items) {
-      forms.set(it.form, (forms.get(it.form) || 0) + 1);
-      diffs.set(it.difficulty_zh || it.difficulty, (diffs.get(it.difficulty_zh || it.difficulty) || 0) + 1);
-    }
-    const toArr = (m: Map<string, number>) => [...m.entries()].map(([value, n]) => ({ value, n })).sort((a, b) => b.n - a.n);
-    const count = (key: string) => { const m = new Map<string, number>(); for (const it of items) m.set(it[key], (m.get(it[key]) || 0) + 1); return [...m.entries()].map(([value, n]) => ({ value, n })).sort((a, b) => b.n - a.n); };
-    const nz = (arr: { value: string; n: number }[]) => arr.filter(x => x.n > 0);
-    const f = { abilities: nz(count("ability")), literacies: nz(count("literacy")), regions: nz(count("region")), scenes: nz(count("scene")) };
-    res.json({ code: 200, msg: "ok", data: {
-      abilities: f.abilities, literacies: f.literacies,
-      regions: f.regions, scenes: f.scenes,
-      forms: toArr(forms).filter((x: any) => x.n > 0), difficulties: toArr(diffs).filter((x: any) => x.n > 0),
-    } });
+    return tagFacets(items);
+    });
+    res.json({ code: 200, msg: "ok", data });
   },
 
   "POST /api/teacher/questions/search": (req: any, res: any) => {
     const items = read("questions.json").items.map(tagQuestion);
-    const fq = (arr: any[], filters: Record<string, string[]>) =>
-      arr.filter((it) => Object.entries(filters).every(([k, vals]) => !vals?.length || vals.includes(it[k])));
     const f = req.body || {};
-    // 学科网兼容字段映射：question_type→form、difficulties→difficulty_zh
+    // v2.0-L：省市二级/来源类别/年份/教材版本；difficulty 参数仅为内部兼容（筛选面板已不下发）
+    const sourceTypes = f.source_type?.length ? f.source_type : (f.scene || []);
     const norm: Record<string, string[]> = {
       ability: f.ability || [],
       literacy: f.literacy || [],
-      region: f.region || [],
-      scene: f.scene || [],
+      source_type: sourceTypes,
       form: f.question_type?.length ? f.question_type : (f.form || []),
-      difficulty_zh: f.difficulties?.length ? f.difficulties : (f.difficulty_zh || []),
+      province: f.province?.length ? f.province : (f.region || []),
+      city: f.city || [],
+      year: (f.years || f.year || []).map((y: any) => String(y)),
+      textbook_version: f.textbook_version || [],
     };
     const keyword = (f.keyword || "").trim();
-    let out = fq(items, norm);
+    let out = filterQuestions(items, norm);
     if (keyword) out = out.filter((q: any) => q.stem.includes(keyword) || q.cluster.includes(keyword));
     const page = Math.max(1, Number(f.current) || 1);
     const size = Math.min(50, Number(f.size) || 10);

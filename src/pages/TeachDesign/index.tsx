@@ -94,6 +94,9 @@ const TeachDesign = (props: any) => {
         },
       };
       setGuideOpen(true);
+    }).catch((error) => {
+      // Form validation already marks invalid fields; do not leak a rejected promise.
+      if (!error?.errorFields) message.error("生成准备失败，请重试");
     });
   };
 
@@ -205,7 +208,6 @@ const TeachDesign = (props: any) => {
                   type={type}
                   setDvaVal={setDvaVal}
                 />
-                <InjectPreview />
                 <AttachList fileList={fileList} fileDelete={fileDelete} />
                 <TextArea
                   autoSize={{ minRows: 3, maxRows: 11 }}
@@ -269,6 +271,8 @@ const TeachDesign = (props: any) => {
                   setDataList={setFileList}
                 />
               </div>
+              {/* v2.0 调整：班级学情预览移到输入卡下方独立展示（参考设计稿） */}
+              <InjectPreview />
             </div>
           </div>
           {stage && <TabVideo form={form} scrollClick={scrollClick} />}

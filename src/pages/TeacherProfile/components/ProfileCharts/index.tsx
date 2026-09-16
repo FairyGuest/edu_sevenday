@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import { Button, Modal, Table } from "antd";
 import { MessageOutlined } from "@ant-design/icons";
 import ReactECharts from "echarts-for-react";
@@ -14,7 +14,7 @@ const BAND_RANGES: Record<string, string> = {
 };
 
 /** F1.2 右列三图 + 四级掌握度图例（图例从分布表上方移至此处） */
-export default function ProfileCharts({ trend, sourceMix, weakRanking, classId }: {
+function ProfileCharts({ trend, sourceMix, weakRanking, classId }: {
   trend: any[]; sourceMix: any[]; weakRanking: any[]; classId?: string;
 }) {
   // B3 人机交互明细（来源=人机交互 的问答记录）
@@ -105,3 +105,5 @@ export default function ProfileCharts({ trend, sourceMix, weakRanking, classId }
     </div>
   );
 }
+
+export default memo(ProfileCharts);

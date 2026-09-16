@@ -9,6 +9,21 @@ import { pickPlanMd, pickStudyPlanMd } from "./teachPlanContent";
 // 记录最近一次生成的小节（供学案生成复用章节语境）；D5：同时记录启发式规划供学案呼应
 let lastChapterName = "16.1 二次根式";
 let lastGuidance: any = null;
+const planHistory = [
+  "16.1 二次根式", "16.2 二次根式的乘除", "16.3 二次根式的加减", "12.1 全等三角形",
+  "12.2 三角形全等的判定", "14.2 乘法公式", "14.3 因式分解",
+].map((title, i) => ({ id: `tp-00${i + 1}`, title, type: 1, created_at: "2026-09-08 10:20" }));
+// Keep generated content available to the detail/replace reads in this demo session.
+const generatedPlans = new Map<string, { title: string; plan_content: string }>();
+function planDetail(id: string) {
+  const saved = generatedPlans.get(id);
+  const item = planHistory.find(p => p.id === id);
+  if (!saved && !item) return null;
+  const title = saved?.title || item!.title;
+  const content = saved?.plan_content || pickPlanMd(title, {});
+  return { id, title, type: 1, status: 1, plan_content: content, thinking_content: "", is_new_evaluate: 0,
+    chat_history: [{ role: "assistant", content_type: "md", content: { end: { status: "success", chat_content: content } } }] };
+}
 
 // 学段学科（Cascader：value/children）
 const STAGE_SUBJECT = [
@@ -202,7 +217,7 @@ function withGuidance(md: string, g: any): string {
   return lines.join("\n") + "\n\n" + md;
 }
 
-function streamMarkdown(res: any, md: string, editMode = false) {
+function streamMarkdown(res: any, md: string, editMode = false, study = false) {
   res.writeHead(200, {
     "Content-Type": "text/event-stream",
     "Cache-Control": "no-cache",
@@ -215,7 +230,13 @@ function streamMarkdown(res: any, md: string, editMode = false) {
   for (let i = 0; i < text.length; i += size) {
     send({ __action: "stream", data: text.slice(i, i + size) });
   }
-  send({ __action: "end" });
+  // end 必须带 id：前端在 end 时写入 planParams.id 终止生成流程，缺失会导致无限重新生成
+  const id = `tp-${Date.now().toString(36)}`;
+  if (!study && !editMode) {
+    generatedPlans.set(id, { title: lastChapterName, plan_content: md });
+    if (generatedPlans.size > 50) generatedPlans.delete(generatedPlans.keys().next().value!);
+  }
+  send({ __action: "end", id });
   res.end();
 }
 
@@ -259,18 +280,19 @@ export default {
     res.json({
       code: 200, msg: "ok",
       data: {
-        list: [
-          { id: "tp-001", title: "16.1 二次根式", created_at: "2026-09-08 10:20", type: "课时教案" },
-          { id: "tp-002", title: "16.2 二次根式的乘除", created_at: "2026-09-08 11:05", type: "课时教案" },
-          { id: "tp-003", title: "16.3 二次根式的加减", created_at: "2026-09-07 16:30", type: "课时教案" },
-          { id: "tp-004", title: "12.1 全等三角形", created_at: "2026-09-07 09:15", type: "课时教案" },
-          { id: "tp-005", title: "12.2 三角形全等的判定", created_at: "2026-09-06 15:41", type: "课时教案" },
-          { id: "tp-006", title: "14.2 乘法公式", created_at: "2026-09-05 14:20", type: "课时教案" },
-          { id: "tp-007", title: "14.3 因式分解", created_at: "2026-09-05 15:10", type: "课时教案" },
-        ],
+        list: planHistory,
         total: 7,
       },
     });
+  },
+
+  "GET /api/teach_plan/teach_plan_history/:id": (req: any, res: any) => {
+    const data = planDetail(req.params.id);
+    res.json(data ? { code: 200, data } : { code: 404, msg: "教案不存在，请返回历史记录重新选择" });
+  },
+  "GET /api/teach_plan/replace_content": (req: any, res: any) => {
+    const data = planDetail(String(req.query?.plan_id || ""));
+    res.json(data ? { code: 200, data } : { code: 404, msg: "教案内容不存在" });
   },
 
   // ===== 教案提示词模板（自然语言修改的快捷指令）=====
@@ -359,7 +381,7 @@ export default {
       lines.push("", "> 学案任务由教案生成时的教师确认规划驱动，保证教-学-练一致。", "");
       sd = lines.join("\n") + "\n" + sd;
     }
-    streamMarkdown(res, sd, isChat);
+    streamMarkdown(res, sd, isChat, true);
   },
 
   // 学案历史详情（保存后查看）

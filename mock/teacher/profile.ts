@@ -3,12 +3,9 @@
  * 接口：GET /api/teacher/classes | profile/class | profile/student | profile/student/evidence
  * 仅 start:mock 模式生效（cogUrl=/api），生产构建不包含。
  */
-import * as fs from "fs";
-import * as path from "path";
+import { readTeacherFixture as read, findStudent, memoizeMock } from "./fixtures";
 import { computeDimensions, clusterLevel, applyTimeWindow, applyDateRange, TimeRange } from "./dimensions";
 
-const D = path.join(__dirname, "data");
-const read = (f: string): any => JSON.parse(fs.readFileSync(path.join(D, f), "utf-8"));
 const BANDS = ["待巩固", "练习中", "较熟练", "已掌握"];
 const ALL_SOURCES = ["作业记录", "人机交互", "自主练习", "考试记录"];
 
@@ -79,6 +76,8 @@ function mergeProfile(prof: any, studentsFile: any[], sources: string[]) {
 
 const cache: Record<string, any> = {};
 const classesData = () => cache.classes || (cache.classes = read("classes.json").classes);
+const profileCache = memoizeMock<any>();
+const studentCache = memoizeMock<any>();
 
 export default {
   "GET /api/teacher/classes": (_req: any, res: any) => {
@@ -87,15 +86,17 @@ export default {
 
   "GET /api/teacher/profile/class": (req: any, res: any) => {
     const classId = req.query.class_id || classesData()[0].class_id;
-    const sources: string[] = req.query.sources ? String(req.query.sources).split(",") : [];
+    const sources = [...new Set<string>(req.query.sources ? String(req.query.sources).split(",") : [])].sort();
     const timeRange: TimeRange = req.query.time_range === "week" ? "week" : "month";
+    const key = JSON.stringify([classId, sources, timeRange, req.query.start_date || "", req.query.end_date || ""]);
+    const data = profileCache(key, () => {
     let prof = read(`class-profile-${classId}.json`);
     const studentsFile = read(`class-students-${classId}.json`);
     const merged = mergeProfile(prof, studentsFile, sources);
     // 自定义起止日期优先；否则按周/月预设
-    prof = (req.query.start_date && req.query.end_date)
+    prof = { ...((req.query.start_date && req.query.end_date)
       ? applyDateRange(merged, String(req.query.start_date), String(req.query.end_date), String(classId))
-      : applyTimeWindow(merged, timeRange, String(classId));
+      : applyTimeWindow(merged, timeRange, String(classId))) };
     // A2：知识点挂课标能力等级；A4：样本题数（<3 题=证据不足口径，确定性生成）
     const hsh = (str: string) => { let h = 7; for (const ch of str) h = (h * 31 + ch.charCodeAt(0)) % 997; return h; };
     prof.cluster_rows = (prof.cluster_rows || []).map((r: any) => {
@@ -118,13 +119,16 @@ export default {
     prof.dimensions = computeDimensions(classCells);
     // A1+图谱：知识点掌握网络（节点=全量目录细粒度；层=L1~L4；边=同章脉络+素养同源）
     prof.kgraph = buildKnowledgeGraph(prof.cluster_rows || [], prof.grade);
-    res.json({ code: 200, msg: "ok", data: prof });
+    return prof;
+    });
+    res.json({ code: 200, msg: "ok", data });
   },
 
   "GET /api/teacher/profile/student": (req: any, res: any) => {
     const { class_id: cid, student_id: sid } = req.query;
-    const one = read(`class-students-${cid}.json`).find((s: any) => s.student_id === sid);
+    const one = findStudent(cid, sid);
     if (!one) return res.json({ code: 404, msg: "学生不存在", data: null });
+    const data = studentCache(JSON.stringify([cid, sid]), () => {
     // A1/A2：个人画像扩展能力/素养维度（cells 已含样本量门槛字段 n）
     const dims = computeDimensions(one.cells || []);
     // 个人知识点图谱：cells 即节点（p 掌握度着色，n=作答题量），关联沿用班级结构
@@ -136,7 +140,9 @@ export default {
     const levels = (one.cells || []).filter((c: any) => c.n >= 3).map((c: any) => ({
       cluster: c.cluster, level: clusterLevel(c.cluster), p: c.p,
     }));
-    res.json({ code: 200, msg: "ok", data: { ...one, dimensions: dims, levels, kgraph: personalGraph } });
+    return { ...one, dimensions: dims, levels, kgraph: personalGraph };
+    });
+    res.json({ code: 200, msg: "ok", data });
   },
 
   "GET /api/teacher/interactions": (req: any, res: any) => {
@@ -148,12 +154,16 @@ export default {
     const { class_id: cid, student_id: sid } = req.query;
     const sources: string[] = req.query.sources ? String(req.query.sources).split(",") : [];
     const cluster = req.query.cluster || "";
-    const one = read(`class-students-${cid}.json`).find((s: any) => s.student_id === sid);
+    const one = findStudent(cid, sid);
     if (!one) return res.json({ code: 404, msg: "学生不存在", data: null });
-    let ev = one.evidence || [];
-    if (cluster) ev = ev.filter((e: any) => e.cluster === cluster);
-    if (sources.length) ev = ev.filter((e: any) => sources.includes(e.source));
-    res.json({ code: 200, msg: "ok", data: ev.slice(0, 40) });
+    const ev = [];
+    for (const item of one.evidence || []) {
+      if (cluster && item.cluster !== cluster) continue;
+      if (sources.length && !sources.includes(item.source)) continue;
+      ev.push(item);
+      if (ev.length === 40) break;
+    }
+    res.json({ code: 200, msg: "ok", data: ev });
   },
 };
 

@@ -14,9 +14,10 @@ import { cogUrl } from "./host";
 import dayjs from "dayjs";
 import { history } from "@@/core/history";
 
-let controller = null;
+let controller: AbortController | null = null;
 export const stopSSE = () => {
   controller?.abort?.();
+  controller = null;
 };
 
 export async function getDataRequest(params: any, url: string) {
@@ -116,7 +117,9 @@ export function sseRequset(
 ) {
   controller?.abort?.();
   controller = new AbortController();
-  let signal = controller.signal;
+  const activeController = controller;
+  let signal = activeController.signal;
+  let terminal = false;
   const Authorization = getStorageToken();
   const { sseUrl, ...rest } = payload;
   const headers = {
@@ -132,7 +135,12 @@ export function sseRequset(
     openWhenHidden: true,
     body: JSON.stringify(rest),
     onmessage(msg) {
+      if (controller !== activeController || signal.aborted) return;
+      try { const action = JSON.parse(msg.data).__action; terminal = terminal || action === "end" || action === "error"; } catch {}
       successCallback(msg);
+    },
+    onclose() {
+      if (!terminal && controller === activeController && !signal.aborted) throw new Error("生成连接提前结束");
     },
     // onerror(err) {
     //
@@ -140,8 +148,10 @@ export function sseRequset(
     //   throw err;
     // },
     onerror(err) {
+      if (controller !== activeController || signal.aborted) throw err;
       // 必须抛出错误才会停止
-      errCallback?.(err);
+      if (errCallback) errCallback(err);
+      else successCallback({ data: JSON.stringify({ __action: "error", data: "生成中断，请重试" }), event: "", id: "" });
       stopSSE(); // 必须抛出错误才会停止
       throw err;
 
@@ -159,7 +169,7 @@ export function sseRequset(
       //   // return retryInterval; // 返回重试间隔
       // }
     },
-  });
+  }).catch((err) => ({ err })); // onerror already reports/cleans up; event callers do not await this promise.
 }
 
 // 对话进行中

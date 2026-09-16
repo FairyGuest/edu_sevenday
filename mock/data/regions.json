@@ -1,12 +1,395 @@
 [
-  { "label": "北京", "value": "beijing" },
-  { "label": "上海", "value": "shanghai" },
-  { "label": "广州", "value": "guangzhou" },
-  { "label": "深圳", "value": "shenzhen" },
-  { "label": "杭州", "value": "hangzhou" },
-  { "label": "南京", "value": "nanjing" },
-  { "label": "武汉", "value": "wuhan" },
-  { "label": "成都", "value": "chengdu" },
-  { "label": "西安", "value": "xian" },
-  { "label": "全国", "value": "national" }
+  {
+    "label": "全国通用",
+    "value": "national",
+    "cities": []
+  },
+  {
+    "label": "北京市",
+    "value": "beijing",
+    "cities": [
+      {
+        "label": "东城区",
+        "value": "dongcheng"
+      },
+      {
+        "label": "西城区",
+        "value": "xicheng"
+      },
+      {
+        "label": "朝阳区",
+        "value": "chaoyang"
+      },
+      {
+        "label": "海淀区",
+        "value": "haidian"
+      }
+    ]
+  },
+  {
+    "label": "上海市",
+    "value": "shanghai",
+    "cities": [
+      {
+        "label": "黄浦区",
+        "value": "huangpu"
+      },
+      {
+        "label": "徐汇区",
+        "value": "xuhui"
+      },
+      {
+        "label": "静安区",
+        "value": "jingan"
+      },
+      {
+        "label": "浦东新区",
+        "value": "pudong"
+      }
+    ]
+  },
+  {
+    "label": "浙江省",
+    "value": "zhejiang",
+    "cities": [
+      {
+        "label": "杭州市",
+        "value": "hangzhou"
+      },
+      {
+        "label": "宁波市",
+        "value": "ningbo"
+      },
+      {
+        "label": "温州市",
+        "value": "wenzhou"
+      },
+      {
+        "label": "绍兴市",
+        "value": "shaoxing"
+      },
+      {
+        "label": "嘉兴市",
+        "value": "jiaxing"
+      }
+    ]
+  },
+  {
+    "label": "江苏省",
+    "value": "jiangsu",
+    "cities": [
+      {
+        "label": "南京市",
+        "value": "nanjing"
+      },
+      {
+        "label": "苏州市",
+        "value": "suzhou"
+      },
+      {
+        "label": "无锡市",
+        "value": "wuxi"
+      },
+      {
+        "label": "徐州市",
+        "value": "xuzhou"
+      },
+      {
+        "label": "扬州市",
+        "value": "yangzhou"
+      }
+    ]
+  },
+  {
+    "label": "广东省",
+    "value": "guangdong",
+    "cities": [
+      {
+        "label": "广州市",
+        "value": "guangzhou"
+      },
+      {
+        "label": "深圳市",
+        "value": "shenzhen"
+      },
+      {
+        "label": "佛山市",
+        "value": "foshan"
+      },
+      {
+        "label": "东莞市",
+        "value": "dongguan"
+      }
+    ]
+  },
+  {
+    "label": "安徽省",
+    "value": "anhui",
+    "cities": [
+      {
+        "label": "合肥市",
+        "value": "hefei"
+      },
+      {
+        "label": "蚌埠市",
+        "value": "bengbu"
+      },
+      {
+        "label": "芜湖市",
+        "value": "wuhu"
+      },
+      {
+        "label": "马鞍山市",
+        "value": "maanshan"
+      },
+      {
+        "label": "安庆市",
+        "value": "anqing"
+      }
+    ]
+  },
+  {
+    "label": "山东省",
+    "value": "shandong",
+    "cities": [
+      {
+        "label": "济南市",
+        "value": "jinan"
+      },
+      {
+        "label": "青岛市",
+        "value": "qingdao"
+      },
+      {
+        "label": "烟台市",
+        "value": "yantai"
+      },
+      {
+        "label": "潍坊市",
+        "value": "weifang"
+      }
+    ]
+  },
+  {
+    "label": "湖北省",
+    "value": "hubei",
+    "cities": [
+      {
+        "label": "武汉市",
+        "value": "wuhan"
+      },
+      {
+        "label": "黄石市",
+        "value": "huangshi"
+      },
+      {
+        "label": "襄阳市",
+        "value": "xiangyang"
+      },
+      {
+        "label": "黄冈市",
+        "value": "huanggang"
+      }
+    ]
+  },
+  {
+    "label": "河南省",
+    "value": "henan",
+    "cities": [
+      {
+        "label": "郑州市",
+        "value": "zhengzhou"
+      },
+      {
+        "label": "洛阳市",
+        "value": "luoyang"
+      },
+      {
+        "label": "开封市",
+        "value": "kaifeng"
+      }
+    ]
+  },
+  {
+    "label": "湖南省",
+    "value": "hunan",
+    "cities": [
+      {
+        "label": "长沙市",
+        "value": "changsha"
+      },
+      {
+        "label": "株洲市",
+        "value": "zhuzhou"
+      },
+      {
+        "label": "衡阳市",
+        "value": "hengyang"
+      }
+    ]
+  },
+  {
+    "label": "福建省",
+    "value": "fujian",
+    "cities": [
+      {
+        "label": "福州市",
+        "value": "fuzhou"
+      },
+      {
+        "label": "厦门市",
+        "value": "xiamen"
+      },
+      {
+        "label": "泉州市",
+        "value": "quanzhou"
+      }
+    ]
+  },
+  {
+    "label": "河北省",
+    "value": "hebei",
+    "cities": [
+      {
+        "label": "石家庄市",
+        "value": "shijiazhuang"
+      },
+      {
+        "label": "唐山市",
+        "value": "tangshan"
+      },
+      {
+        "label": "保定市",
+        "value": "baoding"
+      }
+    ]
+  },
+  {
+    "label": "山西省",
+    "value": "shanxi",
+    "cities": [
+      {
+        "label": "太原市",
+        "value": "taiyuan"
+      },
+      {
+        "label": "大同市",
+        "value": "datong"
+      },
+      {
+        "label": "临汾市",
+        "value": "linfen"
+      }
+    ]
+  },
+  {
+    "label": "陕西省",
+    "value": "shaanxi",
+    "cities": [
+      {
+        "label": "西安市",
+        "value": "xian"
+      },
+      {
+        "label": "宝鸡市",
+        "value": "baoji"
+      },
+      {
+        "label": "咸阳市",
+        "value": "xianyang"
+      }
+    ]
+  },
+  {
+    "label": "吉林省",
+    "value": "jilin",
+    "cities": [
+      {
+        "label": "长春市",
+        "value": "changchun"
+      },
+      {
+        "label": "吉林市",
+        "value": "jilin_city"
+      }
+    ]
+  },
+  {
+    "label": "黑龙江省",
+    "value": "heilongjiang",
+    "cities": [
+      {
+        "label": "哈尔滨市",
+        "value": "harbin"
+      },
+      {
+        "label": "齐齐哈尔市",
+        "value": "qiqihar"
+      }
+    ]
+  },
+  {
+    "label": "贵州省",
+    "value": "guizhou",
+    "cities": [
+      {
+        "label": "贵阳市",
+        "value": "guiyang"
+      },
+      {
+        "label": "遵义市",
+        "value": "zunyi"
+      }
+    ]
+  },
+  {
+    "label": "广西壮族自治区",
+    "value": "guangxi",
+    "cities": [
+      {
+        "label": "南宁市",
+        "value": "nanning"
+      },
+      {
+        "label": "桂林市",
+        "value": "guilin"
+      },
+      {
+        "label": "柳州市",
+        "value": "liuzhou"
+      }
+    ]
+  },
+  {
+    "label": "重庆市",
+    "value": "chongqing",
+    "cities": [
+      {
+        "label": "渝中区",
+        "value": "yuzhong"
+      },
+      {
+        "label": "江北区",
+        "value": "jiangbei"
+      },
+      {
+        "label": "南岸区",
+        "value": "nanan"
+      }
+    ]
+  },
+  {
+    "label": "新疆维吾尔自治区",
+    "value": "xinjiang",
+    "cities": [
+      {
+        "label": "乌鲁木齐市",
+        "value": "urumqi"
+      },
+      {
+        "label": "克拉玛依市",
+        "value": "karamay"
+      }
+    ]
+  }
 ]

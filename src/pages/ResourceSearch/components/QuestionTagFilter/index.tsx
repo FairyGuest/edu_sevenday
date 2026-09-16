@@ -5,14 +5,17 @@ import { useDispatch, useSelector } from "umi";
 import "./index.less";
 
 /**
- * 差异化智能筛选：
+ * 差异化智能筛选（v2.0-L 升级）：
  * - 独有维（内部图谱独有）：能力等级 = L1→L4 课标进阶阶梯（支持"≥该级"范围选择）、
  *   核心素养 = 六色徽章矩阵（同维度跨页同色，悬停见二级维度）
- * - 常规维（题型/难度/区域/场景）收进次级区
+ * - 常规维（题型/来源类别/年份/教材版本/省市地域二级）；难度已按 v2.0-L1 下线不外显
  * 选中写入 resourceSearchModel.filters 驱动主列表。
  */
 
-type FacetKey = "abilities" | "literacies" | "difficulties" | "questionTypes" | "regions" | "scenes";
+type FacetKey =
+  | "abilities" | "literacies"
+  | "questionTypes" | "scenes" | "years" | "textbook_versions"
+  | "regions" | "cities";
 
 const LIT_META: Record<string, { subs: string[]; hex: string }> = {
   数学抽象: { subs: ["符号意识", "概念抽象", "关系抽象"], hex: "#2563eb" },
@@ -26,9 +29,9 @@ const LIT_ORDER = ["数学抽象", "逻辑推理", "数学建模", "直观想象
 
 const NORMAL_DIMS: { key: FacetKey; label: string }[] = [
   { key: "questionTypes", label: "题型" },
-  { key: "difficulties", label: "难度" },
-  { key: "regions", label: "区域" },
-  { key: "scenes", label: "场景" },
+  { key: "scenes", label: "来源类别" },
+  { key: "years", label: "年份" },
+  { key: "textbook_versions", label: "教材版本" },
 ];
 
 const LV_ORDER = ["L1 了解", "L2 理解", "L3 掌握", "L4 综合"];
@@ -41,17 +44,19 @@ export default function QuestionTagFilter() {
 
   useEffect(() => {
     let dead = false;
-    fetch("/api/teacher/questions/facets")
+    fetch("/api/teacher/questions/facets", { signal: AbortSignal.timeout(8000) })
       .then(r => r.json())
       .then(d => {
         if (dead || d.code !== 200 || !d.data) return;
         const v = d.data;
         const norm: Record<string, any[]> = {
           abilities: v.abilities || [], literacies: v.literacies || [],
-          difficulties: v.difficulties || [], questionTypes: v.forms || [],
-          regions: v.regions || [], scenes: v.scenes || [],
+          questionTypes: v.forms || [],
+          scenes: v.scenes || v.source_types || [],
+          years: v.years || [], textbook_versions: v.textbook_versions || [],
+          regions: v.regions || [],
         };
-        setFacets(norm);
+        setFacets({ ...norm, regionTree: v.region_tree || [] });
         dispatch({
           type: "resourceSearchModel/setData",
           payload: {
@@ -65,7 +70,8 @@ export default function QuestionTagFilter() {
             },
           },
         });
-      });
+      })
+      .catch(() => { /* 面板保持空维度，不打断列表 */ });
     return () => { dead = true; };
   }, []);
 
@@ -94,15 +100,26 @@ export default function QuestionTagFilter() {
 
   const clearAll = () => {
     const cleared: Record<string, string[]> = {};
-    [...NORMAL_DIMS.map(d => d.key), "abilities", "literacies"].forEach(k => { cleared[k] = []; });
+    [...NORMAL_DIMS.map(d => d.key), "regions", "cities", "abilities", "literacies"].forEach(k => { cleared[k] = []; });
     dispatch({ type: "resourceSearchModel/setData", payload: { filters: { ...(filters || {}), ...cleared } } });
     toPage1();
   };
 
   const activeCount = useMemo(
-    () => NORMAL_DIMS.reduce((a, d) => a + selOf(d.key).length, 0) + selAbility.length + selOf("literacies").length,
+    () => NORMAL_DIMS.reduce((a, d) => a + selOf(d.key).length, 0) + selAbility.length + selOf("literacies").length + selOf("regions").length + selOf("cities").length,
     [filters],
   );
+
+  /** 省市二级：选中省份后展示其市级选项（来自 facets.region_tree） */
+  const provinceSel = selOf("regions");
+  const cityOptions = useMemo(() => {
+    const tree: any[] = facets.regionTree || [];
+    const picked = tree.filter((t: any) => provinceSel.includes(t.province));
+    const merged = new Map<string, number>();
+    for (const t of picked) for (const c of t.cities || []) merged.set(c.value, (merged.get(c.value) || 0) + c.n);
+    return [...merged.entries()].map(([value, n]) => ({ value, n })).sort((a, b) => b.n - a.n);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [facets.regionTree, filters?.regions]);
 
   return (
     <div className="ds_filter">
@@ -212,6 +229,63 @@ export default function QuestionTagFilter() {
             </div>
           );
         })}
+
+        {/* 省市二级地域（v2.0-L3）：省 → 市级联动，全国通用不细分 */}
+        <div className="ds_nrow">
+          <span className="ds_nlabel">地域（省/市）</span>
+          <div className="ds_nopts">
+            {((facets.regionTree || []) as any[]).map(t => {
+              const on = provinceSel.includes(t.province);
+              return (
+                <button
+                  key={t.province}
+                  type="button"
+                  className={`ds_nopt${on ? " on" : ""}`}
+                  title={`${t.province}（${t.n} 题）${t.cities?.length ? ` · ${t.cities.length} 市` : ""}`}
+                  onClick={() => {
+                    // 切省时清掉已选市级（避免悬空城市筛选）
+                    const nextProv = on ? provinceSel.filter(v => v !== t.province) : [...provinceSel, t.province];
+                    const keepCities = new Set(nextProv.flatMap(p => ((facets.regionTree || []).find((x: any) => x.province === p)?.cities || []).map((c: any) => c.value)));
+                    dispatch({
+                      type: "resourceSearchModel/setData",
+                      payload: {
+                        filters: {
+                          ...(filters || {}),
+                          regions: nextProv,
+                          cities: selOf("cities").filter(c => keepCities.has(c)),
+                        },
+                      },
+                    });
+                    toPage1();
+                  }}
+                >
+                  {t.province}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+        {provinceSel.length && cityOptions.length ? (
+          <div className="ds_nrow ds_nrow--sub">
+            <span className="ds_nlabel">市级</span>
+            <div className="ds_nopts">
+              {cityOptions.map(it => {
+                const on = selOf("cities").includes(it.value);
+                return (
+                  <button
+                    key={it.value}
+                    type="button"
+                    className={`ds_nopt ds_nopt--city${on ? " on" : ""}`}
+                    title={`${it.value}（${it.n} 题）`}
+                    onClick={() => toggle("cities", it.value)}
+                  >
+                    {it.value}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        ) : null}
       </div>
     </div>
   );

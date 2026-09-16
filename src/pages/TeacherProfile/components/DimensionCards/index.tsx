@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { memo, useEffect, useRef } from "react";
 import { BarChartOutlined } from "@ant-design/icons";
 import ReactECharts from "echarts-for-react";
 
@@ -9,7 +9,7 @@ const LIT_HEX: Record<string, string> = {
   "直观想象": "#ea580c", "数学运算": "#0e9265", "数据分析": "#52607a",
 };
 
-export default function DimensionCards({ dimensions }: { dimensions?: any }) {
+function DimensionCards({ dimensions }: { dimensions?: any }) {
   const literacy = (dimensions?.literacy || []).filter((d: any) => d.value != null);
   const radarBoxRef = useRef<HTMLDivElement>(null);
 
@@ -126,3 +126,5 @@ export default function DimensionCards({ dimensions }: { dimensions?: any }) {
     </div>
   );
 }
+
+export default memo(DimensionCards);

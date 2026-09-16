@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { connect } from "@umijs/max";
-import { Button, Card, Col, DatePicker, message, Row, Segmented, Select, Spin, Tag, Tooltip, Upload } from "antd";
+import { Alert, Button, Card, Col, DatePicker, message, Row, Segmented, Select, Skeleton, Tag, Tooltip, Upload } from "antd";
 import {
   ReloadOutlined,
   UploadOutlined,
@@ -20,9 +20,9 @@ import ImportModal from "./components/ImportModal";
 import KnowledgeGraph from "./components/KnowledgeGraph";
 import ProfileCharts from "./components/ProfileCharts";
 import StudentList from "./components/StudentList";
-import StudentDrawer from "./components/StudentDrawer";
 import DimensionCards from "./components/DimensionCards";
 import OverviewGrid from "./components/OverviewGrid";
+import { getDataService, invalidateProfileReads } from "./services";
 import "./index.less";
 
 const ALL_SOURCES = ["作业记录", "人机交互", "自主练习", "考试记录"];
@@ -48,35 +48,28 @@ const BAND_LEGEND: [string, string, string][] = [
  */
 const TeacherProfile = (props: any) => {
   const { variant } = props; // variant: "full"(默认=版本一) | "kgraph"(版本二子页面)
-  const { classes, profile, loading, studentDetail, evidence, detailLoading, dispatch, analysisModel } = props;
-  const [classId, setClassId] = useState<string>("");
+  const { classes, profile: storedProfile, loading, dispatch, analysisModel } = props;
+  const classId = analysisModel?.selectedClass?.value || "";
+  const profile = storedProfile?.class_id === classId ? storedProfile : null;
   const [sources, setSources] = useState<string[]>(ALL_SOURCES);
   // A5 时间维度：自定义起止日期（默认本月）
   const [dateRange, setDateRange] = useState<[Dayjs | null, Dayjs | null]>([
     dayjs().startOf("month"),
     dayjs(),
   ]);
-  const [drawerOpen, setDrawerOpen] = useState(false);
-  const [importOpen, setImportOpen] = useState(false);
-  // 知识点掌握分布（版本一默认表格；版本二为"知识图谱"tab 独立子页面，这里保留快速切换）
+  const [importOpen, setImportOpen] = useState(false);  // 知识点掌握分布（版本一默认表格；版本二为"知识图谱"tab 独立子页面，这里保留快速切换）
   const [distView, setDistView] = useState<"graph" | "table">("table");
   const classList = classes || [];
 
   useEffect(() => {
-    dispatch({ type: "teacherProfileModel/getData", payload: {}, apiUrl: "classesUrl", mTitle: "classes" });
+    if (!classes?.length) dispatch({ type: "teacherProfileModel/getLatest", payload: {}, apiUrl: "classesUrl", mTitle: "classes", mLoading: "classesLoading" });
   }, []);
 
-  // 左侧面板切换班级（写入 analysisModel.selectedClass）后，画像区跟随切换
-  const pageClassId = analysisModel?.selectedClass?.value;
   useEffect(() => {
-    if (pageClassId) setClassId(pageClassId);
-  }, [pageClassId]);
-
-  useEffect(() => {
-    const cid = classId || classList[0]?.class_id;
+    const cid = classId;
     if (!cid) return;
     dispatch({
-      type: "teacherProfileModel/getData",
+      type: "teacherProfileModel/getLatest",
       apiUrl: "classProfileUrl",
       payload: {
         class_id: cid,
@@ -85,8 +78,69 @@ const TeacherProfile = (props: any) => {
         end_date: dateRange?.[1]?.format("YYYY-MM-DD") || "",
       },
       mTitle: "profile",
+      mLoading: "profileLoading",
     });
-  }, [classes, classId, dateRange]);
+  }, [classId, dateRange, sources]);
+
+  // v2.0-I5：注册 AI 小助手页面上下文（班级学情摘要，供助手问答/初始建议注入）
+  useEffect(() => {
+    if (!profile) return;
+    const cid = classId;
+    const lits = (profile.dimensions?.literacy || [])
+      .filter((l: any) => l.value != null)
+      .sort((a: any, b: any) => a.value - b.value);
+    const weak = (profile.weak_ranking || []).filter((r: any) => r.n_students >= 3).slice(0, 2);
+    const weakStudents = (profile.students || []).filter((s: any) => s.status_level === "weak").length;
+    const summary = [
+      `${profile.class_name}（${profile.n_students} 名学生）`,
+      `掌握度均值（近5次评估）${profile.cards?.recent5_avg ?? "—"}`,
+      lits.length ? `素养最薄弱：${lits[0].name} ${lits[0].value} 分` : "",
+      weak.length ? `薄弱知识点：${weak.map((r: any) => `「${r.cluster}」待巩固 ${r.weak_pct}%`).join("、")}` : "",
+      `待巩固状态学生 ${weakStudents} 名`,
+      variant === "kgraph"
+        ? "本页为知识点掌握网络（L1~L4 分层力导向图）"
+        : "本页为班级学情画像：概览指标、能力/素养维度、知识点分布、趋势与来源构成",
+    ].filter(Boolean).join("；") + "。";
+    dispatch({
+      type: "assistantModel/setPageContext",
+      payload: {
+        route: "/learning-analysis",
+        title: variant === "kgraph" ? "学情分析 · 知识图谱" : "学情分析 · 班级学情",
+        summary,
+        data: {
+          class_id: cid,
+          // v2.0-I：图谱页标记 mastery 口径 + 图谱专属快捷指令
+          ...(variant === "kgraph"
+            ? {
+                graphKind: "mastery",
+                quick: [
+                  { label: "图谱怎么看？", query: "这个图谱怎么看" },
+                  { label: "解释「二次根式」", query: "解释一下二次根式" },
+                  { label: "找数学抽象的题", action: { key: "filter_question_bank", params: { literacy: "数学抽象" } } },
+                ],
+              }
+            : {}),
+        },
+      },
+    });
+  }, [profile, classId, variant]);
+
+  // 卸载时注销上下文（切 Tab/页面后助手回退到路由兜底标题）
+  useEffect(() => () => dispatch({ type: "assistantModel/setPageContext", payload: null }), []);
+
+  // v2.0-H1：班级建议入口条（建议在 AI 助手中展示，这里露出条数入口）
+  const [sugCount, setSugCount] = useState<number>(0);
+  useEffect(() => {
+    const cid = classId;
+    if (!cid) return;
+    let dead = false;
+    setSugCount(0);
+    getDataService({ class_id: cid }, "profileSuggestionsUrl")
+      .then((d) => { if (!dead && d?.code === 200) setSugCount(d.data?.suggestions?.length || 0); })
+      .catch(() => {})
+      .finally(() => {});
+    return () => { dead = true; };
+  }, [classId]);
 
   const toggleSource = (src: string) => {
     setSources((prev) => {
@@ -106,30 +160,41 @@ const TeacherProfile = (props: any) => {
       message.warning("请至少选择一个数据来源（全不选将无法计算画像）");
       return;
     }
+    invalidateProfileReads();
     dispatch({
-      type: "teacherProfileModel/getData",
+      type: "teacherProfileModel/getLatest",
       apiUrl: "classProfileUrl",
-      payload: { class_id: classId || classList[0]?.class_id, sources: sources.join(",") },
+      payload: {
+        class_id: classId,
+        sources: sources.join(","),
+        start_date: dateRange?.[0]?.format("YYYY-MM-DD") || "",
+        end_date: dateRange?.[1]?.format("YYYY-MM-DD") || "",
+      },
       mTitle: "profile",
+      mLoading: "profileLoading",
     });
   };
 
+  // G4 联动：点击学生 → 切换到「个人学情」Tab 并选中该生（抽屉已下线，避免两套个人画像并存）
   const openStudent = (sid: string) => {
-    setDrawerOpen(true);
-    const cid = classId || classList[0]?.class_id;
-    dispatch({ type: "teacherProfileModel/getData", apiUrl: "studentProfileUrl",
-      payload: { class_id: cid, student_id: sid }, mTitle: "studentDetail", mLoading: "detailLoading" });
-    dispatch({ type: "teacherProfileModel/getData", apiUrl: "studentEvidenceUrl",
-      payload: { class_id: cid, student_id: sid, sources: sources.join(",") }, mTitle: "evidence" });
+    dispatch({
+      type: "analysisModel/updateState",
+      res: { currentAnalysisTab: "personal", personalStudentId: sid },
+    });
   };
 
   const cards = profile?.cards || {};
+  const placeholder = !classId && !analysisModel?.classSelectionLoading
+    ? <Alert type="info" message="暂无可查看的班级，请检查班级选择" />
+    : props.profileError
+    ? <Alert type="error" message={props.profileError} action={<Button onClick={recalc}>重试</Button>} />
+    : <Card><Skeleton active paragraph={{ rows: 8 }} /></Card>;
 
   // ===== 版本二：知识图谱子页面（独立 tab 入口，只渲染图谱大图）=====
   if (variant === "kgraph") {
     return (
       <div className="teacher_profile_container">
-        <Spin spinning={loading && !profile}>
+        <div aria-busy={loading}>
           {profile ? (
             <div className="teacher_profile_card">
               <div className="ct_header">
@@ -150,8 +215,8 @@ const TeacherProfile = (props: any) => {
               </div>
               <KnowledgeGraph graph={profile.kgraph} height={660} />
             </div>
-          ) : null}
-        </Spin>
+          ) : placeholder}
+        </div>
       </div>
     );
   }
@@ -220,9 +285,26 @@ const TeacherProfile = (props: any) => {
         </div>
       </Card>
 
-      <Spin spinning={loading && !profile}>
+      <div aria-busy={loading}>
         {profile ? (
           <>
+            {/* v2.0-H1 班级建议入口条：点击打开 AI 助手查看与执行 */}
+            {sugCount > 0 ? (
+              <div
+                className="pa_sg_strip"
+                style={{ margin: "0 0 12px" }}
+                role="button"
+                tabIndex={0}
+                onClick={() => dispatch({ type: "assistantModel/open" })}
+              >
+                <BulbOutlined className="icon" />
+                <span className="txt">
+                  AI 助教「小七」已根据本班学情整理了 <b>{sugCount}</b> 条建议（素养短板 / 薄弱知识点 / 进退步关注 / 遗忘复习）
+                </span>
+                <a className="link">在小助手中查看 ›</a>
+              </div>
+            ) : null}
+
             {/* ===== 语义概览网格（graph4rec cockpit 范式）===== */}
             <OverviewGrid cards={cards} trend={profile.trend || []} />
 
@@ -278,38 +360,20 @@ const TeacherProfile = (props: any) => {
               </Col>
             </Row>
 
-            {/* ===== 学生列表（全宽，消除右侧空白）===== */}
+            {/* ===== 学生列表（全宽，消除右侧空白）：点击跳转「个人学情」Tab ===== */}
             <div className="teacher_profile_card">
-              <p className="teacher_profile_chart_title">学生列表 · 仅显示待巩固知识点数，不打等级；冷启动置底</p>
+              <p className="teacher_profile_chart_title">学生列表 · 仅显示待巩固知识点数，不打等级；冷启动置底 · 点击查看个人学情</p>
               <StudentList students={profile.students || []} onOpen={openStudent} />
             </div>
           </>
-        ) : null}
-      </Spin>
-
-      <StudentDrawer
-        open={drawerOpen}
-        detail={studentDetail}
-        evidence={evidence || []}
-        loading={detailLoading}
-        onClose={() => setDrawerOpen(false)}
-      />
+        ) : placeholder}
+      </div>
 
       <ImportModal
         open={importOpen}
         classId={classId || classList[0]?.class_id}
         onClose={() => setImportOpen(false)}
-        onDone={() => {
-          const cid = classId || classList[0]?.class_id;
-          if (cid) {
-            dispatch({
-              type: "teacherProfileModel/getData",
-              apiUrl: "classProfileUrl",
-              payload: { class_id: cid, sources: sources.join(",") },
-              mTitle: "profile",
-            });
-          }
-        }}
+        onDone={recalc}
         students={profile?.students?.map((s: any) => ({
           student_id: s.student_id,
           name: s.name,
@@ -323,7 +387,8 @@ const TeacherProfile = (props: any) => {
 export default connect((state: any) => ({
   classes: state.teacherProfileModel?.classes,
   profile: state.teacherProfileModel?.profile,
-  loading: state.teacherProfileModel?.loading,
+  loading: state.teacherProfileModel?.profileLoading,
+  profileError: state.teacherProfileModel?.profileError,
   studentDetail: state.teacherProfileModel?.studentDetail,
   evidence: state.teacherProfileModel?.evidence,
   detailLoading: state.teacherProfileModel?.detailLoading,

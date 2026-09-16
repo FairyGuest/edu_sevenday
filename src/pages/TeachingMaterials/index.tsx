@@ -108,7 +108,7 @@ const App = (props) => {
   const getHistory = async () => {
     setIsStartCreatePPT({ type: "history" });
     const historyListTemp = await dispatch({
-      type: "teachingModel/getData",
+      type: "designModel/getData",
       apiUrl: "historyList",
       payload: { courseId },
     });
@@ -217,7 +217,7 @@ const App = (props) => {
     setSelectedItem(row);
     if (type == "ppt") {
       const historyListTemp = await dispatch({
-        type: "teachingModel/getData",
+        type: "designModel/getData",
         apiUrl: "getPPTPageById",
         payload: { session_id: id },
       });
@@ -229,7 +229,7 @@ const App = (props) => {
       setRightTabStatus("ppt");
     } else {
       const historyListTemp = await dispatch({
-        type: "teachingModel/getData",
+        type: "designModel/getData",
         apiUrl: "getOutlineById",
         payload: { session_id: id },
       });

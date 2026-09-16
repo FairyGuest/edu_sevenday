@@ -59,9 +59,9 @@ const HistoryList = (props: any) => {
   const goDetail = async (item: any) => {
     await dispatch({
       type: "teachDesginModel/setData",
-      payload: { planParams: item },
+      payload: { planParams: { ...item, type: item.type === "课时教案" ? 1 : item.type === "单元教案" ? 2 : item.type } },
     });
-    if(item?.type == 1){
+    if(item?.type == 1 || item?.type === "课时教案"){
       history.push("/design/hour");
     }else {
       history.push("/design/unit");
@@ -124,7 +124,7 @@ const HistoryList = (props: any) => {
       //   }}
       // >
         <div className="list-item" key={item.id} onClick={() => goDetail(item)}>
-          {item?.type === 2 ? (
+          {item?.type == 2 || item?.type === "单元教案" ? (
             <div className="list-item-type unit">单元</div>
           ) : (
             <div className="list-item-type">课时</div>

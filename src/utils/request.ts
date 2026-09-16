@@ -3,7 +3,20 @@ import { history } from "@@/core/history";
 import { getStorageToken, getRequestParams } from "@/utils/index";
 import qs from "query-string";
 
-let isRedirectingToLogin = false;
+const inflight = new Map<string, Promise<any>>();
+
+function stableValue(value: any): string {
+  if (value === undefined) return "undefined";
+  if (Array.isArray(value)) return `[${value.map(stableValue).join(",")}]`;
+  if (value !== null && typeof value === "object") {
+    return `{${Object.keys(value).sort().map((key) => `${JSON.stringify(key)}:${stableValue(value[key])}`).join(",")}}`;
+  }
+  return JSON.stringify(value);
+}
+
+function requestKey(method: string, url: string, payload: any) {
+  return `${method.toUpperCase()} ${url} ${stableValue(payload)}`;
+}
 
 function parseJSON(response: any) {
   return response.json();
@@ -21,19 +34,17 @@ function isAuthExemptUrl(url: string) {
   return exemptPaths.some((path) => url.includes(path));
 }
 
-function clearLoginAndRedirect() {
+function clearLoginAndRedirect(requestToken: string | null | undefined) {
+  const currentToken = window.__POWERED_BY_WUJIE__ ? (window as any).$wujie?.props?.token : getStorageToken();
+  const normalize = (token: any) => String(token || "").replace(/^Bearer\s+/i, "");
+  // An old session's delayed 401 must not log out a newly authenticated session.
+  if (normalize(currentToken) !== normalize(requestToken)) return;
   // TODO(debug) 临时定位登出触发方，验收后移除
   try { sessionStorage.setItem("__logout_debug", (new Error("logout").stack || "no-stack") + "\n@@url:" + (window as any).__lastReqUrl); } catch {}
-  if (isRedirectingToLogin) {
-    return;
-  }
-
   const currentPath = history.location?.pathname || window.location.pathname;
   if (currentPath.includes("/login")) {
     return;
   }
-
-  isRedirectingToLogin = true;
 
   if (window.__POWERED_BY_WUJIE__) {
     localStorage.removeItem("accessToken");
@@ -46,13 +57,13 @@ function clearLoginAndRedirect() {
   history.replace("/login");
 }
 
-function checkStatus(response: any, url: string) {
+function checkStatus(response: any, url: string, requestToken: string | null | undefined) {
   if (response.status >= 200 && response.status < 401) {
     return response;
   }
 
   if (response.status === 401 && !isAuthExemptUrl(url)) {
-    clearLoginAndRedirect();
+    clearLoginAndRedirect(requestToken);
   }
 
   const error: any = new Error(response.statusText);
@@ -83,12 +94,13 @@ export function requestJson(url: string, options: any) {
     payload
   ) {
     // get 请求
-    newUrl += "?" + qs.stringify(payload);
+    const query = qs.stringify(payload);
+    if (query) newUrl += (newUrl.includes("?") ? "&" : "?") + query;
   }
-  if (method.toUpperCase() == "POST") {
+  if (["POST", "PUT", "PATCH"].includes(method.toUpperCase())) {
     options.body = JSON.stringify(payload); // post 请求
   }
-  let aUrl = decodeURI(`${newUrl}`);
+  let aUrl = `${newUrl}`;
   if (newUrl.includes("http://") || newUrl.includes("https://")) {
     // 全路径处理
     aUrl = newUrl;
@@ -105,11 +117,19 @@ export function requestJson(url: string, options: any) {
   // 处理下载二进制流文件  download_type === zip  就走不走parseJSON
   const isBlob = options.payload?.download_type === "zip";
 
-  return fetch(aUrl, {
+  // Only independent GET readers can share work. Writes must execute separately;
+  // callers with their own abort signal retain control over their own request.
+  const share = method.toUpperCase() === "GET" && !options.signal;
+  const key = requestKey(method, aUrl, { payload, headers, isBlob, credentials: options.credentials });
+  const existing = share ? inflight.get(key) : undefined;
+  if (existing) return existing;
+
+  const promise = fetch(aUrl, {
     ...options,
+    signal: options.signal || (method.toUpperCase() === "GET" && !isBlob ? AbortSignal.timeout(30000) : undefined),
     headers,
   })
-    .then((response) => checkStatus(response, aUrl))
+    .then((response) => checkStatus(response, aUrl, authorization))
     .then((response) => {
       return isBlob ? parseBlob(response) : parseJSON(response);
     })
@@ -119,7 +139,7 @@ export function requestJson(url: string, options: any) {
       }
       const { code, msg, error } = data;
       if (code == 401 && !isAuthExemptUrl(aUrl)) {
-        clearLoginAndRedirect();
+        clearLoginAndRedirect(authorization);
         return data;
       }
 
@@ -134,4 +154,10 @@ export function requestJson(url: string, options: any) {
     .catch((err: any) => {
       return { err };
     });
+
+  if (share) {
+    inflight.set(key, promise);
+    promise.finally(() => { if (inflight.get(key) === promise) inflight.delete(key); });
+  }
+  return promise;
 }

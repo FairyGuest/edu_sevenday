@@ -1,0 +1,254 @@
+/* G2 个人学情 Tab：左学生列表 + 右个人画像整页（v2.0-G） */
+.personal_analysis {
+  display: flex;
+  gap: 14px;
+  align-items: stretch;
+  min-height: 60vh;
+}
+
+.pa_left {
+  flex: 0 0 272px;
+  min-width: 0;
+  background: #fff;
+  border: 1px solid #e8eefb;
+  border-radius: 14px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pa_left_title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #26304a;
+}
+
+.pa_right {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* ===== 左侧列表 ===== */
+.pa_list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 0;
+  flex: 1;
+}
+
+.pa_list_tools {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pa_list_count {
+  font-size: 12px;
+  color: #8a94a8;
+  padding: 0 2px;
+}
+
+.pa_list_scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 66vh;
+  padding-right: 2px;
+}
+
+.pa_list_item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  width: 100%;
+  border: 1px solid #eef2f9;
+  background: #fbfcfe;
+  border-radius: 8px;
+  padding: 6px 9px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s;
+}
+
+.pa_list_item:hover {
+  border-color: #bcd3ff;
+  background: #f5f9ff;
+}
+
+.pa_list_item.on {
+  border-color: #1c6cff;
+  background: #edf4ff;
+  box-shadow: 0 0 0 1px #1c6cff inset;
+}
+
+.pa_dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4f9e70;
+}
+
+.pa_dot--weak { background: #e05d62; }
+.pa_dot--cold { background: #c3c9d4; }
+
+.pa_name {
+  flex: none;
+  font-size: 13px;
+  font-weight: 600;
+  color: #26304a;
+  max-width: 84px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pa_sid {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: 11px;
+  color: #a0a8b8;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pa_weak {
+  flex: none;
+  font-size: 11px;
+  font-weight: 600;
+  color: #e05d62;
+  background: #fdf0f0;
+  border-radius: 999px;
+  padding: 0 6px;
+}
+
+.pa_delta {
+  flex: none;
+  font-size: 11px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.pa_delta.up { color: #4f9e70; }
+.pa_delta.down { color: #e05d62; }
+
+/* ===== 右侧面板 ===== */
+.pa_panel {
+  background: #fff;
+  border: 1px solid #e8eefb;
+  border-radius: 14px;
+  padding: 14px 16px 16px;
+}
+
+.pa_panel_head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.pa_panel_title {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  min-width: 0;
+}
+
+.pa_panel_name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #26304a;
+}
+
+.pa_panel_sid {
+  font-size: 12px;
+  color: #a0a8b8;
+}
+
+.pa_filter {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 10px 0 4px;
+  padding: 8px 0;
+  border-top: 1px dashed #e8eefb;
+  border-bottom: 1px dashed #e8eefb;
+}
+
+.pa_filter_sources {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.pa_filter_sources .icon { color: #1c6cff; }
+.pa_filter_sources .title { font-size: 12px; font-weight: 600; color: #5c6880; white-space: nowrap; }
+
+.pa_chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pa_lit_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 7px 22px;
+}
+
+/* v2.0-I 建议融入助手：个人学情页入口条 */
+.pa_sg_strip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 10px 12px;
+  border: 1px solid #d3e3ff;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #edf4ff, #f8fbff);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.pa_sg_strip:hover {
+  border-color: #1c6cff;
+  box-shadow: 0 2px 8px rgba(28, 108, 255, 0.12);
+}
+
+.pa_sg_strip .icon {
+  color: #1c6cff;
+  font-size: 16px;
+}
+
+.pa_sg_strip .txt {
+  flex: 1;
+  min-width: 0;
+  font-size: 12.5px;
+  color: #33405c;
+}
+
+.pa_sg_strip .link {
+  font-size: 12.5px;
+  white-space: nowrap;
+}
+
+/* 响应式（与全站 ≤900px 折叠基线一致，F2） */
+@media (max-width: 900px) {
+  .personal_analysis {
+    flex-direction: column;
+  }
+  .pa_left {
+    flex: none;
+  }
+  .pa_list_scroll {
+    max-height: 260px;
+  }
+}

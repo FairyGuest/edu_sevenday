@@ -8,7 +8,8 @@ export default {
     selectedStudent: null,
     analysisType: 'class', // 分析类型：class - 班级，personal - 个人
     homeworkAnalysisInfo: null,
-    currentAnalysisTab: 'profile' // 当前分析tab：profile - 画像总览，homework - 作业分析（与页面默认 tab 一致）
+    currentAnalysisTab: 'profile', // 当前分析tab：profile - 班级学情（G1 由"画像总览"更名），personal - 个人学情（G2），kgraph - 知识图谱，homework - 作业分析
+    personalStudentId: null, // 个人学情Tab待选中学生（G4 班级学情点击学生跳转联动，消费后置空）
   },
 
   reducers: {

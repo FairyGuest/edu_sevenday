@@ -1,17 +1,19 @@
-import { history, RuntimeAntdConfig } from "umi";
+import { history, RuntimeAntdConfig, useLocation } from "umi";
+import React from "react";
 import LayoutSider from "@/components/LayoutSider";
-import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { ConfigProvider, Result, Tour, Modal } from "antd";
 import zhCN from "antd/locale/zh_CN";
 import "dayjs/locale/zh-cn";
 import "./markdown-body.less";
 import "@/components/useSiderTour/index.less";
 import { setStorageToken } from "@/utils";
-import { installDemoMock } from "@/demoMock";
+import { GlobalAssistantSafe } from "@/components/GlobalAssistant";
+import RouteProgress from "@/components/RouteProgress";
 
 // demo 静态部署模式（build:demo）：浏览器端拦截 /api 请求返回 mock 数据
 if (REACT_APP_ENV === "demo") {
-  installDemoMock();
+  // Keep the fixture registry and mock handlers out of non-demo bundles.
+  require("@/demoMock").installDemoMock();
 }
 
 declare global {
@@ -91,7 +93,39 @@ function handleChunkError(error: string) {
 
 // 初始化错误监听
 setupChunkErrorListener();
+
+// ===== 页面级错误边界：业务页渲染异常时只降级内容区（侧边栏/助手存活），不再整页白屏 =====
+class PageErrorBoundary extends React.Component<{ children: any }, { err: any }> {
+  state = { err: null };
+  static getDerivedStateFromError(error: any) {
+    return { err: error };
+  }
+  render() {
+    if (this.state.err) {
+      return (
+        <div style={{ padding: 24 }}>
+          <h3 style={{ marginBottom: 8 }}>页面渲染异常</h3>
+          <p style={{ color: "#8a94a8", marginBottom: 12 }}>{String(this.state.err?.message || "")}</p>
+          <button
+            type="button"
+            onClick={() => window.location.reload()}
+            style={{ padding: "4px 14px", borderRadius: 8, cursor: "pointer" }}
+          >
+            刷新页面
+          </button>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
 // ================================================================
+// ================================================================
+
+function RoutedPageBoundary({ children }: { children: React.ReactNode }) {
+  const location = useLocation();
+  return <PageErrorBoundary key={location.pathname}>{children}</PageErrorBoundary>;
+}
 
 export async function getInitialState() {
   return {
@@ -146,7 +180,6 @@ export const layout = (props: any) => {
     links: [],
 
     childrenRender: (children: any, props: any) => {
-      const [parent] = useAutoAnimate();
       const cRouter = history.location.pathname;
       // 排除登录
       const excludeRoute = [
@@ -173,10 +206,14 @@ export const layout = (props: any) => {
           <ConfigProvider locale={zhCN}>
             <div className="layout_content">
               <LayoutSider {...props} />
-              <div className="content_wrap" ref={parent}>
-                {children}
+              <div className="content_wrap">
+                <RoutedPageBoundary>{children}</RoutedPageBoundary>
               </div>
             </div>
+            {/* v2.0-I 全局 AI 小助手（独立错误边界，自身异常不拖垮页面；登录/嵌入页不渲染） */}
+            <GlobalAssistantSafe />
+            {/* v2.0 页面流转优化：路由切换顶部进度条（即时反馈） */}
+            <RouteProgress />
           </ConfigProvider>
         </>
       );

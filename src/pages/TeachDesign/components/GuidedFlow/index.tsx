@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button, Input, Modal, Spin, Tag, message } from "antd";
 import { ArrowRightOutlined, RobotOutlined, ThunderboltOutlined } from "@ant-design/icons";
 import "./index.less";
@@ -30,23 +30,40 @@ export default function GuidedFlow({ open, params, onComplete, onSkip, onClose }
   const [modules, setModules] = useState<MItem[]>([]);
   const [picked, setPicked] = useState<Record<string, string[]>>({});
   const [source, setSource] = useState<string>("");
+  const requestRef = useRef<AbortController | null>(null);
+  const completedRef = useRef(false);
+  const cancelRequest = () => { requestRef.current?.abort(); requestRef.current = null; };
+  const skip = () => {
+    if (completedRef.current) return;
+    completedRef.current = true;
+    cancelRequest();
+    onSkip();
+  };
 
   useEffect(() => {
     if (!open) return;
+    completedRef.current = false;
+    const controller = new AbortController();
+    requestRef.current = controller;
+    const timeout = setTimeout(() => controller.abort(), 30000);
     setStep(0); setQuestions([]); setAnswers({}); setCustoms({}); setModules([]); setPicked({});
     fetch("/api/ai/guide/questions", {
       method: "POST", headers: { "Content-Type": "application/json" },
       body: JSON.stringify(params),
+      signal: controller.signal,
     })
       .then(r => r.json())
       .then(d => {
+        if (requestRef.current !== controller) return;
         if (d.code === 200 && d.data?.questions?.length) {
           setQuestions(d.data.questions);
           setSource(d.data.source);
           setStep(1);
-        } else { message.error("引导问题生成失败，可直接生成"); onSkip(); }
+        } else { message.error("引导问题生成失败，可直接生成"); skip(); }
       })
-      .catch(() => { message.error("AI 服务不可用，已切换直接生成"); onSkip(); });
+      .catch(() => { if (requestRef.current === controller) { message.error("AI 服务不可用，已切换直接生成"); skip(); } })
+      .finally(() => clearTimeout(timeout));
+    return () => { clearTimeout(timeout); cancelRequest(); };
   }, [open]);
 
   const choose = (qid: string, val: string) => {
@@ -55,6 +72,7 @@ export default function GuidedFlow({ open, params, onComplete, onSkip, onClose }
   };
 
   const submitAnswers = async () => {
+    if (step !== 1) return;
     const unanswered = questions.filter(q => !answers[q.id] && !customs[q.id]);
     if (unanswered.length) {
       message.warning(`还有 ${unanswered.length} 个问题未作答（可选方向或自由输入）`);
@@ -63,22 +81,32 @@ export default function GuidedFlow({ open, params, onComplete, onSkip, onClose }
     const merged: Record<string, string> = {};
     questions.forEach(q => { merged[q.id] = customs[q.id] || answers[q.id] || ""; });
     setStep(2);
+    cancelRequest();
+    const controller = new AbortController();
+    requestRef.current = controller;
+    const timeout = setTimeout(() => controller.abort(), 30000);
     try {
       const d = await fetch("/api/ai/guide/plan", {
         method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ chapter: params.chapter, study_ctx: params.study_ctx, answers: merged }),
+        signal: controller.signal,
       }).then(r => r.json());
+      if (requestRef.current !== controller) return;
       if (d.code === 200 && d.data?.modules?.length) {
         setModules(d.data.modules);
         const init: Record<string, string[]> = {};
         d.data.modules.forEach((m: MItem) => { init[m.key] = [...(m.points || [])]; });
         setPicked(init);
         setStep(3);
-      } else { message.error("规划生成失败，已切换直接生成"); onSkip(); }
-    } catch { message.error("AI 服务不可用，已切换直接生成"); onSkip(); }
+      } else { message.error("规划生成失败，已切换直接生成"); skip(); }
+    } catch { if (requestRef.current === controller) { message.error("AI 服务不可用，已切换直接生成"); skip(); } }
+    finally { clearTimeout(timeout); }
   };
 
   const confirm = () => {
+    if (completedRef.current) return;
+    completedRef.current = true;
+    cancelRequest();
     const finalModules = modules.map(m => ({ ...m, points: picked[m.key] || [] }));
     onComplete({
       answers: Object.fromEntries(questions.map(q => [q.id, customs[q.id] || answers[q.id] || ""])),
@@ -94,8 +122,8 @@ export default function GuidedFlow({ open, params, onComplete, onSkip, onClose }
   return (
     <Modal
       open={open}
-      onCancel={step === 0 || step === 2 ? undefined : onClose}
-      closable={step !== 0 && step !== 2}
+      onCancel={() => { completedRef.current = true; cancelRequest(); onClose(); }}
+      closable
       maskClosable={false}
       width={640}
       footer={null}
@@ -162,7 +190,7 @@ export default function GuidedFlow({ open, params, onComplete, onSkip, onClose }
             </div>
           ))}
           <div className="gf_actions">
-            <Button onClick={onSkip}>跳过引导，直接生成</Button>
+            <Button onClick={skip}>跳过引导，直接生成</Button>
             <Button type="primary" icon={<ArrowRightOutlined />} onClick={submitAnswers}>
               提交回答，规划模块
             </Button>

@@ -1,5 +1,5 @@
-import { useState, useEffect, useImperativeHandle } from "react";
-import { connect, useDispatch, history } from "@umijs/max";
+import { useState, useEffect, useImperativeHandle, useRef } from "react";
+import { connect, useDispatch, history, useLocation } from "@umijs/max";
 
 import {
   Cascader,
@@ -15,6 +15,7 @@ import { InfoCircleOutlined } from "@ant-design/icons";
 
 import "./index.less";
 import { addNewTracking } from "@/utils";
+import { getDataService } from "../../services";
 
 const Selection = (props: any) => {
   const { onRef, type, form, setDvaVal, } = props;
@@ -33,6 +34,11 @@ const Selection = (props: any) => {
   } = props.teachDesginModel
 
   const dispatch = useDispatch();
+  const location = useLocation();
+  const query = new URLSearchParams(location.search);
+  const requestedClass = query.get("from") === "analysis" ? query.get("class_id") || "" : "";
+  const requestedClassRef = useRef(requestedClass);
+  requestedClassRef.current = requestedClass;
   // const [form] = Form.useForm();
   const [messageApi, contextHolder] = message.useMessage();
 
@@ -56,57 +62,64 @@ const Selection = (props: any) => {
 
   // 学情注入模式：从学情分析页携带班级跳转而来，自动填充学段学科/教材册别（教师免选）
   useEffect(() => {
-    const q = new URLSearchParams(window.location.search);
-    const injectClassId = q.get("class_id");
-    if (!injectClassId || q.get("from") !== "analysis") return;
-    fetch("/api/teacher/classes")
-      .then(r => r.json())
-      .then(d => {
-        const cls = (d.data || []).find((c: any) => c.class_id === injectClassId);
-        if (!cls) return;
-        // g7/g8/g9 → 初中；c1-c3 → 高中
+    if (!requestedClass) { setDvaVal({ injectClassId: "" }); return; }
+    let active = true;
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 30000);
+    const current = () => active && !controller.signal.aborted;
+    setDvaVal({ injectClassId: "", classInfo: {}, gradeDocId: {}, chapterInfo: {}, chapterList: [] });
+    form.setFieldsValue({ subject: undefined, chapter_id: undefined });
+    const fill = async () => {
+      try {
+        const d = await fetch("/api/teacher/classes", { signal: controller.signal }).then(r => r.json());
+        if (!current()) return;
+        const cls = (Array.isArray(d.data) ? d.data : []).find((c: any) => c.class_id === requestedClass);
+        if (!cls) throw new Error("班级不存在");
         const stageName = /^g/.test(cls.grade || "") ? "初中" : "高中";
         const subjectName = cls.subject || "数学";
         const gradeNum = String(cls.grade || "").replace(/[^0-9]/g, "");
-        const volumeMap: Record<string, string> = { "7": "七年级下册", "8": "八年级下册", "9": "九年级下册" };
-        const volume = volumeMap[gradeNum] || "八年级下册";
-        form.setFieldsValue({ stage: [stageName, subjectName], subject: ["人教版", volume] });
-        setDvaVal({
-          gradeDocId: { doc_id: "doc-pep-g8b", grade: volume.replace("下册", ""), volume: "下册" },
-          injectClassId: cls.class_id,
-        });
-        // 与手动选择保持一致的联动
-        getSubject();
-        getCourseType();
-        postClassInfo();
-        // 班级学情自动设置：按该班画像推导四维（老师可在“设置班级学情”中修改）
-        fetch(`/api/teacher/profile/class?class_id=${injectClassId}&sources=`)
-          .then(r => r.json())
-          .then(async (pd) => {
-            if (pd.code !== 200) return;
-            const cards = pd.data?.cards || {};
-            const weakPct = Number(cards.weak_top_pct) || 0;
-            const avg = Number(cards.recent5_avg) || 60;
-            const derived = {
-              studies_degree: weakPct <= 20 ? "优秀" : weakPct <= 30 ? "中等" : "薄弱",
-              motivation_habit: avg >= 63 ? "主动" : avg >= 58 ? "一般" : "被动",
-              literacy_ability: weakPct <= 20 ? "较强" : weakPct <= 30 ? "中等" : "待提升",
-              class_learning_diff: weakPct <= 22 ? "较为均衡" : weakPct <= 30 ? "分化一般" : "分化明显",
-            };
-            // 推导班型（与弹窗内班型接口同规则）
-            const ct = await fetch("/api/teach_plan/class_type", {
-              method: "POST", headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ subject: subjectName, ...derived }),
-            }).then(r => r.json()).catch(() => null);
-            setDvaVal({
-              gradeDocId: { doc_id: "doc-pep-g8b", grade: volume.replace("下册", ""), volume: "下册" },
-              classInfo: { ...derived, ...(ct?.data || {}) },
-            });
-          })
-          .catch(() => {});
-      })
-      .catch(() => {});
-  }, []);
+        const volume = ({ "7": "七年级下册", "8": "八年级下册", "9": "九年级下册" } as Record<string, string>)[gradeNum];
+        form.setFieldsValue({ stage: [stageName, subjectName] });
+        setDvaVal({ injectClassId: cls.class_id });
+        const [books, courses, pd] = await Promise.all([
+          getDataService({ xueduan: stageName, xueke: subjectName }, "getSubjectUrl"),
+          getDataService({ stage: stageName, subject: subjectName }, "getCourseType"),
+          fetch(`/api/teacher/profile/class?class_id=${encodeURIComponent(cls.class_id)}&sources=`, { signal: controller.signal }).then(r => r.json()),
+        ]);
+        if (!current()) return;
+        const editions = books?.code === 200 && Array.isArray(books.data) ? books.data : [];
+        const matches = (edition: any) => Array.isArray(edition.children) && edition.children.some((book: any) => book.value === volume && book.doc_id);
+        const edition = editions.find((e: any) => e.value === "人教版" && matches(e)) || editions.find(matches);
+        const book = edition?.children.find((b: any) => b.value === volume && b.doc_id);
+        setDvaVal({ subjectList: editions, classTypeList: courses?.code === 200 && Array.isArray(courses.data) ? courses.data : [] });
+        if (book) {
+          form.setFieldsValue({ subject: [edition.value, book.value] });
+          setDvaVal({ gradeDocId: { doc_id: book.doc_id, grade: book.grade, volume: book.volume } });
+        } else {
+          message.info("未找到该班级对应的教材册别，请手动选择教材");
+        }
+        if (pd.code !== 200) throw new Error("学情加载失败");
+        const cards = pd.data?.cards || {};
+        const weakPct = Number(cards.weak_top_pct) || 0;
+        const avg = Number(cards.recent5_avg) || 60;
+        const derived = {
+          studies_degree: weakPct <= 20 ? "优秀" : weakPct <= 30 ? "中等" : "薄弱",
+          motivation_habit: avg >= 63 ? "主动" : avg >= 58 ? "一般" : "被动",
+          literacy_ability: weakPct <= 20 ? "较强" : weakPct <= 30 ? "中等" : "待提升",
+          class_learning_diff: weakPct <= 22 ? "较为均衡" : weakPct <= 30 ? "分化一般" : "分化明显",
+        };
+        const ct = await fetch("/api/teach_plan/class_type", {
+          method: "POST", headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ subject: subjectName, ...derived }), signal: controller.signal,
+        }).then(r => r.json());
+        if (current()) setDvaVal({ classInfo: { ...derived, ...(ct.code === 200 ? ct.data : {}) } });
+      } catch {
+        if (active) message.warning("班级学情自动填充失败，请手动设置班级学情");
+      } finally { clearTimeout(timeout); }
+    };
+    fill();
+    return () => { active = false; clearTimeout(timeout); controller.abort(); };
+  }, [requestedClass]);
 
   useEffect(() => {
     if (gradeDocId?.doc_id) {
@@ -145,7 +158,7 @@ const Selection = (props: any) => {
     });
     if (code === 200) {
       // setStageList(data);
-      form.setFieldsValue({ ...desginForm });  // 重置表单
+      if (!requestedClassRef.current) form.setFieldsValue({ ...desginForm });  // 注入数据不能被迟到的初始化覆盖
 
     }
   };

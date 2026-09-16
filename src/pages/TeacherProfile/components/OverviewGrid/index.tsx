@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Col, Row } from "antd";
 import { FallOutlined, RiseOutlined, SafetyOutlined, SolutionOutlined } from "@ant-design/icons";
 
@@ -28,7 +29,7 @@ function Sparkline({ points, color, invert }: { points: number[]; color: string;
   );
 }
 
-export default function OverviewGrid({ cards, trend }: { cards: any; trend: any[] }) {
+function OverviewGrid({ cards, trend }: { cards: any; trend: any[] }) {
   if (!cards) return null;
   const trendVals = (trend || []).map((t: any) => t.value).filter((v: any) => v != null);
 
@@ -75,3 +76,5 @@ export default function OverviewGrid({ cards, trend }: { cards: any; trend: any[
     </Row>
   );
 }
+
+export default memo(OverviewGrid);

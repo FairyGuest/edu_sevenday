@@ -1,8 +1,9 @@
+import { memo } from "react";
 import { Table } from "antd";
 import type { ColumnsType } from "antd/es/table";
 
 /** F1.3 学生列表（全宽）：仅显示待巩固数不打等级；冷启动置底；点击行查看个人学情 */
-export default function StudentList({ students, onOpen }: { students: any[]; onOpen: (sid: string) => void }) {
+function StudentList({ students, onOpen }: { students: any[]; onOpen: (sid: string) => void }) {
   const columns: ColumnsType<any> = [
     {
       title: "学生", dataIndex: "name", width: 100,
@@ -44,7 +45,7 @@ export default function StudentList({ students, onOpen }: { students: any[]; onO
           </span>
         ),
     },
-    { title: "", width: 70, render: () => <a style={{ fontSize: 12 }}>画像 ›</a> },
+    { title: "", width: 90, render: () => <a style={{ fontSize: 12 }}>个人学情 ›</a> },
   ];
   return (
     <Table
@@ -63,3 +64,5 @@ export default function StudentList({ students, onOpen }: { students: any[]; onO
     />
   );
 }
+
+export default memo(StudentList);

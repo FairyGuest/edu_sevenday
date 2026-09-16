@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 
 import LessonPlansTab from "../LessonPlansTab";
 import CoursewareTab from "../CoursewareTab";
+import KnowledgeGraphTab from "../KnowledgeGraphTab";
 
 import "./index.less";
 
@@ -15,6 +16,7 @@ const RESOURCE_TABS: any = {
   question: [
     { key: "public", label: "公共题库", isIndependent: false, component: null },
     { key: "personal", label: "个人题库", isIndependent: false, component: null },
+    { key: "kgraph", label: "知识图谱", isIndependent: true, component: <KnowledgeGraphTab /> },
     { key: "lesson-plans", label: "教案", isIndependent: true, component: <LessonPlansTab /> },
     { key: "courseware", label: "课件", isIndependent: true, component: <CoursewareTab /> },
   ],

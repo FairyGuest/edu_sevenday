@@ -2,7 +2,7 @@ import { message } from "antd";
 import * as services from "../services";
 
 export default {
-  namespace: "teachingModel",
+  namespace: "designModel",
   state: {
     loading: false,
     fetchLoading: false, // loading

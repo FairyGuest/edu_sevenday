@@ -18,6 +18,7 @@ import {
 import MarkdownRender from "@/components/MarkdownRender";
 import MarkdownRenderToc, { MarkdownTocGroup } from "@/components/MarkdownRender/showToc";
 import { ZYIcon } from "@/components";
+import PlanViewer from "../PlanViewer";
 import { str2json, scrollTop, stopSSE, addNewTracking, getOrgId } from "@/utils";
 import UnitTable from "../UnitTable";
 import useQuestionActions from "@/pages/TeachDesign/hooks/EditTeach";
@@ -45,6 +46,10 @@ const UnitRight = (props: any) => {
   const { confirm } = Modal;
   const [form] = Form.useForm();
   const [messageApi, contextHolder] = message.useMessage();
+  // v2.0 查看教案（课件预览）浮层：设计页「生成课件」进入，查看态可布置作业 / 查看评估结果
+  const [viewerOpen, setViewerOpen] = useState<boolean>(false);
+  // 目录侧栏：全屏或右栏足够宽时展示（参考设计稿默认带目录，窄栏时隐藏避免挤压正文）
+  const tocVisible = fullScreen || (typeof rightWidth === "number" && rightWidth >= 720);
   const thinkRef = useRef<HTMLDivElement>(null); // 思考内容
   const contentRef = useRef<HTMLDivElement>(null); // 创建内容
   const teachPlanRef = useRef<HTMLDivElement>(null); // 教案内容
@@ -68,7 +73,7 @@ const UnitRight = (props: any) => {
       setThinkContent(detailData?.thinking_content || "");
       setTeachPlanContent(detailData?.plan_content || "");
     }
-  }, [detailData?.id]);
+  }, [detailData?.id, detailData?.plan_content, detailData?.thinking_content]);
 
   // TODO: 监听右侧宽度变化，判断是否折叠按钮显示
   useEffect(() => {
@@ -125,6 +130,8 @@ const UnitRight = (props: any) => {
     }
 
     if (__action == "error") {
+      setThinkLoading(false);
+      setThinkCreating(false);
       messageApi.error(data);
       setIsEmpty(false);
       setSseStatus("error");
@@ -215,8 +222,8 @@ const UnitRight = (props: any) => {
     if (code === 200) {
       window.open(data?.file_url);
       // addNewTracking({
-      //   bt: "cl",
-      //   ct: "unit_plan_click_download",
+      //   bt: 'cl',
+      //   ct: 'unit_plan_click_download',
       //   extra: {
       //     unit_id: detailData?.id,
       //     download_format: type,
@@ -224,6 +231,28 @@ const UnitRight = (props: any) => {
       // });
     }
   };
+  // 布置作业：将教案习题注入试卷（参考设计稿：教案预览工具栏提供布置入口）
+  const assignHomeworkFromPlan = async () => {
+    try {
+      const res = await fetch("/api/teacher/teaching/assign-homework", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          from: "plan",
+          chapter: planParams?.title || planParams?.chapter_name || "",
+          class_id: planParams?.class_id || "",
+        }),
+      });
+      const d = await res.json();
+      if (d.code === 200) {
+        message.success(`已将教案 ${d.data.n_questions} 道习题注入试卷（${d.data.homework_id}），可到「作业布置」查看`);
+      } else {
+        message.error(d.msg || "布置失败");
+      }
+    } catch {
+      message.error("布置失败，请重试");
+    }
+  };
+
   // 发起评估点击事件
   const onEvaluateClick = (type: string) => {
     const trackParams = {
@@ -363,7 +392,8 @@ const UnitRight = (props: any) => {
     }
   };
   // 处理评估分数
-  const handleEvaluateScore = (score: string) => {
+  const handleEvaluateScore = (value: string | number) => {
+    const score = String(value);
     let scoreColor = "";
     let textColor = "";
 
@@ -394,6 +424,15 @@ const UnitRight = (props: any) => {
         <div className="create-container">
           <div className="create-header">
             <div className="create-header-left">
+              <Button
+                color="primary"
+                variant="solid"
+                onClick={() => setViewerOpen(true)}
+                disabled={planSseLoading || !teachPlanContent}
+                icon={<ZYIcon type="ppt-color" />}
+              >
+                生成课件
+              </Button>
               {detailData?.evaluate_score && (
                 <Button
                   color="primary"
@@ -524,7 +563,9 @@ const UnitRight = (props: any) => {
           <div className="create-content" ref={contentRef}>
             <div className="create-content-header">
               <ZYIcon className="icon" type="jiaoan" />
-              <div className="title">{detailData?.title || `单元整体教学：${planParams.title}`}</div>
+              <div className="title">
+                单元教案：《{detailData?.title || planParams?.title || ""}》单元整体教学设计
+              </div>
               {detailData?.version && <div className="version">{detailData?.version}</div>}
             </div>
             <div className="create-content-wrapper">
@@ -563,7 +604,7 @@ const UnitRight = (props: any) => {
                     <div className="unit-content">
                       <MarkdownTocGroup>
                         <MarkdownRenderToc
-                          showToc={fullScreen}
+                          showToc={tocVisible}
                           tocSectionKey="unit-pre"
                         >
                           {detailData?.pre_content || ""}
@@ -573,7 +614,7 @@ const UnitRight = (props: any) => {
                           handlePlan={handlePlan}
                         />
                         <MarkdownRenderToc
-                          showToc={fullScreen}
+                          showToc={tocVisible}
                           tocSectionKey="unit-after"
                         >
                           {detailData?.after_content || ""}
@@ -581,7 +622,7 @@ const UnitRight = (props: any) => {
                       </MarkdownTocGroup>
                     </div>
                   ) : (
-                    <MarkdownRenderToc showToc={fullScreen}>
+                    <MarkdownRenderToc showToc={tocVisible}>
                       {teachPlanContent}
                     </MarkdownRenderToc>
                   )}
@@ -669,6 +710,25 @@ const UnitRight = (props: any) => {
           </Form.Item>
         </Form>
       </Modal>
+      {/* v2.0 查看教案（课件预览）：设计页「生成课件」进入，查看态可布置作业 / 查看评估结果 */}
+      <PlanViewer
+        open={viewerOpen}
+        onClose={() => setViewerOpen(false)}
+        docTitle={`单元教案：《${detailData?.title || planParams?.title || ""}》单元整体教学设计`}
+        version={detailData?.version}
+        content={teachPlanContent || detailData?.plan_content || ""}
+        score={detailData?.evaluate_score}
+        evaluating={detailData?.is_new_evaluate === 1}
+        evalDisabled={planSseLoading || leftChatLoading}
+        onEvaluate={() => onEvaluateClick("")}
+        onOpenReport={() => {
+          const id = detailData?.id || planParams?.id;
+          if (id) window.open(history.createHref({ pathname: "/evaluateReport", search: `?id=${encodeURIComponent(id)}` }));
+        }}
+        onDownload={onDownloadClick}
+        onAssignHomework={assignHomeworkFromPlan}
+        assignDisabled={planSseLoading}
+      />
     </div>
   );
 };

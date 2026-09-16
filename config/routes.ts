@@ -249,6 +249,12 @@
     component: "./LearningAnalysis",
   },
   {
+    // v2.0-J 课件生成（独立入口，mock 下 courseId 取演示课程；按钮位置待原型图确定）
+    path: "/teaching-materials",
+    title: "课件生成",
+    component: "./TeachingMaterials",
+  },
+  {
     path: "*",
     component: "./404",
   },

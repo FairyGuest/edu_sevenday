@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useDispatch, useSelector, history, connect } from "@umijs/max";
-import { Button, Splitter, Modal, Affix, message, Tooltip } from "antd";
+import { Alert, Button, Splitter, Modal, Affix, message, Tooltip } from "antd";
 import _ from 'lodash';
 import HourHeader from "./components/HourHeader";
 import DesignChat from "./components/DesignChat";
@@ -41,6 +41,9 @@ const Hour = (props: any) => {
   const timerIdRef = useRef<any | null>(null);
 
   const [detailData, setDetailData] = useState<any>({ status: 0 }); // 详情数据中 status = Column(SmallInteger, comment="生成状态:0生成中,1已生成,2生成失败")
+  const [detailError, setDetailError] = useState("");
+  const detailRequest = useRef(0);
+  const detailLifecycle = useRef(0);
 
   const [hiddenRight, setHiddenRight] = useState(false); // 隐藏右侧组件
 
@@ -76,6 +79,8 @@ const Hour = (props: any) => {
 
   useEffect(() => {
     return () => {
+      ++detailRequest.current;
+      ++detailLifecycle.current;
       clearTimeout(timerIdRef?.current);
       clearInterval(timerIdRef?.current);
     };
@@ -211,12 +216,15 @@ const Hour = (props: any) => {
   // 获取课时详情（课时）
   const getDetail = async () => {
     if (!params?.id) return
+    const seq = ++detailRequest.current;
+    setDetailError("");
     const { code, data }: any = await dispatch({
       type: "teachDesginModel/getData",
       apiUrl: "getPlanDetailUrl",
       payload: { id: params.id },
     });
-    if (code === 200) {
+    if (seq !== detailRequest.current) return;
+    if (code === 200 && data?.id) {
       console.log('课时详情', data)
       setChatList(data?.chat_history || []);
       setDetailData({ ...data });
@@ -228,6 +236,8 @@ const Hour = (props: any) => {
         setEvaluateLoading(evaluateLoading + 1)
         getDetailData()
       }
+    } else {
+      setDetailError("教案加载失败，请重试或返回教学设计重新选择");
     }
   };
 
@@ -249,11 +259,13 @@ const Hour = (props: any) => {
   // 获取课时详情（课时\10s一次获取再次评估状态）
   const getDetailData = async () => {
     if (!params?.id) return
+    const generation = detailLifecycle.current;
     const { code, data }: any = await dispatch({
       type: "teachDesginModel/getData",
       apiUrl: "getPlanDetailUrl",
       payload: { id: params.id },
     });
+    if (generation !== detailLifecycle.current) return;
     if (code === 200) {
       if (data?.is_new_evaluate == 1) {
         setDetailData({
@@ -618,6 +630,9 @@ const Hour = (props: any) => {
       }, 100);
     }
   };
+
+  if (detailError) return <Alert style={{ margin: 24 }} type="error" showIcon message={detailError}
+    action={<Button onClick={getDetail}>重试</Button>} />;
 
   return (
     <div className="hour-design drawer-element">

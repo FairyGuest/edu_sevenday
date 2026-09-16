@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Table, Tooltip } from "antd";
 import type { ColumnsType } from "antd/es/table";
 
@@ -45,7 +46,7 @@ function CIBar({ ci, p, trust }: { ci: [number, number]; p: number; trust: strin
 }
 
 /** F1.2 知识点掌握分布（graph4rec ability-row 范式重做） */
-export default function ClusterTable({ rows }: { rows: any[] }) {
+function ClusterTable({ rows }: { rows: any[] }) {
   const columns: ColumnsType<any> = [
     {
       title: "知识点", dataIndex: "cluster", width: 150,
@@ -125,3 +126,5 @@ ${lv.desc}`} color="#fff" overlayClassName="ct_lv_tip">
     />
   );
 }
+
+export default memo(ClusterTable);

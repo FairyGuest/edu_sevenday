@@ -388,7 +388,8 @@ const ClassRight = (props: any) => {
     form.setFieldsValue({ catalog_id: undefined });
   };
   // 处理评估分数
-  const handleEvaluateScore = (score: string) => {
+  const handleEvaluateScore = (value: string | number) => {
+    const score = String(value);
     let scoreColor = "";
     let textColor = "";
     if (score.includes("A")) {

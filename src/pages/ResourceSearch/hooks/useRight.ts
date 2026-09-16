@@ -1,10 +1,7 @@
 import { useDispatch, useSelector } from "umi";
-import { useRef } from "react";
 
 export const useRight = () => {
   const dispatch = useDispatch();
-  // 防止 loadQuestionList 并发旧请求先返回会覆盖新请求
-  const questionRequestIdRef = useRef(0);
   const {
     gradeName,
     subjectName,
@@ -60,12 +57,6 @@ export const useRight = () => {
 
   // 加载试题列表
   const loadQuestionList = async (knowledgeKeys: any[], chapterKeys: any[], pageNum: number, pageSize?: number) => {
-    const requestId = ++questionRequestIdRef.current;
-    dispatch({
-      type: "resourceSearchModel/setData",
-      payload: { questionLoading: true }
-    });
-
     // 知识点筛选：优先使用传入的参数，否则从状态中获取
     const knowledgeFilter = knowledgeKeys !== undefined
       ? (knowledgeKeys.length > 0 ? knowledgeKeys : undefined)
@@ -108,6 +99,8 @@ export const useRight = () => {
       grade_name: processedFilters.gradeSemesters,
       scene: processedFilters.scenes,
       province: processedFilters.regions,
+      city: processedFilters.cities, // v2.0-L3 省市二级（市级）
+      textbook_version: processedFilters.textbook_versions, // v2.0-L2 教材版本
       ability: processedFilters.abilities,
       literacy: processedFilters.literacies,
       keyword: searchText,
@@ -115,51 +108,18 @@ export const useRight = () => {
     };
 
     const result: any = await dispatch({
-      type: "resourceSearchModel/postData",
+      type: "resourceSearchModel/getLatestQuestions",
       apiUrl: apiUrl,
       payload: requestPayload,
+      pagination,
     });
 
-    if (result?.code === 200) {
+    if (result?.code === 200 && !result?.skipped) {
       // 滚动到顶部
       const listPanel = document.querySelector('.list-panel');
       if (listPanel) {
         listPanel.scrollTo({ top: 0 }); //behavior: 'smooth'
       }
-      const questionListData = result.data?.records || [];
-
-      // if(activeTab != "personal" && questionListData?.length == 0) {
-      //   addNewTracking({
-      //     bt: 'pv',
-      //     ct: 'pub_qb_empty_state_page_impression',
-      //   })
-      // }
-
-      const paginationData = {
-        ...pagination,
-        current: result.data?.current ?? result.data?.page_num ?? pageNum ?? pagination.current,
-        pageSize: result.data?.size ?? result.data?.page_size ?? pageSize ?? pagination.pageSize,
-        total: result.data?.total ?? 0
-      };
-
-      // 只允许最新请求写入 state，避免旧请求覆盖新请求
-      if (questionRequestIdRef.current === requestId) {
-        dispatch({
-          type: "resourceSearchModel/setData",
-          payload: {
-            questionList: questionListData,
-            pagination: paginationData
-          }
-        });
-      }
-    }
-
-    // 只有最新请求结束后才关闭 loading
-    if (questionRequestIdRef.current === requestId) {
-      dispatch({
-        type: "resourceSearchModel/setData",
-        payload: { questionLoading: false }
-      });
     }
   };
 
@@ -172,8 +132,7 @@ export const useRight = () => {
         pagination: { ...pagination, current: 1 }
       }
     });
-    // 直接触发搜索
-    loadQuestionList(checkedKnowledge, checkedChapter, 1);
+    // The page effect reads the committed keyword and starts the request.
   };
 
   // 筛选变化

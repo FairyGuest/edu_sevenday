@@ -94,7 +94,7 @@ const PublishToResourseLibary = (props: any) => {
     };
 
     let res: any = await dispatch({
-      type: "teachingModel/postData",
+      type: "designModel/postData",
       // apiUrl: "getDistribute",
       apiUrl: "pptPublishToLibrary",
       payload: { ...json_data },

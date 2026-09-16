@@ -14,6 +14,10 @@ import profile from "./demo-mock/teacher/profile";
 import recommend from "./demo-mock/teacher/recommend";
 import eduAuth from "./demo-mock/web/eduAuth";
 import resourceSearch from "./demo-mock/web/resourceSearch";
+import suggestions from "./demo-mock/teacher/suggestions";
+import kgraph from "./demo-mock/teacher/kgraph";
+import assistant from "./demo-mock/assistant";
+import workspace from "./demo-mock/web/workspace";
 
 const tables = [
   aiGuide,
@@ -26,6 +30,10 @@ const tables = [
   recommend,
   eduAuth,
   resourceSearch,
+  suggestions,
+  kgraph,
+  assistant,
+  workspace,
 ];
 
 interface CompiledRoute {
@@ -84,12 +92,17 @@ function createRes(
     if (finished) return;
     finished = true;
     // 204/304 等状态不允许带响应体
-    const noBody = (status >= 200 && status < 300 && [204, 205, 304].includes(status)) || status < 200;
+    const noBody = [204, 205, 304].includes(status) || status < 200;
     onDone(status, noBody ? null : bodyText, headers);
   };
   const res: any = {
     status(code: number) {
       status = code;
+      return res;
+    },
+    writeHead(code: number, values: Record<string, string> = {}) {
+      status = code;
+      Object.assign(headers, values);
       return res;
     },
     set(k: string, v: string) {
@@ -187,32 +200,49 @@ export function installDemoMock() {
       query: Object.fromEntries(parsed.searchParams as any),
       body,
       params: hit.params,
-      headers: new Headers(init?.headers ?? {}),
+      headers: Object.fromEntries(new Headers(init?.headers ?? (input instanceof Request ? input.headers : {}))),
     };
 
-    return new Promise<Response>((resolve) => {
+    return new Promise<Response>((resolve, reject) => {
       let settled = false;
+      const signal = init?.signal ?? (input instanceof Request ? input.signal : undefined);
+      const cleanup = () => {
+        clearTimeout(timer);
+        signal?.removeEventListener("abort", abort);
+      };
+      const abort = () => {
+        if (settled) return;
+        settled = true;
+        cleanup();
+        reject(signal?.reason || new DOMException("Aborted", "AbortError"));
+      };
+      const timer = setTimeout(() => {
+        if (settled) return;
+        settled = true;
+        cleanup();
+        resolve(jsonResponse(504, { code: 504, success: false, msg: "demo mock timeout" }));
+      }, 10000);
+      if (signal?.aborted) { abort(); return; }
+      signal?.addEventListener("abort", abort, { once: true });
       const res = createRes((status, bodyText, headers) => {
         if (settled) return;
         settled = true;
+        cleanup();
         resolve(new Response(bodyText, { status, headers }));
       });
-      try {
-        hit.handler(req, res);
-      } catch (err) {
+      const fail = (err: any) => {
         console.error(`[demoMock] handler 执行出错: ${method} ${parsed.pathname}`, err);
         if (!settled) {
           settled = true;
+          cleanup();
           resolve(jsonResponse(500, { code: 500, success: false, msg: String(err) }));
         }
+      };
+      try {
+        Promise.resolve(hit.handler(req, res)).catch(fail);
+      } catch (err) {
+        fail(err);
       }
-      // 兜底：handler 长时间未响应则返回 504，避免页面永久等待
-      setTimeout(() => {
-        if (!settled) {
-          settled = true;
-          resolve(jsonResponse(504, { code: 504, success: false, msg: "demo mock timeout" }));
-        }
-      }, 10000);
     });
   };
   console.info(`[demoMock] 浏览器端 mock 已启用，共 ${compiled.length} 条路由`);

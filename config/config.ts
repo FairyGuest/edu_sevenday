@@ -123,8 +123,13 @@ export default defineConfig({
   // }
   publicPath: NODE_ENV === "development" ? "/" : base,
   tailwindcss: false,
-  // quill 为 ESM，MFSU 联邦容器未暴露时会报 Module "./quill" does not exist
-  mfsu: {
-    exclude: ["quill"],
+  clickToComponent: false,
+  chainWebpack(memo) {
+    if (NODE_ENV === "development") memo.plugins.delete("progress-plugin-dev");
   },
+  // quill 为 ESM，MFSU 联邦容器未暴露时会报 Module "./quill" does not exist
+  mfsu: NODE_ENV === "development" ? {
+    strategy: "normal",
+    exclude: ["quill"],
+  } : false,
 });

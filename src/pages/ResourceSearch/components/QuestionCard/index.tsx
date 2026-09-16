@@ -197,15 +197,15 @@ const QuestionCard = ({
   );
 
   const questionTagItems = useMemo(
+    // v2.0-L1：难度不再外显（仅推荐引擎内部使用），题卡标签 = 题型 + 知识点
     () => [
       { text: quesType || "单选题", type: "type" },
-      { text: difficulty || "中等", type: "difficulty" },
       {
         text: kgPoints.map((point: any) => point.name).join(" "),
         type: "knowledge",
       },
     ],
-    [quesType, difficulty, kgPoints],
+    [quesType, kgPoints],
   );
 
   const handleAnalysisClick = useCallback(() => {

@@ -1,8 +1,6 @@
 import { postDataRequest, getDataRequest } from "@/utils";
 import { cogUrl } from "@/utils/host";
-import { getRequestParams, getStorageToken } from "@/utils/index";
-import { message } from "antd";
-import { history } from "@@/core/history";
+import { requestJson } from "@/utils/request";
 
 const isMock = false;
 const prefix = isMock ? '/api' : cogUrl;
@@ -29,81 +27,25 @@ async function postDataRequestWithCancel(params: any, url: string, requestKey: s
   // 创建新的控制器
   const controller = new AbortController();
   abortControllers[requestKey] = controller;
+  const timeout = setTimeout(() => controller.abort(), 30000);
 
   try {
-    const { newUrl, payload } = getRequestParams(url, { payload: params });
-    const authorization = window.__POWERED_BY_WUJIE__
-      ? (window as any).$wujie?.props?.token
-      : getStorageToken();
-
-    let headers: any = {
-      'Content-Type': contentType || 'application/json',
-    };
-
-    if (authorization) {
-      headers['Authorization'] = authorization.startsWith("Bearer ")
-        ? authorization
-        : `Bearer ${authorization}`;
-    }
-
-    const response = await fetch(newUrl, {
+    return await requestJson(url, {
       method: 'POST',
-      headers,
-      body: JSON.stringify(payload),
+      payload: params,
+      extraHeaders: { 'Content-Type': contentType || 'application/json' },
       signal: controller.signal,
     });
-
-    // 状态码检查，与原有逻辑保持一致
-    if (response.status >= 200 && response.status < 401) {
-      const data = await response.json();
-      const { code, msg, error } = data;
-
-      // 处理 401 状态码
-      if (code === 401) {
-        localStorage.clear();
-        history.push("/login");
-      }
-
-      // 处理错误消息
-      if ((msg || error) && code > 200) {
-        message.error({
-          content: `${msg || error}`,
-          key: `error${code}`,
-        });
-      }
-
-      // 请求成功后清理控制器
-      delete abortControllers[requestKey];
-      return data;
-    } else {
-      // 处理 HTTP 错误状态码
-      if (response.status === 401) {
-        localStorage.clear();
-        history.push("/login");
-      }
-
-      const error: any = new Error(response.statusText);
-      error.response = response;
-      throw error;
-    }
-  } catch (error: any) {
-    // 如果是取消请求，不抛出错误
-    if (error.name === 'AbortError') {
-      console.log(`Request ${requestKey} was cancelled`);
-      return { cancelled: true };
-    }
-
-    // 清理控制器
-    delete abortControllers[requestKey];
-
-    // 返回错误格式，与原有逻辑保持一致
-    return { err: error };
+  } finally {
+    clearTimeout(timeout);
+    // Completion of an older request must not delete the newer controller.
+    if (abortControllers[requestKey] === controller) delete abortControllers[requestKey];
   }
 }
 
 export async function postDataService(params: any, apiUrl: string, contentType?: string) {
   // 对于需要取消处理的接口，使用支持取消的请求函数
-  if (apiUrl === 'postGlobalQuestions' || apiUrl === 'postFavoriteQuestions' ||
+  if (apiUrl === 'postGlobalQuestions' || apiUrl === 'getQuestionPersonalPage' || apiUrl === 'postFavoriteQuestions' ||
       apiUrl === 'postGlobalPapers' || apiUrl === 'postPersonalPapers') {
     return postDataRequestWithCancel(params, api[apiUrl], apiUrl, contentType);
   }

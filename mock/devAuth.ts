@@ -29,6 +29,16 @@ const teacherContext = {
   teacher_name: "演示教师",
 };
 
+function saveContext(req: any, res: any) {
+  const body = req.body || {};
+  if (body.class_id) {
+    teacherContext.class_id = body.class_id;
+    teacherContext.class_name = `八年级(${Number(String(body.class_id).split("-").pop())})班`;
+  }
+  if (body.course_id) teacherContext.course_id = body.course_id;
+  res.json({ code: 200, msg: "ok", data: { ...teacherContext } });
+}
+
 export default {
   // 验证码（返回简单 SVG mock，任意输入可通过）
   "GET /api/web/eduAuth/captcha": (_req: any, res: any) => {
@@ -44,20 +54,8 @@ export default {
     // mock 模式：不校验验证码，任意账号密码+任意验证码均可登录
     setTimeout(() => res.json({ code: 200, msg: "ok", data: teacherUser }), 300);
   },
-  "POST /api/course/teacher_context": (req: any, res: any) => {
-    // 回显教师切换的班级/课程，保持全局上下文与页面选择一致
-    const body = req.body || {};
-    res.json({
-      code: 200,
-      msg: "ok",
-      data: {
-        ...teacherContext,
-        class_id: body.class_id || teacherContext.class_id,
-        class_name: body.class_id ? "" : teacherContext.class_name,
-        course_id: body.course_id || teacherContext.course_id,
-      },
-    });
-  },
+  "POST /api/course/teacher_context": saveContext,
+  "POST /api/course/teacher_context/save": saveContext,
   "GET /api/course/teacher_context": (_req: any, res: any) => {
     res.json({ code: 200, msg: "ok", data: teacherContext });
   },

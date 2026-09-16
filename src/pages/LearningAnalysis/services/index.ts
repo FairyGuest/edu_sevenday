@@ -1,5 +1,6 @@
 import { postDataRequest, getDataRequest } from "@/utils";
 import { cogUrl } from "@/utils/host";
+import { requestJson } from "@/utils/request";
 
 const api: any = {
   // getClassListUrl: `${cogUrl}/student_analysis/classes_by_user`,
@@ -34,6 +35,9 @@ const api: any = {
 };
 
 export async function postDataService(params: any, apiUrl: string) {
+  if (apiUrl === "getClassListUrl") {
+    return requestJson(api[apiUrl], { method: "POST", payload: params, signal: AbortSignal.timeout(30000) });
+  }
   return postDataRequest(params, api[apiUrl]);
 }
 

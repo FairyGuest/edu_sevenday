@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useImperativeHandle } from "react";
 import { connect, useDispatch, useRequest, history } from "umi";
-import { MoreOutlined, LoadingOutlined, ThunderboltOutlined } from "@ant-design/icons";
+import { MoreOutlined, LoadingOutlined } from "@ant-design/icons";
 import {
   Divider,
   Button,
@@ -20,6 +20,7 @@ import type { MenuProps } from "antd";
 import MarkdownRender from "@/components/MarkdownRender";
 import MarkdownRenderToc from "@/components/MarkdownRender/showToc";
 import { ZYIcon } from "@/components";
+import PlanViewer from "../PlanViewer";
 import {
   str2json,
   scrollTop,
@@ -73,6 +74,7 @@ const CreateRight = (props: any) => {
   const [teachPlanHtml, setTeachPlanHtml] = useState<string>(""); // 教案内容HTML
   const [sseStatus, setSseStatus] = useState<string>(""); // SSE状态
   const [visible, setVisible] = useState<boolean>(false); // 保存弹窗
+  const [viewerOpen, setViewerOpen] = useState<boolean>(false); // v2.0 查看教案（课件预览）浮层
   const [isEmpty, setIsEmpty] = useState<boolean>(true); // 是否为空
   const [sseNum, setSseNum] = useState<number>(0); // SSE内容标识（0：初始，1：思考，2：评估）
   const [isOpenEvaluate, setIsOpenEvaluate] = useState({
@@ -97,7 +99,7 @@ const CreateRight = (props: any) => {
       setTeachPlanContent(detailData?.plan_content || "");
       // setTeachPlanHtml(detailData?.html_content || "");
     }
-  }, [detailData?.id]);
+  }, [detailData?.id, detailData?.plan_content, detailData?.thinking_content]);
 
   useImperativeHandle(onRef, () => ({
     handleData: (params: any) => updChatSSE(params), // 获取数据
@@ -143,12 +145,14 @@ const CreateRight = (props: any) => {
         },
       });
       // setShowToc(true)  // 是否展示目录
-      planReplaceContent(); // 教案内容替换
-      refreshContent(); // 刷新内容
+      planReplaceContent(id || planParams?.id); // end 帧中的 id 比当前渲染快一拍
+      refreshContent?.(); // 刷新内容
       setSseStatus("end");
     }
 
     if (__action == "error") {
+      setThinkLoading(false);
+      setThinkCreating(false);
       messageApi.error(data);
       dispatch({
         type: "teachDesginModel/setData",
@@ -195,11 +199,11 @@ const CreateRight = (props: any) => {
     }, 100);
   };
   // 教案内容替换
-  const planReplaceContent = async () => {
+  const planReplaceContent = async (completedId?: string) => {
     const { code, data }: any = await dispatch({
       type: "teachDesginModel/getData",
       apiUrl: "getPlanReplaceUrl",
-      payload: { plan_id: planParams?.id },
+      payload: { plan_id: completedId || planParams?.id },
     });
     if (code === 200) {
       setTeachPlanContent(data?.plan_content); // 设置教案内容
@@ -594,11 +598,11 @@ const CreateRight = (props: any) => {
                 <Button
                   color="primary"
                   variant="solid"
-                  onClick={assignHomeworkFromPlan}
-                  disabled={planSseLoading}
-                  icon={<ThunderboltOutlined />}
+                  onClick={() => setViewerOpen(true)}
+                  disabled={planSseLoading || !teachPlanContent}
+                  icon={<ZYIcon type="ppt-color" />}
                 >
-                  布置作业
+                  生成课件
                 </Button>
                 <Button
                   color="primary"
@@ -926,6 +930,25 @@ const CreateRight = (props: any) => {
           </Form.Item>
         </Form>
       </Modal>
+      {/* v2.0 查看教案（课件预览）：设计页「生成课件」进入，查看态可布置作业 / 查看评估结果 */}
+      <PlanViewer
+        open={viewerOpen}
+        onClose={() => setViewerOpen(false)}
+        docTitle={`课时教案：《${planParams?.title || planParams?.chapter_name || detailData?.title || ""}》`}
+        version={detailData?.version}
+        content={teachPlanContent || detailData?.plan_content || ""}
+        score={detailData?.evaluate_score}
+        evaluating={detailData?.is_new_evaluate === 1}
+        evalDisabled={planSseLoading}
+        onEvaluate={() => onEvaluateClick("")}
+        onOpenReport={() => {
+          const id = detailData?.id || planParams.id;
+          if (id) window.open(history.createHref({ pathname: "/evaluateReport", search: `?id=${encodeURIComponent(id)}` }));
+        }}
+        onDownload={onDownloadClick}
+        onAssignHomework={assignHomeworkFromPlan}
+        assignDisabled={planSseLoading}
+      />
     </div>
   );
 };

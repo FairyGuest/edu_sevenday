@@ -84,6 +84,9 @@ export default {
   },
 
   reducers: {
+    invalidateQuestions(state: any) {
+      return { ...state, questionRequestSeq: (state.questionRequestSeq || 0) + 1, questionLoading: false };
+    },
     updateState(state: any, { res }: any) {
       // 更新state
       return {
@@ -94,6 +97,28 @@ export default {
   },
 
   effects: {
+    // All list entry points (filters, tree and pagination) share one request generation.
+    *getLatestQuestions({ payload, apiUrl, pagination }: any, { call, put, select }: any): Generator<any, any, any> {
+      const state = yield select((s: any) => s.resourceSearchModel);
+      const seq = (state.questionRequestSeq || 0) + 1;
+      yield put({ type: "updateState", res: { questionRequestSeq: seq, questionLoading: true, questionError: null } });
+      let result: any;
+      try { result = yield call(services.postDataService, payload, apiUrl); }
+      catch (err) { result = { err }; }
+      const current = yield select((s: any) => s.resourceSearchModel);
+      if (current.questionRequestSeq !== seq) return { skipped: true };
+      yield put({ type: "updateState", res: result?.code === 200 ? {
+        questionLoading: false,
+        questionList: Array.isArray(result.data?.records) ? result.data.records : [],
+        pagination: {
+          ...pagination,
+          current: result.data?.current ?? result.data?.page_num ?? payload.current,
+          pageSize: result.data?.size ?? result.data?.page_size ?? payload.size,
+          total: result.data?.total ?? 0,
+        },
+      } : { questionLoading: false, questionList: [], questionError: result?.msg || "题目加载失败，请重试" } });
+      return result;
+    },
     // post请求
     *postData(
       params: any,
@@ -138,6 +163,21 @@ export default {
     // 设置数据
     *setData({ payload }: any, { call, put, select }: any) {
       yield put({ type: "updateState", res: { ...payload } });
+    },
+
+    // v2.0 稳定性：AI 助手筛题动作的筛选合并入口——助手不订阅题库状态，
+    // 由模型内部读当前 filters 合并写入（避免题库列表每次翻页都重渲染助手整树）
+    *applyAssistantFilter({ payload }: any, { put, select }: any) {
+      const { resourceSearchModel } = yield select((s: any) => s);
+      const cur = resourceSearchModel?.filters || {};
+      yield put({
+        type: "updateState",
+        res: {
+          filters: { ...cur, ...(payload.filters || {}) },
+          ...(payload.searchText !== undefined ? { searchText: payload.searchText } : {}),
+          pagination: { ...(resourceSearchModel?.pagination || {}), current: 1 },
+        },
+      });
     },
   },
 };

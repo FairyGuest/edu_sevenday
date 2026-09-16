@@ -187,7 +187,7 @@ const PptListRender = (props: any) => {
             const afterEditHtml = artifactsEditor.getSerializeCode();
             setCurrentCodeText(removeCdnPrefixToHtml(afterEditHtml));
             dispatch({
-                type: 'teachingModel/postData',
+                type: 'designModel/postData',
                 apiUrl: "updatePPT",
                 payload: {
                     session_id,
