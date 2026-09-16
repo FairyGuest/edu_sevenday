@@ -1,6 +1,7 @@
 import { message } from "antd";
 import { history } from "@@/core/history";
 import { getStorageToken, getRequestParams } from "@/utils/index";
+import { cogUrl } from "@/utils/host";
 import qs from "query-string";
 
 const inflight = new Map<string, Promise<any>>();
@@ -63,12 +64,41 @@ function checkStatus(response: any, url: string, requestToken: string | null | u
   }
 
   if (response.status === 401 && !isAuthExemptUrl(url)) {
-    clearLoginAndRedirect(requestToken);
+    guardLogout(requestToken);
   }
 
   const error: any = new Error(response.statusText);
   error.response = response;
   throw error;
+}
+
+/** 401 会话探针：先问权威鉴权接口（getUser），确认会话真的失效才全局登出。
+ *  避免个别接口的网关鉴权配置问题（如测试网关未给 /course/* 转发 Authorization 头，
+ *  后端报"缺失令牌"）在登录成功后立刻摧毁会话，形成"登录即被踢回"的死循环。 */
+let logoutProbing = false;
+function guardLogout(requestToken: string | null | undefined) {
+  if (logoutProbing) return;
+  const token = window.__POWERED_BY_WUJIE__
+    ? (window as any).$wujie?.props?.token : getStorageToken();
+  if (!token) {
+    clearLoginAndRedirect(requestToken);
+    return;
+  }
+  logoutProbing = true;
+  fetch(`${cogUrl}/web/eduAuth/getUser`, {
+    headers: { Authorization: token.startsWith?.("Bearer ") ? token : `Bearer ${token}` },
+  })
+    .then(async (r) => {
+      let expired = r.status === 401;
+      if (!expired) {
+        const j = await r.json().catch(() => null);
+        if (j && Number(j.code) === 401) expired = true;
+      }
+      if (expired) clearLoginAndRedirect(requestToken);
+      // 探针通过：会话仍有效，本次 401 属于该接口自身问题（网关未转发鉴权头），不全局登出
+    })
+    .catch(() => clearLoginAndRedirect(requestToken))
+    .finally(() => { logoutProbing = false; });
 }
 
 /**
@@ -109,9 +139,13 @@ export function requestJson(url: string, options: any) {
   const isLoginOrCaptcha =
     aUrl.includes("/eduAuth/login") || aUrl.includes("/eduAuth/captcha");
   if (authorization && !isLoginOrCaptcha) {
-    headers["Authorization"] = authorization.startsWith("Bearer ")
+    const bearer = authorization.startsWith("Bearer ")
       ? authorization
       : `Bearer ${authorization}`;
+    headers["Authorization"] = bearer;
+    // 双鉴权头兼容：/web/** 自定义过滤读 Authorization；BladeX 服务（/course/** 等）
+    // 读 Blade-Auth（缺失时后端报"缺失令牌,鉴权失败"）。两头并发互不干扰。
+    headers["Blade-Auth"] = `bearer ${bearer.replace(/^Bearer\s+/i, "")}`;
   }
 
   // 处理下载二进制流文件  download_type === zip  就走不走parseJSON
@@ -139,7 +173,7 @@ export function requestJson(url: string, options: any) {
       }
       const { code, msg, error } = data;
       if (code == 401 && !isAuthExemptUrl(aUrl)) {
-        clearLoginAndRedirect(authorization);
+        guardLogout(authorization);
         return data;
       }
 

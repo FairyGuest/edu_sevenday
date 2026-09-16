@@ -98,7 +98,7 @@ const Login = (props: any) => {
     }
 
     setLoading(true);
-    let { code, data } = await dispatch({
+    let { code, data, msg } = await dispatch({
       type: "loginModel/postData",
       apiUrl: "loginUrl",
       payload: {
@@ -116,8 +116,10 @@ const Login = (props: any) => {
     });
 
     setLoading(false);
-    if (code !== 200) {
+    if (code !== 200 && code !== 3001) {
       refreshCaptcha();
+      // 登录失败必须给出后端原因（验证码错误/密码错误等），否则表现为“点了没反应”
+      message.error((msg as string) || "登录失败，请检查账号、密码与验证码");
     }
     if (code === 200) {
       const accessToken = "Bearer " + data?.authVO?.accessToken || "";
