@@ -40,13 +40,14 @@ export function getPageGreeting(pathname: string, search: string, context: any, 
       if (classId && studentId) g.suggestions = { class_id: classId, student_id: studentId };
       if (!studentId) { g.text = "这里是个人学情。先在左侧选择学生，就能查看该生的画像与建议。也可以直接告诉我学生姓名。"; g.quick = [query("如何看个人学情？")]; }
     } else if (tab === "kgraph") {
-      g.title = "学情知识图谱"; g.text = "这里可以查看知识点的掌握分布。可以先了解图谱读法，再围绕薄弱知识点找题或备课。"; g.quick = graphQuick;
+      g.title = "学情知识图谱"; g.text = "这里可以查看知识点的掌握分布。可以先把班级学情注入教学设计，再围绕薄弱知识点找题或备课。";
+      g.quick = [action("注入班级学情到教学设计", "inject_teaching_design", { class_id: classId }), ...graphQuick];
     } else if (tab === "homework") {
       g.title = "作业分析"; g.text = "这里是作业分析。可以查看作业情况，或讨论错因与讲评安排。";
       g.quick = [query("查看作业情况", "查看当前班级的作业情况"), query("如何安排作业讲评？")];
     } else {
-      g.title = "班级学情"; g.text = "你好，我是小七。这里是" + (className ? className + "的" : "") + "班级学情。可以从画像建议入手，看看共性薄弱点，再安排备课和练习。";
-      g.quick = [query("查看班级学情", "查看当前页班级学情"), action("带入教学设计", "inject_teaching_design", { class_id: classId }), action("生成补弱练习", "personalized_paper", { class_id: classId, strategy: "weak" })];
+      g.title = "班级学情"; g.text = "你好，我是小七。这里是" + (className ? className + "的" : "") + "班级学情。可以先将班级学情注入教学设计，针对共性薄弱点备课，也可以继续查看学情或生成补弱练习。";
+      g.quick = [action("注入班级学情到教学设计", "inject_teaching_design", { class_id: classId }), query("查看班级学情", "查看当前页班级学情"), action("生成补弱练习", "personalized_paper", { class_id: classId, strategy: "weak" })];
       if (classId) g.suggestions = { class_id: classId };
     }
   } else if (pathname === "/source") {

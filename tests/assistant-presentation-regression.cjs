@@ -7,6 +7,20 @@ const analysis = { selectedClass: { value: "cls-g8-01", label: "八年级1班" }
 const student = { route: "/learning-analysis", title: "学情分析 · 彭媛 的个人学情", summary: "彭媛旧摘要", data: { class_id: "cls-g8-01", student_id: "6738633173303030", start_date: "2026-08-01", end_date: "2026-08-31" } };
 let count = 0;
 const test = (name, fn) => { fn(); count++; console.log("PASS " + name); };
+test("所有班级在画像缺失、加载中和知识图谱场景仍优先提供当前班级注入入口", () => {
+  for (const route of ["/learning-analysis", "/interact/analysis"]) {
+    for (const classId of ["cls-g8-01", "cls-g8-02", "cls-g8-03"]) {
+      for (const tab of ["profile", "kgraph"]) {
+        for (const context of [null, student]) {
+          const g = greeting(route, `?class_id=${classId}&tab=${tab}`, context, { ...analysis, classSelectionLoading: true });
+          assert.equal(g.quick[0].label, "注入班级学情到教学设计");
+          assert.equal(g.quick[0].action.key, "inject_teaching_design");
+          assert.equal(g.quick[0].action.params.class_id, classId);
+        }
+      }
+    }
+  }
+});
 test("日期来源筛选不产生新场景，发送上下文使用最新筛选", () => {
   const a = greeting("/learning-analysis", "?tab=personal&student_id=6738633173303030", student, analysis);
   const b = greeting("/learning-analysis", "?tab=personal&student_id=6738633173303030&start_date=2026-09-01&sources=考试记录", student, analysis);

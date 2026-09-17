@@ -21,6 +21,7 @@ import MarkdownRender from "@/components/MarkdownRender";
 import MarkdownRenderToc from "@/components/MarkdownRender/showToc";
 import { ZYIcon } from "@/components";
 import PlanViewer from "../PlanViewer";
+import { publishPlanHomework } from "../PlanViewer/publishHomework";
 import {
   str2json,
   scrollTop,
@@ -328,25 +329,9 @@ const CreateRight = (props: any) => {
   };
 
   // 布置作业：将教案「四、习题」选题注入试卷（PRD：生成教案的作业提供布置入口）
-  const assignHomeworkFromPlan = async () => {
-    try {
-      const res = await fetch("/api/teacher/teaching/assign-homework", {
-        method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          from: "plan",
-          chapter: planParams?.title || planParams?.chapter_name || "",
-          class_id: planParams?.class_id || "",
-        }),
-      });
-      const d = await res.json();
-      if (d.code === 200) {
-        message.success(`已将教案 ${d.data.n_questions} 道习题注入试卷（${d.data.homework_id}），可到「作业布置」查看`);
-      } else {
-        message.error(d.msg || "布置失败");
-      }
-    } catch {
-      message.error("布置失败，请重试");
-    }
+  const assignHomeworkFromPlan = async (classId: string) => {
+    const data = await publishPlanHomework(classId, detailData?.title || planParams?.title || planParams?.chapter_name || "");
+    message.success(`已发布教案中的 ${data.n_questions} 道习题，可到「作业下发」查看`);
   };
 
   const createPlanFn = () => {
@@ -947,6 +932,8 @@ const CreateRight = (props: any) => {
         }}
         onDownload={onDownloadClick}
         onAssignHomework={assignHomeworkFromPlan}
+        planId={planParams?.id || detailData?.id}
+        defaultClassId={planParams?.class_id ?? (detailData?.id === planParams?.id ? detailData?.class_id : "")}
         assignDisabled={planSseLoading}
       />
     </div>

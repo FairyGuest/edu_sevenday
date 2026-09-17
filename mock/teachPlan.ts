@@ -14,14 +14,14 @@ const planHistory = [
   "12.2 三角形全等的判定", "14.2 乘法公式", "14.3 因式分解",
 ].map((title, i) => ({ id: `tp-00${i + 1}`, title, type: 1, created_at: "2026-09-08 10:20" }));
 // Keep generated content available to the detail/replace reads in this demo session.
-const generatedPlans = new Map<string, { title: string; plan_content: string }>();
+const generatedPlans = new Map<string, { title: string; plan_content: string; class_id: string; type: number; created_at: string }>();
 function planDetail(id: string) {
   const saved = generatedPlans.get(id);
   const item = planHistory.find(p => p.id === id);
   if (!saved && !item) return null;
   const title = saved?.title || item!.title;
   const content = saved?.plan_content || pickPlanMd(title, {});
-  return { id, title, type: 1, status: 1, plan_content: content, thinking_content: "", is_new_evaluate: 0,
+  return { id, title, type: saved?.type || 1, class_id: saved?.class_id || "", status: 1, plan_content: content, thinking_content: "", is_new_evaluate: 0,
     chat_history: [{ role: "assistant", content_type: "md", content: { end: { status: "success", chat_content: content } } }] };
 }
 
@@ -217,7 +217,7 @@ function withGuidance(md: string, g: any): string {
   return lines.join("\n") + "\n\n" + md;
 }
 
-function streamMarkdown(res: any, md: string, editMode = false, study = false) {
+function streamMarkdown(res: any, md: string, editMode = false, study = false, metadata: any = {}) {
   res.writeHead(200, {
     "Content-Type": "text/event-stream",
     "Cache-Control": "no-cache",
@@ -233,7 +233,11 @@ function streamMarkdown(res: any, md: string, editMode = false, study = false) {
   // end 必须带 id：前端在 end 时写入 planParams.id 终止生成流程，缺失会导致无限重新生成
   const id = `tp-${Date.now().toString(36)}`;
   if (!study && !editMode) {
-    generatedPlans.set(id, { title: lastChapterName, plan_content: md });
+    generatedPlans.set(id, {
+      title: metadata.chapter_name || metadata.title || lastChapterName, plan_content: md,
+      class_id: metadata.class_id || "", type: Number(metadata.type) === 2 ? 2 : 1,
+      created_at: new Date().toISOString().replace("T", " ").slice(0, 16),
+    });
     if (generatedPlans.size > 50) generatedPlans.delete(generatedPlans.keys().next().value!);
   }
   send({ __action: "end", id });
@@ -277,11 +281,12 @@ export default {
 
   // ===== 教案列表 =====
   "GET /api/teach_plan/teach_plan_history/list": (_req: any, res: any) => {
+    const list = [...generatedPlans.entries()].reverse().map(([id, { plan_content, ...item }]) => ({ id, ...item })).concat(planHistory as any);
     res.json({
       code: 200, msg: "ok",
       data: {
-        list: planHistory,
-        total: 7,
+        list,
+        total: list.length,
       },
     });
   },
@@ -349,12 +354,12 @@ export default {
     let md = pickPlanMd(chapterName, { classType: b.class_type, studyCtx: ctx || undefined });
     if (b.guidance?.modules?.length && !isChat) lastGuidance = b.guidance;
     md = withGuidance(md, b.guidance);
-    streamMarkdown(res, md, isChat);
+    streamMarkdown(res, md, isChat, false, b);
   },
 
   "POST /api/teach_plan/single_teach_maker": (req: any, res: any) => {
     const md = pickPlanMd(req.body?.chapter_name || lastChapterName, {});
-    streamMarkdown(res, md, !!(req.body?.chat || req.body?.content));
+    streamMarkdown(res, md, !!(req.body?.chat || req.body?.content), false, { ...req.body, type: 1 });
   },
 
   // ===== SSE 学案生成 =====

@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState } from "react";
-import { Button, Dropdown, Tooltip, message } from "antd";
+import { useEffect, useState } from "react";
+import { Button, Dropdown, Tooltip } from "antd";
+import AssignHomeworkDialog from "./AssignHomeworkDialog";
 import MarkdownRenderToc from "@/components/MarkdownRender/showToc";
 import { ZYIcon } from "@/components";
 import { ThunderboltOutlined } from "@ant-design/icons";
@@ -38,32 +39,26 @@ const PlanViewer = (props: {
   onEvaluate?: () => void;
   onOpenReport?: () => void;
   onDownload?: (e: any) => void;
-  onAssignHomework?: () => void | Promise<unknown>;
+  onAssignHomework?: (classId: string) => void | Promise<unknown>;
+  defaultClassId?: string;
+  planId?: string;
   assignDisabled?: boolean;
 }) => {
   const {
     open, onClose, docTitle, version, content, score,
-    evaluating, evalDisabled, onEvaluate, onOpenReport, onDownload, onAssignHomework, assignDisabled,
+    evaluating, evalDisabled, onEvaluate, onOpenReport, onDownload, onAssignHomework, assignDisabled, defaultClassId, planId,
   } = props;
   const [wide, setWide] = useState(false); // 全屏（宽版）布局
-  const [assigning, setAssigning] = useState(false);
-  const assignRef = useRef(false);
-  const assign = async () => {
-    if (assignRef.current || !onAssignHomework) return;
-    assignRef.current = true;
-    setAssigning(true);
-    try { await onAssignHomework(); }
-    catch { message.error("布置失败，请重试"); }
-    finally { assignRef.current = false; setAssigning(false); }
-  };
+  const [assignOpen, setAssignOpen] = useState(false);
+  useEffect(() => { setAssignOpen(false); }, [open, planId]);
 
   // Esc 关闭
   useEffect(() => {
-    if (!open) return;
+    if (!open || assignOpen) return;
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [open, onClose]);
+  }, [open, onClose, assignOpen]);
 
   if (!open) return null;
 
@@ -76,8 +71,7 @@ const PlanViewer = (props: {
               type="primary"
               icon={<ThunderboltOutlined />}
               disabled={assignDisabled || !onAssignHomework}
-              loading={assigning}
-              onClick={assign}
+              onClick={() => setAssignOpen(true)}
             >
               布置作业
             </Button>
@@ -109,12 +103,14 @@ const PlanViewer = (props: {
             <Button
               type="text"
               className="plan_viewer_icon_btn"
+              aria-label={wide ? "退出全屏预览" : "全屏预览"}
               icon={<ZYIcon type={wide ? "icon_fold" : "icon_unfold"} />}
               onClick={() => setWide((v) => !v)}
             />
             <Button
               type="text"
               className="plan_viewer_icon_btn"
+              aria-label="关闭教案预览"
               icon={<ZYIcon type="close" />}
               onClick={onClose}
             />
@@ -131,6 +127,10 @@ const PlanViewer = (props: {
           </div>
         </div>
       </div>
+      {assignOpen && onAssignHomework && <AssignHomeworkDialog
+        defaultClassId={defaultClassId} docTitle={docTitle}
+        onPublish={onAssignHomework} onClose={() => setAssignOpen(false)}
+      />}
     </div>
   );
 };

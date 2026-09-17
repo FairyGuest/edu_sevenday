@@ -10,7 +10,7 @@ import GuideDrawer from "./components/AnswerStep/GuideDrawer";
 import { sseRequset, getOrgId, str2json, deepCopy, stopSSE, uuid } from "@/utils";
 // import { cogUrl } from "@/utils/host";
 import { cogUrl } from "./services";
-import { useElementSize } from "@/hooks/useElementSize";
+import { usePlanSplit } from "./usePlanSplit";
 
 import "./Unit.less";
 
@@ -19,8 +19,7 @@ let gChatList: any = []; // 缓存聊天列表
 
 const Unit = () => {
   const layoutRef = useRef<HTMLDivElement>(null);
-  const { width: layoutWidth } = useElementSize(layoutRef);
-  const stacked = layoutWidth > 0 && layoutWidth < 1020;
+  const { stacked, splitterStyle, panelSizes, sizes, leftWidth, rightWidth: panelRightWidth, onResize } = usePlanSplit(layoutRef);
   const dispatch = useDispatch();
   const rightRef = useRef<any>(null); // 右侧组件ref
   const unitTimerRef = useRef<any>(null); // 单元轮询定时器
@@ -37,7 +36,6 @@ const Unit = () => {
     leftChatLoading, // 左侧聊天加载
   } = useSelector((state: any) => state.teachDesginModel);
   const [messageApi, contextHolder] = message.useMessage();
-  const [sizes, setSizes] = useState([600, "auto"]); // 分割器大小
   const [rightWidth, setRightWidth] = useState(600); // 右侧宽度
   const [step, setStep] = useState(1); // 当前步骤  1: 单元教案 2: 课时教案 3: 学案
   const [unitChatList, setUnitChatList] = useState<any[]>([]); // 单元聊天列表
@@ -565,10 +563,10 @@ const Unit = () => {
 
   return (
     <div className="unit-design drawer-element" ref={layoutRef}>
-      <Splitter onResize={setSizes} layout={stacked ? "vertical" : "horizontal"}>
+      <Splitter style={splitterStyle} onResize={onResize} layout={stacked ? "vertical" : "horizontal"}>
         <Splitter.Panel
           className="unit-design-left"
-          defaultSize="50%"
+          size={panelSizes[0]}
           min={stacked ? "20%" : 434}
           collapsible
         >
@@ -586,7 +584,7 @@ const Unit = () => {
           {step === 1 && (
             <UnitChat
               step={step}
-              leftWidth={sizes[0]}
+              leftWidth={leftWidth}
               teachPlan={teachPlan}
               chatList={unitChatList}
               detailData={unitDetailData}
@@ -601,7 +599,7 @@ const Unit = () => {
           {step === 2 && (
             <UnitChat
               step={step}
-              leftWidth={sizes[0]}
+              leftWidth={leftWidth}
               chatList={classChatList}
               detailData={classDetailData}
               inputValue={inputValue}
@@ -614,13 +612,13 @@ const Unit = () => {
           {step === 3 && (
             <UnitChat
               step={step}
-              leftWidth={sizes[0]}
+              leftWidth={leftWidth}
               chatList={studyChatList}
               detailData={studyDetailData}
             />
           )}
         </Splitter.Panel>
-        <Splitter.Panel className="unit-design-right" min={stacked ? "20%" : 560} collapsible>
+        <Splitter.Panel className="unit-design-right" size={panelSizes[1]} min={stacked ? "20%" : 560} collapsible>
           <div ref={rightRef} style={{ height: "100%" }}>
             {!isInView && step === 1 && (
               <Tooltip placement="right" title={"课标对齐指南"}>
@@ -666,7 +664,7 @@ const Unit = () => {
             {step === 3 && (
               <StudyRight
                 onRef={studyRightRef}
-                rightWidth={sizes[1]}
+                rightWidth={panelRightWidth}
                 courseList={courseList}
                 itemData={currStudy}
                 detailData={studyDetailData}

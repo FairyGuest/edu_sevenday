@@ -10,14 +10,13 @@ import GuideDrawer from './components/AnswerStep/GuideDrawer'
 import { sseRequset, str2json, deepCopy, stopSSE } from "@/utils";
 // import { cogUrl } from "@/utils/host";
 import { cogUrl } from "./services";
-import { useElementSize } from "@/hooks/useElementSize";
+import { usePlanSplit } from "./usePlanSplit";
 
 import "./Hour.less";
 
 const Hour = (props: any) => {
   const layoutRef = useRef<HTMLDivElement>(null);
-  const { width: layoutWidth } = useElementSize(layoutRef);
-  const stacked = layoutWidth > 0 && layoutWidth < 1020;
+  const { stacked, splitterStyle, panelSizes, sizes, leftWidth, onResize: handleResize } = usePlanSplit(layoutRef);
   const dispatch = useDispatch();
   const rightRef = useRef<any>(null); // 右侧组件
   const leftRef = useRef<any>(null); // 右侧组件
@@ -69,9 +68,6 @@ const Hour = (props: any) => {
 
   const [againEvaluation, setAgainEvaluation] = useState(false)
 
-  const [leftWidth, setLeftWidth] = useState(600) // 左侧宽度
-
-  const [sizes, setSizes] = useState([600, "auto"]); // 分割器大小
 
   const [leftChatStatus, setLeftChatStatus] = useState('')  // 左侧对话流的状态
 
@@ -437,18 +433,6 @@ const Hour = (props: any) => {
     sseRequset(payload, (res: any) => rightRef.current?.handleData(res));
   }
 
-  // 拖拽过程实时触发
-  const handleResize = (sizes: any) => {
-    setSizes(sizes)
-    setLeftWidth(sizes[0])
-
-    // if (sizes[1] < maxRightWidth) {
-    //   setShowMore(true)
-    // } else {
-    //   setShowMore(false)
-    // }
-  };
-
   // 课时聊天发送（右侧）
   const onChatClick = async (value: any) => {
     const payload = {
@@ -642,12 +626,13 @@ const Hour = (props: any) => {
     <div className="hour-design drawer-element" ref={layoutRef}>
 
       <Splitter
+        style={splitterStyle}
         onResize={handleResize}
       // onResizeEnd={handleResizeEnd}
        layout={stacked ? "vertical" : "horizontal"}>
         {<Splitter.Panel
           className="hour-design-left"
-          defaultSize="50%"
+          size={panelSizes[0]}
           min={stacked ? "20%" : 434}
           // collapsible
           collapsible={{ start: true, end: true, showCollapsibleIcon: false }}
@@ -699,6 +684,7 @@ const Hour = (props: any) => {
         </Splitter.Panel>}
         <Splitter.Panel
           className="hour-design-right"
+          size={panelSizes[1]}
           collapsible={{ start: true, end: true, showCollapsibleIcon: false }}
           min={stacked ? "20%" : 560}
         >

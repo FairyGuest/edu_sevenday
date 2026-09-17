@@ -568,6 +568,9 @@ export default {
     if (!class_id) {
       return res.json({ code: 400, msg: "缺少发布班级：请从学情分析注入班级后布置，或选择班级", data: null });
     }
+    if (!getClasses().some(c => c.class_id === class_id)) {
+      return res.json({ code: 400, msg: "发布班级不存在，请重新选择班级", data: null });
+    }
     const now = new Date().toISOString().replace("T", " ").slice(0, 19);
     if (from === "plan") {
       const rec = {
