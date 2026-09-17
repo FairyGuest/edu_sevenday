@@ -2,6 +2,7 @@
 const http = require("node:http");
 const fs = require("node:fs");
 const path = require("node:path");
+const { handleModelRequest } = require("../server/assistant-model.cjs");
 
 const root = path.resolve(__dirname, "../dist");
 const port = Number(process.env.PORT || 4173);
@@ -13,6 +14,10 @@ if (!fs.existsSync(path.join(root, "index.html"))) {
 }
 
 http.createServer((req, res) => {
+  if (new URL(req.url, "http://localhost").pathname === "/api/assistant/model") {
+    handleModelRequest(req, res);
+    return;
+  }
   if (!["GET", "HEAD"].includes(req.method)) { res.writeHead(405).end(); return; }
   let pathname;
   try { pathname = decodeURIComponent(new URL(req.url, "http://localhost").pathname); }

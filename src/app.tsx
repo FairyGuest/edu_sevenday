@@ -8,6 +8,7 @@ import "./markdown-body.less";
 import "@/components/useSiderTour/index.less";
 import { setStorageToken } from "@/utils";
 import { GlobalAssistantSafe } from "@/components/GlobalAssistant";
+import { AssistantLayout } from "@/components/GlobalAssistant/layout";
 import RouteProgress from "@/components/RouteProgress";
 
 // demo 静态部署模式（build:demo）：浏览器端拦截 /api 请求返回 mock 数据
@@ -204,6 +205,7 @@ export const layout = (props: any) => {
       return (
         <>
           <ConfigProvider locale={zhCN}>
+            <AssistantLayout>
             <div className="layout_content">
               <LayoutSider {...props} />
               <div className="content_wrap">
@@ -214,6 +216,7 @@ export const layout = (props: any) => {
             <GlobalAssistantSafe />
             {/* v2.0 页面流转优化：路由切换顶部进度条（即时反馈） */}
             <RouteProgress />
+            </AssistantLayout>
           </ConfigProvider>
         </>
       );

@@ -8,7 +8,7 @@
  */
 
 const API_URL = "https://open.bigmodel.cn/api/anthropic/v1/messages";
-const API_KEY = process.env.ZHIPU_API_KEY || "4139bc2c59ec42a5ad3cd13f14cca4bf.iWELzeqxnJX9MMjg";
+const API_KEY = process.env.ZHIPU_API_KEY || "f95a15e7461e403e9bfeacd5255967e5.r8Aq95Fy3EgfEJG1";
 const MODEL = process.env.ZHIPU_MODEL || "glm-4.6";
 
 async function askAI(system: string, user: string, maxTokens = 1200): Promise<string | null> {

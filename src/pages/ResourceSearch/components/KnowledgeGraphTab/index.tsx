@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useDispatch } from "@umijs/max";
-import { Card, Empty, Segmented, Spin, Tag, message } from "antd";
+import { Alert, Button, Card, Empty, Segmented, Spin, Tag, message } from "antd";
 import { PartitionOutlined } from "@ant-design/icons";
 
 import KnowledgeGraph from "@/pages/TeacherProfile/components/KnowledgeGraph";
@@ -41,7 +41,9 @@ export default function KnowledgeGraphTab() {
   const dispatch = useDispatch();
   const [grade, setGrade] = useState<string>("all");
   const [data, setData] = useState<any>(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const [retry, setRetry] = useState(0);
   const [node, setNode] = useState<string | null>(null);
   const [explain, setExplain] = useState<any>(null);
   const [explainLoading, setExplainLoading] = useState(false);
@@ -50,6 +52,7 @@ export default function KnowledgeGraphTab() {
   useEffect(() => {
     let active = true;
     setLoading(true);
+    setError("");
     setData(null);
     setNode(null);
     setExplain(null);
@@ -57,10 +60,10 @@ export default function KnowledgeGraphTab() {
     explainRequest.current?.abort();
     fetchGraph(grade)
       .then((d) => { if (active) setData(d); })
-      .catch((e) => { if (active) message.error(`知识图谱加载失败：${e?.message || "网络异常"}`); })
+      .catch((e) => { if (active) setError(`知识图谱加载失败：${e?.message || "网络异常"}`); })
       .finally(() => { if (active) setLoading(false); });
     return () => { active = false; explainRequest.current?.abort(); };
-  }, [grade]);
+  }, [grade, retry]);
 
   // v2.0-I：注册 AI 助手图谱上下文（图谱统计 + 图谱专属快捷指令；卸载注销）
   useEffect(() => {
@@ -81,7 +84,7 @@ export default function KnowledgeGraphTab() {
         },
       },
     });
-    return () => dispatch({ type: "assistantModel/setPageContext", payload: null });
+    return () => { dispatch({ type: "assistantModel/setPageContext", payload: null }); };
   }, [data?.stats]);
 
   const onNodeClick = useCallback((id: string) => {
@@ -140,11 +143,11 @@ export default function KnowledgeGraphTab() {
         }
       >
         <Spin spinning={loading}>
-          {graph?.nodes?.length ? (
+          {error ? <Alert type="error" showIcon message={error} action={<Button onClick={() => setRetry(v => v + 1)}>重试</Button>} /> : graph?.nodes?.length ? (
             <KnowledgeGraph graph={graph} variant="catalog" height={560} onNodeClick={onNodeClick} />
           ) : !loading ? (
             <Empty description="暂无图谱数据" style={{ margin: "80px 0" }} />
-          ) : null}
+          ) : <div style={{ height: 560 }} aria-label="正在加载知识图谱" />}
         </Spin>
         {data?.stats ? (
           <p className="kg_tab_note">

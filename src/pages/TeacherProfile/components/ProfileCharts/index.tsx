@@ -1,4 +1,4 @@
-import { memo, useState } from "react";
+import { memo, useMemo, useState } from "react";
 import { Button, Modal, Table } from "antd";
 import { MessageOutlined } from "@ant-design/icons";
 import ReactECharts from "echarts-for-react";
@@ -28,7 +28,7 @@ function ProfileCharts({ trend, sourceMix, weakRanking, classId }: {
       .then(d => { if (d.code === 200) setIaRows(d.data || []); })
       .finally(() => setIaLoading(false));
   };
-  const lineOption = {
+  const lineOption = useMemo(() => ({
     grid: { left: 40, right: 16, top: 24, bottom: 26 },
     xAxis: { type: "category", data: trend.map((_, i) => `${i + 1}`), axisLabel: { color: "#8a94a8" } },
     yAxis: { type: "value", min: (v: any) => Math.max(0, Math.floor(v.min - 5)), axisLabel: { color: "#8a94a8" }, splitLine: { lineStyle: { color: "#eef1f6" } } },
@@ -41,9 +41,9 @@ function ProfileCharts({ trend, sourceMix, weakRanking, classId }: {
       symbolSize: 7, itemStyle: { color: "#4f7df0" }, lineStyle: { width: 2.5 },
       areaStyle: { color: "rgba(79,125,240,0.08)" },
     }],
-  };
+  }), [trend]);
 
-  const pieOption = {
+  const pieOption = useMemo(() => ({
     tooltip: { trigger: "item", formatter: "{b}：{c}次（{d}%）" },
     legend: { bottom: 0, icon: "circle", itemWidth: 8, itemHeight: 8, textStyle: { color: "#5f6b81", fontSize: 11 } },
     series: [{
@@ -52,10 +52,11 @@ function ProfileCharts({ trend, sourceMix, weakRanking, classId }: {
       label: { show: false },
       data: sourceMix.filter((s) => s.n > 0).map((s) => ({ name: s.source, value: s.n, itemStyle: { color: SRC_COLORS[s.source] || "#999" } })),
     }],
-  };
+  }), [sourceMix]);
 
-  const top = weakRanking.slice(0, 6);
-  const barOption = {
+  const barOption = useMemo(() => {
+    const top = weakRanking.slice(0, 6);
+    return {
     grid: { left: 110, right: 46, top: 8, bottom: 20 },
     xAxis: { type: "value", axisLabel: { color: "#8a94a8" }, splitLine: { lineStyle: { color: "#eef1f6" } } },
     yAxis: { type: "category", inverse: true, data: top.map((w) => w.cluster), axisLabel: { color: "#2a3346", width: 100, overflow: "truncate" } },
@@ -67,7 +68,8 @@ function ProfileCharts({ trend, sourceMix, weakRanking, classId }: {
       type: "bar", barWidth: 10, itemStyle: { color: "#8e7ce0", borderRadius: 5 },
       data: top.map((w) => w.weak_n),
     }],
-  };
+    };
+  }, [weakRanking]);
 
   return (
     <div className="teacher_profile_charts analysis_charts">

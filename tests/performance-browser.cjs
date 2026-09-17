@@ -101,7 +101,6 @@ fs.mkdirSync(output, { recursive: true });
     await measureClick(menu('作业组卷'), '教学设计→作业组卷', '.setting_topic_box');
     await measureClick(menu('作业下发'), '组卷→作业下发', '.setting_topic_box');
     await measureClick(menu('学情分析'), '作业→学情（返回）', '.teacher_profile_container', 'edu030');
-    await page.locator('.ant-float-btn').click();
     await page.locator('.ga_panel').waitFor();
     await page.waitForFunction(() => document.querySelector('.ga_panel')?.textContent.includes('条建议'));
     await page.screenshot({ path: path.join(output, 'analysis-assistant.png') });

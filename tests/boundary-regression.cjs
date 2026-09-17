@@ -44,11 +44,18 @@ const json = (value, status = 200) => new Response(JSON.stringify(value), { stat
 
   const old = requestJson('/old-session', { method: 'GET' });
   token = 'session-b'; pending.at(-1).resolve(json({ code: 401 }, 401)); await old;
+  // The current implementation checks authoritative getUser before logging out.
+  assert.ok(pending.at(-1).url.endsWith('/web/eduAuth/getUser'));
+  pending.at(-1).resolve(json({ code: 200 }));
+  await new Promise(resolve => setImmediate(resolve));
   assert.equal(token, 'session-b'); assert.equal(redirects, 0, 'late 401 must preserve the newer session');
   for (const businessCode of [false, true]) {
     token = `fresh-${businessCode}`; history.location.pathname = '/source';
     const logout = requestJson('/expired', { method: 'GET' });
     pending.at(-1).resolve(json({ code: 401 }, businessCode ? 200 : 401)); await logout;
+    assert.ok(pending.at(-1).url.endsWith('/web/eduAuth/getUser'));
+    pending.at(-1).resolve(json({ code: 401 }, 401));
+    await new Promise(resolve => setImmediate(resolve));
     assert.equal(token, ''); assert.equal(history.location.pathname, '/login');
   }
   assert.equal(redirects, 2, 'logging in again must not permanently disable later expiry handling');

@@ -63,6 +63,7 @@
     "mathjax-full": "^3.2.2",
     "moment": "^2.29.0",
     "pdfjs-dist": "3.4.120",
+    "pinyin-pro": "^3.29.4",
     "query-string": "^9.1.1",
     "quill": "2.0.3",
     "rc-virtual-list": "^3.11.3",

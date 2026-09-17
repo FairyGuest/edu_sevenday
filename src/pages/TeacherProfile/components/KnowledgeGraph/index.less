@@ -1,0 +1,121 @@
+/* ===== 知识点掌握图谱 ===== */
+.kg_wrap {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.kg_toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.kg_hint {
+  font-size: 11px;
+  color: var(--g-faint);
+}
+
+.kg_onlydata {
+  font-size: 11.5px;
+  color: var(--g-muted);
+  margin-left: 4px;
+  user-select: none;
+}
+
+.kg_search {
+  width: 190px;
+  max-width: 100%;
+  margin-left: auto;
+  border-radius: 8px;
+}
+
+.kg_reset {
+  color: var(--g-muted);
+  cursor: pointer;
+  font-size: 14px;
+  &:hover { color: var(--g-accent); }
+}
+
+/* L1~L4 分布概要行：等级 × 数量 × 平均掌握度 × 薄弱数 */
+.kg_lvstats {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 0 0 8px;
+}
+
+.kg_lvstat {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  font-size: 11px;
+  color: var(--g-muted);
+  background: #fff;
+  border: 1px solid color-mix(in srgb, var(--c, #8fa3b5) 35%, #fff);
+  border-left: 3px solid var(--c, #8fa3b5);
+  border-radius: 7px;
+  cursor: default;
+
+  b { color: var(--c, #52607a); font-size: 11.5px; }
+  em { font-style: normal; color: var(--g-text); font-weight: 600; }
+  i { font-style: normal; font-weight: 700; font-variant-numeric: tabular-nums; }
+  u { text-decoration: none; color: var(--g-bad); font-weight: 600; }
+}
+
+.kg_lvtotal {
+  font-size: 11px;
+  color: var(--g-faint);
+  margin-left: auto;
+}
+
+
+.kg_svg {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  touch-action: none;
+  cursor: grab;
+  background: linear-gradient(180deg, #fafbfd 0%, #f4f6fa 100%);
+  border: 1px solid var(--g-border);
+  border-radius: 10px;
+}
+
+.kg_label {
+  fill: var(--g-muted);
+  pointer-events: none;
+}
+
+.kg_zoom {
+  position: absolute;
+  right: 10px;
+  bottom: 8px;
+  font-size: 10px;
+  color: var(--g-faint);
+  font-variant-numeric: tabular-nums;
+}
+
+.kg_tip {
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 11px;
+  background: #fff;
+  border: 1px solid var(--g-border);
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(23, 39, 64, 0.1);
+  font-size: 11.5px;
+  color: var(--g-muted);
+  pointer-events: none;
+
+  b { color: var(--g-text); font-size: 12.5px; }
+  i { font-style: normal; font-weight: 700; }
+  em { font-style: normal; color: var(--g-bad); font-weight: 600; }
+}

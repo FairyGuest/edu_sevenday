@@ -4,6 +4,7 @@
  * 仅 start:mock 模式生效（cogUrl=/api），生产构建不包含。
  */
 import { readTeacherFixture as read, findStudent, memoizeMock } from "./fixtures";
+import { normalizeScope, scopedStudent } from "./assistantScope";
 import { computeDimensions, clusterLevel, applyTimeWindow, applyDateRange, TimeRange } from "./dimensions";
 
 const BANDS = ["待巩固", "练习中", "较熟练", "已掌握"];
@@ -62,7 +63,7 @@ function mergeProfile(prof: any, studentsFile: any[], sources: string[]) {
     const status = !has_ev ? "暂无学情数据（当前筛选来源）" : (weak_cnt === 0 ? "全部较熟练以上" : `${weak_cnt}个知识点待巩固`);
     return { ...s0, weak_cnt, status, status_level: !has_ev ? "cold" : (weak_cnt === 0 ? "ok" : "weak") };
   });
-  const order = { weak: 0, ok: 1, cold: 2 };
+  const order: Record<string, number> = { weak: 0, ok: 1, cold: 2 };
   students.sort((a: any, b: any) => order[a.status_level] - order[b.status_level] || b.weak_cnt - a.weak_cnt || (a.name > b.name ? 1 : -1));
   const last5 = trend.slice(3).map((t: any) => t.value).filter((v: any) => v != null);
   const top = weak_rows[0];
@@ -126,9 +127,13 @@ export default {
 
   "GET /api/teacher/profile/student": (req: any, res: any) => {
     const { class_id: cid, student_id: sid } = req.query;
-    const one = findStudent(cid, sid);
-    if (!one) return res.json({ code: 404, msg: "学生不存在", data: null });
-    const data = studentCache(JSON.stringify([cid, sid]), () => {
+    if (!classesData().some((c: any) => c.class_id === cid)) return res.json({ code: 404, msg: "班级不存在", data: null });
+    const original = findStudent(cid, sid);
+    if (!original) return res.json({ code: 404, msg: "学生不存在", data: null });
+    let scope;
+    try { scope = normalizeScope(req.query, false); } catch (e: any) { return res.json({ code: 400, msg: e.message, data: null }); }
+    const data = studentCache(JSON.stringify([cid, sid, scope]), () => {
+    const one = scopedStudent(original, scope);
     // A1/A2：个人画像扩展能力/素养维度（cells 已含样本量门槛字段 n）
     const dims = computeDimensions(one.cells || []);
     // 个人知识点图谱：cells 即节点（p 掌握度着色，n=作答题量），关联沿用班级结构
@@ -154,16 +159,11 @@ export default {
     const { class_id: cid, student_id: sid } = req.query;
     const sources: string[] = req.query.sources ? String(req.query.sources).split(",") : [];
     const cluster = req.query.cluster || "";
+    if (!classesData().some((c: any) => c.class_id === cid)) return res.json({ code: 404, msg: "班级不存在", data: null });
     const one = findStudent(cid, sid);
     if (!one) return res.json({ code: 404, msg: "学生不存在", data: null });
-    const ev = [];
-    for (const item of one.evidence || []) {
-      if (cluster && item.cluster !== cluster) continue;
-      if (sources.length && !sources.includes(item.source)) continue;
-      ev.push(item);
-      if (ev.length === 40) break;
-    }
-    res.json({ code: 200, msg: "ok", data: ev });
+    try { res.json({ code: 200, msg: "ok", data: scopedStudent(one, normalizeScope(req.query, false)).evidence }); }
+    catch (e: any) { res.json({ code: 400, msg: e.message, data: null }); }
   },
 };
 
@@ -194,7 +194,7 @@ function buildKnowledgeGraph(rows: any[], grade?: string) {
   const nodes = [...catalog.entries()].map(([id, meta]) => {
     const r = rowMap.get(id);
     const hasData = !!r;
-    const p = hasData ? Math.max(15, Math.min(95, Math.round(100 - (r.weak_pct || 0) * 2.2))) : 0;
+    const p = hasData ? (Number.isFinite(r.p) ? r.p : Math.max(15, Math.min(95, Math.round(100 - (r.weak_pct || 0) * 2.2)))) : 0;
     const hue = p * 1.05; // 15%→红 95%→绿
     return {
       id,

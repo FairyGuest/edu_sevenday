@@ -1,4 +1,4 @@
-import { memo, useEffect, useMemo, useRef, useState } from "react";
+import { memo, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import {
   forceCollide, forceLink, forceManyBody, forceSimulation, forceX, forceY,
   type Simulation, type SimulationLinkDatum, type SimulationNodeDatum,
@@ -9,6 +9,8 @@ import { zoom, zoomIdentity, type D3ZoomEvent } from "d3-zoom";
 import "d3-transition";
 import { ReloadOutlined, SearchOutlined } from "@ant-design/icons";
 import { Checkbox, Input, Tooltip } from "antd";
+import { useElementSize } from "@/hooks/useElementSize";
+import "./index.less";
 
 /**
  * 知识点掌握图谱（借鉴 graph4rec ForceGraph 的交互范式）：
@@ -32,11 +34,12 @@ const levelOf = (n: any): Level => {
 };
 
 interface GNode extends SimulationNodeDatum {
+  x?: number; y?: number; vx?: number; vy?: number; fx?: number | null; fy?: number | null;
   id: string; chapter: string; layer: number; level?: Level;
   p: number; n: number; weak: boolean; nodata?: boolean; fill: string;
   literacy?: string; gradeName?: string;
 }
-interface GLink extends SimulationLinkDatum<GNode> { kind: string }
+interface GLink extends SimulationLinkDatum<GNode> { kind: string; source: string | number | GNode; target: string | number | GNode }
 
 interface Props {
   graph?: { nodes: any[]; edges: { src: string; tgt: string; kind: string }[] };
@@ -64,7 +67,8 @@ function KnowledgeGraph({ graph, onNodeClick, height, variant = "mastery" }: Pro
   const draggingRef = useRef(false);
   const selectedRef = useRef<string | null>(null);
   const drawRef = useRef<(() => void) | null>(null);
-  const [width, setWidth] = useState(860);
+  const { width } = useElementSize(wrapRef);
+  const geometryRef = useRef({ width: 0, height: H });
   const [tip, setTip] = useState<{ x: number; y: number; node: GNode } | null>(null);
   const [viewK, setViewK] = useState(1);
   const [selected, setSelected] = useState<string | null>(null);
@@ -74,14 +78,6 @@ function KnowledgeGraph({ graph, onNodeClick, height, variant = "mastery" }: Pro
   selectedRef.current = selected;
   // 选中态变化时立即重绘（让选中节点标签马上显示）
   useEffect(() => { drawRef.current?.(); }, [selected]);
-
-  useEffect(() => {
-    const el = wrapRef.current;
-    if (!el) return;
-    const ro = new ResizeObserver((es) => { for (const e of es) setWidth(Math.max(320, Math.floor(e.contentRect.width))); });
-    ro.observe(el);
-    return () => ro.disconnect();
-  }, []);
 
   const model = useMemo(() => {
     if (!graph) return null;
@@ -121,9 +117,10 @@ function KnowledgeGraph({ graph, onNodeClick, height, variant = "mastery" }: Pro
     return (i: number) => pad + (i * (width - 2 * pad)) / (LEVELS.length - 1);
   }, [width]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const svg = svgRef.current;
     if (!svg || !model || width < 60) return;
+    geometryRef.current = { width, height: H };
     const { ns, ls } = model;
     const radius = (d: GNode) => (d.nodata ? 8.5 : 9 + 8 * Math.sqrt(Math.min(d.n, 50) / 50));
 
@@ -151,8 +148,10 @@ function KnowledgeGraph({ graph, onNodeClick, height, variant = "mastery" }: Pro
       const li = LEVELS.findIndex((l) => l.key === levelOf(bucket[0]));
       slots.forEach((d, i) => {
         if (!d) return;
-        d.x = colX(li) + (Math.random() - 0.5) * 46;
-        d.y = COL_TOP + ((i + 0.5) / bucket.length) * usable + (Math.random() - 0.5) * 10;
+        // Stable seed avoids a different initial layout on each mount/data refresh.
+        const seed = [...d.id].reduce((v, c) => (v * 31 + c.charCodeAt(0)) >>> 0, 7);
+        d.x = colX(li) + ((seed % 101) / 100 - 0.5) * 46;
+        d.y = COL_TOP + ((i + 0.5) / bucket.length) * usable;
         (d as any).slotY = d.y; // 目标槽位：模拟中持续拉回，保持数据/灰点交错分布
         d.vx = 0; d.vy = 0;
         (d as any).r = radius(d);
@@ -161,6 +160,9 @@ function KnowledgeGraph({ graph, onNodeClick, height, variant = "mastery" }: Pro
 
     const draw = () => {
       for (let i = 0; i < ns.length; i++) {
+        const r = (ns[i] as any).r ?? 10, bounds = geometryRef.current;
+        ns[i].x = Math.max(r + 8, Math.min(bounds.width - r - 8, ns[i].x ?? 0));
+        ns[i].y = Math.max(COL_TOP + r + 4, Math.min(bounds.height - r - 8, ns[i].y ?? 0));
         const el = nodeEls.current[i];
         if (el) el.setAttribute("transform", `translate(${ns[i].x ?? 0},${ns[i].y ?? 0})`);
         // 半径同步（React 只渲染初始值，力导向过程中统一由 draw 维护）
@@ -172,7 +174,9 @@ function KnowledgeGraph({ graph, onNodeClick, height, variant = "mastery" }: Pro
         if (lb) {
           // 标签是节点 g(translate) 的子元素，坐标系相对节点圆心：x=r+4, y=3.5
           // （若写绝对坐标会被 g 的 translate 二次叠加，文字飞到两倍坐标处）
-          lb.setAttribute("x", String(((ns[i] as any).r ?? 10) + 4));
+          const leftLabel = (ns[i].x ?? 0) > bounds.width - 125;
+          lb.setAttribute("x", String((r + 4) * (leftLabel ? -1 : 1)));
+          lb.setAttribute("text-anchor", leftLabel ? "end" : "start");
           lb.setAttribute("y", "3.5");
           // 标签常显（用户偏好：灰点也带字，不空荡）；灰点标签小一号淡一档
           lb.style.display = "";
@@ -191,16 +195,18 @@ function KnowledgeGraph({ graph, onNodeClick, height, variant = "mastery" }: Pro
     };
 
     const sim = forceSimulation<GNode>(ns)
-      .force("link", forceLink<GNode, GLink>(ls).id((d) => d.id)
-        .distance((l) => 40 + (((l.source as GNode).n ?? 30) % 20))
+      .force("link", forceLink<GNode, GLink>(ls).id((d: GNode) => d.id)
+        .distance((l: GLink) => 40 + (((l.source as GNode).n ?? 30) % 20))
         .strength(0.14))
       .force("charge", forceManyBody<GNode>().strength(-120))
-      .force("collide", forceCollide<GNode>((d) => ((d as any).r ?? 10) + (d.nodata ? 5 : 4)).iterations(2))
-      .force("colX", forceX<GNode>((d) => colX(LEVELS.findIndex((l) => l.key === levelOf(d)))).strength(0.14))
-      .force("slotY", forceY<GNode>((d) => (d as any).slotY ?? (H + COL_TOP) / 2).strength(0.22))
+      .force("collide", forceCollide<GNode>((d: GNode) => ((d as any).r ?? 10) + (d.nodata ? 5 : 4)).iterations(2))
+      .force("colX", forceX<GNode>((d: GNode) => colX(LEVELS.findIndex((l) => l.key === levelOf(d)))).strength(0.14))
+      .force("slotY", forceY<GNode>((d: GNode) => (d as any).slotY ?? (H + COL_TOP) / 2).strength(0.22))
       .force("centerY", forceY<GNode>((H + COL_TOP) / 2).strength(0.05))
       .alphaDecay(0.022);
     simRef.current = sim;
+    // Settle the seed before its first paint; subsequent interaction remains live.
+    sim.tick(40);
     sim.on("tick", draw);
     drawRef.current = draw;
     draw();
@@ -221,17 +227,36 @@ function KnowledgeGraph({ graph, onNodeClick, height, variant = "mastery" }: Pro
         draw();
       });
     zoomRef.current = zoomBeh;
-    select(svg).call(zoomBeh).on("dblclick.zoom", null);
+    select(svg).call(zoomBeh).call(zoomBeh.transform, zoomIdentity).on("dblclick.zoom", null);
 
-    return () => { sim.on("tick", null); sim.stop(); simRef.current = null; select(svg).on(".zoom", null); };
-  }, [model, colX, width]);
+    return () => { sim.on("tick", null); sim.stop(); simRef.current = null; drawRef.current = null; select(svg).interrupt().on(".zoom", null); select(svg).selectAll("circle.kg-node").on(".drag", null); };
+    // Container resizes are handled below without rebuilding the simulation or resetting zoom.
+  }, [model, width >= 60]);
+
+  useLayoutEffect(() => {
+    const sim = simRef.current, previous = geometryRef.current;
+    if (!sim || width < 60 || !previous.width || (previous.width === width && previous.height === H)) return;
+    const sx = width / previous.width, sy = (H - COL_TOP) / (previous.height - COL_TOP);
+    for (const node of sim.nodes()) {
+      node.x = (node.x ?? 0) * sx;
+      node.y = COL_TOP + ((node.y ?? COL_TOP) - COL_TOP) * sy;
+      (node as any).slotY = COL_TOP + (((node as any).slotY ?? COL_TOP) - COL_TOP) * sy;
+      if (node.fx != null) node.fx *= sx;
+      if (node.fy != null) node.fy = COL_TOP + (node.fy - COL_TOP) * sy;
+    }
+    geometryRef.current = { width, height: H };
+    sim.force("colX", forceX<GNode>((d: GNode) => colX(LEVELS.findIndex(l => l.key === levelOf(d)))).strength(0.14));
+    sim.force("slotY", forceY<GNode>((d: GNode) => (d as any).slotY).strength(0.22));
+    sim.force("centerY", forceY<GNode>((H + COL_TOP) / 2).strength(0.05));
+    drawRef.current?.();
+    sim.alpha(Math.max(sim.alpha(), 0.12)).restart();
+    setTip(null);
+  }, [width, H, colX]);
 
   const resetView = () => {
     const svg = svgRef.current;
-    if (!svg) return;
-    viewRef.current = { k: 1, x: 0, y: 0 };
-    setViewK(1);
-    worldRef.current?.setAttribute("transform", "translate(0,0) scale(1)");
+    if (!svg || !zoomRef.current) return;
+    select(svg).interrupt().call(zoomRef.current.transform, zoomIdentity);
     setSelected(null);
     drawRef.current?.(); // 标签可见性按新缩放级别重算
   };
@@ -275,7 +300,7 @@ function KnowledgeGraph({ graph, onNodeClick, height, variant = "mastery" }: Pro
     setTip({ x: e.clientX - (rect?.left ?? 0), y: e.clientY - (rect?.top ?? 0), node: model.ns[i] });
   };
 
-  if (!model || !model.ns.length) return null;
+  if (!model || !model.ns.length) return <div ref={wrapRef} className="kg_wrap" />;
   const total = model.ns.length;
 
   return (
@@ -327,7 +352,7 @@ function KnowledgeGraph({ graph, onNodeClick, height, variant = "mastery" }: Pro
           {variant === "catalog" ? `共 ${total} 个知识点` : `共 ${total} 个知识点 · ${model.dataTotal} 个有学情数据`}
         </span>
       </div>
-      <svg ref={svgRef} width={width} height={H} viewBox={`0 0 ${width} ${H}`} className="kg_svg">
+      <svg ref={svgRef} width="100%" height={H} viewBox={`0 0 ${Math.max(1, width)} ${H}`} className="kg_svg" style={{ visibility: width >= 60 ? "visible" : "hidden" }}>
         <g ref={worldRef}>
           {LEVELS.map((l, i) => {
             const x = colX(i);

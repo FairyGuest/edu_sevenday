@@ -31,6 +31,13 @@ const TeachDesign = (props: any) => {
   const [open, setOpen] = useState(false); // 抽屉显示隐藏
   const stage = Form.useWatch("stage", form); // 学段学科值
   const [userRequire, setUserRequire] = useState(""); // 个性化诉求
+  useEffect(() => {
+    if (props.assistantModel?.teachingDraft) {
+      setUserRequire(props.assistantModel.teachingDraft);
+      dispatch({ type: "assistantModel/updateState", res: { teachingDraft: null } });
+      message.success("已带入助手教学草稿，可在个性化诉求中继续编辑");
+    }
+  }, [props.assistantModel?.teachingDraft]);
   const [guideOpen, setGuideOpen] = useState(false); // D1 启发式引导
   const guideCtxRef = useRef<any>({}); // 引导上下文（表单+学情快照）
   const [fileList, setFileList] = useState<any>([]); // 附件列表
@@ -285,4 +292,5 @@ const TeachDesign = (props: any) => {
 
 export default connect((state: any) => ({
   teachDesginModel: state.teachDesginModel,
+  assistantModel: state.assistantModel,
 }))(TeachDesign);

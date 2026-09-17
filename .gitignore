@@ -42,3 +42,6 @@ build
 
 
 src/demo-mock/
+
+# Server-side local model credentials
+.assistant.local.json

@@ -156,6 +156,7 @@ export function installDemoMock() {
       return origFetch(input, init);
     }
 
+    if (parsed.pathname === "/api/assistant/model") return origFetch(input, init);
     const hit = matchRoute(method, parsed.pathname);
     if (!hit) {
       if (parsed.pathname.startsWith("/api")) {

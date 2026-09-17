@@ -12,10 +12,14 @@
   // 主内容区
   .main-content {
     flex: 1;
+    min-width: 0;
+    min-height: 0;
     overflow-y: auto;
     overflow-x: hidden;
     .main-content-right{
       flex: 1;
+      min-width: 0;
+      min-height: 0;
       overflow-x: auto;
       
       &.full-width {
@@ -23,4 +27,9 @@
       }
     }
   }
+}
+
+@container business-page (max-width: 1000px) {
+  .resource-search-container .catalog-container:not(.collapsed) { width: 200px; }
+  .resource-search-container .catalog-tree-panel { width: 100%; }
 }

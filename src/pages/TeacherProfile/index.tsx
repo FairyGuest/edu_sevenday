@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { connect } from "@umijs/max";
-import { Alert, Button, Card, Col, DatePicker, message, Row, Segmented, Select, Skeleton, Tag, Tooltip, Upload } from "antd";
+import { Alert, Button, Card, DatePicker, message, Segmented, Select, Skeleton, Tag, Tooltip, Upload } from "antd";
 import {
   ReloadOutlined,
   UploadOutlined,
@@ -109,6 +109,9 @@ const TeacherProfile = (props: any) => {
         summary,
         data: {
           class_id: cid,
+          start_date: dateRange?.[0]?.format("YYYY-MM-DD") || "",
+          end_date: dateRange?.[1]?.format("YYYY-MM-DD") || "",
+          sources,
           // v2.0-I：图谱页标记 mastery 口径 + 图谱专属快捷指令
           ...(variant === "kgraph"
             ? {
@@ -123,10 +126,10 @@ const TeacherProfile = (props: any) => {
         },
       },
     });
-  }, [profile, classId, variant]);
+  }, [profile, classId, variant, dateRange, sources]);
 
   // 卸载时注销上下文（切 Tab/页面后助手回退到路由兜底标题）
-  useEffect(() => () => dispatch({ type: "assistantModel/setPageContext", payload: null }), []);
+  useEffect(() => () => { dispatch({ type: "assistantModel/setPageContext", payload: null }); }, []);
 
   // v2.0-H1：班级建议入口条（建议在 AI 助手中展示，这里露出条数入口）
   const [sugCount, setSugCount] = useState<number>(0);
@@ -313,8 +316,8 @@ const TeacherProfile = (props: any) => {
             {profile.window_note ? <p className="window_note">⏱ {profile.window_note}</p> : null}
 
             {/* ===== 分析区：左分布表 + 右图表 ===== */}
-            <Row gutter={16} className="analysis_row" align="stretch">
-              <Col flex="1 1 620px" style={{ minWidth: 0 }}>
+            <div className="analysis_row">
+              <div className="analysis_distribution">
                 <div className="teacher_profile_card">
                     <div className="ct_header">
                     <p className="teacher_profile_chart_title" style={{ marginBottom: 0 }}>知识点掌握分布</p>
@@ -354,11 +357,11 @@ const TeacherProfile = (props: any) => {
                     <ClusterTable rows={profile.cluster_rows || []} />
                   )}
                 </div>
-              </Col>
-              <Col flex="0 0 312px" style={{ minWidth: 0 }} className="analysis_right">
+              </div>
+              <div className="analysis_right">
                 <ProfileCharts trend={profile.trend || []} sourceMix={profile.source_mix || []} weakRanking={profile.weak_ranking || []} classId={classId || classList[0]?.class_id} />
-              </Col>
-            </Row>
+              </div>
+            </div>
 
             {/* ===== 学生列表（全宽，消除右侧空白）：点击跳转「个人学情」Tab ===== */}
             <div className="teacher_profile_card">

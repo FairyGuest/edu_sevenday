@@ -1,4 +1,4 @@
-import { memo, useEffect, useRef } from "react";
+import { memo } from "react";
 import { BarChartOutlined } from "@ant-design/icons";
 import ReactECharts from "echarts-for-react";
 
@@ -11,15 +11,8 @@ const LIT_HEX: Record<string, string> = {
 
 function DimensionCards({ dimensions }: { dimensions?: any }) {
   const literacy = (dimensions?.literacy || []).filter((d: any) => d.value != null);
-  const radarBoxRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = radarBoxRef.current;
-    if (!el || typeof ResizeObserver === "undefined") return;
-    const ro = new ResizeObserver(() => window.dispatchEvent(new Event("resize")));
-    ro.observe(el);
-    return () => ro.disconnect();
-  }, []);
+  // ReactECharts observes its own host. Broadcasting a window resize from this
+  // card caused unrelated page widgets to relayout on every local size change.
 
   if (!literacy.length) return null;
 
@@ -84,7 +77,7 @@ function DimensionCards({ dimensions }: { dimensions?: any }) {
         <span className="g-hint">同维度跨页面同色 · 能力等级标签见知识点掌握分布</span>
       </div>
       <div className="dim_radar_row">
-        <div className="dim_radar_main" ref={radarBoxRef}>
+        <div className="dim_radar_main">
           <ReactECharts option={radarOption} style={{ height: "100%", minHeight: 240, width: "100%" }} notMerge />
         </div>
         <div className="dim_radar_side">

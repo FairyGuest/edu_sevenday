@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Tabs } from "antd";
+import { useLocation } from "@umijs/max";
 import List from "./List";
 import PersonalizedSection from "../components/PersonalizedSection";
 
@@ -9,7 +10,9 @@ import PersonalizedSection from "../components/PersonalizedSection";
  * - 个性化组卷：四方针引擎逐生组卷（每人一单）→ 抽样确认 → 发布（对象锁定）
  */
 const PaperCompose = () => {
+  const location = useLocation();
   const [tab, setTab] = useState("normal");
+  useEffect(() => { if (new URLSearchParams(location.search).get("tab") === "personalized") setTab("personalized"); }, [location.search]);
   const [classes, setClasses] = useState<any[]>([]);
 
   useEffect(() => {

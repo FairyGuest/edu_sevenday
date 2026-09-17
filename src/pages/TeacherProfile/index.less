@@ -272,7 +272,8 @@
   border-radius: 5px;
   overflow: hidden;
   background: #eff3f9;
-  min-width: 110px;
+  width: 100%;
+  min-width: 0;
 
   i {
     display: block;
@@ -488,7 +489,7 @@
   flex: 1;
   min-height: 0;
 
-  @media (max-width: 1200px) { flex-direction: column; }
+  @container business-page (max-width: 1000px) { flex-direction: column; }
 }
 
 .dim_radar_main {
@@ -507,7 +508,7 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  @media (max-width: 1200px) { width: 100%; }
+  @container business-page (max-width: 1000px) { width: 100%; }
 }
 
 .dim_side_stats {
@@ -570,124 +571,6 @@
   border-radius: 999px;
   padding: 1px 7px;
   white-space: nowrap;
-}
-
-/* ===== 知识点掌握图谱 ===== */
-.kg_wrap {
-  position: relative;
-  width: 100%;
-}
-
-.kg_toolbar {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-bottom: 8px;
-}
-
-.kg_hint {
-  font-size: 11px;
-  color: var(--g-faint);
-}
-
-.kg_onlydata {
-  font-size: 11.5px;
-  color: var(--g-muted);
-  margin-left: 4px;
-  user-select: none;
-}
-
-.kg_search {
-  width: 190px;
-  margin-left: auto;
-  border-radius: 8px;
-}
-
-.kg_reset {
-  color: var(--g-muted);
-  cursor: pointer;
-  font-size: 14px;
-  &:hover { color: var(--g-accent); }
-}
-
-/* L1~L4 分布概要行：等级 × 数量 × 平均掌握度 × 薄弱数 */
-.kg_lvstats {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin: 0 0 8px;
-}
-
-.kg_lvstat {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 3px 9px;
-  font-size: 11px;
-  color: var(--g-muted);
-  background: #fff;
-  border: 1px solid color-mix(in srgb, var(--c, #8fa3b5) 35%, #fff);
-  border-left: 3px solid var(--c, #8fa3b5);
-  border-radius: 7px;
-  cursor: default;
-
-  b { color: var(--c, #52607a); font-size: 11.5px; }
-  em { font-style: normal; color: var(--g-text); font-weight: 600; }
-  i { font-style: normal; font-weight: 700; font-variant-numeric: tabular-nums; }
-  u { text-decoration: none; color: var(--g-bad); font-weight: 600; }
-}
-
-.kg_lvtotal {
-  font-size: 11px;
-  color: var(--g-faint);
-  margin-left: auto;
-}
-
-
-.kg_svg {
-  display: block;
-  max-width: 100%;
-  touch-action: none;
-  cursor: grab;
-  background: linear-gradient(180deg, #fafbfd 0%, #f4f6fa 100%);
-  border: 1px solid var(--g-border);
-  border-radius: 10px;
-}
-
-.kg_label {
-  fill: var(--g-muted);
-  pointer-events: none;
-}
-
-.kg_zoom {
-  position: absolute;
-  right: 10px;
-  bottom: 8px;
-  font-size: 10px;
-  color: var(--g-faint);
-  font-variant-numeric: tabular-nums;
-}
-
-.kg_tip {
-  position: absolute;
-  z-index: 5;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  padding: 8px 11px;
-  background: #fff;
-  border: 1px solid var(--g-border);
-  border-radius: 8px;
-  box-shadow: 0 4px 14px rgba(23, 39, 64, 0.1);
-  font-size: 11.5px;
-  color: var(--g-muted);
-  pointer-events: none;
-
-  b { color: var(--g-text); font-size: 12.5px; }
-  i { font-style: normal; font-weight: 700; }
-  em { font-style: normal; color: var(--g-bad); font-weight: 600; }
 }
 
 /* 人机交互明细入口 */
@@ -849,6 +732,7 @@
 
 .ct_legend {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 12px;
   margin-left: auto;
@@ -865,6 +749,7 @@
   font-size: 11.5px;
   font-weight: 600;
   color: var(--g-text);
+  white-space: nowrap;
 
   i { width: 9px; height: 9px; border-radius: 3px; }
   em { font-style: normal; font-weight: 400; font-size: 10px; color: var(--g-faint); }
@@ -946,34 +831,34 @@
 /* 素养雷达整行卡 */
 .dim_card_full { margin-bottom: 12px; }
 
-/* 分析行：右栏填满左卡高度，三图均分（总高恒等于左卡） */
+/* 图表高度独立于分布表，避免百分比高度与 flex 拉伸形成尺寸反馈。 */
 .analysis_row {
-  align-items: stretch;
-}
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  gap: 16px;
+  margin-bottom: 14px;
 
-.analysis_row .analysis_right {
-  display: flex;
-  flex-direction: column;
+  > .analysis_distribution, > .analysis_right { min-width: 0; }
+  .analysis_distribution > .teacher_profile_card { margin-bottom: 0; }
 }
 
 .analysis_charts {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  align-items: start;
   gap: 12px;
 
   .teacher_profile_chart_card {
-    flex: 1;
-    min-height: 0;
-    display: flex;
-    flex-direction: column;
-
-    > p { flex: none; }
-    > div, > .echarts-for-react {
-      flex: 1;
-      min-height: 0;
-    }
+    min-width: 0;
+    margin-bottom: 0;
   }
+}
+
+/* 以助手占位后的业务区宽度为准，窄时将图表放到分布表下方。 */
+@container business-page (min-width: 1220px) {
+  .analysis_row { grid-template-columns: minmax(0, 1fr) 312px; }
+  .analysis_charts { grid-template-columns: minmax(0, 1fr); }
 }
 
 /* 表头等级图例（常显小字） */
@@ -1020,12 +905,22 @@
 
 /* CI 列：区间条 + 数值同行 */
 .ct_ci_cell {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 7px;
+  width: 100%;
+  min-width: 0;
+
+  .ci_bar {
+    flex: 1 1 100px;
+    min-width: 0;
+    max-width: 100px;
+  }
 }
 
 .ct_ci_p {
+  flex: none;
+  white-space: nowrap;
   font-size: 12px;
   font-weight: 700;
   font-variant-numeric: tabular-nums;

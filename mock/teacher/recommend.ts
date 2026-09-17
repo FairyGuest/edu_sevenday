@@ -8,11 +8,13 @@ import * as path from "path";
 import { readTeacherFixture as read, memoizeMock } from "./fixtures";
 
 import { tagQuestion, tagFacets, filterQuestions } from "./questionTags";
+import { selectQuestions, validateQuestionFilter } from "./assistantQuestions";
+import { normalizeScope, scopedStudent } from "./assistantScope";
 
 const D = path.join(__dirname, "data");
 const facetCache = memoizeMock<any>(1);
 
-const DIFF_ZH = { easy: "容易", easy_moderate: "较易", medium: "适中", moderate_hard: "较难", hard: "困难" };
+const DIFF_ZH: Record<string, string> = { easy: "容易", easy_moderate: "较易", medium: "适中", moderate_hard: "较难", hard: "困难" };
 const STRATEGY_ZH: Record<string, string> = {
   weak: "薄弱知识点练", variant: "错题变式", review: "遗忘曲线复习",
   challenge: "选做挑战题", balanced: "均衡（默认）", plan: "教案作业",
@@ -20,6 +22,86 @@ const STRATEGY_ZH: Record<string, string> = {
 
 // 会话级存储
 const homeworkStore: Record<string, any> = {};
+
+/** Shared with assistant tools: drafts are the same records used by preview/publishing pages. */
+export function listAssistantHomework(classId?: string) {
+  for (const c of getClasses()) {
+    try {
+      const hw = read('homework-' + c.class_id + '.json');
+      if (hw?.homework_id && !homeworkStore[hw.homework_id]) homeworkStore[hw.homework_id] = hw;
+    } catch { /* This class has no fixture homework. */ }
+  }
+  return Object.values(homeworkStore).filter(h => !classId || h.class_id === classId);
+}
+export function getAssistantHomework(id: string) { return homeworkStore[id]; }
+export function generateTargetedHomework(classId: string, input: any) {
+  if (!getClasses().some(c => c.class_id === classId)) throw new Error("班级不存在。");
+  const config = validateQuestionFilter(input);
+  const roster = getStudents(classId);
+  if (!Array.isArray(input.student_ids) || !input.student_ids.length) throw new Error("请指定有效的学生名单，不能用空名单代替全班。");
+  const ids = [...new Set<string>(input.student_ids)];
+  if (ids.some(id => !roster.some(s => s.student_id === id))) throw new Error("名单包含不属于本班的学生，请重新选择。");
+  const students = roster.filter(s => ids.includes(s.student_id));
+  const papers: Record<string, any> = {};
+  const notes = new Set<string>();
+  for (const s of students) {
+    const detail = scopedStudent(s, normalizeScope(input.scope || {}, false));
+    const weak = detail.cells.filter((c: any) => c.n >= 3 && c.p < 60).map((c: any) => c.cluster);
+    const filter = { ...config };
+    if (!filter.cluster && !filter.clusters?.length && input.target_weak) {
+      if (!weak.length) throw new Error(s.name + "在当前范围没有证据充分的薄弱知识点，请指定知识点或调整日期。");
+      filter.clusters = weak;
+    }
+    const pool = selectQuestions(filter, (s.evidence || []).map((e: any) => e.qid));
+    const rank = new Map(detail.cells.map((c: any) => [c.cluster, c.p]));
+    pool.sort((a, b) => Number(rank.get(a.cluster) ?? 100) - Number(rank.get(b.cluster) ?? 100));
+    const items = pool.slice(0, config.total).map(q => ({
+      ...q, difficulty: q.difficulty_zh, strategy: input.strategy || "weak", optional: false,
+      reason: "按指定对象、日期范围与题目条件选入；未放宽筛选条件", source_label: "题库记录",
+    }));
+    if (!items.length) throw new Error(s.name + "没有符合全部条件的题目；未创建空作业，请减少限制后重试。");
+    if (items.length < config.total!) notes.add(s.name + "仅找到 " + items.length + "/" + config.total + " 题，保留全部条件。");
+    papers[s.student_id] = { student_id: s.student_id, name: s.name, items };
+  }
+  const counts = Object.values(papers).map(p => p.items.length);
+  const homework_id = "hw-r-" + (++hwSeq);
+  const hw = {
+    homework_id, class_id: classId, mode: "personalized", title: input.title || "小七 · 定向练习草稿",
+    status: "generated", revision: 1, config: { ...config, student_ids: ids, scope: input.scope },
+    created_at: new Date().toISOString(), roster_snapshot: ids, papers,
+    summary: { n_students: ids.length, q_count: { min: Math.min(...counts), max: Math.max(...counts) }, notes_sample: [...notes] },
+  };
+  homeworkStore[homework_id] = hw;
+  return hw;
+}
+export function replaceAssistantQuestion(id: string, index: number, extra: any = {}) {
+  const hw = homeworkStore[id];
+  if (!hw || hw.status !== "generated") throw new Error("只能修改尚未发布的草稿。");
+  if (!Number.isInteger(index) || index < 0 || Object.values(hw.papers).some((p: any) => index >= p.items.length)) throw new Error("题号超出草稿范围。");
+  const changes = Object.values(hw.papers).map((paper: any) => {
+    const stu = getStudents(hw.class_id).find(s => s.student_id === paper.student_id);
+    const candidate = selectQuestions({ ...hw.config, ...extra, exclude_qids: [...(hw.config.exclude_qids || []), ...paper.items.map((q: any) => q.qid)] }, stu?.evidence?.map((e: any) => e.qid))
+      .find(q => q.cluster === paper.items[index].cluster);
+    if (!candidate) throw new Error(paper.name + "没有符合原条件的替换题，草稿保持原样。");
+    return { paper, candidate };
+  });
+  changes.forEach(({ paper, candidate }) => { paper.items[index] = { ...candidate, difficulty: candidate.difficulty_zh, strategy: "variant", reason: "同知识点替换，保留原筛选条件" }; });
+  hw.revision = (hw.revision || 1) + 1;
+  return hw;
+}
+export function publishAssistantHomework(id: string, revision: number, deadline: string) {
+  const hw = homeworkStore[id];
+  if (!hw) throw new Error("草稿已失效，请重新生成。");
+  if (hw.revision !== revision) throw new Error("草稿已修改，请重新查看发布确认卡。");
+  if (!deadline || !Number.isFinite(new Date(deadline).getTime()) || new Date(deadline).getTime() <= Date.now()) throw new Error("请指定未来的截止时间后再发布。");
+  if (hw.status === "published" || hw.status === "reported") return { ...hw.receipt, already_published: true };
+  if (hw.status !== "generated") throw new Error("当前状态不允许发布。");
+  hw.status = "published";
+  hw.deadline = deadline;
+  hw.published_at = new Date().toISOString();
+  hw.receipt = { homework_id: id, recipients: hw.roster_snapshot.length, published_at: hw.published_at, deadline, mode: "demo", status: "published" };
+  return hw.receipt;
+}
 
 /** 教案/章节布置的作业入库（全班同卷，供作业下发查看） */
 export function recordPlanHomework(rec: any) {
@@ -225,7 +307,7 @@ function generateHomework(classId: string, config: any) {
         if (quotas[k] === 0 && total >= requiredStrats.length) { quotas[k] = 1; rest = 0; }
       }
       // 因人微调：薄弱簇多（≥3个）的学生从复习挪 1 题给薄弱；无薄弱的挪给变式/复习
-      const weakCells = stu.cells.filter((c) => c.n >= 3 && c.p < 60);
+      const weakCells = stu.cells.filter((c: any) => c.n >= 3 && c.p < 60);
       if (quotas.review > 1) {
         if (weakCells.length >= 3 && quotas.weak != null) { quotas.weak++; quotas.review--; }
         else if (weakCells.length === 0 && quotas.variant != null) { quotas.variant++; quotas.review--; }
@@ -313,7 +395,7 @@ function simulateReport(hw: any) {
     let reqK = 0, reqN = 0, optK = 0, optN = 0;
 
     for (const item of (paper as any).items) {
-      const cell = cells.find((c) => c.cluster === item.cluster);
+      const cell = cells.find((c: any) => c.cluster === item.cluster);
       const p = cell && cell.n >= 3 ? cell.p / 100 : 0.55;
       // 确定性模拟：根据掌握度概率
       const correct = Math.sin(sid.charCodeAt(0) + item.qid.length) > (1 - p * 0.9) * 2 - 1;
@@ -382,8 +464,11 @@ export default {
     const { class_id, ranges, total } = req.body || {};
     const cid = class_id || getClasses()[0].class_id;
     setTimeout(() => {
-      const hw = generateHomework(cid, { ranges, total });
-      res.json({ code: 200, msg: "ok", data: hw });
+      try {
+        const targeted = req.body?.student_ids !== undefined || req.body?.clusters?.length || req.body?.cluster || req.body?.literacy || req.body?.form || req.body?.difficulty;
+        const hw = targeted ? generateTargetedHomework(cid, { ...req.body, student_ids: req.body.student_ids ?? getStudents(cid).map(s => s.student_id) }) : generateHomework(cid, { ranges, total });
+        res.json({ code: 200, msg: "ok", data: hw });
+      } catch (e: any) { res.json({ code: 400, msg: e.message, data: null }); }
     }, 800); // 模拟逐生组卷延迟
   },
 

@@ -10,6 +10,7 @@ import GuideDrawer from "./components/AnswerStep/GuideDrawer";
 import { sseRequset, getOrgId, str2json, deepCopy, stopSSE, uuid } from "@/utils";
 // import { cogUrl } from "@/utils/host";
 import { cogUrl } from "./services";
+import { useElementSize } from "@/hooks/useElementSize";
 
 import "./Unit.less";
 
@@ -17,6 +18,9 @@ let mdDataStr: string = ""; // 缓存流式数据
 let gChatList: any = []; // 缓存聊天列表
 
 const Unit = () => {
+  const layoutRef = useRef<HTMLDivElement>(null);
+  const { width: layoutWidth } = useElementSize(layoutRef);
+  const stacked = layoutWidth > 0 && layoutWidth < 1020;
   const dispatch = useDispatch();
   const rightRef = useRef<any>(null); // 右侧组件ref
   const unitTimerRef = useRef<any>(null); // 单元轮询定时器
@@ -560,12 +564,12 @@ const Unit = () => {
   };
 
   return (
-    <div className="unit-design drawer-element">
-      <Splitter onResize={setSizes} layout={typeof window !== "undefined" && window.innerWidth <= 900 ? "vertical" : "horizontal"}>
+    <div className="unit-design drawer-element" ref={layoutRef}>
+      <Splitter onResize={setSizes} layout={stacked ? "vertical" : "horizontal"}>
         <Splitter.Panel
           className="unit-design-left"
-          defaultSize={typeof window !== "undefined" && window.innerWidth <= 900 ? "50%" : 600}
-          min={typeof window !== "undefined" && window.innerWidth <= 900 ? "20%" : 434}
+          defaultSize="50%"
+          min={stacked ? "20%" : 434}
           collapsible
         >
           <UnitHeader
@@ -616,7 +620,7 @@ const Unit = () => {
             />
           )}
         </Splitter.Panel>
-        <Splitter.Panel className="unit-design-right" min={typeof window !== "undefined" && window.innerWidth <= 900 ? "20%" : 560} collapsible>
+        <Splitter.Panel className="unit-design-right" min={stacked ? "20%" : 560} collapsible>
           <div ref={rightRef} style={{ height: "100%" }}>
             {!isInView && step === 1 && (
               <Tooltip placement="right" title={"课标对齐指南"}>

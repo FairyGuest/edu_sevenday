@@ -10,10 +10,14 @@ import GuideDrawer from './components/AnswerStep/GuideDrawer'
 import { sseRequset, str2json, deepCopy, stopSSE } from "@/utils";
 // import { cogUrl } from "@/utils/host";
 import { cogUrl } from "./services";
+import { useElementSize } from "@/hooks/useElementSize";
 
 import "./Hour.less";
 
 const Hour = (props: any) => {
+  const layoutRef = useRef<HTMLDivElement>(null);
+  const { width: layoutWidth } = useElementSize(layoutRef);
+  const stacked = layoutWidth > 0 && layoutWidth < 1020;
   const dispatch = useDispatch();
   const rightRef = useRef<any>(null); // 右侧组件
   const leftRef = useRef<any>(null); // 右侧组件
@@ -635,16 +639,16 @@ const Hour = (props: any) => {
     action={<Button onClick={getDetail}>重试</Button>} />;
 
   return (
-    <div className="hour-design drawer-element">
+    <div className="hour-design drawer-element" ref={layoutRef}>
 
       <Splitter
         onResize={handleResize}
       // onResizeEnd={handleResizeEnd}
-       layout={typeof window !== "undefined" && window.innerWidth <= 900 ? "vertical" : "horizontal"}>
+       layout={stacked ? "vertical" : "horizontal"}>
         {<Splitter.Panel
           className="hour-design-left"
-          defaultSize={typeof window !== "undefined" && window.innerWidth <= 900 ? "50%" : 600}
-          min={typeof window !== "undefined" && window.innerWidth <= 900 ? "20%" : 434}
+          defaultSize="50%"
+          min={stacked ? "20%" : 434}
           // collapsible
           collapsible={{ start: true, end: true, showCollapsibleIcon: false }}
         >
@@ -696,7 +700,7 @@ const Hour = (props: any) => {
         <Splitter.Panel
           className="hour-design-right"
           collapsible={{ start: true, end: true, showCollapsibleIcon: false }}
-          min={typeof window !== "undefined" && window.innerWidth <= 900 ? "20%" : 560}
+          min={stacked ? "20%" : 560}
         >
           <div ref={rightPanelRef}>
           </div>

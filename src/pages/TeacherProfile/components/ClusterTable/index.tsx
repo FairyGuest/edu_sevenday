@@ -69,11 +69,11 @@ ${lv.desc}`} color="#fff" overlayClassName="ct_lv_tip">
       },
     },
     {
-      title: "分布", dataIndex: "band_counts", width: 82,
+      title: "分布", dataIndex: "band_counts", width: 128,
       render: (counts: Record<string, number>) => <StackBar counts={counts} />,
     },
     {
-      title: "掌握度 · 95% 区间", key: "ci", width: 150,
+      title: "掌握度 · 95% 区间", key: "ci", width: 168,
       render: (_: any, r: any) =>
         r.ci ? (
           <span className="ct_ci_cell">
@@ -85,7 +85,7 @@ ${lv.desc}`} color="#fff" overlayClassName="ct_lv_tip">
         ) : <span style={{ color: "#c3c9d4" }}>—</span>,
     },
     {
-      title: "待巩固", dataIndex: "weak_n", width: 80,
+      title: "待巩固", dataIndex: "weak_n", width: 96,
       render: (t: number, r: any) => (
         <span>
           <b style={{ color: t > 0 ? "#e05d62" : "#4f9e70" }}>{t}人</b>
@@ -94,7 +94,7 @@ ${lv.desc}`} color="#fff" overlayClassName="ct_lv_tip">
       ),
     },
     {
-      title: "趋势", dataIndex: "trend", width: 64,
+      title: "趋势", dataIndex: "trend", width: 92,
       render: (t: string) => {
         const cls = t === "向好↑" ? "g-chip--ok" : t === "连续下降" ? "g-chip--bad" : "";
         return <span className={`g-chip ${cls}`}>{t}</span>;
@@ -117,12 +117,14 @@ ${lv.desc}`} color="#fff" overlayClassName="ct_lv_tip">
   ];
   return (
     <Table
+      className="cluster_table"
       rowKey="cluster"
       size="small"
+      tableLayout="fixed"
       columns={columns}
       dataSource={rows.filter((r) => r.n_students >= 3).slice(0, 10)}
       pagination={false}
-      scroll={{ x: 560, y: 700 }}
+      scroll={{ x: columns.reduce((width, column) => width + Number(column.width), 0), y: 700 }}
     />
   );
 }

@@ -32,6 +32,21 @@ const PersonalAnalysis = (props: any) => {
     dayjs().startOf("month"),
     dayjs(),
   ]);
+  const query = new URLSearchParams(location.search);
+  const scopeQuery = [query.get("start_date"), query.get("end_date"), query.get("sources"), query.get("cluster")].join("|");
+  const [cluster, setCluster] = useState("");
+  useEffect(() => {
+    const q = new URLSearchParams(location.search);
+    if (q.has("start_date") || q.has("end_date")) {
+      const parse = (v: string | null) => v && dayjs(v).isValid() ? dayjs(v) : null;
+      setDateRange([parse(q.get("start_date")), parse(q.get("end_date"))]);
+    }
+    if (q.has("sources")) {
+      const selected = (q.get("sources") || "").split(",").filter(s => ALL_SOURCES.includes(s));
+      if (selected.length) setSources(selected);
+    }
+    setCluster(q.get("cluster") || "");
+  }, [scopeQuery]);
   // URL 深链初始学生（仅首次消费）
   const urlSid = new URLSearchParams(location.search).get("student_id") || "";
 
@@ -60,6 +75,7 @@ const PersonalAnalysis = (props: any) => {
       class_id: classId,
       student_id: sid,
       sources: sources.join(","),
+      cluster,
       start_date: dateRange?.[0]?.format("YYYY-MM-DD") || "",
       end_date: dateRange?.[1]?.format("YYYY-MM-DD") || "",
     };
@@ -123,7 +139,7 @@ const PersonalAnalysis = (props: any) => {
 
   useEffect(() => {
     if (classReady && profile?.class_id === classId && students.some((s: any) => s.student_id === selectedId)) fetchStudent(selectedId);
-  }, [selectedId, classId, classReady, profile?.class_id, sources, dateRange]);
+  }, [selectedId, classId, classReady, profile?.class_id, sources, dateRange, cluster]);
 
   const selectStudent = (sid: string) => {
     if (sid === selectedRef.current) return;
@@ -173,6 +189,9 @@ const PersonalAnalysis = (props: any) => {
         data: {
           class_id: classId,
           student_id: d.student_id,
+          start_date: dateRange?.[0]?.format("YYYY-MM-DD") || "",
+          end_date: dateRange?.[1]?.format("YYYY-MM-DD") || "",
+          sources, cluster,
           // 图谱解释 + 注入入口快捷指令（v2.0-I）
           quick: [
             { label: "注入教学设计", action: { key: "inject_teaching_design", params: { class_id: classId } } },
@@ -181,10 +200,10 @@ const PersonalAnalysis = (props: any) => {
         },
       },
     });
-  }, [teacherProfileModel?.studentDetail, selectedId, classId]);
+  }, [teacherProfileModel?.studentDetail, selectedId, classId, sources, dateRange, cluster]);
 
   // 卸载时注销上下文
-  useEffect(() => () => dispatch({ type: "assistantModel/setPageContext", payload: null }), []);
+  useEffect(() => () => { dispatch({ type: "assistantModel/setPageContext", payload: null }); }, []);
 
   const backToClass = () => {
     dispatch({ type: "analysisModel/updateState", res: { currentAnalysisTab: "profile" } });

@@ -63,6 +63,10 @@ function splitArgs(inner) {
 }
 
 function transformFile(file) {
+  if (path.basename(file) === "assistantModel.ts") {
+    fs.writeFileSync(file, "export default {};\n");
+    return true;
+  }
   let code = fs.readFileSync(file, "utf-8");
   const originalCode = code;
   // Static demos use the existing deterministic AI fallback; never ship server credentials

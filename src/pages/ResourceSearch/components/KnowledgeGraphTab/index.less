@@ -1,8 +1,12 @@
 /* v2.0-K1 资源平台知识图谱 Tab */
 .kg_tab {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  flex: 1 1 0;
+  min-width: 0;
   gap: 14px;
-  align-items: flex-start;
+  align-items: start;
+  align-content: start;
   margin: 16px 20px;
 }
 
@@ -12,7 +16,15 @@
 }
 
 .kg_tab_side {
-  flex: 0 0 300px;
+  min-width: 0;
+  width: 100%;
+}
+.kg_tab_main .ant-card-head-wrapper { flex-wrap: wrap; gap: 8px; padding: 10px 0; }
+.kg_tab_main .ant-card-head-title { white-space: normal; }
+.kg_tab_main .ant-card-extra { margin-inline-start: 0; }
+
+@container business-page (min-width: 1100px) {
+  .kg_tab:has(.kg_tab_side) { grid-template-columns: minmax(0, 1fr) 300px; }
 }
 
 .kg_tab_note {
@@ -91,14 +103,4 @@
   border: 1px solid #f0dfae;
   border-radius: 8px;
   padding: 8px 10px;
-}
-
-@media (max-width: 1100px) {
-  .kg_tab {
-    flex-direction: column;
-  }
-  .kg_tab_side {
-    flex: none;
-    width: 100%;
-  }
 }

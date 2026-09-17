@@ -91,6 +91,7 @@ async function main() {
     if (id === '@@/core/history') return { history: { location: { pathname: '/' } } };
     if (id === '@/utils/index') return { getStorageToken: () => token, getRequestParams: (url, opts) => ({ newUrl: url, payload: opts.payload }) };
     if (id === 'query-string') return { stringify: (value) => new URLSearchParams(value).toString() };
+    if (id === '@/utils/host') return { cogUrl: '/api' };
     return originalLoad.call(this, id, parent, main);
   };
   const { requestJson } = load('src/utils/request.ts');

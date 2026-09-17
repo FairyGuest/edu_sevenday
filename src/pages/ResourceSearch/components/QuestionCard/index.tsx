@@ -8,6 +8,7 @@ import SafeMathRenderer from "../SafeMathRenderer";
 import ZYIcon from "@/components/ZYIcon";
 
 import { useQuestionActions } from "../../hooks/useQuestionActions";
+import { useElementSize } from "@/hooks/useElementSize";
 import { useBesket } from "../../hooks/useBesket";
 
 import { selectOptionsData,all_question_number } from "@/global";
@@ -60,7 +61,8 @@ const QuestionCard = ({
   const questionData = data;
 
   const cardRef = useRef<HTMLDivElement>(null);
-  const [cardWidth, setCardWidth] = useState(600);
+  const { width: hostWidth } = useElementSize(cardRef);
+  const cardWidth = Math.max(0, hostWidth - 24);
 
   const [selectOptions, setSelectOptions] = useState(selectOptionsData);
 
@@ -83,22 +85,6 @@ const QuestionCard = ({
   useEffect(() => {
     setIsInBasket(basketQuestionList?.some((item: any) => item.id === data.id));
   }, [basketQuestionList, data.id]);
-
-  useEffect(() => {
-    const updateCardWidth = () => {
-      if (cardRef.current) {
-        const width = cardRef.current.offsetWidth - 24;
-        setCardWidth(width);
-      }
-    };
-
-    updateCardWidth();
-    window.addEventListener("resize", updateCardWidth);
-
-    return () => {
-      window.removeEventListener("resize", updateCardWidth);
-    };
-  }, []);
 
   const {
     stem,

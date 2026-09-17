@@ -80,8 +80,10 @@ const base = process.env.TEST_URL || 'http://127.0.0.1:4173';
     await menu('资源平台').click();
     await page.locator('.question-list-section .ant-alert').waitFor();
     await fault({});
+    await page.getByRole('button', { name: '让出页面', exact: true }).click();
     await page.locator('.question-list-section').getByRole('button', { name: /重\s*试/ }).click();
     await page.locator('.question-list-section .pagination-wrapper').waitFor();
+    await page.getByRole('button', { name: '恢复聊天显示', exact: true }).click();
     await healthy('题库失败显示重试并恢复');
 
     const roster = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../mock/teacher/data/class-students-cls-g8-02.json'), 'utf8'));
@@ -127,7 +129,6 @@ const base = process.env.TEST_URL || 'http://127.0.0.1:4173';
 
     await fault({});
     await menu('资源平台').click();
-    await page.locator('.ant-float-btn').click();
     await page.locator('.ga_panel').waitFor();
     await page.locator('.ga_input textarea').fill('解释标签体系');
     await fault({ delayMatch: '/assistant/chat', delay: 700 });
@@ -142,10 +143,11 @@ const base = process.env.TEST_URL || 'http://127.0.0.1:4173';
     await page.keyboard.press('Escape');
     await menu('教学设计').click();
     await page.waitForTimeout(1000);
-    await page.locator('.ant-float-btn').click();
     await page.locator('.ga_panel').waitFor();
+    assert.ok((await page.locator('.ga_panel').innerText()).includes('这条消息随后离页'));
+    await page.getByRole('button', { name: '开始新对话' }).click();
     assert.ok(!(await page.locator('.ga_panel').innerText()).includes('这条消息随后离页'));
-    await healthy('助手离页后忽略旧回复');
+    await healthy('助手跨页保留会话，新对话取消旧请求');
     await page.keyboard.press('Escape');
 
     await fault({});

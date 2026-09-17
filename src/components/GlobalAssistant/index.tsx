@@ -1,435 +1,222 @@
 import { Component, useEffect, useRef, useState } from "react";
 import { connect, useDispatch, useLocation, history } from "@umijs/max";
-import { Button, FloatButton, Input, message, Modal, Spin, Tooltip } from "antd";
-import { RobotOutlined, SendOutlined, ReloadOutlined, CheckCircleFilled, CloseCircleFilled, CloseOutlined } from "@ant-design/icons";
-
+import { Button, Input, message, Spin, Tooltip } from "antd";
+import { RobotOutlined, SendOutlined, ReloadOutlined, LayoutOutlined, ShrinkOutlined, EyeOutlined, EyeInvisibleOutlined } from "@ant-design/icons";
 import MarkdownRender from "@/components/MarkdownRender";
-import SuggestionCards, { type Suggestion, type SuggestionAction } from "@/components/SuggestionCards";
-import { ACTION_META, runAction, type AssistantAction } from "./actions";
+import SuggestionCards from "@/components/SuggestionCards";
+import { runAction, type AssistantAction } from "./actions";
 import { getDataService } from "@/pages/TeacherProfile/services";
+import { getPageGreeting, type AssistantPage, type QuickEntry } from "./greetings";
+import { useAssistantLayout } from "./layout";
 import "./index.less";
 
-/** 无页面注册时的路由兜底标题 */
-const ROUTE_TITLES: [string, string][] = [
-  ["/learning-analysis", "学情分析"],
-  ["/design", "教学设计"],
-  ["/paperCompose", "作业组卷"],
-  ["/setTopic", "作业下发"],
-  ["/source", "资源平台"],
-  ["/teach/course", "课程管理"],
-];
-
-/** v2.0-I 路由级助手能力配置：各页面给"本页该给的内容"（建议仅学情分析模块输出） */
-interface QuickItem {
-  label: string;
-  action?: { key: string; params?: Record<string, any> };
-  query?: string;
+interface ChatMsg { id: string; role: "user" | "assistant"; text: string; cards?: any[]; suggestions?: any[]; source?: string; kind?: "greeting"; quick?: QuickEntry[]; page?: AssistantPage; sceneKey?: string }
+let seq = 0;
+const mid = () => "m-" + Date.now() + "-" + seq++;
+function ResultRow({ row, initialOpen, execute }: any) {
+  const [expanded, setExpanded] = useState(initialOpen);
+  return <details className="ga_result_row" open={expanded} onToggle={e => setExpanded(e.currentTarget.open)}>
+    <summary>{row.title}</summary>
+    {expanded && <><MarkdownRender>{row.text || ""}</MarkdownRender>{row.action && <Button size="small" onClick={() => execute(row.action)}>{row.action.label}</Button>}</>}
+  </details>;
 }
-const ROUTE_CONFIG: Record<string, { title: string; desc: string; quick?: QuickItem[] }> = {
-  "/learning-analysis": {
-    title: "学情分析",
-    desc: "班级/个人学情画像、知识图谱与作业分析。我可以按画像数据给出可执行建议，也能解释图表与指标口径。",
-  },
-  "/source": {
-    title: "资源平台",
-    desc: "公共/个人题库与教案、课件资源。题目支持能力等级（L1–L4）、核心素养、题型、来源类别（真题/模拟/月考/期中/期末/同步练习…）、年份与省市地域多维筛选。",
-    quick: [
-      { label: "找「数学抽象」题", action: { key: "filter_question_bank", params: { literacy: "数学抽象" } } },
-      { label: "找「逻辑推理」题", action: { key: "filter_question_bank", params: { literacy: "逻辑推理" } } },
-      { label: "看真题", action: { key: "filter_question_bank", params: { source_type: "真题" } } },
-      { label: "看同步练习", action: { key: "filter_question_bank", params: { source_type: "同步练习" } } },
-      { label: "解释标签体系", query: "解释一下资源平台题库的筛选标签体系" },
-    ],
-  },
-  "/design": {
-    title: "教学设计",
-    desc: "教案/学案的启发式生成与编辑。建议先在「学情分析」页点击「注入教学设计」带入本班学情，生成内容会更贴合班级薄弱点。",
-  },
-  "/paperCompose": {
-    title: "作业组卷",
-    desc: "支持普通组卷与「个性化组卷」（薄弱/变式/复习/挑战四方针，每人一单），生成后可抽样预览再统一下发。",
-    quick: [
-      { label: "生成薄弱补弱作业", action: { key: "personalized_paper", params: { strategy: "weak" } } },
-      { label: "生成遗忘复习作业", action: { key: "personalized_paper", params: { strategy: "review" } } },
-    ],
-  },
-  "/setTopic": {
-    title: "作业下发",
-    desc: "作业的下发与个性化布置。个性化作业建议先在「作业组卷」生成每人一单，再回到本页统一下发。",
-  },
-  "/teach/correction": {
-    title: "作业批改",
-    desc: "查看学生作答与批改结果。批改数据会回流学情画像，可在「学情分析」查看最新掌握度变化。",
-  },
-  "/teach/course": {
-    title: "课程管理",
-    desc: "课程空间内的教材、讲义、题库等资源管理与 AI 助学。",
-  },
-};
-
-const matchRouteConfig = (pathname: string) =>
-  ROUTE_CONFIG[Object.keys(ROUTE_CONFIG).find((p) => pathname.startsWith(p)) || ""];
-
-interface ChatMsg {
-  id: string;
-  role: "user" | "assistant";
-  text: string;
-  suggestions?: Suggestion[];
-  quick?: QuickItem[];
-  action?: AssistantAction & { label?: string };
-  actionDone?: { ok: boolean; detail: string };
+function DocumentCard({ card, onAction, onEdit }: any) {
+  const [editing, setEditing] = useState(false);
+  return <>
+    {editing ? <Input.TextArea aria-label="编辑内容草稿" value={card.text} autoSize={{ minRows: 5, maxRows: 16 }} onChange={e => onEdit(e.target.value)} /> : <MarkdownRender>{card.text}</MarkdownRender>}
+    <div className="ga_quick">
+      <Button size="small" onClick={() => setEditing(!editing)}>{editing ? "完成编辑" : "编辑草稿"}</Button>
+      <Button size="small" onClick={async () => { try { await navigator.clipboard.writeText(card.text); message.success("已复制"); } catch { message.error("复制失败，请选中文本复制"); } }}>复制内容</Button>
+      <Button size="small" onClick={() => {
+        const url = URL.createObjectURL(new Blob([card.text], { type: "text/markdown;charset=utf-8" }));
+        const a = document.createElement("a"); a.href = url; a.download = card.title + ".md"; a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
+      }}>下载草稿</Button>
+      {(card.actions || []).map((a: any) => <Button size="small" key={a.key} onClick={() => onAction({ ...a, params: { ...a.params, assistant_draft: card.text } })}>{a.label}</Button>)}
+    </div>
+  </>;
 }
-
-let msgSeq = 0;
-const mid = () => `m-${Date.now()}-${msgSeq++}`;
-
-/**
- * v2.0-I 全局 AI 小助手：右下角常态化入口 + 对话面板。
- * 能力：①打开时按当前页面自动给出初始建议（建议区融入助手）②基于页面上下文问答/解释
- * ③代替执行系统功能（意图识别 → 确认卡 → ActionRegistry 白名单执行）。
- */
-const GlobalAssistant = (props: any) => {
-  const { assistantModel, analysisModel } = props;
-  const dispatch = useDispatch();
-  const open = !!assistantModel?.open;
-  const pageContext = assistantModel?.pageContext;
+const GlobalAssistant = ({ assistantModel, analysisModel, resourceTab }: any) => {
+  const dispatch = useDispatch(), location = useLocation();
+  const scene = getPageGreeting(location.pathname, location.search, assistantModel?.pageContext, analysisModel, resourceTab);
+  const { page, title } = scene;
+  const sceneRef = useRef(scene); sceneRef.current = scene;
+  const { placement, setPlacement } = useAssistantLayout();
+  const placementRef = useRef(placement); placementRef.current = placement;
+  const [faded, setFaded] = useState(false), [resetVersion, setResetVersion] = useState(0);
+  const [peek, setPeek] = useState(false);
   const [messages, setMessages] = useState<ChatMsg[]>([]);
-  const [input, setInput] = useState("");
-  const [thinking, setThinking] = useState(false);
-  const [loadingSuggestions, setLoadingSuggestions] = useState(false);
-  const listRef = useRef<HTMLDivElement>(null);
-  const loadedSigRef = useRef<string>("");
-  const loadSeqRef = useRef(0);
-  const chatRef = useRef<AbortController | null>(null);
-
-  // 响应式路由：页面切换驱动重渲染（window.location 非响应式，切换页不会触发更新）
-  const location = useLocation();
-  const routeCfg = matchRouteConfig(location.pathname);
-  const route = pageContext?.route || location.pathname;
-  const pageTitle = pageContext?.title
-    || routeCfg?.title
-    || ROUTE_TITLES.find(([p]) => route.startsWith(p))?.[1]
-    || "智谱七天";
-  const isAnalysisRoute = location.pathname.startsWith("/learning-analysis");
-  // 学情建议仅由学情分析模块供给（页面注册上下文），不跨模块兜底到其他页面
-  const classId = isAnalysisRoute
-    ? (pageContext?.data?.class_id || analysisModel?.selectedClass?.value)
-    : pageContext?.data?.class_id;
-  // 上下文签名：页面/班级/学生任一变化即视为"换页"
-  const ctxSig = [
-    route,
-    pageTitle,
-    String(classId || ""),
-    String(pageContext?.data?.student_id || ""),
-  ].join("|");
-
-  // A reply from another page/class must never be appended to the new conversation.
+  const [input, setInput] = useState(""), [thinking, setThinking] = useState(false), [phase, setPhase] = useState(""), [task, setTask] = useState<any>(null);
+  const panelRef = useRef<HTMLElement>(null), listRef = useRef<HTMLDivElement>(null), controllerRef = useRef<AbortController | null>(null);
+  const sessionRef = useRef(""), initSeq = useRef(0), actionBusy = useRef(false), mounted = useRef(true);
+  const scrollTarget = useRef(""), fadeTimer = useRef<ReturnType<typeof setTimeout>>();
+  const auth = localStorage.getItem("accessToken") || "", authRef = useRef(auth);
+  const push = (m: Omit<ChatMsg, "id">) => { const id = mid(); scrollTarget.current = m.kind === "greeting" ? id : "bottom"; setMessages(prev => [...prev.slice(-59), { ...m, id }]); return id; };
+  const patch = (id: string, data: Partial<ChatMsg>) => setMessages(prev => prev.map(m => m.id === id ? { ...m, ...data } : m));
+  const stop = () => { controllerRef.current?.abort(); controllerRef.current = null; setThinking(false); };
+  const restore = () => { clearTimeout(fadeTimer.current); setFaded(false); };
+  const reset = () => { ++initSeq.current; stop(); restore(); setPeek(false); sessionRef.current = ""; setTask(null); setMessages([]); setResetVersion(v => v + 1); };
   useEffect(() => {
-    ++loadSeqRef.current;
-    chatRef.current?.abort();
-    chatRef.current = null;
-    setThinking(false);
-    return () => {
-      ++loadSeqRef.current;
-      chatRef.current?.abort();
-      chatRef.current = null;
+    if (authRef.current !== auth || location.pathname === "/login") { authRef.current = auth; reset(); }
+  }, [auth, location.pathname]);
+  useEffect(() => { mounted.current = true; return () => { mounted.current = false; ++initSeq.current; controllerRef.current?.abort(); }; }, []);
+  useEffect(() => {
+    const version = ++initSeq.current;
+    if (location.pathname === "/login") return;
+    const started = Date.now();
+    let timer: ReturnType<typeof setTimeout>;
+    const greet = () => {
+      const current = sceneRef.current;
+      if (!current.ready && Date.now() - started < 1500) { timer = setTimeout(greet, 100); return; }
+      const id = push({ role: "assistant", kind: "greeting", text: current.text, quick: current.quick, page: current.page, sceneKey: current.key });
+      if (current.suggestions) getDataService(current.suggestions, "profileSuggestionsUrl")
+        .then(j => { if (mounted.current && version === initSeq.current && current.key === sceneRef.current.key && j?.code === 200) patch(id, { suggestions: Array.isArray(j.data?.suggestions) ? j.data.suggestions : [] }); }).catch(() => {});
     };
-  }, [ctxSig]);
-
-  /** 按当前页面上下文重置会话：学情分析=建议；其他页=本页能力介绍+快捷指令 */
-  const loadInitial = async () => {
-    const seq = ++loadSeqRef.current;
-    loadedSigRef.current = ctxSig;
-    setLoadingSuggestions(false);
-    if (isAnalysisRoute && classId) {
-      setLoadingSuggestions(true);
-      try {
-        const sid = pageContext?.data?.student_id;
-        const j = await getDataService({ class_id: String(classId), ...(sid ? { student_id: String(sid) } : {}) }, "profileSuggestionsUrl");
-        if (seq !== loadSeqRef.current) return;
-        if (j?.code !== 200) throw new Error("Suggestions unavailable");
-        const sugs: Suggestion[] = j?.data?.suggestions || [];
-        const head = sid
-          ? `根据该生学情，我整理了 ${sugs.length} 条建议：`
-          : `根据本班学情，我整理了 ${sugs.length} 条建议：`;
-        // 页面自注册快捷指令（如知识图谱页的"图谱怎么看/解释知识点"）附加在建议后
-        const pageQuick: QuickItem[] = Array.isArray(pageContext?.data?.quick) ? pageContext.data.quick : [];
-        setMessages([{
-          id: mid(), role: "assistant",
-          text: `你好，我是 AI 助教**小七** 🤖\n\n当前页面：《**${pageTitle}**》。\n\n${head}`,
-          suggestions: sugs,
-          quick: pageQuick,
-        }]);
-      } catch {
-        if (seq !== loadSeqRef.current) return;
-        setMessages([{
-          id: mid(), role: "assistant",
-          text: `你好，我是 AI 助教**小七** 🤖\n\n当前页面：《**${pageTitle}**》。\n\n建议获取失败（接口异常），你可以直接向我提问，或说“帮我注入教学设计”。`,
-        }]);
-      } finally {
-        if (seq === loadSeqRef.current) setLoadingSuggestions(false);
-      }
+    timer = setTimeout(greet, 250);
+    return () => { clearTimeout(timer); ++initSeq.current; };
+  }, [scene.key, resetVersion, auth]);
+  // Existing page entry buttons now focus the always-visible chat.
+  useEffect(() => {
+    if (!assistantModel?.open) return;
+    restore(); setPeek(false); panelRef.current?.querySelector<HTMLTextAreaElement>(".ga_input textarea")?.focus({ preventScroll: true });
+    dispatch({ type: "assistantModel/close" });
+  }, [assistantModel?.open]);
+  useEffect(() => {
+    const onScroll = (e: Event) => {
+      // Docked chat has its own column; page reflow/scroll must not flash it transparent.
+      if (placementRef.current === "sidebar") return;
+      if (e.target instanceof Node && panelRef.current?.contains(e.target)) return;
+      // Keep typing/composition readable, but allow the page to fade an idle panel.
+      const focused = document.activeElement;
+      if (focused?.matches("textarea, input, [contenteditable=true]") && panelRef.current?.contains(focused)) return;
+      clearTimeout(fadeTimer.current); setFaded(true);
+      fadeTimer.current = setTimeout(() => setFaded(false), 450);
+    };
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape" && panelRef.current?.contains(e.target as Node)) { restore(); setPlacement("floating"); } };
+    window.addEventListener("scroll", onScroll, { capture: true, passive: true });
+    window.addEventListener("keydown", onKey);
+    return () => { clearTimeout(fadeTimer.current); window.removeEventListener("scroll", onScroll, true); window.removeEventListener("keydown", onKey); };
+  }, []);
+  useEffect(() => {
+    const list = listRef.current, target = scrollTarget.current;
+    if (!list || !target) return;
+    if (target === "bottom") list.scrollTop = list.scrollHeight;
+    else { const node = list.querySelector<HTMLElement>('[data-message-id="' + target + '"]'); if (node) list.scrollTop += node.getBoundingClientRect().top - list.getBoundingClientRect().top - 14; }
+    scrollTarget.current = "";
+  }, [messages]);
+  const execute = async (action: AssistantAction, origin?: AssistantPage) => {
+    if (origin?.data.class_id) action = { ...action, params: { ...action.params, class_id: action.params?.class_id || origin.data.class_id } };
+    if (["personalized_paper", "assign_homework"].includes(action.key)) {
+      await send(action.label || "生成个性化练习草稿", { suggestion_action: action, ...(origin ? { page: origin, page_command: true } : {}) });
       return;
     }
-    // 非学情分析页（或学情页无班级数据）：本页能力介绍 + 快捷指令（页面自注册优先），不输出学情建议
-    const pageQuick: QuickItem[] = Array.isArray(pageContext?.data?.quick) ? pageContext.data.quick : [];
-    const quick = pageQuick.length ? pageQuick : (routeCfg?.quick || []);
-    setMessages([{
-      id: mid(), role: "assistant",
-      text: `你好，我是 AI 助教**小七** 🤖\n\n当前页面：《**${pageTitle}**》。\n\n${routeCfg?.desc || "你可以问我本页的功能，也可以让我帮你执行系统操作（如：帮我生成个性化作业）。"}${quick.length ? "\n\n以下快捷指令可直接点击：" : ""}`,
-      quick,
-    }]);
-  };
-
-  // 打开时 / 打开状态下切换页面 → 上下文签名变化即重置会话并重取本页建议；同页重开保留会话
-  useEffect(() => {
-    if (!open) return;
-    if (loadedSigRef.current === ctxSig && messages.length) return;
-    loadInitial();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [open, ctxSig]);
-
-  // 抽屉挂载控制已由自绘面板替代；ESC 关闭
-  useEffect(() => {
-    if (!open) return;
-    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") dispatch({ type: "assistantModel/close" }); };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [open]);
-
-  // 新消息滚动到底
-  useEffect(() => {
-    listRef.current?.scrollTo({ top: listRef.current.scrollHeight });
-  }, [messages, thinking, loadingSuggestions]);
-
-  const pushMsg = (m: Omit<ChatMsg, "id">) => setMessages((prev) => [...prev, { ...m, id: mid() }]);
-  const patchMsg = (id: string, patch: Partial<ChatMsg>) =>
-    setMessages((prev) => prev.map((m) => (m.id === id ? { ...m, ...patch } : m)));
-
-  /** 执行动作（页面建议卡与对话确认卡共用）；写操作二次确认（I6）。
-   *  页面流转（v2.0 优化）：先同步收起面板（遮罩不再压住新页挂载），
-   *  再于下一帧提交路由跳转——把"卸载面板"与"挂载新页"拆到两帧，避免同帧重活造成的顿挫。 */
-  const executeAction = (action: AssistantAction, onDone?: (r: { ok: boolean; detail: string; navigateTo?: any }) => void) => {
-    const meta = ACTION_META.find((m) => m.key === action.key);
-    const doRun = async () => {
-      const r = await runAction(action, { dispatch });
-      onDone?.(r);
-      if (r.navigateTo) {
-        message.success({ content: r.detail.replace(/\*\*/g, ""), duration: 5 });
-        dispatch({ type: "assistantModel/close" });
-        const dest = r.navigateTo;
-        requestAnimationFrame(() => requestAnimationFrame(() => {
-          history.push({ pathname: dest.pathname, search: dest.search || "" });
-        }));
-      }
-    };
-    if (meta?.write) {
-      Modal.confirm({
-        title: `确认执行：${meta.label}`,
-        content: `${meta.desc}。执行后可在对应页面查看与撤回前的确认信息。`,
-        okText: "确认执行",
-        cancelText: "再想想",
-        onOk: doRun,
-      });
-    } else {
-      doRun();
-    }
-  };
-
-  const send = async (overrideText?: string) => {
-    const text = (typeof overrideText === "string" ? overrideText : input).trim();
-    if (!text || chatRef.current) return;
-    const controller = new AbortController();
-    chatRef.current = controller;
-    const timeout = setTimeout(() => controller.abort(), 30000);
-    setInput("");
-    pushMsg({ role: "user", text });
-    setThinking(true);
+    if (actionBusy.current) return; actionBusy.current = true;
     try {
-      const history = messages.slice(-8).map((m) => ({ role: m.role, text: m.text }));
-      const r = await fetch("/api/assistant/chat", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        signal: controller.signal,
-        body: JSON.stringify({
-          message: text,
-          page: {
-            route,
-            title: pageTitle,
-            summary: pageContext?.summary || routeCfg?.desc || "",
-            data: pageContext?.data || {},
-          },
-          actions: ACTION_META.map(({ key, label, desc }) => ({ key, label, desc })),
-          history,
-        }),
-      });
-      const j = await r.json();
-      if (chatRef.current !== controller) return;
-      if (!r.ok || j?.code !== 200) throw new Error(j?.msg || "请求失败");
-      const d = j?.data || {};
-      pushMsg({
-        role: "assistant",
-        text: d.reply || "（空回复）",
-        action: d.type === "action" ? d.action : undefined,
-      });
-    } catch {
-      if (chatRef.current === controller) pushMsg({ role: "assistant", text: "请求失败或超时，请稍后重试～" });
-    } finally {
-      clearTimeout(timeout);
-      if (chatRef.current === controller) {
-        chatRef.current = null;
-        setThinking(false);
-      }
-    }
+      const r = await runAction(action, { dispatch });
+      if (!mounted.current || authRef.current !== auth) return;
+      if (!r.ok) message.error(r.detail);
+      else if (r.navigateTo) history.push({ pathname: r.navigateTo.pathname, search: r.navigateTo.search || "" });
+    } catch { message.error("操作失败，请重试"); }
+    finally { actionBusy.current = false; }
   };
-
-  const renderMsg = (m: ChatMsg) => (
-    <div key={m.id} className={`ga_bubble ga_bubble--${m.role}`}>
-      {m.role === "assistant" ? <div className="ga_avatar">七</div> : null}
-      <div className="ga_bubble_body">
-        {m.text ? (
-          <div className="ga_text">
-            <MarkdownRender>{m.text}</MarkdownRender>
-          </div>
-        ) : null}
-        {m.suggestions?.length ? (
-          <div className="ga_suggestions">
-            <SuggestionCards
-              suggestions={m.suggestions}
-              onAction={(a: SuggestionAction) => executeAction({ key: a.key, label: a.label, params: a.params })}
-            />
-          </div>
-        ) : null}
-        {m.quick?.length ? (
-          <div className="ga_quick">
-            {m.quick.map((q) => (
-              <Button
-                key={q.label}
-                size="small"
-                className="ga_quick_btn"
-                onClick={() => {
-                  if (q.action) executeAction({ key: q.action.key, label: q.label, params: q.action.params });
-                  else if (q.query) { setInput(q.query); setTimeout(() => send(q.query), 0); }
-                }}
-              >
-                {q.label}
-              </Button>
-            ))}
-          </div>
-        ) : null}
-        {m.action ? (
-          <div className="ga_action_card">
-            <div className="ga_action_label">⚡ {m.action.label || m.action.key}</div>
-            {m.actionDone ? (
-              <div className={`ga_action_result ${m.actionDone.ok ? "ok" : "fail"}`}>
-                {m.actionDone.ok ? <CheckCircleFilled /> : <CloseCircleFilled />}
-                <MarkdownRender>{m.actionDone.detail}</MarkdownRender>
-              </div>
-            ) : (
-              <div className="ga_action_btns">
-                <Button size="small" type="primary" onClick={() =>
-                  executeAction(m.action!, (r) => patchMsg(m.id, { actionDone: { ok: r.ok, detail: r.detail } }))
-                }>
-                  确认执行
-                </Button>
-                <Button size="small" onClick={() => patchMsg(m.id, { actionDone: { ok: true, detail: "已取消，可继续对话" } })}>
-                  取消
-                </Button>
-              </div>
-            )}
-          </div>
-        ) : null}
-      </div>
-    </div>
-  );
-
-  return (
-    <>
-      {!open ? (
-        <Tooltip title="AI 助教 · 小七" placement="left">
-          <FloatButton
-            icon={<RobotOutlined />}
-            type="primary"
-            style={{ insetInlineEnd: 28, bottom: 36, width: 46, height: 46, zIndex: 999 }}
-            onClick={() => dispatch({ type: "assistantModel/open" })}
-          />
-        </Tooltip>
-      ) : (
-        // 自绘固定面板：打开即挂载、关闭即卸载，无过渡动画（规避 rc-motion 在
-        // 节流环境下卡在中途态导致遮罩吞点击/面板停屏外的问题）
-        <>
-          <div className="ga_mask" onClick={() => dispatch({ type: "assistantModel/close" })} />
-          <div className="ga_panel">
-            <div className="ga_header">
-              <span className="ga_header_name">🤖 AI 助教 · 小七</span>
-              <span className="ga_header_page">{pageTitle}</span>
-              <Tooltip title="按当前页面重新获取建议">
-                <Button
-                  type="text"
-                  size="small"
-                  className="ga_header_refresh"
-                  icon={<ReloadOutlined />}
-                  onClick={loadInitial}
-                />
-              </Tooltip>
-              <Button
-                type="text"
-                size="small"
-                className="ga_header_close"
-                icon={<CloseOutlined />}
-                onClick={() => dispatch({ type: "assistantModel/close" })}
-              />
+  const send = async (override?: string, extra: any = {}) => {
+    const text = (typeof override === "string" ? override : input).trim();
+    if (!text || controllerRef.current) return;
+    const controller = new AbortController(); controllerRef.current = controller;
+    const timeout = setTimeout(() => controller.abort(), 65000);
+    const active = () => mounted.current && controllerRef.current === controller && !controller.signal.aborted && authRef.current === auth;
+    setInput(""); push({ role: "user", text }); setThinking(true); setPhase("正在查询数据…");
+    // Snapshot context stays with the task when the user navigates elsewhere.
+    const past = messages.filter(m => m.kind !== "greeting").slice(-10).map(m => ({ role: m.role, text: m.text }));
+    const requestPage = extra.page || page;
+    const documentText = [...messages].reverse().flatMap(m => m.cards || []).find(c => c.kind === "document")?.text;
+    const call = async (url: string, body: any) => {
+      const response = await fetch(url, { method: "POST", headers: { "content-type": "application/json", Authorization: auth }, signal: controller.signal, body: JSON.stringify(body) });
+      const data = await response.json();
+      if (!response.ok || data.code !== 200) throw new Error(data.msg || "请求失败");
+      return data.data;
+    };
+    try {
+      const body = { message: text, page, history: past, session_id: sessionRef.current, request_id: mid(), document_text: documentText, ...extra };
+      let d = await call("/api/assistant/chat", body);
+      if (!active()) return;
+      sessionRef.current = d.session_id || sessionRef.current; setTask(d.task);
+      const responseId = push({ role: "assistant", text: d.reply, cards: d.cards || [], source: d.source, page: requestPage });
+      if (d.auto_action) await execute(d.auto_action);
+      if (d.needs_model) {
+        setPhase("正在结合证据整理教学回答…");
+        try {
+          let ai = await call("/api/assistant/model", { message: text, page: requestPage, history: past, context: d.model_context, allow_interpret: d.allow_interpret });
+          if (!active()) return;
+          if (ai.available && ai.lookup && d.allow_interpret) {
+            const retrieved = await call("/api/assistant/chat", { ...body, request_id: mid(), session_id: sessionRef.current, semantic_read: ai.lookup });
+            if (!active()) return;
+            if (retrieved.source !== "fallback") {
+              d = retrieved; setTask(d.task); patch(responseId, { text: d.reply, cards: d.cards || [], source: d.source });
+              if (!d.needs_model) return;
+              ai = await call("/api/assistant/model", { message: text, page: requestPage, history: past, context: d.model_context });
+              if (!active()) return;
+            }
+          }
+          if (ai.available) {
+            const cards = (d.cards || []).map((c: any) => c.kind === "document" ? { ...c, text: ai.answer } : c);
+            patch(responseId, { text: cards.some((c: any) => c.kind === "document") ? d.reply : ai.answer, cards, source: "ai" });
+          } else patch(responseId, { text: d.reply + "\n\n模型服务暂不可用，以上保留了可核对的数据和基础建议。", source: "offline" });
+        } catch { if (active()) patch(responseId, { text: d.reply + "\n\n模型连接失败，已保留查询结果，可以继续操作或稍后重试。", source: "offline" }); }
+      }
+    } catch { if (mounted.current && controllerRef.current === controller) push({ role: "assistant", text: controller.signal.aborted ? "本次请求已停止，已完成的结果仍保留。" : "请求失败，请稍后重试；未报告任何执行成功。", source: "error" }); }
+    finally { clearTimeout(timeout); if (controllerRef.current === controller) { controllerRef.current = null; setThinking(false); } }
+  };
+  const greetingPage = (m: ChatMsg) => m.sceneKey === scene.key ? page : m.page;
+  const runQuick = (q: QuickEntry, m: ChatMsg) => {
+    const origin = greetingPage(m);
+    if (q.action) return execute(q.action, origin);
+    return send(q.query, { page: origin, page_command: !!origin?.data.class_id && ["/learning-analysis", "/interact/analysis"].includes(origin.route) });
+  };
+  const renderCard = (card: any, index: number, m: ChatMsg) => <div className={"ga_result_card ga_result--" + card.kind} key={index} data-kind={card.kind}>
+    <strong>{card.title}</strong>{card.subtitle && <div className="ga_card_scope">{card.subtitle}</div>}
+    {card.kind === "document" ? <DocumentCard card={card} onAction={execute} onEdit={(text: string) => patch(m.id, { cards: m.cards?.map((c, i) => i === index ? { ...c, text } : c) })} /> : <>
+      {(card.rows || []).map((row: any, i: number) => <ResultRow key={i} row={row} initialOpen={i < 3 && card.kind !== "draft"} execute={execute} />)}
+      {(card.actions || []).map((a: any) => <Button size="small" key={a.key} onClick={() => execute(a)}>{a.label}</Button>)}
+    </>}
+    {card.candidates?.map((c: any) => <Button block key={c.class_id + c.student_id} disabled={thinking} onClick={() => send("选择" + c.name, { candidate_id: c.student_id, candidate_class: c.class_id })}>{c.name} · {c.class_name} · {c.display_id}</Button>)}
+    {card.kind === "confirmation" && <div className="ga_quick"><Button type="primary" disabled={thinking || messages.filter(item => item.kind !== "greeting").at(-1)?.id !== m.id} onClick={() => send("确认发布", { confirmation: card.token })}>确认发布</Button><Button disabled={thinking} onClick={() => send("取消")}>取消</Button></div>}
+    {card.notes?.map((n: string) => <div key={n} className="ga_card_scope">{n}</div>)}
+    {!!card.prompts?.length && <div className="ga_quick">{card.prompts.map((p: string) => <Button size="small" key={p} disabled={thinking} onClick={() => send(p)}>{p}</Button>)}</div>}
+  </div>;
+  if (location.pathname === "/login") return null;
+  const switchLabel = placement === "floating" ? "切换到右侧栏" : "切换到右下角";
+  return <aside ref={panelRef} className={"ga_panel ga_panel--" + placement + (faded || peek ? " ga_panel--faded" : "")} aria-label="AI助教对话" onPointerEnter={restore} onFocusCapture={e => { restore(); if ((e.target as HTMLElement).matches("textarea, input, [contenteditable=true]")) setPeek(false); }}>
+        <div className="ga_header"><RobotOutlined className="ga_header_icon" /><div className="ga_heading"><span className="ga_header_name">AI 助教 · 小七</span><span className="ga_header_page" title={title}>{title}</span></div>
+          <Tooltip title="开始新对话"><Button aria-label="开始新对话" type="text" className="ga_header_refresh" icon={<ReloadOutlined />} onClick={reset} /></Tooltip>
+          <Tooltip title={peek ? "恢复聊天显示" : "让出页面：虚化聊天，可点击下方内容"}><Button aria-label={peek ? "恢复聊天显示" : "让出页面"} aria-pressed={peek} type="text" icon={peek ? <EyeOutlined /> : <EyeInvisibleOutlined />} onClick={() => { restore(); setPeek(v => !v); }} /></Tooltip>
+          <Tooltip title={switchLabel}><Button aria-label={switchLabel} type="text" icon={placement === "floating" ? <LayoutOutlined /> : <ShrinkOutlined />} onClick={() => { restore(); setPeek(false); setPlacement(placement === "floating" ? "sidebar" : "floating"); }} /></Tooltip></div>
+        {task && <div className="ga_task"><b>当前任务：</b>{task.students?.join("、") || task.class_name || "教学问答"}<div>{task.scope}</div>{task.draft_id && <div>草稿 {task.draft_id}</div>}</div>}
+        <div className="ga_list" ref={listRef} aria-live="polite">
+          {messages.map(m => <div key={m.id} data-message-id={m.id} className={"ga_bubble ga_bubble--" + m.role + (m.kind === "greeting" ? " ga_greeting" : "")}>
+            {m.role === "assistant" && <div className="ga_avatar">七</div>}
+            <div className="ga_bubble_body">{m.kind === "greeting" && <div className="ga_greeting_title">{m.page?.title} · 常用功能</div>}
+              {m.kind !== "greeting" && m.page && m.page.title !== title && <div className="ga_card_scope">回复于 {m.page.title}</div>}
+              <div className="ga_text"><MarkdownRender>{m.text}</MarkdownRender></div>
+              {m.source && <div className="ga_source">{({ ai: "模型回答 · 请结合下方证据核对", data: "业务数据 · 当前为演示环境", offline: "模型离线 · 数据查询可用", clarification: "需要补充信息" } as any)[m.source] || ""}</div>}
+              {!!m.quick?.length && <div className="ga_quick">{m.quick.map(q => <Button className="ga_quick_btn" size="small" key={q.label} disabled={thinking} onClick={() => runQuick(q, m)}>{q.label}</Button>)}</div>}
+              {m.suggestions?.length ? <div className="ga_suggestions"><div className="ga_card_scope">根据画像整理的 {m.suggestions.length} 条建议（画像口径）</div><SuggestionCards suggestions={m.suggestions.slice(0, 1)} onAction={a => execute(a, greetingPage(m))} />{m.suggestions.length > 1 && <details><summary>查看其余 {m.suggestions.length - 1} 条建议</summary><SuggestionCards suggestions={m.suggestions.slice(1)} onAction={a => execute(a, greetingPage(m))} /></details>}</div> : null}
+              {m.cards?.map((c, i) => renderCard(c, i, m))}
             </div>
-            <div className="ga_list" ref={listRef}>
-              {loadingSuggestions ? (
-                <div className="ga_thinking"><Spin size="small" /> 正在根据本页学情整理建议…</div>
-              ) : null}
-              {messages.map(renderMsg)}
-              {thinking ? <div className="ga_thinking"><Spin size="small" /> 小七正在思考…</div> : null}
-            </div>
-            <div className="ga_input">
-              <Input.TextArea
-                value={input}
-                autoSize={{ minRows: 1, maxRows: 4 }}
-                placeholder="问我本页数据，或让我帮你做事（如：帮我生成个性化作业）"
-                onChange={(e) => setInput(e.target.value)}
-                onPressEnter={(e) => { if (!e.shiftKey) { e.preventDefault(); send(); } }}
-              />
-              <Button aria-label="发送消息" type="primary" icon={<SendOutlined />} loading={thinking} onClick={() => send()} />
-            </div>
-          </div>
-        </>
-      )}
-    </>
-  );
+          </div>)}
+          {thinking && <div className="ga_thinking"><Spin size="small" />{phase}<Button size="small" onClick={stop}>停止</Button></div>}
+        </div>
+        <div className="ga_input"><Input.TextArea value={input} autoSize={{ minRows: 1, maxRows: 4 }} placeholder="输入学生姓名、教学问题或任务…" onChange={e => setInput(e.target.value)}
+          onPressEnter={e => { if (!e.shiftKey && !(e.nativeEvent as any).isComposing) { e.preventDefault(); send(); } }} />
+          <Button aria-label="发送消息" type="primary" icon={<SendOutlined />} loading={thinking} onClick={() => send()} /></div>
+      </aside>;
 };
-
-export default connect((state: any) => ({
-  assistantModel: state.assistantModel,
-  analysisModel: state.analysisModel,
-}))(GlobalAssistant);
-
-/** 助手专属错误边界：助手自身异常时静默退场，绝不拖垮业务页面（调试期记录错误到 window） */
+const ConnectedAssistant = connect((state: any) => ({ assistantModel: state.assistantModel, analysisModel: state.analysisModel, resourceTab: state.resourceSearchModel?.activeTab }))(GlobalAssistant);
+export default ConnectedAssistant;
 class AssistantErrorBoundary extends Component<{ children: any }, { failed: boolean }> {
   state = { failed: false };
-  static getDerivedStateFromError(err: any) {
-    try { (window as any).__ASSISTANT_ERR__ = { message: err?.message, stack: err?.stack }; } catch {}
-    return { failed: true };
-  }
-  render() {
-    return this.state.failed ? null : this.props.children;
-  }
+  static getDerivedStateFromError() { return { failed: true }; }
+  componentDidCatch(error: any) { (window as any).__assistantError = String(error); }
+  render() { return this.state.failed ? <Button style={{ position: "fixed", right: 24, bottom: 32 }} onClick={() => this.setState({ failed: false })}>重新打开助手</Button> : this.props.children; }
 }
-
-export function GlobalAssistantSafe() {
-  return (
-    <AssistantErrorBoundary>
-      <ConnectedGlobalAssistant />
-    </AssistantErrorBoundary>
-  );
-}
-
-const ConnectedGlobalAssistant = connect((state: any) => ({
-  assistantModel: state.assistantModel,
-  analysisModel: state.analysisModel,
-}))(GlobalAssistant);
+export { AssistantErrorBoundary };
+export const GlobalAssistantSafe = () => <AssistantErrorBoundary><ConnectedAssistant /></AssistantErrorBoundary>;

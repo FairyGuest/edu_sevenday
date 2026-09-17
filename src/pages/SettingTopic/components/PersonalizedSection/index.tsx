@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "@umijs/max";
 import {
   Alert, Button, Card, Checkbox, Col, Collapse, message, Row, Select, Spin, Table, Tag, Tooltip,
 } from "antd";
@@ -27,20 +28,26 @@ const post = (url: string, body: any) =>
  * 业务闭环：四方针配置 → 生成（每人一单）→ 发布（对象锁定）→ 学情汇总报告 → 二轮推荐。
  */
 const PersonalizedSection = ({ classes }: { classes: any[] }) => {
+  const location = useLocation();
   const [classId, setClassId] = useState("");
   const [config, setConfig] = useState({ weak: true, variant: true, review: true, challenge: true, total: 6 });
   const [detail, setDetail] = useState<any>(null);
   const [report, setReport] = useState<any>(null);
   const [hwId, setHwId] = useState("");
+  useEffect(() => {
+    const id = new URLSearchParams(location.search).get("homework_id");
+    if (id) setHwId(id);
+  }, [location.search]);
   const [paper, setPaper] = useState<any>(null);
   const [studentId, setStudentId] = useState("");
   const [genLoading, setGenLoading] = useState(false);
   const [rptLoading, setRptLoading] = useState(false);
   const [homeworkList, setHomeworkList] = useState<any[]>([]);
+  const [loadError, setLoadError] = useState("");
 
   const classList = classes || [];
   const s = detail?.summary || {};
-  const strategyEntries = Object.entries(s.strategy_mix || {});
+  const strategyEntries = Object.entries(s.strategy_mix || {}) as [string, number][];
   const topClusters = s.top_clusters || [];
 
   const loadHomeworkList = async (cid?: string) => {
@@ -54,17 +61,27 @@ const PersonalizedSection = ({ classes }: { classes: any[] }) => {
 
   // 选中作业：拉详情 + 已有报告
   useEffect(() => {
+    const controller = new AbortController();
+    setDetail(null); setLoadError("");
     if (!hwId) return;
     setReport(null); setPaper(null); setStudentId("");
-    fetch(`/api/teacher/recommend/homework/${hwId}`).then(j).then(d => { if (d.code === 200) setDetail(d.data); });
-    fetch(`/api/teacher/recommend/report?id=${hwId}`).then(j).then(d => { if (d.code === 200) setReport(d.data); });
+    fetch(`/api/teacher/recommend/homework/${encodeURIComponent(hwId)}`, { signal: controller.signal }).then(j).then(d => {
+      if (controller.signal.aborted) return;
+      if (d.code !== 200) throw new Error(d.msg || "作业加载失败");
+      setDetail(d.data); setClassId(d.data.class_id); setStudentId(d.data.students?.[0]?.sid || "");
+    }).catch(e => { if (!controller.signal.aborted) setLoadError(e.message || "作业加载失败"); });
+    fetch(`/api/teacher/recommend/report?id=${encodeURIComponent(hwId)}`, { signal: controller.signal }).then(j).then(d => { if (!controller.signal.aborted && d.code === 200) setReport(d.data); }).catch(() => {});
+    return () => controller.abort();
   }, [hwId]);
 
   useEffect(() => {
+    const controller = new AbortController();
+    setPaper(null);
     if (hwId && studentId) {
-      fetch(`/api/teacher/recommend/paper-preview?id=${hwId}&sid=${studentId}`)
-        .then(j).then(d => { if (d.code === 200) setPaper(d.data); });
+      fetch(`/api/teacher/recommend/paper-preview?id=${encodeURIComponent(hwId)}&sid=${encodeURIComponent(studentId)}`, { signal: controller.signal })
+        .then(j).then(d => { if (!controller.signal.aborted && d.code === 200) setPaper(d.data); }).catch(() => {});
     }
+    return () => controller.abort();
   }, [hwId, studentId]);
 
   const donutOption = {
@@ -151,6 +168,7 @@ const PersonalizedSection = ({ classes }: { classes: any[] }) => {
 
   return (
     <div style={{ padding: "0 0 12px" }}>
+      {loadError && <Alert type="error" showIcon message={loadError} />}
       {/* 配置+生成 */}
       <Card size="small" style={{ marginBottom: 10 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
@@ -161,7 +179,7 @@ const PersonalizedSection = ({ classes }: { classes: any[] }) => {
             placeholder="选择班级"
             options={classList.map(c => ({ value: c.class_id, label: `${c.class_name} · ${c.n_students}人` }))} />
           {([["weak","薄弱知识点"],["variant","错题变式"],["review","遗忘复习"],["challenge","挑战(选做)"]] as const).map(([k,l]) => (
-            <Checkbox key={k} size="small" checked={(config as any)[k]}
+            <Checkbox key={k} checked={(config as any)[k]}
               onChange={e => setConfig(c => ({...c, [k]: e.target.checked}))}>{l}</Checkbox>
           ))}
           <Tooltip title="人均必做题量：按方针权重自动分配（薄弱优先），挑战题为选做+1">

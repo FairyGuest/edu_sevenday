@@ -1,7 +1,7 @@
 /**
  * v2.0-I 全局 AI 小助手 · dva 模型。
  * pageContext 由各页面挂载时注册（I5 上下文注入），小助手发起对话时注入 system 上下文；
- * open 控制右下角入口展开。建议数据不落 model（打开时按 pageContext 现取）。
+ * 聊天窗常驻；open 保留为页面入口的聚焦请求。切页问候独立于对话与任务。
  */
 export default {
   namespace: "assistantModel",
