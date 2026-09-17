@@ -1,5 +1,5 @@
 import { memo, useMemo, useState } from "react";
-import { Button, Modal, Table } from "antd";
+import { Button, Modal, Table, Tooltip } from "antd";
 import { MessageOutlined } from "@ant-design/icons";
 import ReactECharts from "echarts-for-react";
 
@@ -74,19 +74,34 @@ function ProfileCharts({ trend, sourceMix, weakRanking, classId }: {
   return (
     <div className="teacher_profile_charts analysis_charts">
       <div className="teacher_profile_chart_card">
-        <p className="teacher_profile_chart_title">班级掌握度趋势 · 近8次评估</p>
-        <ReactECharts option={lineOption} style={{ height: 212 }} notMerge />
+        <div className="profile_chart_heading">
+          <p className="teacher_profile_chart_title">班级掌握度趋势 · 近8次评估</p>
+        </div>
+        <div className="profile_chart_plot">
+          <ReactECharts option={lineOption} style={{ height: "100%" }} notMerge />
+        </div>
       </div>
       <div className="teacher_profile_chart_card">
-        <p className="teacher_profile_chart_title">数据来源构成</p>
-        <ReactECharts option={pieOption} style={{ height: 228 }} notMerge />
-        <Button size="small" type="link" icon={<MessageOutlined />} className="ia_link" onClick={openInteractions}>
-          查看人机交互明细
-        </Button>
+        <div className="profile_chart_heading">
+          <p className="teacher_profile_chart_title">数据来源构成</p>
+          <Tooltip title="查看人机交互明细">
+            <Button size="small" type="link" icon={<MessageOutlined />} className="ia_link"
+              aria-label="查看人机交互明细" onClick={openInteractions}>
+              查看明细
+            </Button>
+          </Tooltip>
+        </div>
+        <div className="profile_chart_plot">
+          <ReactECharts option={pieOption} style={{ height: "100%" }} notMerge />
+        </div>
       </div>
       <div className="teacher_profile_chart_card">
-        <p className="teacher_profile_chart_title">薄弱知识点排行</p>
-        <ReactECharts option={barOption} style={{ height: 204 }} notMerge />
+        <div className="profile_chart_heading">
+          <p className="teacher_profile_chart_title">薄弱知识点排行</p>
+        </div>
+        <div className="profile_chart_plot">
+          <ReactECharts option={barOption} style={{ height: "100%" }} notMerge />
+        </div>
       </div>
       {/* B3 人机交互明细弹窗 */}
       <Modal open={iaOpen} onCancel={() => setIaOpen(false)} footer={null} width={640}

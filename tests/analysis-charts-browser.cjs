@@ -110,6 +110,9 @@ fs.mkdirSync(output, { recursive: true });
       }
       return { frames, resizeCounts, canvasMutations, clears, distinctSizes: sizes.map(s => s.size),
         hosts: hosts.map(rect), cards: cards.map(rect), business: rect(document.querySelector('.content_wrap')),
+        distribution: rect(document.querySelector('.analysis_distribution > .teacher_profile_card')),
+        chartGroup: rect(document.querySelector('.analysis_charts')),
+        tableBody: document.querySelector('.cluster_table .ant-table-body') ? rect(document.querySelector('.cluster_table .ant-table-body')) : null,
         instances: hosts.map(host => host.getAttribute('_echarts_instance_')) };
     }, duration);
     measurements.push({ name, ...result });
@@ -118,6 +121,22 @@ fs.mkdirSync(output, { recursive: true });
     assert.deepEqual(result.canvasMutations, [0, 0, 0], name + ': 闲置期间不能反复修改画布尺寸/重挂画布');
     assert.deepEqual(result.clears, [0, 0, 0], name + ': 闲置期间不能反复清空重绘');
     assert.ok(result.resizeCounts.every(n => n <= 1), name + ': 除首次回调外不能继续触发 resize');
+    const heights = result.cards.map(card => card.height);
+    assert.ok(Math.max(...heights) - Math.min(...heights) < 1, name + ': 三张卡片应等高');
+    const [first, second, third] = result.cards;
+    if (Math.abs(first.y - second.y) < 1 && third.y > first.y + first.height) {
+      assert.ok(Math.abs(third.x - first.x) < 1 && Math.abs(third.x + third.width - second.x - second.width) < 1,
+        name + ': 两列排列时第三图应铺满第二行');
+    }
+    const left = result.distribution, right = result.chartGroup;
+    if (right.x >= left.x + left.width) {
+      assert.ok(Math.abs(left.y - right.y) < 1, name + ': 左右两栏顶部对齐');
+      assert.ok(Math.abs(left.y + left.height - right.y - right.height) < 1, name + ': 左右两栏底部对齐');
+      if (result.tableBody) {
+        const bottomGap = left.y + left.height - result.tableBody.y - result.tableBody.height;
+        assert.ok(bottomGap <= 32, name + ': 表格内部不能通过大片留白凑齐高度 ' + bottomGap);
+      }
+    }
     result.hosts.forEach((host, i) => {
       assert.ok(host.height >= 180 && host.width >= 200, name + ': 保留可读绘图区 ' + JSON.stringify(host));
       const card = result.cards[i], business = result.business;
@@ -139,20 +158,27 @@ fs.mkdirSync(output, { recursive: true });
     await page.getByPlaceholder('请输入验证码').fill('1234');
     await page.getByRole('button', { name: '立即登录' }).click(); await page.waitForURL('**/source');
     await dock(); await page.getByText('学情分析', { exact: true }).first().click();
-    for (const width of [1440, 1920, 1600, 1280, 1024]) {
+    for (const width of [1440, 1920, 2240, 1800, 1600, 1280, 1024]) {
       await page.setViewportSize({ width, height: 960 });
       await stable(`侧栏 ${width}px`, width === 1440 ? 5000 : 2200); await cellsFit();
       const scroll = page.locator('.cluster_table .ant-table-body');
       await scroll.evaluate(e => { e.scrollLeft = e.scrollWidth; }); await cellsFit();
       await scroll.evaluate(e => { e.scrollLeft = 0; });
       check(`侧栏 ${width}px：单元格无越界，三图持续采样稳定，横向滚动正常`);
-      if (width === 1440 || width === 1024) {
+      if (width === 1440 || width === 1920 || width === 2240 || width === 1800 || width === 1024) {
         await page.locator('.analysis_distribution').scrollIntoViewIfNeeded();
         await page.screenshot({ path: path.join(output, `table-sidebar-${width}.png`) });
         await page.locator('.analysis_charts').scrollIntoViewIfNeeded();
         await page.screenshot({ path: path.join(output, `charts-sidebar-${width}.png`) });
       }
     }
+
+    await page.setViewportSize({ width: 1920, height: 1080 }); await float();
+    await stable('宽屏浮窗两栏对齐'); await cellsFit();
+    await page.locator('.analysis_charts').scrollIntoViewIfNeeded();
+    await page.screenshot({ path: path.join(output, 'alignment-floating-1920.png') });
+    await dock();
+    check('宽屏左右两栏顶部底部对齐，表格内部无大片空白');
 
     await page.setViewportSize({ width: 1440, height: 960 }); await ready();
     const handles = await page.locator('.analysis_charts canvas').elementHandles();
@@ -195,6 +221,7 @@ fs.mkdirSync(output, { recursive: true });
     await page.evaluate(() => { window.__analysisTest.empty = true; });
     await page.locator('.teacher_profile_filter .source-chip').filter({ hasText: '自主练习' }).click();
     await page.locator('.cluster_table .ant-empty').waitFor(); await stable('空数据');
+    await page.setViewportSize({ width: 1920, height: 960 }); await stable('宽屏空数据对齐');
     check('空数据保留稳定图表尺寸，无页面异常');
     fs.writeFileSync(path.join(output, 'results.json'), JSON.stringify({ passed, errors, measurements }, null, 2));
   } catch (error) {

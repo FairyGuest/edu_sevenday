@@ -831,34 +831,89 @@
 /* 素养雷达整行卡 */
 .dim_card_full { margin-bottom: 12px; }
 
-/* 图表高度独立于分布表，避免百分比高度与 flex 拉伸形成尺寸反馈。 */
+/* 卡片由 Grid 对齐；画布脱离固有尺寸计算，避免绘制反过来撑高卡片。 */
 .analysis_row {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  align-items: start;
+  align-items: stretch;
   gap: 16px;
   margin-bottom: 14px;
 
-  > .analysis_distribution, > .analysis_right { min-width: 0; }
-  .analysis_distribution > .teacher_profile_card { margin-bottom: 0; }
-}
-
-.analysis_charts {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-  align-items: start;
-  gap: 12px;
-
-  .teacher_profile_chart_card {
+  > .analysis_distribution, > .analysis_right { display: grid; min-width: 0; }
+  > .analysis_right { container: profile-charts / inline-size; }
+  .analysis_distribution > .teacher_profile_card {
     min-width: 0;
     margin-bottom: 0;
   }
 }
 
+.analysis_charts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  grid-auto-rows: 1fr;
+  align-items: stretch;
+  gap: 12px;
+
+  .teacher_profile_chart_card {
+    display: grid;
+    grid-template-rows: auto minmax(220px, 1fr);
+    gap: 10px;
+    min-width: 0;
+    margin-bottom: 0;
+  }
+}
+
+.profile_chart_heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 24px;
+
+  .teacher_profile_chart_title { margin: 0; }
+  .ia_link { flex: none; margin: 0; }
+}
+
+.profile_chart_plot {
+  position: relative;
+  min-width: 0;
+
+  > .echarts-for-react {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+  }
+}
+
+/* 两列容得下、三列容不下时，排行图铺满第二行，避免留下半行空位。 */
+@container profile-charts (572px <= width < 864px) {
+  .analysis_charts > .teacher_profile_chart_card:nth-child(3) { grid-column: 1 / -1; }
+}
+
 /* 以助手占位后的业务区宽度为准，窄时将图表放到分布表下方。 */
 @container business-page (min-width: 1220px) {
   .analysis_row { grid-template-columns: minmax(0, 1fr) 312px; }
-  .analysis_charts { grid-template-columns: minmax(0, 1fr); }
+  .analysis_charts {
+    grid-template-columns: minmax(0, 1fr);
+    .teacher_profile_chart_card { grid-template-rows: auto minmax(180px, 1fr); }
+  }
+
+  .analysis_distribution > .teacher_profile_card {
+    display: flex;
+    flex-direction: column;
+    .ct_header { flex: none; }
+    .cluster_table {
+      flex: 1;
+      display: grid;
+      // Table 的 clearfix 伪元素在 Grid 中会成为额外行，少量数据时产生上下空白。
+      &::before, &::after { display: none; }
+    }
+    .ant-spin-nested-loading, .ant-spin-container, .ant-table { display: grid; }
+    .ant-table-container { display: flex; flex-direction: column; }
+    .ant-table-header { flex: none; }
+    .ant-table-body { flex: 1; }
+    .ant-table-body > table { height: 100%; }
+  }
 }
 
 /* 表头等级图例（常显小字） */
