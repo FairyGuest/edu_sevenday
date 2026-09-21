@@ -141,8 +141,14 @@ const SiderMenu = () => {
         ) : (
           <>
             <div className="logo">
-              <img className="logo-img" src={require("@/assets/logo.png")} />
-              <div className="logo-text">智谱七天</div>
+              <img
+                className="logo-img"
+                src={require("@/assets/zhipu-logo.png")}
+                alt="智谱 Logo"
+                width={30}
+                height={30}
+              />
+              <div className="logo-text">智谱</div>
             </div>
 
             <Tooltip title="收起侧边栏" placement="right">
