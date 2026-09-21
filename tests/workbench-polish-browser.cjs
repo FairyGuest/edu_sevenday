@@ -76,6 +76,7 @@ fs.mkdirSync(output, { recursive: true });
     page.screenshot({
       path: path.join(output, name + ".png"),
       animations: "disabled",
+      style: ".ant-message { visibility: hidden !important; }",
     });
   const menu = (name) => page.getByRole("menuitem", { name, exact: true });
   const closeResources = async () => {
@@ -130,7 +131,8 @@ fs.mkdirSync(output, { recursive: true });
 
     await menu("教学设计").click();
     await page.locator(".dialog-box").waitFor();
-    assert.ok((await page.locator(".right-wrapper-title").boundingBox()).y < 200);
+    const headingTop = (await page.locator(".right-wrapper-title").boundingBox()).y;
+    assert.ok(headingTop >= 120 && headingTop < 200);
     assert.equal(await page.locator(".type-item-img").count(), 2);
     assert.equal(await page.locator(".type-item--reflect .reflection-icon").count(), 1);
     await page.locator(".dab_btn").filter({ hasText: "教学目标" }).click();
@@ -158,8 +160,26 @@ fs.mkdirSync(output, { recursive: true });
       true,
     );
     await shot("design-laptop");
+    await page.setViewportSize({ width: 1100, height: 760 });
+    const overlapping = await page.locator(".right-wrapper-type .type-item").evaluateAll((buttons) =>
+      buttons.some((button) => {
+        const icon = button.querySelector(".type-item-img, .reflection-icon").getBoundingClientRect();
+        const label = button.querySelector(".type-item-label").getBoundingClientRect();
+        const bounds = button.getBoundingClientRect();
+        return icon.right > label.left + 1 || label.right > bounds.right + 1;
+      }),
+    );
+    assert.equal(overlapping, false, "Each illustration stays paired with its own label");
+    await shot("design-narrow");
+    await page.getByRole("button", { name: "单元教学设计", exact: true }).click();
+    assert.equal(await page.getByRole("button", { name: "单元教学设计", exact: true }).getAttribute("aria-pressed"), "true");
+    await page.getByRole("button", { name: "课时教学设计", exact: true }).click();
+    assert.equal(await page.getByRole("button", { name: "课时教学设计", exact: true }).getAttribute("aria-pressed"), "true");
+    await page.getByRole("button", { name: "教学反思", exact: true }).click();
+    await page.waitForURL("**/design/reflection");
+    await page.setViewportSize({ width: 1440, height: 960 });
     console.log(
-      "PASS original design layout, history sidebar and visible idempotent injection",
+      "PASS design spacing, aligned illustrations, mode selection, reflection navigation and idempotent injection",
     );
 
     await page.goto(

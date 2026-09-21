@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { ReadOutlined } from "@ant-design/icons";
+import { HistoryOutlined, UnorderedListOutlined } from "@ant-design/icons";
 import { ZYIcon } from "@/components";
 import { connect, useDispatch, history, useLocation } from "@umijs/max";
 import {
@@ -258,28 +258,41 @@ const TeachDesign = (props: any) => {
               </Tooltip>
             </div>
             <div className="right-wrapper-type">
-              <div
+              <button
+                type="button"
+                aria-pressed={type === 1}
                 className={`type-item ${type === 1 ? "course-active" : "course"}`}
                 onClick={() => setDvaVal({ type: 1 })}
               >
-                <div className="type-item-img" />
-                课时教学设计
-              </div>
-              <div
+                <span className="type-item-img" aria-hidden="true" />
+                <span className="type-item-label">课时教学设计</span>
+              </button>
+              <button
+                type="button"
+                aria-pressed={type === 2}
                 className={`type-item ${type === 2 ? "unit-active" : "unit"}`}
                 onClick={() => setDvaVal({ type: 2 })}
               >
-                <div className="type-item-img" />
-                单元教学设计
-              </div>
+                <span className="type-item-img" aria-hidden="true" />
+                <span className="type-item-label">单元教学设计</span>
+              </button>
               {/* 教学反思：批改证据 → 反思 → 教研/反哺教案（反思链入口） */}
-              <div
+              <button
+                type="button"
+                aria-label="教学反思"
                 className="type-item type-item--reflect"
                 onClick={() => history.push("/design/reflection")}
               >
-                <ReadOutlined className="reflection-icon" />
-                教学反思
-              </div>
+                <span className="reflection-icon" aria-hidden="true">
+                  <span className="reflection-notebook">
+                    <UnorderedListOutlined />
+                  </span>
+                  <span className="reflection-revisit">
+                    <HistoryOutlined />
+                  </span>
+                </span>
+                <span className="type-item-label">教学反思</span>
+              </button>
             </div>
             {/* 设计资产条：教学目标/教学资源两个抽屉入口 + 注入按钮（勾选后注入随生成带入） */}
             <DesignAssetsBar
