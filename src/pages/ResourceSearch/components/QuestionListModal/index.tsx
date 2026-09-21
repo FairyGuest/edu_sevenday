@@ -39,7 +39,9 @@ const QuestionListModal = ({
             />
           ))
         ) : loading ? (
-          <div className="loading-container"><Spin /></div>
+          <div className="loading-container">
+            <Spin />
+          </div>
         ) : (
           <Empty
             description="很抱歉没能为您找到合适的试题我们会尽快补充～"

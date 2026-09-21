@@ -16,10 +16,16 @@ import {
 import MarkdownRender from "@/components/MarkdownRender";
 import MarkdownRenderToc from "@/components/MarkdownRender/showToc";
 import { ZYIcon } from "@/components";
-import { str2json, scrollTop, stopSSE, getOrgId, addNewTracking } from "@/utils";
+import {
+  str2json,
+  scrollTop,
+  stopSSE,
+  getOrgId,
+  addNewTracking,
+} from "@/utils";
 import { useExercisePrint } from "./PrintPdf"; // 打印
 // import Evaluate from "../Evaluate"; // 评价
-import useQuestionActions from "@/pages/TeachDesign/hooks/EditTeach"
+import useQuestionActions from "@/pages/TeachDesign/hooks/EditTeach";
 import "./index.less";
 
 const CreateRight = (props: any) => {
@@ -30,7 +36,7 @@ const CreateRight = (props: any) => {
     hiddenRight,
     setHiddenRight,
     teachDesginModel,
-    onPreviewLeftClick
+    onPreviewLeftClick,
   } = props;
   const { planParams, planSseLoading } = teachDesginModel;
 
@@ -54,9 +60,12 @@ const CreateRight = (props: any) => {
   const [visible, setVisible] = useState<boolean>(false); // 保存弹窗
   const [isEmpty, setIsEmpty] = useState<boolean>(true); // 是否为空
   const [sseNum, setSseNum] = useState<number>(0); // SSE内容标识（0：初始，1：思考，2：评估）
-  const [isOpenEvaluate, setIsOpenEvaluate] = useState({ open: false, sse: false }); // 评价显示、请求
+  const [isOpenEvaluate, setIsOpenEvaluate] = useState({
+    open: false,
+    sse: false,
+  }); // 评价显示、请求
   const [dropdownOpen, setDropdownOpen] = useState(false); // 菜单按钮是否打开
-  const [title, setTitle] = useState('')
+  const [title, setTitle] = useState("");
   const { toggleQuestionFavorite } = useQuestionActions();
 
   // useEffect(() => {
@@ -69,7 +78,7 @@ const CreateRight = (props: any) => {
   useEffect(() => {
     if (detailData?.id) {
       setIsEmpty(false);
-      setTitle(detailData?.studay_plan_title || "")
+      setTitle(detailData?.studay_plan_title || "");
       setThinkContent(detailData?.studay_plan_thinking || "");
       setTeachPlanContent(detailData?.studay_plan_content || "");
     }
@@ -83,7 +92,7 @@ const CreateRight = (props: any) => {
   const handleReset = () => {
     setThinkContent(""); // 清空思考内容
     setTeachPlanContent(""); // 清空学案内容
-    setTitle('') // 清空学案title
+    setTitle(""); // 清空学案title
     // setTeachPlanHtml(""); // 清空学案内容HTML
   };
   // 更新思考内容
@@ -202,9 +211,9 @@ const CreateRight = (props: any) => {
         </span>
       ),
       okText: "是，进入人工编辑", // 确认按钮文字
-      cancelText: '否',
+      cancelText: "否",
       onOk: () => {
-        toggleQuestionFavorite(detailData?.id || planParams.id, "study_plan")
+        toggleQuestionFavorite(detailData?.id || planParams.id, "study_plan");
         // addNewTracking({
         //   bt: 'pv',
         //   ct: 'study_plan_edit_view',
@@ -232,7 +241,11 @@ const CreateRight = (props: any) => {
       const { code }: any = await dispatch({
         type: "teachDesginModel/postData",
         apiUrl: "postPublishToLib",
-        payload: { ...values, plan_id: planParams?.id, publish_type: 'study_plan' },
+        payload: {
+          ...values,
+          plan_id: planParams?.id,
+          publish_type: "study_plan",
+        },
       });
       if (code === 200) {
         setVisible(false);
@@ -297,16 +310,37 @@ const CreateRight = (props: any) => {
   };
 
   // 全览收起
-  // 学案下发：教师查看学案内容后推送给全班（消息中心定时推送）
+  // 学案下发：教师查看学案内容后推送给全班（消息中心定时推送）；下发后进入回收工作台跟踪提交/批改
   const issueStudyPlan = async () => {
     try {
       const res = await fetch("/api/teacher/teaching/plans", {
-        method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ chapter: planParams?.title || "", class_id: planParams?.class_id || "" }),
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chapter: planParams?.title || "",
+          class_id: planParams?.class_id || "",
+        }),
       });
       const d = await res.json();
       if (d.code === 200) {
-        message.success(`学案已下发（${d.data.targets} · ${d.data.issued_at}），学生将在消息中心收到`);
+        confirm({
+          title: "学案已下发",
+          icon: (
+            <span
+              className="anticon anticon-check-circle"
+              style={{ color: "#52c41a" }}
+            >
+              <ZYIcon type="danxuan" />
+            </span>
+          ),
+          content: `已推送给全班 ${d.data.n_students || ""} 名学生（消息中心定时推送）。任务分基础（必做）/ 提高（选做）/ 挑战（选做）三档，学生按自身情况选做。回收进度可在「下发与回收」工作台跟踪。`,
+          okText: "去查看回收进度",
+          cancelText: "留在此页",
+          onOk: () =>
+            history.push(
+              `/homework?sub=flow&dispatch_id=${encodeURIComponent(d.data.dispatch_id || "")}`,
+            ),
+        });
       } else {
         message.error(d.msg || "下发失败");
       }
@@ -321,7 +355,7 @@ const CreateRight = (props: any) => {
     ) as HTMLElement;
     collapseBtn?.click();
     // setFullScreen(!fullScreen);
-    setHiddenRight(!hiddenRight)
+    setHiddenRight(!hiddenRight);
   };
 
   return (
@@ -393,10 +427,12 @@ const CreateRight = (props: any) => {
               <Button
                 type="text"
                 // disabled={planSseLoading}
-                icon={<ZYIcon type={hiddenRight ? "icon_fold" : "icon_unfold"} />}
+                icon={
+                  <ZYIcon type={hiddenRight ? "icon_fold" : "icon_unfold"} />
+                }
                 // onClick={() => setHiddenRight(!hiddenRight)}
                 onClick={() => {
-                  onPreviewClick()
+                  onPreviewClick();
                   // addNewTracking({
                   //   bt: "cl",
                   //   ct: "study_plan_click_overview",
@@ -414,26 +450,34 @@ const CreateRight = (props: any) => {
               <Button
                 type="text"
                 // disabled={planSseLoading}
-                icon={<ZYIcon type={'shanchu3'} style={{ fontSize: '16px' }} />}
+                icon={<ZYIcon type={"shanchu3"} style={{ fontSize: "16px" }} />}
                 onClick={onPreviewLeftClick}
-              >
-              </Button>
+              ></Button>
             </div>
           </div>
           <div className="create-content" ref={contentRef}>
             <div className="create-content-header">
               <ZYIcon className="icon" type="jiaoan" />
-              <div className="title">{detailData.title || '课时学案:' + planParams.title}</div>
-              {detailData?.version && <div className="version">{detailData.version}</div>}
+              <div className="title">
+                {detailData.title || "课时学案:" + planParams.title}
+              </div>
+              {detailData?.version && (
+                <div className="version">{detailData.version}</div>
+              )}
             </div>
             <div className="create-content-wrapper">
-              <div ref={thinkRef} className={`think  ${thinkCreating ? 'think-css' : ''} `}>
+              <div
+                ref={thinkRef}
+                className={`think  ${thinkCreating ? "think-css" : ""} `}
+              >
                 {thinkLoading ? (
                   <Spin style={{ paddingTop: 8 }} />
                 ) : (
                   <>
                     <div className="think-title">
-                      <div>{thinkCreating ? "深度思考中..." : "已完成思考"}</div>
+                      <div>
+                        {thinkCreating ? "深度思考中..." : "已完成思考"}
+                      </div>
                       <div
                         className="think-expand"
                         onClick={() => setThinkExpand(!thinkExpand)}
@@ -454,7 +498,9 @@ const CreateRight = (props: any) => {
               {/* 教案内容 */}
               {teachPlanContent && (
                 <div className="teach-plan" ref={teachPlanRef}>
-                  <MarkdownRenderToc showToc={hiddenRight}>{teachPlanContent}</MarkdownRenderToc>
+                  <MarkdownRenderToc showToc={hiddenRight}>
+                    {teachPlanContent}
+                  </MarkdownRenderToc>
                 </div>
               )}
 

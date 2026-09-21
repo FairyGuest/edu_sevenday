@@ -1,5 +1,5 @@
 /** Shared evidence scope for the assistant and personal profile. Never extrapolate missing events. */
-export const SOURCES = ["作业记录", "人机交互", "自主练习", "考试记录"];
+export const SOURCES = ["作业记录", "人机交互", "自主练习", "考试记录", "课堂互动"];
 export interface Scope { start_date: string; end_date: string; sources: string[]; cluster?: string }
 export function dateKey(date = new Date()): string {
   return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;

@@ -6,7 +6,11 @@ import {
   useDispatch,
   useSelector,
 } from "umi";
-import { UserOutlined } from "@ant-design/icons";
+import {
+  UserOutlined,
+  CommentOutlined,
+  AuditOutlined,
+} from "@ant-design/icons";
 import { Avatar, Layout, Menu, Popover, Tooltip } from "antd";
 import ZYIcon from "@/components/ZYIcon";
 import { agentPlatformUrl } from "@/utils/host";
@@ -60,12 +64,17 @@ const SiderMenu = () => {
   const [selectedKey, setSelectedKey] = useState([location.pathname]); // 当前选中的菜单项
 
   useEffect(() => {
-    if (location.pathname.startsWith("/setTopic")) {
-      setSelectedKey(["/setTopic"]);
-    } else if (location.pathname.startsWith("/paperCompose")) {
-      setSelectedKey(["/paperCompose"]);
+    if (
+      location.pathname.startsWith("/homework") ||
+      location.pathname.startsWith("/setTopic") ||
+      location.pathname.startsWith("/paperCompose") ||
+      location.pathname.startsWith("/homework-flow") ||
+      location.pathname.startsWith("/teach/correction") ||
+      location.pathname.startsWith("/check-topic")
+    ) {
+      setSelectedKey(["/homework"]); // 作业四合一（组卷/下发/回收/批改）
     } else if (location.pathname.startsWith("/design")) {
-      setSelectedKey(["/design"]);
+      setSelectedKey(["/design"]); // 含 /design/reflection 教学反思
     } else {
       setSelectedKey([trimPathName(location.pathname)]);
     }
@@ -158,6 +167,19 @@ const SiderMenu = () => {
         }}
         items={[
           {
+            key: "/",
+            icon: (
+              <img
+                src={
+                  location.pathname === "/"
+                    ? require("@/assets/menu/course-active.svg").default
+                    : require("@/assets/menu/course.svg").default
+                }
+              />
+            ),
+            label: "首页",
+          },
+          {
             key: "/learning-analysis",
             icon: (
               <img
@@ -184,43 +206,27 @@ const SiderMenu = () => {
             label: "教学设计",
           },
           {
-            key: "/paperCompose",
+            key: "/homework",
             icon: (
               <img
                 src={
-                  location.pathname.includes("/paperCompose")
+                  location.pathname.includes("/homework")
                     ? require("@/assets/menu/list_active.svg").default
                     : require("@/assets/menu/list.svg").default
                 }
               />
             ),
-            label: "作业组卷",
+            label: "作业",
           },
           {
-            key: "/setTopic",
-            icon: (
-              <img
-                src={
-                  location.pathname.includes("/setTopic")
-                    ? require("@/assets/menu/teach_active.svg").default
-                    : require("@/assets/menu/teach.svg").default
-                }
-              />
-            ),
-            label: "作业下发",
+            key: "/school-research",
+            icon: <CommentOutlined />,
+            label: "校本教研",
           },
           {
-            key: "/teach/correction",
-            icon: (
-              <img
-                src={
-                  location.pathname.includes("/teach/correction")
-                    ? require("@/assets/menu/teach_active.svg").default
-                    : require("@/assets/menu/teach.svg").default
-                }
-              />
-            ),
-            label: "作业批改",
+            key: "/classroom-evaluation",
+            icon: <AuditOutlined />,
+            label: "课堂评价",
           },
           {
             key: "/source",
@@ -237,7 +243,10 @@ const SiderMenu = () => {
           },
         ]}
       />
-      <div className="main-sider-avatar" style={{ paddingInline: collapsed ? 12 : 20 }}>
+      <div
+        className="main-sider-avatar"
+        style={{ paddingInline: collapsed ? 12 : 20 }}
+      >
         <Popover
           trigger="click"
           classNames={{ root: "avatar-popover" }}
@@ -245,7 +254,10 @@ const SiderMenu = () => {
           content={
             <>
               <div className="avatar-content">
-                <Avatar size={40} src={require(`@/assets/menu/avatar.svg`).default} />
+                <Avatar
+                  size={40}
+                  src={require(`@/assets/menu/avatar.svg`).default}
+                />
                 <div className="avatar-text">
                   <div className="avatar-text-name">{getUserInfo("name")}</div>
                   <div className="avatar-text-info">{getOrgId("title")}</div>

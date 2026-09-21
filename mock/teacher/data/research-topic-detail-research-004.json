@@ -1,0 +1,81 @@
+{
+ "topic": {
+  "topic_id": "research-004",
+  "title": "分式方程总忘验根：如何把“检验”变成习惯？",
+  "content": "2 班分式方程题解得都对，但验根环节漏做率超过六成，直接丢步骤分。讲过很多遍“去分母可能产生增根”，还是记不住做。求把检验变成肌肉记忆的办法。",
+  "author_id": "t-005",
+  "author_name": "郑老师",
+  "subject": "数学",
+  "grade": "g8",
+  "class_scope": [
+   "cls-g8-02"
+  ],
+  "related_knowledge_ids": [
+   "kp-fraction-calc"
+  ],
+  "related_dimension_keys": [
+   "knowledge",
+   "process"
+  ],
+  "evidence_summary": "2 班分式方程题步骤分丢失中，“未验根”占 61%；关联节点「分式的加法与减法」掌握度不足 60。",
+  "status": "used_in_plan",
+  "tags": [
+   "习惯养成",
+   "作业设计"
+  ],
+  "created_at": "2026-09-08 14:15"
+ },
+ "replies": [
+  {
+   "reply_id": "reply-004-01",
+   "topic_id": "research-004",
+   "author_id": "t-008",
+   "author_name": "陈老师",
+   "content": "把验根设计成“必答空”：作业里分式方程最后一行印好“检验：把 x=____ 代入最简公分母，得____≠0，是原方程的解”。不填就退回。",
+   "evidence_refs": [],
+   "created_at": "2026-09-08 15:35",
+   "liked_count": 8
+  },
+  {
+   "reply_id": "reply-004-02",
+   "topic_id": "research-004",
+   "author_id": "t-003",
+   "author_name": "周老师",
+   "content": "我们组内统一了口径：分式方程不写检验一律扣 2 分且不给订正通过。扣分不是目的，但确实两周就把习惯立起来了。",
+   "evidence_refs": [],
+   "created_at": "2026-09-08 16:33",
+   "liked_count": 6
+  },
+  {
+   "reply_id": "reply-004-03",
+   "topic_id": "research-004",
+   "author_id": "t-005",
+   "author_name": "郑老师",
+   "content": "验根必查清单已沉淀为共识策略，我上周已经引用到第 15 章复习课教案里，作业模板也换掉了。下次单元测看效果。",
+   "evidence_refs": [],
+   "created_at": "2026-09-08 16:36",
+   "liked_count": 5
+  },
+  {
+   "reply_id": "reply-004-04",
+   "topic_id": "research-004",
+   "author_id": "t-006",
+   "author_name": "王老师",
+   "content": "补充：AI 辅导记录里能看到，学生自主练习分式方程时其实系统提示了验根，但 42% 的学生直接跳过提示。线上线下要一致要求。",
+   "evidence_refs": [],
+   "created_at": "2026-09-08 17:34",
+   "liked_count": 4
+  }
+ ],
+ "strategies": [
+  {
+   "strategy_id": "strategy-004",
+   "topic_id": "research-004",
+   "title": "分式方程验根必查清单",
+   "content": "作业与试卷中分式方程题固定印制三空：① 解得 x=____；② 代入最简公分母得____；③ 判定是否为增根。三空缺一视为未完成，订正通过前置条件。",
+   "applicable_scene": "分式方程作业、测验与自主练习",
+   "evidence_summary": "试行两周后验根漏做率 61%→18%；步骤分平均找回 2.4 分/人。",
+   "can_apply_to_plan": true
+  }
+ ]
+}

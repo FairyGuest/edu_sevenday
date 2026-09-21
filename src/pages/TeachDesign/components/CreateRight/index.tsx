@@ -21,6 +21,7 @@ import MarkdownRender from "@/components/MarkdownRender";
 import MarkdownRenderToc from "@/components/MarkdownRender/showToc";
 import { ZYIcon } from "@/components";
 import PlanViewer from "../PlanViewer";
+import AssignHomeworkButton from "../PlanViewer/AssignHomeworkButton";
 import { publishPlanHomework } from "../PlanViewer/publishHomework";
 import {
   str2json,
@@ -330,8 +331,13 @@ const CreateRight = (props: any) => {
 
   // 布置作业：将教案「四、习题」选题注入试卷（PRD：生成教案的作业提供布置入口）
   const assignHomeworkFromPlan = async (classId: string) => {
-    const data = await publishPlanHomework(classId, detailData?.title || planParams?.title || planParams?.chapter_name || "");
-    message.success(`已发布教案中的 ${data.n_questions} 道习题，可到「作业下发」查看`);
+    const data = await publishPlanHomework(
+      classId,
+      detailData?.title || planParams?.title || planParams?.chapter_name || "",
+    );
+    message.success(
+      `已发布教案中的 ${data.n_questions} 道习题，可到「作业下发」查看`,
+    );
   };
 
   const createPlanFn = () => {
@@ -575,6 +581,21 @@ const CreateRight = (props: any) => {
 
   return (
     <div className="create-right">
+      <AssignHomeworkButton
+        visible={
+          !isEmpty &&
+          !!(teachPlanContent || detailData?.plan_content) &&
+          !viewerOpen
+        }
+        disabled={planSseLoading}
+        planId={planParams?.id || detailData?.id}
+        docTitle={detailData?.title || planParams?.title || "课时教案"}
+        defaultClassId={
+          planParams?.class_id ??
+          (detailData?.id === planParams?.id ? detailData?.class_id : "")
+        }
+        onPublish={assignHomeworkFromPlan}
+      />
       {!isEmpty && (
         <div className="create-container">
           <div className="create-header">
@@ -644,7 +665,7 @@ const CreateRight = (props: any) => {
                             color="primary"
                             variant="solid"
                             className="evaluation-one"
-                            onClick={() => onEvaluateClick("") }
+                            onClick={() => onEvaluateClick("")}
                             disabled={planSseLoading}
                             icon={<ZYIcon type="evaluate" />}
                           >
@@ -783,8 +804,12 @@ const CreateRight = (props: any) => {
           <div className="create-content" ref={contentRef}>
             <div className="create-content-header">
               <ZYIcon className="icon" type="jiaoan" />
-              <div className="title">{detailData.title || "课时教案:" + planParams.title}</div>
-              {detailData.version && <div className="version">{detailData.version}</div>}
+              <div className="title">
+                {detailData.title || "课时教案:" + planParams.title}
+              </div>
+              {detailData.version && (
+                <div className="version">{detailData.version}</div>
+              )}
             </div>
             <div className="create-content-wrapper">
               <div
@@ -796,7 +821,9 @@ const CreateRight = (props: any) => {
                 ) : (
                   <>
                     <div className="think-title">
-                      <div>{thinkCreating ? "深度思考中..." : "已完成思考"}</div>
+                      <div>
+                        {thinkCreating ? "深度思考中..." : "已完成思考"}
+                      </div>
                       <div
                         className="think-expand"
                         onClick={() => setThinkExpand(!thinkExpand)}
@@ -928,12 +955,21 @@ const CreateRight = (props: any) => {
         onEvaluate={() => onEvaluateClick("")}
         onOpenReport={() => {
           const id = detailData?.id || planParams.id;
-          if (id) window.open(history.createHref({ pathname: "/evaluateReport", search: `?id=${encodeURIComponent(id)}` }));
+          if (id)
+            window.open(
+              history.createHref({
+                pathname: "/evaluateReport",
+                search: `?id=${encodeURIComponent(id)}`,
+              }),
+            );
         }}
         onDownload={onDownloadClick}
         onAssignHomework={assignHomeworkFromPlan}
         planId={planParams?.id || detailData?.id}
-        defaultClassId={planParams?.class_id ?? (detailData?.id === planParams?.id ? detailData?.class_id : "")}
+        defaultClassId={
+          planParams?.class_id ??
+          (detailData?.id === planParams?.id ? detailData?.class_id : "")
+        }
         assignDisabled={planSseLoading}
       />
     </div>

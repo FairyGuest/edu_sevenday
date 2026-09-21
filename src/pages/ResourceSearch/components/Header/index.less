@@ -1,4 +1,39 @@
 // 页面Header
+.resource-mode-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  h1 {
+    font-size: 23px;
+    font-weight: 600;
+    color: #2b3b50;
+    margin: 0;
+  }
+  p {
+    font-size: 12px;
+    color: #8d99a9;
+    margin: 6px 0 0;
+  }
+  .ant-segmented {
+    padding: 4px;
+    background: #f1f4f8;
+    border: 1px solid #e9edf3;
+  }
+  .ant-segmented-item-label {
+    min-height: 34px;
+    line-height: 34px;
+  }
+}
+.resource-selection {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  color: #8d99a9;
+  font-size: 12px;
+}
 .page-header {
   .resource-type-selector {
     .ant-btn {
@@ -9,7 +44,6 @@
 
 // 资源归属标签页
 .resource-tabs {
-
   .ant-tabs {
     .ant-tabs-nav {
       margin-bottom: 0;
@@ -19,7 +53,7 @@
       font-size: 16px;
       font-weight: 400;
       height: 38px;
-      color: #0F142A;
+      color: #0f142a;
     }
   }
 }
@@ -27,12 +61,12 @@
 .switch-textbook-box {
   display: flex;
   gap: 4px;
-  color: #1C6CFF;
+  color: #1c6cff;
   font-family: "PingFang SC";
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 28px;
-  cursor: pointer
+  cursor: pointer;
   /* 200% */
 }

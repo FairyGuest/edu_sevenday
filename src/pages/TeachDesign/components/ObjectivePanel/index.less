@@ -1,0 +1,188 @@
+.obj_panel {
+  margin: 18px auto 0;
+  max-width: 620px;
+  background: #fff;
+  border: 1px solid #e8edf6;
+  border-radius: 12px;
+  padding: 14px 16px;
+  text-align: left;
+}
+
+.obj_head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.obj_icon {
+  color: #1c6cff;
+  font-size: 16px;
+}
+
+.obj_title {
+  font-size: 15px;
+  font-weight: 650;
+  color: #2a3346;
+}
+
+.obj_stage {
+  zoom: 0.9;
+}
+
+.obj_tip {
+  margin: 10px 0;
+}
+
+.obj_loading {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+}
+
+.obj_section {
+  margin-bottom: 8px;
+}
+
+.obj_section_title {
+  font-size: 13px;
+  font-weight: 650;
+  color: #35507a;
+  margin-bottom: 6px;
+}
+
+.obj_list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.obj_item {
+  border: 1px solid #e8edf6;
+  border-radius: 8px;
+  padding: 8px 10px;
+  cursor: pointer;
+  transition: all 0.15s;
+
+  &:hover {
+    border-color: #b7d0ff;
+  }
+}
+
+.obj_item--on {
+  border-color: #1c6cff;
+  background: #f4f8ff;
+}
+
+.obj_item_main {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.obj_item_body {
+  flex: 1;
+  min-width: 0;
+}
+
+.obj_item_text {
+  font-size: 13px;
+  color: #2a3346;
+  line-height: 1.6;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.obj_tag {
+  zoom: 0.85;
+  margin: 0;
+}
+
+.obj_basis {
+  font-size: 12px;
+  color: #8a93ab;
+  margin-top: 2px;
+}
+
+.obj_rubric {
+  margin-top: 4px;
+
+  :global(.ant-collapse-header) {
+    padding: 2px 0 !important;
+  }
+}
+
+.obj_rubric_label {
+  font-size: 12px;
+  color: #1c6cff;
+}
+
+.obj_rubric_table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+
+  td {
+    border: 1px solid #eef0f5;
+    padding: 4px 8px;
+    color: #4b5568;
+  }
+}
+
+.obj_rubric_lv {
+  width: 44px;
+  text-align: center;
+  color: #35507a;
+  font-weight: 600;
+  background: #f7faff;
+}
+
+.obj_fixed_label {
+  font-size: 13px;
+  font-weight: 650;
+  color: #35507a;
+}
+
+.obj_footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  border-top: 1px dashed #e8edf6;
+  padding-top: 8px;
+  margin-top: 8px;
+}
+
+.obj_selected_n {
+  font-size: 12px;
+  color: #1c6cff;
+  font-weight: 600;
+}
+
+.obj_selected_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.obj_note {
+  margin-left: auto;
+  font-size: 11px;
+  color: #b0b8cc;
+}
+
+/* 抽屉内嵌模式：去卡片外壳，铺满抽屉 */
+.obj_panel--embedded {
+  border: none;
+  border-radius: 0;
+  padding: 0 4px;
+  max-width: none;
+  margin: 0;
+  background: transparent;
+}
+
+.obj_head--embedded {
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eef0f5;
+}

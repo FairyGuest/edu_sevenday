@@ -1,8 +1,16 @@
-import { useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from "react";
-import { Form, Input, message, DatePicker, Cascader, Select } from "antd";
+import {
+  useCallback,
+  useEffect,
+  useImperativeHandle,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
+import { Form, Input, message, DatePicker, Cascader, Select, Tag } from "antd";
 import dayjs from "dayjs";
 import { useDispatch, useSelector } from "@umijs/max";
 import { history } from "umi";
+import LearningContent from "@/components/LearningContent";
 import { useTeacherContext } from "@/components/LayoutSider";
 import UploadComponents, {
   resolveExamUploadFileId,
@@ -256,7 +264,11 @@ const PublishExamForm = ({
             return {
               uid: String(file.id ?? file.fileId ?? index),
               id: file.id ?? file.fileId,
-              name: file.name ?? file.filename ?? file.fileName ?? `附件${index + 1}`,
+              name:
+                file.name ??
+                file.filename ??
+                file.fileName ??
+                `附件${index + 1}`,
               status: "done",
               url,
               size: file.size ?? file.size_bytes,
@@ -291,7 +303,10 @@ const PublishExamForm = ({
   const pickerDisabledDate = (current: any) =>
     current && current < dayjs().subtract(1, "days").endOf("day");
 
-  const pickerDisabledRangeTime = (currentDate: any, _type?: "start" | "end") => {
+  const pickerDisabledRangeTime = (
+    currentDate: any,
+    _type?: "start" | "end",
+  ) => {
     const isToday = !currentDate || currentDate.isSame(dayjs(), "day");
     if (!isToday) {
       return {
@@ -392,9 +407,12 @@ const PublishExamForm = ({
       const groupNodeMap = classMap.get(classKey)?.children;
       if (groupNodeMap && !groupNodeMap.has(groupKey)) {
         const grp = classGroupTreeOption
-          .find((c) => String(c.value) === classKey || String(c.id) === classKey)
+          .find(
+            (c) => String(c.value) === classKey || String(c.id) === classKey,
+          )
           ?.children?.find(
-            (g: any) => String(g.value) === groupKey || String(g.id) === groupKey,
+            (g: any) =>
+              String(g.value) === groupKey || String(g.id) === groupKey,
           );
         if (grp) {
           groupNodeMap.set(groupKey, {
@@ -476,7 +494,9 @@ const PublishExamForm = ({
       return;
     }
 
-    const selectedExam = examOptions.find((item) => item.value === values?.exam_id);
+    const selectedExam = examOptions.find(
+      (item) => item.value === values?.exam_id,
+    );
     const subjectId =
       selectedExam?.raw?.subjectId ??
       selectedExam?.raw?.subject_id ??
@@ -493,7 +513,9 @@ const PublishExamForm = ({
       uploadRef?.current?.getFileList?.() || uploadList || [];
     const fileIdList =
       uploadRef?.current?.getFileIdList?.() ||
-      file_urls_list.map(resolveFileId).filter((id: any) => id != null && id !== "");
+      file_urls_list
+        .map(resolveFileId)
+        .filter((id: any) => id != null && id !== "");
 
     const paperGrade = selectedExam?.raw?.grade;
     updateLoading(true);
@@ -515,7 +537,9 @@ const PublishExamForm = ({
     });
     if (isApiSuccess(code)) {
       message.success("发布成功");
-      history.push(`/setTopic?courseId=${courseId}`);
+      history.push(
+        `/homework?sub=assign${courseId ? `&courseId=${encodeURIComponent(courseId)}` : ""}`,
+      );
     }
     updateLoading(false);
   };
@@ -557,7 +581,9 @@ const PublishExamForm = ({
           </div>
           <div className="exam_detail_item">
             <span className="exam_detail_item_title">作业要求:</span>
-            <span className="exam_detail_item_content">{requirement || "—"}</span>
+            <div className="exam_detail_item_content">
+              <LearningContent>{requirement || "—"}</LearningContent>
+            </div>
           </div>
           <div className="exam_detail_item">
             <span className="exam_detail_item_title">作业附件:</span>
@@ -582,6 +608,45 @@ const PublishExamForm = ({
               {detailClassName || "—"}
             </span>
           </div>
+          {detailData?.questions?.length > 0 && (
+            <div className="exam_detail_item">
+              <span className="exam_detail_item_title">题目清单:</span>
+              <div className="exam_detail_item_content">
+                <div style={{ display: "grid", gap: 6 }}>
+                  {detailData.questions.map(
+                    (q: any, i: number) =>
+                      q?.stem && (
+                        <div
+                          key={q.qid || i}
+                          style={{
+                            display: "flex",
+                            gap: 8,
+                            fontSize: 13,
+                            color: "#374151",
+                          }}
+                        >
+                          <span style={{ color: "#8a93ab" }}>
+                            {q.index || i + 1}.
+                          </span>
+                          <div style={{ flex: 1, minWidth: 0 }}>
+                            <LearningContent>{q.stem}</LearningContent>
+                            {q.cluster ? (
+                              <Tag
+                                style={{ marginLeft: 8, zoom: 0.85 }}
+                                color={q.optional ? "gold" : "blue"}
+                              >
+                                {q.cluster}
+                                {q.optional ? " · 选做" : ""}
+                              </Tag>
+                            ) : null}
+                          </div>
+                        </div>
+                      ),
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     );

@@ -1,0 +1,312 @@
+.dg_container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #f5f7fb;
+}
+
+.dg_header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: #fff;
+  border-bottom: 1px solid #eef0f5;
+}
+
+.dg_title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2a3346;
+}
+
+.dg_sub {
+  font-size: 12px;
+  color: #8a93ab;
+}
+
+.dg_body {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+.dg_list {
+  width: 250px;
+  background: #fff;
+  border-right: 1px solid #eef0f5;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.dg_list_title {
+  padding: 10px 12px 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #4b5568;
+}
+
+.dg_list_scroll {
+  flex: 1;
+  overflow: auto;
+  padding: 0 8px 12px;
+}
+
+.dg_item {
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 6px;
+  border: 1px solid transparent;
+}
+
+.dg_item:hover {
+  background: #f5f8ff;
+}
+
+.dg_item--active {
+  background: #eef4ff;
+  border-color: #1c6cff;
+}
+
+.dg_item_title {
+  font-size: 13px;
+  color: #2a3346;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dg_item_meta {
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+  color: #8a93ab;
+  margin: 4px 0 2px;
+}
+
+.dg_students {
+  width: 240px;
+  background: #fff;
+  border-right: 1px solid #eef0f5;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.dg_students_head {
+  padding: 10px 10px 8px;
+}
+
+.dg_students_scroll {
+  flex: 1;
+  overflow: auto;
+  padding: 0 8px 12px;
+}
+
+.dg_student {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.dg_student:hover {
+  background: #f5f8ff;
+}
+
+.dg_student--active {
+  background: #eef4ff;
+}
+
+.dg_student_name {
+  color: #2a3346;
+}
+
+.dg_student_id {
+  color: #8a93ab;
+  font-size: 12px;
+  flex: 1;
+}
+
+.dg_detail {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.dg_loading {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dg_detail_scroll {
+  flex: 1;
+  overflow: auto;
+  padding: 12px 16px 24px;
+}
+
+.dg_detail_head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.dg_detail_stu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dg_detail_name {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.dg_q {
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border: 1px solid #eef0f5;
+}
+
+.dg_q_head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.dg_q_no {
+  font-weight: 600;
+  font-size: 13px;
+  color: #2a3346;
+}
+
+.dg_q_verdict {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: #646e8b;
+}
+
+.dg_q_stem {
+  font-size: 13px;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.dg_q_answer {
+  display: flex;
+  gap: 8px;
+  font-size: 13px;
+  color: #4b5568;
+  padding: 2px 0;
+}
+
+.dg_q_answer_label {
+  flex-shrink: 0;
+  font-size: 12px;
+  color: #8a93ab;
+  padding-top: 2px;
+}
+
+.dg_q_review {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 6px;
+  border-top: 1px dashed #eef0f5;
+  margin-top: 6px;
+}
+
+.dg_feedback {
+  background: #fffbef;
+  border: 1px solid #ffe9a8;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.dg_feedback_title {
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #874d00;
+}
+
+.dg_feedback_summary {
+  font-size: 13px;
+  color: #4b5568;
+  margin: 0 0 8px;
+}
+
+.dg_feedback_row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.dg_feedback_row > .dg_q_answer_label {
+  width: 70px;
+}
+
+.dg_clusters {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dg_cluster {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dg_cluster_name {
+  width: 160px;
+  font-size: 12px;
+  color: #4b5568;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.dg_cluster :global(.ant-progress) {
+  flex: 1;
+  margin: 0;
+}
+
+.dg_next {
+  margin: 0;
+  padding-left: 18px;
+  color: #4b5568;
+}
+
+.dg_feedback_basis {
+  font-size: 12px;
+  color: #b0b8cc;
+  margin-top: 4px;
+}
+
+.dg_muted {
+  color: #8a93ab;
+  font-size: 12px;
+}

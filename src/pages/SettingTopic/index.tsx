@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-import { Tabs } from "antd";
+import { Button, Tabs } from "antd";
+import { ArrowLeftOutlined } from "@ant-design/icons";
+import { history, useLocation } from "@umijs/max";
 import List from "./List";
 import ReuseAssign from "./components/ReuseAssign";
 
@@ -10,22 +12,43 @@ import ReuseAssign from "./components/ReuseAssign";
  * 注：个性化组卷入口已前移至「作业组卷」（先组卷 → 组完即下发）
  */
 const SettingTopic = () => {
+  const location = useLocation();
   const [tab, setTab] = useState("normal");
   const [classes, setClasses] = useState<any[]>([]);
 
   useEffect(() => {
     fetch("/api/teacher/classes")
-      .then(r => r.json())
-      .then(d => { if (d.code === 200) setClasses(d.data || []); })
+      .then((r) => r.json())
+      .then((d) => {
+        if (d.code === 200) setClasses(d.data || []);
+      })
       .catch(() => {});
   }, []);
 
   return (
     <div style={{ padding: "12px 16px" }}>
-      <Tabs activeKey={tab} onChange={setTab} items={[
-        { key: "normal", label: "📝 统一布置", children: <List /> },
-        { key: "reuse", label: "🔁 跨班复用下发", children: <ReuseAssign classes={classes} /> },
-      ]} />
+      {location.pathname !== "/homework" && (
+        <Button
+          type="text"
+          aria-label="返回作业工作台"
+          icon={<ArrowLeftOutlined />}
+          onClick={() => history.push("/homework?sub=assign")}
+        >
+          返回作业工作台
+        </Button>
+      )}
+      <Tabs
+        activeKey={tab}
+        onChange={setTab}
+        items={[
+          { key: "normal", label: "📝 统一布置", children: <List /> },
+          {
+            key: "reuse",
+            label: "🔁 跨班复用下发",
+            children: <ReuseAssign classes={classes} />,
+          },
+        ]}
+      />
     </div>
   );
 };

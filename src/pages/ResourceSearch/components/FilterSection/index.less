@@ -17,11 +17,11 @@
         height: 48px;
 
         &:hover {
-          border-color: #1C6CFF;
+          border-color: #1c6cff;
         }
 
         &:focus {
-          border-color: #1C6CFF;
+          border-color: #1c6cff;
           box-shadow: 0 0 0 2px rgba(91, 33, 182, 0.1);
         }
       }
@@ -33,16 +33,16 @@
     }
 
     .ant-btn-primary {
-      background-color: #1C6CFF;
-      border-color: #1C6CFF;
+      background-color: #1c6cff;
+      border-color: #1c6cff;
       border-radius: 8px;
       font-weight: 500;
       height: 48px;
       padding: 0 24px;
 
       &:hover {
-        background-color: #1C6CFF;
-        border-color: #1C6CFF;
+        background-color: #1c6cff;
+        border-color: #1c6cff;
       }
     }
   }
@@ -52,7 +52,8 @@
     overflow: hidden;
     width: 100%;
 
-    .filter-tags-row, .filter-select-row {
+    .filter-tags-row,
+    .filter-select-row {
       display: flex;
       align-items: flex-start;
 
@@ -74,12 +75,12 @@
           border-color: #d1d5db;
 
           &:hover {
-            border-color: #1C6CFF;
+            border-color: #1c6cff;
           }
         }
 
         &.ant-select-focused .ant-select-selector {
-          border-color: #1C6CFF;
+          border-color: #1c6cff;
           box-shadow: 0 0 0 2px rgba(91, 33, 182, 0.1);
         }
       }
@@ -103,7 +104,8 @@
     }
   }
 
-  .filter-select, .filter-search {
+  .filter-select,
+  .filter-search {
     min-width: 0;
     .ant-input-affix-wrapper {
       border-radius: 6px;
@@ -114,7 +116,8 @@
   }
 
   // 新增自适应样式
-  .filter-select-adaptive, .filter-search-adaptive {
+  .filter-select-adaptive,
+  .filter-search-adaptive {
     width: 100% !important; // 自适应宽度
     min-width: 142px; // 最小宽度142px
     .ant-input-affix-wrapper {
@@ -157,13 +160,14 @@
   }
 
   // Select 多选样式优化
-  .filter-select, .filter-select-adaptive {
+  .filter-select,
+  .filter-select-adaptive {
     .ant-select-selector {
       min-height: 32px;
       padding-right: 24px; // 为下拉箭头留出更多空间
     }
   }
-  .filter-pos{
+  .filter-pos {
     width: 118px;
     height: 32px;
     visibility: hidden;
@@ -185,19 +189,20 @@
 
     .ant-btn {
       padding: 0;
-      color: #646E8B;
+      color: #646e8b;
       pointer-events: auto; // 但按钮本身可以点击
       gap: 6px;
       &:hover {
         background: none;
-        color: #1C6CFF;
+        color: #1c6cff;
       }
     }
   }
-  .ant-select-selection-item-content{
+  .ant-select-selection-item-content {
     max-width: 110px;
   }
-  .ant-select-selector:has(.ant-select-selection-overflow-item-rest) .ant-select-selection-item-content{
+  .ant-select-selector:has(.ant-select-selection-overflow-item-rest)
+    .ant-select-selection-item-content {
     max-width: 50px;
   }
 }

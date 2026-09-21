@@ -29,6 +29,12 @@
   min-width: 0;
 }
 
+.pa_literacy_radar {
+  margin-top: 24px;
+
+  .lit_card { padding: 0 0 16px; }
+}
+
 /* ===== 左侧列表 ===== */
 .pa_list {
   display: flex;
@@ -161,9 +167,9 @@
 }
 
 .pa_panel_name {
-  font-size: 16px;
-  font-weight: 700;
-  color: #26304a;
+  font-size: 18px;
+  font-weight: 600;
+  color: #222222;
 }
 
 .pa_panel_sid {
@@ -203,6 +209,218 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 7px 22px;
 }
+
+/* ===== 个人学情（Figma 个人学情稿范式） ===== */
+.pa_kpi_strip { margin: 16px 0 4px; }
+
+.pa_sec {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.pa_sec_head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #E2E6F0;
+
+  h4 { margin: 0; font-size: 18px; font-weight: 600; color: #222222; }
+}
+
+.pa_sec_sep {
+  flex: none;
+  width: 0;
+  height: 14px;
+  border-left: 1px solid #DFE3F0;
+}
+
+.pa_sec_meta {
+  font-size: 14px;
+  font-weight: 400;
+  color: #5D5F65;
+
+  b { font-weight: 600; }
+}
+
+/* L1-L4 统计卡（渐变底 + 等级环 + 数量/掌握度/有学情/薄弱） */
+.pa_lv_cards {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.pa_lv_card {
+  flex: 1 1 0;
+  min-width: 150px;
+  padding: 12px 16px;
+  background: linear-gradient(180deg, #EDF4FF 0%, #F2F5FA 50%);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pa_lv_head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #DFE3F0;
+}
+
+.pa_lv_ring {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid #C0C4CC;
+}
+
+.pa_lv_name {
+  flex: 1;
+  min-width: 0;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  color: #222222;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+
+  b { font-size: 16px; font-weight: 500; color: #222222; }
+}
+
+.pa_lv_count {
+  flex: none;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+  color: #222222;
+  font-size: 14px;
+  font-weight: 400;
+
+  b { font-size: 20px; font-weight: 500; color: #222222; font-variant-numeric: tabular-nums; }
+}
+
+.pa_lv_body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pa_lv_row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 400;
+  color: #67696E;
+
+  em {
+    font-style: normal;
+    font-weight: 500;
+    color: #393E4A;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* 能力等级三列：知识点名 + Lx | 掌握度% */
+.pa_ab_cols {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.pa_ab_col {
+  flex: 1 1 0;
+  min-width: 200px;
+  padding: 12px 16px;
+  background: #F7F9FC;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pa_ab_row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.pa_ab_name {
+  flex: 1;
+  min-width: 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: #393E4A;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pa_ab_lv {
+  flex: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #393E4A;
+}
+
+.pa_ab_sep {
+  flex: none;
+  width: 0;
+  height: 14px;
+  border-left: 1px solid #DFE3F0;
+}
+
+.pa_ab_p {
+  flex: none;
+  width: 40px;
+  text-align: right;
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  font-variant-numeric: tabular-nums;
+}
+
+/* 明细/证据表（Figma：#F7F9FC 表头、#E2E6F0 行线） */
+.pa_table {
+  .ant-table-thead > tr > th {
+    background: #F7F9FC;
+    color: #1E253B;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 16px;
+    border-bottom: 1px solid #E2E6F0;
+
+    &::before { display: none; }
+  }
+
+  .ant-table-tbody > tr > td {
+    padding: 12px 16px;
+    color: #1E253B;
+    font-size: 14px;
+    border-bottom: 1px solid #E2E6F0;
+  }
+
+  .ant-table-tbody > tr:last-child > td { border-bottom: none; }
+}
+
+.pa_band {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  i { flex: none; width: 8px; height: 8px; border-radius: 50%; }
+}
+
+/* 图谱内部自带 L1-L4 概要条与外层统计卡重复，个人面板内隐藏 */
+.drawer_graph_wrap .kg_lvstats { display: none; }
 
 /* v2.0-I 建议融入助手：个人学情页入口条 */
 .pa_sg_strip {

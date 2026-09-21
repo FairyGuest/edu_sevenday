@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useImperativeHandle } from "react";
-import { useDispatch, useRequest, useSelector } from "umi";
+import { useDispatch, useRequest, useSelector, history } from "umi";
 import {
   Affix,
   Button,
@@ -16,7 +16,13 @@ import {
 import MarkdownRender from "@/components/MarkdownRender";
 import MarkdownRenderToc from "@/components/MarkdownRender/showToc";
 import { ZYIcon } from "@/components";
-import { str2json, scrollTop, stopSSE, addNewTracking, getOrgId } from "@/utils";
+import {
+  str2json,
+  scrollTop,
+  stopSSE,
+  addNewTracking,
+  getOrgId,
+} from "@/utils";
 import useQuestionActions from "@/pages/TeachDesign/hooks/EditTeach";
 
 import "./StudyRight.less";
@@ -34,7 +40,9 @@ const StudyRight = (props: any) => {
     fullScreen,
     setFullScreen,
   } = props;
-  const { planParams, studyPlanLoading } = useSelector((state: any) => state.teachDesginModel); // 单元学案参数
+  const { planParams, studyPlanLoading } = useSelector(
+    (state: any) => state.teachDesginModel,
+  ); // 单元学案参数
 
   const dispatch = useDispatch();
   const { confirm } = Modal;
@@ -114,7 +122,8 @@ const StudyRight = (props: any) => {
         has_study_plan: true,
       });
       setSseStatus("end");
-      dispatch({ // 刷新单元教案
+      dispatch({
+        // 刷新单元教案
         type: "teachDesginModel/setData",
         payload: {
           studyPlanLoading: false, // 学案加载
@@ -204,7 +213,8 @@ const StudyRight = (props: any) => {
   const issueStudyPlan = async () => {
     try {
       const res = await fetch("/api/teacher/teaching/plans", {
-        method: "POST", headers: { "Content-Type": "application/json" },
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           chapter: itemData?.title || planParams?.title || "",
           class_id: planParams?.class_id || "",
@@ -212,7 +222,16 @@ const StudyRight = (props: any) => {
       });
       const d = await res.json();
       if (d.code === 200) {
-        message.success(`学案已下发（${d.data.targets} · ${d.data.issued_at}），学生将在消息中心收到`);
+        confirm({
+          title: "学案已下发",
+          content: `已推送给全班 ${d.data.n_students || ""} 名学生（消息中心定时推送）。任务分基础（必做）/ 提高（选做）/ 挑战（选做）三档，学生按自身情况选做。回收进度可在「下发与回收」工作台跟踪。`,
+          okText: "去查看回收进度",
+          cancelText: "留在此页",
+          onOk: () =>
+            history.push(
+              `/homework?sub=flow&dispatch_id=${encodeURIComponent(d.data.dispatch_id || "")}`,
+            ),
+        });
       } else {
         message.error(d.msg || "下发失败");
       }
@@ -371,7 +390,7 @@ const StudyRight = (props: any) => {
                   <ZYIcon type={fullScreen ? "icon_fold" : "icon_unfold"} />
                 }
                 onClick={() => {
-                  onRightPreview()
+                  onRightPreview();
                   // addNewTracking({
                   //   bt: "cl",
                   //   ct: "study_plan_click_overview",
@@ -393,8 +412,12 @@ const StudyRight = (props: any) => {
           <div className="create-content" ref={contentRef}>
             <div className="create-content-header">
               <ZYIcon className="icon" type="jiaoan" />
-              <div className="title">{detailData?.title || itemData?.title || ""}</div>
-              {detailData?.version && <div className="version">{detailData?.version}</div>}
+              <div className="title">
+                {detailData?.title || itemData?.title || ""}
+              </div>
+              {detailData?.version && (
+                <div className="version">{detailData?.version}</div>
+              )}
             </div>
             <div className="create-content-wrapper">
               <div
@@ -407,7 +430,9 @@ const StudyRight = (props: any) => {
                 ) : (
                   <>
                     <div className="think-title">
-                      <div>{thinkCreating ? "深度思考中..." : "已完成思考"}</div>
+                      <div>
+                        {thinkCreating ? "深度思考中..." : "已完成思考"}
+                      </div>
                       <div
                         className="think-expand"
                         onClick={() => setThinkExpand(!thinkExpand)}
@@ -428,7 +453,9 @@ const StudyRight = (props: any) => {
               {/* 学案内容 */}
               {teachPlanContent && (
                 <div className="teach-plan" ref={teachPlanRef}>
-                  <MarkdownRenderToc showToc={fullScreen}>{teachPlanContent}</MarkdownRenderToc>
+                  <MarkdownRenderToc showToc={fullScreen}>
+                    {teachPlanContent}
+                  </MarkdownRenderToc>
                 </div>
               )}
               {sseStatus === "error" && (

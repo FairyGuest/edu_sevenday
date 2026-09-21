@@ -1,0 +1,426 @@
+{
+ "scope": "class",
+ "teacher_id": "t-001",
+ "teacher_name": "演示教师",
+ "class_id": "cls-g8-03",
+ "class_name": "八年级(3)班",
+ "grade": "g8",
+ "subject": "数学",
+ "snapshot_id": "snap-20260918-cls-g8-03",
+ "latest_snapshot_at": "2026-09-18 18:30",
+ "time_window": {
+  "preset": "month",
+  "start_date": "2026-08-18",
+  "end_date": "2026-09-18"
+ },
+ "sources": [
+  "作业记录",
+  "考试记录",
+  "课堂互动",
+  "自主练习"
+ ],
+ "dimensions": [
+  {
+   "dimension_key": "knowledge",
+   "dimension_name": "知识点画像",
+   "score": 64,
+   "class_avg": null,
+   "rank_pct": null,
+   "sample_count": 5385,
+   "evidence_strength": "sufficient",
+   "explanation": "知识点画像为 64 分，其中「图像解释」「坐标系读图」「图像识读」「变化趋势判断」「实际问题建模」低于 70，是本维度主要短板。",
+   "suggestion": "针对「图像解释」，建议在下周作业中加入 2-3 道关联题，并配合图像—语言表达支架。",
+   "radar_items": [
+    {
+     "key": "func_concept",
+     "name": "函数概念理解",
+     "value": 75,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 1065,
+     "evidence_strength": "sufficient",
+     "explanation": "近 30 天关联作答 266 条，正确率 75%，掌握较稳固。",
+     "related_knowledge_ids": [
+      "kp-function"
+     ],
+     "related_goal_ids": [
+      "goal-1"
+     ]
+    },
+    {
+     "key": "coordinate_reading",
+     "name": "坐标系读图",
+     "value": 62,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 1140,
+     "evidence_strength": "sufficient",
+     "explanation": "近 30 天关联作答 285 条，正确率 61%，明显低于预期水平。",
+     "related_knowledge_ids": [
+      "kp-coordinate"
+     ],
+     "related_goal_ids": [
+      "goal-2"
+     ]
+    },
+    {
+     "key": "function_image_reading",
+     "name": "图像识读",
+     "value": 63,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 705,
+     "evidence_strength": "sufficient",
+     "explanation": "近 30 天关联作答 176 条，正确率 63%，明显低于预期水平。",
+     "related_knowledge_ids": [
+      "kp-function-image"
+     ],
+     "related_goal_ids": [
+      "goal-2"
+     ]
+    },
+    {
+     "key": "image_interpretation",
+     "name": "图像解释",
+     "value": 52,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 1125,
+     "evidence_strength": "sufficient",
+     "explanation": "近 30 天关联作答 281 条，正确率 49%，明显低于预期水平。",
+     "related_knowledge_ids": [
+      "kp-function-image",
+      "kp-function-property"
+     ],
+     "related_goal_ids": [
+      "goal-2"
+     ]
+    },
+    {
+     "key": "trend_judgment",
+     "name": "变化趋势判断",
+     "value": 63,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 555,
+     "evidence_strength": "sufficient",
+     "explanation": "近 30 天关联作答 139 条，正确率 58%，明显低于预期水平。",
+     "related_knowledge_ids": [
+      "kp-function-property"
+     ],
+     "related_goal_ids": [
+      "goal-2"
+     ]
+    },
+    {
+     "key": "real_world_modeling",
+     "name": "实际问题建模",
+     "value": 67,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 795,
+     "evidence_strength": "sufficient",
+     "explanation": "近 30 天关联作答 199 条，正确率 64%，处于中等水平，其中 72 条失分。",
+     "related_knowledge_ids": [
+      "kp-function-application"
+     ],
+     "related_goal_ids": [
+      "goal-5"
+     ]
+    }
+   ]
+  },
+  {
+   "dimension_key": "ability",
+   "dimension_name": "能力画像",
+   "score": 68,
+   "class_avg": null,
+   "rank_pct": null,
+   "sample_count": 5445,
+   "evidence_strength": "sufficient",
+   "explanation": "能力画像为 68 分，其中「表征转换」「迁移应用」「问题分析」「运算推理」低于 70，是本维度主要短板。",
+   "suggestion": "针对「表征转换」，建议安排 10 分钟专项微练习，并要求写出关键步骤。",
+   "radar_items": [
+    {
+     "key": "memorize_understand",
+     "name": "识记理解",
+     "value": 78,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 1320,
+     "evidence_strength": "sufficient",
+     "explanation": "近 30 天关联作答 330 条，正确率 76%，掌握较稳固。",
+     "related_knowledge_ids": [
+      "kp-function",
+      "kp-fraction-properties"
+     ],
+     "related_goal_ids": [
+      "goal-1"
+     ]
+    },
+    {
+     "key": "representation_transfer",
+     "name": "表征转换",
+     "value": 59,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 870,
+     "evidence_strength": "sufficient",
+     "explanation": "近 30 天关联作答 218 条，正确率 56%，明显低于预期水平。",
+     "related_knowledge_ids": [
+      "kp-function-image",
+      "kp-coordinate"
+     ],
+     "related_goal_ids": [
+      "goal-2"
+     ]
+    },
+    {
+     "key": "operation_reasoning",
+     "name": "运算推理",
+     "value": 69,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 660,
+     "evidence_strength": "sufficient",
+     "explanation": "近 30 天关联作答 165 条，正确率 66%，处于中等水平，其中 56 条失分。",
+     "related_knowledge_ids": [
+      "kp-radical-addsub",
+      "kp-fraction-calc"
+     ],
+     "related_goal_ids": [
+      "goal-3"
+     ]
+    },
+    {
+     "key": "problem_analysis",
+     "name": "问题分析",
+     "value": 67,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 900,
+     "evidence_strength": "sufficient",
+     "explanation": "近 30 天关联作答 225 条，正确率 68%，处于中等水平，其中 72 条失分。",
+     "related_knowledge_ids": [
+      "kp-congruent-judge",
+      "kp-special-quad"
+     ],
+     "related_goal_ids": [
+      "goal-4"
+     ]
+    },
+    {
+     "key": "transfer_apply",
+     "name": "迁移应用",
+     "value": 66,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 555,
+     "evidence_strength": "sufficient",
+     "explanation": "近 30 天关联作答 139 条，正确率 67%，处于中等水平，其中 46 条失分。",
+     "related_knowledge_ids": [
+      "kp-function-application"
+     ],
+     "related_goal_ids": [
+      "goal-5"
+     ]
+    },
+    {
+     "key": "reflect_express",
+     "name": "反思表达",
+     "value": 70,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 1140,
+     "evidence_strength": "sufficient",
+     "explanation": "近 30 天关联作答 285 条，正确率 66%，处于中等水平，其中 97 条失分。",
+     "related_knowledge_ids": [],
+     "related_goal_ids": [
+      "goal-6"
+     ]
+    }
+   ]
+  },
+  {
+   "dimension_key": "literacy",
+   "dimension_name": "素养画像",
+   "score": 73,
+   "class_avg": null,
+   "rank_pct": null,
+   "sample_count": 2085,
+   "evidence_strength": "sufficient",
+   "explanation": "素养画像为 73 分，其中「自我效能」低于 70，是本维度主要短板。",
+   "suggestion": "在单元小结课增加 5 分钟自我反思环节，补充非智力因素的证据采集。",
+   "radar_items": [
+    {
+     "key": "learning_attitude",
+     "name": "学习态度",
+     "value": 76,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 195,
+     "evidence_strength": "sufficient",
+     "explanation": "近 30 天作业按时提交率 82%，学案带齐率 79%。",
+     "related_knowledge_ids": [],
+     "related_goal_ids": [
+      "goal-6"
+     ]
+    },
+    {
+     "key": "learning_interest",
+     "name": "学习兴趣",
+     "value": 71,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 300,
+     "evidence_strength": "sufficient",
+     "explanation": "挑战题参与率 53%，课后主动提问 4 次。",
+     "related_knowledge_ids": [],
+     "related_goal_ids": []
+    },
+    {
+     "key": "learning_motivation",
+     "name": "学习动机",
+     "value": 74,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 495,
+     "evidence_strength": "sufficient",
+     "explanation": "自主练习启动 7 次，目标卡完成率 69%。",
+     "related_knowledge_ids": [],
+     "related_goal_ids": []
+    },
+    {
+     "key": "effort_level",
+     "name": "努力程度",
+     "value": 77,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 180,
+     "evidence_strength": "sufficient",
+     "explanation": "订正完成率 73%，平均订正时长 0.7 天。",
+     "related_knowledge_ids": [],
+     "related_goal_ids": [
+      "goal-6"
+     ]
+    },
+    {
+     "key": "self_efficacy",
+     "name": "自我效能",
+     "value": 65,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 495,
+     "evidence_strength": "sufficient",
+     "explanation": "单元反思自评均分 6.5/10，难题独立完成率 51%。",
+     "related_knowledge_ids": [],
+     "related_goal_ids": []
+    },
+    {
+     "key": "value_formation",
+     "name": "价值观养成",
+     "value": 76,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 420,
+     "evidence_strength": "sufficient",
+     "explanation": "小组互评“诚信/助人”好评率 70%，反思中主动谈及意义 3 次。",
+     "related_knowledge_ids": [],
+     "related_goal_ids": []
+    }
+   ]
+  },
+  {
+   "dimension_key": "process",
+   "dimension_name": "学习过程表现画像",
+   "score": 69,
+   "class_avg": null,
+   "rank_pct": null,
+   "sample_count": 2565,
+   "evidence_strength": "sufficient",
+   "explanation": "学习过程表现画像为 69 分，其中「订正过程」「思维角度」「作业完成过程」低于 70，是本维度主要短板。",
+   "suggestion": "对订正环节实行“错因归类—重做—3 日后复测”的闭环跟踪。",
+   "radar_items": [
+    {
+     "key": "class_participation",
+     "name": "课堂参与",
+     "value": 72,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 285,
+     "evidence_strength": "sufficient",
+     "explanation": "近 30 天课堂互动 5 次（抢答/投票/演示）。",
+     "related_knowledge_ids": [],
+     "related_goal_ids": []
+    },
+    {
+     "key": "listening_speaking",
+     "name": "倾听与发言",
+     "value": 72,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 375,
+     "evidence_strength": "sufficient",
+     "explanation": "主动发言 3 次，复述他人观点 3 次。",
+     "related_knowledge_ids": [],
+     "related_goal_ids": []
+    },
+    {
+     "key": "cooperation",
+     "name": "合作表现",
+     "value": 74,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 600,
+     "evidence_strength": "sufficient",
+     "explanation": "小组任务贡献占比 64%，组内互评 B 档。",
+     "related_knowledge_ids": [],
+     "related_goal_ids": []
+    },
+    {
+     "key": "thinking_perspective",
+     "name": "思维角度",
+     "value": 66,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 495,
+     "evidence_strength": "sufficient",
+     "explanation": "一题多解提交 1 次。",
+     "related_knowledge_ids": [],
+     "related_goal_ids": [
+      "goal-4"
+     ]
+    },
+    {
+     "key": "homework_process",
+     "name": "作业完成过程",
+     "value": 68,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 375,
+     "evidence_strength": "sufficient",
+     "explanation": "平均提交间隔 1.1 天，中途退出重做 0 次。",
+     "related_knowledge_ids": [],
+     "related_goal_ids": [
+      "goal-6"
+     ]
+    },
+    {
+     "key": "homework_correction",
+     "name": "订正过程",
+     "value": 64,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 435,
+     "evidence_strength": "sufficient",
+     "explanation": "订正完成率 68%，平均订正时长 1.1 天，错因归类完整率 56%。",
+     "related_knowledge_ids": [],
+     "related_goal_ids": [
+      "goal-6"
+     ]
+    }
+   ]
+  }
+ ],
+ "note": "班级四维画像（聚合口径）：中等偏弱：存在明显薄弱簇（补弱主路径演示）"
+}

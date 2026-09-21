@@ -48,13 +48,17 @@ export const useQuickHomework = ({
   }, [dispatch, examId, form]);
 
   useEffect(() => {
-    if (homeworkType === HOMEWORK_TYPES.PUBLISH || homeworkType === HOMEWORK_TYPES.LOOK) {
+    if (
+      homeworkType === HOMEWORK_TYPES.PUBLISH ||
+      homeworkType === HOMEWORK_TYPES.LOOK
+    ) {
       setFlagType(homeworkType);
       setFlagStatus(homeworkType === HOMEWORK_TYPES.LOOK ? "look" : "edit");
       return;
     }
 
-    let nextType = homeworkType === HOMEWORK_TYPES.COPY ? HOMEWORK_TYPES.EDIT : homeworkType;
+    let nextType =
+      homeworkType === HOMEWORK_TYPES.COPY ? HOMEWORK_TYPES.EDIT : homeworkType;
     if (status === "editable") {
       nextType = HOMEWORK_TYPES.EDIT;
     }
@@ -70,7 +74,10 @@ export const useQuickHomework = ({
       setFlagStatus("edit");
     }
 
-    if (homeworkType === HOMEWORK_TYPES.EDIT || homeworkType === HOMEWORK_TYPES.COPY) {
+    if (
+      homeworkType === HOMEWORK_TYPES.EDIT ||
+      homeworkType === HOMEWORK_TYPES.COPY
+    ) {
       setFlagStatus("edit");
     }
 
@@ -80,7 +87,10 @@ export const useQuickHomework = ({
   }, []);
 
   useEffect(() => {
-    if (homeworkType === HOMEWORK_TYPES.PUBLISH || homeworkType === HOMEWORK_TYPES.LOOK) {
+    if (
+      homeworkType === HOMEWORK_TYPES.PUBLISH ||
+      homeworkType === HOMEWORK_TYPES.LOOK
+    ) {
       return;
     }
     if (examId) {
@@ -114,7 +124,7 @@ export const useQuickHomework = ({
         setExamId(data?.exam_id);
         setFlagType(HOMEWORK_TYPES.EDIT);
         setFlagStatus("edit");
-        history.push("/setTopic");
+        history.push("/homework?sub=assign");
       }
       setLoading(false);
     },

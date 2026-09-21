@@ -3,9 +3,7 @@ import * as services from "../services";
 
 export default {
   namespace: "homePageModel",
-  state: {
-    
-  },
+  state: {},
 
   reducers: {
     updateState(state: any, { res }: any) {
@@ -19,7 +17,10 @@ export default {
 
   effects: {
     // post请求
-    *postData(params: any, { call, put, select }: any): Generator<any, any, any> {
+    *postData(
+      params: any,
+      { call, put, select }: any,
+    ): Generator<any, any, any> {
       const { payload, mTitle, mLoading, isInfo, apiUrl, contentType } = params;
       const loading = mLoading || "loading";
       yield put({ type: "updateState", res: { [loading]: true } });
@@ -42,7 +43,10 @@ export default {
     },
 
     // get请求
-    *getData({ payload, mTitle, mLoading, apiUrl }: any, { call, put, select }: any): Generator<any, any, any> {
+    *getData(
+      { payload, mTitle, mLoading, apiUrl }: any,
+      { call, put, select }: any,
+    ): Generator<any, any, any> {
       const loading = mLoading || "loading";
       yield put({ type: "updateState", res: { [loading]: true } });
       const result = yield call(services.getDataService, payload, apiUrl);

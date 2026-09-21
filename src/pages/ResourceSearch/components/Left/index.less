@@ -5,14 +5,14 @@
   // transition: width 0.2s ease-in-out;
   // padding-right: 12px;
   width: 258px; // 展开时的宽度
-  border-right: 1px solid #F2F5FA;
+  border-right: 1px solid #f2f5fa;
   flex-shrink: 0;
 
   // 折叠状态
   &.collapsed {
     width: 32px; // 折叠时的宽度
     border-right: none;
-    border-left: 1px solid #F2F5FA;
+    border-left: 1px solid #f2f5fa;
   }
 }
 // 折叠状态的目录条
@@ -22,14 +22,14 @@
   background-color: #fff;
   // transition: all 0.3s ease-in-out;
 
-  .catalog-close-icon{
+  .catalog-close-icon {
     width: 32px;
     height: 32px;
     border-radius: 0 6px 6px 0;
-    background-color: #F2F5FA;
+    background-color: #f2f5fa;
     cursor: pointer;
     &:hover {
-      background-color: #E2E6F0;
+      background-color: #e2e6f0;
     }
     .unfold-icon {
       font-size: 22px;
@@ -92,12 +92,12 @@
     line-height: 36px;
 
     .icon-btn {
-      background-color: #F2F5FA;
+      background-color: #f2f5fa;
       height: 36px;
       width: 32px;
       border-radius: 6px 0 0 6px;
       &:hover {
-        background-color: #E2E6F0;
+        background-color: #e2e6f0;
       }
       .fold-icon {
         font-size: 18px;
@@ -112,49 +112,49 @@
 
   .catalog-tabs-wrapper-individual .custom-tabs,
   .catalog-tabs-wrapper .custom-tabs {
-      flex: 1;
+    flex: 1;
+    height: 36px;
+    line-height: 36px;
+    background-color: #edf4ff;
+    border-radius: 6px;
+
+    .ant-cascader {
       height: 36px;
-      line-height: 36px;
-      background-color: #EDF4FF;
+      .ant-select-selector {
+        background: transparent;
+        border: 1px solid #1c6cff !important;
+      }
+    }
+    .tab-item {
+      flex: 1;
+      font-size: 14px;
+      font-weight: 400;
+      color: #646e8b;
+      cursor: pointer;
       border-radius: 6px;
+      transition: all 0.3s ease-in-out;
+      position: relative;
+      white-space: nowrap;
 
-      .ant-cascader {
-        height: 36px;
-        .ant-select-selector {
-          background: transparent;
-          border: 1px solid #1C6CFF !important;
-        }
+      &:hover {
+        color: #1c6cff;
       }
-      .tab-item {
-        flex: 1;
-        font-size: 14px;
-        font-weight: 400;
-        color: #646e8b;
-        cursor: pointer;
-        border-radius: 6px;
-        transition: all 0.3s ease-in-out;
-        position: relative;
-        white-space: nowrap;
-
-        &:hover {
-          color: #1C6CFF;
-        }
-        &.active{
-          color: #1C6CFF;
-          font-weight: 500;
-        }
-        &:not(:last-child)::after{
-          position: absolute;
-          top: 50%;
-          transform: translateY(-50%);
-          right: 0;
-          display: block;
-          content: "";
-          border-right: 1px solid #E2E6F0;
-          width: 0;
-          height: 14px;
-        }
+      &.active {
+        color: #1c6cff;
+        font-weight: 500;
       }
+      &:not(:last-child)::after {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        display: block;
+        content: "";
+        border-right: 1px solid #e2e6f0;
+        width: 0;
+        height: 14px;
+      }
+    }
   }
 
   // 目录内容区（知识点目录和章节目录共用）
@@ -180,22 +180,21 @@
           border-radius: 4px;
 
           &:hover {
-            border-color: #1C6CFF;
+            border-color: #1c6cff;
           }
         }
-        &.ant-select-disabled  .ant-select-selector:hover{
+        &.ant-select-disabled .ant-select-selector:hover {
           border-color: #e2e6f0;
         }
 
         &.ant-select-focused .ant-select-selector {
-          border-color: #1C6CFF;
+          border-color: #1c6cff;
           box-shadow: 0 0 0 2px rgba(91, 33, 182, 0.1);
         }
         .ant-select-selection-item {
           font-weight: 400;
-          color: #1E253B;
+          color: #1e253b;
         }
-
       }
     }
 
@@ -203,7 +202,7 @@
     .search-input.ant-input-search {
       .ant-input-affix-wrapper {
         border: none;
-        border-bottom: 1px solid #F2F5FA;
+        border-bottom: 1px solid #f2f5fa;
         border-radius: 0;
         background: transparent;
         padding-left: 0;
@@ -214,12 +213,12 @@
 
         &:focus,
         &:focus-within {
-          border-bottom-color: #1C6CFF;
+          border-bottom-color: #1c6cff;
           // box-shadow: 0 1px 0 0 #1C6CFF;
         }
 
         &:hover {
-          border-bottom-color: #1C6CFF;
+          border-bottom-color: #1c6cff;
         }
 
         .ant-input-prefix {
@@ -237,7 +236,7 @@
           padding: 0;
 
           &::placeholder {
-            color: #94A0B8;
+            color: #94a0b8;
           }
         }
       }
@@ -265,8 +264,8 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-50%);
-        .ant-empty-image{
+        transform: translate(-50%, -50%);
+        .ant-empty-image {
           width: 80px;
           height: 48px;
           margin: 0 auto;
@@ -301,14 +300,14 @@
           overflow: hidden;
 
           &:hover {
-            color: #1C6CFF !important;
+            color: #1c6cff !important;
             font-weight: 500;
             background-color: unset !important;
           }
         }
 
         .ant-tree-node-selected {
-          color: #1C6CFF;
+          color: #1c6cff;
           font-weight: 500;
           background-color: unset !important;
         }

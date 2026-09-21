@@ -3,7 +3,7 @@
   display: flex;
   height: 100%;
   background-color: var(--page-bg-color);
-  background-image: url('@/assets/designpage_bg.png');
+  background-image: url("@/assets/designpage_bg.png");
   background-repeat: no-repeat;
   background-position: top;
   background-size: 135% 100%;
@@ -20,7 +20,8 @@
 
   &-right {
     flex: 1;
-    overflow: scroll;
+    min-width: 0;
+    overflow: auto;
     scrollbar-width: none;
   }
 
@@ -59,7 +60,9 @@
           color: #5d5f65;
           font-weight: 400;
 
-          &:not(.ant-segmented-item-selected):not(.ant-segmented-item-disabled):hover {
+          &:not(.ant-segmented-item-selected):not(
+              .ant-segmented-item-disabled
+            ):hover {
             color: #5d5f65;
           }
         }
@@ -100,9 +103,9 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  // height: 100vh;
-
-  margin-top: calc(50vh - 180px);
+  width: 100%;
+  margin-top: 56px;
+  margin-bottom: 24px;
 
   &-title {
     color: #222;
@@ -114,7 +117,7 @@
     align-items: center;
     gap: 6px;
 
-    >img {
+    > img {
       cursor: pointer;
     }
   }
@@ -137,6 +140,8 @@
       display: flex;
       align-items: center;
       cursor: pointer;
+      flex-shrink: 0;
+      border: 1px solid transparent;
 
       &:hover {
         border: 1px solid transparent;
@@ -192,10 +197,11 @@
 
   &-img {
     position: absolute;
-    top: -100px;
-    right: -60px;
-    width: 320px;
-    height: 200px;
+    top: -70px;
+    right: 0;
+    width: 176px;
+    height: 110px;
+    pointer-events: none;
     background: center / cover url("@/assets/design_bg.png");
   }
 
@@ -203,7 +209,7 @@
     position: relative;
 
     .dialog-box {
-      width: 800px;
+      width: 100%;
       min-height: 160px;
       padding: 12px;
       border-radius: 12px;
@@ -239,4 +245,89 @@
       color: #ef4444;
     }
   }
+}
+
+.right-wrapper-type {
+  margin-bottom: 12px;
+}
+
+/* 教学反思入口：与课时/单元并列，虚线边框区分「改进」性质 */
+.right-wrapper-type {
+  .type-item--reflect {
+    border: 1px dashed #b7c6e8;
+    background: #f7faff;
+    color: #35507a;
+
+    .reflection-icon {
+      width: 72px;
+      flex-shrink: 0;
+      font-size: 30px;
+      color: #6485b9;
+    }
+
+    &:hover {
+      border: 1px solid #458cff;
+    }
+  }
+}
+
+.teach-design {
+  .right {
+    width: min(100%, 948px);
+    margin: 0 auto;
+    padding: 0 24px 36px;
+  }
+
+  .right-wrapper-content {
+    width: 100%;
+  }
+
+  .dab_bar {
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
+    gap: 10px;
+  }
+
+  .tab-video {
+    width: 100%;
+    margin-top: 28px;
+  }
+
+  .right-wrapper-type {
+    flex-wrap: wrap;
+  }
+
+  .tab-video-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+  }
+
+  .tab-video-item, .tab-video-item .item-img {
+    width: 100%;
+  }
+
+  .tab-video-item .item-img > img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 240 / 136;
+    object-fit: cover;
+  }
+
+  @media (max-width: 1100px) {
+    .right { padding-inline: 16px; }
+    .right-wrapper-title { font-size: 20px; flex-wrap: wrap; }
+    .right-wrapper-type { gap: 10px; margin-top: 24px; }
+    .right-wrapper-type .type-item { width: 164px; font-size: 14px; }
+    .right-wrapper-type .type-item-img { width: 56px; height: 56px; }
+    .type-item--reflect .reflection-icon { width: 56px; }
+    .right-wrapper-img { display: none; }
+    .dab_bar { padding: 10px; }
+    .dab_btn, .dab_inject { padding-inline: 12px; }
+  }
+}
+
+.design-drawer .drawer-content img {
+  max-width: 100%;
+  height: auto;
 }

@@ -11,16 +11,66 @@ export interface AssistantAction {
   label?: string;
   params?: Record<string, any>;
 }
-export interface NavTarget { pathname: string; search?: string }
+export interface NavTarget {
+  pathname: string;
+  search?: string;
+}
 
 /** 动作元信息（供 mock /api/assistant/chat 的 system 提示与前端确认卡展示） */
-export const ACTION_META: { key: string; label: string; desc: string; write: boolean }[] = [
-  { key: "open_homework", label: "查看作业", desc: "打开指定作业预览", write: false },
-  { key: "inject_teaching_design", label: "注入教学设计", desc: "把当前班级学情画像带入教学设计页", write: false },
-  { key: "filter_question_bank", label: "筛选题目", desc: "按素养/知识点预置筛选条件并跳转题库", write: false },
-  { key: "personalized_paper", label: "生成个性化作业", desc: "按四方针为全班生成每人一单（需确认）", write: true },
-  { key: "assign_homework", label: "布置作业", desc: "生成个性化作业并跳转作业组卷下发（需确认）", write: true },
-  { key: "view_student_profile", label: "查看个人学情", desc: "切到个人学情页查看某学生画像", write: false },
+export const ACTION_META: {
+  key: string;
+  label: string;
+  desc: string;
+  write: boolean;
+}[] = [
+  {
+    key: "open_homework",
+    label: "查看作业",
+    desc: "打开指定作业预览",
+    write: false,
+  },
+  {
+    key: "inject_teaching_design",
+    label: "注入教学设计",
+    desc: "把当前班级学情画像带入教学设计页",
+    write: false,
+  },
+  {
+    key: "filter_question_bank",
+    label: "筛选题目",
+    desc: "按素养/知识点预置筛选条件并跳转题库",
+    write: false,
+  },
+  {
+    key: "personalized_paper",
+    label: "生成个性化作业",
+    desc: "按四方针为全班生成每人一单（需确认）",
+    write: true,
+  },
+  {
+    key: "assign_homework",
+    label: "布置作业",
+    desc: "生成个性化作业并跳转作业组卷下发（需确认）",
+    write: true,
+  },
+  {
+    key: "view_student_profile",
+    label: "查看个人学情",
+    desc: "切到个人学情页查看某学生画像",
+    write: false,
+  },
+  {
+    key: "open_homework_flow",
+    label: "查看下发回收",
+    desc: "打开下发与回收工作台，查看提交/批改进度",
+    write: false,
+  },
+  {
+    key: "open_teaching_reflection",
+    label: "教学反思",
+    desc: "打开教学反思页查看批改证据生成的反思建议",
+    write: false,
+  },
 ];
 
 const STRATEGY_RANGES: Record<string, Record<string, [number, number]>> = {
@@ -40,10 +90,18 @@ export async function runAction(
 
   if (key === "inject_teaching_design") {
     const cid = params.class_id || "";
-    if (params.assistant_draft) ctx.dispatch({ type: "assistantModel/updateState", res: { teachingDraft: String(params.assistant_draft) } });
+    if (params.assistant_draft)
+      ctx.dispatch({
+        type: "assistantModel/updateState",
+        res: { teachingDraft: String(params.assistant_draft) },
+      });
     return {
-      ok: true, detail: "已跳转教学设计页，班级学情已带入预览卡",
-      navigateTo: { pathname: "/design", search: `?${new URLSearchParams({ class_id: String(cid), from: "analysis" })}` },
+      ok: true,
+      detail: "已跳转教学设计页，班级学情已带入预览卡",
+      navigateTo: {
+        pathname: "/design",
+        search: `?${new URLSearchParams({ class_id: String(cid), from: "analysis" })}`,
+      },
     };
   }
 
@@ -51,12 +109,22 @@ export async function runAction(
     // 经模型内合并（applyAssistantFilter）：助手不订阅题库状态，避免列表翻页重渲染助手
     const patch: Record<string, any> = {};
     if (params.literacy) patch.filters = { literacies: [params.literacy] };
-    if (params.source_type) patch.filters = { ...(patch.filters || {}), scenes: [params.source_type] };
+    if (params.source_type)
+      patch.filters = {
+        ...(patch.filters || {}),
+        scenes: [params.source_type],
+      };
     if (params.cluster) patch.searchText = params.cluster;
-    ctx.dispatch({ type: "resourceSearchModel/applyAssistantFilter", payload: patch });
+    ctx.dispatch({
+      type: "resourceSearchModel/applyAssistantFilter",
+      payload: patch,
+    });
     // 已在 /source 时（如从知识图谱 Tab 触发）需切回公共题库 Tab 才能看到筛选结果
     if (history.location.pathname === "/source") {
-      ctx.dispatch({ type: "resourceSearchModel/setData", payload: { activeTab: "public" } });
+      ctx.dispatch({
+        type: "resourceSearchModel/setData",
+        payload: { activeTab: "public" },
+      });
     }
     return {
       ok: true,
@@ -72,20 +140,30 @@ export async function runAction(
   }
 
   if (key === "personalized_paper" || key === "assign_homework") {
-    const strategy: "weak" | "variant" | "review" | "challenge" = STRATEGY_RANGES[params.strategy] ? params.strategy : "weak";
+    const strategy: "weak" | "variant" | "review" | "challenge" =
+      STRATEGY_RANGES[params.strategy] ? params.strategy : "weak";
     const classId = params.class_id;
     try {
       const r = await fetch("/api/teacher/recommend/generate", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ ...params, class_id: classId, ranges: STRATEGY_RANGES[strategy], total: params.total ?? 6 }),
+        body: JSON.stringify({
+          ...params,
+          class_id: classId,
+          ranges: STRATEGY_RANGES[strategy],
+          total: params.total ?? 6,
+        }),
       });
       const j = await r.json();
       const hw = j?.data;
-      if (j?.code !== 200 || !hw?.homework_id) throw new Error(j?.msg || "生成失败");
+      if (j?.code !== 200 || !hw?.homework_id)
+        throw new Error(j?.msg || "生成失败");
       return {
         ok: true,
-        navigateTo: { pathname: "/paperCompose" },
+        navigateTo: {
+          pathname: "/homework",
+          search: "sub=compose&tab=personalized",
+        },
         detail: `已生成个性化作业 **${hw.homework_id}**（${hw.summary?.n_students} 名学生 · 每人 ${hw.summary?.q_count?.max || 6} 题，方针：${{ weak: "薄弱补弱", variant: "错题变式", review: "遗忘复习", challenge: "选做挑战" }[strategy]}），已打开作业组卷页，可在其中预览与发布`,
       };
     } catch (e: any) {
@@ -93,7 +171,40 @@ export async function runAction(
     }
   }
 
-  if (key === "open_homework") return { ok: true, detail: "已打开指定作业", navigateTo: { pathname: "/paperCompose", search: "?tab=personalized&homework_id=" + encodeURIComponent(params.homework_id || "") } };
+  if (key === "open_homework_flow") {
+    const search = params.dispatch_id
+      ? "?sub=flow&dispatch_id=" +
+        encodeURIComponent(String(params.dispatch_id))
+      : params.class_id
+        ? "?sub=flow&class_id=" + encodeURIComponent(String(params.class_id))
+        : "?sub=flow";
+    return {
+      ok: true,
+      detail: "已打开作业的下发与回收",
+      navigateTo: { pathname: "/homework", search },
+    };
+  }
+  if (key === "open_teaching_reflection") {
+    const search = params.class_id
+      ? "?class_id=" + encodeURIComponent(String(params.class_id))
+      : "";
+    return {
+      ok: true,
+      detail: "已打开教学反思",
+      navigateTo: { pathname: "/design/reflection", search },
+    };
+  }
+  if (key === "open_homework")
+    return {
+      ok: true,
+      detail: "已打开指定作业",
+      navigateTo: {
+        pathname: "/homework",
+        search:
+          "?sub=compose&tab=personalized&homework_id=" +
+          encodeURIComponent(params.homework_id || ""),
+      },
+    };
   if (key === "view_student_profile") {
     const sid = params.student_id || "";
     const query = new URLSearchParams({ tab: "personal" });
@@ -102,9 +213,13 @@ export async function runAction(
     for (const field of ["start_date", "end_date", "sources", "cluster"]) {
       if (params[field] !== undefined) query.set(field, String(params[field]));
     }
-    if ((history.location.pathname || "") !== "/learning-analysis" || params.class_id) {
+    if (
+      (history.location.pathname || "") !== "/learning-analysis" ||
+      params.class_id
+    ) {
       return {
-        ok: true, detail: "已切换到个人学情页",
+        ok: true,
+        detail: "已切换到个人学情页",
         navigateTo: { pathname: "/learning-analysis", search: `?${query}` },
       };
     }
@@ -115,5 +230,8 @@ export async function runAction(
     return { ok: true, detail: "已切换到个人学情页" };
   }
 
-  return { ok: false, detail: `未知动作：${key}${meta ? "" : "（不在白名单）"}` };
+  return {
+    ok: false,
+    detail: `未知动作：${key}${meta ? "" : "（不在白名单）"}`,
+  };
 }

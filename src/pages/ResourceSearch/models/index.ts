@@ -15,7 +15,10 @@ export default {
     // Header 相关状态
     gradeName: "",
     subjectName: "",
-    activeTab: "public",   // { key: "public", label: "公共题库" },{ key: "district", label: "海淀区题库" },{ key: "personal", label: "个人题库" },
+    activeTab: "kgraph", // 默认以知识图谱作为资源平台入口；仍可切换公共/个人题库
+    graphGrade: "all",
+    graphNode: null,
+    graphResourceType: "all",
 
     // Left 相关状态 - 知识点
     checkedKnowledge: [],
@@ -42,7 +45,7 @@ export default {
     // 教材数据
     textbooksList: [], // 从接口获取的教材列表
 
-    textbooksListTree:[], //版本教材数据
+    textbooksListTree: [], //版本教材数据
     // Right 相关状态
     questionList: [],
     questionLoading: false,
@@ -58,7 +61,7 @@ export default {
       years: ["all"], // 年份
       regions: ["all"], // 地区
       gradeSemesters: ["all"], // 年级学期
-      searchText: "" // 关键字
+      searchText: "", // 关键字
     },
     filterOptions: {
       scenes: [], // 使用场景
@@ -79,13 +82,17 @@ export default {
     questionBasket: null, // 试题篮信息
     questionBasketLoading: false, // 试题篮加载状态
     textbookOptions: [], // 个人题库教材option
-    catalogueTree:[], // 章节目录树
-    treeAllKeyIdList:[]
+    catalogueTree: [], // 章节目录树
+    treeAllKeyIdList: [],
   },
 
   reducers: {
     invalidateQuestions(state: any) {
-      return { ...state, questionRequestSeq: (state.questionRequestSeq || 0) + 1, questionLoading: false };
+      return {
+        ...state,
+        questionRequestSeq: (state.questionRequestSeq || 0) + 1,
+        questionLoading: false,
+      };
     },
     updateState(state: any, { res }: any) {
       // 更新state
@@ -98,25 +105,54 @@ export default {
 
   effects: {
     // All list entry points (filters, tree and pagination) share one request generation.
-    *getLatestQuestions({ payload, apiUrl, pagination }: any, { call, put, select }: any): Generator<any, any, any> {
+    *getLatestQuestions(
+      { payload, apiUrl, pagination }: any,
+      { call, put, select }: any,
+    ): Generator<any, any, any> {
       const state = yield select((s: any) => s.resourceSearchModel);
       const seq = (state.questionRequestSeq || 0) + 1;
-      yield put({ type: "updateState", res: { questionRequestSeq: seq, questionLoading: true, questionError: null } });
+      yield put({
+        type: "updateState",
+        res: {
+          questionRequestSeq: seq,
+          questionLoading: true,
+          questionError: null,
+        },
+      });
       let result: any;
-      try { result = yield call(services.postDataService, payload, apiUrl); }
-      catch (err) { result = { err }; }
+      try {
+        result = yield call(services.postDataService, payload, apiUrl);
+      } catch (err) {
+        result = { err };
+      }
       const current = yield select((s: any) => s.resourceSearchModel);
       if (current.questionRequestSeq !== seq) return { skipped: true };
-      yield put({ type: "updateState", res: result?.code === 200 ? {
-        questionLoading: false,
-        questionList: Array.isArray(result.data?.records) ? result.data.records : [],
-        pagination: {
-          ...pagination,
-          current: result.data?.current ?? result.data?.page_num ?? payload.current,
-          pageSize: result.data?.size ?? result.data?.page_size ?? payload.size,
-          total: result.data?.total ?? 0,
-        },
-      } : { questionLoading: false, questionList: [], questionError: result?.msg || "题目加载失败，请重试" } });
+      yield put({
+        type: "updateState",
+        res:
+          result?.code === 200
+            ? {
+                questionLoading: false,
+                questionList: Array.isArray(result.data?.records)
+                  ? result.data.records
+                  : [],
+                pagination: {
+                  ...pagination,
+                  current:
+                    result.data?.current ??
+                    result.data?.page_num ??
+                    payload.current,
+                  pageSize:
+                    result.data?.size ?? result.data?.page_size ?? payload.size,
+                  total: result.data?.total ?? 0,
+                },
+              }
+            : {
+                questionLoading: false,
+                questionList: [],
+                questionError: result?.msg || "题目加载失败，请重试",
+              },
+      });
       return result;
     },
     // post请求
@@ -174,8 +210,13 @@ export default {
         type: "updateState",
         res: {
           filters: { ...cur, ...(payload.filters || {}) },
-          ...(payload.searchText !== undefined ? { searchText: payload.searchText } : {}),
-          pagination: { ...(resourceSearchModel?.pagination || {}), current: 1 },
+          ...(payload.searchText !== undefined
+            ? { searchText: payload.searchText }
+            : {}),
+          pagination: {
+            ...(resourceSearchModel?.pagination || {}),
+            current: 1,
+          },
         },
       });
     },

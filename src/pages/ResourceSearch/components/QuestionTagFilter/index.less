@@ -15,19 +15,38 @@
   padding-bottom: 8px;
   border-bottom: 1px solid #f0f2f6;
 
-  .ds_icon { color: var(--g-accent); font-size: 14px; }
-  .ds_title { font-size: 13.5px; font-weight: 650; color: var(--g-text); }
+  .ds_icon {
+    color: var(--g-accent);
+    font-size: 14px;
+  }
+  .ds_title {
+    font-size: 13.5px;
+    font-weight: 650;
+    color: var(--g-text);
+  }
   .ds_badge {
     font-size: 10.5px;
     font-weight: 600;
     color: var(--g-accent-deep);
-    background: linear-gradient(135deg, rgba(77, 141, 255, 0.14), rgba(28, 108, 255, 0.1));
+    background: linear-gradient(
+      135deg,
+      rgba(77, 141, 255, 0.14),
+      rgba(28, 108, 255, 0.1)
+    );
     border: 1px solid rgba(28, 108, 255, 0.22);
     border-radius: 999px;
     padding: 1px 9px;
   }
-  .ds_count { font-size: 11.5px; color: var(--g-faint); margin-left: 6px; }
-  .ant-btn { margin-left: auto; padding: 0; font-size: 11.5px; }
+  .ds_count {
+    font-size: 11.5px;
+    color: var(--g-faint);
+    margin-left: 6px;
+  }
+  .ant-btn {
+    margin-left: auto;
+    padding: 0;
+    font-size: 11.5px;
+  }
 }
 
 /* ===== 独有维区（浅底突出） ===== */
@@ -59,7 +78,10 @@
   font-weight: 650;
   color: var(--g-text);
 
-  .anticon { color: var(--g-accent); font-size: 12.5px; }
+  .anticon {
+    color: var(--g-accent);
+    font-size: 12.5px;
+  }
 
   .ds_q {
     width: 14px;
@@ -94,8 +116,14 @@
   cursor: pointer;
   transition: all 0.18s ease;
 
-  &:hover:not(:disabled) { border-color: var(--g-accent); transform: translateY(-1px); }
-  &:disabled { opacity: 0.45; cursor: not-allowed; }
+  &:hover:not(:disabled) {
+    border-color: var(--g-accent);
+    transform: translateY(-1px);
+  }
+  &:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
 
   .ds_step_bar {
     width: 100%;
@@ -106,13 +134,24 @@
     transition: all 0.18s ease;
   }
 
-  .ds_step_lv { font-size: 12px; font-weight: 700; color: var(--g-muted); line-height: 1; }
-  .ds_step_name { font-size: 10.5px; color: var(--g-faint); line-height: 1; }
+  .ds_step_lv {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--g-muted);
+    line-height: 1;
+  }
+  .ds_step_name {
+    font-size: 10.5px;
+    color: var(--g-faint);
+    line-height: 1;
+  }
 
   &.inrange {
     border-color: rgba(28, 108, 255, 0.35);
     background: var(--g-accent-soft);
-    .ds_step_bar { background: rgba(28, 108, 255, 0.45); }
+    .ds_step_bar {
+      background: rgba(28, 108, 255, 0.45);
+    }
   }
 
   &.on {
@@ -122,7 +161,9 @@
     .ds_step_bar {
       background: linear-gradient(180deg, #4d8dff, #1c6cff);
     }
-    .ds_step_lv { color: var(--g-accent-deep); }
+    .ds_step_lv {
+      color: var(--g-accent-deep);
+    }
   }
 }
 
@@ -164,7 +205,10 @@
     vertical-align: 1px;
   }
 
-  &:hover { transform: translateY(-1px); box-shadow: 0 3px 8px rgba(23, 39, 64, 0.1); }
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(23, 39, 64, 0.1);
+  }
 
   &.on {
     background: var(--c);
@@ -172,7 +216,9 @@
     color: #fff;
     box-shadow: 0 3px 10px rgba(23, 39, 64, 0.22);
 
-    &::before { background: rgba(255, 255, 255, 0.85); }
+    &::before {
+      background: rgba(255, 255, 255, 0.85);
+    }
   }
 }
 
@@ -192,7 +238,9 @@
   min-width: 0;
   padding: 3px 0;
 
-  & + .ds_nrow { border-top: 1px dashed #f3f5f9; }
+  & + .ds_nrow {
+    border-top: 1px dashed #f3f5f9;
+  }
 }
 
 .ds_nlabel {
@@ -220,7 +268,10 @@
   cursor: pointer;
   transition: all 0.15s ease;
 
-  &:hover { color: var(--g-accent); background: var(--g-accent-soft); }
+  &:hover {
+    color: var(--g-accent);
+    background: var(--g-accent-soft);
+  }
 
   &.on {
     color: var(--g-accent-deep);

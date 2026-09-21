@@ -11,7 +11,7 @@ import { useQuestionActions } from "../../hooks/useQuestionActions";
 import { useElementSize } from "@/hooks/useElementSize";
 import { useBesket } from "../../hooks/useBesket";
 
-import { selectOptionsData,all_question_number } from "@/global";
+import { selectOptionsData, all_question_number } from "@/global";
 
 import "katex/dist/katex.min.css";
 import "./index.less";
@@ -115,7 +115,9 @@ const QuestionCard = ({
 
   const warningConfig = {
     title: "提示",
-    content: <Text>试题篮已达上限{all_question_number}道，请清理后重新添加！</Text>,
+    content: (
+      <Text>试题篮已达上限{all_question_number}道，请清理后重新添加！</Text>
+    ),
   };
 
   const isSelectQuestion = useMemo(
@@ -319,9 +321,14 @@ const QuestionCard = ({
             <Flex justify="space-between" align="center">
               <Flex gap={4}>
                 <Flex className="question-meta" align="center">
-                  {questionMetaItems.map((item, idx) => (
-                    item && <span key={idx} className="question-meta-item">{item}</span>
-                  ))}
+                  {questionMetaItems.map(
+                    (item, idx) =>
+                      item && (
+                        <span key={idx} className="question-meta-item">
+                          {item}
+                        </span>
+                      ),
+                  )}
                 </Flex>
               </Flex>
               <div className="question-right-info">
@@ -453,8 +460,7 @@ const QuestionCard = ({
               )}
               {actionKeys.includes("personalDelete") && (
                 <Button type="link" size="small" onClick={delBtn}>
-                  <ZYIcon
-                    type={'shanchu'} />
+                  <ZYIcon type={"shanchu"} />
                   删除
                 </Button>
               )}
@@ -463,7 +469,7 @@ const QuestionCard = ({
                   type="link"
                   size="small"
                   onClick={handleAddQuestionToBasketClick}
-                  className={isInBasket ? 'in-basket-btn' : ''}
+                  className={isInBasket ? "in-basket-btn" : ""}
                 >
                   <ZYIcon
                     type={isInBasket ? "yichushitilan" : "jiarushitilan"}

@@ -99,7 +99,9 @@ const AnswerCard = (props: any) => {
                           <div className="desc">正在生成文档……</div>
                         )}
                         {detailData?.status == 1 && (
-                          <div className="time">创建时间：{end?.create_time}</div>
+                          <div className="time">
+                            创建时间：{end?.create_time}
+                          </div>
                         )}
                         {detailData?.status == 2 && (
                           <div className="error">

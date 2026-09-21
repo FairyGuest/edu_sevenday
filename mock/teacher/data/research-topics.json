@@ -1,0 +1,290 @@
+{
+ "generated_at": "2026-09-18 18:30",
+ "scope_note": "八年级数学备课组（同一教师 + 备课组同事）",
+ "topics": [
+  {
+   "topic_id": "research-001",
+   "title": "八年级多个班在「一次函数图像解释」上达成偏低，如何补支架？",
+   "content": "9 月单元测和近两周作业显示，3 班在“图像解释”类题目上正确率不足五成、2 班约六成，均明显低于同章计算题。学生不是不会算，而是说不清“y 随 x 怎么变、在实际情境里意味着什么”。想请大家聊聊：表达类的短板，用什么支架最见效？",
+   "author_id": "t-002",
+   "author_name": "李老师",
+   "subject": "数学",
+   "grade": "g8",
+   "class_scope": [
+    "cls-g8-01",
+    "cls-g8-02",
+    "cls-g8-03"
+   ],
+   "related_knowledge_ids": [
+    "kp-function-image",
+    "kp-function-property"
+   ],
+   "related_dimension_keys": [
+    "knowledge",
+    "ability"
+   ],
+   "evidence_summary": "3 班图像解释读数不足 55，显著低于学期目标 75；失分集中在“解释趋势的实际含义”小问。",
+   "reply_count": 5,
+   "last_reply_at": "2026-09-12 14:00",
+   "status": "strategy_formed",
+   "tags": [
+    "图像解释",
+    "表达支架"
+   ],
+   "created_at": "2026-09-12 10:05"
+  },
+  {
+   "topic_id": "research-002",
+   "title": "「二次根式加减」错误率高：计算类薄弱簇怎么专项训练？",
+   "content": "2 班运算推理读数只有 60，图谱上二次根式加减是待巩固节点。典型错误是“没化成最简二次根式就直接合并”，比如 √18+√8 算成 √26。计算类短板靠刷题好像边际效应递减，大家有什么结构性办法？",
+   "author_id": "t-003",
+   "author_name": "周老师",
+   "subject": "数学",
+   "grade": "g8",
+   "class_scope": [
+    "cls-g8-02",
+    "cls-g8-03"
+   ],
+   "related_knowledge_ids": [
+    "kp-radical-addsub",
+    "kp-radical-muldvd"
+   ],
+   "related_dimension_keys": [
+    "knowledge",
+    "ability"
+   ],
+   "evidence_summary": "2 班「二次根式的加减」掌握度不足 60（练习中偏下，部分学生待巩固）；单元测计算题失分中“未化简先合并”占 55%。",
+   "reply_count": 4,
+   "last_reply_at": "2026-09-10 19:48",
+   "status": "strategy_formed",
+   "tags": [
+    "运算薄弱",
+    "专项训练"
+   ],
+   "created_at": "2026-09-10 16:40"
+  },
+  {
+   "topic_id": "research-003",
+   "title": "全等三角形判定：SSA 误用怎么破？",
+   "content": "单元测里“补充条件使三角形全等”的题，1、3 班都有近三成学生选了 SSA。画图演示过两边及其中一边的对角不一定全等，但过两周又错。这种概念性误解如何长期压住？",
+   "author_id": "t-004",
+   "author_name": "吴老师",
+   "subject": "数学",
+   "grade": "g8",
+   "class_scope": [
+    "cls-g8-01",
+    "cls-g8-03"
+   ],
+   "related_knowledge_ids": [
+    "kp-congruent-judge"
+   ],
+   "related_dimension_keys": [
+    "knowledge",
+    "ability"
+   ],
+   "evidence_summary": "3 班「三角形全等的判定」掌握度不足 72（练习中）；SSA 误用占判定类失分的 46%。",
+   "reply_count": 3,
+   "last_reply_at": "2026-09-14 11:51",
+   "status": "discussing",
+   "tags": [
+    "概念混淆",
+    "几何推理"
+   ],
+   "created_at": "2026-09-14 09:30"
+  },
+  {
+   "topic_id": "research-004",
+   "title": "分式方程总忘验根：如何把“检验”变成习惯？",
+   "content": "2 班分式方程题解得都对，但验根环节漏做率超过六成，直接丢步骤分。讲过很多遍“去分母可能产生增根”，还是记不住做。求把检验变成肌肉记忆的办法。",
+   "author_id": "t-005",
+   "author_name": "郑老师",
+   "subject": "数学",
+   "grade": "g8",
+   "class_scope": [
+    "cls-g8-02"
+   ],
+   "related_knowledge_ids": [
+    "kp-fraction-calc"
+   ],
+   "related_dimension_keys": [
+    "knowledge",
+    "process"
+   ],
+   "evidence_summary": "2 班分式方程题步骤分丢失中，“未验根”占 61%；关联节点「分式的加法与减法」掌握度不足 60。",
+   "reply_count": 4,
+   "last_reply_at": "2026-09-08 17:34",
+   "status": "used_in_plan",
+   "tags": [
+    "习惯养成",
+    "作业设计"
+   ],
+   "created_at": "2026-09-08 14:15"
+  },
+  {
+   "topic_id": "research-005",
+   "title": "课堂沉默的学生，如何用过程画像早发现、早干预？",
+   "content": "有些学生作业都对，但课堂几乎零互动，问题往往拖到期中才暴露。过程画像里的「课堂参与」「倾听与发言」指标能不能作为预警源？大家怎么用？",
+   "author_id": "t-006",
+   "author_name": "王老师",
+   "subject": "数学",
+   "grade": "g8",
+   "class_scope": [
+    "cls-g8-01",
+    "cls-g8-02",
+    "cls-g8-03"
+   ],
+   "related_knowledge_ids": [],
+   "related_dimension_keys": [
+    "process",
+    "literacy"
+   ],
+   "evidence_summary": "抽样学生中，各班均有 1-3 人课堂参与读数低于班均 15 分以上，其中多数知识画像正常。",
+   "reply_count": 4,
+   "last_reply_at": "2026-09-15 14:28",
+   "status": "discussing",
+   "tags": [
+    "课堂参与",
+    "过程画像"
+   ],
+   "created_at": "2026-09-15 11:20"
+  },
+  {
+   "topic_id": "research-006",
+   "title": "作业订正流于形式：订正闭环记录单的落地效果",
+   "content": "3 班订正过程读数不足 65，是过程维度最低项。抽查发现相当比例学生订正就是抄一遍正确答案。上月试行了“错因归类—重做—3 日复测”闭环单，汇报一下效果，也请大家提问题。",
+   "author_id": "t-007",
+   "author_name": "冯老师",
+   "subject": "数学",
+   "grade": "g8",
+   "class_scope": [
+    "cls-g8-03"
+   ],
+   "related_knowledge_ids": [],
+   "related_dimension_keys": [
+    "process"
+   ],
+   "evidence_summary": "闭环单试行 3 周：订正含错因归类的比例从 35% 提升到 78%，同类错误复现率下降约一半。",
+   "reply_count": 4,
+   "last_reply_at": "2026-09-05 18:08",
+   "status": "used_in_plan",
+   "tags": [
+    "订正",
+    "过程画像"
+   ],
+   "created_at": "2026-09-05 15:00"
+  },
+  {
+   "topic_id": "research-007",
+   "title": "一次函数实际应用（建模）得分低：情境素材从哪里找？",
+   "content": "三个班的「实际问题建模」普遍只有 60-75，均未达到学期目标。学生见到“套餐、出租车、弹簧”之外的情境就懵。大家平时从哪里收集真实情境素材？",
+   "author_id": "t-008",
+   "author_name": "陈老师",
+   "subject": "数学",
+   "grade": "g8",
+   "class_scope": [
+    "cls-g8-01",
+    "cls-g8-02",
+    "cls-g8-03"
+   ],
+   "related_knowledge_ids": [
+    "kp-function-application"
+   ],
+   "related_dimension_keys": [
+    "knowledge",
+    "ability"
+   ],
+   "evidence_summary": "建模题失分中 47% 是“未能建立函数关系”，31% 是“未回答实际问题问的量”。",
+   "reply_count": 3,
+   "last_reply_at": "2026-09-16 11:55",
+   "status": "discussing",
+   "tags": [
+    "建模",
+    "情境素材"
+   ],
+   "created_at": "2026-09-16 08:50"
+  },
+  {
+   "topic_id": "research-008",
+   "title": "已掌握学生重复练习过多：画像驱动的分层作业怎么排？",
+   "content": "1 班整体较好，图谱上已掌握节点不少，但作业还是一刀切，头部学生浪费时间做熟题。有没有用画像直接驱动分层作业的成熟做法？",
+   "author_id": "t-009",
+   "author_name": "许老师",
+   "subject": "数学",
+   "grade": "g8",
+   "class_scope": [
+    "cls-g8-01"
+   ],
+   "related_knowledge_ids": [],
+   "related_dimension_keys": [
+    "knowledge",
+    "process"
+   ],
+   "evidence_summary": "1 班较熟练/已掌握节点约占六成，但近两周作业中对应重复题占比仍约 30%。",
+   "reply_count": 3,
+   "last_reply_at": "2026-09-17 13:35",
+   "status": "discussing",
+   "tags": [
+    "分层作业",
+    "减负"
+   ],
+   "created_at": "2026-09-17 10:30"
+  },
+  {
+   "topic_id": "research-009",
+   "title": "单元测命题如何与画像薄弱簇对齐？",
+   "content": "常出现“考完才发现命题和班级真实薄弱点对不上”。打算做一张“命题双向细目表 × 画像薄弱簇”的对齐模板，命题时先看图谱再定题。请大家对模板提意见。",
+   "author_id": "t-004",
+   "author_name": "吴老师",
+   "subject": "数学",
+   "grade": "g8",
+   "class_scope": [
+    "cls-g8-01",
+    "cls-g8-02",
+    "cls-g8-03"
+   ],
+   "related_knowledge_ids": [
+    "kp-radical-addsub",
+    "kp-function-image"
+   ],
+   "related_dimension_keys": [
+    "knowledge"
+   ],
+   "evidence_summary": "对照 9 月单元测：图谱待巩固/证据不足节点中仅约半数在卷面覆盖 ≥2 题。",
+   "reply_count": 4,
+   "last_reply_at": "2026-09-13 17:37",
+   "status": "strategy_formed",
+   "tags": [
+    "命题",
+    "教-学-评一致"
+   ],
+   "created_at": "2026-09-13 13:45"
+  },
+  {
+   "topic_id": "research-010",
+   "title": "素养画像「学习动机」该采哪些证据才可信？",
+   "content": "素养维度里「学习动机」最容易被打成主观分。目前我们用自主练习启动次数、目标卡完成率、连续学习天数三个口径，还是觉得偏行为化。大家觉得哪些证据组合最站得住？",
+   "author_id": "t-006",
+   "author_name": "王老师",
+   "subject": "数学",
+   "grade": "g8",
+   "class_scope": [
+    "cls-g8-01",
+    "cls-g8-02",
+    "cls-g8-03"
+   ],
+   "related_knowledge_ids": [],
+   "related_dimension_keys": [
+    "literacy"
+   ],
+   "evidence_summary": "三班学习动机读数 70-80，行为证据人均 22 条，问卷证据仅 1 次/学期。",
+   "reply_count": 4,
+   "last_reply_at": "2026-09-17 19:18",
+   "status": "discussing",
+   "tags": [
+    "素养证据",
+    "口径讨论"
+   ],
+   "created_at": "2026-09-17 16:10"
+  }
+ ]
+}

@@ -7,60 +7,62 @@ import "./index.less";
 
 const HourHeader = (props: any) => {
   const dispatch = useDispatch();
-  const { teachDesginModel, step = 1, setStep, hourStatus, planStatus, planDetail, refreshContent, setPlanStatus, sizes } = props;
+  const {
+    teachDesginModel,
+    step = 1,
+    setStep,
+    hourStatus,
+    planStatus,
+    planDetail,
+    refreshContent,
+    setPlanStatus,
+    sizes,
+  } = props;
   const { planSseLoading } = teachDesginModel;
-  const { has_study_plan } = planDetail
+  const { has_study_plan } = planDetail;
 
   // const [step, setStep] = useState(1); // 当前步骤  1: 课时教案 2: 学案
   // const [hourStatus, setHourStatus] = useState('loading') //课时 loading 进行中   finish 完成
   // const [planStatus, setPlanStatus] = useState('') //学案 loading 进行中   finish 完成
 
   const stepChange = (val: any) => {
-    setStep(val)
+    setStep(val);
     if (val == 1) {
-      refreshContent?.()
-      setPlanStatus('')
+      refreshContent?.();
+      setPlanStatus("");
     }
-  }
+  };
 
   // 学案的状态icon
   const getPlanIcon = () => {
     if (step == 2) {
       if (has_study_plan) {
-
-        return <ZYIcon type="check1" />
-
+        return <ZYIcon type="check1" />;
       } else {
-
-        if (planStatus == 'loading') {
-          return <ZYIcon type="weianshitijiao" />
+        if (planStatus == "loading") {
+          return <ZYIcon type="weianshitijiao" />;
         }
 
-        if (planStatus == 'finish') {
-          return <ZYIcon type="check1" />
+        if (planStatus == "finish") {
+          return <ZYIcon type="check1" />;
         }
 
-        return <ZYIcon type="circle" />
+        return <ZYIcon type="circle" />;
       }
     } else {
       if (has_study_plan) {
-
-        return <ZYIcon type="check1" />
-
+        return <ZYIcon type="check1" />;
       } else {
-        if (planStatus == 'loading') {
-
-          return <ZYIcon type="weianshitijiao" />
+        if (planStatus == "loading") {
+          return <ZYIcon type="weianshitijiao" />;
         }
-        if (planStatus == 'finish') {
-
-          return <ZYIcon type="check1" />
-
+        if (planStatus == "finish") {
+          return <ZYIcon type="check1" />;
         }
-        return <ZYIcon type="circle" style={{ color: "#CBD2E1" }} />
+        return <ZYIcon type="circle" style={{ color: "#CBD2E1" }} />;
       }
     }
-  }
+  };
 
   // 头部收起点击
   const onLeftPreview = () => {
@@ -92,15 +94,31 @@ const HourHeader = (props: any) => {
       <div className="hour-header-right">
         <div className="step">
           <div className={step === 1 ? "step-item active" : "step-item"}>
-            <Button color="default" variant="text" disabled={planSseLoading && step != 1} onClick={() => { stepChange(1) }}>
-              {hourStatus == 'loading' && <ZYIcon type="weianshitijiao" />}
-              {hourStatus == 'finish' && <ZYIcon type="check1" />}
+            <Button
+              color="default"
+              variant="text"
+              disabled={planSseLoading && step != 1}
+              onClick={() => {
+                stepChange(1);
+              }}
+            >
+              {hourStatus == "loading" && <ZYIcon type="weianshitijiao" />}
+              {hourStatus == "finish" && <ZYIcon type="check1" />}
               课时教案
             </Button>
             <div className="step-item-line"></div>
           </div>
           <div className={step === 2 ? "step-item active" : "step-item"}>
-            <Button color="default" variant="text" disabled={(planSseLoading && step != 2) || (!has_study_plan && step != 2)} onClick={() => { stepChange(2) }}>
+            <Button
+              color="default"
+              variant="text"
+              disabled={
+                (planSseLoading && step != 2) || (!has_study_plan && step != 2)
+              }
+              onClick={() => {
+                stepChange(2);
+              }}
+            >
               {/* {step == 2 ? <ZYIcon type="circle" /> : <ZYIcon type="circle" style={{ color: "#CBD2E1" }} />} */}
               {getPlanIcon()}
               {/* {planStatus == 'loading' && <ZYIcon type="weianshitijiao" />}

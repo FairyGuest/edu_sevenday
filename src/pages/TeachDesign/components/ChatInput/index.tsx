@@ -20,9 +20,8 @@ const ChatInput = (props: any) => {
     setFileList = () => {},
     onSend = () => {},
   } = props;
-  const { planSseLoading, childPlanLoading, leftChatLoading, planParams } = useSelector(
-    (state: any) => state.teachDesginModel,
-  );
+  const { planSseLoading, childPlanLoading, leftChatLoading, planParams } =
+    useSelector((state: any) => state.teachDesginModel);
 
   const dispatch = useDispatch();
   const uploadFileRef = useRef<any>(null); // 上传文件ref
@@ -112,7 +111,7 @@ const ChatInput = (props: any) => {
       // 回车发起请求
       sendStop();
     }
-  }
+  };
   // 发送拦截
   const sendStop = (msg?: string) => {
     if (detailData?.is_new_evaluate === 1) {
@@ -136,7 +135,11 @@ const ChatInput = (props: any) => {
   // tooltip 提示
   const tooltipFun = (params: Array<any>) =>
     params.map((item: any, index: number) => (
-      <div key={index} className="prompt-item" onClick={() => setInputValue(item?.promptText)}>
+      <div
+        key={index}
+        className="prompt-item"
+        onClick={() => setInputValue(item?.promptText)}
+      >
         <ZYIcon className="prompt-icon" type="tishi1" />
         <div className="content">{item?.promptText}</div>
       </div>
@@ -230,11 +233,11 @@ const ChatInput = (props: any) => {
                   variant="text"
                   className="upload-btn"
                   disabled={
-                    fileList?.length >= 10 ||
-                    planSseLoading ||
-                    leftChatLoading
+                    fileList?.length >= 10 || planSseLoading || leftChatLoading
                   }
-                  icon={<ZYIcon type="upload-file" style={{color: "#475069"}} />}
+                  icon={
+                    <ZYIcon type="upload-file" style={{ color: "#475069" }} />
+                  }
                 />
               </Tooltip>
             </Dropdown>

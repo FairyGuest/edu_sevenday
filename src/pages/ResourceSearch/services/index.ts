@@ -3,7 +3,7 @@ import { cogUrl } from "@/utils/host";
 import { requestJson } from "@/utils/request";
 
 const isMock = false;
-const prefix = isMock ? '/api' : cogUrl;
+const prefix = isMock ? "/api" : cogUrl;
 
 const api: any = {
   getFindXkwQuestionTypeList: `${prefix}/web/xkwQuestionType/findXkwQuestionTypeListByCourseId`, // 个人题库题型（按课程）
@@ -18,7 +18,12 @@ const api: any = {
 const abortControllers: { [key: string]: AbortController } = {};
 
 // 支持取消的请求函数
-async function postDataRequestWithCancel(params: any, url: string, requestKey: string, contentType?: string) {
+async function postDataRequestWithCancel(
+  params: any,
+  url: string,
+  requestKey: string,
+  contentType?: string,
+) {
   // 取消之前的请求
   if (abortControllers[requestKey]) {
     abortControllers[requestKey].abort();
@@ -31,22 +36,32 @@ async function postDataRequestWithCancel(params: any, url: string, requestKey: s
 
   try {
     return await requestJson(url, {
-      method: 'POST',
+      method: "POST",
       payload: params,
-      extraHeaders: { 'Content-Type': contentType || 'application/json' },
+      extraHeaders: { "Content-Type": contentType || "application/json" },
       signal: controller.signal,
     });
   } finally {
     clearTimeout(timeout);
     // Completion of an older request must not delete the newer controller.
-    if (abortControllers[requestKey] === controller) delete abortControllers[requestKey];
+    if (abortControllers[requestKey] === controller)
+      delete abortControllers[requestKey];
   }
 }
 
-export async function postDataService(params: any, apiUrl: string, contentType?: string) {
+export async function postDataService(
+  params: any,
+  apiUrl: string,
+  contentType?: string,
+) {
   // 对于需要取消处理的接口，使用支持取消的请求函数
-  if (apiUrl === 'postGlobalQuestions' || apiUrl === 'getQuestionPersonalPage' || apiUrl === 'postFavoriteQuestions' ||
-      apiUrl === 'postGlobalPapers' || apiUrl === 'postPersonalPapers') {
+  if (
+    apiUrl === "postGlobalQuestions" ||
+    apiUrl === "getQuestionPersonalPage" ||
+    apiUrl === "postFavoriteQuestions" ||
+    apiUrl === "postGlobalPapers" ||
+    apiUrl === "postPersonalPapers"
+  ) {
     return postDataRequestWithCancel(params, api[apiUrl], apiUrl, contentType);
   }
 
@@ -56,7 +71,7 @@ export async function postDataService(params: any, apiUrl: string, contentType?:
 
 export async function getDataService(params: any, apiUrl: keyof typeof api) {
   // 对于需要路径参数的接口，特殊处理
-  if (apiUrl === 'getPaperDetail' && params?.id) {
+  if (apiUrl === "getPaperDetail" && params?.id) {
     const url = `${api[apiUrl]}/${params.id}`;
     // 对于路径参数，不传递 params，避免被添加到查询字符串
     return getDataRequest({}, url);

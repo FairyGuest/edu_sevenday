@@ -1,0 +1,804 @@
+{
+ "schema_version": "portrait-coverage-v1",
+ "demo_as_of": "2026-09-20",
+ "timezone": "Asia/Shanghai",
+ "aggregation_version": "portrait-v1",
+ "class_ids": [
+  "cls-g8-01",
+  "cls-g8-02",
+  "cls-g8-03"
+ ],
+ "start_date": "2026-06-20",
+ "end_date": "2026-09-20",
+ "expected_students": 135,
+ "covered_students": 135,
+ "missing_students": [],
+ "missing_intervals": [
+  {
+   "class_id": "cls-g8-01",
+   "source_type": "classroom",
+   "start_date": "2026-07-01",
+   "end_date": "2026-08-31",
+   "reason": "暑假：学校日历无课堂教学，属无活动而非未采集"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "source_type": "exam",
+   "start_date": "2026-07-01",
+   "end_date": "2026-09-03",
+   "reason": "暑假及开学首周无正式测验"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "source_type": "ai_tutor",
+   "start_date": "2026-09-01",
+   "end_date": "2026-09-12",
+   "reason": "开学前两周未布置 AI 学伴任务（部分学生 09-13 起有记录）"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "source_type": "classroom",
+   "start_date": "2026-07-01",
+   "end_date": "2026-08-31",
+   "reason": "暑假：学校日历无课堂教学，属无活动而非未采集"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "source_type": "exam",
+   "start_date": "2026-07-01",
+   "end_date": "2026-09-03",
+   "reason": "暑假及开学首周无正式测验"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "source_type": "ai_tutor",
+   "start_date": "2026-09-01",
+   "end_date": "2026-09-12",
+   "reason": "开学前两周未布置 AI 学伴任务（部分学生 09-13 起有记录）"
+  },
+  {
+   "class_id": "cls-g8-03",
+   "source_type": "classroom",
+   "start_date": "2026-07-01",
+   "end_date": "2026-08-31",
+   "reason": "暑假：学校日历无课堂教学，属无活动而非未采集"
+  },
+  {
+   "class_id": "cls-g8-03",
+   "source_type": "exam",
+   "start_date": "2026-07-01",
+   "end_date": "2026-09-03",
+   "reason": "暑假及开学首周无正式测验"
+  },
+  {
+   "class_id": "cls-g8-03",
+   "source_type": "ai_tutor",
+   "start_date": "2026-09-01",
+   "end_date": "2026-09-12",
+   "reason": "开学前两周未布置 AI 学伴任务（部分学生 09-13 起有记录）"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "source_type": "all",
+   "start_date": "2026-06-20",
+   "end_date": "2026-09-06",
+   "reason": "转学生：09-07 转入本班，转入前无本校数据"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "source_type": "all",
+   "start_date": "2026-09-01",
+   "end_date": "2026-09-20",
+   "reason": "病假：九月全月缺勤，仅存六月期末与暑期少量记录"
+  }
+ ],
+ "missing_metrics": [
+  {
+   "class_id": "cls-g8-01",
+   "student_id": null,
+   "metric_key": "value_formation",
+   "reason": "无已接入证据来源（小组互评待设计），所有窗口均为 null"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "student_id": "6738633173303031",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "student_id": "6738633173303032",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "student_id": "6738633173303034",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "student_id": "6738633173303035",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "student_id": "6738633173303036",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "student_id": "6738633173303037",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "student_id": "6738633173303038",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "student_id": "6738633173303039",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "student_id": "6738633173303130",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "student_id": "6738633173303131",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "student_id": "6738633173303134",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "student_id": "6738633173303136",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "student_id": "6738633173303137",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "student_id": "6738633173303139",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "student_id": "6738633173303232",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "student_id": "6738633173303234",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "student_id": "6738633173303236",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "student_id": "6738633173303237",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "student_id": "6738633173303239",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "student_id": "6738633173303330",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "student_id": "6738633173303331",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "student_id": "6738633173303332",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "student_id": "6738633173303333",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "student_id": "6738633173303335",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "student_id": "6738633173303336",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "student_id": "6738633173303337",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "student_id": "6738633173303338",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "student_id": "6738633173303430",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "student_id": "6738633173303434",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "student_id": null,
+   "metric_key": "value_formation",
+   "reason": "无已接入证据来源（小组互评待设计），所有窗口均为 null"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "student_id": "6738633273303031",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "student_id": "6738633273303032",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "student_id": "6738633273303033",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "student_id": "6738633273303034",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "student_id": "6738633273303037",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "student_id": "6738633273303039",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "student_id": "6738633273303130",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "student_id": "6738633273303131",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "student_id": "6738633273303132",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "student_id": "6738633273303134",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "student_id": "6738633273303135",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "student_id": "6738633273303136",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "student_id": "6738633273303137",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "student_id": "6738633273303230",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "student_id": "6738633273303231",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "student_id": "6738633273303232",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "student_id": "6738633273303233",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "student_id": "6738633273303234",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "student_id": "6738633273303238",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "student_id": "6738633273303239",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "student_id": "6738633273303330",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "student_id": "6738633273303331",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "student_id": "6738633273303332",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "student_id": "6738633273303333",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "student_id": "6738633273303334",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "student_id": "6738633273303335",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "student_id": "6738633273303336",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "student_id": "6738633273303338",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "student_id": "6738633273303430",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "student_id": "6738633273303432",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "student_id": "6738633273303433",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-03",
+   "student_id": null,
+   "metric_key": "value_formation",
+   "reason": "无已接入证据来源（小组互评待设计），所有窗口均为 null"
+  },
+  {
+   "class_id": "cls-g8-03",
+   "student_id": "aa18e927903a0918",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-03",
+   "student_id": "b2a7c9327638ebd7",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-03",
+   "student_id": "e285baf106ac2747",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-03",
+   "student_id": "668681ce95c6ca5e",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-03",
+   "student_id": "6c4898082f92b9af",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-03",
+   "student_id": "35be72f89ba8cd58",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-03",
+   "student_id": "2134924d024a911c",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-03",
+   "student_id": "85c7acbb3ffdffcf",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-03",
+   "student_id": "098dd360cdcedab6",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-03",
+   "student_id": "df5c55a79f94865b",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-03",
+   "student_id": "3f913e2f549f9c8f",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-03",
+   "student_id": "622bfc15b689575a",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-03",
+   "student_id": "55f42d2a030c5a62",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-03",
+   "student_id": "d465b44049b2138d",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-03",
+   "student_id": "d0bee916ab9e7fb0",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-03",
+   "student_id": "beeaccab58aaa752",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-03",
+   "student_id": "8009419ca70611cd",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-03",
+   "student_id": "5c3b87411787a1d7",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-03",
+   "student_id": "412dd61a08e3bdf2",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-03",
+   "student_id": "79854a8afc3da277",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-03",
+   "student_id": "cd479e3e05145ac8",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-03",
+   "student_id": "6853638ac65f20c8",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-03",
+   "student_id": "f8222fae945c55f4",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-03",
+   "student_id": "6e86ce90b4b58dfc",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-03",
+   "student_id": "8f6f14b9f8d0862b",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-03",
+   "student_id": "89446af7673f2ee0",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-03",
+   "student_id": "642180977c3b406c",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-03",
+   "student_id": "db06b38adc58d9f7",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-03",
+   "student_id": "2911637062528a1f",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  }
+ ],
+ "source_coverage": [
+  {
+   "class_id": "cls-g8-01",
+   "source_type": "homework",
+   "n_events": 524,
+   "n_valid": 524,
+   "earliest_date": "2026-06-22",
+   "latest_date": "2026-09-16",
+   "n_students": 45
+  },
+  {
+   "class_id": "cls-g8-01",
+   "source_type": "exam",
+   "n_events": 223,
+   "n_valid": 223,
+   "earliest_date": "2026-06-29",
+   "latest_date": "2026-09-18",
+   "n_students": 45
+  },
+  {
+   "class_id": "cls-g8-01",
+   "source_type": "classroom",
+   "n_events": 114,
+   "n_valid": 113,
+   "earliest_date": "2026-06-24",
+   "latest_date": "2026-09-18",
+   "n_students": 45
+  },
+  {
+   "class_id": "cls-g8-01",
+   "source_type": "ai_tutor",
+   "n_events": 58,
+   "n_valid": 58,
+   "earliest_date": "2026-07-15",
+   "latest_date": "2026-09-18",
+   "n_students": 37
+  },
+  {
+   "class_id": "cls-g8-01",
+   "source_type": "practice",
+   "n_events": 225,
+   "n_valid": 225,
+   "earliest_date": "2026-07-12",
+   "latest_date": "2026-09-20",
+   "n_students": 45
+  },
+  {
+   "class_id": "cls-g8-02",
+   "source_type": "homework",
+   "n_events": 522,
+   "n_valid": 522,
+   "earliest_date": "2026-06-22",
+   "latest_date": "2026-09-16",
+   "n_students": 45
+  },
+  {
+   "class_id": "cls-g8-02",
+   "source_type": "exam",
+   "n_events": 221,
+   "n_valid": 221,
+   "earliest_date": "2026-06-29",
+   "latest_date": "2026-09-18",
+   "n_students": 45
+  },
+  {
+   "class_id": "cls-g8-02",
+   "source_type": "classroom",
+   "n_events": 110,
+   "n_valid": 110,
+   "earliest_date": "2026-06-24",
+   "latest_date": "2026-09-18",
+   "n_students": 45
+  },
+  {
+   "class_id": "cls-g8-02",
+   "source_type": "ai_tutor",
+   "n_events": 58,
+   "n_valid": 57,
+   "earliest_date": "2026-07-16",
+   "latest_date": "2026-09-18",
+   "n_students": 39
+  },
+  {
+   "class_id": "cls-g8-02",
+   "source_type": "practice",
+   "n_events": 221,
+   "n_valid": 221,
+   "earliest_date": "2026-07-12",
+   "latest_date": "2026-09-20",
+   "n_students": 45
+  },
+  {
+   "class_id": "cls-g8-03",
+   "source_type": "homework",
+   "n_events": 531,
+   "n_valid": 531,
+   "earliest_date": "2026-06-22",
+   "latest_date": "2026-09-16",
+   "n_students": 45
+  },
+  {
+   "class_id": "cls-g8-03",
+   "source_type": "exam",
+   "n_events": 225,
+   "n_valid": 224,
+   "earliest_date": "2026-06-29",
+   "latest_date": "2026-09-18",
+   "n_students": 45
+  },
+  {
+   "class_id": "cls-g8-03",
+   "source_type": "classroom",
+   "n_events": 113,
+   "n_valid": 113,
+   "earliest_date": "2026-06-24",
+   "latest_date": "2026-09-18",
+   "n_students": 45
+  },
+  {
+   "class_id": "cls-g8-03",
+   "source_type": "ai_tutor",
+   "n_events": 69,
+   "n_valid": 69,
+   "earliest_date": "2026-07-16",
+   "latest_date": "2026-09-18",
+   "n_students": 43
+  },
+  {
+   "class_id": "cls-g8-03",
+   "source_type": "practice",
+   "n_events": 229,
+   "n_valid": 229,
+   "earliest_date": "2026-07-12",
+   "latest_date": "2026-09-20",
+   "n_students": 45
+  }
+ ],
+ "aggregation_rules": [
+  "筛选班级、日期、来源、valid=true 后按 evidence_id 去重，同 ID 冲突内容应报错",
+  "个人指标 = 100×SUM(earned)/SUM(possible)，显示时才四舍五入",
+  "个人维度 = 有效指标等权均值；有效指标不足 3 个时维度为 null（保留已观测指标）",
+  "班级指标 = 有效学生个人指标均值；班级维度 = 有效学生维度均值；均返回有效人数",
+  "class_avg 必须取相同日期/来源/规则下的班级值",
+  "知识节点掌握度由 knowledge_results 计算，班级节点取有效学生均值",
+  "指标 sample_count = 支撑事件的去重数；维度 sample_count = 关联事件去重并集",
+  "有效学生数、事件数、量表分母是三个不同数字，需分别返回",
+  "同口径下解释/颜色/雷达/建议一致，建议可追溯 ≥1 条有效证据",
+  "部分日期未采集 ≠ 当天零活动 ≠ 覆盖整个请求区间"
+ ],
+ "notes": [
+  "暑假（07-04~08-31）与周末无课堂/考试活动，属学校日历无活动，非数据缺失。",
+  "课堂观察为轮转抽样（每次课约 12-14 人），不是每生每课都有记录；个人过程指标在窗口内可能低样本。",
+  "三班教学叙事：3 班图像解释 09-11 周练二触底、09-12 起三步表达支架试行、09-16 起回升；2 班运算 09-10 起三步自查单回升；对应事件日期可查。",
+  "演示日期推进时应补充新记录并更新本文件，不得整体平移旧证据日期或沿用旧考试名称。"
+ ]
+}

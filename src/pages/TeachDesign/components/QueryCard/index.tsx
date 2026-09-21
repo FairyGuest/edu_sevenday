@@ -23,7 +23,10 @@ const QueryCard = (props: any) => {
   return (
     <div className="query-card" id={id}>
       <div style={{ flex: 1, minWidth: 24 }}></div>
-      <div className="query-content" style={{ maxWidth: leftWidth ? leftWidth - 70 : "auto" }}>
+      <div
+        className="query-content"
+        style={{ maxWidth: leftWidth ? leftWidth - 70 : "auto" }}
+      >
         {textbook_info && (
           <div className="query-content-info">
             <MarkdownRender>{textbook_info}</MarkdownRender>
@@ -45,7 +48,10 @@ const QueryCard = (props: any) => {
                   {bytesToSize(item?.file_size)}
                 </div>
                 {imgeType.includes(handleName(item?.doc_name).type) && (
-                  <div className="file-item-preview" onClick={() => openImage(item)}>
+                  <div
+                    className="file-item-preview"
+                    onClick={() => openImage(item)}
+                  >
                     <ZYIcon type="chakan" />
                   </div>
                 )}

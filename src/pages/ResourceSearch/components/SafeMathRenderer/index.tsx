@@ -167,14 +167,12 @@ const SafeMathRenderer: React.FC<SafeMathRendererProps> = ({
       <div
         key="stem-wrapper"
         className="stem-wrapper"
-        {
-        ...download && {
+        {...(download && {
           style: {
             display: "flex",
             alignItems: "baseline",
-          }
-        }
-        }
+          },
+        })}
       >
         {number && (
           <span key="question-number" className="question-number">
@@ -192,7 +190,9 @@ const SafeMathRenderer: React.FC<SafeMathRendererProps> = ({
           <div className="options-wrap" key="options-wrap">
             {parsedOptions.map((choice, idx) => (
               <React.Fragment key={`choice-${idx}`}>
-                <MathHtmlRenderer htmlString={prepareMarkdownInput(choice.content)} />
+                <MathHtmlRenderer
+                  htmlString={prepareMarkdownInput(choice.content)}
+                />
                 {/* {isChoicePerP && idx < parsedOptions.length - 1 ? (
                   <br key={`choice-br-${idx}`} />
                 ) : !isChoicePerP && idx < parsedOptions.length - 1 ? (

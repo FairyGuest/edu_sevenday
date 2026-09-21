@@ -40,10 +40,28 @@
 
 .inject_preview_selects {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
 
   .ant-btn {
     border-radius: 8px;
+  }
+}
+
+.inject_preview_tabs {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  .ant-tabs {
+    flex: 1;
+    min-width: 0;
+  }
+  .ant-tabs-nav {
+    margin-bottom: 12px;
+  }
+  > .ant-btn {
+    color: #8a94a8;
+    margin-bottom: 12px;
   }
 }
 

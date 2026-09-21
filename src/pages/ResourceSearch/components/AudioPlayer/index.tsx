@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Flex, Slider } from 'antd';
-import './index.less';
+import React, { useState, useRef, useEffect } from "react";
+import { Flex, Slider } from "antd";
+import "./index.less";
 import { ZYIcon } from "@/components";
 
 interface AudioPlayerProps {
@@ -22,7 +22,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src }) => {
   const formatTime = (time: number) => {
     const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);
-    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    return `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
   };
 
   // 播放/暂停切换
@@ -79,11 +79,11 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src }) => {
     setCurrentTime(0);
     setProgress(0);
     setDuration(0);
-    
+
     if (audioRef.current) {
       audioRef.current.load();
     }
-    
+
     // 刷新动画结束后
     setTimeout(() => {
       setIsRefreshing(false);
@@ -128,51 +128,61 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src }) => {
       }
     };
 
-    audio.addEventListener('loadedmetadata', handleLoadedMetadata);
-    audio.addEventListener('timeupdate', handleTimeUpdate);
-    audio.addEventListener('ended', handleEnded);
-    audio.addEventListener('error', handleError);
-    audio.addEventListener('loadstart', handleLoadStart);
+    audio.addEventListener("loadedmetadata", handleLoadedMetadata);
+    audio.addEventListener("timeupdate", handleTimeUpdate);
+    audio.addEventListener("ended", handleEnded);
+    audio.addEventListener("error", handleError);
+    audio.addEventListener("loadstart", handleLoadStart);
 
     return () => {
-      audio.removeEventListener('loadedmetadata', handleLoadedMetadata);
-      audio.removeEventListener('timeupdate', handleTimeUpdate);
-      audio.removeEventListener('ended', handleEnded);
-      audio.removeEventListener('error', handleError);
-      audio.removeEventListener('loadstart', handleLoadStart);
+      audio.removeEventListener("loadedmetadata", handleLoadedMetadata);
+      audio.removeEventListener("timeupdate", handleTimeUpdate);
+      audio.removeEventListener("ended", handleEnded);
+      audio.removeEventListener("error", handleError);
+      audio.removeEventListener("loadstart", handleLoadStart);
     };
   }, [isDragging, isRefreshing]);
 
   return (
     <div className="custom-audio-player">
       <audio ref={audioRef} src={src} preload="metadata" />
-      
+
       {hasError || (isRefreshing && isLoading) ? (
         // 加载失败状态
-        <Flex className="audio-error" align="center" gap={4} onClick={handleControlsClick}>
-          <ZYIcon 
-            type="yinpinjiazaishibai" 
-            className="error-icon"
-          />
+        <Flex
+          className="audio-error"
+          align="center"
+          gap={4}
+          onClick={handleControlsClick}
+        >
+          <ZYIcon type="yinpinjiazaishibai" className="error-icon" />
           <span className="error-text">音频加载失败，请刷新重试</span>
-          <ZYIcon 
-            type="shuaxin" 
-            className={`refresh-icon ${isRefreshing ? 'refreshing' : ''}`}
+          <ZYIcon
+            type="shuaxin"
+            className={`refresh-icon ${isRefreshing ? "refreshing" : ""}`}
             onClick={handleRefresh}
           />
         </Flex>
       ) : (
         // 正常播放状态
-        <Flex className="audio-controls" align="center" gap={4} onClick={handleControlsClick}>
+        <Flex
+          className="audio-controls"
+          align="center"
+          gap={4}
+          onClick={handleControlsClick}
+        >
           {/* 播放/暂停按钮 */}
-          <ZYIcon 
-            type={ isPlaying ? "yinpinzanting" : "yinpinbofang"} 
+          <ZYIcon
+            type={isPlaying ? "yinpinzanting" : "yinpinbofang"}
             className="play-button"
             onClick={togglePlay}
-            />
-          
+          />
+
           {/* 进度滑块 */}
-          <div className="slider-container" onClick={handleSliderContainerClick}>
+          <div
+            className="slider-container"
+            onClick={handleSliderContainerClick}
+          >
             <Slider
               value={progress}
               onChange={handleSliderChange}
@@ -182,7 +192,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ src }) => {
               disabled={!isPlaying}
             />
           </div>
-          
+
           <Flex onClick={handleTimeDisplayClick}>
             {/* 当前时间 */}
             <span className="time-display current-time">

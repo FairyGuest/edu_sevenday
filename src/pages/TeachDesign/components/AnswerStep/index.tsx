@@ -47,22 +47,22 @@ const AnswerStep = (props: any) => {
   useEffect(() => {
     if (params?.id) {
       handleStep(arr);
-      scrollTopChat?.()
+      scrollTopChat?.();
       return;
     }
 
     handleStep([{ title: book?.head }]);
     setTimeout(() => {
       handleStep([arr[0], { title: course_standard?.head }]);
-      scrollTopChat?.()
+      scrollTopChat?.();
     }, 1000);
     setTimeout(() => {
       handleStep([arr[0], arr[1], { title: teach_guide?.head }]);
-      scrollTopChat?.()
+      scrollTopChat?.();
     }, 2000);
     setTimeout(() => {
       handleStep(arr);
-      scrollTopChat?.()
+      scrollTopChat?.();
     }, 3000);
   }, [book, params]);
 
@@ -83,8 +83,8 @@ const AnswerStep = (props: any) => {
         },
         {
           threshold: 0, // 露出多少触发（0=刚露出就触发）
-          ...options
-        }
+          ...options,
+        },
       );
 
       observer.observe(el);
@@ -97,9 +97,8 @@ const AnswerStep = (props: any) => {
   const { elementRef, isInView } = useIntersectionObserver();
 
   useEffect(() => {
-    setGuideInView(isInView)
-  }, [isInView])
-
+    setGuideInView(isInView);
+  }, [isInView]);
 
   // 处理步骤条数据
   const handleStep = (params: any[]) => {
@@ -113,8 +112,8 @@ const AnswerStep = (props: any) => {
         icon: item.description ? <ZYIcon type="check1" /> : <LoadingOutlined />,
         description: item.description ? (
           <div className="answer-step-description" ref={elementRef}>
-            <span style={{fontSize:'16px'}}>{item.description?.title}</span>
-            <StepDrawer item={item} detailData={detailData}/>
+            <span style={{ fontSize: "16px" }}>{item.description?.title}</span>
+            <StepDrawer item={item} detailData={detailData} />
           </div>
         ) : null,
       };

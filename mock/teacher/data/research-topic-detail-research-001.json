@@ -1,0 +1,98 @@
+{
+ "topic": {
+  "topic_id": "research-001",
+  "title": "八年级多个班在「一次函数图像解释」上达成偏低，如何补支架？",
+  "content": "9 月单元测和近两周作业显示，3 班在“图像解释”类题目上正确率不足五成、2 班约六成，均明显低于同章计算题。学生不是不会算，而是说不清“y 随 x 怎么变、在实际情境里意味着什么”。想请大家聊聊：表达类的短板，用什么支架最见效？",
+  "author_id": "t-002",
+  "author_name": "李老师",
+  "subject": "数学",
+  "grade": "g8",
+  "class_scope": [
+   "cls-g8-01",
+   "cls-g8-02",
+   "cls-g8-03"
+  ],
+  "related_knowledge_ids": [
+   "kp-function-image",
+   "kp-function-property"
+  ],
+  "related_dimension_keys": [
+   "knowledge",
+   "ability"
+  ],
+  "evidence_summary": "3 班图像解释读数不足 55，显著低于学期目标 75；失分集中在“解释趋势的实际含义”小问。",
+  "status": "strategy_formed",
+  "tags": [
+   "图像解释",
+   "表达支架"
+  ],
+  "created_at": "2026-09-12 10:05"
+ },
+ "replies": [
+  {
+   "reply_id": "reply-001-01",
+   "topic_id": "research-001",
+   "author_id": "t-003",
+   "author_name": "周老师",
+   "content": "我们班先用了“点—线—趋势”三步表达模板：先读关键点，再说变化方向，最后解释实际意义。两周下来，同类题正确率从 54% 提到 67%。关键是让学生口头说一遍再落笔。",
+   "evidence_refs": [
+    "exp-kp-function-image"
+   ],
+   "created_at": "2026-09-12 11:03",
+   "liked_count": 9
+  },
+  {
+   "reply_id": "reply-001-02",
+   "topic_id": "research-001",
+   "author_id": "t-005",
+   "author_name": "郑老师",
+   "content": "赞同先说后写。我补充一点：解释类题目要给句式半支架（“因为 k>0，所以 y 随 x 增大而____，这意味着____”），比空喊“说完整”有效。",
+   "evidence_refs": [],
+   "created_at": "2026-09-12 12:01",
+   "liked_count": 6
+  },
+  {
+   "reply_id": "reply-001-03",
+   "topic_id": "research-001",
+   "author_id": "t-006",
+   "author_name": "王老师",
+   "content": "画像里 3 班的「表征转换」也偏低，和这个问题应该是一体的。建议图像解释课里加一次表格→图像→文字的三表征互换练习。",
+   "evidence_refs": [
+    "exp-cls-cls-g8-03-radar_item-representation_transfer"
+   ],
+   "created_at": "2026-09-12 13:10",
+   "liked_count": 5
+  },
+  {
+   "reply_id": "reply-001-04",
+   "topic_id": "research-001",
+   "author_id": "t-002",
+   "author_name": "李老师",
+   "content": "综合大家的意见，我把“点—线—趋势三步表达支架”整理成共识策略了，适用场景和效果证据都放在策略卡里，各位可以引用到教案试试。",
+   "evidence_refs": [],
+   "created_at": "2026-09-12 13:13",
+   "liked_count": 7
+  },
+  {
+   "reply_id": "reply-001-05",
+   "topic_id": "research-001",
+   "author_id": "t-007",
+   "author_name": "冯老师",
+   "content": "下周一我在 2 班先试，周五教研时把对比数据带回来。",
+   "evidence_refs": [],
+   "created_at": "2026-09-12 14:00",
+   "liked_count": 3
+  }
+ ],
+ "strategies": [
+  {
+   "strategy_id": "strategy-001",
+   "topic_id": "research-001",
+   "title": "点—线—趋势三步表达支架",
+   "content": "第一步找关键点（交点、端点）；第二步描述变化方向（k 的符号 → 升/降）；第三步解释实际意义（速率、增量、限值等）。先口头说，再用半支架句式落笔，最后同伴互评。",
+   "applicable_scene": "一次函数图像解释课（亦可用于其他函数图像教学）",
+   "evidence_summary": "应用后两个班同类题正确率提升 13 分（54%→67%）。",
+   "can_apply_to_plan": true
+  }
+ ]
+}

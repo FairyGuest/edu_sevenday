@@ -1,10 +1,23 @@
 import { connect } from "@umijs/max";
+import { history } from "umi";
 import { useEffect, useState } from "react";
 import {
-  Alert, Button, Card, Col, message, Row, Select, Table, Tag,
+  Alert,
+  Button,
+  Card,
+  Col,
+  message,
+  Modal,
+  Row,
+  Select,
+  Table,
+  Tag,
 } from "antd";
 import {
-  BookOutlined, FileTextOutlined, SendOutlined, ThunderboltOutlined,
+  BookOutlined,
+  FileTextOutlined,
+  SendOutlined,
+  ThunderboltOutlined,
 } from "@ant-design/icons";
 import "./index.less";
 
@@ -21,95 +34,199 @@ const TeachingEnhance = (props: any) => {
   const [issueRecords, setIssueRecords] = useState<any[]>([]);
 
   useEffect(() => {
-    fetch("/api/teacher/teaching/chapters").then(r => r.json()).then(d => {
-      if (d.code === 200) {
-        setChapters(d.data || []);
-        if (d.data?.[0]?.chapter) setChapter(d.data[0].chapter);
-      }
-    });
-    fetch("/api/teacher/teaching/plans").then(r => r.json()).then(d => {
-      if (d.code === 200) setPlans(d.data || []);
-    });
+    fetch("/api/teacher/teaching/chapters")
+      .then((r) => r.json())
+      .then((d) => {
+        if (d.code === 200) {
+          setChapters(d.data || []);
+          if (d.data?.[0]?.chapter) setChapter(d.data[0].chapter);
+        }
+      });
+    fetch("/api/teacher/teaching/plans")
+      .then((r) => r.json())
+      .then((d) => {
+        if (d.code === 200) setPlans(d.data || []);
+      });
   }, []);
 
   useEffect(() => {
     if (!chapter) return;
-    fetch(`/api/teacher/teaching/inject-file?chapter=${encodeURIComponent(chapter)}`)
-      .then(r => r.json())
-      .then(d => { if (d.code === 200) setInject(d.data); });
+    fetch(
+      `/api/teacher/teaching/inject-file?chapter=${encodeURIComponent(chapter)}`,
+    )
+      .then((r) => r.json())
+      .then((d) => {
+        if (d.code === 200) setInject(d.data);
+      });
   }, [chapter]);
 
   const issueStudyPlan = async (planId: string) => {
-    const res = await fetch(`/api/teacher/teaching/plans/${planId}/issue`, { method: "POST" });
+    const res = await fetch(`/api/teacher/teaching/plans/${planId}/issue`, {
+      method: "POST",
+    });
     const d = await res.json();
     if (d.code === 200) {
-      setIssueRecords(prev => [d.data, ...prev]);
-      message.success(`学案已下发（${d.data.targets}）`);
+      setIssueRecords((prev) => [d.data, ...prev]);
+      Modal.confirm({
+        title: "学案已下发",
+        content: `已推送给全班 ${d.data.n_students || ""} 名学生（消息中心定时推送），任务分基础/提高/挑战三档。回收进度可在「下发与回收」工作台跟踪。`,
+        okText: "去查看回收进度",
+        cancelText: "留在此页",
+        onOk: () =>
+          history.push(
+            `/homework?sub=flow&dispatch_id=${encodeURIComponent(d.data.dispatch_id || "")}`,
+          ),
+      });
     }
   };
 
   const injectCols = [
     { title: "前置知识点", dataIndex: "前置知识点", ellipsis: true },
     { title: "班级掌握分布", dataIndex: "班级掌握分布", width: 140 },
-    { title: "典型错例（匿名）", dataIndex: "典型错例（匿名）", ellipsis: true },
+    {
+      title: "典型错例（匿名）",
+      dataIndex: "典型错例（匿名）",
+      ellipsis: true,
+    },
   ];
 
   const planCols = [
     { title: "教案", dataIndex: "chapter", ellipsis: true },
-    { title: "版本", dataIndex: "version", width: 60, render: (t: string) => <Tag>{t}</Tag> },
+    {
+      title: "版本",
+      dataIndex: "version",
+      width: 60,
+      render: (t: string) => <Tag>{t}</Tag>,
+    },
     { title: "下发", dataIndex: "n_issues", width: 55 },
-    { title: "对应作业", dataIndex: "homework_ids", width: 100,
-      render: (ids: string[]) => ids?.length ? ids.map((h, i) => <Tag key={i} color="blue">{h}</Tag>) : "—" },
-    { title: "", width: 140, render: (_: any, r: any) => (
-      <Button size="small" type="primary" ghost icon={<ThunderboltOutlined />}
-        onClick={() => message.info(`已创建统一卷作业，请到「个性化作业」模块查看`)}>
-        布置对应作业
-      </Button>
-    )},
-    { title: "", width: 100, render: (_: any, r: any) => (
-      <Button size="small" icon={<SendOutlined />} onClick={() => issueStudyPlan(r.plan_id)}>
-        学案下发
-      </Button>
-    )},
+    {
+      title: "对应作业",
+      dataIndex: "homework_ids",
+      width: 100,
+      render: (ids: string[]) =>
+        ids?.length
+          ? ids.map((h, i) => (
+              <Tag key={i} color="blue">
+                {h}
+              </Tag>
+            ))
+          : "—",
+    },
+    {
+      title: "",
+      width: 140,
+      render: (_: any, r: any) => (
+        <Button
+          size="small"
+          type="primary"
+          ghost
+          icon={<ThunderboltOutlined />}
+          onClick={() =>
+            message.info(`已创建统一卷作业，请到「个性化作业」模块查看`)
+          }
+        >
+          布置对应作业
+        </Button>
+      ),
+    },
+    {
+      title: "",
+      width: 100,
+      render: (_: any, r: any) => (
+        <Button
+          size="small"
+          icon={<SendOutlined />}
+          onClick={() => issueStudyPlan(r.plan_id)}
+        >
+          学案下发
+        </Button>
+      ),
+    },
   ];
 
   return (
     <div className="te_enhance_container">
-      <Card size="small" title={<span><BookOutlined /> 教学设计增强 · 班级学情注入与作业联动</span>}
+      <Card
+        size="small"
+        title={
+          <span>
+            <BookOutlined /> 教学设计增强 · 班级学情注入与作业联动
+          </span>
+        }
         extra={
-          <Select size="small" style={{ width: 200 }}
-            value={chapter} onChange={setChapter}
-            options={chapters.map(c => ({ value: c.chapter, label: c.chapter }))}
+          <Select
+            size="small"
+            style={{ width: 200 }}
+            value={chapter}
+            onChange={setChapter}
+            options={chapters.map((c) => ({
+              value: c.chapter,
+              label: c.chapter,
+            }))}
           />
-        }>
+        }
+      >
         <Row gutter={12}>
           <Col span={12}>
-            <p className="te_title">📥 班级学情注入预览（三列格式 · PRD 初定）</p>
+            <p className="te_title">
+              📥 班级学情注入预览（三列格式 · PRD 初定）
+            </p>
             {inject?.empty ? (
-              <Alert type="info" message={inject.empty_hint || "暂无可参考学情"} />
+              <Alert
+                type="info"
+                message={inject.empty_hint || "暂无可参考学情"}
+              />
             ) : (
-              <Table columns={injectCols} dataSource={inject?.rows || []}
-                rowKey="前置知识点" pagination={false} size="small" tableLayout="fixed" />
+              <Table
+                columns={injectCols}
+                dataSource={inject?.rows || []}
+                rowKey="前置知识点"
+                pagination={false}
+                size="small"
+                tableLayout="fixed"
+              />
             )}
           </Col>
           <Col span={12}>
             <p className="te_title">📨 学案下发记录</p>
             {issueRecords.length === 0 ? (
-              <Alert type="info" message="点击教案列表中的「学案下发」按钮后显示记录" />
+              <Alert
+                type="info"
+                message="点击教案列表中的「学案下发」按钮后显示记录"
+              />
             ) : (
               issueRecords.map((r, i) => (
-                <Alert key={i} type="success" showIcon style={{ marginBottom: 6 }}
+                <Alert
+                  key={i}
+                  type="success"
+                  showIcon
+                  style={{ marginBottom: 6 }}
                   message={`${r.version} · ${r.targets} · ${r.issued_at}`}
-                  description={`摘要：${r.excerpt}`} />
+                  description={`摘要：${r.excerpt}`}
+                />
               ))
             )}
           </Col>
         </Row>
       </Card>
 
-      <Card size="small" style={{ marginTop: 12 }} title={<span><FileTextOutlined /> 历史教案</span>}>
-        <Table columns={planCols} dataSource={plans} rowKey="plan_id"
-          pagination={false} size="small" tableLayout="fixed" />
+      <Card
+        size="small"
+        style={{ marginTop: 12 }}
+        title={
+          <span>
+            <FileTextOutlined /> 历史教案
+          </span>
+        }
+      >
+        <Table
+          columns={planCols}
+          dataSource={plans}
+          rowKey="plan_id"
+          pagination={false}
+          size="small"
+          tableLayout="fixed"
+        />
       </Card>
     </div>
   );

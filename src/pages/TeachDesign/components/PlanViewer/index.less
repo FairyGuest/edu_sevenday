@@ -143,8 +143,12 @@
       overflow: hidden scroll;
       padding: 20px clamp(16px, 2vw, 32px) 32px;
 
-      .markdown_toc { gap: 24px; }
-      .markdown_toc_collapsed { gap: 12px; }
+      .markdown_toc {
+        gap: 24px;
+      }
+      .markdown_toc_collapsed {
+        gap: 12px;
+      }
 
       &::-webkit-scrollbar-thumb {
         background: #c0c3c9;
@@ -153,18 +157,43 @@
   }
 }
 
-.plan_viewer_mask:has(.plan_viewer--wide) { padding: 0; }
-.plan_assignment_title { font-weight: 600; overflow-wrap: anywhere; }
+.plan_viewer_mask:has(.plan_viewer--wide) {
+  padding: 0;
+}
+.plan_assignment_title {
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
 
 @media (max-width: 640px) {
-  .plan_viewer_mask { padding: 8px; }
-  .plan_viewer_toolbar { gap: 6px; padding: 8px; }
-  .plan_viewer_doc { margin: 0 6px 6px; }
-  .plan_viewer_doc_header { padding: 0 12px; }
+  .plan_viewer_mask {
+    padding: 8px;
+  }
+  .plan_viewer_toolbar {
+    gap: 6px;
+    padding: 8px;
+  }
+  .plan_viewer_doc {
+    margin: 0 6px 6px;
+  }
+  .plan_viewer_doc_header {
+    padding: 0 12px;
+  }
   .plan_viewer_doc_body {
     padding: 12px;
-    .markdown_toc { flex-direction: column; gap: 8px; }
-    .markdown_toc_tree { position: static; width: 100%; max-height: 140px; padding: 0; }
-    .markdown_toc_main { width: 100%; flex: auto; }
+    .markdown_toc {
+      flex-direction: column;
+      gap: 8px;
+    }
+    .markdown_toc_tree {
+      position: static;
+      width: 100%;
+      max-height: 140px;
+      padding: 0;
+    }
+    .markdown_toc_main {
+      width: 100%;
+      flex: auto;
+    }
   }
 }

@@ -243,6 +243,7 @@
 // 嵌套选择器（容器级样式）
 .teacher_profile_container {
   padding: 18px 22px 48px;
+  @media (max-width: 600px) { padding: 12px 0 32px; }
 
   &_label {
     color: #5f6b81;
@@ -269,15 +270,50 @@
 .teacher_profile_stackbar {
   display: flex;
   height: 8px;
-  border-radius: 5px;
+  border-radius: 4px;
   overflow: hidden;
-  background: #eff3f9;
+  background: #F2F5FA;
   width: 100%;
   min-width: 0;
 
   i {
     display: block;
     height: 100%;
+  }
+}
+
+/* 时间窗预设按钮组（Figma：近7天/近1个月/近3个月，白底描边、外圆角 8，选中浅蓝底主色字） */
+.date_preset_group {
+  display: inline-flex;
+  align-items: center;
+
+  button {
+    appearance: none;
+    height: 36px;
+    padding: 0 20px;
+    background: #fff;
+    border: 1px solid #E2E6F0;
+    color: #1E253B;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    cursor: pointer;
+    transition: all 0.15s;
+
+    &:first-child { border-radius: 8px 0 0 8px; }
+    &:last-child { border-radius: 0 8px 8px 0; }
+    & + button { margin-left: -1px; }
+
+    &:hover { color: #1C6CFF; }
+
+    &.on {
+      background: #EDF4FF;
+      border-color: #1C6CFF;
+      color: #1C6CFF;
+      font-weight: 500;
+      position: relative;
+      z-index: 1;
+    }
   }
 }
 
@@ -573,6 +609,146 @@
   white-space: nowrap;
 }
 
+/* ===== 素养掌握概况（Figma 范式）：六边形雷达 + 概览条 + 六维明细 ===== */
+.lit_card { padding-bottom: 16px; }
+
+.lit_header {
+  padding-bottom: 8px;
+  border-bottom: 1px solid #E2E6F0;
+
+  h3 { margin: 0; font-size: 24px; font-weight: 600; color: #222222; }
+}
+
+/* 个人学情版区块标题（Figma 个人稿为 18px） */
+.lit_header--sm h3 { font-size: 18px; }
+
+.lit_body {
+  display: flex;
+  align-items: stretch;
+  gap: 24px;
+  padding-top: 16px;
+  flex: 1;
+  min-height: 0;
+
+  @container business-page (max-width: 1000px) { flex-direction: column; }
+}
+
+.lit_radar_col {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  > div { width: 100% !important; height: 100% !important; }
+}
+
+.lit_side_col {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.lit_stats_strip {
+  display: flex;
+  align-items: center;
+  padding: 16px 0;
+  background: linear-gradient(180deg, #EDF4FF 0%, #F2F5FA 50%);
+  border-radius: 4px;
+}
+
+.lit_stat {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 24px;
+
+  .lit_stat_txt {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    min-width: 0;
+
+    small { font-size: 13px; font-weight: 400; color: #67696E; }
+    b { font-size: 16px; font-weight: 600; color: #222222; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  }
+
+  em { font-style: normal; flex: none; font-size: 20px; font-weight: 600; line-height: 22px; font-variant-numeric: tabular-nums; }
+}
+
+.lit_vsep {
+  flex: none;
+  width: 0;
+  height: 34px;
+  border-left: 1px solid #DFE3F0;
+}
+
+.lit_detail {
+  padding: 16px 24px;
+  background: #F7F9FC;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.lit_detail_row {
+  display: flex;
+  align-items: stretch;
+  gap: 24px;
+}
+
+.lit_dim {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.lit_dim_left {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+
+  .lit_dim_name { font-size: 14px; font-weight: 600; line-height: 22px; color: #222222; }
+
+  .lit_dim_subs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    span { font-size: 13px; font-weight: 400; color: #67696E; }
+  }
+}
+
+.lit_dim_right {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+
+  .lit_dim_val { font-size: 16px; font-weight: 600; line-height: 22px; font-variant-numeric: tabular-nums; }
+
+  .lit_dim_subvals {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+
+    span { font-size: 13px; font-weight: 600; color: #393E4A; font-variant-numeric: tabular-nums; }
+  }
+}
+
 /* 人机交互明细入口 */
 .ia_link {
   padding: 0;
@@ -580,78 +756,53 @@
   font-size: 11.5px;
 }
 
-/* ===== 语义概览网格（graph4rec cockpit 范式） ===== */
-.ov_grid {
+/* ===== 语义概览条（Figma 范式）：渐变底 + 居中大数字 + 竖分隔线 ===== */
+.ov_strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
   margin-bottom: 12px;
-
-  .ant-col { display: flex; }
+  background: linear-gradient(180deg, #EDF4FF 0%, #F2F5FA 50%);
+  border-radius: 12px;
 }
 
 .ov_cell {
-  position: relative;
-  flex: 1;
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 93px;
+  padding: 0 16px;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 11px;
-  background: var(--g-surface);
-  border: 1px solid var(--g-border);
-  border-radius: 10px;
-  box-shadow: var(--g-shadow);
-  padding: 12px 14px;
+  gap: 8px;
+}
+
+.ov_value {
+  font-size: 32px;
+  font-weight: 600;
+  color: #222222;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.ov_label {
+  font-size: 14px;
+  font-weight: 400;
+  color: #67696E;
+  text-align: center;
+  max-width: 100%;
+  white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
+}
 
-  .ov_bar {
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 3.5px;
-  }
-
-  .ov_body { flex: 1; min-width: 0; }
-
-  .ov_top {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .ov_value {
-    font-size: 26px;
-    font-weight: 750;
-    line-height: 1.05;
-    letter-spacing: -0.4px;
-    color: var(--g-text);
-    font-variant-numeric: tabular-nums;
-  }
-
-  .ov_spark { flex: none; }
-
-  .ov_label {
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--g-text);
-    margin-top: 3px;
-  }
-
-  .ov_sub {
-    font-size: 10.5px;
-    color: var(--g-faint);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .ov_icon {
-    flex: none;
-    width: 30px;
-    height: 30px;
-    border-radius: 9px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-  }
+.ov_sep {
+  flex: none;
+  width: 0;
+  height: 34px;
+  border-left: 1px solid #DFE3F0;
 }
 
 /* Wilson 区间条（graph4rec ability-bar 范式） */
@@ -734,25 +885,131 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 12px;
-  margin-left: auto;
-  padding: 3px 12px;
-  background: #f7f9fc;
-  border: 1px solid #eef1f6;
-  border-radius: 999px;
+  gap: 8px 16px;
+  margin: 2px 0 12px;
 }
 
 .ct_legend_item {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  font-size: 11.5px;
-  font-weight: 600;
-  color: var(--g-text);
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #67696E;
   white-space: nowrap;
 
-  i { width: 9px; height: 9px; border-radius: 3px; }
-  em { font-style: normal; font-weight: 400; font-size: 10px; color: var(--g-faint); }
+  i { width: 12px; height: 12px; border-radius: 1px; }
+  em { font-style: normal; font-weight: 400; font-size: 14px; color: #67696E; }
+}
+
+/* 知识点掌握分布：行卡片列表（Figma 范式：名称/章节 → 堆叠条 → 待巩固 + 趋势/错因标签） */
+.ct_rows {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.ct_row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 12px;
+  border-bottom: 1px solid #DFE3F0;
+  border-radius: 8px;
+
+  &:last-child { border-bottom: none; }
+  &:hover { background: #F7F9FC; }
+}
+
+.ct_row_top,
+.ct_row_bottom {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  gap: 12px;
+  min-width: 0;
+}
+
+.ct_row_bottom { justify-content: space-between; }
+
+.ct_row_name {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  color: #393E4A;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ct_row_sep {
+  flex: none;
+  width: 0;
+  height: 14px;
+  border-left: 1px solid #DFE3F0;
+}
+
+.ct_row_chapter {
+  min-width: 0;
+  color: #67696E;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ct_row_weak {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex: none;
+  color: #67696E;
+  font-size: 14px;
+
+  b { color: #393E4A; font-weight: 500; font-variant-numeric: tabular-nums; }
+}
+
+.ct_row_tags {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.ct_chip {
+  flex: none;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 18px;
+  white-space: nowrap;
+
+  &.ct_chip--ok { background: #E0F8E8; color: #17BE6A; }
+  &.ct_chip--bad { background: #FFEFEF; color: #F63232; }
+  &.ct_chip--flat { background: #EDF4FF; color: #1C6CFF; }
+}
+
+.ct_misc {
+  display: inline-block;
+  min-width: 0;
+  max-width: 100%;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: #F2F5FA;
+  color: #5D5F65;
+  font-size: 13px;
+  line-height: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: default;
 }
 
 /* 能力等级：单条堆叠横条 + 行内微统计 */
@@ -840,27 +1097,41 @@
   margin-bottom: 14px;
 
   > .analysis_distribution, > .analysis_right { display: grid; min-width: 0; }
-  > .analysis_right { container: profile-charts / inline-size; }
   .analysis_distribution > .teacher_profile_card {
     min-width: 0;
     margin-bottom: 0;
   }
 }
 
+/* 三子图纵向等分：卡片间 16px 间距，每卡 flex:1 0 0 随容器高度均分。 */
 .analysis_charts {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-  grid-auto-rows: 1fr;
+  display: flex;
+  flex-direction: column;
   align-items: stretch;
-  gap: 12px;
+  gap: 16px;
 
   .teacher_profile_chart_card {
-    display: grid;
-    grid-template-rows: auto minmax(220px, 1fr);
-    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    flex: 1 0 0;
     min-width: 0;
+    min-height: 0;
     margin-bottom: 0;
+    border-radius: 8px;
+    padding: 16px;
   }
+}
+
+/* 分析区标题按设计稿：16px / 500 / #1E253B，去装饰条 */
+.analysis_row .teacher_profile_chart_title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1E253B;
+
+  &::before { display: none; }
 }
 
 .profile_chart_heading {
@@ -868,6 +1139,8 @@
   align-items: center;
   justify-content: space-between;
   gap: 8px;
+  align-self: stretch;
+  width: 100%;
   min-height: 24px;
 
   .teacher_profile_chart_title { margin: 0; }
@@ -876,6 +1149,10 @@
 
 .profile_chart_plot {
   position: relative;
+  flex: 1 0 0;
+  width: 100%;
+  // 容器高度自适应（窄屏图表落在分布表下方）时，flex 基准为 0，需保底高度撑开画布
+  min-height: 180px;
   min-width: 0;
 
   > .echarts-for-react {
@@ -885,34 +1162,116 @@
   }
 }
 
-/* 两列容得下、三列容不下时，排行图铺满第二行，避免留下半行空位。 */
-@container profile-charts (572px <= width < 864px) {
-  .analysis_charts > .teacher_profile_chart_card:nth-child(3) { grid-column: 1 / -1; }
+/* 数据来源构成：环形图 + 右侧「名称列 / 数值列」图例（Figma 范式） */
+.pc_source_mix {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pc_pie {
+  flex: 1 1 0;
+  min-width: 0;
+  height: 100%;
+  position: relative;
+
+  > .echarts-for-react {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+  }
+}
+
+.pc_source_legend {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-width: 0;
+}
+
+.pc_source_names {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pc_source_name {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #67696E;
+  font-size: 14px;
+  white-space: nowrap;
+
+  i { flex: none; width: 12px; height: 12px; border-radius: 1px; }
+}
+
+.pc_source_values {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.pc_source_value {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 12px;
+  white-space: nowrap;
+
+  b { color: #393E4A; font-weight: 500; font-size: 14px; font-variant-numeric: tabular-nums; }
+  em { font-style: normal; width: 40px; text-align: right; color: #393E4A; font-weight: 400; font-size: 14px; font-variant-numeric: tabular-nums; }
+}
+
+/* 知识图谱/分布表格 切换（Figma 范式：浅灰轨道 + 白色选中块） */
+.ct_header .ant-segmented {
+  background: #F2F5FA;
+  border-radius: 6px;
+  padding: 3px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.02);
+
+  .ant-segmented-thumb {
+    background: #fff;
+    border-radius: 4px;
+  }
+  .ant-segmented-item {
+    border-radius: 4px;
+  }
+  .ant-segmented-item-option-content {
+    color: #475069;
+    font-size: 14px;
+  }
+  .ant-segmented-item-selected .ant-segmented-item-option-content {
+    color: #1C6CFF;
+    font-weight: 500;
+  }
 }
 
 /* 以助手占位后的业务区宽度为准，窄时将图表放到分布表下方。 */
 @container business-page (min-width: 1220px) {
-  .analysis_row { grid-template-columns: minmax(0, 1fr) 312px; }
-  .analysis_charts {
-    grid-template-columns: minmax(0, 1fr);
-    .teacher_profile_chart_card { grid-template-rows: auto minmax(180px, 1fr); }
+  .analysis_row {
+    grid-template-columns: minmax(0, 1fr) 560px;
+    gap: 24px;
+  }
+
+  // 设计稿：分布表与三子图之间 1px 浅灰分隔线
+  .analysis_right {
+    border-left: 1px solid #EEEEF6;
+    padding-left: 24px;
   }
 
   .analysis_distribution > .teacher_profile_card {
     display: flex;
     flex-direction: column;
-    .ct_header { flex: none; }
-    .cluster_table {
+    .ct_header, .ct_legend { flex: none; }
+    .ct_rows {
       flex: 1;
-      display: grid;
-      // Table 的 clearfix 伪元素在 Grid 中会成为额外行，少量数据时产生上下空白。
-      &::before, &::after { display: none; }
+      min-height: 0;
+      overflow-y: auto;
     }
-    .ant-spin-nested-loading, .ant-spin-container, .ant-table { display: grid; }
-    .ant-table-container { display: flex; flex-direction: column; }
-    .ant-table-header { flex: none; }
-    .ant-table-body { flex: 1; }
-    .ant-table-body > table { height: 100%; }
   }
 }
 
@@ -958,37 +1317,8 @@
   text-align: left;
 }
 
-/* CI 列：区间条 + 数值同行 */
-.ct_ci_cell {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  width: 100%;
-  min-width: 0;
-
-  .ci_bar {
-    flex: 1 1 100px;
-    min-width: 0;
-    max-width: 100px;
-  }
-}
-
-.ct_ci_p {
-  flex: none;
-  white-space: nowrap;
-  font-size: 12px;
-  font-weight: 700;
-  font-variant-numeric: tabular-nums;
-}
-
-/* 表头图例分组：L1-L4 | 分级 */
+/* 图谱子页页头图例分组：L1-L4 */
 .ct_legend_group {
   display: inline-flex;
   gap: 4px;
-}
-
-.ct_legend_divider {
-  width: 1px;
-  height: 14px;
-  background: #dfe5f0;
 }

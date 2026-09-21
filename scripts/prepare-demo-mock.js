@@ -9,10 +9,12 @@ const fs = require("fs");
 const path = require("path");
 
 const SRC = path.join(__dirname, "..", "mock");
-const DEST = path.join(__dirname, "..", "src", "demo-mock");
+const PUBLISH = path.resolve(__dirname, "..", "src", "demo-mock");
+const STAGING_ROOT = path.resolve(__dirname, "..", ".temp");
+fs.mkdirSync(STAGING_ROOT, { recursive: true });
+const DEST = fs.mkdtempSync(path.join(STAGING_ROOT, "demo-mock-"));
 
 function copyDir(src, dest) {
-  fs.rmSync(dest, { recursive: true, force: true });
   fs.mkdirSync(dest, { recursive: true });
   for (const name of fs.readdirSync(src)) {
     const s = path.join(src, name);
@@ -72,10 +74,16 @@ function transformFile(file) {
   // Static demos use the existing deterministic AI fallback; never ship server credentials
   // or wait for a remote model from the browser.
   code = code.replace(/^const API_KEY = .*;$/gm, 'const API_KEY = "";');
-  code = code.replace(/(async function askAI\([^\n]+\{)/g, '$1\n  if (!API_KEY) return null;');
+  code = code.replace(
+    /(async function askAI\([^\n]+\{)/g,
+    "$1\n  if (!API_KEY) return null;",
+  );
 
   // Buffer.from(x).toString("base64") → btoa(x)（浏览器无 Buffer，无论是否 import fs 都要处理）
-  code = code.replace(/Buffer\.from\(([^)]+)\)\.toString\("base64"\)/g, (_m, expr) => `btoa(${expr})`);
+  code = code.replace(
+    /Buffer\.from\(([^)]+)\)\.toString\("base64"\)/g,
+    (_m, expr) => `btoa(${expr})`,
+  );
 
   if (!/from ["']fs["']/.test(code) && !/from ["']path["']/.test(code)) {
     if (code !== originalCode) {
@@ -86,7 +94,10 @@ function transformFile(file) {
   }
 
   // 文件自身目录（相对复制目标根，与 mock 结构一致）段，作为 ".." 解析基准
-  const fileDir = path.relative(DEST, path.dirname(file)).split(path.sep).filter(Boolean);
+  const fileDir = path
+    .relative(DEST, path.dirname(file))
+    .split(path.sep)
+    .filter(Boolean);
   let dirSegs = [];
   // 1. 提取并删除 const D = path.join(__dirname, ...) 行，解析出数据目录（绝对段）
   code = code.replace(
@@ -132,7 +143,11 @@ function transformFile(file) {
   code = header + code;
 
   // 7. 兜底校验：不允许残留 fs/path/Buffer 引用
-  if (/fs\.readFileSync|path\.join|from ["']fs["']|from ["']path["']|Buffer\./.test(code)) {
+  if (
+    /fs\.readFileSync|path\.join|from ["']fs["']|from ["']path["']|Buffer\./.test(
+      code,
+    )
+  ) {
     throw new Error(`${file} 转换后仍残留 fs/path 引用，请人工检查`);
   }
 
@@ -140,33 +155,80 @@ function transformFile(file) {
   return true;
 }
 
-copyDir(SRC, DEST);
+// Never expose server-side fs calls to the dev server's file watcher.
+try {
+  copyDir(SRC, DEST);
 
-// 生成全量 JSON 注册表：read(`xxx-${id}.json`) 等动态 key 也能命中
-const allJson = [];
-(function collect(dir) {
-  for (const name of fs.readdirSync(dir)) {
-    const p = path.join(dir, name);
-    if (fs.statSync(p).isDirectory()) collect(p);
-    else if (name.endsWith(".json")) allJson.push(path.relative(DEST, p).split(path.sep).join("/"));
-  }
-})(DEST);
-const regImports = allJson.map((k, i) => `import __j${i} from ${JSON.stringify("./" + k)};`).join("\n");
-const regEntries = allJson.map((k, i) => `  ${JSON.stringify(k)}: __j${i},`).join("\n");
-fs.writeFileSync(
-  path.join(DEST, "__jsonRegistry.ts"),
-  `// [prepare-demo-mock] 自动生成：全量 JSON 注册表（支持动态 key 查询）\n` +
-    regImports +
-    `\nexport const jsonRegistry: Record<string, any> = {\n${regEntries}\n};\n`,
-);
+  // 生成全量 JSON 注册表：read(`xxx-${id}.json`) 等动态 key 也能命中
+  const allJson = [];
+  (function collect(dir) {
+    for (const name of fs.readdirSync(dir)) {
+      const p = path.join(dir, name);
+      if (fs.statSync(p).isDirectory()) collect(p);
+      else if (name.endsWith(".json"))
+        allJson.push(path.relative(DEST, p).split(path.sep).join("/"));
+    }
+  })(DEST);
+  const regImports = allJson
+    .map((k, i) => `import __j${i} from ${JSON.stringify("./" + k)};`)
+    .join("\n");
+  const regEntries = allJson
+    .map((k, i) => `  ${JSON.stringify(k)}: __j${i},`)
+    .join("\n");
+  fs.writeFileSync(
+    path.join(DEST, "__jsonRegistry.ts"),
+    `// [prepare-demo-mock] 自动生成：全量 JSON 注册表（支持动态 key 查询）\n` +
+      regImports +
+      `\nexport const jsonRegistry: Record<string, any> = {\n${regEntries}\n};\n`,
+  );
 
-let transformed = 0;
-function walk(dir) {
-  for (const name of fs.readdirSync(dir)) {
-    const p = path.join(dir, name);
-    if (fs.statSync(p).isDirectory()) walk(p);
-    else if (name.endsWith(".ts") && transformFile(p)) transformed++;
+  let transformed = 0;
+  function walk(dir) {
+    for (const name of fs.readdirSync(dir)) {
+      const p = path.join(dir, name);
+      if (fs.statSync(p).isDirectory()) walk(p);
+      else if (name.endsWith(".ts") && transformFile(p)) transformed++;
+    }
   }
+  walk(DEST);
+
+  const files = [];
+  function collectFiles(dir) {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const file = path.join(dir, entry.name);
+      if (entry.isDirectory()) collectFiles(file);
+      else files.push(path.relative(DEST, file));
+    }
+  }
+  collectFiles(DEST);
+  // JSON assets must exist before the registry that imports them is published.
+  files.sort(
+    (a, b) =>
+      Number(!a.endsWith(".json")) - Number(!b.endsWith(".json")) ||
+      a.localeCompare(b),
+  );
+  let published = 0;
+  for (const name of files) {
+    const source = path.join(DEST, name);
+    const target = path.join(PUBLISH, name);
+    const content = fs.readFileSync(source);
+    if (fs.existsSync(target) && fs.readFileSync(target).equals(content))
+      continue;
+    fs.mkdirSync(path.dirname(target), { recursive: true });
+    const pending = target + `.pending-${process.pid}`;
+    fs.writeFileSync(pending, content);
+    fs.renameSync(pending, target);
+    published++;
+  }
+  console.log(
+    `[prepare-demo-mock] 已转换 ${transformed} 个文件，发布 ${published} 个变更文件（未改动文件不触发热更新）`,
+  );
+} finally {
+  if (
+    path.dirname(DEST) !== STAGING_ROOT ||
+    !path.basename(DEST).startsWith("demo-mock-")
+  ) {
+    throw new Error("Unexpected demo mock staging directory");
+  }
+  fs.rmSync(DEST, { recursive: true, force: true });
 }
-walk(DEST);
-console.log(`[prepare-demo-mock] 已复制 mock/ -> src/demo-mock/，转换 ${transformed} 个使用 fs 的文件`);

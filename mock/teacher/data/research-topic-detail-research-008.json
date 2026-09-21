@@ -1,0 +1,59 @@
+{
+ "topic": {
+  "topic_id": "research-008",
+  "title": "已掌握学生重复练习过多：画像驱动的分层作业怎么排？",
+  "content": "1 班整体较好，图谱上已掌握节点不少，但作业还是一刀切，头部学生浪费时间做熟题。有没有用画像直接驱动分层作业的成熟做法？",
+  "author_id": "t-009",
+  "author_name": "许老师",
+  "subject": "数学",
+  "grade": "g8",
+  "class_scope": [
+   "cls-g8-01"
+  ],
+  "related_knowledge_ids": [],
+  "related_dimension_keys": [
+   "knowledge",
+   "process"
+  ],
+  "evidence_summary": "1 班较熟练/已掌握节点约占六成，但近两周作业中对应重复题占比仍约 30%。",
+  "status": "discussing",
+  "tags": [
+   "分层作业",
+   "减负"
+  ],
+  "created_at": "2026-09-17 10:30"
+ },
+ "replies": [
+  {
+   "reply_id": "reply-008-01",
+   "topic_id": "research-008",
+   "author_id": "t-003",
+   "author_name": "周老师",
+   "content": "我们的做法：作业分 A（必做）/B（选做巩固）/C（挑战），系统按图谱掌握度把学生跳过 A 中已掌握题、直推 C。两周试下来头部学生日均省 12 分钟。",
+   "evidence_refs": [],
+   "created_at": "2026-09-17 11:39",
+   "liked_count": 8
+  },
+  {
+   "reply_id": "reply-008-02",
+   "topic_id": "research-008",
+   "author_id": "t-005",
+   "author_name": "郑老师",
+   "content": "注意别把“已掌握”当成永久标签，证据强度要看着：久未更新的节点（比如轴对称）到期要回炉，不然期末会反噬。",
+   "evidence_refs": [],
+   "created_at": "2026-09-17 12:15",
+   "liked_count": 6
+  },
+  {
+   "reply_id": "reply-008-03",
+   "topic_id": "research-008",
+   "author_id": "t-009",
+   "author_name": "许老师",
+   "content": "受启发，我准备先在 1 班把“已掌握且样本充足”的节点白名单化，其余照旧，小步试行。",
+   "evidence_refs": [],
+   "created_at": "2026-09-17 13:35",
+   "liked_count": 3
+  }
+ ],
+ "strategies": []
+}

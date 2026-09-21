@@ -12,9 +12,16 @@ function scoreTag(value: string | number) {
   const score = String(value);
   let bg = "#FEF3F2";
   let color = "#EF4444";
-  if (score.includes("A")) { bg = "#E1FAEB"; color = "#1A805E"; }
-  else if (score.includes("B")) { bg = "#EAF1FC"; color = "#2B75D9"; }
-  else if (score.includes("C")) { bg = "#FFF3E3"; color = "#FFAD37"; }
+  if (score.includes("A")) {
+    bg = "#E1FAEB";
+    color = "#1A805E";
+  } else if (score.includes("B")) {
+    bg = "#EAF1FC";
+    color = "#2B75D9";
+  } else if (score.includes("C")) {
+    bg = "#FFF3E3";
+    color = "#FFAD37";
+  }
   return (
     <span className="plan_viewer_score" style={{ background: bg, color }}>
       {score}
@@ -45,17 +52,34 @@ const PlanViewer = (props: {
   assignDisabled?: boolean;
 }) => {
   const {
-    open, onClose, docTitle, version, content, score,
-    evaluating, evalDisabled, onEvaluate, onOpenReport, onDownload, onAssignHomework, assignDisabled, defaultClassId, planId,
+    open,
+    onClose,
+    docTitle,
+    version,
+    content,
+    score,
+    evaluating,
+    evalDisabled,
+    onEvaluate,
+    onOpenReport,
+    onDownload,
+    onAssignHomework,
+    assignDisabled,
+    defaultClassId,
+    planId,
   } = props;
   const [wide, setWide] = useState(false); // 全屏（宽版）布局
   const [assignOpen, setAssignOpen] = useState(false);
-  useEffect(() => { setAssignOpen(false); }, [open, planId]);
+  useEffect(() => {
+    setAssignOpen(false);
+  }, [open, planId]);
 
   // Esc 关闭
   useEffect(() => {
     if (!open || assignOpen) return;
-    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [open, onClose, assignOpen]);
@@ -77,16 +101,29 @@ const PlanViewer = (props: {
             </Button>
             {evaluating ? (
               <div className="plan_viewer_evaluating">
-                <ZYIcon type="dengdai" style={{ fontSize: 16, animation: "spin 1s linear infinite" }} />
+                <ZYIcon
+                  type="dengdai"
+                  style={{ fontSize: 16, animation: "spin 1s linear infinite" }}
+                />
                 评估中...
               </div>
             ) : score !== undefined && score !== null && score !== "" ? (
-              <Button type="text" className="plan_viewer_report_btn" onClick={onOpenReport} icon={<ZYIcon type="tiku" />}>
+              <Button
+                type="text"
+                className="plan_viewer_report_btn"
+                onClick={onOpenReport}
+                icon={<ZYIcon type="tiku" />}
+              >
                 评估结果{scoreTag(score)}
               </Button>
             ) : (
               <Tooltip title="已完成教案优化，评估一下效果如何?">
-                <Button type="primary" icon={<ZYIcon type="evaluate" />} disabled={evalDisabled} onClick={onEvaluate}>
+                <Button
+                  type="primary"
+                  icon={<ZYIcon type="evaluate" />}
+                  disabled={evalDisabled}
+                  onClick={onEvaluate}
+                >
                   评估教案
                 </Button>
               </Tooltip>
@@ -95,9 +132,14 @@ const PlanViewer = (props: {
           <div className="plan_viewer_toolbar-right">
             <Dropdown
               disabled={evalDisabled}
-              menu={{ items: [{ key: "docx", label: "下载为Word" }], onClick: onDownload }}
+              menu={{
+                items: [{ key: "docx", label: "下载为Word" }],
+                onClick: onDownload,
+              }}
             >
-              <Button type="text" icon={<ZYIcon type="download" />}>下载</Button>
+              <Button type="text" icon={<ZYIcon type="download" />}>
+                下载
+              </Button>
             </Dropdown>
             <span className="plan_viewer_divider" />
             <Button
@@ -127,10 +169,14 @@ const PlanViewer = (props: {
           </div>
         </div>
       </div>
-      {assignOpen && onAssignHomework && <AssignHomeworkDialog
-        defaultClassId={defaultClassId} docTitle={docTitle}
-        onPublish={onAssignHomework} onClose={() => setAssignOpen(false)}
-      />}
+      {assignOpen && onAssignHomework && (
+        <AssignHomeworkDialog
+          defaultClassId={defaultClassId}
+          docTitle={docTitle}
+          onPublish={onAssignHomework}
+          onClose={() => setAssignOpen(false)}
+        />
+      )}
     </div>
   );
 };

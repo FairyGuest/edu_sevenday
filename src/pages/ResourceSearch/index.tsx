@@ -28,7 +28,7 @@ const ResourceSearch = () => {
     catalogueTree,
     pagination,
     checkedChapter,
-    checkedKnowledge
+    checkedKnowledge,
   } = useSelector((state: any) => state.resourceSearchModel);
   const { xkwStageName, xkwSubjectName } = useSelector(
     (state: any) => state.settingTopicModel,
@@ -36,11 +36,47 @@ const ResourceSearch = () => {
 
   const independentTabView = getIndependentTabView(activeTab);
   const independent = isIndependentTab(activeTab);
-  useEffect(() => () => { dispatch({ type: "resourceSearchModel/invalidateQuestions" }); }, [activeTab]);
+  useEffect(
+    () => () => {
+      dispatch({ type: "resourceSearchModel/invalidateQuestions" });
+    },
+    [activeTab],
+  );
 
   // 初始化数据：字典数据、用户选择数据（没有前置依赖，只需要加载一次）
   useEffect(() => {
     initData();
+  }, []);
+
+  // 个人题库：xkw 学段学科属于选课级联状态（settingTopicModel），资源平台直达时未初始化会导致列表永不加载
+  useEffect(() => {
+    if (xkwStageName && xkwSubjectName) return;
+    let dead = false;
+    fetch("/api/web/mindQuestion/getTeacherStageId")
+      .then((r) => r.json())
+      .then(async (stageRes: any) => {
+        if (dead || stageRes.code !== 200) return;
+        const courseRes = await fetch(
+          "/api/web/xkwCourse/findXkwCourseListByStageId",
+        ).then((r) => r.json());
+        if (dead || courseRes.code !== 200 || !courseRes.data?.length) return;
+        dispatch({
+          type: "settingTopicModel/updateState",
+          res: {
+            xkwStageName: stageRes.data.stageName || "",
+            xkwSubjectName:
+              courseRes.data[0].subject_name || courseRes.data[0].name || "",
+            xkwCourseId: courseRes.data[0].id,
+          },
+        });
+      })
+      .catch(() => {
+        /* 初始化失败不阻断公共题库链路 */
+      });
+    return () => {
+      dead = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -55,7 +91,7 @@ const ResourceSearch = () => {
 
       // console.log('activeTab',activeTab)
 
-      if(activeTab == 'public') {
+      if (activeTab == "public") {
         loadKnowledgeTree();
       }
       // if(activeTab == 'personal') {
@@ -68,14 +104,27 @@ const ResourceSearch = () => {
   useEffect(() => {
     // 独立tab不复用旧列表的加载逻辑
     if (independent) return;
-    let arr = checkedChapter?.length > 0 ? checkedChapter : getTreeKeys(catalogueTree)
+    let arr =
+      checkedChapter?.length > 0 ? checkedChapter : getTreeKeys(catalogueTree);
     if (activeTab === "personal") {
       if (!xkwStageName || !xkwSubjectName) return;
     } else if (!gradeName || !subjectName) {
       return;
     }
     loadQuestionList(checkedKnowledge, arr, 1);
-  }, [activeTab, filters, gradeName, subjectName, searchText, independent, catalogueTree, xkwStageName, xkwSubjectName]);
+    // checkedKnowledge：知识图谱筛选/知识点树勾选变化时联动刷新列表
+  }, [
+    activeTab,
+    filters,
+    gradeName,
+    subjectName,
+    searchText,
+    independent,
+    catalogueTree,
+    xkwStageName,
+    xkwSubjectName,
+    checkedKnowledge,
+  ]);
 
   // 试题篮暂时隐藏，不再拉取试题篮数据
   // useEffect(() => {
@@ -85,7 +134,11 @@ const ResourceSearch = () => {
   // }, [gradeName, subjectName, activeTab, independent])
 
   return (
-    <Flex className="resource-search-container" vertical style={{ width: '100%', height: '100%' }}>
+    <Flex
+      className="resource-search-container"
+      vertical
+      style={{ width: "100%", height: "100%" }}
+    >
       {/* Header 组件 */}
       <Header />
 
@@ -99,7 +152,7 @@ const ResourceSearch = () => {
             <Left />
 
             {/* Right 组件 */}
-            <div className='main-content-right'>
+            <div className="main-content-right">
               <Right />
             </div>
 

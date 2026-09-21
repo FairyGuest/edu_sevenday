@@ -1,6 +1,6 @@
 .home-wrap {
   background-color: var(--page-bg-color);
-  background-image: url('@/assets/dashboard-bg.png');
+  background-image: url("@/assets/dashboard-bg.png");
   background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: top right;
@@ -32,17 +32,17 @@
             font-size: 16px;
             width: 16px;
             height: 16px;
-            color: #333C55;
+            color: #333c55;
           }
           &-text {
             font-size: 14px;
-            color: #333C55;
+            color: #333c55;
             margin-left: 8px;
           }
           &:hover {
             cursor: pointer;
             .notice-badge-text {
-              color: #1C6CFF;
+              color: #1c6cff;
             }
           }
         }
@@ -55,8 +55,8 @@
           align-items: center;
           gap: 8px;
           flex-shrink: 0;
-          border: 1px solid #DDD6FE;
-          background: #1C6CFF;
+          border: 1px solid #ddd6fe;
+          background: #1c6cff;
           border-radius: 8px;
           color: #fff !important;
           box-shadow: none;
@@ -82,7 +82,9 @@
   .banner {
     width: 100%;
     height: 320px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 50.15%, #FFF 100%), linear-gradient(90deg, #FFF5F7 0%, #F3F1FF 32%, #F1F2FF 80%, #F0F6FF 100%);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0) 50.15%, #fff 100%),
+      linear-gradient(90deg, #fff5f7 0%, #f3f1ff 32%, #f1f2ff 80%, #f0f6ff 100%);
     margin-top: 34px;
     border-radius: 12px;
     overflow: hidden;
@@ -105,11 +107,11 @@
         .title {
           font-size: 24px;
           font-weight: bold;
-          color: #1E253B;
+          color: #1e253b;
         }
         .subtitle {
           font-size: 16px;
-          color: #646E8B;
+          color: #646e8b;
           margin: 12px 0 32px;
         }
       }
@@ -126,7 +128,7 @@
     display: grid;
     grid-template-columns: 2.1fr 1fr;
     grid-template-rows: auto 1fr;
-    grid-template-areas: 
+    grid-template-areas:
       "homework interaction"
       "agent notice";
     gap: 12px;

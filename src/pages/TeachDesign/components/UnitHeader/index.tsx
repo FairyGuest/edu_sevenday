@@ -138,7 +138,10 @@ const UnitHeader = (props: any) => {
           cancelText: "取消",
           onOk: () => {
             setCurrClass({});
-            setCurrStudy({ plan_id: item?.plan_id || item?.id, title: item?.title });
+            setCurrStudy({
+              plan_id: item?.plan_id || item?.id,
+              title: item?.title,
+            });
             setOpenStudy(false);
             setStep(3);
           },

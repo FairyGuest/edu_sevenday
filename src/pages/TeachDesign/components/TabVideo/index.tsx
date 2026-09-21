@@ -60,7 +60,14 @@ const TabVideo = (props: any) => {
 
   return (
     <div className="tab-video">
-      <div className="tab-video-tabs" style={{ display: "flex", justifyContent: "flex-end", padding: "4px 0" }}>
+      <div
+        className="tab-video-tabs"
+        style={{
+          display: "flex",
+          justifyContent: "flex-end",
+          padding: "4px 0",
+        }}
+      >
         <Button
           type="link"
           icon={<ZYIcon type="up-top" />}
@@ -73,7 +80,9 @@ const TabVideo = (props: any) => {
             key={item?.id}
             className="tab-video-item"
             onClick={() => {
-              window.open(`/design/player?id=${item?.video_url.split("/").at(-1).split(".")[0]}`);
+              window.open(
+                `/design/player?id=${item?.video_url.split("/").at(-1).split(".")[0]}`,
+              );
             }}
           >
             <div

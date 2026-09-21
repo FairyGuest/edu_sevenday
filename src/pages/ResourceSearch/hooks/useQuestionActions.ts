@@ -3,23 +3,33 @@ import { useDispatch, useSelector } from "umi";
 
 export const useQuestionActions = () => {
   const dispatch = useDispatch();
-  const { activeTab, questionList } = useSelector((state: any) => state.resourceSearchModel);
+  const { activeTab, questionList } = useSelector(
+    (state: any) => state.resourceSearchModel,
+  );
 
   // 试题收藏/取消收藏
-  const toggleQuestionFavorite = async (questionId: string, questionData: any, onRefreshList?: () => void) => {
+  const toggleQuestionFavorite = async (
+    questionId: string,
+    questionData: any,
+    onRefreshList?: () => void,
+  ) => {
     const result: any = await dispatch({
       type: "resourceSearchModel/postData",
       apiUrl: "postFavorite",
       payload: {
         question_id: questionId,
-        question_data: questionData
+        question_data: questionData,
       },
       isInfo: true, // 显示成功提示
     });
 
     if (result?.code === 200) {
       // 如果是在个人列表页面且取消收藏成功，刷新列表
-      if (activeTab === "personal" && !result.data?.is_favorite && onRefreshList) {
+      if (
+        activeTab === "personal" &&
+        !result.data?.is_favorite &&
+        onRefreshList
+      ) {
         onRefreshList();
       }
 
@@ -29,7 +39,11 @@ export const useQuestionActions = () => {
   };
 
   // 删除试题
-  const toggleQuestionDelete = async (questionId: string, onRefreshList?: () => void, loadQuestionBasket?: () => void) => {
+  const toggleQuestionDelete = async (
+    questionId: string,
+    onRefreshList?: () => void,
+    loadQuestionBasket?: () => void,
+  ) => {
     const result: any = await dispatch({
       type: "resourceSearchModel/getData",
       apiUrl: "postPersonalDelete",
@@ -50,6 +64,6 @@ export const useQuestionActions = () => {
 
   return {
     toggleQuestionFavorite,
-    toggleQuestionDelete
+    toggleQuestionDelete,
   };
 };

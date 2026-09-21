@@ -1,12 +1,12 @@
-import { useCallback, useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef } from "react";
 
-export const DEFAULT_POLLING_INTERVAL = 30000
+export const DEFAULT_POLLING_INTERVAL = 30000;
 
 export interface UsePollingOptions {
-  interval?: number // 轮询间隔，默认30000毫秒
-  enabled?: boolean // 是否开启轮询，默认 true
-  immediate?: boolean // 挂载后是否立即执行一次，默认 true
-  pauseWhenHidden?: boolean // 页面不可见时暂停轮询，恢复可见时立即拉取一次，默认 true
+  interval?: number; // 轮询间隔，默认30000毫秒
+  enabled?: boolean; // 是否开启轮询，默认 true
+  immediate?: boolean; // 挂载后是否立即执行一次，默认 true
+  pauseWhenHidden?: boolean; // 页面不可见时暂停轮询，恢复可见时立即拉取一次，默认 true
 }
 
 /**
@@ -23,67 +23,68 @@ export function usePolling(
     enabled = true,
     immediate = true,
     pauseWhenHidden = true,
-  } = options
+  } = options;
 
-  const fetcherRef = useRef(fetcher)
-  fetcherRef.current = fetcher
+  const fetcherRef = useRef(fetcher);
+  fetcherRef.current = fetcher;
 
-  const timerRef = useRef<ReturnType<typeof setInterval>>()
-  const pendingRef = useRef(false)
+  const timerRef = useRef<ReturnType<typeof setInterval>>();
+  const pendingRef = useRef(false);
 
   const clearTimer = useCallback(() => {
     if (timerRef.current) {
-      clearInterval(timerRef.current)
-      timerRef.current = undefined
+      clearInterval(timerRef.current);
+      timerRef.current = undefined;
     }
-  }, [])
+  }, []);
 
   const run = useCallback(async () => {
-    if (pendingRef.current) return
-    pendingRef.current = true
+    if (pendingRef.current) return;
+    pendingRef.current = true;
     try {
-      await fetcherRef.current()
+      await fetcherRef.current();
     } finally {
-      pendingRef.current = false
+      pendingRef.current = false;
     }
-  }, [])
+  }, []);
 
   const startTimer = useCallback(() => {
-    clearTimer()
+    clearTimer();
     timerRef.current = setInterval(() => {
-      run()
-    }, interval)
-  }, [clearTimer, interval, run])
+      run();
+    }, interval);
+  }, [clearTimer, interval, run]);
 
   useEffect(() => {
     if (!enabled) {
-      clearTimer()
-      return
+      clearTimer();
+      return;
     }
 
     if (immediate) {
-      run()
+      run();
     }
-    startTimer()
+    startTimer();
 
-    return clearTimer
-  }, [enabled, immediate, run, startTimer, clearTimer])
+    return clearTimer;
+  }, [enabled, immediate, run, startTimer, clearTimer]);
 
   useEffect(() => {
-    if (!enabled || !pauseWhenHidden) return
+    if (!enabled || !pauseWhenHidden) return;
 
     const handleVisibilityChange = () => {
       if (document.hidden) {
-        clearTimer()
-        return
+        clearTimer();
+        return;
       }
-      run()
-      startTimer()
-    }
+      run();
+      startTimer();
+    };
 
-    document.addEventListener('visibilitychange', handleVisibilityChange)
-    return () => document.removeEventListener('visibilitychange', handleVisibilityChange)
-  }, [enabled, pauseWhenHidden, run, startTimer, clearTimer])
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    return () =>
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+  }, [enabled, pauseWhenHidden, run, startTimer, clearTimer]);
 
-  return { run, refresh: run }
+  return { run, refresh: run };
 }

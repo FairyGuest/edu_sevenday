@@ -1,9 +1,8 @@
 import { memo } from "react";
-import { Table, Tooltip } from "antd";
-import type { ColumnsType } from "antd/es/table";
+import { Tooltip } from "antd";
 
 const BAND_COLORS: Record<string, string> = {
-  待巩固: "#e05d62", 练习中: "#e8a23d", 较熟练: "#c0a83e", 已掌握: "#4f9e70",
+  待巩固: "#F76964", 练习中: "#8EB6FE", 较熟练: "#1C6CFF", 已掌握: "#1FD479",
 };
 const BANDS = ["待巩固", "练习中", "较熟练", "已掌握"];
 const LEVEL_META: Record<string, { color: string; short: string; label: string; verb: string; desc: string }> = {
@@ -12,120 +11,79 @@ const LEVEL_META: Record<string, { color: string; short: string; label: string; 
   L3: { color: "#7c3aed", short: "L3", label: "掌握", verb: "掌握 / 运用 / 计算", desc: "能在熟悉情境中独立使用与计算" },
   L4: { color: "#db2777", short: "L4", label: "综合", verb: "综合 / 迁移 / 建模", desc: "能在新情境中组合应用、建模探究" },
 };
-const TRUST_META: Record<string, { label: string; cls: string; color: string }> = {
-  credible: { label: "可信", cls: "ok", color: "var(--g-ok)" },
-  coarse: { label: "粗估", cls: "warn", color: "var(--g-warn)" },
-  insufficient: { label: "证据不足", cls: "", color: "var(--g-faint)" },
-};
+const TRUST_META: Record<string, string> = { credible: "可信", coarse: "粗估", insufficient: "证据不足" };
 
-/** 四级人数堆叠条 */
-function StackBar({ counts }: { counts: Record<string, number> }) {
+/** 四级人数堆叠条；95% 置信区间与可信度收进悬停提示 */
+function StackBar({ counts, ci, p, trust }: { counts: Record<string, number>; ci?: [number, number]; p?: number; trust?: string }) {
   const total = BANDS.reduce((a, b) => a + (counts?.[b] || 0), 0) || 1;
+  const tip = [
+    ...BANDS.filter((b) => counts?.[b]).map((b) => `${b} ${counts[b]}人`),
+    ci ? `掌握度 ${p}% · 95% 区间 [${ci[0]}, ${ci[1]}] · ${TRUST_META[trust || ""] || ""}` : "",
+  ].filter(Boolean).join("\n");
   return (
-    <div className="teacher_profile_stackbar">
-      {BANDS.map((b) =>
-        counts?.[b] ? (
-          <i key={b} style={{ width: `${(counts[b] / total) * 100}%`, background: BAND_COLORS[b] }} title={`${b} ${counts[b]}人`} />
-        ) : null,
-      )}
-    </div>
-  );
-}
-
-/** Wilson 置信区间条（graph4rec ability-bar 范式）：range 带 + mark 竖线 */
-function CIBar({ ci, p, trust }: { ci: [number, number]; p: number; trust: string }) {
-  const c = TRUST_META[trust]?.color || "var(--g-accent)";
-  return (
-    <Tooltip title={`掌握度 ${p}% · 95% 区间 [${ci[0]}, ${ci[1]}] · ${TRUST_META[trust]?.label}`}>
-      <span className="ci_bar" style={{ ["--c" as any]: c }}>
-        <span className="ci_bar_range" style={{ left: `${ci[0]}%`, width: `${Math.max(2, ci[1] - ci[0])}%` }} />
-        <span className="ci_bar_mark" style={{ left: `${p}%` }} />
-      </span>
+    <Tooltip title={tip} overlayClassName="ct_lv_tip">
+      <div className="teacher_profile_stackbar">
+        {BANDS.map((b) =>
+          counts?.[b] ? (
+            <i key={b} style={{ width: `${(counts[b] / total) * 100}%`, background: BAND_COLORS[b] }} />
+          ) : null,
+        )}
+      </div>
     </Tooltip>
   );
 }
 
-/** F1.2 知识点掌握分布（graph4rec ability-row 范式重做） */
-function ClusterTable({ rows }: { rows: any[] }) {
-  const columns: ColumnsType<any> = [
-    {
-      title: "知识点", dataIndex: "cluster", width: 150,
-      render: (t: string, r: any) => {
-        const lv = LEVEL_META[r.level];
-        return (
-          <div className="ct_kp">
-            <div className="ct_kp_name" title={`${t}${r.level ? "（" + r.level + "）" : ""}`}>
-              {t}
-              {lv ? (
-                <Tooltip title={`能力等级 ${r.level}：${lv.verb}
-${lv.desc}`} color="#fff" overlayClassName="ct_lv_tip">
-                  <span className="ct_lv" style={{ ["--c" as any]: lv.color }}>{lv.short}</span>
-                </Tooltip>
-              ) : null}
-            </div>
-            {r.chapter ? <div className="teacher_profile_subtext">{r.chapter}</div> : null}
-          </div>
-        );
-      },
-    },
-    {
-      title: "分布", dataIndex: "band_counts", width: 128,
-      render: (counts: Record<string, number>) => <StackBar counts={counts} />,
-    },
-    {
-      title: "掌握度 · 95% 区间", key: "ci", width: 168,
-      render: (_: any, r: any) =>
-        r.ci ? (
-          <span className="ct_ci_cell">
-            <CIBar ci={r.ci} p={r.p} trust={r.trust} />
-            <b className="ct_ci_p" style={{ color: r.trust === "insufficient" ? "var(--g-faint)" : "var(--g-text)" }}>
-              {r.trust === "insufficient" ? "—" : `${r.p}%`}
-            </b>
-          </span>
-        ) : <span style={{ color: "#c3c9d4" }}>—</span>,
-    },
-    {
-      title: "待巩固", dataIndex: "weak_n", width: 96,
-      render: (t: number, r: any) => (
-        <span>
-          <b style={{ color: t > 0 ? "#e05d62" : "#4f9e70" }}>{t}人</b>
-          <span style={{ color: "#8a94a8", fontSize: 11, marginLeft: 3 }}>({r.weak_pct}%)</span>
-        </span>
-      ),
-    },
-    {
-      title: "趋势", dataIndex: "trend", width: 92,
-      render: (t: string) => {
-        const cls = t === "向好↑" ? "g-chip--ok" : t === "连续下降" ? "g-chip--bad" : "";
-        return <span className={`g-chip ${cls}`}>{t}</span>;
-      },
-    },
-    {
-      title: "高频错因", dataIndex: "misconception", width: 132, ellipsis: true,
-      render: (m: any) =>
-        m ? (
-          <Tooltip title={`${m.share}% 集中在「${m.label}」${m.evidence ? "：" + m.evidence : ""}`}>
-            <span style={{ display: "inline-flex", alignItems: "center", gap: 5, maxWidth: "100%" }}>
-              <i className="g-dot" style={{ background: "var(--dim-cognitive)", flex: "none" }} />
-              <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-                {m.label} {m.share}%
-              </span>
-            </span>
-          </Tooltip>
-        ) : "—",
-    },
-  ];
+const trendChipCls = (t: string) =>
+  t.includes("向好") ? "ct_chip ct_chip--ok" : t.includes("下降") ? "ct_chip ct_chip--bad" : "ct_chip ct_chip--flat";
+
+/** 单个知识点行：名称/章节 → 四级堆叠条 → 待巩固人数 + 趋势/错因标签 */
+function ClusterRow({ r }: { r: any }) {
+  const lv = LEVEL_META[r.level];
+  const m = r.misconception;
   return (
-    <Table
-      className="cluster_table"
-      rowKey="cluster"
-      size="small"
-      tableLayout="fixed"
-      columns={columns}
-      dataSource={rows.filter((r) => r.n_students >= 3).slice(0, 10)}
-      pagination={false}
-      scroll={{ x: columns.reduce((width, column) => width + Number(column.width), 0), y: 700 }}
-    />
+    <div className="ct_row">
+      <div className="ct_row_top">
+        <span className="ct_row_name" title={`${r.cluster}${r.level ? "（" + r.level + "）" : ""}`}>
+          {r.cluster}
+          {lv ? (
+            <Tooltip title={`能力等级 ${r.level}：${lv.verb}
+${lv.desc}`} color="#fff" overlayClassName="ct_lv_tip">
+              <span className="ct_lv" style={{ ["--c" as any]: lv.color }}>{lv.short}</span>
+            </Tooltip>
+          ) : null}
+        </span>
+        <i className="ct_row_sep" />
+        <span className="ct_row_chapter">{r.chapter || "—"}</span>
+      </div>
+      <StackBar counts={r.band_counts} ci={r.ci} p={r.p} trust={r.trust} />
+      <div className="ct_row_bottom">
+        <span className="ct_row_weak">
+          待巩固 <b>{r.weak_n}人</b> <i className="ct_row_sep" /> <b>{r.weak_pct}%</b>
+        </span>
+        <span className="ct_row_tags">
+          {r.trend ? <span className={trendChipCls(r.trend)}>{r.trend}</span> : null}
+          {m ? (
+            <Tooltip title={`${m.share}% 集中在「${m.label}」${m.evidence ? "：" + m.evidence : ""}`}>
+              <span className="ct_misc">
+                {m.share}%错误集中在「{m.label}」
+              </span>
+            </Tooltip>
+          ) : null}
+        </span>
+      </div>
+    </div>
+  );
+}
+
+/** F1.2 知识点掌握分布（行卡片范式，Figma 设计稿重做） */
+function ClusterTable({ rows }: { rows: any[] }) {
+  const list = rows.filter((r) => r.n_students >= 3).slice(0, 10);
+  return (
+    <div className="ct_rows">
+      {list.map((r) => (
+        <ClusterRow key={r.cluster} r={r} />
+      ))}
+    </div>
   );
 }
 

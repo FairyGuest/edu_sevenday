@@ -2,7 +2,7 @@
  * 知识点树数据加载工具
  */
 
-import type { KnowledgeTreeNode, TreeKnowledgeNode } from '../types';
+import type { KnowledgeTreeNode, TreeKnowledgeNode } from "../types";
 
 /**
  * 将TreeKnowledgeNode转换为KnowledgeTreeNode（适配Ant Design Tree组件）
@@ -22,15 +22,15 @@ function convertToAntTreeNode(node: TreeKnowledgeNode): KnowledgeTreeNode {
  * @returns Promise<KnowledgeTreeNode[]>
  */
 export async function loadKnowledgeTree(
-  gradeLevel: string, 
-  subject: string
+  gradeLevel: string,
+  subject: string,
 ): Promise<KnowledgeTreeNode[]> {
   try {
     // 动态构建文件路径并导入
     const fileName = `${gradeLevel}_${subject}.json`;
     const module = await import(`../enums/knowledgeTree/${fileName}`);
     const treeData = module.default as TreeKnowledgeNode[];
-    
+
     // 转换为Ant Design Tree组件需要的格式
     return treeData.map(convertToAntTreeNode);
   } catch (error) {
@@ -38,4 +38,3 @@ export async function loadKnowledgeTree(
     return [];
   }
 }
-

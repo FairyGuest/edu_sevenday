@@ -44,6 +44,7 @@ interface GLink extends SimulationLinkDatum<GNode> { kind: string; source: strin
 interface Props {
   graph?: { nodes: any[]; edges: { src: string; tgt: string; kind: string }[] };
   onNodeClick?: (cluster: string) => void;
+  selectedNode?: string | null;
   height?: number;
   /** mastery=学情掌握图（默认）；catalog=知识目录图（v2.0-K 资源平台：素养着色、无学情口径） */
   variant?: "mastery" | "catalog";
@@ -52,7 +53,7 @@ interface Props {
 const HEIGHT = 620;
 const COL_TOP = 46; // 列头文字下方起点
 
-function KnowledgeGraph({ graph, onNodeClick, height, variant = "mastery" }: Props) {
+function KnowledgeGraph({ graph, onNodeClick, selectedNode, height, variant = "mastery" }: Props) {
   const H = height ?? HEIGHT;
   const wrapRef = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
@@ -72,6 +73,7 @@ function KnowledgeGraph({ graph, onNodeClick, height, variant = "mastery" }: Pro
   const [tip, setTip] = useState<{ x: number; y: number; node: GNode } | null>(null);
   const [viewK, setViewK] = useState(1);
   const [selected, setSelected] = useState<string | null>(null);
+  useEffect(() => { if (selectedNode !== undefined) setSelected(selectedNode); }, [selectedNode]);
   const [search, setSearch] = useState("");
   const [onlyData, setOnlyData] = useState(false);
   const matchIdx = useRef(0);
@@ -158,6 +160,7 @@ function KnowledgeGraph({ graph, onNodeClick, height, variant = "mastery" }: Pro
       });
     }
 
+    const labelWidths = ns.map((d, i) => labelEls.current[i]?.getComputedTextLength() || Math.min(d.id.length, 10) * 10);
     const draw = () => {
       for (let i = 0; i < ns.length; i++) {
         const r = (ns[i] as any).r ?? 10, bounds = geometryRef.current;
@@ -182,6 +185,40 @@ function KnowledgeGraph({ graph, onNodeClick, height, variant = "mastery" }: Pro
           lb.style.display = "";
           lb.style.fill = ns[i].nodata ? "#8e99a8" : "#33445c";
           lb.setAttribute("font-size", ns[i].nodata ? "9" : "10");
+        }
+      }
+      if (variant === "catalog") {
+        // Keep the dense resource catalog readable without removing selectable nodes.
+        const bounds = geometryRef.current;
+        const occupied = ns.map((d) => {
+          const r = ((d as any).r ?? 10) + 2;
+          return { left: d.x! - r, right: d.x! + r, top: d.y! - r, bottom: d.y! + r };
+        });
+        const order = ns.map((_, i) => i).sort((a, b) =>
+          Number(ns[b].id === selectedRef.current) - Number(ns[a].id === selectedRef.current),
+        );
+        for (const i of order) {
+          const label = labelEls.current[i];
+          if (!label) continue;
+          const d = ns[i], r = (d as any).r ?? 10, w = labelWidths[i];
+          const candidates = [
+            { x: r + 5, y: 3.5, anchor: "start" },
+            { x: -r - 5, y: 3.5, anchor: "end" },
+            { x: 0, y: r + 16, anchor: "middle" },
+          ];
+          label.style.display = "none";
+          for (const candidate of candidates) {
+            const left = d.x! + candidate.x - (candidate.anchor === "end" ? w : candidate.anchor === "middle" ? w / 2 : 0);
+            const rect = { left, right: left + w, top: d.y! + candidate.y - 11, bottom: d.y! + candidate.y + 3 };
+            if (rect.left < 4 || rect.right > bounds.width - 4 || rect.top < COL_TOP || rect.bottom > bounds.height - 4) continue;
+            if (occupied.some((other) => rect.left < other.right + 2 && rect.right > other.left - 2 && rect.top < other.bottom + 2 && rect.bottom > other.top - 2)) continue;
+            label.style.display = "";
+            label.setAttribute("x", String(candidate.x));
+            label.setAttribute("y", String(candidate.y));
+            label.setAttribute("text-anchor", candidate.anchor);
+            occupied.push(rect);
+            break;
+          }
         }
       }
       for (let i = 0; i < ls.length; i++) {
@@ -257,7 +294,7 @@ function KnowledgeGraph({ graph, onNodeClick, height, variant = "mastery" }: Pro
     const svg = svgRef.current;
     if (!svg || !zoomRef.current) return;
     select(svg).interrupt().call(zoomRef.current.transform, zoomIdentity);
-    setSelected(null);
+    if (selectedNode === undefined) setSelected(null);
     drawRef.current?.(); // 标签可见性按新缩放级别重算
   };
 
@@ -275,6 +312,7 @@ function KnowledgeGraph({ graph, onNodeClick, height, variant = "mastery" }: Pro
       select(svgRef.current).call(zoomRef.current.transform, target);
     }
     setSelected(id);
+    if (selectedNode !== undefined) onNodeClick?.(id);
   };
 
   const locateNext = () => {
@@ -414,8 +452,8 @@ function KnowledgeGraph({ graph, onNodeClick, height, variant = "mastery" }: Pro
                     onPointerEnter={hover(i)}
                     onPointerMove={hover(i)}
                     onPointerLeave={() => setTip(null)}
-                    onDoubleClick={(e) => { e.stopPropagation(); d.fx = null; d.fy = null; setSelected(null); simRef.current?.alpha(0.3).restart(); }}
-                    onClick={() => { setSelected((c) => (c === d.id ? null : d.id)); onNodeClick?.(d.id); }}
+                    onDoubleClick={(e) => { e.stopPropagation(); d.fx = null; d.fy = null; if (selectedNode === undefined) setSelected(null); simRef.current?.alpha(0.3).restart(); }}
+                    onClick={() => { setSelected((c) => selectedNode !== undefined ? d.id : c === d.id ? null : d.id); onNodeClick?.(d.id); }}
                   />
                   <text ref={(el) => { labelEls.current[i] = el; }} fontSize={10} className="kg_label">
                     {d.id.length > 9 ? d.id.slice(0, 9) + "…" : d.id}

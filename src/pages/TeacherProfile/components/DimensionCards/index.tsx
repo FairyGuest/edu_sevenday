@@ -1,6 +1,6 @@
-import { memo } from "react";
-import { BarChartOutlined } from "@ant-design/icons";
+import { Fragment, memo } from "react";
 import ReactECharts from "echarts-for-react";
+import { Empty } from "antd";
 
 /** A1 素养雷达（整行卡）：主维大图 + 二级维度图例；能力等级标签在知识点掌握分布表中 */
 
@@ -9,33 +9,43 @@ const LIT_HEX: Record<string, string> = {
   "直观想象": "#ea580c", "数学运算": "#0e9265", "数据分析": "#52607a",
 };
 
-function DimensionCards({ dimensions }: { dimensions?: any }) {
+function DimensionCards({ dimensions, personal = false }: { dimensions?: any; personal?: boolean }) {
   const literacy = (dimensions?.literacy || []).filter((d: any) => d.value != null);
   // ReactECharts observes its own host. Broadcasting a window resize from this
   // card caused unrelated page widgets to relayout on every local size change.
 
-  if (!literacy.length) return null;
+  if (!literacy.length) return personal ? <Empty description="暂无足够的作答证据，完成练习后可查看素养雷达图" /> : null;
 
+  // 概览微统计：最强 / 最弱 / 均值（雷达标签配色与右侧概览条共用）
+  const vals = literacy.map((d: any) => ({ name: d.name, value: d.value, hex: LIT_HEX[d.name] || "#1c6cff" }));
+  const strongest = [...vals].sort((a, b) => b.value - a.value)[0];
+  const weakest = [...vals].sort((a, b) => a.value - b.value)[0];
+  const avg = Math.round(vals.reduce((a: number, v: any) => a + v.value, 0) / vals.length);
+
+  // 六边形雷达（Figma 范式）：#F2F5FA 轨道 + #DFE3F0 描边，数据面 20% 主色 + 1.5px 主色描边，蓝心白边顶点
   const radarOption = {
     radar: {
       indicator: literacy.map((d: any) => ({ name: d.name, max: 100 })),
-      radius: "66%",
-      center: ["50%", "49%"],
-      splitNumber: 4,
+      radius: "62%",
+      center: ["50%", "50%"],
+      splitNumber: 1,
+      axisNameGap: 10,
       axisName: {
         formatter: (name: string) => {
           const d = literacy.find((x: any) => x.name === name);
-          return `{n|${name}}
-{v|${d?.value ?? "—"}%}`;
+          const key = d?.value === strongest?.value ? "vg" : d?.value === weakest?.value ? "vr" : "vb";
+          return `{n|${name}}\n{${key}|${d?.value ?? "—"}%}`;
         },
         rich: {
-          n: { color: "#1f2733", fontSize: 11.5, fontWeight: 600, lineHeight: 16 },
-          v: { color: "#1c6cff", fontSize: 10.5, fontWeight: 700, lineHeight: 13 },
+          n: { color: "#67696E", fontSize: 14, fontWeight: 500, lineHeight: 20, align: "center" },
+          vg: { color: "#17BE6A", fontSize: 14, fontWeight: 500, lineHeight: 18, align: "center" },
+          vr: { color: "#F63232", fontSize: 14, fontWeight: 500, lineHeight: 18, align: "center" },
+          vb: { color: "#1C6CFF", fontSize: 14, fontWeight: 500, lineHeight: 18, align: "center" },
         },
       },
-      splitLine: { lineStyle: { color: "#e6ebf3", width: 1 } },
-      splitArea: { areaStyle: { color: ["#fdfefe", "#f6f8fc", "#f1f4fa", "#eceff7"] } },
-      axisLine: { lineStyle: { color: "#dde4ef" } },
+      splitLine: { lineStyle: { color: "#DFE3F0", width: 1 } },
+      splitArea: { areaStyle: { color: ["#F2F5FA"] } },
+      axisLine: { lineStyle: { color: "#DFE3F0" } },
     },
     series: [{
       type: "radar",
@@ -43,18 +53,10 @@ function DimensionCards({ dimensions }: { dimensions?: any }) {
         value: literacy.map((d: any) => d.value ?? 0),
         name: "素养掌握度",
         symbol: "circle",
-        symbolSize: 5.5,
-        lineStyle: { color: "#1c6cff", width: 2.2, shadowColor: "rgba(28,108,255,0.35)", shadowBlur: 8 },
-        itemStyle: { color: "#fff", borderColor: "#1c6cff", borderWidth: 2 },
-        areaStyle: {
-          color: {
-            type: "radial", x: 0.5, y: 0.5, r: 0.65,
-            colorStops: [
-              { offset: 0, color: "rgba(28,108,255,0.30)" },
-              { offset: 1, color: "rgba(77,141,255,0.10)" },
-            ],
-          },
-        },
+        symbolSize: 8,
+        lineStyle: { color: "#1C6CFF", width: 1.5 },
+        itemStyle: { color: "#1C6CFF", borderColor: "#fff", borderWidth: 1 },
+        areaStyle: { color: "rgba(28,108,255,0.20)" },
       }],
     }],
     tooltip: {
@@ -63,56 +65,86 @@ function DimensionCards({ dimensions }: { dimensions?: any }) {
     },
   };
 
-  // 概览微统计：最强 / 最弱 / 均值（图例行顶部常显）
-  const vals = literacy.map((d: any) => ({ name: d.name, value: d.value, hex: LIT_HEX[d.name] || "#1c6cff" }));
-  const strongest = [...vals].sort((a, b) => b.value - a.value)[0];
-  const weakest = [...vals].sort((a, b) => a.value - b.value)[0];
-  const avg = Math.round(vals.reduce((a: number, v: any) => a + v.value, 0) / vals.length);
+  // 个人学情：仅居中六边形雷达 + 六维标签（Figma 个人学情稿）
+  if (personal) {
+    return (
+      <div className="lit_card pa_lit_card">
+        <div className="lit_header lit_header--sm">
+          <h3>素养掌握</h3>
+        </div>
+        <div className="lit_body pa_lit_body">
+          <div className="lit_radar_col">
+            <ReactECharts option={radarOption} style={{ height: "100%", minHeight: 340, width: "100%" }} notMerge />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // ===== 班级视图：素养掌握概况（Figma 范式：六边形雷达 + 概览条 + 六维明细）=====
+  // 维度值配色：最强 #17BE6A / 最弱 #F63232 / 其余主色
+  const valColor = (v: number) =>
+    v === strongest?.value ? "#17BE6A" : v === weakest?.value ? "#F63232" : "#1C6CFF";
+  const dimRows = [
+    literacy.slice(0, 3),
+    literacy.slice(3, 6),
+  ].filter((r: any[]) => r.length);
 
   return (
-    <div className="teacher_profile_card dim_card dim_card_full">
-      <div className="g-panel-head" style={{ marginBottom: 2 }}>
-        <span className="g-panel-head__icon"><BarChartOutlined /></span>
-        <h3>素养掌握 · 六大素养</h3>
-        <span className="g-hint">同维度跨页面同色 · 能力等级标签见知识点掌握分布</span>
+    <div className="teacher_profile_card dim_card dim_card_full lit_card">
+      <div className="lit_header">
+        <h3>素养掌握概况</h3>
       </div>
-      <div className="dim_radar_row">
-        <div className="dim_radar_main">
-          <ReactECharts option={radarOption} style={{ height: "100%", minHeight: 240, width: "100%" }} notMerge />
+      <div className="lit_body">
+        <div className="lit_radar_col">
+          <ReactECharts option={radarOption} style={{ height: "100%", minHeight: 320, width: "100%" }} notMerge />
         </div>
-        <div className="dim_radar_side">
-          <div className="dim_side_stats">
-            <div className="dim_side_stat" style={{ ["--c" as any]: strongest?.hex }}>
-              <small>最强素养</small>
-              <b>{strongest?.name}</b>
-              <em>{strongest?.value}%</em>
+        <div className="lit_side_col">
+          <div className="lit_stats_strip">
+            <div className="lit_stat">
+              <span className="lit_stat_txt"><small>最强素养</small><b>{strongest?.name}</b></span>
+              <em style={{ color: "#17BE6A" }}>{strongest?.value}%</em>
             </div>
-            <div className="dim_side_stat" style={{ ["--c" as any]: weakest?.hex }}>
-              <small>待提升</small>
-              <b>{weakest?.name}</b>
-              <em>{weakest?.value}%</em>
+            <i className="lit_vsep" />
+            <div className="lit_stat">
+              <span className="lit_stat_txt"><small>待提升素养</small><b>{weakest?.name}</b></span>
+              <em style={{ color: "#F63232" }}>{weakest?.value}%</em>
             </div>
-            <div className="dim_side_stat" style={{ ["--c" as any]: "#1c6cff" }}>
-              <small>六维均值</small>
-              <b>整体水平</b>
-              <em>{avg}%</em>
+            <i className="lit_vsep" />
+            <div className="lit_stat">
+              <span className="lit_stat_txt"><small>{literacy.length === 6 ? "六维均值" : "维度均值"}</small><b>整体水平</b></span>
+              <em style={{ color: "#1C6CFF" }}>{avg}%</em>
             </div>
           </div>
-        <div className="dim_radar_legend">
-          {literacy.map((d: any) => (
-            <div key={d.key} className="dim_rl_item">
-              <div className="dim_rl_head">
-                <i className="g-dot" style={{ background: LIT_HEX[d.name] || "#1c6cff" }} />
-                <span className="dim_rl_name">{d.name}</span>
-                <b className="dim_rl_val">{d.value}%</b>
+          <div className="lit_detail">
+            {dimRows.map((row: any[], ri: number) => (
+              <div className="lit_detail_row" key={ri}>
+                {row.map((d: any, i: number) => {
+                  const subs = (d.subs || []).filter((sub: any) => sub.value != null);
+                  return (
+                    <Fragment key={d.key || d.name}>
+                      {i > 0 ? <i className="lit_vsep" /> : null}
+                      <div className="lit_dim">
+                        <div className="lit_dim_left">
+                          <b className="lit_dim_name">{d.name}</b>
+                          <div className="lit_dim_subs">
+                            {subs.map((sub: any) => <span key={sub.name}>{sub.name}</span>)}
+                          </div>
+                        </div>
+                        <div className="lit_dim_right">
+                          <b className="lit_dim_val" style={{ color: d.value === strongest?.value ? "#17BE6A" : d.value === weakest?.value ? "#F63232" : "#4E83FD" }}>
+                            {d.value}%
+                          </b>
+                          <div className="lit_dim_subvals">
+                            {subs.map((sub: any) => <span key={sub.name}>{sub.value}%</span>)}
+                          </div>
+                        </div>
+                      </div>
+                    </Fragment>
+                  );
+                })}
               </div>
-              <div className="dim_rl_subs">
-                {d.subs?.filter((sub: any) => sub.value != null).map((sub: any) => (
-                  <span key={sub.name} className="dim_rl_sub">{sub.name} {sub.value}%</span>
-                ))}
-              </div>
-            </div>
-          ))}
+            ))}
           </div>
         </div>
       </div>

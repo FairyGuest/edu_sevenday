@@ -15,30 +15,39 @@ const ChildQuestion = ({ child, childIndex }: ChildQuestionProps) => {
   const childData = child;
   const childAnswer = childData.answerList ?? childData.answer;
 
-  const childIsSelectQuestion = useMemo(() => Array.isArray(child.options), [child.options]);
-  
+  const childIsSelectQuestion = useMemo(
+    () => Array.isArray(child.options),
+    [child.options],
+  );
+
   const childAnswerDisplay = useMemo(() => {
     if (!childIsSelectQuestion) {
       if (Array.isArray(childAnswer)) {
-        return childAnswer.join('、');
+        return childAnswer.join("、");
       }
       return childAnswer;
     }
-    
+
     if (Array.isArray(childAnswer)) {
-      return childAnswer.map((ans: any) => {
-        if (typeof ans === 'number') {
-          return String.fromCharCode(65 + ans);
-        } else {
-          const index = childData.options.findIndex((option: string) => option === ans);
-          return index >= 0 ? String.fromCharCode(65 + index) : ans;
-        }
-      }).join('、');
+      return childAnswer
+        .map((ans: any) => {
+          if (typeof ans === "number") {
+            return String.fromCharCode(65 + ans);
+          } else {
+            const index = childData.options.findIndex(
+              (option: string) => option === ans,
+            );
+            return index >= 0 ? String.fromCharCode(65 + index) : ans;
+          }
+        })
+        .join("、");
     } else {
-      if (typeof childAnswer === 'number') {
+      if (typeof childAnswer === "number") {
         return String.fromCharCode(65 + childAnswer);
       } else {
-        const index = childData.options.findIndex((option: string) => option === childAnswer);
+        const index = childData.options.findIndex(
+          (option: string) => option === childAnswer,
+        );
         return index >= 0 ? String.fromCharCode(65 + index) : childAnswer;
       }
     }
@@ -51,11 +60,17 @@ const ChildQuestion = ({ child, childIndex }: ChildQuestionProps) => {
   return (
     <div className="child-question">
       {/* 子题可点击区域 */}
-      <div className="child-question-clickable" onClick={handleChildAnalysisClick}>
+      <div
+        className="child-question-clickable"
+        onClick={handleChildAnalysisClick}
+      >
         {/* 子题题干 */}
         <div className="child-question-stem">
           <span className="child-question-number">({childIndex + 1})</span>
-          <SafeMathRenderer html={`<p>${childData.stem}</p>`} className="child-question-text" />
+          <SafeMathRenderer
+            html={`<p>${childData.stem}</p>`}
+            className="child-question-text"
+          />
         </div>
 
         {/* 子题音频 */}
@@ -69,9 +84,18 @@ const ChildQuestion = ({ child, childIndex }: ChildQuestionProps) => {
         {childIsSelectQuestion && (
           <div className="child-question-options">
             {childData.options.map((option: string, optionIndex: number) => (
-              <Flex key={optionIndex} className="child-option-item" align="flex-start">
-                <span className="child-option-label">{String.fromCharCode(65 + optionIndex)}.</span>
-                <SafeMathRenderer html={option} className="child-option-content" />
+              <Flex
+                key={optionIndex}
+                className="child-option-item"
+                align="flex-start"
+              >
+                <span className="child-option-label">
+                  {String.fromCharCode(65 + optionIndex)}.
+                </span>
+                <SafeMathRenderer
+                  html={option}
+                  className="child-option-content"
+                />
               </Flex>
             ))}
           </div>
@@ -113,11 +137,7 @@ export const ChildQuestionList = ({ children }: ChildQuestionListProps) => {
   return (
     <Flex vertical gap={16} className="question-children">
       {children.map((child: any, childIndex: number) => (
-        <ChildQuestion
-          key={child.id}
-          child={child}
-          childIndex={childIndex}
-        />
+        <ChildQuestion key={child.id} child={child} childIndex={childIndex} />
       ))}
     </Flex>
   );

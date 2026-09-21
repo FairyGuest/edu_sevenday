@@ -1,0 +1,866 @@
+{
+ "class_id": "cls-g8-03",
+ "class_name": "八年级(3)班",
+ "snapshot_id": "snap-20260918-cls-g8-03",
+ "time_window": {
+  "preset": "month",
+  "start_date": "2026-08-18",
+  "end_date": "2026-09-18"
+ },
+ "filters": {
+  "time_windows": [
+   {
+    "key": "7d",
+    "label": "近 7 天"
+   },
+   {
+    "key": "1m",
+    "label": "近 1 个月"
+   },
+   {
+    "key": "3m",
+    "label": "近 3 个月"
+   },
+   {
+    "key": "custom",
+    "label": "自定义"
+   }
+  ],
+  "sources": [
+   "作业记录",
+   "考试记录",
+   "课堂互动",
+   "人机交互",
+   "自主练习"
+  ],
+  "dimension_types": [
+   "知识点",
+   "能力",
+   "素养",
+   "学习过程表现"
+  ],
+  "mastery_bands": [
+   "待巩固",
+   "练习中",
+   "较熟练",
+   "已掌握",
+   "证据不足"
+  ],
+  "evidence_strengths": [
+   "样本充足",
+   "样本偏少",
+   "久未更新"
+  ],
+  "goals": [
+   {
+    "goal_id": "goal-1",
+    "name": "理解函数概念，能判断具体情境中的函数关系"
+   },
+   {
+    "goal_id": "goal-2",
+    "name": "能借助图像解释一次函数的变化趋势与实际意义"
+   },
+   {
+    "goal_id": "goal-3",
+    "name": "能准确完成整式、根式、分式的基础运算"
+   },
+   {
+    "goal_id": "goal-4",
+    "name": "能选择恰当的判定定理完成简单推理"
+   },
+   {
+    "goal_id": "goal-5",
+    "name": "能从实际情境中建立一次函数模型并求解"
+   },
+   {
+    "goal_id": "goal-6",
+    "name": "养成审题—作答—订正的完整学习习惯"
+   }
+  ]
+ },
+ "nodes": [
+  {
+   "node_id": "kp-coordinate",
+   "name": "平面直角坐标系",
+   "chapter": "第6章 平面直角坐标系（七年级前置）",
+   "level": "L2",
+   "cluster": "function",
+   "mastery": 46,
+   "mastery_band": "待巩固",
+   "sample_count": 64,
+   "evidence_strength": "sufficient",
+   "evidence_strength_label": "样本充足",
+   "sources": [
+    "作业记录",
+    "考试记录",
+    "人机交互"
+   ],
+   "goal_ids": [
+    "goal-2",
+    "goal-5"
+   ],
+   "ability_keys": [
+    "representation_transfer",
+    "transfer_apply"
+   ],
+   "literacy_keys": [
+    "learning_motivation"
+   ],
+   "process_keys": [
+    "thinking_perspective"
+   ],
+   "explanation": "最近一次单元测关联题正确率 43%，低于近三次均值 59%，为本班薄弱簇节点。"
+  },
+  {
+   "node_id": "kp-congruent-judge",
+   "name": "三角形全等的判定",
+   "chapter": "第12章 全等三角形",
+   "level": "L4",
+   "cluster": "geo",
+   "mastery": 70,
+   "mastery_band": "较熟练",
+   "sample_count": 61,
+   "evidence_strength": "sufficient",
+   "evidence_strength_label": "样本充足",
+   "sources": [
+    "作业记录",
+    "考试记录",
+    "课堂互动"
+   ],
+   "goal_ids": [
+    "goal-4"
+   ],
+   "ability_keys": [
+    "problem_analysis",
+    "representation_transfer"
+   ],
+   "literacy_keys": [
+    "learning_interest"
+   ],
+   "process_keys": [
+    "class_participation"
+   ],
+   "explanation": "关联题正确率 58%，掌握较稳固，可作为后续综合题的支撑知识点。"
+  },
+  {
+   "node_id": "kp-axisymmetry",
+   "name": "轴对称",
+   "chapter": "第13章 轴对称",
+   "level": "L1",
+   "cluster": "geo",
+   "mastery": 70,
+   "mastery_band": "较熟练",
+   "sample_count": 23,
+   "evidence_strength": "stale",
+   "evidence_strength_label": "久未更新",
+   "sources": [
+    "作业记录",
+    "考试记录",
+    "课堂互动"
+   ],
+   "goal_ids": [
+    "goal-4"
+   ],
+   "ability_keys": [
+    "problem_analysis",
+    "representation_transfer"
+   ],
+   "literacy_keys": [
+    "learning_interest"
+   ],
+   "process_keys": [
+    "class_participation"
+   ],
+   "explanation": "最近一次关联记录停留在 2026-05-21，久未更新，建议在近期小测中补充证据。"
+  },
+  {
+   "node_id": "kp-integral-multiply",
+   "name": "整式的乘法",
+   "chapter": "第14章 整式的乘法与因式分解",
+   "level": "L3",
+   "cluster": "calc",
+   "mastery": 61,
+   "mastery_band": "练习中",
+   "sample_count": 46,
+   "evidence_strength": "sufficient",
+   "evidence_strength_label": "样本充足",
+   "sources": [
+    "作业记录",
+    "考试记录"
+   ],
+   "goal_ids": [
+    "goal-3"
+   ],
+   "ability_keys": [
+    "operation_reasoning",
+    "memorize_understand"
+   ],
+   "literacy_keys": [
+    "effort_level"
+   ],
+   "process_keys": [
+    "homework_process",
+    "homework_correction"
+   ],
+   "explanation": "关联题正确率 55%，处于练习巩固阶段，保持当前练习量即可。"
+  },
+  {
+   "node_id": "kp-multiply-formulas",
+   "name": "乘法公式",
+   "chapter": "第14章 整式的乘法与因式分解",
+   "level": "L3",
+   "cluster": "calc",
+   "mastery": 64,
+   "mastery_band": "练习中",
+   "sample_count": 39,
+   "evidence_strength": "sufficient",
+   "evidence_strength_label": "样本充足",
+   "sources": [
+    "作业记录",
+    "考试记录"
+   ],
+   "goal_ids": [
+    "goal-3"
+   ],
+   "ability_keys": [
+    "operation_reasoning",
+    "memorize_understand"
+   ],
+   "literacy_keys": [
+    "effort_level"
+   ],
+   "process_keys": [
+    "homework_process",
+    "homework_correction"
+   ],
+   "explanation": "关联题正确率 59%，处于练习巩固阶段，保持当前练习量即可。"
+  },
+  {
+   "node_id": "kp-common-factor",
+   "name": "用提公因式法分解因式",
+   "chapter": "第14章 整式的乘法与因式分解",
+   "level": "L3",
+   "cluster": "calc",
+   "mastery": 64,
+   "mastery_band": "练习中",
+   "sample_count": 55,
+   "evidence_strength": "sufficient",
+   "evidence_strength_label": "样本充足",
+   "sources": [
+    "作业记录",
+    "考试记录"
+   ],
+   "goal_ids": [
+    "goal-3"
+   ],
+   "ability_keys": [
+    "operation_reasoning",
+    "memorize_understand"
+   ],
+   "literacy_keys": [
+    "effort_level"
+   ],
+   "process_keys": [
+    "homework_process",
+    "homework_correction"
+   ],
+   "explanation": "关联题正确率 58%，处于练习巩固阶段，保持当前练习量即可。"
+  },
+  {
+   "node_id": "kp-factorization",
+   "name": "因式分解",
+   "chapter": "第14章 整式的乘法与因式分解",
+   "level": "L4",
+   "cluster": "calc",
+   "mastery": 63,
+   "mastery_band": "练习中",
+   "sample_count": 28,
+   "evidence_strength": "sufficient",
+   "evidence_strength_label": "样本充足",
+   "sources": [
+    "作业记录",
+    "考试记录"
+   ],
+   "goal_ids": [
+    "goal-3"
+   ],
+   "ability_keys": [
+    "operation_reasoning",
+    "memorize_understand"
+   ],
+   "literacy_keys": [
+    "effort_level"
+   ],
+   "process_keys": [
+    "homework_process",
+    "homework_correction"
+   ],
+   "explanation": "关联题正确率 55%，处于练习巩固阶段，保持当前练习量即可。"
+  },
+  {
+   "node_id": "kp-fraction",
+   "name": "分式",
+   "chapter": "第15章 分式",
+   "level": "L3",
+   "cluster": "calc",
+   "mastery": 67,
+   "mastery_band": "练习中",
+   "sample_count": 55,
+   "evidence_strength": "sufficient",
+   "evidence_strength_label": "样本充足",
+   "sources": [
+    "作业记录",
+    "考试记录"
+   ],
+   "goal_ids": [
+    "goal-3"
+   ],
+   "ability_keys": [
+    "operation_reasoning",
+    "memorize_understand"
+   ],
+   "literacy_keys": [
+    "effort_level"
+   ],
+   "process_keys": [
+    "homework_process",
+    "homework_correction"
+   ],
+   "explanation": "关联题正确率 61%，处于练习巩固阶段，保持当前练习量即可。"
+  },
+  {
+   "node_id": "kp-fraction-properties",
+   "name": "分式及其基本性质",
+   "chapter": "第15章 分式",
+   "level": "L2",
+   "cluster": "calc",
+   "mastery": 67,
+   "mastery_band": "练习中",
+   "sample_count": 68,
+   "evidence_strength": "sufficient",
+   "evidence_strength_label": "样本充足",
+   "sources": [
+    "作业记录",
+    "考试记录"
+   ],
+   "goal_ids": [
+    "goal-3"
+   ],
+   "ability_keys": [
+    "operation_reasoning",
+    "memorize_understand"
+   ],
+   "literacy_keys": [
+    "effort_level"
+   ],
+   "process_keys": [
+    "homework_process",
+    "homework_correction"
+   ],
+   "explanation": "关联题正确率 56%，处于练习巩固阶段，保持当前练习量即可。"
+  },
+  {
+   "node_id": "kp-fraction-calc",
+   "name": "分式的加法与减法",
+   "chapter": "第15章 分式",
+   "level": "L3",
+   "cluster": "calc",
+   "mastery": 66,
+   "mastery_band": "练习中",
+   "sample_count": 28,
+   "evidence_strength": "sufficient",
+   "evidence_strength_label": "样本充足",
+   "sources": [
+    "作业记录",
+    "考试记录"
+   ],
+   "goal_ids": [
+    "goal-3"
+   ],
+   "ability_keys": [
+    "operation_reasoning",
+    "memorize_understand"
+   ],
+   "literacy_keys": [
+    "effort_level"
+   ],
+   "process_keys": [
+    "homework_process",
+    "homework_correction"
+   ],
+   "explanation": "关联题正确率 62%，处于练习巩固阶段，保持当前练习量即可。"
+  },
+  {
+   "node_id": "kp-radical",
+   "name": "二次根式",
+   "chapter": "第16章 二次根式",
+   "level": "L2",
+   "cluster": "calc",
+   "mastery": 65,
+   "mastery_band": "练习中",
+   "sample_count": 21,
+   "evidence_strength": "sufficient",
+   "evidence_strength_label": "样本充足",
+   "sources": [
+    "作业记录",
+    "考试记录"
+   ],
+   "goal_ids": [
+    "goal-3"
+   ],
+   "ability_keys": [
+    "operation_reasoning",
+    "memorize_understand"
+   ],
+   "literacy_keys": [
+    "effort_level"
+   ],
+   "process_keys": [
+    "homework_process",
+    "homework_correction"
+   ],
+   "explanation": "关联题正确率 59%，处于练习巩固阶段，保持当前练习量即可。"
+  },
+  {
+   "node_id": "kp-radical-muldvd",
+   "name": "二次根式的乘除",
+   "chapter": "第16章 二次根式",
+   "level": "L3",
+   "cluster": "calc",
+   "mastery": 63,
+   "mastery_band": "练习中",
+   "sample_count": 18,
+   "evidence_strength": "sufficient",
+   "evidence_strength_label": "样本充足",
+   "sources": [
+    "作业记录",
+    "考试记录"
+   ],
+   "goal_ids": [
+    "goal-3"
+   ],
+   "ability_keys": [
+    "operation_reasoning",
+    "memorize_understand"
+   ],
+   "literacy_keys": [
+    "effort_level"
+   ],
+   "process_keys": [
+    "homework_process",
+    "homework_correction"
+   ],
+   "explanation": "关联题正确率 56%，处于练习巩固阶段，保持当前练习量即可。"
+  },
+  {
+   "node_id": "kp-radical-addsub",
+   "name": "二次根式的加减",
+   "chapter": "第16章 二次根式",
+   "level": "L3",
+   "cluster": "calc",
+   "mastery": 59,
+   "mastery_band": "练习中",
+   "sample_count": 75,
+   "evidence_strength": "sufficient",
+   "evidence_strength_label": "样本充足",
+   "sources": [
+    "作业记录",
+    "考试记录"
+   ],
+   "goal_ids": [
+    "goal-3"
+   ],
+   "ability_keys": [
+    "operation_reasoning",
+    "memorize_understand"
+   ],
+   "literacy_keys": [
+    "effort_level"
+   ],
+   "process_keys": [
+    "homework_process",
+    "homework_correction"
+   ],
+   "explanation": "关联题正确率 53%，虽处练习巩固阶段但掌握度不足 60，建议增加针对性变式练习。"
+  },
+  {
+   "node_id": "kp-pythagoras",
+   "name": "勾股定理及其应用",
+   "chapter": "第17章 勾股定理",
+   "level": "L4",
+   "cluster": "geo",
+   "mastery": 73,
+   "mastery_band": "较熟练",
+   "sample_count": 65,
+   "evidence_strength": "sufficient",
+   "evidence_strength_label": "样本充足",
+   "sources": [
+    "作业记录",
+    "考试记录",
+    "课堂互动"
+   ],
+   "goal_ids": [
+    "goal-4"
+   ],
+   "ability_keys": [
+    "problem_analysis",
+    "representation_transfer"
+   ],
+   "literacy_keys": [
+    "learning_interest"
+   ],
+   "process_keys": [
+    "class_participation"
+   ],
+   "explanation": "关联题正确率 65%，掌握较稳固，可作为后续综合题的支撑知识点。"
+  },
+  {
+   "node_id": "kp-parallelogram",
+   "name": "平行四边形",
+   "chapter": "第18章 平行四边形",
+   "level": "L3",
+   "cluster": "geo",
+   "mastery": 73,
+   "mastery_band": "证据不足",
+   "sample_count": 4,
+   "evidence_strength": "low_sample",
+   "evidence_strength_label": "样本偏少",
+   "sources": [
+    "作业记录",
+    "考试记录",
+    "课堂互动"
+   ],
+   "goal_ids": [
+    "goal-4"
+   ],
+   "ability_keys": [
+    "problem_analysis",
+    "representation_transfer"
+   ],
+   "literacy_keys": [
+    "learning_interest"
+   ],
+   "process_keys": [
+    "class_participation"
+   ],
+   "explanation": "近 30 天仅 4 条作答样本，暂按「证据不足」处理，不建议直接据此分层。"
+  },
+  {
+   "node_id": "kp-special-quad",
+   "name": "特殊的平行四边形",
+   "chapter": "第18章 平行四边形",
+   "level": "L4",
+   "cluster": "geo",
+   "mastery": 66,
+   "mastery_band": "练习中",
+   "sample_count": 35,
+   "evidence_strength": "sufficient",
+   "evidence_strength_label": "样本充足",
+   "sources": [
+    "作业记录",
+    "考试记录",
+    "课堂互动"
+   ],
+   "goal_ids": [
+    "goal-4"
+   ],
+   "ability_keys": [
+    "problem_analysis",
+    "representation_transfer"
+   ],
+   "literacy_keys": [
+    "learning_interest"
+   ],
+   "process_keys": [
+    "class_participation"
+   ],
+   "explanation": "关联题正确率 60%，处于练习巩固阶段，保持当前练习量即可。"
+  },
+  {
+   "node_id": "kp-function",
+   "name": "函数的概念",
+   "chapter": "第19章 一次函数",
+   "level": "L2",
+   "cluster": "function",
+   "mastery": 47,
+   "mastery_band": "待巩固",
+   "sample_count": 49,
+   "evidence_strength": "sufficient",
+   "evidence_strength_label": "样本充足",
+   "sources": [
+    "作业记录",
+    "考试记录",
+    "人机交互"
+   ],
+   "goal_ids": [
+    "goal-2",
+    "goal-5"
+   ],
+   "ability_keys": [
+    "representation_transfer",
+    "transfer_apply"
+   ],
+   "literacy_keys": [
+    "learning_motivation"
+   ],
+   "process_keys": [
+    "thinking_perspective"
+   ],
+   "explanation": "最近一次单元测关联题正确率 43%，低于近三次均值 59%，为本班薄弱簇节点。"
+  },
+  {
+   "node_id": "kp-function-image",
+   "name": "一次函数图像",
+   "chapter": "第19章 一次函数",
+   "level": "L2",
+   "cluster": "function",
+   "mastery": 53,
+   "mastery_band": "练习中",
+   "sample_count": 53,
+   "evidence_strength": "sufficient",
+   "evidence_strength_label": "样本充足",
+   "sources": [
+    "作业记录",
+    "考试记录",
+    "人机交互"
+   ],
+   "goal_ids": [
+    "goal-2",
+    "goal-5"
+   ],
+   "ability_keys": [
+    "representation_transfer",
+    "transfer_apply"
+   ],
+   "literacy_keys": [
+    "learning_motivation"
+   ],
+   "process_keys": [
+    "thinking_perspective"
+   ],
+   "explanation": "关联题正确率 44%，虽处练习巩固阶段但掌握度不足 60，建议增加针对性变式练习。"
+  },
+  {
+   "node_id": "kp-function-property",
+   "name": "一次函数的图象和性质",
+   "chapter": "第19章 一次函数",
+   "level": "L4",
+   "cluster": "function",
+   "mastery": 48,
+   "mastery_band": "待巩固",
+   "sample_count": 18,
+   "evidence_strength": "sufficient",
+   "evidence_strength_label": "样本充足",
+   "sources": [
+    "作业记录",
+    "考试记录",
+    "人机交互"
+   ],
+   "goal_ids": [
+    "goal-2",
+    "goal-5"
+   ],
+   "ability_keys": [
+    "representation_transfer",
+    "transfer_apply"
+   ],
+   "literacy_keys": [
+    "learning_motivation"
+   ],
+   "process_keys": [
+    "thinking_perspective"
+   ],
+   "explanation": "最近一次单元测关联题正确率 42%，低于近三次均值 58%，为本班薄弱簇节点。"
+  },
+  {
+   "node_id": "kp-function-application",
+   "name": "实际问题与一次函数",
+   "chapter": "第19章 一次函数",
+   "level": "L4",
+   "cluster": "function",
+   "mastery": 50,
+   "mastery_band": "练习中",
+   "sample_count": 40,
+   "evidence_strength": "sufficient",
+   "evidence_strength_label": "样本充足",
+   "sources": [
+    "作业记录",
+    "考试记录",
+    "人机交互"
+   ],
+   "goal_ids": [
+    "goal-2",
+    "goal-5"
+   ],
+   "ability_keys": [
+    "representation_transfer",
+    "transfer_apply"
+   ],
+   "literacy_keys": [
+    "learning_motivation"
+   ],
+   "process_keys": [
+    "thinking_perspective"
+   ],
+   "explanation": "关联题正确率 41%，虽处练习巩固阶段但掌握度不足 60，建议增加针对性变式练习。"
+  }
+ ],
+ "edges": [
+  {
+   "source": "kp-coordinate",
+   "target": "kp-function",
+   "relation_type": "prerequisite",
+   "explanation": "坐标系读图是理解函数图像的前置知识。",
+   "edge_id": "edge-cls-g8-03-1"
+  },
+  {
+   "source": "kp-function",
+   "target": "kp-function-image",
+   "relation_type": "prerequisite",
+   "explanation": "函数概念是认识一次函数图像的基础。",
+   "edge_id": "edge-cls-g8-03-2"
+  },
+  {
+   "source": "kp-function-image",
+   "target": "kp-function-property",
+   "relation_type": "prerequisite",
+   "explanation": "先会读图，才能归纳一次函数的图象和性质。",
+   "edge_id": "edge-cls-g8-03-3"
+  },
+  {
+   "source": "kp-function-property",
+   "target": "kp-function-application",
+   "relation_type": "prerequisite",
+   "explanation": "掌握图象和性质后，才能将其用于实际问题的分析与求解。",
+   "edge_id": "edge-cls-g8-03-4"
+  },
+  {
+   "source": "kp-integral-multiply",
+   "target": "kp-multiply-formulas",
+   "relation_type": "prerequisite",
+   "explanation": "整式乘法是一般法则，乘法公式是其特殊情形。",
+   "edge_id": "edge-cls-g8-03-5"
+  },
+  {
+   "source": "kp-multiply-formulas",
+   "target": "kp-common-factor",
+   "relation_type": "prerequisite",
+   "explanation": "乘法公式与提公因式法互为逆用方向，先乘后分。",
+   "edge_id": "edge-cls-g8-03-6"
+  },
+  {
+   "source": "kp-common-factor",
+   "target": "kp-factorization",
+   "relation_type": "prerequisite",
+   "explanation": "提公因式法是因式分解的第一步，常与公式法连用。",
+   "edge_id": "edge-cls-g8-03-7"
+  },
+  {
+   "source": "kp-fraction",
+   "target": "kp-fraction-properties",
+   "relation_type": "prerequisite",
+   "explanation": "分式的基本性质是分式变形与运算的依据。",
+   "edge_id": "edge-cls-g8-03-8"
+  },
+  {
+   "source": "kp-fraction-properties",
+   "target": "kp-fraction-calc",
+   "relation_type": "prerequisite",
+   "explanation": "通分须以分式基本性质为依据，再进行加减运算。",
+   "edge_id": "edge-cls-g8-03-9"
+  },
+  {
+   "source": "kp-radical",
+   "target": "kp-radical-muldvd",
+   "relation_type": "prerequisite",
+   "explanation": "二次根式的概念与性质是乘除运算的基础。",
+   "edge_id": "edge-cls-g8-03-10"
+  },
+  {
+   "source": "kp-radical-muldvd",
+   "target": "kp-radical-addsub",
+   "relation_type": "prerequisite",
+   "explanation": "先化简（乘除）再合并（加减）是根式运算的常规路径。",
+   "edge_id": "edge-cls-g8-03-11"
+  },
+  {
+   "source": "kp-congruent-judge",
+   "target": "kp-parallelogram",
+   "relation_type": "prerequisite",
+   "explanation": "全等三角形判定是证明平行四边形性质的主要工具。",
+   "edge_id": "edge-cls-g8-03-12"
+  },
+  {
+   "source": "kp-parallelogram",
+   "target": "kp-special-quad",
+   "relation_type": "prerequisite",
+   "explanation": "矩形、菱形、正方形均以平行四边形为基类扩展。",
+   "edge_id": "edge-cls-g8-03-13"
+  },
+  {
+   "source": "kp-multiply-formulas",
+   "target": "kp-factorization",
+   "relation_type": "same_chapter",
+   "explanation": "同属第14章：乘法公式正向展开、逆向分解，宜对照训练。",
+   "edge_id": "edge-cls-g8-03-14"
+  },
+  {
+   "source": "kp-radical-muldvd",
+   "target": "kp-radical-addsub",
+   "relation_type": "same_chapter",
+   "explanation": "同属第16章：乘除与加减共用最简二次根式口径。",
+   "edge_id": "edge-cls-g8-03-15"
+  },
+  {
+   "source": "kp-function-image",
+   "target": "kp-function-application",
+   "relation_type": "same_chapter",
+   "explanation": "同属第19章：建模结果最终要回到图像上解释。",
+   "edge_id": "edge-cls-g8-03-16"
+  },
+  {
+   "source": "kp-radical-addsub",
+   "target": "kp-fraction-calc",
+   "relation_type": "ability_related",
+   "explanation": "两节点共同指向「运算推理」能力：化简—通分—合并的程序性步骤同构。",
+   "edge_id": "edge-cls-g8-03-17"
+  },
+  {
+   "source": "kp-function-image",
+   "target": "kp-axisymmetry",
+   "relation_type": "ability_related",
+   "explanation": "两节点共同指向「表征转换」能力：图像的对称性与变换均需图形—符号互译。",
+   "edge_id": "edge-cls-g8-03-18"
+  },
+  {
+   "source": "kp-function-application",
+   "target": "kp-pythagoras",
+   "relation_type": "ability_related",
+   "explanation": "两节点共同指向「迁移应用」能力：在真实情境中选模、建模并检验。",
+   "edge_id": "edge-cls-g8-03-19"
+  },
+  {
+   "source": "kp-factorization",
+   "target": "kp-congruent-judge",
+   "relation_type": "ability_related",
+   "explanation": "两节点共同指向「问题分析」能力：都需要先辨结构、再选定理/方法。",
+   "edge_id": "edge-cls-g8-03-20"
+  }
+ ],
+ "stats": {
+  "n_nodes": 20,
+  "n_edges": 20,
+  "by_band": {
+   "待巩固": 3,
+   "较熟练": 3,
+   "练习中": 13,
+   "证据不足": 1
+  },
+  "weak_clusters": [
+   "平面直角坐标系",
+   "函数的概念",
+   "一次函数的图象和性质"
+  ]
+ },
+ "note": "班级知识图谱（中等偏弱：存在明显薄弱簇（补弱主路径演示））：掌握度着色 + 证据强度标记 + 筛选字段齐备"
+}

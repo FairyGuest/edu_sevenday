@@ -97,7 +97,10 @@ const QuickHomeworkForm = ({
         </Form.Item>
         <Form.Item label="作业附件:" name="file_urls">
           {uploadList?.length > 0 ? (
-            <UploadComponents flagStatus={flagStatus} uploadList={[...uploadList]} />
+            <UploadComponents
+              flagStatus={flagStatus}
+              uploadList={[...uploadList]}
+            />
           ) : (
             <>无</>
           )}

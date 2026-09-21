@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Alert, Button, Col, Form, Input, message, Modal,
-  Row, Select, Spin, Table, Tag,
+  Row, Select, Spin, Table, Tag, Tabs, DatePicker,
 } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import MarkdownRender from "@/components/MarkdownRender";
+import dayjs from "dayjs";
+import "./index.less";
 
 const { Option } = Select;
 
@@ -21,7 +23,7 @@ interface Receipt {
   queued_for_tagging: { qid: string }[];
   new_students: { student_id: string; name: string; display_id: string }[];
   mastery_updated: { n_clusters: number; clusters: string[] };
-  meta: { subject?: string; comment?: string };
+  meta: { subject?: string; comment?: string; exam_name?: string; exam_date?: string };
 }
 
 const RANDOM_COMMENTS = [
@@ -46,6 +48,7 @@ export default function ImportModal({ open, onClose, onDone, students, classId }
   open: boolean;
   onClose: () => void;
   onDone: () => void;
+  classId: string;
   students: { student_id: string; name: string; display_id: string }[];
 }) {
   const [form] = Form.useForm();
@@ -56,6 +59,7 @@ export default function ImportModal({ open, onClose, onDone, students, classId }
   const [examName, setExamName] = useState("2026 秋季期中考试");
   const [examDate, setExamDate] = useState(() => new Date().toISOString().slice(0, 10));
   const [submitting, setSubmitting] = useState(false);
+  const submittingRef = useRef(false);
   const [isNewStudent, setIsNewStudent] = useState(false);
   const [batches, setBatches] = useState<any[]>([]);
   const [tab, setTab] = useState<"form" | "receipt" | "batches">("form");
@@ -128,11 +132,17 @@ export default function ImportModal({ open, onClose, onDone, students, classId }
   const removeRow = (idx: number) => setRows((prev) => prev.filter((_, j) => j !== idx));
 
   const handleSubmit = async () => {
+    if (submittingRef.current) return;
+    try { await form.validateFields(); } catch { return; }
+    if (!examName.trim()) { message.warning("请填写考试名称"); return; }
+    if (!examDate || !dayjs(examDate).isValid()) { message.warning("请选择考试日期"); return; }
     if (!rows.length) { message.warning("请先添加练习记录"); return; }
     if (isNewStudent) {
       const name = form.getFieldValue("newName");
       if (!name || !name.trim()) { message.warning("请填写新学生姓名"); return; }
     }
+    if (submittingRef.current) return;
+    submittingRef.current = true;
     setSubmitting(true);
     try {
       const sid = form.getFieldValue("studentId");
@@ -171,6 +181,7 @@ export default function ImportModal({ open, onClose, onDone, students, classId }
     } catch (e: any) {
       message.error(`导入失败：${e.message}`);
     } finally {
+      submittingRef.current = false;
       setSubmitting(false);
     }
   };
@@ -261,14 +272,20 @@ export default function ImportModal({ open, onClose, onDone, students, classId }
   return (
     <Modal
       open={open}
-      onCancel={onClose}
+      onCancel={() => { if (!submittingRef.current) onClose(); }}
+      className="exam_import_modal"
+      centered
+      closable={!submitting}
+      maskClosable={!submitting}
+      keyboard={!submitting}
       width={720}
       title="导入考试记录"
-      styles={{ body: { maxHeight: "65vh", overflowY: "auto" } }}
+      styles={{ body: { maxHeight: "70vh", overflowY: "auto", paddingRight: 6 } }}
       footer={
         tab === "form" ? (
-          <div style={{ display: "flex", gap: 8 }}>
-            <Button onClick={onClose}>取消</Button>
+          <div className="exam_import_footer">
+            <span>共 {rows.length} 条练习记录</span>
+            <Button disabled={submitting} onClick={onClose}>取消</Button>
             <Button type="primary" loading={submitting} onClick={handleSubmit}>提交导入</Button>
           </div>
         ) : tab === "receipt" ? (
@@ -277,25 +294,17 @@ export default function ImportModal({ open, onClose, onDone, students, classId }
       }
     >
       {/* Tab 切换 */}
-      <div style={{ display: "flex", gap: 6, marginBottom: 12 }}>
-        {(["form", "receipt", "batches"] as const).map((k) => (
-          <Button
-            key={k}
-            type={tab === k ? "primary" : "default"}
-            size="small"
-            onClick={() => setTab(k)}
-            disabled={k === "receipt" && !receipt}
-          >
-            {k === "form" ? "填写表单" : k === "receipt" ? "导入回执" : `批次(${batches.length})`}
-          </Button>
-        ))}
-      </div>
+      <Tabs activeKey={tab} onChange={(key) => setTab(key as typeof tab)} items={[
+        { key: "form", label: "填写表单", disabled: submitting },
+        { key: "batches", label: `批次（${batches.length}）`, disabled: submitting },
+        ...(receipt ? [{ key: "receipt", label: "导入回执" }] : []),
+      ]} />
 
       {tab === "form" ? (
         <Spin spinning={submitting}>
-          <Form form={form} layout="vertical" size="small">
-            <Row gutter={10}>
-              <Col span={8}>
+          <Form form={form} layout="vertical">
+            <Row gutter={[16, 0]}>
+              <Col xs={24} sm={12}>
                 <Form.Item label="学生（账号ID）" name="studentId" style={{ marginBottom: 8 }}
                   rules={[{ required: !isNewStudent, message: "请选择学生" }]}>
                   <Select
@@ -304,7 +313,6 @@ export default function ImportModal({ open, onClose, onDone, students, classId }
                     optionFilterProp="label"
                     onChange={(v) => setIsNewStudent(v === "__NEW__")}
                     allowClear
-                    size="small"
                     options={[
                       { value: "__NEW__", label: "➕ 新学生（不在名单）" },
                       ...students.map((s) => ({ value: s.student_id, label: `${s.name}（${s.display_id}）` })),
@@ -312,30 +320,35 @@ export default function ImportModal({ open, onClose, onDone, students, classId }
                   />
                 </Form.Item>
               </Col>
-              <Col span={6}>
-                <Form.Item label="学科" style={{ marginBottom: 8 }}>
-                  <Select defaultValue="数学" size="small" style={{ width: "100%" }}>
+              <Col xs={24} sm={12}>
+                <Form.Item label="学科" required style={{ marginBottom: 8 }}>
+                  <Select defaultValue="数学" style={{ width: "100%" }}>
                     <Option value="数学">数学</Option>
                     <Option value="语文" disabled>语文（未开放）</Option>
                     <Option value="英语" disabled>英语（未开放）</Option>
                   </Select>
                 </Form.Item>
               </Col>
-              <Col span={10}>
+              <Col xs={24} sm={12}>
                 <Form.Item label="考试名称" required>
-            <Input size="small" placeholder="如：2026 秋季期中考试" value={examName}
-              onChange={(e) => setExamName(e.target.value)} />
-          </Form.Item>
-          <Form.Item label="考试日期" required>
-            <Input size="small" placeholder="YYYY-MM-DD" value={examDate}
-              onChange={(e) => setExamDate(e.target.value)} />
-          </Form.Item>
-          <Form.Item label="教师备注（选填）" style={{ marginBottom: 8 }}>
-                  <Input
-                    placeholder="如：基础薄弱，需补几何"
+                  <Input placeholder="如：2026 秋季期中考试" value={examName} maxLength={100}
+                    onChange={(e) => setExamName(e.target.value)} />
+                </Form.Item>
+              </Col>
+              <Col xs={24} sm={12}>
+                <Form.Item label="考试日期" required>
+                  <DatePicker value={examDate ? dayjs(examDate) : null} style={{ width: "100%" }}
+                    placeholder="选择考试日期" disabledDate={(date) => date.isAfter(dayjs(), "day")}
+                    onChange={(date) => setExamDate(date ? date.format("YYYY-MM-DD") : "")} />
+                </Form.Item>
+              </Col>
+              <Col span={24}>
+                <Form.Item label="教师备注（选填）">
+                  <Input.TextArea
+                    placeholder="补充学生的学习表现、薄弱环节或教学观察"
                     value={comment}
                     onChange={(e) => setComment(e.target.value)}
-                    size="small"
+                    maxLength={200} showCount autoSize={{ minRows: 3, maxRows: 5 }}
                   />
                 </Form.Item>
               </Col>
@@ -364,7 +377,7 @@ export default function ImportModal({ open, onClose, onDone, students, classId }
               />
             ) : null}
 
-            <div style={{ display: "flex", gap: 6, alignItems: "center", marginBottom: 6 }}>
+            <div className="exam_import_questions_head">
               <b style={{ fontSize: 12 }}>练习题目列表（数学）</b>
               <Button size="small" onClick={addRow}>＋ 添加</Button>
               <Button size="small" onClick={() => randomRows()}>🎲 随机生成</Button>
@@ -377,6 +390,7 @@ export default function ImportModal({ open, onClose, onDone, students, classId }
               size="small"
               bordered
               tableLayout="fixed"
+              scroll={{ x: 550 }}
             />
           </Form>
         </Spin>

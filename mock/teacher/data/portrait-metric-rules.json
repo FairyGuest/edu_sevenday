@@ -1,0 +1,867 @@
+{
+ "schema_version": "portrait-metric-rules-v1",
+ "timezone": "Asia/Shanghai",
+ "generated_as_of": "2026-09-20",
+ "sample_caliber_note": "事件数（去重 evidence_id 计 1）、题次数（题目数量）、量表分母（SUM(possible)）是三个不同口径；指标 sample_count 一律指事件数。",
+ "threshold_note": "min_sample_count / stale_after_days 为演示阈值，待业务与教研确认，不构成已验证的教育评价标准。",
+ "metrics": [
+  {
+   "key": "func_concept",
+   "name": "函数概念理解",
+   "dimension_key": "knowledge",
+   "definition": "能判断具体情境中的函数关系并说出变量依赖。口径：个人读数 = 100×SUM(earned)/SUM(possible)，分母为量表分（题次数×每题分），样本量为去重事件数，二者不可混称。",
+   "allowed_source_types": [
+    "homework",
+    "exam",
+    "practice",
+    "ai_tutor"
+   ],
+   "rubric_ids": [
+    "qa-4pt-v1"
+   ],
+   "related_knowledge_ids": [
+    "kp-function"
+   ],
+   "related_goal_ids": [
+    "goal-1"
+   ],
+   "min_sample_count": 3,
+   "stale_after_days": 30
+  },
+  {
+   "key": "coordinate_reading",
+   "name": "坐标系读图",
+   "dimension_key": "knowledge",
+   "definition": "能在平面直角坐标系中读点、判断位置与对称关系。口径：个人读数 = 100×SUM(earned)/SUM(possible)，分母为量表分（题次数×每题分），样本量为去重事件数，二者不可混称。",
+   "allowed_source_types": [
+    "homework",
+    "exam",
+    "practice",
+    "ai_tutor"
+   ],
+   "rubric_ids": [
+    "qa-4pt-v1"
+   ],
+   "related_knowledge_ids": [
+    "kp-coordinate"
+   ],
+   "related_goal_ids": [
+    "goal-2"
+   ],
+   "min_sample_count": 3,
+   "stale_after_days": 30
+  },
+  {
+   "key": "function_image_reading",
+   "name": "图像识读",
+   "dimension_key": "knowledge",
+   "definition": "能从一次函数图像读出交点、截距等基本信息。口径：个人读数 = 100×SUM(earned)/SUM(possible)，分母为量表分（题次数×每题分），样本量为去重事件数，二者不可混称。",
+   "allowed_source_types": [
+    "homework",
+    "exam",
+    "practice",
+    "ai_tutor"
+   ],
+   "rubric_ids": [
+    "qa-4pt-v1"
+   ],
+   "related_knowledge_ids": [
+    "kp-function-image"
+   ],
+   "related_goal_ids": [
+    "goal-2"
+   ],
+   "min_sample_count": 3,
+   "stale_after_days": 30
+  },
+  {
+   "key": "image_interpretation",
+   "name": "图像解释",
+   "dimension_key": "knowledge",
+   "definition": "能用“点—线—趋势”解释图像并落到实际意义（口头或书面）。口径：个人读数 = 100×SUM(earned)/SUM(possible)，分母为量表分（题次数×每题分），样本量为去重事件数，二者不可混称。",
+   "allowed_source_types": [
+    "exam",
+    "homework",
+    "practice",
+    "ai_tutor",
+    "classroom"
+   ],
+   "rubric_ids": [
+    "qa-4pt-v1",
+    "oral-expression-v1"
+   ],
+   "related_knowledge_ids": [
+    "kp-function-image"
+   ],
+   "related_goal_ids": [
+    "goal-2"
+   ],
+   "min_sample_count": 3,
+   "stale_after_days": 30
+  },
+  {
+   "key": "trend_judgment",
+   "name": "变化趋势判断",
+   "dimension_key": "knowledge",
+   "definition": "能依据 k 的符号判断 y 随 x 的变化趋势并借助图像验证。口径：个人读数 = 100×SUM(earned)/SUM(possible)，分母为量表分（题次数×每题分），样本量为去重事件数，二者不可混称。",
+   "allowed_source_types": [
+    "homework",
+    "exam",
+    "practice",
+    "ai_tutor"
+   ],
+   "rubric_ids": [
+    "qa-4pt-v1"
+   ],
+   "related_knowledge_ids": [
+    "kp-function-property"
+   ],
+   "related_goal_ids": [
+    "goal-2"
+   ],
+   "min_sample_count": 3,
+   "stale_after_days": 30
+  },
+  {
+   "key": "real_world_modeling",
+   "name": "实际问题建模",
+   "dimension_key": "knowledge",
+   "definition": "能从实际情境建立一次函数模型并求解、检验。口径：个人读数 = 100×SUM(earned)/SUM(possible)，分母为量表分（题次数×每题分），样本量为去重事件数，二者不可混称。",
+   "allowed_source_types": [
+    "homework",
+    "exam",
+    "practice",
+    "ai_tutor"
+   ],
+   "rubric_ids": [
+    "qa-4pt-v1"
+   ],
+   "related_knowledge_ids": [
+    "kp-function-application"
+   ],
+   "related_goal_ids": [
+    "goal-5"
+   ],
+   "min_sample_count": 3,
+   "stale_after_days": 30
+  },
+  {
+   "key": "memorize_understand",
+   "name": "识记理解",
+   "dimension_key": "ability",
+   "definition": "能再认再现概念、法则等基础事实。口径：个人读数 = 100×SUM(earned)/SUM(possible)，分母为量表分（题次数×每题分），样本量为去重事件数，二者不可混称。",
+   "allowed_source_types": [
+    "homework",
+    "exam",
+    "practice",
+    "ai_tutor"
+   ],
+   "rubric_ids": [
+    "qa-4pt-v1"
+   ],
+   "related_knowledge_ids": [
+    "kp-fraction-properties"
+   ],
+   "related_goal_ids": [
+    "goal-3"
+   ],
+   "min_sample_count": 3,
+   "stale_after_days": 30
+  },
+  {
+   "key": "representation_transfer",
+   "name": "表征转换",
+   "dimension_key": "ability",
+   "definition": "能在文字、表格、图像、解析式之间互译。口径：个人读数 = 100×SUM(earned)/SUM(possible)，分母为量表分（题次数×每题分），样本量为去重事件数，二者不可混称。",
+   "allowed_source_types": [
+    "exam",
+    "homework",
+    "practice",
+    "ai_tutor",
+    "classroom"
+   ],
+   "rubric_ids": [
+    "qa-4pt-v1",
+    "oral-expression-v1"
+   ],
+   "related_knowledge_ids": [
+    "kp-function-image"
+   ],
+   "related_goal_ids": [
+    "goal-2"
+   ],
+   "min_sample_count": 3,
+   "stale_after_days": 30
+  },
+  {
+   "key": "operation_reasoning",
+   "name": "运算推理",
+   "dimension_key": "ability",
+   "definition": "能按程序完成根式/分式等运算并说明算理。口径：个人读数 = 100×SUM(earned)/SUM(possible)，分母为量表分（题次数×每题分），样本量为去重事件数，二者不可混称。",
+   "allowed_source_types": [
+    "homework",
+    "exam",
+    "practice",
+    "ai_tutor"
+   ],
+   "rubric_ids": [
+    "qa-4pt-v1"
+   ],
+   "related_knowledge_ids": [
+    "kp-radical-addsub",
+    "kp-fraction-calc"
+   ],
+   "related_goal_ids": [
+    "goal-3"
+   ],
+   "min_sample_count": 3,
+   "stale_after_days": 30
+  },
+  {
+   "key": "problem_analysis",
+   "name": "问题分析",
+   "dimension_key": "ability",
+   "definition": "能辨析结构、选择恰当定理或方法切入问题。口径：个人读数 = 100×SUM(earned)/SUM(possible)，分母为量表分（题次数×每题分），样本量为去重事件数，二者不可混称。",
+   "allowed_source_types": [
+    "homework",
+    "exam",
+    "practice",
+    "ai_tutor"
+   ],
+   "rubric_ids": [
+    "qa-4pt-v1"
+   ],
+   "related_knowledge_ids": [
+    "kp-congruent-judge",
+    "kp-special-quad"
+   ],
+   "related_goal_ids": [
+    "goal-4"
+   ],
+   "min_sample_count": 3,
+   "stale_after_days": 30
+  },
+  {
+   "key": "transfer_apply",
+   "name": "迁移应用",
+   "dimension_key": "ability",
+   "definition": "能将已学模型迁移到新情境并完成求解。口径：个人读数 = 100×SUM(earned)/SUM(possible)，分母为量表分（题次数×每题分），样本量为去重事件数，二者不可混称。",
+   "allowed_source_types": [
+    "homework",
+    "exam",
+    "practice",
+    "ai_tutor"
+   ],
+   "rubric_ids": [
+    "qa-4pt-v1"
+   ],
+   "related_knowledge_ids": [
+    "kp-function-application"
+   ],
+   "related_goal_ids": [
+    "goal-5"
+   ],
+   "min_sample_count": 3,
+   "stale_after_days": 30
+  },
+  {
+   "key": "reflect_express",
+   "name": "反思表达",
+   "dimension_key": "ability",
+   "definition": "能对错误归因并以书面/口头表达改进措施。口径：个人读数 = 100×SUM(earned)/SUM(possible)，分母为量表分（题次数×每题分），样本量为去重事件数，二者不可混称。",
+   "allowed_source_types": [
+    "homework",
+    "exam",
+    "practice",
+    "ai_tutor"
+   ],
+   "rubric_ids": [
+    "qa-4pt-v1"
+   ],
+   "related_knowledge_ids": [],
+   "related_goal_ids": [
+    "goal-6"
+   ],
+   "min_sample_count": 3,
+   "stale_after_days": 30
+  },
+  {
+   "key": "learning_attitude",
+   "name": "学习态度",
+   "dimension_key": "literacy",
+   "definition": "以提交行为观察学习态度：按时率、完整度、自查习惯；不从答题正误推断。 口径：读数=100×SUM(earned)/SUM(possible)；样本量为去重事件数。",
+   "allowed_source_types": [
+    "homework"
+   ],
+   "rubric_ids": [
+    "attitude-v1"
+   ],
+   "related_knowledge_ids": [],
+   "related_goal_ids": [
+    "goal-6"
+   ],
+   "min_sample_count": 2,
+   "stale_after_days": 45
+  },
+  {
+   "key": "learning_interest",
+   "name": "学习兴趣",
+   "dimension_key": "literacy",
+   "definition": "以挑战题选做、拓展参与等自选行为观察兴趣；缺选做机会时缺测。 口径：读数=100×SUM(earned)/SUM(possible)；样本量为去重事件数。",
+   "allowed_source_types": [
+    "practice",
+    "homework"
+   ],
+   "rubric_ids": [
+    "challenge-v1"
+   ],
+   "related_knowledge_ids": [],
+   "related_goal_ids": [],
+   "min_sample_count": 2,
+   "stale_after_days": 45
+  },
+  {
+   "key": "learning_motivation",
+   "name": "学习动机",
+   "dimension_key": "literacy",
+   "definition": "以自主练习启动、完成与复盘等自我导向行为观察动机；不从正确率推断。 口径：读数=100×SUM(earned)/SUM(possible)；样本量为去重事件数。",
+   "allowed_source_types": [
+    "practice"
+   ],
+   "rubric_ids": [
+    "self-directed-v1"
+   ],
+   "related_knowledge_ids": [],
+   "related_goal_ids": [],
+   "min_sample_count": 2,
+   "stale_after_days": 45
+  },
+  {
+   "key": "effort_level",
+   "name": "努力程度",
+   "dimension_key": "literacy",
+   "definition": "以订正投入（是否订正、错因说明、复测）观察努力程度。 口径：读数=100×SUM(earned)/SUM(possible)；样本量为去重事件数。",
+   "allowed_source_types": [
+    "homework"
+   ],
+   "rubric_ids": [
+    "effort-v1"
+   ],
+   "related_knowledge_ids": [],
+   "related_goal_ids": [
+    "goal-6"
+   ],
+   "min_sample_count": 2,
+   "stale_after_days": 45
+  },
+  {
+   "key": "self_efficacy",
+   "name": "自我效能",
+   "dimension_key": "literacy",
+   "definition": "仅在学习反思单中以自评量表采集；无反思单则缺测。 口径：读数=100×SUM(earned)/SUM(possible)；样本量为去重事件数。",
+   "allowed_source_types": [
+    "practice"
+   ],
+   "rubric_ids": [
+    "self-efficacy-v1"
+   ],
+   "related_knowledge_ids": [],
+   "related_goal_ids": [],
+   "min_sample_count": 2,
+   "stale_after_days": 45
+  },
+  {
+   "key": "value_formation",
+   "name": "价值观养成",
+   "dimension_key": "literacy",
+   "definition": "拟通过小组互评（诚信/助人）采集，当前无已接入来源，全员缺测（见覆盖说明）。 口径：读数=100×SUM(earned)/SUM(possible)；样本量为去重事件数。",
+   "allowed_source_types": [],
+   "rubric_ids": [],
+   "related_knowledge_ids": [],
+   "related_goal_ids": [],
+   "min_sample_count": 2,
+   "stale_after_days": 45,
+   "note": "无 allowed 来源：所有窗口均返回 null，不自动推断。"
+  },
+  {
+   "key": "class_participation",
+   "name": "课堂参与",
+   "dimension_key": "process",
+   "definition": "以课堂互动（抢答、投票、演示、讨论）观察参与度。 口径：读数=100×SUM(earned)/SUM(possible)；样本量为去重事件数。",
+   "allowed_source_types": [
+    "classroom"
+   ],
+   "rubric_ids": [
+    "participation-v1"
+   ],
+   "related_knowledge_ids": [],
+   "related_goal_ids": [],
+   "min_sample_count": 2,
+   "stale_after_days": 21
+  },
+  {
+   "key": "listening_speaking",
+   "name": "倾听与发言",
+   "dimension_key": "process",
+   "definition": "以倾听完整度与主动发言质量观察。 口径：读数=100×SUM(earned)/SUM(possible)；样本量为去重事件数。",
+   "allowed_source_types": [
+    "classroom"
+   ],
+   "rubric_ids": [
+    "listening-v1"
+   ],
+   "related_knowledge_ids": [],
+   "related_goal_ids": [],
+   "min_sample_count": 2,
+   "stale_after_days": 21
+  },
+  {
+   "key": "cooperation",
+   "name": "合作表现",
+   "dimension_key": "process",
+   "definition": "以小组任务中的分工完成与协作贡献观察。 口径：读数=100×SUM(earned)/SUM(possible)；样本量为去重事件数。",
+   "allowed_source_types": [
+    "classroom"
+   ],
+   "rubric_ids": [
+    "group-task-v1"
+   ],
+   "related_knowledge_ids": [],
+   "related_goal_ids": [],
+   "min_sample_count": 2,
+   "stale_after_days": 21
+  },
+  {
+   "key": "thinking_perspective",
+   "name": "思维角度",
+   "dimension_key": "process",
+   "definition": "以一题多解、解法比较等行为观察思维广度。 口径：读数=100×SUM(earned)/SUM(possible)；样本量为去重事件数。",
+   "allowed_source_types": [
+    "classroom"
+   ],
+   "rubric_ids": [
+    "thinking-v1"
+   ],
+   "related_knowledge_ids": [],
+   "related_goal_ids": [],
+   "min_sample_count": 2,
+   "stale_after_days": 21
+  },
+  {
+   "key": "homework_process",
+   "name": "作业完成过程",
+   "dimension_key": "process",
+   "definition": "以提交及时性与完整性观察作业完成过程。 口径：读数=100×SUM(earned)/SUM(possible)；样本量为去重事件数。",
+   "allowed_source_types": [
+    "homework"
+   ],
+   "rubric_ids": [
+    "submission-v1"
+   ],
+   "related_knowledge_ids": [],
+   "related_goal_ids": [
+    "goal-6"
+   ],
+   "min_sample_count": 2,
+   "stale_after_days": 21
+  },
+  {
+   "key": "homework_correction",
+   "name": "订正过程",
+   "dimension_key": "process",
+   "definition": "以订正质量（重做、错因、复测）观察订正过程；原始时长与次数保留在事件可选字段。 口径：读数=100×SUM(earned)/SUM(possible)；样本量为去重事件数。",
+   "allowed_source_types": [
+    "homework"
+   ],
+   "rubric_ids": [
+    "correction-v1"
+   ],
+   "related_knowledge_ids": [],
+   "related_goal_ids": [
+    "goal-6"
+   ],
+   "min_sample_count": 2,
+   "stale_after_days": 21
+  }
+ ],
+ "rubrics": [
+  {
+   "rubric_id": "qa-4pt-v1",
+   "name": "作答计分量表（每题 0-4 分）",
+   "possible": 4,
+   "levels": [
+    {
+     "earned": 0,
+     "description": "未作答或完全错误"
+    },
+    {
+     "earned": 1,
+     "description": "有相关思路但结论错误"
+    },
+    {
+     "earned": 2,
+     "description": "部分正确，关键步骤缺失"
+    },
+    {
+     "earned": 3,
+     "description": "基本正确，仅少量过程分丢失"
+    },
+    {
+     "earned": 4,
+     "description": "完全正确且过程完整"
+    }
+   ]
+  },
+  {
+   "rubric_id": "oral-expression-v1",
+   "name": "口头表达量表",
+   "possible": 4,
+   "levels": [
+    {
+     "earned": 0,
+     "description": "未能开口描述"
+    },
+    {
+     "earned": 1,
+     "description": "只读出孤立数据点"
+    },
+    {
+     "earned": 2,
+     "description": "能读关键点，未说清趋势"
+    },
+    {
+     "earned": 3,
+     "description": "点与趋势说清，实际意义不完整"
+    },
+    {
+     "earned": 4,
+     "description": "点—线—趋势完整并联系实际意义"
+    }
+   ]
+  },
+  {
+   "rubric_id": "participation-v1",
+   "name": "课堂参与量表",
+   "possible": 4,
+   "levels": [
+    {
+     "earned": 0,
+     "description": "全程未参与"
+    },
+    {
+     "earned": 1,
+     "description": "被点名后被动应答"
+    },
+    {
+     "earned": 2,
+     "description": "主动应答一次"
+    },
+    {
+     "earned": 3,
+     "description": "主动发言并能复述他人观点"
+    },
+    {
+     "earned": 4,
+     "description": "多轮深度参与并推动讨论"
+    }
+   ]
+  },
+  {
+   "rubric_id": "listening-v1",
+   "name": "倾听与发言量表",
+   "possible": 4,
+   "levels": [
+    {
+     "earned": 0,
+     "description": "未倾听也未发言"
+    },
+    {
+     "earned": 1,
+     "description": "能倾听，发言需提示"
+    },
+    {
+     "earned": 2,
+     "description": "倾听完整，偶尔主动发言"
+    },
+    {
+     "earned": 3,
+     "description": "主动发言且表达完整"
+    },
+    {
+     "earned": 4,
+     "description": "主动发言并回应、补充他人"
+    }
+   ]
+  },
+  {
+   "rubric_id": "group-task-v1",
+   "name": "小组任务量表",
+   "possible": 4,
+   "levels": [
+    {
+     "earned": 0,
+     "description": "未参与分工"
+    },
+    {
+     "earned": 1,
+     "description": "挂名分工无产出"
+    },
+    {
+     "earned": 2,
+     "description": "完成自己分工"
+    },
+    {
+     "earned": 3,
+     "description": "完成分工并主动协调"
+    },
+    {
+     "earned": 4,
+     "description": "贡献关键思路并帮助同伴"
+    }
+   ]
+  },
+  {
+   "rubric_id": "thinking-v1",
+   "name": "思维角度量表",
+   "possible": 4,
+   "levels": [
+    {
+     "earned": 0,
+     "description": "未尝试"
+    },
+    {
+     "earned": 1,
+     "description": "单一解法照搬"
+    },
+    {
+     "earned": 2,
+     "description": "在提示下给出第二种思路"
+    },
+    {
+     "earned": 3,
+     "description": "自主给出两种思路并比较"
+    },
+    {
+     "earned": 4,
+     "description": "多思路比较并说明适用条件"
+    }
+   ]
+  },
+  {
+   "rubric_id": "submission-v1",
+   "name": "作业提交量表",
+   "possible": 4,
+   "levels": [
+    {
+     "earned": 0,
+     "description": "未提交"
+    },
+    {
+     "earned": 1,
+     "description": "迟交且不完整"
+    },
+    {
+     "earned": 2,
+     "description": "按时提交但不完整"
+    },
+    {
+     "earned": 3,
+     "description": "按时完整提交"
+    },
+    {
+     "earned": 4,
+     "description": "按时完整并附自查标记"
+    }
+   ]
+  },
+  {
+   "rubric_id": "attitude-v1",
+   "name": "学习态度量表（提交行为观察）",
+   "possible": 4,
+   "levels": [
+    {
+     "earned": 0,
+     "description": "多次缺交"
+    },
+    {
+     "earned": 1,
+     "description": "经常迟交"
+    },
+    {
+     "earned": 2,
+     "description": "偶有迟交"
+    },
+    {
+     "earned": 3,
+     "description": "按时提交卷面完整"
+    },
+    {
+     "earned": 4,
+     "description": "按时提交且主动补做拓展"
+    }
+   ]
+  },
+  {
+   "rubric_id": "correction-v1",
+   "name": "订正质量量表",
+   "possible": 4,
+   "levels": [
+    {
+     "earned": 0,
+     "description": "未订正"
+    },
+    {
+     "earned": 1,
+     "description": "仅抄写正确答案"
+    },
+    {
+     "earned": 2,
+     "description": "重做但未写错因"
+    },
+    {
+     "earned": 3,
+     "description": "重做并写明错因"
+    },
+    {
+     "earned": 4,
+     "description": "重做+错因+复测通过"
+    }
+   ]
+  },
+  {
+   "rubric_id": "effort-v1",
+   "name": "努力程度量表（订正投入）",
+   "possible": 4,
+   "levels": [
+    {
+     "earned": 0,
+     "description": "无订正记录"
+    },
+    {
+     "earned": 1,
+     "description": "提醒后补订正"
+    },
+    {
+     "earned": 2,
+     "description": "自行订正一次"
+    },
+    {
+     "earned": 3,
+     "description": "自行订正并复核"
+    },
+    {
+     "earned": 4,
+     "description": "订正后主动加练同类题"
+    }
+   ]
+  },
+  {
+   "rubric_id": "self-directed-v1",
+   "name": "自主学习量表（练习启动行为）",
+   "possible": 4,
+   "levels": [
+    {
+     "earned": 0,
+     "description": "未启动"
+    },
+    {
+     "earned": 1,
+     "description": "被提醒后启动且未完成"
+    },
+    {
+     "earned": 2,
+     "description": "自主启动未完成"
+    },
+    {
+     "earned": 3,
+     "description": "自主启动并完成"
+    },
+    {
+     "earned": 4,
+     "description": "自主启动、完成并复盘错题"
+    }
+   ]
+  },
+  {
+   "rubric_id": "challenge-v1",
+   "name": "挑战参与量表（选做行为）",
+   "possible": 4,
+   "levels": [
+    {
+     "earned": 0,
+     "description": "未选做"
+    },
+    {
+     "earned": 1,
+     "description": "选做未提交"
+    },
+    {
+     "earned": 2,
+     "description": "完成基础挑战题"
+    },
+    {
+     "earned": 3,
+     "description": "完成并主动求讲解"
+    },
+    {
+     "earned": 4,
+     "description": "持续选做并尝试拓展题"
+    }
+   ]
+  },
+  {
+   "rubric_id": "reflection-v1",
+   "name": "学习反思量表",
+   "possible": 4,
+   "levels": [
+    {
+     "earned": 0,
+     "description": "未提交反思"
+    },
+    {
+     "earned": 1,
+     "description": "只写结论无分析"
+    },
+    {
+     "earned": 2,
+     "description": "指出错误但无归因"
+    },
+    {
+     "earned": 3,
+     "description": "错误归因并列改进措施"
+    },
+    {
+     "earned": 4,
+     "description": "归因、措施并跟踪落实"
+    }
+   ]
+  },
+  {
+   "rubric_id": "self-efficacy-v1",
+   "name": "自我效能自评量表（反思单）",
+   "possible": 4,
+   "levels": [
+    {
+     "earned": 0,
+     "description": "自评完全学不会"
+    },
+    {
+     "earned": 1,
+     "description": "自评多数听不懂"
+    },
+    {
+     "earned": 2,
+     "description": "自评能懂但不会做"
+    },
+    {
+     "earned": 3,
+     "description": "自评能做但不敢确定"
+    },
+    {
+     "earned": 4,
+     "description": "自评能独立完成并愿意讲解"
+    }
+   ]
+  }
+ ]
+}

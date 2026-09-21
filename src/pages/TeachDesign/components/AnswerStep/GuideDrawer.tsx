@@ -42,7 +42,11 @@ const GuideDrawer = (props: any) => {
   return (
     <>
       <div className="affix-guide-btn" onClick={showDrawer}>
-        <img style={{ width: '48px', height: '48px' }} src={require('@/assets/teachingplanguide.png')} alt="" />
+        <img
+          style={{ width: "48px", height: "48px" }}
+          src={require("@/assets/teachingplanguide.png")}
+          alt=""
+        />
       </div>
       <Drawer
         open={open}
@@ -81,7 +85,9 @@ const GuideDrawer = (props: any) => {
               </Dropdown>
               <Button
                 type="text"
-                icon={<ZYIcon type={fullScreen ? "icon_fold" : "icon_unfold"} />}
+                icon={
+                  <ZYIcon type={fullScreen ? "icon_fold" : "icon_unfold"} />
+                }
                 onClick={() => setFullScreen(!fullScreen)}
               >
                 {fullScreen ? "收起" : "全览"}

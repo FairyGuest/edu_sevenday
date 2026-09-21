@@ -1,6 +1,22 @@
 import { useState, useEffect, useRef } from "react";
-import { connect, history, useDispatch, useLocation, useRequest } from "@umijs/max";
-import { Button, Dropdown, Modal, Tag, Form, Input, Select, TreeSelect, message } from "antd";
+import {
+  connect,
+  history,
+  useDispatch,
+  useLocation,
+  useRequest,
+} from "@umijs/max";
+import {
+  Button,
+  Dropdown,
+  Modal,
+  Tag,
+  Form,
+  Input,
+  Select,
+  TreeSelect,
+  message,
+} from "antd";
 import ZYIcon from "@/components/ZYIcon";
 import Editor from "./components/Editor";
 // import Evaluate from "./components/Evaluate";
@@ -104,7 +120,7 @@ const Detail = (props: any) => {
       okText: "确定", // 确认按钮文字
       onOk: () => history.push("/"),
     });
-  }
+  };
   // 发起评估点击事件
   const onEvaluateClick = () => {
     if (detailData?.evaluate_score) {

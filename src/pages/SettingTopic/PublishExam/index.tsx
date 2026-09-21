@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { Button, Image } from "antd";
+import { ArrowLeftOutlined } from "@ant-design/icons";
 import { history, useLocation } from "@umijs/max";
 import Breadcrumb from "../components/Breadcrumb";
 import { useTeacherContext } from "@/components/LayoutSider";
@@ -32,39 +33,48 @@ const PublishExam = () => {
   const [previewOpen, setPreviewOpen] = useState(false);
   const [previewImage, setPreviewImage] = useState("");
 
-  const {
-    form,
-    examId,
-    uploadList,
-    flagStatus,
-    details,
-    loading,
-    onFinish,
-  } = useQuickHomework({
-    courseId,
-    homeworkType,
-    status,
-    examIdFromUrl: searchParams.get("examId"),
-  });
+  const { form, examId, uploadList, flagStatus, details, loading, onFinish } =
+    useQuickHomework({
+      courseId,
+      homeworkType,
+      status,
+      examIdFromUrl: searchParams.get("examId"),
+    });
 
   const isPublishMode = homeworkType === HOMEWORK_TYPES.PUBLISH;
   const isLookMode = homeworkType === HOMEWORK_TYPES.LOOK;
+  const returnToWorkbench = () =>
+    history.push(
+      `/homework?sub=assign${courseId ? `&courseId=${encodeURIComponent(courseId)}` : ""}`,
+    );
 
   return (
     <div className="setting_homework_box">
+      <Button
+        className="homework-back"
+        aria-label="返回作业工作台"
+        type="text"
+        icon={<ArrowLeftOutlined />}
+        onClick={returnToWorkbench}
+      >
+        返回作业工作台
+      </Button>
       <Breadcrumb
         items={[
           {
-            onClick: () => history.push(`/setTopic?courseId=${courseId}`),
+            title: "作业下发",
+            onClick: returnToWorkbench,
           },
           { title: getHomeworkPageTitle(homeworkType) },
         ]}
       />
       <div className="setting_homework_title_box">
-        <div className="setting_homework_title_text">{getHomeworkContentTitle(homeworkType)}</div>
+        <div className="setting_homework_title_text">
+          {getHomeworkContentTitle(homeworkType)}
+        </div>
         {isPublishMode && (
           <div className="setting_homework_save_cancel_btn_box">
-            <Button onClick={() => history.push(`/setTopic?courseId=${courseId}`)}>取消</Button>
+            <Button onClick={returnToWorkbench}>取消</Button>
             <Button
               type="primary"
               loading={publishLoading}
@@ -76,7 +86,11 @@ const PublishExam = () => {
         )}
         {!isPublishMode && !isLookMode && (
           <div className="setting_homework_save_cancel_btn_box">
-            <Button type="primary" loading={loading} onClick={() => form.submit()}>
+            <Button
+              type="primary"
+              loading={loading}
+              onClick={() => form.submit()}
+            >
               保存
             </Button>
           </div>

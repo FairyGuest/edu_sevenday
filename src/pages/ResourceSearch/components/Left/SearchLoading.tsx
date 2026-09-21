@@ -1,6 +1,6 @@
-import React from 'react';
-import { Spin } from 'antd';
-import './SearchLoading.less';
+import React from "react";
+import { Spin } from "antd";
+import "./SearchLoading.less";
 
 const SearchLoading: React.FC = () => {
   return (

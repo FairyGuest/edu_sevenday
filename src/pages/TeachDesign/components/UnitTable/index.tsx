@@ -9,7 +9,9 @@ import "./index.less";
 
 const UnitTable = (props: any) => {
   const { unitContent = {}, handlePlan } = props;
-  const { leftChatLoading } = useSelector((state: any) => state.teachDesginModel);
+  const { leftChatLoading } = useSelector(
+    (state: any) => state.teachDesginModel,
+  );
 
   const tableRef = useRef<any>(null);
   const [columns, setColumns] = useState<any[]>([]); // 表格列配置
@@ -79,9 +81,11 @@ const UnitTable = (props: any) => {
       dataIndex: "core_task",
       key: "core_task",
       width: 200,
-      render: (text: string) => <div className="text-ellipsis">
-        <MarkdownRender>{text}</MarkdownRender>
-      </div>,
+      render: (text: string) => (
+        <div className="text-ellipsis">
+          <MarkdownRender>{text}</MarkdownRender>
+        </div>
+      ),
     },
     {
       title: "课时目标",
@@ -141,9 +145,11 @@ const UnitTable = (props: any) => {
       dataIndex: "evaluation_focus",
       key: "evaluation_focus",
       width: 200,
-      render: (text: string) => <div className="text-ellipsis">
-        <MarkdownRender>{text}</MarkdownRender>
-      </div>,
+      render: (text: string) => (
+        <div className="text-ellipsis">
+          <MarkdownRender>{text}</MarkdownRender>
+        </div>
+      ),
     },
     {
       title: "评价与成果",

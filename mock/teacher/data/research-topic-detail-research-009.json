@@ -1,0 +1,83 @@
+{
+ "topic": {
+  "topic_id": "research-009",
+  "title": "单元测命题如何与画像薄弱簇对齐？",
+  "content": "常出现“考完才发现命题和班级真实薄弱点对不上”。打算做一张“命题双向细目表 × 画像薄弱簇”的对齐模板，命题时先看图谱再定题。请大家对模板提意见。",
+  "author_id": "t-004",
+  "author_name": "吴老师",
+  "subject": "数学",
+  "grade": "g8",
+  "class_scope": [
+   "cls-g8-01",
+   "cls-g8-02",
+   "cls-g8-03"
+  ],
+  "related_knowledge_ids": [
+   "kp-radical-addsub",
+   "kp-function-image"
+  ],
+  "related_dimension_keys": [
+   "knowledge"
+  ],
+  "evidence_summary": "对照 9 月单元测：图谱待巩固/证据不足节点中仅约半数在卷面覆盖 ≥2 题。",
+  "status": "strategy_formed",
+  "tags": [
+   "命题",
+   "教-学-评一致"
+  ],
+  "created_at": "2026-09-13 13:45"
+ },
+ "replies": [
+  {
+   "reply_id": "reply-009-01",
+   "topic_id": "research-009",
+   "author_id": "t-002",
+   "author_name": "李老师",
+   "content": "模板思路好。建议加一列“证据强度”：样本偏少的薄弱点不配大分值，先小题补样本。",
+   "evidence_refs": [],
+   "created_at": "2026-09-13 14:32",
+   "liked_count": 6
+  },
+  {
+   "reply_id": "reply-009-02",
+   "topic_id": "research-009",
+   "author_id": "t-007",
+   "author_name": "冯老师",
+   "content": "再补一列“考后回填”：考完后把各节点正确率回写图谱，下次命题就能看到“测过但没测好”的节点。",
+   "evidence_refs": [],
+   "created_at": "2026-09-13 15:30",
+   "liked_count": 7
+  },
+  {
+   "reply_id": "reply-009-03",
+   "topic_id": "research-009",
+   "author_id": "t-008",
+   "author_name": "陈老师",
+   "content": "我们的细目表已经按这个改了：薄弱簇节点覆盖分值不低于 35%，新增节点（新课）不超过 20%，其余巩固。下次月考后给大家看回写效果。",
+   "evidence_refs": [],
+   "created_at": "2026-09-13 16:39",
+   "liked_count": 5
+  },
+  {
+   "reply_id": "reply-009-04",
+   "topic_id": "research-009",
+   "author_id": "t-004",
+   "author_name": "吴老师",
+   "content": "对齐模板已沉淀为共识策略（含分值配比建议），欢迎各班月考命题时引用。",
+   "evidence_refs": [],
+   "created_at": "2026-09-13 17:37",
+   "liked_count": 4
+  }
+ ],
+ "strategies": [
+  {
+   "strategy_id": "strategy-009",
+   "topic_id": "research-009",
+   "title": "命题双向细目表 × 画像薄弱簇对齐模板",
+   "content": "命题前导出班级图谱：待巩固/练习中节点覆盖分值 ≥35%（其中样本充足者可配解答题）；证据不足节点仅配小题补样本；已掌握节点 ≤20% 且以综合题形式出现；考后 3 日内将各节点正确率回写图谱。",
+   "applicable_scene": "单元测/月考命题与考后分析",
+   "evidence_summary": "试用于 9 月月考：薄弱簇覆盖分值 28%→41%，考后图谱回写率 100%。",
+   "can_apply_to_plan": true
+  }
+ ]
+}

@@ -19,12 +19,24 @@ export default {
     chapterList: [], // 章节目录选项
     classTypeList: [], // 课型设置选项
     classInfo: {}, // 班型信息
+    importedClasses: [], // 按班级保存学情快照，供预览与生成共同消费
+    importClassOpen: false,
     gradeDocId: {}, // 年级、教材id
     chapterInfo: {}, // 章节目录信息
     expandedKeys: [], // 章节目录展开的key
   },
 
   reducers: {
+    updateImportedPreview(state: any, { payload }: any) {
+      return {
+        ...state,
+        importedClasses: state.importedClasses.map((item: any) =>
+          item.class_id === payload.class_id
+            ? { ...item, chapter: payload.chapter, preview: payload.preview }
+            : item,
+        ),
+      };
+    },
     updateState(state: any, { res }: any) {
       // 更新state
       return {

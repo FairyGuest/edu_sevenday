@@ -1,14 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { connect, useDispatch, useLocation } from "@umijs/max";
-import { Alert, message } from "antd";
+import { Alert } from "antd";
 import { replacePageQuery } from "@/utils/pageQuery";
-import dayjs, { Dayjs } from "dayjs";
-
 import StudentSearchList from "../StudentSearchList";
 import StudentProfilePanel from "../StudentProfilePanel";
 import "./index.less";
-
-const ALL_SOURCES = ["作业记录", "人机交互", "自主练习", "考试记录"];
+import { usePortrait, useProfileScope } from "@/features/portraits/hooks";
 
 /**
  * G2 个人学情 Tab：左侧学生列表（G3 搜索/排序）+ 右侧个人学情整页（G5）。
@@ -17,7 +14,7 @@ const ALL_SOURCES = ["作业记录", "人机交互", "自主练习", "考试记�
  * 数据复用 teacherProfileModel（个人画像/证据），建议走 /teacher/profile/suggestions。
  */
 const PersonalAnalysis = (props: any) => {
-  const { analysisModel, teacherProfileModel, resourceSearchModel } = props;
+  const { analysisModel, teacherProfileModel } = props;
   const dispatch = useDispatch();
   const location = useLocation();
   const profile = teacherProfileModel?.profile;
@@ -27,24 +24,14 @@ const PersonalAnalysis = (props: any) => {
   const classReady = !!classId && (!requestedClass || requestedClass === classId) && !analysisModel?.classSelectionLoading;
   const [selectedId, setSelectedId] = useState<string>("");
   const selectedRef = useRef<string>("");
-  const [sources, setSources] = useState<string[]>(ALL_SOURCES);
-  const [dateRange, setDateRange] = useState<[Dayjs | null, Dayjs | null]>([
-    dayjs().startOf("month"),
-    dayjs(),
-  ]);
+  const { sources, setSources, dateRange, setDateRange, scope } = useProfileScope();
+  const classPortrait = usePortrait(classReady ? classId : "");
+  const portrait = usePortrait(classReady ? classId : "", selectedId);
   const query = new URLSearchParams(location.search);
   const scopeQuery = [query.get("start_date"), query.get("end_date"), query.get("sources"), query.get("cluster")].join("|");
   const [cluster, setCluster] = useState("");
   useEffect(() => {
     const q = new URLSearchParams(location.search);
-    if (q.has("start_date") || q.has("end_date")) {
-      const parse = (v: string | null) => v && dayjs(v).isValid() ? dayjs(v) : null;
-      setDateRange([parse(q.get("start_date")), parse(q.get("end_date"))]);
-    }
-    if (q.has("sources")) {
-      const selected = (q.get("sources") || "").split(",").filter(s => ALL_SOURCES.includes(s));
-      if (selected.length) setSources(selected);
-    }
     setCluster(q.get("cluster") || "");
   }, [scopeQuery]);
   // URL 深链初始学生（仅首次消费）
@@ -125,6 +112,7 @@ const PersonalAnalysis = (props: any) => {
       return;
     }
     const wanted = analysisModel?.personalStudentId || urlSid;
+    if (!wanted && !selectedRef.current && classPortrait.loading) return;
     if (wanted && students.some((s: any) => s.student_id === wanted)) {
       if (wanted !== selectedRef.current) select(wanted);
       // 消费完即清（避免切换班级后被旧值拉回）
@@ -132,10 +120,11 @@ const PersonalAnalysis = (props: any) => {
         dispatch({ type: "analysisModel/updateState", res: { personalStudentId: null } });
       }
     } else if (wanted || !selectedRef.current || !students.some((s: any) => s.student_id === selectedRef.current)) {
-      select(students[0].student_id);
+      const covered = classPortrait.data?.available_student_ids || [];
+      select((students.find((s: any) => covered.includes(s.student_id)) || students[0]).student_id);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [students, classId, classReady, urlSid, analysisModel?.personalStudentId]);
+  }, [students, classId, classReady, urlSid, analysisModel?.personalStudentId, classPortrait.data, classPortrait.loading]);
 
   useEffect(() => {
     if (classReady && profile?.class_id === classId && students.some((s: any) => s.student_id === selectedId)) fetchStudent(selectedId);
@@ -144,17 +133,6 @@ const PersonalAnalysis = (props: any) => {
   const selectStudent = (sid: string) => {
     if (sid === selectedRef.current) return;
     select(sid);
-  };
-
-  const toggleSource = (src: string) => {
-    const next = sources.includes(src)
-      ? (sources.length === 1 ? null : sources.filter((x) => x !== src))
-      : [...sources, src];
-    if (!next) {
-      message.warning("请至少选择一个数据来源");
-      return;
-    }
-    setSources(next);
   };
 
   /** v2.0-I：打开 AI 助教（建议已融入助手面板展示与执行） */
@@ -223,13 +201,15 @@ const PersonalAnalysis = (props: any) => {
             action={<a onClick={() => fetchStudent(selectedId)}>重试</a>} />
         ) : null}
         <StudentProfilePanel
+          portrait={portrait}
+          scope={scope}
+          classId={classId}
+          onSources={setSources}
           detail={classReady && profile?.class_id === classId && teacherProfileModel?.studentDetail?.student_id === selectedId ? teacherProfileModel.studentDetail : null}
           evidence={teacherProfileModel?.evidenceLoading || teacherProfileModel?.evidenceError ? [] : teacherProfileModel?.evidence || []}
           suggestions={teacherProfileModel?.studentSuggestions?.student_id === selectedId ? teacherProfileModel.studentSuggestions.suggestions : []}
           loading={analysisModel?.classSelectionLoading || teacherProfileModel?.detailLoading || teacherProfileModel?.profileLoading}
           sources={sources}
-          allSources={ALL_SOURCES}
-          onToggleSource={toggleSource}
           dateRange={dateRange}
           onDateRange={setDateRange}
           onOpenAssistant={openAssistant}

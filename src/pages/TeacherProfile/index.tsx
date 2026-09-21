@@ -1,31 +1,28 @@
 import { useEffect, useState } from "react";
 import { connect } from "@umijs/max";
-import { Alert, Button, Card, DatePicker, message, Segmented, Select, Skeleton, Tag, Tooltip, Upload } from "antd";
+import { Alert, Button, Card, message, Segmented, Skeleton, Tooltip } from "antd";
 import {
   ReloadOutlined,
   UploadOutlined,
-  FilterOutlined,
   ClockCircleOutlined,
-  AlertOutlined,
   BulbOutlined,
-  SafetyCertificateOutlined,
-  RiseOutlined,
   ExperimentOutlined,
 } from "@ant-design/icons";
 import { history } from "@umijs/max";
-import dayjs, { Dayjs } from "dayjs";
 
 import ClusterTable from "./components/ClusterTable";
 import ImportModal from "./components/ImportModal";
 import KnowledgeGraph from "./components/KnowledgeGraph";
 import ProfileCharts from "./components/ProfileCharts";
-import StudentList from "./components/StudentList";
-import DimensionCards from "./components/DimensionCards";
+import PortraitOverview from "@/features/portraits/PortraitOverview";
+import EvidenceGraph from "@/features/portraits/EvidenceGraph";
+import ScopeFilters from "@/features/portraits/ScopeFilters";
+import { usePortrait, useProfileScope } from "@/features/portraits/hooks";
 import OverviewGrid from "./components/OverviewGrid";
 import { getDataService, invalidateProfileReads } from "./services";
 import "./index.less";
 
-const ALL_SOURCES = ["作业记录", "人机交互", "自主练习", "考试记录"];
+// 能力等级图例：知识图谱子页（kgraph）页头使用
 const LEVEL_LEGEND = [
   { short: "L1", label: "了解", color: "#52607a", verb: "了解 / 知道 / 识别", desc: "能再认再现，识别基本概念与符号" },
   { short: "L2", label: "理解", color: "#2563eb", verb: "理解 / 描述 / 说明", desc: "能解释含义、举例说明，明白为什么" },
@@ -33,10 +30,10 @@ const LEVEL_LEGEND = [
   { short: "L4", label: "综合", color: "#db2777", verb: "综合 / 迁移 / 建模", desc: "能在新情境中组合应用、建模探究" },
 ];
 const BAND_LEGEND: [string, string, string][] = [
-  ["待巩固", "<50", "#e05d62"],
-  ["练习中", "50–70", "#e8a23d"],
-  ["较熟练", "70–85", "#c0a83e"],
-  ["已掌握", "≥85", "#4f9e70"],
+  ["待巩固", "<50%", "#F76964"],
+  ["练习中", "51%-70%", "#8EB6FE"],
+  ["较熟练", "71%-85%", "#1C6CFF"],
+  ["已掌握", ">86%", "#1FD479"],
 ];
 
 /**
@@ -51,12 +48,9 @@ const TeacherProfile = (props: any) => {
   const { classes, profile: storedProfile, loading, dispatch, analysisModel } = props;
   const classId = analysisModel?.selectedClass?.value || "";
   const profile = storedProfile?.class_id === classId ? storedProfile : null;
-  const [sources, setSources] = useState<string[]>(ALL_SOURCES);
-  // A5 时间维度：自定义起止日期（默认本月）
-  const [dateRange, setDateRange] = useState<[Dayjs | null, Dayjs | null]>([
-    dayjs().startOf("month"),
-    dayjs(),
-  ]);
+  const { sources, setSources, dateRange, setDateRange, scope } = useProfileScope();
+  const portrait = usePortrait(classId);
+  // A5 时间维度：默认近3个月（Figma 筛选栏为预设按钮组）
   const [importOpen, setImportOpen] = useState(false);  // 知识点掌握分布（版本一默认表格；版本二为"知识图谱"tab 独立子页面，这里保留快速切换）
   const [distView, setDistView] = useState<"graph" | "table">("table");
   const classList = classes || [];
@@ -145,25 +139,13 @@ const TeacherProfile = (props: any) => {
     return () => { dead = true; };
   }, [classId]);
 
-  const toggleSource = (src: string) => {
-    setSources((prev) => {
-      if (prev.includes(src)) {
-        if (prev.length === 1) {
-          message.warning("请至少选择一个数据来源");
-          return prev;
-        }
-        return prev.filter((x) => x !== src);
-      }
-      return [...prev, src];
-    });
-  };
-
   const recalc = () => {
     if (!sources.length) {
       message.warning("请至少选择一个数据来源（全不选将无法计算画像）");
       return;
     }
     invalidateProfileReads();
+    portrait.retry();
     dispatch({
       type: "teacherProfileModel/getLatest",
       apiUrl: "classProfileUrl",
@@ -178,14 +160,6 @@ const TeacherProfile = (props: any) => {
     });
   };
 
-  // G4 联动：点击学生 → 切换到「个人学情」Tab 并选中该生（抽屉已下线，避免两套个人画像并存）
-  const openStudent = (sid: string) => {
-    dispatch({
-      type: "analysisModel/updateState",
-      res: { currentAnalysisTab: "personal", personalStudentId: sid },
-    });
-  };
-
   const cards = profile?.cards || {};
   const placeholder = !classId && !analysisModel?.classSelectionLoading
     ? <Alert type="info" message="暂无可查看的班级，请检查班级选择" />
@@ -197,6 +171,8 @@ const TeacherProfile = (props: any) => {
   if (variant === "kgraph") {
     return (
       <div className="teacher_profile_container">
+        <ScopeFilters sources={sources} dateRange={dateRange} onSources={setSources} onDateRange={setDateRange} />
+        {portrait.error ? <Alert type="warning" message={portrait.error} action={<Button onClick={portrait.retry}>重试</Button>} /> : null}
         <div aria-busy={loading}>
           {profile ? (
             <div className="teacher_profile_card">
@@ -216,7 +192,7 @@ const TeacherProfile = (props: any) => {
                   </span>
                 </div>
               </div>
-              <KnowledgeGraph graph={profile.kgraph} height={660} />
+              {portrait.loading ? <Skeleton active /> : <EvidenceGraph data={portrait.data} scope={scope} classId={classId} />}
             </div>
           ) : placeholder}
         </div>
@@ -225,55 +201,10 @@ const TeacherProfile = (props: any) => {
   }
 
   return (
-    <div className="teacher_profile_container">
-      {/* ===== 筛选栏：来源（班级切换统一由页头选择器负责）===== */}
-      <Card size="small" className="teacher_profile_filter">
-        <div className="filter-row">
-          <span className="filter-class-name">
-            {classList.find((c: any) => c.class_id === (classId || classList[0]?.class_id))?.class_name || ""}
-          </span>
-          <DatePicker.RangePicker
-            size="small"
-            allowEmpty={[false, false]}
-            value={dateRange as any}
-            onChange={(vals) => setDateRange(vals as [Dayjs | null, Dayjs | null])}
-            presets={[
-              { label: "本周", value: [dayjs().startOf("week"), dayjs()] },
-              { label: "本月", value: [dayjs().startOf("month"), dayjs()] },
-              { label: "近三个月", value: [dayjs().subtract(3, "month"), dayjs()] },
-              { label: "本学期", value: [dayjs().subtract(6, "month"), dayjs()] },
-            ]}
-          />
-          <div className="filter-spacer" />
-          {profile?.updated_at ? (
-            <span className="filter-updated">
-              <ClockCircleOutlined />
-              画像更新于 {profile.updated_at}
-            </span>
-          ) : null}
-        </div>
-        <div className="filter-split" />
-        <div className="filter-row">
-          <div className="filter-source-head">
-            <FilterOutlined className="icon" />
-            <span className="title">学情来源</span>
-            <span className="hint">勾选后图表按所选来源重新计算</span>
-          </div>
-          <div className="filter-chips">
-            {ALL_SOURCES.map((s) => (
-              <button
-                key={s}
-                type="button"
-                className={`source-chip ${sources.includes(s) ? "on" : ""}`}
-                onClick={() => toggleSource(s)}
-              >
-                <i className="g-dot" style={{ background: sources.includes(s) ? "#fff" : "var(--dim-context)" }} />
-                {s}
-              </button>
-            ))}
-          </div>
-          <div className="filter-spacer" />
-          <div className="filter-actions">
+    <div className="teacher_profile_container teacher-profile-portraits">
+      <div className="portrait-toolbar">
+          <ScopeFilters sources={sources} dateRange={dateRange} onSources={setSources} onDateRange={setDateRange} />
+          <div className="portrait-toolbar-actions">
             <Button size="small" icon={<ExperimentOutlined />}
               onClick={() => history.push({ pathname: '/design', search: `?class_id=${classId || classList[0]?.class_id || ''}&from=analysis` })}>
               注入教学设计
@@ -281,17 +212,17 @@ const TeacherProfile = (props: any) => {
             <Button size="small" icon={<UploadOutlined />} onClick={() => setImportOpen(true)}>
               导入考试记录
             </Button>
-            <Button size="small" type="primary" icon={<ReloadOutlined />} onClick={recalc} loading={loading}>
-              重新计算
-            </Button>
+            <Tooltip title="重新计算"><Button size="small" aria-label="重新计算" icon={<ReloadOutlined />} onClick={recalc} loading={loading} /></Tooltip>
           </div>
-        </div>
-      </Card>
+      </div>
 
       <div aria-busy={loading}>
         {profile ? (
           <>
-            {/* v2.0-H1 班级建议入口条：点击打开 AI 助手查看与执行 */}
+            <div className="portrait-legacy-heading"><span>作答概览</span>{profile.updated_at && <small><ClockCircleOutlined /> 更新于 {profile.updated_at}</small>}</div>
+            <OverviewGrid cards={cards} trend={profile.trend || []} />
+            <PortraitOverview data={portrait.data} scope={scope} loading={portrait.loading} error={portrait.error} onRetry={portrait.retry} />
+
             {sugCount > 0 ? (
               <div
                 className="pa_sg_strip"
@@ -302,24 +233,19 @@ const TeacherProfile = (props: any) => {
               >
                 <BulbOutlined className="icon" />
                 <span className="txt">
-                  AI 助教「小七」已根据本班学情整理了 <b>{sugCount}</b> 条建议（素养短板 / 薄弱知识点 / 进退步关注 / 遗忘复习）
+                  本班有 <b>{sugCount}</b> 条教学建议
                 </span>
                 <a className="link">在小助手中查看 ›</a>
               </div>
             ) : null}
 
-            {/* ===== 语义概览网格（graph4rec cockpit 范式）===== */}
-            <OverviewGrid cards={cards} trend={profile.trend || []} />
-
-            {/* ===== A1/A2 多维标签：能力等级 + 素养 ===== */}
-            <DimensionCards dimensions={profile.dimensions} />
             {profile.window_note ? <p className="window_note">⏱ {profile.window_note}</p> : null}
 
             {/* ===== 分析区：左分布表 + 右图表 ===== */}
             <div className="analysis_row">
               <div className="analysis_distribution">
                 <div className="teacher_profile_card">
-                    <div className="ct_header">
+                  <div className="ct_header">
                     <p className="teacher_profile_chart_title" style={{ marginBottom: 0 }}>知识点掌握分布</p>
                     <Segmented
                       size="small"
@@ -331,25 +257,15 @@ const TeacherProfile = (props: any) => {
                       ]}
                       style={{ margin: "0 10px" }}
                     />
-                    <div className="ct_legend">
-                      <span className="ct_legend_group">
-                        {LEVEL_LEGEND.map(l => (
-                          <Tooltip key={l.short} title={`${l.short}＝${l.label}（${l.verb}）：${l.desc}`} color="#fff" overlayClassName="ct_lv_tip">
-                            <span className="ct_th_lv" style={{ ["--c" as any]: l.color }}>
-                              <b>{l.short}</b>{l.label}
-                            </span>
-                          </Tooltip>
-                        ))}
+                  </div>
+                  <div className="ct_legend">
+                    {BAND_LEGEND.map(([band, range, color]) => (
+                      <span key={band} className="ct_legend_item">
+                        <i style={{ background: color }} />
+                        {band}
+                        <em>{range}</em>
                       </span>
-                      <span className="ct_legend_divider" />
-                      {BAND_LEGEND.map(([band, range, color]) => (
-                        <span key={band} className="ct_legend_item">
-                          <i style={{ background: color }} />
-                          {band}
-                          <em>{range}</em>
-                        </span>
-                      ))}
-                    </div>
+                    ))}
                   </div>
                   {distView === "graph" ? (
                     <KnowledgeGraph graph={profile.kgraph} />
@@ -363,10 +279,9 @@ const TeacherProfile = (props: any) => {
               </div>
             </div>
 
-            {/* ===== 学生列表（全宽，消除右侧空白）：点击跳转「个人学情」Tab ===== */}
-            <div className="teacher_profile_card">
-              <p className="teacher_profile_chart_title">学生列表 · 仅显示待巩固知识点数，不打等级；冷启动置底 · 点击查看个人学情</p>
-              <StudentList students={profile.students || []} onOpen={openStudent} />
+            <div className="portrait-scope">
+              本班 {profile.n_students ?? 0} 名学生，{(profile.students || []).filter((s: any) => s.status_level === "weak").length} 名待关注。
+              <Button type="link" onClick={() => dispatch({ type: "analysisModel/updateState", res: { currentAnalysisTab: "personal" } })}>查看个人学情</Button>
             </div>
           </>
         ) : placeholder}

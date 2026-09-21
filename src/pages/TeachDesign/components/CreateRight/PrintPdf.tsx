@@ -83,7 +83,7 @@ export const useExercisePrint = ({
     documentTitle, // 打印文档标题
     onBeforePrint: async () => {
       await new Promise((resolve) => {
-        setTimeout(resolve, 100)
+        setTimeout(resolve, 100);
       }); // 等待100ms，确保页面渲染完成
     },
     onAfterPrint: () => {

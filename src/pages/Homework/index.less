@@ -1,0 +1,45 @@
+.hw_tabs_page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+.hw_tabs_page :global(.ant-tabs) {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.hw_tabs_page :global(.ant-tabs-nav) {
+  margin: 0;
+  padding: 0 16px;
+  background: #fff;
+}
+
+.hw_tabs_page :global(.ant-tabs-content-holder) {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.hw_tabs_page :global(.ant-tabs-content),
+.hw_tabs_page :global(.ant-tabs-tabpane) {
+  height: 100%;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.hw_tab_body {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  display: block;
+}
+
+.hw_tab_body--full {
+  overflow: hidden;
+}

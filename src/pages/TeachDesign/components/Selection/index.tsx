@@ -18,7 +18,7 @@ import { addNewTracking } from "@/utils";
 import { getDataService } from "../../services";
 
 const Selection = (props: any) => {
-  const { onRef, type, form, setDvaVal, } = props;
+  const { onRef, type, form, setDvaVal } = props;
 
   const {
     desginForm,
@@ -31,12 +31,17 @@ const Selection = (props: any) => {
     chapterInfo,
     expandedKeys,
     injectClassId,
-  } = props.teachDesginModel
+    importedClasses = [],
+  } = props.teachDesginModel;
 
   const dispatch = useDispatch();
   const location = useLocation();
   const query = new URLSearchParams(location.search);
-  const requestedClass = query.get("from") === "analysis" ? query.get("class_id") || "" : "";
+  const requestedClass = ["analysis", "research"].includes(
+    query.get("from") || "",
+  )
+    ? query.get("class_id") || ""
+    : "";
   const requestedClassRef = useRef(requestedClass);
   requestedClassRef.current = requestedClass;
   // const [form] = Form.useForm();
@@ -50,7 +55,6 @@ const Selection = (props: any) => {
   // const [chapterList, setChapterList] = useState<any>([]); // 章节目录选项
   // const [classTypeList, setClassTypeList] = useState<any>([]); // 课型设置选项
 
-
   // const [expandedKeys, setExpandedKeys] = useState<any>([]); // 章节目录展开的key
   // const [gradeDocId, setGradeDocId] = useState<any>({}); // 年级、教材id
   // const [chapterInfo, setChapterInfo] = useState<any>({}); // 章节目录信息
@@ -62,39 +66,93 @@ const Selection = (props: any) => {
 
   // 学情注入模式：从学情分析页携带班级跳转而来，自动填充学段学科/教材册别（教师免选）
   useEffect(() => {
-    if (!requestedClass) { setDvaVal({ injectClassId: "" }); return; }
+    if (!requestedClass) {
+      setDvaVal({ injectClassId: "" });
+      return;
+    }
+    if (
+      importedClasses.length &&
+      !importedClasses.some((c: any) => c.class_id === requestedClass)
+    ) {
+      setDvaVal({ importedClasses: [] });
+    }
     let active = true;
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 30000);
     const current = () => active && !controller.signal.aborted;
-    setDvaVal({ injectClassId: "", classInfo: {}, gradeDocId: {}, chapterInfo: {}, chapterList: [] });
+    setDvaVal({
+      injectClassId: "",
+      classInfo: {},
+      gradeDocId: {},
+      chapterInfo: {},
+      chapterList: [],
+    });
     form.setFieldsValue({ subject: undefined, chapter_id: undefined });
     const fill = async () => {
       try {
-        const d = await fetch("/api/teacher/classes", { signal: controller.signal }).then(r => r.json());
+        const d = await fetch("/api/teacher/classes", {
+          signal: controller.signal,
+        }).then((r) => r.json());
         if (!current()) return;
-        const cls = (Array.isArray(d.data) ? d.data : []).find((c: any) => c.class_id === requestedClass);
+        const cls = (Array.isArray(d.data) ? d.data : []).find(
+          (c: any) => c.class_id === requestedClass,
+        );
         if (!cls) throw new Error("班级不存在");
         const stageName = /^g/.test(cls.grade || "") ? "初中" : "高中";
         const subjectName = cls.subject || "数学";
         const gradeNum = String(cls.grade || "").replace(/[^0-9]/g, "");
-        const volume = ({ "7": "七年级下册", "8": "八年级下册", "9": "九年级下册" } as Record<string, string>)[gradeNum];
+        const volume = (
+          { "7": "七年级下册", "8": "八年级下册", "9": "九年级下册" } as Record<
+            string,
+            string
+          >
+        )[gradeNum];
         form.setFieldsValue({ stage: [stageName, subjectName] });
         setDvaVal({ injectClassId: cls.class_id });
         const [books, courses, pd] = await Promise.all([
-          getDataService({ xueduan: stageName, xueke: subjectName }, "getSubjectUrl"),
-          getDataService({ stage: stageName, subject: subjectName }, "getCourseType"),
-          fetch(`/api/teacher/profile/class?class_id=${encodeURIComponent(cls.class_id)}&sources=`, { signal: controller.signal }).then(r => r.json()),
+          getDataService(
+            { xueduan: stageName, xueke: subjectName },
+            "getSubjectUrl",
+          ),
+          getDataService(
+            { stage: stageName, subject: subjectName },
+            "getCourseType",
+          ),
+          fetch(
+            `/api/teacher/profile/class?class_id=${encodeURIComponent(cls.class_id)}&sources=`,
+            { signal: controller.signal },
+          ).then((r) => r.json()),
         ]);
         if (!current()) return;
-        const editions = books?.code === 200 && Array.isArray(books.data) ? books.data : [];
-        const matches = (edition: any) => Array.isArray(edition.children) && edition.children.some((book: any) => book.value === volume && book.doc_id);
-        const edition = editions.find((e: any) => e.value === "人教版" && matches(e)) || editions.find(matches);
-        const book = edition?.children.find((b: any) => b.value === volume && b.doc_id);
-        setDvaVal({ subjectList: editions, classTypeList: courses?.code === 200 && Array.isArray(courses.data) ? courses.data : [] });
+        const editions =
+          books?.code === 200 && Array.isArray(books.data) ? books.data : [];
+        const matches = (edition: any) =>
+          Array.isArray(edition.children) &&
+          edition.children.some(
+            (book: any) => book.value === volume && book.doc_id,
+          );
+        const edition =
+          editions.find((e: any) => e.value === "人教版" && matches(e)) ||
+          editions.find(matches);
+        const book = edition?.children.find(
+          (b: any) => b.value === volume && b.doc_id,
+        );
+        setDvaVal({
+          subjectList: editions,
+          classTypeList:
+            courses?.code === 200 && Array.isArray(courses.data)
+              ? courses.data
+              : [],
+        });
         if (book) {
           form.setFieldsValue({ subject: [edition.value, book.value] });
-          setDvaVal({ gradeDocId: { doc_id: book.doc_id, grade: book.grade, volume: book.volume } });
+          setDvaVal({
+            gradeDocId: {
+              doc_id: book.doc_id,
+              grade: book.grade,
+              volume: book.volume,
+            },
+          });
         } else {
           message.info("未找到该班级对应的教材册别，请手动选择教材");
         }
@@ -103,22 +161,40 @@ const Selection = (props: any) => {
         const weakPct = Number(cards.weak_top_pct) || 0;
         const avg = Number(cards.recent5_avg) || 60;
         const derived = {
-          studies_degree: weakPct <= 20 ? "优秀" : weakPct <= 30 ? "中等" : "薄弱",
+          studies_degree:
+            weakPct <= 20 ? "优秀" : weakPct <= 30 ? "中等" : "薄弱",
           motivation_habit: avg >= 63 ? "主动" : avg >= 58 ? "一般" : "被动",
-          literacy_ability: weakPct <= 20 ? "较强" : weakPct <= 30 ? "中等" : "待提升",
-          class_learning_diff: weakPct <= 22 ? "较为均衡" : weakPct <= 30 ? "分化一般" : "分化明显",
+          literacy_ability:
+            weakPct <= 20 ? "较强" : weakPct <= 30 ? "中等" : "待提升",
+          class_learning_diff:
+            weakPct <= 22
+              ? "较为均衡"
+              : weakPct <= 30
+                ? "分化一般"
+                : "分化明显",
         };
         const ct = await fetch("/api/teach_plan/class_type", {
-          method: "POST", headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ subject: subjectName, ...derived }), signal: controller.signal,
-        }).then(r => r.json());
-        if (current()) setDvaVal({ classInfo: { ...derived, ...(ct.code === 200 ? ct.data : {}) } });
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ subject: subjectName, ...derived }),
+          signal: controller.signal,
+        }).then((r) => r.json());
+        if (current())
+          setDvaVal({
+            classInfo: { ...derived, ...(ct.code === 200 ? ct.data : {}) },
+          });
       } catch {
         if (active) message.warning("班级学情自动填充失败，请手动设置班级学情");
-      } finally { clearTimeout(timeout); }
+      } finally {
+        clearTimeout(timeout);
+      }
     };
     fill();
-    return () => { active = false; clearTimeout(timeout); controller.abort(); };
+    return () => {
+      active = false;
+      clearTimeout(timeout);
+      controller.abort();
+    };
   }, [requestedClass]);
 
   useEffect(() => {
@@ -130,15 +206,16 @@ const Selection = (props: any) => {
 
   useImperativeHandle(onRef, () => ({
     getData: () => {
-
-      const formValues = form.getFieldsValue()
-      setDvaVal({ desginForm: formValues })
+      const formValues = form.getFieldsValue();
+      setDvaVal({ desginForm: formValues });
 
       return {
         ...chapterInfo,
         ...gradeDocId,
         // 学情注入的班级：布置作业等后续动作按此班级下发
-        class_id: injectClassId || "",
+        class_id: importedClasses[0]?.class_id || injectClassId || "",
+        class_ids: importedClasses.map((c: any) => c.class_id),
+        imported_class_profiles: importedClasses,
         study_info: classInfo,
         studies_degree: classInfo?.studies_degree || "",
         motivation_habit: classInfo?.motivation_habit || "",
@@ -158,8 +235,7 @@ const Selection = (props: any) => {
     });
     if (code === 200) {
       // setStageList(data);
-      if (!requestedClassRef.current) form.setFieldsValue({ ...desginForm });  // 注入数据不能被迟到的初始化覆盖
-
+      if (!requestedClassRef.current) form.setFieldsValue({ ...desginForm }); // 注入数据不能被迟到的初始化覆盖
     }
   };
   // 获取教材章节目录
@@ -189,7 +265,7 @@ const Selection = (props: any) => {
     if (code === 200) {
       // setChapterList(data);
       // setExpandedKeys(getAllKeys(data));
-      setDvaVal({ expandedKeys: getAllKeys(data) })
+      setDvaVal({ expandedKeys: getAllKeys(data) });
     }
   };
   // 获取课型设置
@@ -227,6 +303,9 @@ const Selection = (props: any) => {
 
   // 学科学段改变
   const onStageChange = (value: any) => {
+    setDvaVal({ importedClasses: [], injectClassId: "" });
+    if (requestedClass)
+      history.replace({ pathname: location.pathname, search: "" });
     form.setFieldsValue({
       subject: undefined,
       chapter_id: undefined,
@@ -239,7 +318,7 @@ const Selection = (props: any) => {
       classTypeList: [],
       classInfo: {},
       gradeDocId: {},
-    })
+    });
 
     // setSubjectList([]);
     // setChapterList([]);
@@ -269,7 +348,7 @@ const Selection = (props: any) => {
     setDvaVal({
       chapterList: [],
       gradeDocId: {},
-    })
+    });
 
     if (value) {
       // addNewTracking({
@@ -282,7 +361,7 @@ const Selection = (props: any) => {
           doc_id: option[1]?.doc_id,
           grade: option[1]?.grade,
           volume: option[1]?.volume,
-        }
+        },
       });
     }
   };
@@ -298,7 +377,7 @@ const Selection = (props: any) => {
     setDvaVal({
       chapterInfo: { chapter_id: item.id, chapter_name: item.title },
       // gradeDocId:{},
-    })
+    });
     // addNewTracking({
     //   bt: "cl",
     //   ct: "teaching_design_home_select_chapter",
@@ -351,20 +430,28 @@ const Selection = (props: any) => {
     //   ct: "teaching_design_home_input_planned_lessons",
     //   extra: { planned_lessons: e },
     // });
-  }
+  };
   /**
    * 特殊情况（前端处理）
    * 高中历史册别区分必修、选必修
    * 对应的课型不一样
-  */
+   */
   const historyCheck = () => {
     if (type === 2) return []; // 单元没有课型
     if (Array.isArray(stage) && stage.join("") === "高中历史") {
       if (Array.isArray(subject)) {
         if (subject[1].includes("选择性")) {
-          return classTypeList.filter((item: any) => item?.classType?.includes("选必")) || [];
+          return (
+            classTypeList.filter((item: any) =>
+              item?.classType?.includes("选必"),
+            ) || []
+          );
         } else {
-          return classTypeList.filter((item: any) => item?.classType?.includes("必修")) || [];
+          return (
+            classTypeList.filter((item: any) =>
+              item?.classType?.includes("必修"),
+            ) || []
+          );
         }
       } else {
         return [];
@@ -516,7 +603,6 @@ const Selection = (props: any) => {
     </div>
   );
 };
-
 
 export default connect((state: any) => ({
   teachDesginModel: state.teachDesginModel,

@@ -1,0 +1,52 @@
+.learning-content {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  .markdown_container {
+    color: inherit;
+    font-size: 14px;
+    line-height: 1.85;
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 12px 0 8px;
+    }
+    p {
+      margin: 0 0 8px;
+      font-size: inherit;
+    }
+    > :first-child {
+      margin-top: 0;
+    }
+    > :last-child {
+      margin-bottom: 0;
+    }
+    ul,
+    ol {
+      padding-left: 24px;
+      margin: 8px 0;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    pre,
+    .katex-display {
+      max-width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+    table {
+      display: block;
+      max-width: 100%;
+      overflow-x: auto;
+    }
+    code {
+      overflow-wrap: anywhere;
+      white-space: pre-wrap;
+    }
+  }
+}

@@ -144,7 +144,9 @@ const StepDrawer = (props: any) => {
         title={
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             {item.type === "book" && <div>{item.title}</div>}
-            {item.type === "standard" && <div>{item.description?.subTitle}</div>}
+            {item.type === "standard" && (
+              <div>{item.description?.subTitle}</div>
+            )}
             {item.type === "guide" && <div>{item.description?.subTitle}</div>}
             {item.type === "guide" && (
               <div>
@@ -172,7 +174,9 @@ const StepDrawer = (props: any) => {
                 </Dropdown>
                 <Button
                   type="text"
-                  icon={<ZYIcon type={fullScreen ? "icon_fold" : "icon_unfold"} />}
+                  icon={
+                    <ZYIcon type={fullScreen ? "icon_fold" : "icon_unfold"} />
+                  }
                   onClick={() => setFullScreen(!fullScreen)}
                 >
                   {fullScreen ? "收起" : "全览"}
@@ -182,9 +186,15 @@ const StepDrawer = (props: any) => {
           </div>
         }
       >
-        {item.type === "book" && ( <PdfView fileInfo={{ id: item.id }} initialPage={pageNum} /> )}
+        {item.type === "book" && (
+          <PdfView fileInfo={{ id: item.id }} initialPage={pageNum} />
+        )}
         {item.type === "standard" && <PdfView fileInfo={{ id: item.id }} />}
-        {item.type === "guide" && ( <MarkdownRenderToc showToc={fullScreen}>{item.content}</MarkdownRenderToc> )}
+        {item.type === "guide" && (
+          <MarkdownRenderToc showToc={fullScreen}>
+            {item.content}
+          </MarkdownRenderToc>
+        )}
       </Drawer>
     </>
   );

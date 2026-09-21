@@ -1,0 +1,4149 @@
+{
+ "class_id": "cls-g8-03",
+ "class_name": "八年级(3)班",
+ "snapshot_id": "snap-20260918-cls-g8-03",
+ "time_window": {
+  "preset": "month",
+  "start_date": "2026-08-18",
+  "end_date": "2026-09-18"
+ },
+ "sources": [
+  "作业记录",
+  "考试记录",
+  "课堂互动",
+  "自主练习"
+ ],
+ "sampled_note": "演示抽样：每班取前 10 名学生（全班 45 人）",
+ "students": [
+  {
+   "scope": "student",
+   "student_id": "947bb83daabc33cf",
+   "name": "徐丽",
+   "display_id": "edu03001",
+   "class_id": "cls-g8-03",
+   "persona_label": "整体偏弱",
+   "latest_event_at": "2026-09-14 09:50",
+   "evidence_count": 45,
+   "dimensions": [
+    {
+     "dimension_key": "knowledge",
+     "dimension_name": "知识点画像",
+     "score": 61,
+     "class_avg": 64,
+     "rank_pct": 40,
+     "sample_count": 91,
+     "evidence_strength": "sufficient",
+     "explanation": "知识点画像（61）与班均（64）持平，班级百分位 40%。",
+     "suggestion": "保持当前节奏，可尝试「函数概念理解」方向的挑战题。",
+     "radar_items": [
+      {
+       "key": "func_concept",
+       "name": "函数概念理解",
+       "value": 69,
+       "class_avg": 75,
+       "max": 100,
+       "sample_count": 25,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 6 条，正确率 63%，处于中等水平，其中 2 条失分。 与班均（75）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function"
+       ],
+       "related_goal_ids": [
+        "goal-1"
+       ]
+      },
+      {
+       "key": "coordinate_reading",
+       "name": "坐标系读图",
+       "value": 60,
+       "class_avg": 62,
+       "max": 100,
+       "sample_count": 16,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 4 条，正确率 60%，明显低于预期水平。 与班均（62）基本持平。",
+       "related_knowledge_ids": [
+        "kp-coordinate"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "function_image_reading",
+       "name": "图像识读",
+       "value": 65,
+       "class_avg": 63,
+       "max": 100,
+       "sample_count": 10,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 3 条，正确率 63%，处于中等水平，其中 1 条失分。（当前样本偏少，读数仅供参考） 与班均（63）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-image"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "image_interpretation",
+       "name": "图像解释",
+       "value": 49,
+       "class_avg": 52,
+       "max": 100,
+       "sample_count": 12,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 3 条，正确率 45%，明显低于预期水平。（当前样本偏少，读数仅供参考） 与班均（52）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-image",
+        "kp-function-property"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "trend_judgment",
+       "name": "变化趋势判断",
+       "value": 58,
+       "class_avg": 63,
+       "max": 100,
+       "sample_count": 18,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 5 条，正确率 57%，明显低于预期水平。 与班均（63）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-property"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "real_world_modeling",
+       "name": "实际问题建模",
+       "value": 62,
+       "class_avg": 67,
+       "max": 100,
+       "sample_count": 10,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 3 条，正确率 58%，明显低于预期水平。（当前样本偏少，读数仅供参考） 与班均（67）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-application"
+       ],
+       "related_goal_ids": [
+        "goal-5"
+       ]
+      }
+     ]
+    },
+    {
+     "dimension_key": "ability",
+     "dimension_name": "能力画像",
+     "score": 65,
+     "class_avg": 68,
+     "rank_pct": 40,
+     "sample_count": 93,
+     "evidence_strength": "sufficient",
+     "explanation": "能力画像（65）与班均（68）持平，班级百分位 40%。",
+     "suggestion": "保持当前节奏，可尝试「识记理解」方向的挑战题。",
+     "radar_items": [
+      {
+       "key": "memorize_understand",
+       "name": "识记理解",
+       "value": 72,
+       "class_avg": 78,
+       "max": 100,
+       "sample_count": 13,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 3 条，正确率 72%，处于中等水平，其中 1 条失分。（当前样本偏少，读数仅供参考） 与班均（78）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function",
+        "kp-fraction-properties"
+       ],
+       "related_goal_ids": [
+        "goal-1"
+       ]
+      },
+      {
+       "key": "representation_transfer",
+       "name": "表征转换",
+       "value": 57,
+       "class_avg": 59,
+       "max": 100,
+       "sample_count": 24,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 6 条，正确率 53%，明显低于预期水平。 与班均（59）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-image",
+        "kp-coordinate"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "operation_reasoning",
+       "name": "运算推理",
+       "value": 66,
+       "class_avg": 69,
+       "max": 100,
+       "sample_count": 13,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 3 条，正确率 62%，处于中等水平，其中 1 条失分。（当前样本偏少，读数仅供参考） 与班均（69）基本持平。",
+       "related_knowledge_ids": [
+        "kp-radical-addsub",
+        "kp-fraction-calc"
+       ],
+       "related_goal_ids": [
+        "goal-3"
+       ]
+      },
+      {
+       "key": "problem_analysis",
+       "name": "问题分析",
+       "value": 69,
+       "class_avg": 67,
+       "max": 100,
+       "sample_count": 12,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 3 条，正确率 69%，处于中等水平，其中 1 条失分。（当前样本偏少，读数仅供参考） 与班均（67）基本持平。",
+       "related_knowledge_ids": [
+        "kp-congruent-judge",
+        "kp-special-quad"
+       ],
+       "related_goal_ids": [
+        "goal-4"
+       ]
+      },
+      {
+       "key": "transfer_apply",
+       "name": "迁移应用",
+       "value": 60,
+       "class_avg": 66,
+       "max": 100,
+       "sample_count": 9,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 2 条，正确率 59%，明显低于预期水平。（当前样本偏少，读数仅供参考） 与班均（66）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-application"
+       ],
+       "related_goal_ids": [
+        "goal-5"
+       ]
+      },
+      {
+       "key": "reflect_express",
+       "name": "反思表达",
+       "value": 63,
+       "class_avg": 70,
+       "max": 100,
+       "sample_count": 22,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 6 条，正确率 62%，明显低于预期水平。 与班均（70）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      }
+     ]
+    },
+    {
+     "dimension_key": "literacy",
+     "dimension_name": "素养画像",
+     "score": 66,
+     "class_avg": 73,
+     "rank_pct": 27,
+     "sample_count": 43,
+     "evidence_strength": "sufficient",
+     "explanation": "素养画像（66）低于班均（73），班级百分位 27%，短板集中在「自我效能」。",
+     "suggestion": "优先补「自我效能」：本周完成 3 道关联基础题 + 1 道变式题，三天后复测。",
+     "radar_items": [
+      {
+       "key": "learning_attitude",
+       "name": "学习态度",
+       "value": 68,
+       "class_avg": 76,
+       "max": 100,
+       "sample_count": 5,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天作业按时提交率 74%，学案带齐率 71%。 低于班均 8 分，是本维度重点补弱项。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      },
+      {
+       "key": "learning_interest",
+       "name": "学习兴趣",
+       "value": 65,
+       "class_avg": 71,
+       "max": 100,
+       "sample_count": 7,
+       "evidence_strength": "low_sample",
+       "explanation": "挑战题参与率 47%，课后主动提问 2 次。 与班均（71）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "learning_motivation",
+       "name": "学习动机",
+       "value": 64,
+       "class_avg": 74,
+       "max": 100,
+       "sample_count": 10,
+       "evidence_strength": "low_sample",
+       "explanation": "自主练习启动 8 次，目标卡完成率 59%。 低于班均 10 分，是本维度重点补弱项。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "effort_level",
+       "name": "努力程度",
+       "value": 71,
+       "class_avg": 77,
+       "max": 100,
+       "sample_count": 3,
+       "evidence_strength": "low_sample",
+       "explanation": "订正完成率 67%，平均订正时长 0.8 天。 与班均（77）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      },
+      {
+       "key": "self_efficacy",
+       "name": "自我效能",
+       "value": 57,
+       "class_avg": 65,
+       "max": 100,
+       "sample_count": 10,
+       "evidence_strength": "low_sample",
+       "explanation": "单元反思自评均分 5.7/10，难题独立完成率 43%。 低于班均 8 分，是本维度重点补弱项。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "value_formation",
+       "name": "价值观养成",
+       "value": 72,
+       "class_avg": 76,
+       "max": 100,
+       "sample_count": 8,
+       "evidence_strength": "low_sample",
+       "explanation": "小组互评“诚信/助人”好评率 66%，反思中主动谈及意义 3 次。 与班均（76）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      }
+     ]
+    },
+    {
+     "dimension_key": "process",
+     "dimension_name": "学习过程表现画像",
+     "score": 60,
+     "class_avg": 69,
+     "rank_pct": 22,
+     "sample_count": 47,
+     "evidence_strength": "sufficient",
+     "explanation": "学习过程表现画像（60）低于班均（69），班级百分位 22%，短板集中在「订正过程」。",
+     "suggestion": "优先补「订正过程」：本周完成 2 道关联基础题 + 1 道变式题，三天后复测。",
+     "radar_items": [
+      {
+       "key": "class_participation",
+       "name": "课堂参与",
+       "value": 67,
+       "class_avg": 72,
+       "max": 100,
+       "sample_count": 5,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天课堂互动 6 次（抢答/投票/演示）。 与班均（72）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "listening_speaking",
+       "name": "倾听与发言",
+       "value": 63,
+       "class_avg": 72,
+       "max": 100,
+       "sample_count": 7,
+       "evidence_strength": "low_sample",
+       "explanation": "主动发言 1 次，复述他人观点 2 次。 低于班均 9 分，是本维度重点补弱项。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "cooperation",
+       "name": "合作表现",
+       "value": 64,
+       "class_avg": 74,
+       "max": 100,
+       "sample_count": 6,
+       "evidence_strength": "low_sample",
+       "explanation": "小组任务贡献占比 54%，组内互评 B 档。 低于班均 10 分，是本维度重点补弱项。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "thinking_perspective",
+       "name": "思维角度",
+       "value": 58,
+       "class_avg": 66,
+       "max": 100,
+       "sample_count": 8,
+       "evidence_strength": "low_sample",
+       "explanation": "一题多解提交 1 次。 低于班均 8 分，是本维度重点补弱项。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-4"
+       ]
+      },
+      {
+       "key": "homework_process",
+       "name": "作业完成过程",
+       "value": 58,
+       "class_avg": 68,
+       "max": 100,
+       "sample_count": 12,
+       "evidence_strength": "low_sample",
+       "explanation": "平均提交间隔 1.3 天，中途退出重做 1 次。 低于班均 10 分，是本维度重点补弱项。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      },
+      {
+       "key": "homework_correction",
+       "name": "订正过程",
+       "value": 47,
+       "class_avg": 64,
+       "max": 100,
+       "sample_count": 9,
+       "evidence_strength": "low_sample",
+       "explanation": "订正完成率 51%，平均订正时长 1.4 天，错因归类完整率 39%。 低于班均 17 分，是本维度重点补弱项。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "scope": "student",
+   "student_id": "883ab5554975ea82",
+   "name": "李辉",
+   "display_id": "edu03002",
+   "class_id": "cls-g8-03",
+   "persona_label": null,
+   "latest_event_at": "2026-09-18 10:10",
+   "evidence_count": 37,
+   "dimensions": [
+    {
+     "dimension_key": "knowledge",
+     "dimension_name": "知识点画像",
+     "score": 62,
+     "class_avg": 64,
+     "rank_pct": 43,
+     "sample_count": 96,
+     "evidence_strength": "sufficient",
+     "explanation": "知识点画像（62）与班均（64）持平，班级百分位 43%。",
+     "suggestion": "保持当前节奏，可尝试「函数概念理解」方向的挑战题。",
+     "radar_items": [
+      {
+       "key": "func_concept",
+       "name": "函数概念理解",
+       "value": 74,
+       "class_avg": 75,
+       "max": 100,
+       "sample_count": 21,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 5 条，正确率 70%，处于中等水平，其中 2 条失分。 与班均（75）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function"
+       ],
+       "related_goal_ids": [
+        "goal-1"
+       ]
+      },
+      {
+       "key": "coordinate_reading",
+       "name": "坐标系读图",
+       "value": 59,
+       "class_avg": 62,
+       "max": 100,
+       "sample_count": 11,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 3 条，正确率 54%，明显低于预期水平。（当前样本偏少，读数仅供参考） 与班均（62）基本持平。",
+       "related_knowledge_ids": [
+        "kp-coordinate"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "function_image_reading",
+       "name": "图像识读",
+       "value": 58,
+       "class_avg": 63,
+       "max": 100,
+       "sample_count": 20,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 5 条，正确率 58%，明显低于预期水平。 与班均（63）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-image"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "image_interpretation",
+       "name": "图像解释",
+       "value": 53,
+       "class_avg": 52,
+       "max": 100,
+       "sample_count": 18,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 5 条，正确率 54%，明显低于预期水平。 与班均（52）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-image",
+        "kp-function-property"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "trend_judgment",
+       "name": "变化趋势判断",
+       "value": 59,
+       "class_avg": 63,
+       "max": 100,
+       "sample_count": 13,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 3 条，正确率 57%，明显低于预期水平。（当前样本偏少，读数仅供参考） 与班均（63）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-property"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "real_world_modeling",
+       "name": "实际问题建模",
+       "value": 66,
+       "class_avg": 67,
+       "max": 100,
+       "sample_count": 13,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 3 条，正确率 62%，处于中等水平，其中 1 条失分。（当前样本偏少，读数仅供参考） 与班均（67）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-application"
+       ],
+       "related_goal_ids": [
+        "goal-5"
+       ]
+      }
+     ]
+    },
+    {
+     "dimension_key": "ability",
+     "dimension_name": "能力画像",
+     "score": 79,
+     "class_avg": 68,
+     "rank_pct": 83,
+     "sample_count": 113,
+     "evidence_strength": "sufficient",
+     "explanation": "能力画像（79）高于班均（68），班级百分位 83%。",
+     "suggestion": "保持当前节奏，可尝试「识记理解」方向的挑战题。",
+     "radar_items": [
+      {
+       "key": "memorize_understand",
+       "name": "识记理解",
+       "value": 88,
+       "class_avg": 78,
+       "max": 100,
+       "sample_count": 15,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 4 条，正确率 88%，掌握较稳固。 高于班均 10 分，可作为优势项保持。",
+       "related_knowledge_ids": [
+        "kp-function",
+        "kp-fraction-properties"
+       ],
+       "related_goal_ids": [
+        "goal-1"
+       ]
+      },
+      {
+       "key": "representation_transfer",
+       "name": "表征转换",
+       "value": 69,
+       "class_avg": 59,
+       "max": 100,
+       "sample_count": 23,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 6 条，正确率 63%，处于中等水平，其中 2 条失分。 高于班均 10 分，可作为优势项保持。",
+       "related_knowledge_ids": [
+        "kp-function-image",
+        "kp-coordinate"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "operation_reasoning",
+       "name": "运算推理",
+       "value": 77,
+       "class_avg": 69,
+       "max": 100,
+       "sample_count": 17,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 4 条，正确率 76%，掌握较稳固。 高于班均 8 分，可作为优势项保持。",
+       "related_knowledge_ids": [
+        "kp-radical-addsub",
+        "kp-fraction-calc"
+       ],
+       "related_goal_ids": [
+        "goal-3"
+       ]
+      },
+      {
+       "key": "problem_analysis",
+       "name": "问题分析",
+       "value": 79,
+       "class_avg": 67,
+       "max": 100,
+       "sample_count": 23,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 6 条，正确率 80%，掌握较稳固。 高于班均 12 分，可作为优势项保持。",
+       "related_knowledge_ids": [
+        "kp-congruent-judge",
+        "kp-special-quad"
+       ],
+       "related_goal_ids": [
+        "goal-4"
+       ]
+      },
+      {
+       "key": "transfer_apply",
+       "name": "迁移应用",
+       "value": 77,
+       "class_avg": 66,
+       "max": 100,
+       "sample_count": 24,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 6 条，正确率 76%，掌握较稳固。 高于班均 11 分，可作为优势项保持。",
+       "related_knowledge_ids": [
+        "kp-function-application"
+       ],
+       "related_goal_ids": [
+        "goal-5"
+       ]
+      },
+      {
+       "key": "reflect_express",
+       "name": "反思表达",
+       "value": 82,
+       "class_avg": 70,
+       "max": 100,
+       "sample_count": 11,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 3 条，正确率 78%，掌握较稳固。（当前样本偏少，读数仅供参考） 高于班均 12 分，可作为优势项保持。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      }
+     ]
+    },
+    {
+     "dimension_key": "literacy",
+     "dimension_name": "素养画像",
+     "score": 73,
+     "class_avg": 73,
+     "rank_pct": 50,
+     "sample_count": 36,
+     "evidence_strength": "sufficient",
+     "explanation": "素养画像（73）与班均（73）持平，班级百分位 50%。",
+     "suggestion": "保持当前节奏，可尝试「学习态度」方向的挑战题。",
+     "radar_items": [
+      {
+       "key": "learning_attitude",
+       "name": "学习态度",
+       "value": 79,
+       "class_avg": 76,
+       "max": 100,
+       "sample_count": 8,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天作业按时提交率 85%，学案带齐率 82%。 与班均（76）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      },
+      {
+       "key": "learning_interest",
+       "name": "学习兴趣",
+       "value": 72,
+       "class_avg": 71,
+       "max": 100,
+       "sample_count": 7,
+       "evidence_strength": "low_sample",
+       "explanation": "挑战题参与率 54%，课后主动提问 4 次。 与班均（71）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "learning_motivation",
+       "name": "学习动机",
+       "value": 71,
+       "class_avg": 74,
+       "max": 100,
+       "sample_count": 7,
+       "evidence_strength": "low_sample",
+       "explanation": "自主练习启动 10 次，目标卡完成率 66%。 与班均（74）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "effort_level",
+       "name": "努力程度",
+       "value": 79,
+       "class_avg": 77,
+       "max": 100,
+       "sample_count": 3,
+       "evidence_strength": "low_sample",
+       "explanation": "订正完成率 75%，平均订正时长 0.7 天。 与班均（77）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      },
+      {
+       "key": "self_efficacy",
+       "name": "自我效能",
+       "value": 59,
+       "class_avg": 65,
+       "max": 100,
+       "sample_count": 5,
+       "evidence_strength": "low_sample",
+       "explanation": "单元反思自评均分 5.9/10，难题独立完成率 45%。 与班均（65）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "value_formation",
+       "name": "价值观养成",
+       "value": 76,
+       "class_avg": 76,
+       "max": 100,
+       "sample_count": 6,
+       "evidence_strength": "low_sample",
+       "explanation": "小组互评“诚信/助人”好评率 70%，反思中主动谈及意义 3 次。 与班均（76）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      }
+     ]
+    },
+    {
+     "dimension_key": "process",
+     "dimension_name": "学习过程表现画像",
+     "score": 74,
+     "class_avg": 69,
+     "rank_pct": 67,
+     "sample_count": 62,
+     "evidence_strength": "low_sample",
+     "explanation": "学习过程表现画像（74）高于班均（69），班级百分位 67%。",
+     "suggestion": "保持当前节奏，可尝试「合作表现」方向的挑战题。",
+     "radar_items": [
+      {
+       "key": "class_participation",
+       "name": "课堂参与",
+       "value": 80,
+       "class_avg": 72,
+       "max": 100,
+       "sample_count": 9,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天课堂互动 10 次（抢答/投票/演示）。 高于班均 8 分，可作为优势项保持。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "listening_speaking",
+       "name": "倾听与发言",
+       "value": 81,
+       "class_avg": 72,
+       "max": 100,
+       "sample_count": 11,
+       "evidence_strength": "low_sample",
+       "explanation": "主动发言 8 次，复述他人观点 4 次。 高于班均 9 分，可作为优势项保持。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "cooperation",
+       "name": "合作表现",
+       "value": 82,
+       "class_avg": 74,
+       "max": 100,
+       "sample_count": 8,
+       "evidence_strength": "low_sample",
+       "explanation": "小组任务贡献占比 72%，组内互评 A 档。 高于班均 8 分，可作为优势项保持。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "thinking_perspective",
+       "name": "思维角度",
+       "value": 67,
+       "class_avg": 66,
+       "max": 100,
+       "sample_count": 11,
+       "evidence_strength": "low_sample",
+       "explanation": "一题多解提交 2 次。 与班均（66）基本持平。（样本偏少）",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-4"
+       ]
+      },
+      {
+       "key": "homework_process",
+       "name": "作业完成过程",
+       "value": 68,
+       "class_avg": 68,
+       "max": 100,
+       "sample_count": 12,
+       "evidence_strength": "low_sample",
+       "explanation": "平均提交间隔 1.1 天，中途退出重做 0 次。 与班均（68）基本持平。（样本偏少）",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      },
+      {
+       "key": "homework_correction",
+       "name": "订正过程",
+       "value": 65,
+       "class_avg": 64,
+       "max": 100,
+       "sample_count": 11,
+       "evidence_strength": "low_sample",
+       "explanation": "订正完成率 69%，平均订正时长 1.1 天，错因归类完整率 57%。 与班均（64）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "scope": "student",
+   "student_id": "aa18e927903a0918",
+   "name": "黄明静",
+   "display_id": "edu03003",
+   "class_id": "cls-g8-03",
+   "persona_label": "课堂沉默",
+   "latest_event_at": "2026-09-09 09:30",
+   "evidence_count": 35,
+   "dimensions": [
+    {
+     "dimension_key": "knowledge",
+     "dimension_name": "知识点画像",
+     "score": 60,
+     "class_avg": 64,
+     "rank_pct": 36,
+     "sample_count": 107,
+     "evidence_strength": "sufficient",
+     "explanation": "知识点画像（60）与班均（64）持平，班级百分位 36%。",
+     "suggestion": "保持当前节奏，可尝试「函数概念理解」方向的挑战题。",
+     "radar_items": [
+      {
+       "key": "func_concept",
+       "name": "函数概念理解",
+       "value": 68,
+       "class_avg": 75,
+       "max": 100,
+       "sample_count": 13,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 3 条，正确率 62%，处于中等水平，其中 1 条失分。（当前样本偏少，读数仅供参考） 与班均（75）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function"
+       ],
+       "related_goal_ids": [
+        "goal-1"
+       ]
+      },
+      {
+       "key": "coordinate_reading",
+       "name": "坐标系读图",
+       "value": 59,
+       "class_avg": 62,
+       "max": 100,
+       "sample_count": 20,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 5 条，正确率 58%，明显低于预期水平。 与班均（62）基本持平。",
+       "related_knowledge_ids": [
+        "kp-coordinate"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "function_image_reading",
+       "name": "图像识读",
+       "value": 63,
+       "class_avg": 63,
+       "max": 100,
+       "sample_count": 15,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 4 条，正确率 64%，明显低于预期水平。 与班均（63）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-image"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "image_interpretation",
+       "name": "图像解释",
+       "value": 46,
+       "class_avg": 52,
+       "max": 100,
+       "sample_count": 22,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 6 条，正确率 46%，明显低于预期水平。 与班均（52）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-image",
+        "kp-function-property"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "trend_judgment",
+       "name": "变化趋势判断",
+       "value": 62,
+       "class_avg": 63,
+       "max": 100,
+       "sample_count": 24,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 6 条，正确率 63%，明显低于预期水平。 与班均（63）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-property"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "real_world_modeling",
+       "name": "实际问题建模",
+       "value": 64,
+       "class_avg": 67,
+       "max": 100,
+       "sample_count": 13,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 3 条，正确率 63%，明显低于预期水平。（当前样本偏少，读数仅供参考） 与班均（67）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-application"
+       ],
+       "related_goal_ids": [
+        "goal-5"
+       ]
+      }
+     ]
+    },
+    {
+     "dimension_key": "ability",
+     "dimension_name": "能力画像",
+     "score": 67,
+     "class_avg": 68,
+     "rank_pct": 46,
+     "sample_count": 106,
+     "evidence_strength": "sufficient",
+     "explanation": "能力画像（67）与班均（68）持平，班级百分位 46%。",
+     "suggestion": "保持当前节奏，可尝试「识记理解」方向的挑战题。",
+     "radar_items": [
+      {
+       "key": "memorize_understand",
+       "name": "识记理解",
+       "value": 77,
+       "class_avg": 78,
+       "max": 100,
+       "sample_count": 18,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 5 条，正确率 78%，掌握较稳固。 与班均（78）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function",
+        "kp-fraction-properties"
+       ],
+       "related_goal_ids": [
+        "goal-1"
+       ]
+      },
+      {
+       "key": "representation_transfer",
+       "name": "表征转换",
+       "value": 56,
+       "class_avg": 59,
+       "max": 100,
+       "sample_count": 13,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 3 条，正确率 55%，明显低于预期水平。（当前样本偏少，读数仅供参考） 与班均（59）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-image",
+        "kp-coordinate"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "operation_reasoning",
+       "name": "运算推理",
+       "value": 68,
+       "class_avg": 69,
+       "max": 100,
+       "sample_count": 21,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 5 条，正确率 65%，处于中等水平，其中 2 条失分。 与班均（69）基本持平。",
+       "related_knowledge_ids": [
+        "kp-radical-addsub",
+        "kp-fraction-calc"
+       ],
+       "related_goal_ids": [
+        "goal-3"
+       ]
+      },
+      {
+       "key": "problem_analysis",
+       "name": "问题分析",
+       "value": 67,
+       "class_avg": 67,
+       "max": 100,
+       "sample_count": 25,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 6 条，正确率 62%，处于中等水平，其中 2 条失分。 与班均（67）基本持平。",
+       "related_knowledge_ids": [
+        "kp-congruent-judge",
+        "kp-special-quad"
+       ],
+       "related_goal_ids": [
+        "goal-4"
+       ]
+      },
+      {
+       "key": "transfer_apply",
+       "name": "迁移应用",
+       "value": 68,
+       "class_avg": 66,
+       "max": 100,
+       "sample_count": 15,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 4 条，正确率 68%，处于中等水平，其中 1 条失分。 与班均（66）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-application"
+       ],
+       "related_goal_ids": [
+        "goal-5"
+       ]
+      },
+      {
+       "key": "reflect_express",
+       "name": "反思表达",
+       "value": 64,
+       "class_avg": 70,
+       "max": 100,
+       "sample_count": 14,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 4 条，正确率 65%，明显低于预期水平。（当前样本偏少，读数仅供参考） 与班均（70）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      }
+     ]
+    },
+    {
+     "dimension_key": "literacy",
+     "dimension_name": "素养画像",
+     "score": 74,
+     "class_avg": 73,
+     "rank_pct": 54,
+     "sample_count": 38,
+     "evidence_strength": "low_sample",
+     "explanation": "素养画像（74）与班均（73）持平，班级百分位 54%。",
+     "suggestion": "保持当前节奏，可尝试「努力程度」方向的挑战题。",
+     "radar_items": [
+      {
+       "key": "learning_attitude",
+       "name": "学习态度",
+       "value": 76,
+       "class_avg": 76,
+       "max": 100,
+       "sample_count": 7,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天作业按时提交率 82%，学案带齐率 79%。 与班均（76）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      },
+      {
+       "key": "learning_interest",
+       "name": "学习兴趣",
+       "value": 71,
+       "class_avg": 71,
+       "max": 100,
+       "sample_count": 3,
+       "evidence_strength": "low_sample",
+       "explanation": "挑战题参与率 53%，课后主动提问 3 次。 与班均（71）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "learning_motivation",
+       "name": "学习动机",
+       "value": 74,
+       "class_avg": 74,
+       "max": 100,
+       "sample_count": 8,
+       "evidence_strength": "low_sample",
+       "explanation": "自主练习启动 9 次，目标卡完成率 69%。 与班均（74）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "effort_level",
+       "name": "努力程度",
+       "value": 82,
+       "class_avg": 77,
+       "max": 100,
+       "sample_count": 8,
+       "evidence_strength": "low_sample",
+       "explanation": "订正完成率 78%，平均订正时长 0.6 天。 与班均（77）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      },
+      {
+       "key": "self_efficacy",
+       "name": "自我效能",
+       "value": 64,
+       "class_avg": 65,
+       "max": 100,
+       "sample_count": 8,
+       "evidence_strength": "low_sample",
+       "explanation": "单元反思自评均分 6.4/10，难题独立完成率 50%。 与班均（65）基本持平。（样本偏少）",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "value_formation",
+       "name": "价值观养成",
+       "value": 78,
+       "class_avg": 76,
+       "max": 100,
+       "sample_count": 4,
+       "evidence_strength": "low_sample",
+       "explanation": "小组互评“诚信/助人”好评率 72%，反思中主动谈及意义 4 次。 与班均（76）基本持平。（样本偏少）",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      }
+     ]
+    },
+    {
+     "dimension_key": "process",
+     "dimension_name": "学习过程表现画像",
+     "score": 58,
+     "class_avg": 69,
+     "rank_pct": 17,
+     "sample_count": 62,
+     "evidence_strength": "sufficient",
+     "explanation": "学习过程表现画像（58）低于班均（69），班级百分位 17%，短板集中在「订正过程」。",
+     "suggestion": "优先补「订正过程」：本周完成 2 道关联基础题 + 1 道变式题，三天后复测。",
+     "radar_items": [
+      {
+       "key": "class_participation",
+       "name": "课堂参与",
+       "value": 55,
+       "class_avg": 72,
+       "max": 100,
+       "sample_count": 6,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天课堂互动 3 次（抢答/投票/演示）。 低于班均 17 分，是本维度重点补弱项。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "listening_speaking",
+       "name": "倾听与发言",
+       "value": 57,
+       "class_avg": 72,
+       "max": 100,
+       "sample_count": 10,
+       "evidence_strength": "low_sample",
+       "explanation": "主动发言 0 次，复述他人观点 1 次。 低于班均 15 分，是本维度重点补弱项。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "cooperation",
+       "name": "合作表现",
+       "value": 69,
+       "class_avg": 74,
+       "max": 100,
+       "sample_count": 11,
+       "evidence_strength": "low_sample",
+       "explanation": "小组任务贡献占比 59%，组内互评 B 档。 与班均（74）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "thinking_perspective",
+       "name": "思维角度",
+       "value": 58,
+       "class_avg": 66,
+       "max": 100,
+       "sample_count": 9,
+       "evidence_strength": "low_sample",
+       "explanation": "一题多解提交 0 次。 低于班均 8 分，是本维度重点补弱项。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-4"
+       ]
+      },
+      {
+       "key": "homework_process",
+       "name": "作业完成过程",
+       "value": 55,
+       "class_avg": 68,
+       "max": 100,
+       "sample_count": 14,
+       "evidence_strength": "low_sample",
+       "explanation": "平均提交间隔 1.4 天，中途退出重做 0 次。 低于班均 13 分，是本维度重点补弱项。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      },
+      {
+       "key": "homework_correction",
+       "name": "订正过程",
+       "value": 53,
+       "class_avg": 64,
+       "max": 100,
+       "sample_count": 12,
+       "evidence_strength": "low_sample",
+       "explanation": "订正完成率 57%，平均订正时长 1.3 天，错因归类完整率 45%。 低于班均 11 分，是本维度重点补弱项。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "scope": "student",
+   "student_id": "761e37bc80129fa0",
+   "name": "梁怡",
+   "display_id": "edu03004",
+   "class_id": "cls-g8-03",
+   "persona_label": null,
+   "latest_event_at": "2026-09-11 16:20",
+   "evidence_count": 32,
+   "dimensions": [
+    {
+     "dimension_key": "knowledge",
+     "dimension_name": "知识点画像",
+     "score": 64,
+     "class_avg": 64,
+     "rank_pct": 50,
+     "sample_count": 94,
+     "evidence_strength": "sufficient",
+     "explanation": "知识点画像（64）与班均（64）持平，班级百分位 50%。",
+     "suggestion": "保持当前节奏，可尝试「函数概念理解」方向的挑战题。",
+     "radar_items": [
+      {
+       "key": "func_concept",
+       "name": "函数概念理解",
+       "value": 74,
+       "class_avg": 75,
+       "max": 100,
+       "sample_count": 11,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 3 条，正确率 68%，处于中等水平，其中 1 条失分。（当前样本偏少，读数仅供参考） 与班均（75）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function"
+       ],
+       "related_goal_ids": [
+        "goal-1"
+       ]
+      },
+      {
+       "key": "coordinate_reading",
+       "name": "坐标系读图",
+       "value": 65,
+       "class_avg": 62,
+       "max": 100,
+       "sample_count": 18,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 5 条，正确率 62%，处于中等水平，其中 2 条失分。 与班均（62）基本持平。",
+       "related_knowledge_ids": [
+        "kp-coordinate"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "function_image_reading",
+       "name": "图像识读",
+       "value": 60,
+       "class_avg": 63,
+       "max": 100,
+       "sample_count": 25,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 6 条，正确率 58%，明显低于预期水平。 与班均（63）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-image"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "image_interpretation",
+       "name": "图像解释",
+       "value": 48,
+       "class_avg": 52,
+       "max": 100,
+       "sample_count": 9,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 2 条，正确率 45%，明显低于预期水平。（当前样本偏少，读数仅供参考） 与班均（52）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-image",
+        "kp-function-property"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "trend_judgment",
+       "name": "变化趋势判断",
+       "value": 66,
+       "class_avg": 63,
+       "max": 100,
+       "sample_count": 11,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 3 条，正确率 65%，处于中等水平，其中 1 条失分。（当前样本偏少，读数仅供参考） 与班均（63）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-property"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "real_world_modeling",
+       "name": "实际问题建模",
+       "value": 71,
+       "class_avg": 67,
+       "max": 100,
+       "sample_count": 20,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 5 条，正确率 71%，处于中等水平，其中 1 条失分。 与班均（67）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-application"
+       ],
+       "related_goal_ids": [
+        "goal-5"
+       ]
+      }
+     ]
+    },
+    {
+     "dimension_key": "ability",
+     "dimension_name": "能力画像",
+     "score": 72,
+     "class_avg": 68,
+     "rank_pct": 64,
+     "sample_count": 91,
+     "evidence_strength": "sufficient",
+     "explanation": "能力画像（72）与班均（68）持平，班级百分位 64%。",
+     "suggestion": "保持当前节奏，可尝试「识记理解」方向的挑战题。",
+     "radar_items": [
+      {
+       "key": "memorize_understand",
+       "name": "识记理解",
+       "value": 84,
+       "class_avg": 78,
+       "max": 100,
+       "sample_count": 12,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 3 条，正确率 83%，掌握较稳固。（当前样本偏少，读数仅供参考） 与班均（78）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function",
+        "kp-fraction-properties"
+       ],
+       "related_goal_ids": [
+        "goal-1"
+       ]
+      },
+      {
+       "key": "representation_transfer",
+       "name": "表征转换",
+       "value": 60,
+       "class_avg": 59,
+       "max": 100,
+       "sample_count": 24,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 6 条，正确率 57%，明显低于预期水平。 与班均（59）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-image",
+        "kp-coordinate"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "operation_reasoning",
+       "name": "运算推理",
+       "value": 74,
+       "class_avg": 69,
+       "max": 100,
+       "sample_count": 15,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 4 条，正确率 73%，处于中等水平，其中 1 条失分。 与班均（69）基本持平。",
+       "related_knowledge_ids": [
+        "kp-radical-addsub",
+        "kp-fraction-calc"
+       ],
+       "related_goal_ids": [
+        "goal-3"
+       ]
+      },
+      {
+       "key": "problem_analysis",
+       "name": "问题分析",
+       "value": 72,
+       "class_avg": 67,
+       "max": 100,
+       "sample_count": 15,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 4 条，正确率 73%，处于中等水平，其中 1 条失分。 与班均（67）基本持平。",
+       "related_knowledge_ids": [
+        "kp-congruent-judge",
+        "kp-special-quad"
+       ],
+       "related_goal_ids": [
+        "goal-4"
+       ]
+      },
+      {
+       "key": "transfer_apply",
+       "name": "迁移应用",
+       "value": 68,
+       "class_avg": 66,
+       "max": 100,
+       "sample_count": 16,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 4 条，正确率 64%，处于中等水平，其中 1 条失分。 与班均（66）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-application"
+       ],
+       "related_goal_ids": [
+        "goal-5"
+       ]
+      },
+      {
+       "key": "reflect_express",
+       "name": "反思表达",
+       "value": 76,
+       "class_avg": 70,
+       "max": 100,
+       "sample_count": 9,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 2 条，正确率 75%，掌握较稳固。（当前样本偏少，读数仅供参考） 与班均（70）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      }
+     ]
+    },
+    {
+     "dimension_key": "literacy",
+     "dimension_name": "素养画像",
+     "score": 74,
+     "class_avg": 73,
+     "rank_pct": 54,
+     "sample_count": 41,
+     "evidence_strength": "sufficient",
+     "explanation": "素养画像（74）与班均（73）持平，班级百分位 54%。",
+     "suggestion": "保持当前节奏，可尝试「学习动机」方向的挑战题。",
+     "radar_items": [
+      {
+       "key": "learning_attitude",
+       "name": "学习态度",
+       "value": 73,
+       "class_avg": 76,
+       "max": 100,
+       "sample_count": 8,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天作业按时提交率 79%，学案带齐率 76%。 与班均（76）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      },
+      {
+       "key": "learning_interest",
+       "name": "学习兴趣",
+       "value": 74,
+       "class_avg": 71,
+       "max": 100,
+       "sample_count": 7,
+       "evidence_strength": "low_sample",
+       "explanation": "挑战题参与率 56%，课后主动提问 2 次。 与班均（71）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "learning_motivation",
+       "name": "学习动机",
+       "value": 79,
+       "class_avg": 74,
+       "max": 100,
+       "sample_count": 4,
+       "evidence_strength": "low_sample",
+       "explanation": "自主练习启动 11 次，目标卡完成率 74%。 与班均（74）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "effort_level",
+       "name": "努力程度",
+       "value": 78,
+       "class_avg": 77,
+       "max": 100,
+       "sample_count": 9,
+       "evidence_strength": "low_sample",
+       "explanation": "订正完成率 74%，平均订正时长 0.7 天。 与班均（77）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      },
+      {
+       "key": "self_efficacy",
+       "name": "自我效能",
+       "value": 66,
+       "class_avg": 65,
+       "max": 100,
+       "sample_count": 7,
+       "evidence_strength": "low_sample",
+       "explanation": "单元反思自评均分 6.6/10，难题独立完成率 52%。 与班均（65）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "value_formation",
+       "name": "价值观养成",
+       "value": 76,
+       "class_avg": 76,
+       "max": 100,
+       "sample_count": 6,
+       "evidence_strength": "low_sample",
+       "explanation": "小组互评“诚信/助人”好评率 70%，反思中主动谈及意义 4 次。 与班均（76）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      }
+     ]
+    },
+    {
+     "dimension_key": "process",
+     "dimension_name": "学习过程表现画像",
+     "score": 65,
+     "class_avg": 69,
+     "rank_pct": 36,
+     "sample_count": 55,
+     "evidence_strength": "sufficient",
+     "explanation": "学习过程表现画像（65）与班均（69）持平，班级百分位 36%。",
+     "suggestion": "保持当前节奏，可尝试「课堂参与」方向的挑战题。",
+     "radar_items": [
+      {
+       "key": "class_participation",
+       "name": "课堂参与",
+       "value": 72,
+       "class_avg": 72,
+       "max": 100,
+       "sample_count": 5,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天课堂互动 6 次（抢答/投票/演示）。 与班均（72）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "listening_speaking",
+       "name": "倾听与发言",
+       "value": 71,
+       "class_avg": 72,
+       "max": 100,
+       "sample_count": 6,
+       "evidence_strength": "low_sample",
+       "explanation": "主动发言 4 次，复述他人观点 3 次。 与班均（72）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "cooperation",
+       "name": "合作表现",
+       "value": 67,
+       "class_avg": 74,
+       "max": 100,
+       "sample_count": 12,
+       "evidence_strength": "low_sample",
+       "explanation": "小组任务贡献占比 57%，组内互评 B 档。 与班均（74）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "thinking_perspective",
+       "name": "思维角度",
+       "value": 63,
+       "class_avg": 66,
+       "max": 100,
+       "sample_count": 13,
+       "evidence_strength": "low_sample",
+       "explanation": "一题多解提交 1 次。 与班均（66）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-4"
+       ]
+      },
+      {
+       "key": "homework_process",
+       "name": "作业完成过程",
+       "value": 61,
+       "class_avg": 68,
+       "max": 100,
+       "sample_count": 11,
+       "evidence_strength": "low_sample",
+       "explanation": "平均提交间隔 1.2 天，中途退出重做 0 次。 与班均（68）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      },
+      {
+       "key": "homework_correction",
+       "name": "订正过程",
+       "value": 57,
+       "class_avg": 64,
+       "max": 100,
+       "sample_count": 8,
+       "evidence_strength": "low_sample",
+       "explanation": "订正完成率 61%，平均订正时长 1.2 天，错因归类完整率 49%。 与班均（64）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "scope": "student",
+   "student_id": "b2a7c9327638ebd7",
+   "name": "孙琪明",
+   "display_id": "edu03005",
+   "class_id": "cls-g8-03",
+   "persona_label": null,
+   "latest_event_at": "2026-09-15 15:40",
+   "evidence_count": 49,
+   "dimensions": [
+    {
+     "dimension_key": "knowledge",
+     "dimension_name": "知识点画像",
+     "score": 69,
+     "class_avg": 64,
+     "rank_pct": 67,
+     "sample_count": 98,
+     "evidence_strength": "sufficient",
+     "explanation": "知识点画像（69）高于班均（64），班级百分位 67%。",
+     "suggestion": "保持当前节奏，可尝试「函数概念理解」方向的挑战题。",
+     "radar_items": [
+      {
+       "key": "func_concept",
+       "name": "函数概念理解",
+       "value": 82,
+       "class_avg": 75,
+       "max": 100,
+       "sample_count": 11,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 3 条，正确率 75%，掌握较稳固。（当前样本偏少，读数仅供参考） 与班均（75）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function"
+       ],
+       "related_goal_ids": [
+        "goal-1"
+       ]
+      },
+      {
+       "key": "coordinate_reading",
+       "name": "坐标系读图",
+       "value": 63,
+       "class_avg": 62,
+       "max": 100,
+       "sample_count": 11,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 3 条，正确率 63%，明显低于预期水平。（当前样本偏少，读数仅供参考） 与班均（62）基本持平。",
+       "related_knowledge_ids": [
+        "kp-coordinate"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "function_image_reading",
+       "name": "图像识读",
+       "value": 70,
+       "class_avg": 63,
+       "max": 100,
+       "sample_count": 20,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 5 条，正确率 71%，处于中等水平，其中 1 条失分。 与班均（63）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-image"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "image_interpretation",
+       "name": "图像解释",
+       "value": 53,
+       "class_avg": 52,
+       "max": 100,
+       "sample_count": 23,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 6 条，正确率 52%，明显低于预期水平。 与班均（52）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-image",
+        "kp-function-property"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "trend_judgment",
+       "name": "变化趋势判断",
+       "value": 70,
+       "class_avg": 63,
+       "max": 100,
+       "sample_count": 15,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 4 条，正确率 71%，处于中等水平，其中 1 条失分。 与班均（63）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-property"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "real_world_modeling",
+       "name": "实际问题建模",
+       "value": 73,
+       "class_avg": 67,
+       "max": 100,
+       "sample_count": 18,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 5 条，正确率 72%，处于中等水平，其中 1 条失分。 与班均（67）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-application"
+       ],
+       "related_goal_ids": [
+        "goal-5"
+       ]
+      }
+     ]
+    },
+    {
+     "dimension_key": "ability",
+     "dimension_name": "能力画像",
+     "score": 72,
+     "class_avg": 68,
+     "rank_pct": 64,
+     "sample_count": 95,
+     "evidence_strength": "sufficient",
+     "explanation": "能力画像（72）与班均（68）持平，班级百分位 64%。",
+     "suggestion": "保持当前节奏，可尝试「识记理解」方向的挑战题。",
+     "radar_items": [
+      {
+       "key": "memorize_understand",
+       "name": "识记理解",
+       "value": 82,
+       "class_avg": 78,
+       "max": 100,
+       "sample_count": 16,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 4 条，正确率 82%，掌握较稳固。 与班均（78）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function",
+        "kp-fraction-properties"
+       ],
+       "related_goal_ids": [
+        "goal-1"
+       ]
+      },
+      {
+       "key": "representation_transfer",
+       "name": "表征转换",
+       "value": 66,
+       "class_avg": 59,
+       "max": 100,
+       "sample_count": 13,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 3 条，正确率 63%，处于中等水平，其中 1 条失分。（当前样本偏少，读数仅供参考） 与班均（59）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-image",
+        "kp-coordinate"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "operation_reasoning",
+       "name": "运算推理",
+       "value": 73,
+       "class_avg": 69,
+       "max": 100,
+       "sample_count": 13,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 3 条，正确率 69%，处于中等水平，其中 1 条失分。（当前样本偏少，读数仅供参考） 与班均（69）基本持平。",
+       "related_knowledge_ids": [
+        "kp-radical-addsub",
+        "kp-fraction-calc"
+       ],
+       "related_goal_ids": [
+        "goal-3"
+       ]
+      },
+      {
+       "key": "problem_analysis",
+       "name": "问题分析",
+       "value": 67,
+       "class_avg": 67,
+       "max": 100,
+       "sample_count": 20,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 5 条，正确率 66%，处于中等水平，其中 2 条失分。 与班均（67）基本持平。",
+       "related_knowledge_ids": [
+        "kp-congruent-judge",
+        "kp-special-quad"
+       ],
+       "related_goal_ids": [
+        "goal-4"
+       ]
+      },
+      {
+       "key": "transfer_apply",
+       "name": "迁移应用",
+       "value": 68,
+       "class_avg": 66,
+       "max": 100,
+       "sample_count": 11,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 3 条，正确率 61%，处于中等水平，其中 1 条失分。（当前样本偏少，读数仅供参考） 与班均（66）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-application"
+       ],
+       "related_goal_ids": [
+        "goal-5"
+       ]
+      },
+      {
+       "key": "reflect_express",
+       "name": "反思表达",
+       "value": 75,
+       "class_avg": 70,
+       "max": 100,
+       "sample_count": 22,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 6 条，正确率 76%，掌握较稳固。 与班均（70）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      }
+     ]
+    },
+    {
+     "dimension_key": "literacy",
+     "dimension_name": "素养画像",
+     "score": 74,
+     "class_avg": 73,
+     "rank_pct": 54,
+     "sample_count": 41,
+     "evidence_strength": "low_sample",
+     "explanation": "素养画像（74）与班均（73）持平，班级百分位 54%。",
+     "suggestion": "保持当前节奏，可尝试「价值观养成」方向的挑战题。",
+     "radar_items": [
+      {
+       "key": "learning_attitude",
+       "name": "学习态度",
+       "value": 79,
+       "class_avg": 76,
+       "max": 100,
+       "sample_count": 4,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天作业按时提交率 85%，学案带齐率 82%。 与班均（76）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      },
+      {
+       "key": "learning_interest",
+       "name": "学习兴趣",
+       "value": 67,
+       "class_avg": 71,
+       "max": 100,
+       "sample_count": 7,
+       "evidence_strength": "low_sample",
+       "explanation": "挑战题参与率 49%，课后主动提问 1 次。 与班均（71）基本持平。（样本偏少）",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "learning_motivation",
+       "name": "学习动机",
+       "value": 76,
+       "class_avg": 74,
+       "max": 100,
+       "sample_count": 8,
+       "evidence_strength": "low_sample",
+       "explanation": "自主练习启动 8 次，目标卡完成率 71%。 与班均（74）基本持平。（样本偏少）",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "effort_level",
+       "name": "努力程度",
+       "value": 74,
+       "class_avg": 77,
+       "max": 100,
+       "sample_count": 6,
+       "evidence_strength": "low_sample",
+       "explanation": "订正完成率 70%，平均订正时长 0.8 天。 与班均（77）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      },
+      {
+       "key": "self_efficacy",
+       "name": "自我效能",
+       "value": 66,
+       "class_avg": 65,
+       "max": 100,
+       "sample_count": 8,
+       "evidence_strength": "low_sample",
+       "explanation": "单元反思自评均分 6.6/10，难题独立完成率 52%。 与班均（65）基本持平。（样本偏少）",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "value_formation",
+       "name": "价值观养成",
+       "value": 81,
+       "class_avg": 76,
+       "max": 100,
+       "sample_count": 8,
+       "evidence_strength": "low_sample",
+       "explanation": "小组互评“诚信/助人”好评率 75%，反思中主动谈及意义 2 次。 与班均（76）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      }
+     ]
+    },
+    {
+     "dimension_key": "process",
+     "dimension_name": "学习过程表现画像",
+     "score": 68,
+     "class_avg": 69,
+     "rank_pct": 46,
+     "sample_count": 67,
+     "evidence_strength": "sufficient",
+     "explanation": "学习过程表现画像（68）与班均（69）持平，班级百分位 46%。",
+     "suggestion": "保持当前节奏，可尝试「合作表现」方向的挑战题。",
+     "radar_items": [
+      {
+       "key": "class_participation",
+       "name": "课堂参与",
+       "value": 68,
+       "class_avg": 72,
+       "max": 100,
+       "sample_count": 11,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天课堂互动 6 次（抢答/投票/演示）。 与班均（72）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "listening_speaking",
+       "name": "倾听与发言",
+       "value": 73,
+       "class_avg": 72,
+       "max": 100,
+       "sample_count": 9,
+       "evidence_strength": "low_sample",
+       "explanation": "主动发言 3 次，复述他人观点 3 次。 与班均（72）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "cooperation",
+       "name": "合作表现",
+       "value": 75,
+       "class_avg": 74,
+       "max": 100,
+       "sample_count": 12,
+       "evidence_strength": "low_sample",
+       "explanation": "小组任务贡献占比 65%，组内互评 A 档。 与班均（74）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "thinking_perspective",
+       "name": "思维角度",
+       "value": 62,
+       "class_avg": 66,
+       "max": 100,
+       "sample_count": 13,
+       "evidence_strength": "low_sample",
+       "explanation": "一题多解提交 2 次。 与班均（66）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-4"
+       ]
+      },
+      {
+       "key": "homework_process",
+       "name": "作业完成过程",
+       "value": 69,
+       "class_avg": 68,
+       "max": 100,
+       "sample_count": 11,
+       "evidence_strength": "low_sample",
+       "explanation": "平均提交间隔 1.0 天，中途退出重做 0 次。 与班均（68）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      },
+      {
+       "key": "homework_correction",
+       "name": "订正过程",
+       "value": 58,
+       "class_avg": 64,
+       "max": 100,
+       "sample_count": 11,
+       "evidence_strength": "low_sample",
+       "explanation": "订正完成率 62%，平均订正时长 1.2 天，错因归类完整率 50%。 与班均（64）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "scope": "student",
+   "student_id": "8dcf5f76483436c3",
+   "name": "罗勇",
+   "display_id": "edu03006",
+   "class_id": "cls-g8-03",
+   "persona_label": null,
+   "latest_event_at": "2026-09-16 16:20",
+   "evidence_count": 52,
+   "dimensions": [
+    {
+     "dimension_key": "knowledge",
+     "dimension_name": "知识点画像",
+     "score": 72,
+     "class_avg": 64,
+     "rank_pct": 76,
+     "sample_count": 97,
+     "evidence_strength": "sufficient",
+     "explanation": "知识点画像（72）高于班均（64），班级百分位 76%。",
+     "suggestion": "保持当前节奏，可尝试「函数概念理解」方向的挑战题。",
+     "radar_items": [
+      {
+       "key": "func_concept",
+       "name": "函数概念理解",
+       "value": 87,
+       "class_avg": 75,
+       "max": 100,
+       "sample_count": 18,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 5 条，正确率 87%，掌握较稳固。 高于班均 12 分，可作为优势项保持。",
+       "related_knowledge_ids": [
+        "kp-function"
+       ],
+       "related_goal_ids": [
+        "goal-1"
+       ]
+      },
+      {
+       "key": "coordinate_reading",
+       "name": "坐标系读图",
+       "value": 68,
+       "class_avg": 62,
+       "max": 100,
+       "sample_count": 9,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 2 条，正确率 66%，处于中等水平，其中 1 条失分。（当前样本偏少，读数仅供参考） 与班均（62）基本持平。",
+       "related_knowledge_ids": [
+        "kp-coordinate"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "function_image_reading",
+       "name": "图像识读",
+       "value": 69,
+       "class_avg": 63,
+       "max": 100,
+       "sample_count": 18,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 5 条，正确率 67%，处于中等水平，其中 2 条失分。 与班均（63）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-image"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "image_interpretation",
+       "name": "图像解释",
+       "value": 64,
+       "class_avg": 52,
+       "max": 100,
+       "sample_count": 16,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 4 条，正确率 61%，明显低于预期水平。 高于班均 12 分，可作为优势项保持。",
+       "related_knowledge_ids": [
+        "kp-function-image",
+        "kp-function-property"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "trend_judgment",
+       "name": "变化趋势判断",
+       "value": 67,
+       "class_avg": 63,
+       "max": 100,
+       "sample_count": 20,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 5 条，正确率 65%，处于中等水平，其中 2 条失分。 与班均（63）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-property"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "real_world_modeling",
+       "name": "实际问题建模",
+       "value": 78,
+       "class_avg": 67,
+       "max": 100,
+       "sample_count": 16,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 4 条，正确率 75%，掌握较稳固。 高于班均 11 分，可作为优势项保持。",
+       "related_knowledge_ids": [
+        "kp-function-application"
+       ],
+       "related_goal_ids": [
+        "goal-5"
+       ]
+      }
+     ]
+    },
+    {
+     "dimension_key": "ability",
+     "dimension_name": "能力画像",
+     "score": 74,
+     "class_avg": 68,
+     "rank_pct": 70,
+     "sample_count": 94,
+     "evidence_strength": "sufficient",
+     "explanation": "能力画像（74）高于班均（68），班级百分位 70%。",
+     "suggestion": "保持当前节奏，可尝试「识记理解」方向的挑战题。",
+     "radar_items": [
+      {
+       "key": "memorize_understand",
+       "name": "识记理解",
+       "value": 82,
+       "class_avg": 78,
+       "max": 100,
+       "sample_count": 12,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 3 条，正确率 80%，掌握较稳固。（当前样本偏少，读数仅供参考） 与班均（78）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function",
+        "kp-fraction-properties"
+       ],
+       "related_goal_ids": [
+        "goal-1"
+       ]
+      },
+      {
+       "key": "representation_transfer",
+       "name": "表征转换",
+       "value": 67,
+       "class_avg": 59,
+       "max": 100,
+       "sample_count": 15,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 4 条，正确率 62%，处于中等水平，其中 2 条失分。 高于班均 8 分，可作为优势项保持。",
+       "related_knowledge_ids": [
+        "kp-function-image",
+        "kp-coordinate"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "operation_reasoning",
+       "name": "运算推理",
+       "value": 75,
+       "class_avg": 69,
+       "max": 100,
+       "sample_count": 21,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 5 条，正确率 75%，掌握较稳固。 与班均（69）基本持平。",
+       "related_knowledge_ids": [
+        "kp-radical-addsub",
+        "kp-fraction-calc"
+       ],
+       "related_goal_ids": [
+        "goal-3"
+       ]
+      },
+      {
+       "key": "problem_analysis",
+       "name": "问题分析",
+       "value": 75,
+       "class_avg": 67,
+       "max": 100,
+       "sample_count": 15,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 4 条，正确率 75%，掌握较稳固。 高于班均 8 分，可作为优势项保持。",
+       "related_knowledge_ids": [
+        "kp-congruent-judge",
+        "kp-special-quad"
+       ],
+       "related_goal_ids": [
+        "goal-4"
+       ]
+      },
+      {
+       "key": "transfer_apply",
+       "name": "迁移应用",
+       "value": 75,
+       "class_avg": 66,
+       "max": 100,
+       "sample_count": 15,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 4 条，正确率 75%，掌握较稳固。 高于班均 9 分，可作为优势项保持。",
+       "related_knowledge_ids": [
+        "kp-function-application"
+       ],
+       "related_goal_ids": [
+        "goal-5"
+       ]
+      },
+      {
+       "key": "reflect_express",
+       "name": "反思表达",
+       "value": 72,
+       "class_avg": 70,
+       "max": 100,
+       "sample_count": 16,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 4 条，正确率 70%，处于中等水平，其中 1 条失分。 与班均（70）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      }
+     ]
+    },
+    {
+     "dimension_key": "literacy",
+     "dimension_name": "素养画像",
+     "score": 77,
+     "class_avg": 73,
+     "rank_pct": 64,
+     "sample_count": 36,
+     "evidence_strength": "sufficient",
+     "explanation": "素养画像（77）与班均（73）持平，班级百分位 64%。",
+     "suggestion": "保持当前节奏，可尝试「学习态度」方向的挑战题。",
+     "radar_items": [
+      {
+       "key": "learning_attitude",
+       "name": "学习态度",
+       "value": 83,
+       "class_avg": 76,
+       "max": 100,
+       "sample_count": 7,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天作业按时提交率 89%，学案带齐率 86%。 与班均（76）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      },
+      {
+       "key": "learning_interest",
+       "name": "学习兴趣",
+       "value": 72,
+       "class_avg": 71,
+       "max": 100,
+       "sample_count": 7,
+       "evidence_strength": "low_sample",
+       "explanation": "挑战题参与率 54%，课后主动提问 3 次。 与班均（71）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "learning_motivation",
+       "name": "学习动机",
+       "value": 83,
+       "class_avg": 74,
+       "max": 100,
+       "sample_count": 6,
+       "evidence_strength": "low_sample",
+       "explanation": "自主练习启动 10 次，目标卡完成率 78%。 高于班均 9 分，可作为优势项保持。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "effort_level",
+       "name": "努力程度",
+       "value": 78,
+       "class_avg": 77,
+       "max": 100,
+       "sample_count": 6,
+       "evidence_strength": "low_sample",
+       "explanation": "订正完成率 74%，平均订正时长 0.7 天。 与班均（77）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      },
+      {
+       "key": "self_efficacy",
+       "name": "自我效能",
+       "value": 66,
+       "class_avg": 65,
+       "max": 100,
+       "sample_count": 4,
+       "evidence_strength": "low_sample",
+       "explanation": "单元反思自评均分 6.6/10，难题独立完成率 52%。 与班均（65）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "value_formation",
+       "name": "价值观养成",
+       "value": 80,
+       "class_avg": 76,
+       "max": 100,
+       "sample_count": 6,
+       "evidence_strength": "low_sample",
+       "explanation": "小组互评“诚信/助人”好评率 74%，反思中主动谈及意义 2 次。 与班均（76）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      }
+     ]
+    },
+    {
+     "dimension_key": "process",
+     "dimension_name": "学习过程表现画像",
+     "score": 74,
+     "class_avg": 69,
+     "rank_pct": 67,
+     "sample_count": 61,
+     "evidence_strength": "sufficient",
+     "explanation": "学习过程表现画像（74）高于班均（69），班级百分位 67%。",
+     "suggestion": "保持当前节奏，可尝试「课堂参与」方向的挑战题。",
+     "radar_items": [
+      {
+       "key": "class_participation",
+       "name": "课堂参与",
+       "value": 80,
+       "class_avg": 72,
+       "max": 100,
+       "sample_count": 11,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天课堂互动 9 次（抢答/投票/演示）。 高于班均 8 分，可作为优势项保持。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "listening_speaking",
+       "name": "倾听与发言",
+       "value": 78,
+       "class_avg": 72,
+       "max": 100,
+       "sample_count": 14,
+       "evidence_strength": "low_sample",
+       "explanation": "主动发言 5 次，复述他人观点 4 次。 与班均（72）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "cooperation",
+       "name": "合作表现",
+       "value": 80,
+       "class_avg": 74,
+       "max": 100,
+       "sample_count": 6,
+       "evidence_strength": "low_sample",
+       "explanation": "小组任务贡献占比 70%，组内互评 A 档。 与班均（74）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "thinking_perspective",
+       "name": "思维角度",
+       "value": 71,
+       "class_avg": 66,
+       "max": 100,
+       "sample_count": 10,
+       "evidence_strength": "low_sample",
+       "explanation": "一题多解提交 3 次。 与班均（66）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-4"
+       ]
+      },
+      {
+       "key": "homework_process",
+       "name": "作业完成过程",
+       "value": 67,
+       "class_avg": 68,
+       "max": 100,
+       "sample_count": 8,
+       "evidence_strength": "low_sample",
+       "explanation": "平均提交间隔 1.1 天，中途退出重做 0 次。 与班均（68）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      },
+      {
+       "key": "homework_correction",
+       "name": "订正过程",
+       "value": 66,
+       "class_avg": 64,
+       "max": 100,
+       "sample_count": 12,
+       "evidence_strength": "low_sample",
+       "explanation": "订正完成率 70%，平均订正时长 1.1 天，错因归类完整率 58%。 与班均（64）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "scope": "student",
+   "student_id": "e285baf106ac2747",
+   "name": "周娟",
+   "display_id": "edu03007",
+   "class_id": "cls-g8-03",
+   "persona_label": null,
+   "latest_event_at": "2026-09-18 15:50",
+   "evidence_count": 61,
+   "dimensions": [
+    {
+     "dimension_key": "knowledge",
+     "dimension_name": "知识点画像",
+     "score": 71,
+     "class_avg": 64,
+     "rank_pct": 73,
+     "sample_count": 94,
+     "evidence_strength": "sufficient",
+     "explanation": "知识点画像（71）高于班均（64），班级百分位 73%。",
+     "suggestion": "保持当前节奏，可尝试「函数概念理解」方向的挑战题。",
+     "radar_items": [
+      {
+       "key": "func_concept",
+       "name": "函数概念理解",
+       "value": 85,
+       "class_avg": 75,
+       "max": 100,
+       "sample_count": 13,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 3 条，正确率 87%，掌握较稳固。（当前样本偏少，读数仅供参考） 高于班均 10 分，可作为优势项保持。",
+       "related_knowledge_ids": [
+        "kp-function"
+       ],
+       "related_goal_ids": [
+        "goal-1"
+       ]
+      },
+      {
+       "key": "coordinate_reading",
+       "name": "坐标系读图",
+       "value": 68,
+       "class_avg": 62,
+       "max": 100,
+       "sample_count": 20,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 5 条，正确率 67%，处于中等水平，其中 2 条失分。 与班均（62）基本持平。",
+       "related_knowledge_ids": [
+        "kp-coordinate"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "function_image_reading",
+       "name": "图像识读",
+       "value": 74,
+       "class_avg": 63,
+       "max": 100,
+       "sample_count": 16,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 4 条，正确率 68%，处于中等水平，其中 1 条失分。 高于班均 11 分，可作为优势项保持。",
+       "related_knowledge_ids": [
+        "kp-function-image"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "image_interpretation",
+       "name": "图像解释",
+       "value": 63,
+       "class_avg": 52,
+       "max": 100,
+       "sample_count": 14,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 4 条，正确率 60%，明显低于预期水平。（当前样本偏少，读数仅供参考） 高于班均 11 分，可作为优势项保持。",
+       "related_knowledge_ids": [
+        "kp-function-image",
+        "kp-function-property"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "trend_judgment",
+       "name": "变化趋势判断",
+       "value": 66,
+       "class_avg": 63,
+       "max": 100,
+       "sample_count": 17,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 4 条，正确率 67%，处于中等水平，其中 1 条失分。 与班均（63）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-property"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "real_world_modeling",
+       "name": "实际问题建模",
+       "value": 72,
+       "class_avg": 67,
+       "max": 100,
+       "sample_count": 14,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 4 条，正确率 73%，处于中等水平，其中 1 条失分。（当前样本偏少，读数仅供参考） 与班均（67）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-application"
+       ],
+       "related_goal_ids": [
+        "goal-5"
+       ]
+      }
+     ]
+    },
+    {
+     "dimension_key": "ability",
+     "dimension_name": "能力画像",
+     "score": 73,
+     "class_avg": 68,
+     "rank_pct": 67,
+     "sample_count": 71,
+     "evidence_strength": "sufficient",
+     "explanation": "能力画像（73）高于班均（68），班级百分位 67%。",
+     "suggestion": "保持当前节奏，可尝试「识记理解」方向的挑战题。",
+     "radar_items": [
+      {
+       "key": "memorize_understand",
+       "name": "识记理解",
+       "value": 86,
+       "class_avg": 78,
+       "max": 100,
+       "sample_count": 13,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 3 条，正确率 86%，掌握较稳固。（当前样本偏少，读数仅供参考） 高于班均 8 分，可作为优势项保持。",
+       "related_knowledge_ids": [
+        "kp-function",
+        "kp-fraction-properties"
+       ],
+       "related_goal_ids": [
+        "goal-1"
+       ]
+      },
+      {
+       "key": "representation_transfer",
+       "name": "表征转换",
+       "value": 66,
+       "class_avg": 59,
+       "max": 100,
+       "sample_count": 14,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 4 条，正确率 63%，处于中等水平，其中 1 条失分。（当前样本偏少，读数仅供参考） 与班均（59）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-image",
+        "kp-coordinate"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "operation_reasoning",
+       "name": "运算推理",
+       "value": 69,
+       "class_avg": 69,
+       "max": 100,
+       "sample_count": 11,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 3 条，正确率 70%，处于中等水平，其中 1 条失分。（当前样本偏少，读数仅供参考） 与班均（69）基本持平。",
+       "related_knowledge_ids": [
+        "kp-radical-addsub",
+        "kp-fraction-calc"
+       ],
+       "related_goal_ids": [
+        "goal-3"
+       ]
+      },
+      {
+       "key": "problem_analysis",
+       "name": "问题分析",
+       "value": 74,
+       "class_avg": 67,
+       "max": 100,
+       "sample_count": 11,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 3 条，正确率 69%，处于中等水平，其中 1 条失分。（当前样本偏少，读数仅供参考） 与班均（67）基本持平。",
+       "related_knowledge_ids": [
+        "kp-congruent-judge",
+        "kp-special-quad"
+       ],
+       "related_goal_ids": [
+        "goal-4"
+       ]
+      },
+      {
+       "key": "transfer_apply",
+       "name": "迁移应用",
+       "value": 72,
+       "class_avg": 66,
+       "max": 100,
+       "sample_count": 10,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 3 条，正确率 73%，处于中等水平，其中 1 条失分。（当前样本偏少，读数仅供参考） 与班均（66）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-application"
+       ],
+       "related_goal_ids": [
+        "goal-5"
+       ]
+      },
+      {
+       "key": "reflect_express",
+       "name": "反思表达",
+       "value": 71,
+       "class_avg": 70,
+       "max": 100,
+       "sample_count": 12,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 3 条，正确率 66%，处于中等水平，其中 1 条失分。（当前样本偏少，读数仅供参考） 与班均（70）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      }
+     ]
+    },
+    {
+     "dimension_key": "literacy",
+     "dimension_name": "素养画像",
+     "score": 78,
+     "class_avg": 73,
+     "rank_pct": 67,
+     "sample_count": 33,
+     "evidence_strength": "sufficient",
+     "explanation": "素养画像（78）高于班均（73），班级百分位 67%。",
+     "suggestion": "保持当前节奏，可尝试「价值观养成」方向的挑战题。",
+     "radar_items": [
+      {
+       "key": "learning_attitude",
+       "name": "学习态度",
+       "value": 83,
+       "class_avg": 76,
+       "max": 100,
+       "sample_count": 5,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天作业按时提交率 89%，学案带齐率 86%。 与班均（76）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      },
+      {
+       "key": "learning_interest",
+       "name": "学习兴趣",
+       "value": 73,
+       "class_avg": 71,
+       "max": 100,
+       "sample_count": 9,
+       "evidence_strength": "low_sample",
+       "explanation": "挑战题参与率 55%，课后主动提问 2 次。 与班均（71）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "learning_motivation",
+       "name": "学习动机",
+       "value": 81,
+       "class_avg": 74,
+       "max": 100,
+       "sample_count": 4,
+       "evidence_strength": "low_sample",
+       "explanation": "自主练习启动 9 次，目标卡完成率 76%。 与班均（74）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "effort_level",
+       "name": "努力程度",
+       "value": 81,
+       "class_avg": 77,
+       "max": 100,
+       "sample_count": 4,
+       "evidence_strength": "low_sample",
+       "explanation": "订正完成率 77%，平均订正时长 0.7 天。 与班均（77）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      },
+      {
+       "key": "self_efficacy",
+       "name": "自我效能",
+       "value": 66,
+       "class_avg": 65,
+       "max": 100,
+       "sample_count": 4,
+       "evidence_strength": "low_sample",
+       "explanation": "单元反思自评均分 6.6/10，难题独立完成率 52%。 与班均（65）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "value_formation",
+       "name": "价值观养成",
+       "value": 85,
+       "class_avg": 76,
+       "max": 100,
+       "sample_count": 7,
+       "evidence_strength": "low_sample",
+       "explanation": "小组互评“诚信/助人”好评率 79%，反思中主动谈及意义 3 次。 高于班均 9 分，可作为优势项保持。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      }
+     ]
+    },
+    {
+     "dimension_key": "process",
+     "dimension_name": "学习过程表现画像",
+     "score": 69,
+     "class_avg": 69,
+     "rank_pct": 50,
+     "sample_count": 58,
+     "evidence_strength": "low_sample",
+     "explanation": "学习过程表现画像（69）与班均（69）持平，班级百分位 50%。",
+     "suggestion": "保持当前节奏，可尝试「合作表现」方向的挑战题。",
+     "radar_items": [
+      {
+       "key": "class_participation",
+       "name": "课堂参与",
+       "value": 72,
+       "class_avg": 72,
+       "max": 100,
+       "sample_count": 13,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天课堂互动 6 次（抢答/投票/演示）。 与班均（72）基本持平。（样本偏少）",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "listening_speaking",
+       "name": "倾听与发言",
+       "value": 72,
+       "class_avg": 72,
+       "max": 100,
+       "sample_count": 9,
+       "evidence_strength": "low_sample",
+       "explanation": "主动发言 4 次，复述他人观点 3 次。 与班均（72）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "cooperation",
+       "name": "合作表现",
+       "value": 78,
+       "class_avg": 74,
+       "max": 100,
+       "sample_count": 10,
+       "evidence_strength": "low_sample",
+       "explanation": "小组任务贡献占比 68%，组内互评 A 档。 与班均（74）基本持平。（样本偏少）",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "thinking_perspective",
+       "name": "思维角度",
+       "value": 65,
+       "class_avg": 66,
+       "max": 100,
+       "sample_count": 10,
+       "evidence_strength": "low_sample",
+       "explanation": "一题多解提交 1 次。 与班均（66）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-4"
+       ]
+      },
+      {
+       "key": "homework_process",
+       "name": "作业完成过程",
+       "value": 66,
+       "class_avg": 68,
+       "max": 100,
+       "sample_count": 10,
+       "evidence_strength": "low_sample",
+       "explanation": "平均提交间隔 1.1 天，中途退出重做 0 次。 与班均（68）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      },
+      {
+       "key": "homework_correction",
+       "name": "订正过程",
+       "value": 61,
+       "class_avg": 64,
+       "max": 100,
+       "sample_count": 6,
+       "evidence_strength": "low_sample",
+       "explanation": "订正完成率 65%，平均订正时长 1.2 天，错因归类完整率 53%。 与班均（64）基本持平。（样本偏少）",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "scope": "student",
+   "student_id": "668681ce95c6ca5e",
+   "name": "周娟露",
+   "display_id": "edu03008",
+   "class_id": "cls-g8-03",
+   "persona_label": null,
+   "latest_event_at": "2026-09-16 10:00",
+   "evidence_count": 63,
+   "dimensions": [
+    {
+     "dimension_key": "knowledge",
+     "dimension_name": "知识点画像",
+     "score": 62,
+     "class_avg": 64,
+     "rank_pct": 43,
+     "sample_count": 99,
+     "evidence_strength": "sufficient",
+     "explanation": "知识点画像（62）与班均（64）持平，班级百分位 43%。",
+     "suggestion": "保持当前节奏，可尝试「函数概念理解」方向的挑战题。",
+     "radar_items": [
+      {
+       "key": "func_concept",
+       "name": "函数概念理解",
+       "value": 68,
+       "class_avg": 75,
+       "max": 100,
+       "sample_count": 9,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 2 条，正确率 69%，处于中等水平，其中 1 条失分。（当前样本偏少，读数仅供参考） 与班均（75）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function"
+       ],
+       "related_goal_ids": [
+        "goal-1"
+       ]
+      },
+      {
+       "key": "coordinate_reading",
+       "name": "坐标系读图",
+       "value": 58,
+       "class_avg": 62,
+       "max": 100,
+       "sample_count": 18,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 5 条，正确率 55%，明显低于预期水平。 与班均（62）基本持平。",
+       "related_knowledge_ids": [
+        "kp-coordinate"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "function_image_reading",
+       "name": "图像识读",
+       "value": 60,
+       "class_avg": 63,
+       "max": 100,
+       "sample_count": 13,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 3 条，正确率 60%，明显低于预期水平。（当前样本偏少，读数仅供参考） 与班均（63）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-image"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "image_interpretation",
+       "name": "图像解释",
+       "value": 53,
+       "class_avg": 52,
+       "max": 100,
+       "sample_count": 21,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 5 条，正确率 50%，明显低于预期水平。 与班均（52）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-image",
+        "kp-function-property"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "trend_judgment",
+       "name": "变化趋势判断",
+       "value": 65,
+       "class_avg": 63,
+       "max": 100,
+       "sample_count": 14,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 4 条，正确率 62%，处于中等水平，其中 2 条失分。（当前样本偏少，读数仅供参考） 与班均（63）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-property"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "real_world_modeling",
+       "name": "实际问题建模",
+       "value": 67,
+       "class_avg": 67,
+       "max": 100,
+       "sample_count": 24,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 6 条，正确率 66%，处于中等水平，其中 2 条失分。 与班均（67）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-application"
+       ],
+       "related_goal_ids": [
+        "goal-5"
+       ]
+      }
+     ]
+    },
+    {
+     "dimension_key": "ability",
+     "dimension_name": "能力画像",
+     "score": 75,
+     "class_avg": 68,
+     "rank_pct": 73,
+     "sample_count": 118,
+     "evidence_strength": "sufficient",
+     "explanation": "能力画像（75）高于班均（68），班级百分位 73%。",
+     "suggestion": "保持当前节奏，可尝试「识记理解」方向的挑战题。",
+     "radar_items": [
+      {
+       "key": "memorize_understand",
+       "name": "识记理解",
+       "value": 85,
+       "class_avg": 78,
+       "max": 100,
+       "sample_count": 18,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 5 条，正确率 78%，掌握较稳固。 与班均（78）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function",
+        "kp-fraction-properties"
+       ],
+       "related_goal_ids": [
+        "goal-1"
+       ]
+      },
+      {
+       "key": "representation_transfer",
+       "name": "表征转换",
+       "value": 65,
+       "class_avg": 59,
+       "max": 100,
+       "sample_count": 17,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 4 条，正确率 61%，处于中等水平，其中 2 条失分。 与班均（59）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-image",
+        "kp-coordinate"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "operation_reasoning",
+       "name": "运算推理",
+       "value": 76,
+       "class_avg": 69,
+       "max": 100,
+       "sample_count": 24,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 6 条，正确率 75%，掌握较稳固。 与班均（69）基本持平。",
+       "related_knowledge_ids": [
+        "kp-radical-addsub",
+        "kp-fraction-calc"
+       ],
+       "related_goal_ids": [
+        "goal-3"
+       ]
+      },
+      {
+       "key": "problem_analysis",
+       "name": "问题分析",
+       "value": 75,
+       "class_avg": 67,
+       "max": 100,
+       "sample_count": 19,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 5 条，正确率 75%，掌握较稳固。 高于班均 8 分，可作为优势项保持。",
+       "related_knowledge_ids": [
+        "kp-congruent-judge",
+        "kp-special-quad"
+       ],
+       "related_goal_ids": [
+        "goal-4"
+       ]
+      },
+      {
+       "key": "transfer_apply",
+       "name": "迁移应用",
+       "value": 72,
+       "class_avg": 66,
+       "max": 100,
+       "sample_count": 21,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 5 条，正确率 66%，处于中等水平，其中 2 条失分。 与班均（66）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-application"
+       ],
+       "related_goal_ids": [
+        "goal-5"
+       ]
+      },
+      {
+       "key": "reflect_express",
+       "name": "反思表达",
+       "value": 75,
+       "class_avg": 70,
+       "max": 100,
+       "sample_count": 19,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 5 条，正确率 75%，掌握较稳固。 与班均（70）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      }
+     ]
+    },
+    {
+     "dimension_key": "literacy",
+     "dimension_name": "素养画像",
+     "score": 71,
+     "class_avg": 73,
+     "rank_pct": 43,
+     "sample_count": 34,
+     "evidence_strength": "sufficient",
+     "explanation": "素养画像（71）与班均（73）持平，班级百分位 43%。",
+     "suggestion": "保持当前节奏，可尝试「努力程度」方向的挑战题。",
+     "radar_items": [
+      {
+       "key": "learning_attitude",
+       "name": "学习态度",
+       "value": 73,
+       "class_avg": 76,
+       "max": 100,
+       "sample_count": 7,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天作业按时提交率 79%，学案带齐率 76%。 与班均（76）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      },
+      {
+       "key": "learning_interest",
+       "name": "学习兴趣",
+       "value": 67,
+       "class_avg": 71,
+       "max": 100,
+       "sample_count": 4,
+       "evidence_strength": "low_sample",
+       "explanation": "挑战题参与率 49%，课后主动提问 1 次。 与班均（71）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "learning_motivation",
+       "name": "学习动机",
+       "value": 69,
+       "class_avg": 74,
+       "max": 100,
+       "sample_count": 8,
+       "evidence_strength": "low_sample",
+       "explanation": "自主练习启动 8 次，目标卡完成率 64%。 与班均（74）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "effort_level",
+       "name": "努力程度",
+       "value": 74,
+       "class_avg": 77,
+       "max": 100,
+       "sample_count": 7,
+       "evidence_strength": "low_sample",
+       "explanation": "订正完成率 70%，平均订正时长 0.8 天。 与班均（77）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      },
+      {
+       "key": "self_efficacy",
+       "name": "自我效能",
+       "value": 66,
+       "class_avg": 65,
+       "max": 100,
+       "sample_count": 3,
+       "evidence_strength": "low_sample",
+       "explanation": "单元反思自评均分 6.6/10，难题独立完成率 52%。 与班均（65）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "value_formation",
+       "name": "价值观养成",
+       "value": 74,
+       "class_avg": 76,
+       "max": 100,
+       "sample_count": 5,
+       "evidence_strength": "low_sample",
+       "explanation": "小组互评“诚信/助人”好评率 68%，反思中主动谈及意义 4 次。 与班均（76）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      }
+     ]
+    },
+    {
+     "dimension_key": "process",
+     "dimension_name": "学习过程表现画像",
+     "score": 72,
+     "class_avg": 69,
+     "rank_pct": 60,
+     "sample_count": 65,
+     "evidence_strength": "low_sample",
+     "explanation": "学习过程表现画像（72）与班均（69）持平，班级百分位 60%。",
+     "suggestion": "保持当前节奏，可尝试「合作表现」方向的挑战题。",
+     "radar_items": [
+      {
+       "key": "class_participation",
+       "name": "课堂参与",
+       "value": 72,
+       "class_avg": 72,
+       "max": 100,
+       "sample_count": 5,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天课堂互动 5 次（抢答/投票/演示）。 与班均（72）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "listening_speaking",
+       "name": "倾听与发言",
+       "value": 73,
+       "class_avg": 72,
+       "max": 100,
+       "sample_count": 9,
+       "evidence_strength": "low_sample",
+       "explanation": "主动发言 5 次，复述他人观点 3 次。 与班均（72）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "cooperation",
+       "name": "合作表现",
+       "value": 83,
+       "class_avg": 74,
+       "max": 100,
+       "sample_count": 11,
+       "evidence_strength": "low_sample",
+       "explanation": "小组任务贡献占比 73%，组内互评 A 档。 高于班均 9 分，可作为优势项保持。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "thinking_perspective",
+       "name": "思维角度",
+       "value": 66,
+       "class_avg": 66,
+       "max": 100,
+       "sample_count": 13,
+       "evidence_strength": "low_sample",
+       "explanation": "一题多解提交 0 次。 与班均（66）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-4"
+       ]
+      },
+      {
+       "key": "homework_process",
+       "name": "作业完成过程",
+       "value": 71,
+       "class_avg": 68,
+       "max": 100,
+       "sample_count": 14,
+       "evidence_strength": "low_sample",
+       "explanation": "平均提交间隔 1.0 天，中途退出重做 0 次。 与班均（68）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      },
+      {
+       "key": "homework_correction",
+       "name": "订正过程",
+       "value": 68,
+       "class_avg": 64,
+       "max": 100,
+       "sample_count": 13,
+       "evidence_strength": "low_sample",
+       "explanation": "订正完成率 72%，平均订正时长 1.0 天，错因归类完整率 60%。 与班均（64）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "scope": "student",
+   "student_id": "358f22c0c0bb9d3a",
+   "name": "曹婷",
+   "display_id": "edu03009",
+   "class_id": "cls-g8-03",
+   "persona_label": null,
+   "latest_event_at": "2026-09-14 09:30",
+   "evidence_count": 49,
+   "dimensions": [
+    {
+     "dimension_key": "knowledge",
+     "dimension_name": "知识点画像",
+     "score": 60,
+     "class_avg": 64,
+     "rank_pct": 36,
+     "sample_count": 96,
+     "evidence_strength": "sufficient",
+     "explanation": "知识点画像（60）与班均（64）持平，班级百分位 36%。",
+     "suggestion": "保持当前节奏，可尝试「函数概念理解」方向的挑战题。",
+     "radar_items": [
+      {
+       "key": "func_concept",
+       "name": "函数概念理解",
+       "value": 69,
+       "class_avg": 75,
+       "max": 100,
+       "sample_count": 13,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 3 条，正确率 65%，处于中等水平，其中 1 条失分。（当前样本偏少，读数仅供参考） 与班均（75）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function"
+       ],
+       "related_goal_ids": [
+        "goal-1"
+       ]
+      },
+      {
+       "key": "coordinate_reading",
+       "name": "坐标系读图",
+       "value": 59,
+       "class_avg": 62,
+       "max": 100,
+       "sample_count": 13,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 3 条，正确率 60%，明显低于预期水平。（当前样本偏少，读数仅供参考） 与班均（62）基本持平。",
+       "related_knowledge_ids": [
+        "kp-coordinate"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "function_image_reading",
+       "name": "图像识读",
+       "value": 58,
+       "class_avg": 63,
+       "max": 100,
+       "sample_count": 23,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 6 条，正确率 53%，明显低于预期水平。 与班均（63）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-image"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "image_interpretation",
+       "name": "图像解释",
+       "value": 48,
+       "class_avg": 52,
+       "max": 100,
+       "sample_count": 13,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 3 条，正确率 44%，明显低于预期水平。（当前样本偏少，读数仅供参考） 与班均（52）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-image",
+        "kp-function-property"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "trend_judgment",
+       "name": "变化趋势判断",
+       "value": 65,
+       "class_avg": 63,
+       "max": 100,
+       "sample_count": 21,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 5 条，正确率 59%，处于中等水平，其中 2 条失分。 与班均（63）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-property"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "real_world_modeling",
+       "name": "实际问题建模",
+       "value": 60,
+       "class_avg": 67,
+       "max": 100,
+       "sample_count": 13,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 3 条，正确率 54%，明显低于预期水平。（当前样本偏少，读数仅供参考） 与班均（67）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-application"
+       ],
+       "related_goal_ids": [
+        "goal-5"
+       ]
+      }
+     ]
+    },
+    {
+     "dimension_key": "ability",
+     "dimension_name": "能力画像",
+     "score": 63,
+     "class_avg": 68,
+     "rank_pct": 33,
+     "sample_count": 101,
+     "evidence_strength": "sufficient",
+     "explanation": "能力画像（63）低于班均（68），班级百分位 33%，短板集中在「表征转换」。",
+     "suggestion": "优先补「表征转换」：本周完成 2 道关联基础题 + 1 道变式题，三天后复测。",
+     "radar_items": [
+      {
+       "key": "memorize_understand",
+       "name": "识记理解",
+       "value": 75,
+       "class_avg": 78,
+       "max": 100,
+       "sample_count": 17,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 4 条，正确率 75%，掌握较稳固。 与班均（78）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function",
+        "kp-fraction-properties"
+       ],
+       "related_goal_ids": [
+        "goal-1"
+       ]
+      },
+      {
+       "key": "representation_transfer",
+       "name": "表征转换",
+       "value": 55,
+       "class_avg": 59,
+       "max": 100,
+       "sample_count": 19,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 5 条，正确率 50%，明显低于预期水平。 与班均（59）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-image",
+        "kp-coordinate"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "operation_reasoning",
+       "name": "运算推理",
+       "value": 61,
+       "class_avg": 69,
+       "max": 100,
+       "sample_count": 21,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 5 条，正确率 60%，明显低于预期水平。 低于班均 8 分，是本维度重点补弱项。",
+       "related_knowledge_ids": [
+        "kp-radical-addsub",
+        "kp-fraction-calc"
+       ],
+       "related_goal_ids": [
+        "goal-3"
+       ]
+      },
+      {
+       "key": "problem_analysis",
+       "name": "问题分析",
+       "value": 60,
+       "class_avg": 67,
+       "max": 100,
+       "sample_count": 9,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 2 条，正确率 59%，明显低于预期水平。（当前样本偏少，读数仅供参考） 与班均（67）基本持平。",
+       "related_knowledge_ids": [
+        "kp-congruent-judge",
+        "kp-special-quad"
+       ],
+       "related_goal_ids": [
+        "goal-4"
+       ]
+      },
+      {
+       "key": "transfer_apply",
+       "name": "迁移应用",
+       "value": 65,
+       "class_avg": 66,
+       "max": 100,
+       "sample_count": 24,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 6 条，正确率 60%，处于中等水平，其中 2 条失分。 与班均（66）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-application"
+       ],
+       "related_goal_ids": [
+        "goal-5"
+       ]
+      },
+      {
+       "key": "reflect_express",
+       "name": "反思表达",
+       "value": 63,
+       "class_avg": 70,
+       "max": 100,
+       "sample_count": 11,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 3 条，正确率 61%，明显低于预期水平。（当前样本偏少，读数仅供参考） 与班均（70）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      }
+     ]
+    },
+    {
+     "dimension_key": "literacy",
+     "dimension_name": "素养画像",
+     "score": 70,
+     "class_avg": 73,
+     "rank_pct": 40,
+     "sample_count": 39,
+     "evidence_strength": "low_sample",
+     "explanation": "素养画像（70）与班均（73）持平，班级百分位 40%。",
+     "suggestion": "保持当前节奏，可尝试「学习态度」方向的挑战题。",
+     "radar_items": [
+      {
+       "key": "learning_attitude",
+       "name": "学习态度",
+       "value": 76,
+       "class_avg": 76,
+       "max": 100,
+       "sample_count": 7,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天作业按时提交率 82%，学案带齐率 79%。 与班均（76）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      },
+      {
+       "key": "learning_interest",
+       "name": "学习兴趣",
+       "value": 66,
+       "class_avg": 71,
+       "max": 100,
+       "sample_count": 4,
+       "evidence_strength": "low_sample",
+       "explanation": "挑战题参与率 48%，课后主动提问 1 次。 与班均（71）基本持平。（样本偏少）",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "learning_motivation",
+       "name": "学习动机",
+       "value": 76,
+       "class_avg": 74,
+       "max": 100,
+       "sample_count": 6,
+       "evidence_strength": "low_sample",
+       "explanation": "自主练习启动 11 次，目标卡完成率 71%。 与班均（74）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "effort_level",
+       "name": "努力程度",
+       "value": 70,
+       "class_avg": 77,
+       "max": 100,
+       "sample_count": 9,
+       "evidence_strength": "low_sample",
+       "explanation": "订正完成率 66%，平均订正时长 0.8 天。 与班均（77）基本持平。（样本偏少）",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      },
+      {
+       "key": "self_efficacy",
+       "name": "自我效能",
+       "value": 59,
+       "class_avg": 65,
+       "max": 100,
+       "sample_count": 5,
+       "evidence_strength": "low_sample",
+       "explanation": "单元反思自评均分 5.9/10，难题独立完成率 45%。 与班均（65）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "value_formation",
+       "name": "价值观养成",
+       "value": 70,
+       "class_avg": 76,
+       "max": 100,
+       "sample_count": 8,
+       "evidence_strength": "low_sample",
+       "explanation": "小组互评“诚信/助人”好评率 64%，反思中主动谈及意义 2 次。 与班均（76）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      }
+     ]
+    },
+    {
+     "dimension_key": "process",
+     "dimension_name": "学习过程表现画像",
+     "score": 67,
+     "class_avg": 69,
+     "rank_pct": 43,
+     "sample_count": 64,
+     "evidence_strength": "sufficient",
+     "explanation": "学习过程表现画像（67）与班均（69）持平，班级百分位 43%。",
+     "suggestion": "保持当前节奏，可尝试「课堂参与」方向的挑战题。",
+     "radar_items": [
+      {
+       "key": "class_participation",
+       "name": "课堂参与",
+       "value": 72,
+       "class_avg": 72,
+       "max": 100,
+       "sample_count": 11,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天课堂互动 7 次（抢答/投票/演示）。 与班均（72）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "listening_speaking",
+       "name": "倾听与发言",
+       "value": 70,
+       "class_avg": 72,
+       "max": 100,
+       "sample_count": 13,
+       "evidence_strength": "low_sample",
+       "explanation": "主动发言 5 次，复述他人观点 3 次。 与班均（72）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "cooperation",
+       "name": "合作表现",
+       "value": 71,
+       "class_avg": 74,
+       "max": 100,
+       "sample_count": 13,
+       "evidence_strength": "low_sample",
+       "explanation": "小组任务贡献占比 61%，组内互评 B 档。 与班均（74）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "thinking_perspective",
+       "name": "思维角度",
+       "value": 61,
+       "class_avg": 66,
+       "max": 100,
+       "sample_count": 10,
+       "evidence_strength": "low_sample",
+       "explanation": "一题多解提交 1 次。 与班均（66）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-4"
+       ]
+      },
+      {
+       "key": "homework_process",
+       "name": "作业完成过程",
+       "value": 67,
+       "class_avg": 68,
+       "max": 100,
+       "sample_count": 7,
+       "evidence_strength": "low_sample",
+       "explanation": "平均提交间隔 1.1 天，中途退出重做 0 次。 与班均（68）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      },
+      {
+       "key": "homework_correction",
+       "name": "订正过程",
+       "value": 58,
+       "class_avg": 64,
+       "max": 100,
+       "sample_count": 10,
+       "evidence_strength": "low_sample",
+       "explanation": "订正完成率 62%，平均订正时长 1.2 天，错因归类完整率 50%。 与班均（64）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "scope": "student",
+   "student_id": "6c4898082f92b9af",
+   "name": "马军",
+   "display_id": "edu03010",
+   "class_id": "cls-g8-03",
+   "persona_label": null,
+   "latest_event_at": "2026-09-14 16:20",
+   "evidence_count": 37,
+   "dimensions": [
+    {
+     "dimension_key": "knowledge",
+     "dimension_name": "知识点画像",
+     "score": 67,
+     "class_avg": 64,
+     "rank_pct": 60,
+     "sample_count": 98,
+     "evidence_strength": "sufficient",
+     "explanation": "知识点画像（67）与班均（64）持平，班级百分位 60%。",
+     "suggestion": "保持当前节奏，可尝试「函数概念理解」方向的挑战题。",
+     "radar_items": [
+      {
+       "key": "func_concept",
+       "name": "函数概念理解",
+       "value": 80,
+       "class_avg": 75,
+       "max": 100,
+       "sample_count": 11,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 3 条，正确率 79%，掌握较稳固。（当前样本偏少，读数仅供参考） 与班均（75）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function"
+       ],
+       "related_goal_ids": [
+        "goal-1"
+       ]
+      },
+      {
+       "key": "coordinate_reading",
+       "name": "坐标系读图",
+       "value": 67,
+       "class_avg": 62,
+       "max": 100,
+       "sample_count": 23,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 6 条，正确率 67%，处于中等水平，其中 2 条失分。 与班均（62）基本持平。",
+       "related_knowledge_ids": [
+        "kp-coordinate"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "function_image_reading",
+       "name": "图像识读",
+       "value": 61,
+       "class_avg": 63,
+       "max": 100,
+       "sample_count": 11,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 3 条，正确率 61%，明显低于预期水平。（当前样本偏少，读数仅供参考） 与班均（63）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-image"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "image_interpretation",
+       "name": "图像解释",
+       "value": 53,
+       "class_avg": 52,
+       "max": 100,
+       "sample_count": 23,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 6 条，正确率 53%，明显低于预期水平。 与班均（52）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-image",
+        "kp-function-property"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "trend_judgment",
+       "name": "变化趋势判断",
+       "value": 69,
+       "class_avg": 63,
+       "max": 100,
+       "sample_count": 16,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 4 条，正确率 64%，处于中等水平，其中 1 条失分。 与班均（63）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-property"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "real_world_modeling",
+       "name": "实际问题建模",
+       "value": 70,
+       "class_avg": 67,
+       "max": 100,
+       "sample_count": 14,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天关联作答 4 条，正确率 69%，处于中等水平，其中 1 条失分。（当前样本偏少，读数仅供参考） 与班均（67）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-application"
+       ],
+       "related_goal_ids": [
+        "goal-5"
+       ]
+      }
+     ]
+    },
+    {
+     "dimension_key": "ability",
+     "dimension_name": "能力画像",
+     "score": 61,
+     "class_avg": 68,
+     "rank_pct": 27,
+     "sample_count": 119,
+     "evidence_strength": "sufficient",
+     "explanation": "能力画像（61）低于班均（68），班级百分位 27%，短板集中在「表征转换」。",
+     "suggestion": "优先补「表征转换」：本周完成 2 道关联基础题 + 1 道变式题，三天后复测。",
+     "radar_items": [
+      {
+       "key": "memorize_understand",
+       "name": "识记理解",
+       "value": 73,
+       "class_avg": 78,
+       "max": 100,
+       "sample_count": 23,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 6 条，正确率 74%，处于中等水平，其中 2 条失分。 与班均（78）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function",
+        "kp-fraction-properties"
+       ],
+       "related_goal_ids": [
+        "goal-1"
+       ]
+      },
+      {
+       "key": "representation_transfer",
+       "name": "表征转换",
+       "value": 53,
+       "class_avg": 59,
+       "max": 100,
+       "sample_count": 22,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 6 条，正确率 48%，明显低于预期水平。 与班均（59）基本持平。",
+       "related_knowledge_ids": [
+        "kp-function-image",
+        "kp-coordinate"
+       ],
+       "related_goal_ids": [
+        "goal-2"
+       ]
+      },
+      {
+       "key": "operation_reasoning",
+       "name": "运算推理",
+       "value": 64,
+       "class_avg": 69,
+       "max": 100,
+       "sample_count": 16,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 4 条，正确率 65%，明显低于预期水平。 与班均（69）基本持平。",
+       "related_knowledge_ids": [
+        "kp-radical-addsub",
+        "kp-fraction-calc"
+       ],
+       "related_goal_ids": [
+        "goal-3"
+       ]
+      },
+      {
+       "key": "problem_analysis",
+       "name": "问题分析",
+       "value": 59,
+       "class_avg": 67,
+       "max": 100,
+       "sample_count": 19,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 5 条，正确率 53%，明显低于预期水平。 低于班均 8 分，是本维度重点补弱项。",
+       "related_knowledge_ids": [
+        "kp-congruent-judge",
+        "kp-special-quad"
+       ],
+       "related_goal_ids": [
+        "goal-4"
+       ]
+      },
+      {
+       "key": "transfer_apply",
+       "name": "迁移应用",
+       "value": 55,
+       "class_avg": 66,
+       "max": 100,
+       "sample_count": 15,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 4 条，正确率 55%，明显低于预期水平。 低于班均 11 分，是本维度重点补弱项。",
+       "related_knowledge_ids": [
+        "kp-function-application"
+       ],
+       "related_goal_ids": [
+        "goal-5"
+       ]
+      },
+      {
+       "key": "reflect_express",
+       "name": "反思表达",
+       "value": 61,
+       "class_avg": 70,
+       "max": 100,
+       "sample_count": 24,
+       "evidence_strength": "sufficient",
+       "explanation": "近 30 天关联作答 6 条，正确率 56%，明显低于预期水平。 低于班均 9 分，是本维度重点补弱项。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      }
+     ]
+    },
+    {
+     "dimension_key": "literacy",
+     "dimension_name": "素养画像",
+     "score": 72,
+     "class_avg": 73,
+     "rank_pct": 46,
+     "sample_count": 30,
+     "evidence_strength": "sufficient",
+     "explanation": "素养画像（72）与班均（73）持平，班级百分位 46%。",
+     "suggestion": "保持当前节奏，可尝试「价值观养成」方向的挑战题。",
+     "radar_items": [
+      {
+       "key": "learning_attitude",
+       "name": "学习态度",
+       "value": 77,
+       "class_avg": 76,
+       "max": 100,
+       "sample_count": 3,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天作业按时提交率 83%，学案带齐率 80%。 与班均（76）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      },
+      {
+       "key": "learning_interest",
+       "name": "学习兴趣",
+       "value": 67,
+       "class_avg": 71,
+       "max": 100,
+       "sample_count": 6,
+       "evidence_strength": "low_sample",
+       "explanation": "挑战题参与率 49%，课后主动提问 1 次。 与班均（71）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "learning_motivation",
+       "name": "学习动机",
+       "value": 69,
+       "class_avg": 74,
+       "max": 100,
+       "sample_count": 4,
+       "evidence_strength": "low_sample",
+       "explanation": "自主练习启动 11 次，目标卡完成率 64%。 与班均（74）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "effort_level",
+       "name": "努力程度",
+       "value": 75,
+       "class_avg": 77,
+       "max": 100,
+       "sample_count": 4,
+       "evidence_strength": "low_sample",
+       "explanation": "订正完成率 71%，平均订正时长 0.8 天。 与班均（77）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      },
+      {
+       "key": "self_efficacy",
+       "name": "自我效能",
+       "value": 63,
+       "class_avg": 65,
+       "max": 100,
+       "sample_count": 9,
+       "evidence_strength": "low_sample",
+       "explanation": "单元反思自评均分 6.3/10，难题独立完成率 49%。 与班均（65）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "value_formation",
+       "name": "价值观养成",
+       "value": 81,
+       "class_avg": 76,
+       "max": 100,
+       "sample_count": 4,
+       "evidence_strength": "low_sample",
+       "explanation": "小组互评“诚信/助人”好评率 75%，反思中主动谈及意义 3 次。 与班均（76）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      }
+     ]
+    },
+    {
+     "dimension_key": "process",
+     "dimension_name": "学习过程表现画像",
+     "score": 72,
+     "class_avg": 69,
+     "rank_pct": 60,
+     "sample_count": 52,
+     "evidence_strength": "sufficient",
+     "explanation": "学习过程表现画像（72）与班均（69）持平，班级百分位 60%。",
+     "suggestion": "保持当前节奏，可尝试「合作表现」方向的挑战题。",
+     "radar_items": [
+      {
+       "key": "class_participation",
+       "name": "课堂参与",
+       "value": 71,
+       "class_avg": 72,
+       "max": 100,
+       "sample_count": 7,
+       "evidence_strength": "low_sample",
+       "explanation": "近 30 天课堂互动 4 次（抢答/投票/演示）。 与班均（72）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "listening_speaking",
+       "name": "倾听与发言",
+       "value": 71,
+       "class_avg": 72,
+       "max": 100,
+       "sample_count": 13,
+       "evidence_strength": "low_sample",
+       "explanation": "主动发言 4 次，复述他人观点 3 次。 与班均（72）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "cooperation",
+       "name": "合作表现",
+       "value": 79,
+       "class_avg": 74,
+       "max": 100,
+       "sample_count": 10,
+       "evidence_strength": "low_sample",
+       "explanation": "小组任务贡献占比 69%，组内互评 A 档。 与班均（74）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": []
+      },
+      {
+       "key": "thinking_perspective",
+       "name": "思维角度",
+       "value": 71,
+       "class_avg": 66,
+       "max": 100,
+       "sample_count": 10,
+       "evidence_strength": "low_sample",
+       "explanation": "一题多解提交 2 次。 与班均（66）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-4"
+       ]
+      },
+      {
+       "key": "homework_process",
+       "name": "作业完成过程",
+       "value": 70,
+       "class_avg": 68,
+       "max": 100,
+       "sample_count": 6,
+       "evidence_strength": "low_sample",
+       "explanation": "平均提交间隔 1.0 天，中途退出重做 0 次。 与班均（68）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      },
+      {
+       "key": "homework_correction",
+       "name": "订正过程",
+       "value": 69,
+       "class_avg": 64,
+       "max": 100,
+       "sample_count": 6,
+       "evidence_strength": "low_sample",
+       "explanation": "订正完成率 73%，平均订正时长 1.0 天，错因归类完整率 61%。 与班均（64）基本持平。",
+       "related_knowledge_ids": [],
+       "related_goal_ids": [
+        "goal-6"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

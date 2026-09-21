@@ -3,16 +3,17 @@ import { message } from "antd";
 
 export const useBesket = () => {
   const dispatch = useDispatch();
-  const {
-    gradeName,
-    subjectName,
-    questionBasket,
-    activeTab
-  } = useSelector((state: any) => state.resourceSearchModel);
+  const { gradeName, subjectName, questionBasket, activeTab } = useSelector(
+    (state: any) => state.resourceSearchModel,
+  );
 
   const getQuestionGroups = (basketData: any = questionBasket) => {
     const questionGroups = basketData?.ques_type_stat;
-    if (!questionGroups || typeof questionGroups !== "object" || Array.isArray(questionGroups)) {
+    if (
+      !questionGroups ||
+      typeof questionGroups !== "object" ||
+      Array.isArray(questionGroups)
+    ) {
       return {};
     }
     return questionGroups;
@@ -40,7 +41,7 @@ export const useBesket = () => {
   const loadQuestionBasket = async () => {
     dispatch({
       type: "resourceSearchModel/setData",
-      payload: { questionBasketLoading: true }
+      payload: { questionBasketLoading: true },
     });
 
     const result: any = await dispatch({
@@ -49,79 +50,86 @@ export const useBesket = () => {
       payload: {
         stage_name: gradeName,
         subject_name: subjectName,
-        bank_source: activeTab === 'public' ? 1 : 2
+        bank_source: activeTab === "public" ? 1 : 2,
       },
     });
     if (result?.code === 200) {
       dispatch({
         type: "resourceSearchModel/setData",
         payload: {
-          questionBasket: result.data
-        }
+          questionBasket: result.data,
+        },
       });
     } else {
       dispatch({
         type: "resourceSearchModel/setData",
         payload: {
-          questionBasket: null
-        }
+          questionBasket: null,
+        },
       });
     }
     dispatch({
       type: "resourceSearchModel/setData",
-      payload: { questionBasketLoading: false }
+      payload: { questionBasketLoading: false },
     });
   };
 
   // 操作试题篮
-  const handleQuestionToBasket = async (actionType: 'add' | 'remove', questionData: any) => {
-    const payload = actionType === 'add'
-      ? {
-        ...questionData, 
-        bankSource: activeTab === 'public' ? 1 : 2
-      }
-      : {
-        id: questionData.id,
-        stage_name: gradeName,
-        subject_name: subjectName,
-        bank_source: activeTab === 'public' ? 1 : 2
-      }
+  const handleQuestionToBasket = async (
+    actionType: "add" | "remove",
+    questionData: any,
+  ) => {
+    const payload =
+      actionType === "add"
+        ? {
+            ...questionData,
+            bankSource: activeTab === "public" ? 1 : 2,
+          }
+        : {
+            id: questionData.id,
+            stage_name: gradeName,
+            subject_name: subjectName,
+            bank_source: activeTab === "public" ? 1 : 2,
+          };
     const result: any = await dispatch({
       type: "resourceSearchModel/postData",
-      apiUrl: actionType === 'add' ? "addQuestionToBasket" : "removeQuestionFromBasket",
-      payload
+      apiUrl:
+        actionType === "add"
+          ? "addQuestionToBasket"
+          : "removeQuestionFromBasket",
+      payload,
     });
     if (result?.code === 200) {
       dispatch({
-        type: 'resourceSearchModel/updateState',
+        type: "resourceSearchModel/updateState",
         res: {
-          questionBasket: result.data
-        }
-      })
+          questionBasket: result.data,
+        },
+      });
     } else {
       message.error(result?.msg || "操作失败");
       return null;
     }
-  }
+  };
 
   // 清空试题篮
-  const clearQuestionBasket = async() => {
+  const clearQuestionBasket = async () => {
     const result: any = await dispatch({
       type: "resourceSearchModel/postData",
       apiUrl: "clearQuestionBasket",
       payload: {
         stage_name: gradeName,
         subject_name: subjectName,
-        bank_source: activeTab === 'public' ? 1 : 2
+        bank_source: activeTab === "public" ? 1 : 2,
       },
     });
     if (result?.code === 200) {
       dispatch({
-        type: 'resourceSearchModel/updateState',
+        type: "resourceSearchModel/updateState",
         res: {
-          questionBasket: null
-        }
-      })
+          questionBasket: null,
+        },
+      });
     } else {
       message.error(result?.msg || "操作失败");
     }
@@ -135,7 +143,7 @@ export const useBesket = () => {
         ids: questionIds,
         stage_name: gradeName,
         subject_name: subjectName,
-        bank_source: activeTab === 'public' ? 1 : 2
+        bank_source: activeTab === "public" ? 1 : 2,
       },
     });
     if (result?.code === 200) {

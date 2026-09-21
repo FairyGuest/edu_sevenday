@@ -18,11 +18,15 @@ export const useLeft = () => {
     chapterTree,
     expandedKeys,
     chapterExpandedKeys,
-    activeTab
+    activeTab,
   } = useSelector((state: any) => state.resourceSearchModel);
 
   // 获取节点的所有子节点key
-  const getChildrenKeys = (nodes: any[], targetKeys: string[], keyField = 'key'): string[] => {
+  const getChildrenKeys = (
+    nodes: any[],
+    targetKeys: string[],
+    keyField = "key",
+  ): string[] => {
     const childrenKeys: string[] = [];
 
     const findChildren = (nodeList: any[]) => {
@@ -55,7 +59,6 @@ export const useLeft = () => {
 
   // 加载知识点树
   const loadKnowledgeTree = async () => {
-
     // if(activeTab == 'public') {
     //   addNewTracking({
     //     bt: 'pv',
@@ -71,52 +74,52 @@ export const useLeft = () => {
 
       // 从本地JSON文件加载知识点树数据
       const treeData = await loadLocalKnowledgeTree(gradeName, subjectName);
-      const firstLevelKeys = treeData.map((node: KnowledgeTreeNode) => node.key);
+      const firstLevelKeys = treeData.map(
+        (node: KnowledgeTreeNode) => node.key,
+      );
       dispatch({
         type: "resourceSearchModel/setData",
         payload: {
           knowledgeTree: treeData,
           expandedKeys: firstLevelKeys,
           autoExpandParent: true,
-          checkedKnowledge: [],
+          // Loading the catalog must preserve a selection carried from the graph.
           // knowledgeTreeLoading: false,
-        }
+        },
       });
     } catch (error) {
-      console.error('加载知识点树失败:', error);
+      console.error("加载知识点树失败:", error);
       dispatch({
         type: "resourceSearchModel/setData",
-        payload: { knowledgeTreeLoading: false }
+        payload: { knowledgeTreeLoading: false },
       });
     }
   };
-
 
   const saveUserSelection = async (
     textbookId?: string,
     textbookVersion?: string,
     stageName = gradeName,
-    subjectValue = subjectName
+    subjectValue = subjectName,
   ) => {
     // 暂时不再调用 /bank/user_selection
-  }
-
+  };
 
   // 获取章节树的全部勾选id
   const getTreeKeys = (val: any) => {
-    const _arr: any = []
+    const _arr: any = [];
     const dealwith = (list: any) => {
       return list.map((item: any) => {
         if (item?.children?.length > 0) {
           dealwith(item?.children);
         }
-        _arr.push(item?.id ?? item?.key)
+        _arr.push(item?.id ?? item?.key);
         return;
       });
     };
-    dealwith(val)
-    return _arr
-  }
+    dealwith(val);
+    return _arr;
+  };
 
   // 处理教材列表树数据
   const transformToCascader = (treeData: any) => {
@@ -124,16 +127,17 @@ export const useLeft = () => {
       return [];
     }
 
-    return treeData.map(versionItem => {
+    return treeData.map((versionItem) => {
       // 第一层：版本
       const versionNode = {
         value: versionItem.version_id,
         label: versionItem.version_name,
         // 第二层：教材
-        children: versionItem.children?.map((textbook: any) => ({
-          value: textbook.textbook_id,
-          label: textbook.textbook_name,
-        })) || []
+        children:
+          versionItem.children?.map((textbook: any) => ({
+            value: textbook.textbook_id,
+            label: textbook.textbook_name,
+          })) || [],
       };
       return versionNode;
     });
@@ -141,7 +145,6 @@ export const useLeft = () => {
 
   // 加载个人题库教材列表
   const loadTextbooksList = async () => {
-
     // 埋点
     // addNewTracking({
     //   bt: 'pv',
@@ -150,11 +153,11 @@ export const useLeft = () => {
 
     const res: any = await dispatch({
       type: "resourceSearchModel/postData",
-      apiUrl: 'getVersionTree',
+      apiUrl: "getVersionTree",
       mTitle: "textbooksListTree",
       payload: {
         stage: gradeName,
-        subject: subjectName
+        subject: subjectName,
       },
     });
 
@@ -164,11 +167,16 @@ export const useLeft = () => {
     const firstTextbookId = list?.[0]?.children?.[0]?.textbook_id || "";
 
     const selectedVersionId = textbookVersion || firstVersionId;
-    const selectedVersionNode = list?.find((item: any) => String(item?.version_id) === String(selectedVersionId));
+    const selectedVersionNode = list?.find(
+      (item: any) => String(item?.version_id) === String(selectedVersionId),
+    );
 
-    const selectedTextbookExists = selectedVersionNode?.children?.some((item: any) => String(item?.textbook_id) === String(textbookId));
+    const selectedTextbookExists = selectedVersionNode?.children?.some(
+      (item: any) => String(item?.textbook_id) === String(textbookId),
+    );
 
-    const currentTextbookVersion = selectedVersionNode?.version_id || firstVersionId;
+    const currentTextbookVersion =
+      selectedVersionNode?.version_id || firstVersionId;
     const currentTextbookId = selectedTextbookExists
       ? textbookId
       : selectedVersionNode?.children?.[0]?.textbook_id || firstTextbookId;
@@ -181,10 +189,10 @@ export const useLeft = () => {
         userSelectionTextbook: {
           ...userSelectionTextbook,
           personalTextbookVersion: currentTextbookVersion,
-          personalTextbookId: currentTextbookId
+          personalTextbookId: currentTextbookId,
         },
         chapterTree: [],
-      }
+      },
     });
 
     if (
@@ -196,7 +204,7 @@ export const useLeft = () => {
 
     // 加载章节树
     if (currentTextbookId) {
-      loadChapterTree(currentTextbookId)
+      loadChapterTree(currentTextbookId);
     }
   };
 
@@ -218,7 +226,7 @@ export const useLeft = () => {
         type: "resourceSearchModel/getData",
         apiUrl: "getCatalogueTree",
         payload: {
-          textbookId: targetTextbookId
+          textbookId: targetTextbookId,
         },
       });
 
@@ -234,7 +242,7 @@ export const useLeft = () => {
             treeAllKeyIdList: getTreeKeys(catalogueTree),
             chapterAutoExpandParent: true,
             checkedChapter: [], // 重置选中状态
-          }
+          },
         });
       }
 
@@ -243,7 +251,7 @@ export const useLeft = () => {
       //   payload: { chapterTreeLoading: false }
       // });
     } catch (error) {
-      console.error('加载章节树失败:', error);
+      console.error("加载章节树失败:", error);
       // dispatch({
       //   type: "resourceSearchModel/setData",
       //   payload: { chapterTreeLoading: false }
@@ -257,11 +265,19 @@ export const useLeft = () => {
 
     // 获取新选中的节点（与之前选中的差集）
     const previousChecked = checked.checked ? [] : checkedKeysValue; // 如果是对象形式，说明有之前的选中状态
-    const newlyChecked = Array.isArray(checkedKeysValue) ? checkedKeysValue : [];
+    const newlyChecked = Array.isArray(checkedKeysValue)
+      ? checkedKeysValue
+      : [];
 
     // 获取新选中节点的子节点，需要展开
-    const childrenToExpand = getChildrenKeys(knowledgeTree, newlyChecked, 'key');
-    const newExpandedKeys = [...new Set([...expandedKeys, ...newlyChecked, ...childrenToExpand])];
+    const childrenToExpand = getChildrenKeys(
+      knowledgeTree,
+      newlyChecked,
+      "key",
+    );
+    const newExpandedKeys = [
+      ...new Set([...expandedKeys, ...newlyChecked, ...childrenToExpand]),
+    ];
 
     dispatch({
       type: "resourceSearchModel/setData",
@@ -270,8 +286,8 @@ export const useLeft = () => {
         // 选中知识点时清空章节选中
         checkedChapter: [],
         // 展开选中的节点及其子节点
-        expandedKeys: newExpandedKeys
-      }
+        expandedKeys: newExpandedKeys,
+      },
     });
   };
 
@@ -281,8 +297,8 @@ export const useLeft = () => {
       type: "resourceSearchModel/setData",
       payload: {
         expandedKeys: keys,
-        autoExpandParent: false
-      }
+        autoExpandParent: false,
+      },
     });
   };
 
@@ -305,7 +321,7 @@ export const useLeft = () => {
         // checkedKnowledge: [],
         // 展开选中的节点及其子节点
         // chapterExpandedKeys: newExpandedKeys
-      }
+      },
     });
   };
 
@@ -315,8 +331,8 @@ export const useLeft = () => {
       type: "resourceSearchModel/setData",
       payload: {
         chapterExpandedKeys: keys,
-        chapterAutoExpandParent: false
-      }
+        chapterAutoExpandParent: false,
+      },
     });
   };
 
@@ -373,7 +389,7 @@ export const useLeft = () => {
         chapterExpandedKeys: chapterFirstLevelKeys,
         autoExpandParent: true,
         chapterAutoExpandParent: true,
-      }
+      },
     });
   };
 
@@ -381,7 +397,7 @@ export const useLeft = () => {
   const setIsCatalogOpen = (value: boolean) => {
     dispatch({
       type: "resourceSearchModel/setData",
-      payload: { isCatalogOpen: value }
+      payload: { isCatalogOpen: value },
     });
   };
 
@@ -394,7 +410,6 @@ export const useLeft = () => {
     //     type: "resourceSearchModel/setData",
     //     payload: { knowledgeSearchLoading: true }
     //   });
-
     //   // 模拟搜索延迟
     //   setTimeout(() => {
     //     dispatch({
@@ -419,7 +434,6 @@ export const useLeft = () => {
     //     type: "resourceSearchModel/setData",
     //     payload: { chapterSearchLoading: true }
     //   });
-
     //   // 模拟搜索延迟
     //   setTimeout(() => {
     //     dispatch({
@@ -451,6 +465,6 @@ export const useLeft = () => {
     setIsCatalogOpen,
     transformToCascader,
     getTreeKeys,
-    saveUserSelection
+    saveUserSelection,
   };
 };

@@ -1,0 +1,70 @@
+{
+ "topic": {
+  "topic_id": "research-010",
+  "title": "素养画像「学习动机」该采哪些证据才可信？",
+  "content": "素养维度里「学习动机」最容易被打成主观分。目前我们用自主练习启动次数、目标卡完成率、连续学习天数三个口径，还是觉得偏行为化。大家觉得哪些证据组合最站得住？",
+  "author_id": "t-006",
+  "author_name": "王老师",
+  "subject": "数学",
+  "grade": "g8",
+  "class_scope": [
+   "cls-g8-01",
+   "cls-g8-02",
+   "cls-g8-03"
+  ],
+  "related_knowledge_ids": [],
+  "related_dimension_keys": [
+   "literacy"
+  ],
+  "evidence_summary": "三班学习动机读数 70-80，行为证据人均 22 条，问卷证据仅 1 次/学期。",
+  "status": "discussing",
+  "tags": [
+   "素养证据",
+   "口径讨论"
+  ],
+  "created_at": "2026-09-17 16:10"
+ },
+ "replies": [
+  {
+   "reply_id": "reply-010-01",
+   "topic_id": "research-010",
+   "author_id": "t-009",
+   "author_name": "许老师",
+   "content": "建议“行为证据 + 每月一次 3 题微问卷”双轨：行为看强度，问卷看方向。单靠任何一边都会被质疑。",
+   "evidence_refs": [],
+   "created_at": "2026-09-17 17:41",
+   "liked_count": 7
+  },
+  {
+   "reply_id": "reply-010-02",
+   "topic_id": "research-010",
+   "author_id": "t-003",
+   "author_name": "周老师",
+   "content": "学习任务完成间隔也是个好口径：同样完成率，间隔稳定的比突击型的动机读数应该更高。",
+   "evidence_refs": [],
+   "created_at": "2026-09-17 18:17",
+   "liked_count": 5
+  },
+  {
+   "reply_id": "reply-010-03",
+   "topic_id": "research-010",
+   "author_id": "t-005",
+   "author_name": "郑老师",
+   "content": "同意楼上。另外读数页一定要带“证据构成”说明，家长会上被问到“凭什么说我孩子动机不足”时，能点开看证据清单很重要。",
+   "evidence_refs": [],
+   "created_at": "2026-09-17 18:42",
+   "liked_count": 6
+  },
+  {
+   "reply_id": "reply-010-04",
+   "topic_id": "research-010",
+   "author_id": "t-006",
+   "author_name": "王老师",
+   "content": "先把三条行为口径 + 微问卷写进下学期素养画像口径说明，期末拿一个班的完整数据链再复盘。",
+   "evidence_refs": [],
+   "created_at": "2026-09-17 19:18",
+   "liked_count": 4
+  }
+ ],
+ "strategies": []
+}

@@ -1,0 +1,338 @@
+.wb_nav {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+  min-height: 0;
+}
+
+.wb_nav_head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding: 0 8px;
+}
+
+.wb_nav_title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2a3346;
+}
+
+.wb_nav_hint {
+  font-size: 13px;
+  color: #8a93ab;
+}
+
+/* ===== 卡内待办（分模块） ===== */
+.wb_todos {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wb_todo_item {
+  border: 0;
+  background: transparent;
+  text-align: left;
+  font: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  padding: 3px 6px;
+  border-radius: 6px;
+  transition: background 0.15s;
+  width: fit-content;
+  max-width: 100%;
+
+  &:hover {
+    background: #f0f6ff;
+
+    .wb_todo_go {
+      color: #1c6cff;
+    }
+  }
+}
+
+.wb_todo_dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.wb_todo_text {
+  font-size: 12px;
+  color: #4b5568;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wb_todo_go {
+  font-size: 10px;
+  color: #c3cadb;
+}
+
+/* ===== 双大卡（学情分析 / 教学设计） ===== */
+.wb_hero_row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.wb_hero_card {
+  background: #fff;
+  border: 1px solid #e8edf6;
+  border-radius: 14px;
+  padding: 18px 22px 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 1px 4px rgba(42, 51, 70, 0.04);
+  background-image: linear-gradient(
+    135deg,
+    rgba(28, 108, 255, 0.04),
+    transparent 40%
+  );
+
+  &:hover {
+    border-color: #1c6cff;
+    box-shadow: 0 8px 24px rgba(28, 108, 255, 0.14);
+    transform: translateY(-2px);
+
+    .wb_hero_enter {
+      color: #1c6cff;
+      opacity: 1;
+    }
+  }
+}
+
+.wb_hero_head {
+  display: flex;
+  align-items: center;
+}
+
+.wb_hero_title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2a3346;
+}
+
+.wb_hero_enter {
+  margin-left: auto;
+  font-size: 13px;
+  color: #8a93ab;
+  opacity: 0.75;
+  transition: all 0.2s;
+}
+
+.wb_hero_desc {
+  font-size: 13px;
+  color: #646e8b;
+  line-height: 1.7;
+}
+
+.wb_hero_stats {
+  display: flex;
+  gap: 0;
+  background: #f7f9fd;
+  border-radius: 10px;
+  padding: 10px 0;
+}
+
+.wb_stat {
+  flex: 1;
+  text-align: center;
+  border-right: 1px solid #e8edf6;
+
+  &:last-child {
+    border-right: none;
+  }
+}
+
+.wb_stat_num {
+  display: block;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1c6cff;
+  line-height: 1.25;
+}
+
+.wb_stat_label {
+  font-size: 12px;
+  color: #8a93ab;
+}
+
+.wb_hero_subs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ===== 标准模块 ===== */
+.wb_nav_grid {
+  flex: 0 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: minmax(min-content, auto);
+  gap: 16px;
+  align-items: stretch;
+}
+
+.wb_nav_card {
+  min-width: 0;
+  min-height: min-content;
+  background: #fff;
+  border: 1px solid #e8edf6;
+  border-radius: 14px;
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 1px 4px rgba(42, 51, 70, 0.04);
+
+  &:hover {
+    border-color: #1c6cff;
+    box-shadow: 0 8px 24px rgba(28, 108, 255, 0.14);
+    transform: translateY(-2px);
+
+    .wb_nav_card_enter {
+      color: #1c6cff;
+      opacity: 1;
+    }
+  }
+}
+
+.wb_nav_card_head {
+  display: flex;
+  align-items: center;
+}
+
+.wb_nav_card_title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2a3346;
+}
+
+.wb_nav_card_enter {
+  margin-left: auto;
+  font-size: 12px;
+  color: #8a93ab;
+  opacity: 0.75;
+  transition: all 0.2s;
+}
+
+.wb_nav_card_desc {
+  font-size: 12px;
+  color: #8a93ab;
+  line-height: 1.7;
+  min-height: 40px;
+}
+
+.wb_todos--expanded {
+  flex: 1;
+  padding-top: 8px;
+  border-top: 1px solid #edf0f5;
+  gap: 6px;
+  .wb_todos_heading {
+    font-size: 11px;
+    color: #8a93ab;
+    margin-bottom: 2px;
+  }
+  .wb_todo_item {
+    width: 100%;
+    padding: 6px 0;
+    gap: 7px;
+    align-items: flex-start;
+  }
+  .wb_todo_item > .anticon:first-child {
+    color: #4f8da6;
+    margin-top: 3px;
+  }
+  .wb_todo_kind {
+    font-size: 10px;
+    color: #8794a7;
+    flex-shrink: 0;
+    padding-top: 1px;
+  }
+  .wb_todo_text {
+    white-space: normal;
+    line-height: 1.65;
+    flex: 1;
+  }
+  .wb_todo_go {
+    margin-top: 5px;
+  }
+}
+
+.wb_card_stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.wb_card_stat {
+  font-size: 12px;
+  color: #646e8b;
+  background: #f4f6fb;
+  border-radius: 6px;
+  padding: 4px 10px;
+
+  b {
+    color: #1c6cff;
+    font-size: 14px;
+    margin-right: 2px;
+  }
+}
+
+.wb_nav_card_subs {
+  margin-top: auto;
+  flex-shrink: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.wb_nav_sub {
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  font-size: 13px;
+  color: #35507a;
+  background: #f4f6fb;
+  border: 1px solid #e8edf6;
+  border-radius: 6px;
+  padding: 5px 12px;
+  transition: all 0.15s;
+
+  &:hover {
+    color: #1c6cff;
+    border-color: #b7d0ff;
+    background: #f0f6ff;
+  }
+}
+
+@media (max-width: 1100px) {
+  .wb_hero_row {
+    grid-template-columns: 1fr;
+  }
+
+  .wb_nav_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .wb_nav_grid {
+    grid-template-columns: 1fr;
+  }
+}

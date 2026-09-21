@@ -12,29 +12,86 @@ import * as fs from "fs";
 import * as path from "path";
 import { tagQuestion } from "../teacher/questionTags";
 
-/** 多维过滤（v2.0-L）：question_type/来源类别/省/市/年份/教材版本/ability/literacy；难度不外显（内部字段保留兼容） */
+/** 多维过滤（v2.0-L）：question_type/来源类别/省/市/年份/教材版本/ability/literacy；难度不外显（内部字段保留兼容）
+ *  'all' 为前端「全部」语义，过滤时忽略（真实后端同理） */
 function applyTagFilters(list: any[], b: any) {
   let out = list.map(tagQuestion);
-  const inArr = (v: any) => Array.isArray(v) && v.filter(Boolean).length > 0;
-  if (inArr(b.question_type)) out = out.filter(q => b.question_type.includes(q.form));
-  if (inArr(b.scene)) out = out.filter(q => b.scene.includes(q.scene));
-  if (inArr(b.province)) out = out.filter(q => b.province.includes(q.province));
-  if (inArr(b.city)) out = out.filter(q => b.city.includes(q.city));
-  if (inArr(b.year)) out = out.filter(q => b.year.map(String).includes(String(q.year)));
-  if (inArr(b.textbook_version)) out = out.filter(q => b.textbook_version.includes(q.textbook_version));
-  if (inArr(b.ability)) out = out.filter(q => b.ability.includes(q.ability));
-  if (inArr(b.literacy)) out = out.filter(q => b.literacy.includes(q.literacy));
+  const inArr = (v: any) =>
+    Array.isArray(v) && v.filter((x) => x && x !== "all").length > 0;
+  const noAll = (v: any) => (v || []).filter((x: any) => x && x !== "all");
+  if (inArr(b.question_type))
+    out = out.filter((q) => noAll(b.question_type).includes(q.form));
+  if (inArr(b.scene))
+    out = out.filter((q) => noAll(b.scene).includes(q.scene));
+  if (inArr(b.province))
+    out = out.filter((q) => noAll(b.province).includes(q.province));
+  if (inArr(b.city))
+    out = out.filter((q) => noAll(b.city).includes(q.city));
+  if (inArr(b.year))
+    out = out.filter((q) =>
+      noAll(b.year).map(String).includes(String(q.year)),
+    );
+  if (inArr(b.textbook_version))
+    out = out.filter((q) =>
+      noAll(b.textbook_version).includes(q.textbook_version),
+    );
+  if (inArr(b.ability))
+    out = out.filter((q) => noAll(b.ability).includes(q.ability));
+  if (inArr(b.literacy))
+    out = out.filter((q) => noAll(b.literacy).includes(q.literacy));
   return out;
 }
 
 const D = path.join(__dirname, "..", "data");
-const read = (f: string): any => JSON.parse(fs.readFileSync(path.join(D, f), "utf-8"));
+const read = (f: string): any =>
+  JSON.parse(fs.readFileSync(path.join(D, f), "utf-8"));
 
 const questionTypes = read("questionTypes.json");
 const personalQuestions = read("personalQuestions.json");
+// 个人题库合并：上传挂载的 12 题（personal-bank，带 cluster）+ 演示题（kgPoints 取首知识点为 cluster）
+// prettier-ignore 保持单行：prepare-demo-mock 的 fs→registry 转换依赖单行写法
+const personalBank = JSON.parse(fs.readFileSync(path.join(D, "..", "teacher", "data", "personal-bank.json"), "utf-8"));
+const personalAll = [
+  ...(personalBank.items || []).map((b: any) => ({
+    id: b.qid,
+    stem: b.stem,
+    cluster: b.cluster,
+    form: b.form,
+    difficulty: b.difficulty,
+    year: 2026,
+    province: "全国通用",
+    city: "",
+    scene: "专项练习",
+    textbook_version: "人教版",
+    ability: "L3 掌握",
+    literacy: "数学运算",
+    options: [],
+    answer: "",
+    area: "全国通用",
+    grade: "八年级",
+    subject: "数学",
+    stage: "初中",
+    chapters: [],
+    hasChild: false,
+    kgPoints: [{ id: b.qid, code: "", name: b.cluster }],
+    quesType: b.form,
+    quesAudio: null,
+    quesVideo: null,
+    timestamp: b.created_at,
+    createTime: b.created_at,
+    difficulty_calc: 0.5,
+    updateTime: b.created_at,
+    childrenCount: 0,
+    is_favorite: false,
+    mount_status: b.status,
+    mount_status_zh: b.status_zh,
+  })),
+  ...personalQuestions,
+];
 const textbooksList = read("textbooksList.json");
 // 公共题库与 facets（/api/teacher/questions/facets）同源：teacher 题库 420 题，
 // 避免出现「facets 显示有能力分布、列表过滤却为 0」的双源口径不一致
+// prettier-ignore 保持单行：prepare-demo-mock 的 fs→registry 转换依赖单行写法
 const publicQuestions = JSON.parse(fs.readFileSync(path.join(D, "..", "teacher", "data", "questions.json"), "utf-8")).items.map((q: any) => ({
   ...q,
   // 题卡兼容字段（选项/答案在演示库中留空）
@@ -59,7 +116,9 @@ const toCatalogNode = (n: any): any => ({
   type: "catalog",
   children: (n.children || []).map(toCatalogNode),
 });
-const chapterTree = [{ treeJson: { tree: read("chapterTreeData.json").map(toCatalogNode) } }];
+const chapterTree = [
+  { treeJson: { tree: read("chapterTreeData.json").map(toCatalogNode) } },
+];
 
 /** 简单分页（忽略筛选条件，本地演示只保证流程可用） */
 const paginate = (list: any[], body: any) => {
@@ -77,40 +136,86 @@ const paginate = (list: any[], body: any) => {
 
 export default {
   // 题型（个人题库按课程）
-  "POST /api/web/xkwQuestionType/findXkwQuestionTypeListByCourseId": (_req: any, res: any) => {
+  "POST /api/web/xkwQuestionType/findXkwQuestionTypeListByCourseId": (
+    _req: any,
+    res: any,
+  ) => {
     res.json({ code: 200, msg: "ok", data: questionTypes });
   },
 
   // 章节树（教材知识点树）
-  "POST /api/web/xkwTestbookKnowledgePointTree/findXkwTbKPTreeList": (_req: any, res: any) => {
+  "POST /api/web/xkwTestbookKnowledgePointTree/findXkwTbKPTreeList": (
+    _req: any,
+    res: any,
+  ) => {
     res.json({ code: 200, msg: "ok", data: chapterTree });
   },
 
-  // 个人题库试题分页
-  "POST /api/web/personalQuestion/findPersonalQuestionPage": (req: any, res: any) => {
-    res.json({ code: 200, msg: "ok", data: paginate(applyTagFilters(personalQuestions, req.body), req.body) });
+  // 个人题库试题分页：上传挂载的 12 题（personal-bank，带 cluster）+ 演示题；kg_list=知识图谱筛选
+  "POST /api/web/personalQuestion/findPersonalQuestionPage": (
+    req: any,
+    res: any,
+  ) => {
+    let pool = applyTagFilters(personalAll, req.body);
+    const kg = (req.body?.kg_list || []).filter(Boolean);
+    if (kg.length) {
+      const clusters = new Set(pool.map((q: any) => q.cluster));
+      const names = kg.filter((k: any) => clusters.has(k));
+      if (names.length)
+        pool = pool.filter((q: any) => names.includes(q.cluster));
+    }
+    res.json({ code: 200, msg: "ok", data: paginate(pool, req.body) });
   },
 
-  // 公共题库试题分页
-  "POST /api/web/publicQuestion/findPublicQuestionPage": (req: any, res: any) => {
+  // 公共题库试题分页（kg_list=知识点筛选：仅当传入值命中题库 cluster 时生效，树勾选的编码不误伤）
+  "POST /api/web/publicQuestion/findPublicQuestionPage": (
+    req: any,
+    res: any,
+  ) => {
     const kw = String(req.body?.keyword || "").trim();
-    const pool = applyTagFilters(publicQuestions, req.body);
-    const filtered = kw ? pool.filter(q => q.stem.includes(kw)) : pool;
+    let pool = applyTagFilters(publicQuestions, req.body);
+    const kg = (req.body?.kg_list || []).filter(Boolean);
+    if (kg.length) {
+      const clusters = new Set(pool.map((q) => q.cluster));
+      const names = kg.filter((k: any) => clusters.has(k));
+      if (names.length || req.body?.knowledge_match === "exact")
+        pool = pool.filter((q) => names.includes(q.cluster));
+    }
+    const filtered = kw ? pool.filter((q) => q.stem.includes(kw)) : pool;
     res.json({ code: 200, msg: "ok", data: paginate(filtered, req.body) });
   },
 
   // 相似题
-  "GET /api/web/publicQuestion/findPublicQuestionSimilarList": (_req: any, res: any) => {
-    res.json({ code: 200, msg: "ok", data: { records: publicQuestions.slice(0, 5), current: 1, size: 5, total: 5 } });
+  "GET /api/web/publicQuestion/findPublicQuestionSimilarList": (
+    _req: any,
+    res: any,
+  ) => {
+    res.json({
+      code: 200,
+      msg: "ok",
+      data: {
+        records: publicQuestions.slice(0, 5),
+        current: 1,
+        size: 5,
+        total: 5,
+      },
+    });
   },
 
   // 教师学段（教材级联入口）
   "GET /api/web/mindQuestion/getTeacherStageId": (_req: any, res: any) => {
-    res.json({ code: 200, msg: "ok", data: { stageId: "stage-junior", stageName: "初中" } });
+    res.json({
+      code: 200,
+      msg: "ok",
+      data: { stageId: "stage-junior", stageName: "初中" },
+    });
   },
 
   // 学段下的课程列表
-  "GET /api/web/xkwCourse/findXkwCourseListByStageId": (_req: any, res: any) => {
+  "GET /api/web/xkwCourse/findXkwCourseListByStageId": (
+    _req: any,
+    res: any,
+  ) => {
     res.json({
       code: 200,
       msg: "ok",
@@ -129,20 +234,35 @@ export default {
   },
 
   // 课程下的教材版本
-  "GET /api/web/xkwTextbookVersion/findXkwTbVersListByCourseId": (_req: any, res: any) => {
+  "GET /api/web/xkwTextbookVersion/findXkwTbVersListByCourseId": (
+    _req: any,
+    res: any,
+  ) => {
     res.json({
       code: 200,
       msg: "ok",
-      data: [{ id: "ver-rj-01", name: "人教版", label: "人教版", courseId: "course-mock-001" }],
+      data: [
+        {
+          id: "ver-rj-01",
+          name: "人教版",
+          label: "人教版",
+          courseId: "course-mock-001",
+        },
+      ],
     });
   },
 
   // 版本下的教材列表
-  "GET /api/web/xkwTextbook/findXkwTextbookListByVersionId": (_req: any, res: any) => {
+  "GET /api/web/xkwTextbook/findXkwTextbookListByVersionId": (
+    _req: any,
+    res: any,
+  ) => {
     res.json({
       code: 200,
       msg: "ok",
-      data: textbooksList.slice(0, 6).map((t: any) => ({ ...t, label: t.name })),
+      data: textbooksList
+        .slice(0, 6)
+        .map((t: any) => ({ ...t, label: t.name })),
     });
   },
 };

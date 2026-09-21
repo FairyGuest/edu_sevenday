@@ -24,7 +24,9 @@ const UnitChat = (props: any) => {
     setIsInView,
   } = props;
 
-  const { leftChatLoading } = useSelector((state: any) => state.teachDesginModel);
+  const { leftChatLoading } = useSelector(
+    (state: any) => state.teachDesginModel,
+  );
   const chatRef = useRef<HTMLDivElement>(null); // 对话内容
   const [hasPlan, setHasPlan] = useState<boolean>(false); // 是否有单课时教案
   const [catalogList, setCatalogList] = useState<any>([]); // 目录列表

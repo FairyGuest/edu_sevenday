@@ -1,6 +1,11 @@
 ﻿export default [
   // 主页
   {
+    path: "/school-research",
+    title: "校本教研",
+    component: "./SchoolResearch",
+  },
+  {
     path: "/",
     title: "主页",
     component: "./Home",
@@ -76,7 +81,19 @@
         title: "教学设计详情",
         component: "./TeachDesign/Detail",
       },
+      {
+        // 教学反思：并入教学设计域（反思链：批改证据 → 反思 → 教研 → 反哺教案）
+        path: "reflection",
+        title: "教学反思",
+        component: "./TeachingReflection",
+      },
     ],
+  },
+  // 作业四合一工作台：组卷 / 下发 / 回收 / 批改（子 Tab 组织对齐学情分析）
+  {
+    path: "/homework",
+    title: "作业",
+    component: "./Homework",
   },
   // 课程教学
   {
@@ -123,11 +140,16 @@
       },
     ],
   },
+  {
+    path: "/classroom-evaluation",
+    title: "课堂评价",
+    component: "./ClassroomEvaluation",
+  },
   // 资源平台
   {
     path: "/source",
     title: "资源平台",
-    component: "./ResourceSearch"
+    component: "./ResourceSearch",
   },
   // 智能体
   {
@@ -241,8 +263,24 @@
   },
   { path: "/setting-topic", title: "作业布置", component: "./SettingTopic" },
   { path: "/check-topic", title: "作业批改", component: "./CheckTopic" },
-  { path: "/teaching-enhance", title: "教学设计增强", component: "./TeachingEnhance" },
-  { path: "/resource-platform", title: "资源平台", component: "./ResourcePlatform" },
+  {
+    path: "/teaching-enhance",
+    title: "教学设计增强",
+    component: "./TeachingEnhance",
+  },
+  {
+    path: "/resource-platform",
+    title: "资源平台",
+    component: "./ResourcePlatform",
+  },
+  // 下发与回收工作台：作业 + 学案统一回收状态（提交/批改进度）
+  { path: "/homework-flow", title: "下发与回收", component: "./HomeworkFlow" },
+  // 教学反思：批改证据 → 反思建议 → 教研/教案反哺
+  {
+    path: "/teaching-reflection",
+    title: "教学反思",
+    component: "./TeachingReflection",
+  },
   {
     path: "/learning-analysis",
     title: "学情分析",

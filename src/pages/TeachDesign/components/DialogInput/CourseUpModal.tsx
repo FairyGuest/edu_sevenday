@@ -99,9 +99,21 @@ const CourseUpModal = (props: any) => {
       },
     });
     if (code == 200 && data?.list?.length) {
-      const typeArr = ["pdf", "doc", "docx", "pptx", "txt", "md", "jpg", "jpeg", "png"];
+      const typeArr = [
+        "pdf",
+        "doc",
+        "docx",
+        "pptx",
+        "txt",
+        "md",
+        "jpg",
+        "jpeg",
+        "png",
+      ];
       // 筛选符合格式的文件
-      const dataArr = data?.list.filter((item: any) => typeArr.includes(item?.file_type));
+      const dataArr = data?.list.filter((item: any) =>
+        typeArr.includes(item?.file_type),
+      );
       const arr = dataArr.filter((item: any) => checkSize(item));
       setDataList(arr);
     }
@@ -110,7 +122,7 @@ const CourseUpModal = (props: any) => {
   // 文件大小校验
   const checkSize = (item: any) => {
     return item?.file_size <= 1024 * 1024 * 20;
-  }
+  };
   // 课程选中回调
   const onSelectCourse = async (key: any) => {
     const query = {
@@ -208,10 +220,10 @@ const CourseUpModal = (props: any) => {
     }
   };
 
-  const handleOk = () =>{
-    setOpen(false)
+  const handleOk = () => {
+    setOpen(false);
     setFileList(selectList);
-  }
+  };
 
   return (
     <Modal
@@ -265,7 +277,8 @@ const CourseUpModal = (props: any) => {
         </div>
       </div>
       <div className="selected-desc">
-        已选择 <span>{selectList?.length}</span> 个资料，最多选择 <span>10</span> 个
+        已选择 <span>{selectList?.length}</span> 个资料，最多选择{" "}
+        <span>10</span> 个
       </div>
       <div className="card-content">
         {dataList.map((item: any) => (
@@ -277,7 +290,7 @@ const CourseUpModal = (props: any) => {
             <Checkbox
               checked={checkedFn(item)}
               disabled={disabledFn(item)}
-              onChange={() =>onChangeCheck(item)}
+              onChange={() => onChangeCheck(item)}
             />
             <div className="card-content-item-body">{handleBg(item)}</div>
             <div className="card-content-item-footer">

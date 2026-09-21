@@ -1,0 +1,2573 @@
+{
+ "class_id": "cls-g8-02",
+ "generated_at": "2026-09-18 18:30",
+ "time_range_text": "近 30 天",
+ "explanations": [
+  {
+   "explanation_id": "exp-cls-cls-g8-02-dimension-knowledge",
+   "scope": "class",
+   "student_id": null,
+   "target_type": "dimension",
+   "target_id": "knowledge",
+   "conclusion": "知识点画像存在短板",
+   "reason": "知识点画像均分 76，「实际问题建模」仅 66 分，拖累整体读数。",
+   "evidence_summary": "5985 条有效证据；关键指标「实际问题建模」690 条。",
+   "compare_text": "与年级均值基本持平。",
+   "sample_count": 5985,
+   "source_names": [
+    "作业记录",
+    "考试记录",
+    "课堂互动"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "none",
+   "suggestion": "针对「实际问题建模」，建议在下周作业中加入 2-3 道关联题，并配合图像—语言表达支架。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-1-0",
+     "source_type": "exam",
+     "source_name": "9月单元测",
+     "occurred_at": "2026-09-15 11:40",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": "que-ddf1ef2119894cebb1de865e932dd5b3",
+     "question_stem": "根据手机套餐月费与流量的信息建立一次函数模型，并求 30GB 流量时的月费。",
+     "answer_summary": "未分段计费，把起步价也按 2.4 元/km 计算",
+     "correct": false,
+     "score": 0,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-function-application"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-1-1",
+     "source_type": "homework",
+     "source_name": "课后作业（九月第 3 周）",
+     "occurred_at": "2026-09-02 10:40",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": "q-6837",
+     "question_stem": "某出租车收费：起步价 8 元（3km 内），超出部分 2.4 元/km。写出车费 y 与里程 x 的函数关系式。",
+     "answer_summary": "作答正确，步骤完整",
+     "correct": true,
+     "score": 5,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-function-application"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-cls-cls-g8-02-radar_item-real_world_modeling",
+   "scope": "class",
+   "student_id": null,
+   "target_type": "radar_item",
+   "target_id": "real_world_modeling",
+   "conclusion": "班级「实际问题建模」读数偏低（66）",
+   "reason": "近 30 天关联作答 173 条，正确率 66%，处于中等水平，其中 59 条失分。",
+   "evidence_summary": "共 690 条证据；9月单元测关联题正确率 59%。",
+   "compare_text": "低于学期目标（75）9 分。",
+   "sample_count": 690,
+   "source_names": [
+    "9月单元测",
+    "周练二",
+    "课堂学案"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "none",
+   "suggestion": "建议：围绕「实际问题建模」设计 1 课时专项 + 课后 3 题变式（由易到难），一周后用 2 道题快检。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-2-0",
+     "source_type": "practice",
+     "source_name": "自主练习（函数专题）",
+     "occurred_at": "2026-08-25 17:50",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": "que-3d56caca22bf4cbda580cff19b659f7c",
+     "question_stem": "某出租车收费：起步价 8 元（3km 内），超出部分 2.4 元/km。写出车费 y 与里程 x 的函数关系式。",
+     "answer_summary": "未分段计费，把起步价也按 2.4 元/km 计算",
+     "correct": false,
+     "score": 2,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-function-application"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-cls-cls-g8-02-dimension-ability",
+   "scope": "class",
+   "student_id": null,
+   "target_type": "dimension",
+   "target_id": "ability",
+   "conclusion": "能力画像存在短板",
+   "reason": "能力画像均分 69，「运算推理」仅 58 分，拖累整体读数。",
+   "evidence_summary": "7065 条有效证据；关键指标「运算推理」1230 条。",
+   "compare_text": "与年级均值基本持平。",
+   "sample_count": 7065,
+   "source_names": [
+    "作业记录",
+    "考试记录",
+    "课堂互动"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "none",
+   "suggestion": "针对「运算推理」，建议安排 10 分钟专项微练习，并要求写出关键步骤。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-3-0",
+     "source_type": "homework",
+     "source_name": "自主练习（函数专题）",
+     "occurred_at": "2026-08-26 14:40",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": "que-a6e0b5413ae84300924a84ae28e8a7e0",
+     "question_stem": "计算：√18 + √8 - √50（先化简，再合并）。",
+     "answer_summary": "化简后未化成最简二次根式就合并",
+     "correct": false,
+     "score": 0,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-radical-addsub",
+      "kp-fraction-calc"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-3-1",
+     "source_type": "homework",
+     "source_name": "课后作业（九月第 3 周）",
+     "occurred_at": "2026-08-24 09:40",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": "q-4673",
+     "question_stem": "计算：√18 + √8 - √50（先化简，再合并）。",
+     "answer_summary": "作答正确，步骤完整",
+     "correct": true,
+     "score": 5,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-radical-addsub",
+      "kp-fraction-calc"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-cls-cls-g8-02-radar_item-operation_reasoning",
+   "scope": "class",
+   "student_id": null,
+   "target_type": "radar_item",
+   "target_id": "operation_reasoning",
+   "conclusion": "班级「运算推理」读数偏低（58）",
+   "reason": "近 30 天关联作答 308 条，正确率 59%，明显低于预期水平。",
+   "evidence_summary": "共 1230 条证据；9月单元测关联题正确率 52%。",
+   "compare_text": "低于学期目标（75）17 分。",
+   "sample_count": 1230,
+   "source_names": [
+    "9月单元测",
+    "周练二",
+    "课堂学案"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "none",
+   "suggestion": "建议：围绕「运算推理」设计 1 课时专项 + 课后 3 题变式（由易到难），一周后用 2 道题快检。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-4-0",
+     "source_type": "exam",
+     "source_name": "9月单元测",
+     "occurred_at": "2026-09-03 13:50",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": "que-0235fce7-e377-4625-b88a-c29f0aafc218",
+     "question_stem": "计算：√18 + √8 - √50（先化简，再合并）。",
+     "answer_summary": "化简后未化成最简二次根式就合并",
+     "correct": false,
+     "score": 0,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-radical-addsub",
+      "kp-fraction-calc"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-4-1",
+     "source_type": "practice",
+     "source_name": "周练二",
+     "occurred_at": "2026-09-11 17:30",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": "que-b6434dd3bf7a406a8920ed0ad8e1f7bc",
+     "question_stem": "计算：a²b/(3c) × 6c²/(ab²) ÷ (a/b)。",
+     "answer_summary": "化简后未化成最简二次根式就合并",
+     "correct": false,
+     "score": 0,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-radical-addsub",
+      "kp-fraction-calc"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-cls-cls-g8-02-radar_item-problem_analysis",
+   "scope": "class",
+   "student_id": null,
+   "target_type": "radar_item",
+   "target_id": "problem_analysis",
+   "conclusion": "班级「问题分析」读数偏低（67）",
+   "reason": "近 30 天关联作答 338 条，正确率 66%，处于中等水平，其中 115 条失分。",
+   "evidence_summary": "共 1350 条证据；9月单元测关联题正确率 60%。",
+   "compare_text": "低于学期目标（75）8 分。",
+   "sample_count": 1350,
+   "source_names": [
+    "9月单元测",
+    "周练二",
+    "课堂学案"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "none",
+   "suggestion": "建议：围绕「问题分析」设计 1 课时专项 + 课后 3 题变式（由易到难），一周后用 2 道题快检。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-5-0",
+     "source_type": "homework",
+     "source_name": "周练二",
+     "occurred_at": "2026-08-24 17:10",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": "que-f544a123b5c24b4699e08e07816644c5",
+     "question_stem": "在平行四边形 ABCD 中，对角线 AC、BD 交于 O，给出能判定其为矩形的条件并证明。",
+     "answer_summary": "混淆 SSA 与 SAS，误用 SSA 判定全等",
+     "correct": false,
+     "score": 0,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-congruent-judge",
+      "kp-special-quad"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-5-1",
+     "source_type": "practice",
+     "source_name": "自主练习（函数专题）",
+     "occurred_at": "2026-09-14 11:40",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": "que-ab9de02a123d48a7a404468a39748713",
+     "question_stem": "在平行四边形 ABCD 中，对角线 AC、BD 交于 O，给出能判定其为矩形的条件并证明。",
+     "answer_summary": "混淆 SSA 与 SAS，误用 SSA 判定全等",
+     "correct": false,
+     "score": 0,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-congruent-judge",
+      "kp-special-quad"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-cls-cls-g8-02-radar_item-transfer_apply",
+   "scope": "class",
+   "student_id": null,
+   "target_type": "radar_item",
+   "target_id": "transfer_apply",
+   "conclusion": "班级「迁移应用」读数偏低（67）",
+   "reason": "近 30 天关联作答 154 条，正确率 67%，处于中等水平，其中 51 条失分。",
+   "evidence_summary": "共 615 条证据；9月单元测关联题正确率 60%。",
+   "compare_text": "低于学期目标（75）8 分。",
+   "sample_count": 615,
+   "source_names": [
+    "9月单元测",
+    "周练二",
+    "课堂学案"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "none",
+   "suggestion": "建议：围绕「迁移应用」设计 1 课时专项 + 课后 3 题变式（由易到难），一周后用 2 道题快检。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-6-0",
+     "source_type": "homework",
+     "source_name": "自主练习（函数专题）",
+     "occurred_at": "2026-08-27 09:30",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": "que-253bf88721344ba883cf7cdaec66c766",
+     "question_stem": "将行程问题中的相遇模型迁移到工程问题，列出函数关系式。",
+     "answer_summary": "直接套用相遇模型，未换算两队的工作效率",
+     "correct": false,
+     "score": 0,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-function-application"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-6-1",
+     "source_type": "homework",
+     "source_name": "周练二",
+     "occurred_at": "2026-08-30 11:30",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": "que-2a866e6815e641a78414b96742655cd5",
+     "question_stem": "用一次函数刻画弹簧长度随重物质量的变化，并预测量程外是否适用。",
+     "answer_summary": "直接套用相遇模型，未换算两队的工作效率",
+     "correct": false,
+     "score": 1,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-function-application"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-cls-cls-g8-02-radar_item-reflect_express",
+   "scope": "class",
+   "student_id": null,
+   "target_type": "radar_item",
+   "target_id": "reflect_express",
+   "conclusion": "班级「反思表达」读数偏低（72）",
+   "reason": "近 30 天关联作答 330 条，正确率 72%，处于中等水平，其中 92 条失分。",
+   "evidence_summary": "共 1320 条证据；9月单元测关联题正确率 65%。",
+   "compare_text": "低于学期目标（75）3 分。",
+   "sample_count": 1320,
+   "source_names": [
+    "9月单元测",
+    "周练二",
+    "课堂学案"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "none",
+   "suggestion": "建议：围绕「反思表达」设计 1 课时专项 + 课后 3 题变式（由易到难），一周后用 2 道题快检。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-7-0",
+     "source_type": "exam",
+     "source_name": "9月单元测",
+     "occurred_at": "2026-08-24 18:30",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": "que-a6e0b5413ae84300924a84ae28e8a7e0",
+     "question_stem": "写出本次周练中你放弃的题目，并说明卡在哪一步。",
+     "answer_summary": "只写“粗心”，未指明具体错误类型",
+     "correct": false,
+     "score": 0,
+     "full_score": 5,
+     "knowledge_ids": [],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-cls-cls-g8-02-dimension-literacy",
+   "scope": "class",
+   "student_id": null,
+   "target_type": "dimension",
+   "target_id": "literacy",
+   "conclusion": "素养画像存在短板",
+   "reason": "素养画像均分 75，「学习态度」仅 74 分，拖累整体读数。",
+   "evidence_summary": "1605 条有效证据；关键指标「学习态度」270 条。",
+   "compare_text": "与年级均值基本持平。",
+   "sample_count": 1605,
+   "source_names": [
+    "作业记录",
+    "考试记录",
+    "课堂互动"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "none",
+   "suggestion": "在单元小结课增加 5 分钟自我反思环节，补充非智力因素的证据采集。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-8-0",
+     "source_type": "exam",
+     "source_name": "9月单元测",
+     "occurred_at": "2026-09-16 13:40",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": null,
+     "question_stem": "（行为记录）近 30 天作业按时提交情况",
+     "answer_summary": "作答不完整",
+     "correct": false,
+     "score": 1,
+     "full_score": 5,
+     "knowledge_ids": [],
+     "ability_keys": [],
+     "literacy_keys": [
+      "learning_attitude"
+     ],
+     "process_keys": []
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-8-1",
+     "source_type": "homework",
+     "source_name": "课后作业（九月第 3 周）",
+     "occurred_at": "2026-08-20 15:50",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": null,
+     "question_stem": "（行为记录）近 30 天作业按时提交情况",
+     "answer_summary": "作答正确，步骤完整",
+     "correct": true,
+     "score": 5,
+     "full_score": 5,
+     "knowledge_ids": [],
+     "ability_keys": [],
+     "literacy_keys": [
+      "learning_attitude"
+     ],
+     "process_keys": []
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-cls-cls-g8-02-dimension-process",
+   "scope": "class",
+   "student_id": null,
+   "target_type": "dimension",
+   "target_id": "process",
+   "conclusion": "学习过程表现画像存在短板",
+   "reason": "学习过程表现画像均分 74，「订正过程」仅 67 分，拖累整体读数。",
+   "evidence_summary": "3015 条有效证据；关键指标「订正过程」585 条。",
+   "compare_text": "与年级均值基本持平。",
+   "sample_count": 3015,
+   "source_names": [
+    "作业记录",
+    "考试记录",
+    "课堂互动"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "none",
+   "suggestion": "对订正环节实行“错因归类—重做—3 日后复测”的闭环跟踪。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-9-0",
+     "source_type": "exam",
+     "source_name": "9月单元测",
+     "occurred_at": "2026-08-26 15:20",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": null,
+     "question_stem": "（行为记录）错因归类填写完整率",
+     "answer_summary": "订正只抄正确答案，未写错因",
+     "correct": false,
+     "score": 2,
+     "full_score": 5,
+     "knowledge_ids": [],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": [
+      "homework_correction"
+     ]
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-9-1",
+     "source_type": "homework",
+     "source_name": "课后作业（九月第 3 周）",
+     "occurred_at": "2026-09-13 16:20",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": null,
+     "question_stem": "（行为记录）错因归类填写完整率",
+     "answer_summary": "作答正确，步骤完整",
+     "correct": true,
+     "score": 5,
+     "full_score": 5,
+     "knowledge_ids": [],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": [
+      "homework_correction"
+     ]
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-cls-cls-g8-02-radar_item-homework_correction",
+   "scope": "class",
+   "student_id": null,
+   "target_type": "radar_item",
+   "target_id": "homework_correction",
+   "conclusion": "班级「订正过程」读数偏低（67）",
+   "reason": "订正完成率 71%，平均订正时长 1.1 天，错因归类完整率 59%。",
+   "evidence_summary": "共 585 条证据；9月单元测关联题正确率 60%。",
+   "compare_text": "低于学期目标（75）8 分。",
+   "sample_count": 585,
+   "source_names": [
+    "9月单元测",
+    "周练二",
+    "课堂学案"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "none",
+   "suggestion": "建议：围绕「订正过程」设计 1 课时专项 + 课后 3 题变式（由易到难），一周后用 2 道题快检。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-10-0",
+     "source_type": "exam",
+     "source_name": "9月单元测",
+     "occurred_at": "2026-09-13 09:00",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": null,
+     "question_stem": "（行为记录）错因归类填写完整率",
+     "answer_summary": "订正只抄正确答案，未写错因",
+     "correct": false,
+     "score": 1,
+     "full_score": 5,
+     "knowledge_ids": [],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": [
+      "homework_correction"
+     ]
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-10-1",
+     "source_type": "practice",
+     "source_name": "自主练习（函数专题）",
+     "occurred_at": "2026-09-12 10:40",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": null,
+     "question_stem": "（行为记录）错因归类填写完整率",
+     "answer_summary": "订正只抄正确答案，未写错因",
+     "correct": false,
+     "score": 2,
+     "full_score": 5,
+     "knowledge_ids": [],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": [
+      "homework_correction"
+     ]
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-kp-integral-multiply",
+   "scope": "class",
+   "student_id": null,
+   "target_type": "knowledge_node",
+   "target_id": "kp-integral-multiply",
+   "conclusion": "「整式的乘法」掌握度偏低",
+   "reason": "最近一次单元测关联题正确率 50%，低于班级近三次均值 68%。",
+   "evidence_summary": "单元测第 6、9 题；周练二第 5、7 题。",
+   "compare_text": "低于同章基础题均值 11 分。",
+   "sample_count": 26,
+   "source_names": [
+    "作业记录",
+    "考试记录"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "none",
+   "suggestion": "建议下一课增加「整式的乘法」的表达支架与 2 道变式题，并减少重复计算题。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-11-0",
+     "source_type": "exam",
+     "source_name": "9月单元测",
+     "occurred_at": "2026-09-09 14:00",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": "que-fc5cd7c868dd42e6a6d3c5477210a03e",
+     "question_stem": "计算：√18 + √8 - √50（先化简，再合并）。",
+     "answer_summary": "化简后未化成最简二次根式就合并",
+     "correct": false,
+     "score": 2,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-integral-multiply"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-11-1",
+     "source_type": "practice",
+     "source_name": "周练二",
+     "occurred_at": "2026-09-10 18:30",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": "que-759c25d1a4014f38915e06766240ca28",
+     "question_stem": "计算：a²b/(3c) × 6c²/(ab²) ÷ (a/b)。",
+     "answer_summary": "化简后未化成最简二次根式就合并",
+     "correct": false,
+     "score": 1,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-integral-multiply"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-kp-multiply-formulas",
+   "scope": "class",
+   "student_id": null,
+   "target_type": "knowledge_node",
+   "target_id": "kp-multiply-formulas",
+   "conclusion": "「乘法公式」掌握度偏低",
+   "reason": "最近一次单元测关联题正确率 44%，低于班级近三次均值 62%。",
+   "evidence_summary": "单元测第 7、9 题；周练二第 3、8 题。",
+   "compare_text": "低于同章基础题均值 14 分。",
+   "sample_count": 77,
+   "source_names": [
+    "作业记录",
+    "考试记录"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "none",
+   "suggestion": "建议下一课增加「乘法公式」的表达支架与 2 道变式题，并减少重复计算题。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-12-0",
+     "source_type": "exam",
+     "source_name": "9月单元测",
+     "occurred_at": "2026-08-21 10:50",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": "que-056fd9352f534c7b8f46c201685821ed",
+     "question_stem": "计算：√18 + √8 - √50（先化简，再合并）。",
+     "answer_summary": "化简后未化成最简二次根式就合并",
+     "correct": false,
+     "score": 0,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-multiply-formulas"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-12-1",
+     "source_type": "homework",
+     "source_name": "自主练习（函数专题）",
+     "occurred_at": "2026-09-10 08:20",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": "que-c2152fd9f2244ac08eb756dad0b98bb6",
+     "question_stem": "计算：√18 + √8 - √50（先化简，再合并）。",
+     "answer_summary": "化简后未化成最简二次根式就合并",
+     "correct": false,
+     "score": 1,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-multiply-formulas"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-kp-common-factor",
+   "scope": "class",
+   "student_id": null,
+   "target_type": "knowledge_node",
+   "target_id": "kp-common-factor",
+   "conclusion": "「用提公因式法分解因式」掌握度偏低",
+   "reason": "最近一次单元测关联题正确率 44%，低于班级近三次均值 62%。",
+   "evidence_summary": "单元测第 6、12 题；周练二第 5、9 题。",
+   "compare_text": "低于同章基础题均值 17 分。",
+   "sample_count": 37,
+   "source_names": [
+    "作业记录",
+    "考试记录"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "none",
+   "suggestion": "建议下一课增加「用提公因式法分解因式」的表达支架与 2 道变式题，并减少重复计算题。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-13-0",
+     "source_type": "homework",
+     "source_name": "自主练习（函数专题）",
+     "occurred_at": "2026-08-25 17:20",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": "que-835c26de4c5f4cf09dba65456fb9d670",
+     "question_stem": "计算：√18 + √8 - √50（先化简，再合并）。",
+     "answer_summary": "化简后未化成最简二次根式就合并",
+     "correct": false,
+     "score": 1,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-common-factor"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-13-1",
+     "source_type": "practice",
+     "source_name": "周练二",
+     "occurred_at": "2026-08-22 15:20",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": "que-9cd07391d1184bbf855c1b76ea1529a6",
+     "question_stem": "计算：a²b/(3c) × 6c²/(ab²) ÷ (a/b)。",
+     "answer_summary": "化简后未化成最简二次根式就合并",
+     "correct": false,
+     "score": 1,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-common-factor"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-kp-factorization",
+   "scope": "class",
+   "student_id": null,
+   "target_type": "knowledge_node",
+   "target_id": "kp-factorization",
+   "conclusion": "「因式分解」掌握度偏低",
+   "reason": "最近一次单元测关联题正确率 47%，低于班级近三次均值 65%。",
+   "evidence_summary": "单元测第 9、10 题；周练二第 3、9 题。",
+   "compare_text": "低于同章基础题均值 19 分。",
+   "sample_count": 49,
+   "source_names": [
+    "作业记录",
+    "考试记录"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "none",
+   "suggestion": "建议下一课增加「因式分解」的表达支架与 2 道变式题，并减少重复计算题。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-14-0",
+     "source_type": "exam",
+     "source_name": "9月单元测",
+     "occurred_at": "2026-09-08 14:30",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": "que-b4937dbf609f4c0299708f7af8a1cb3d",
+     "question_stem": "计算：a²b/(3c) × 6c²/(ab²) ÷ (a/b)。",
+     "answer_summary": "化简后未化成最简二次根式就合并",
+     "correct": false,
+     "score": 0,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-factorization"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-14-1",
+     "source_type": "practice",
+     "source_name": "周练二",
+     "occurred_at": "2026-08-26 18:30",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": "que-52246d5d508d4361a82be2151d1c586a",
+     "question_stem": "计算：a²b/(3c) × 6c²/(ab²) ÷ (a/b)。",
+     "answer_summary": "化简后未化成最简二次根式就合并",
+     "correct": false,
+     "score": 1,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-factorization"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-kp-fraction",
+   "scope": "class",
+   "student_id": null,
+   "target_type": "knowledge_node",
+   "target_id": "kp-fraction",
+   "conclusion": "「分式」掌握度证据不足",
+   "reason": "该知识点近 30 天仅 5 条作答样本，低于 15 条的可信门槛，暂不给出掌握度结论。",
+   "evidence_summary": "作业记录、考试记录中关联记录过少。",
+   "compare_text": "无有效对比。",
+   "sample_count": 5,
+   "source_names": [
+    "作业记录",
+    "考试记录"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "low_sample",
+   "suggestion": "建议先布置一次 5 题小测补足样本，再评估掌握度。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-15-0",
+     "source_type": "exam",
+     "source_name": "9月单元测",
+     "occurred_at": "2026-08-26 09:50",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": "que-28ae3d2ce5c54ee6b11e077c5aa03297",
+     "question_stem": "计算：√18 + √8 - √50（先化简，再合并）。",
+     "answer_summary": "化简后未化成最简二次根式就合并",
+     "correct": false,
+     "score": 1,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-fraction"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-kp-fraction-properties",
+   "scope": "class",
+   "student_id": null,
+   "target_type": "knowledge_node",
+   "target_id": "kp-fraction-properties",
+   "conclusion": "「分式及其基本性质」掌握度偏低",
+   "reason": "最近一次单元测关联题正确率 44%，低于班级近三次均值 62%。",
+   "evidence_summary": "单元测第 6、9 题；周练二第 4、9 题。",
+   "compare_text": "低于同章基础题均值 18 分。",
+   "sample_count": 20,
+   "source_names": [
+    "作业记录",
+    "考试记录"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "none",
+   "suggestion": "建议下一课增加「分式及其基本性质」的表达支架与 2 道变式题，并减少重复计算题。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-16-0",
+     "source_type": "exam",
+     "source_name": "9月单元测",
+     "occurred_at": "2026-09-06 08:50",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": "que-a1b61424928d442ca69d6246705af4cf",
+     "question_stem": "计算：a²b/(3c) × 6c²/(ab²) ÷ (a/b)。",
+     "answer_summary": "化简后未化成最简二次根式就合并",
+     "correct": false,
+     "score": 1,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-fraction-properties"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-16-1",
+     "source_type": "practice",
+     "source_name": "周练二",
+     "occurred_at": "2026-09-07 13:50",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": "que-9361d9913fa1476f9164e4e51f9eac14",
+     "question_stem": "计算：a²b/(3c) × 6c²/(ab²) ÷ (a/b)。",
+     "answer_summary": "化简后未化成最简二次根式就合并",
+     "correct": false,
+     "score": 1,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-fraction-properties"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-kp-fraction-calc",
+   "scope": "class",
+   "student_id": null,
+   "target_type": "knowledge_node",
+   "target_id": "kp-fraction-calc",
+   "conclusion": "「分式的加法与减法」掌握度偏低",
+   "reason": "最近一次单元测关联题正确率 49%，低于班级近三次均值 67%。",
+   "evidence_summary": "单元测第 6、12 题；周练二第 3、9 题。",
+   "compare_text": "低于同章基础题均值 21 分。",
+   "sample_count": 39,
+   "source_names": [
+    "作业记录",
+    "考试记录"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "none",
+   "suggestion": "建议下一课增加「分式的加法与减法」的表达支架与 2 道变式题，并减少重复计算题。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-17-0",
+     "source_type": "exam",
+     "source_name": "9月单元测",
+     "occurred_at": "2026-09-05 12:50",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": "que-e841c5898c8e4c7abdb4fa7018cace73",
+     "question_stem": "计算：a²b/(3c) × 6c²/(ab²) ÷ (a/b)。",
+     "answer_summary": "化简后未化成最简二次根式就合并",
+     "correct": false,
+     "score": 1,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-fraction-calc"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-17-1",
+     "source_type": "exam",
+     "source_name": "9月单元测",
+     "occurred_at": "2026-09-01 14:40",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": "que-2125ba3cd9aa470b9c3240fbdbd2cda6",
+     "question_stem": "计算：√18 + √8 - √50（先化简，再合并）。",
+     "answer_summary": "化简后未化成最简二次根式就合并",
+     "correct": false,
+     "score": 1,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-fraction-calc"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-kp-radical",
+   "scope": "class",
+   "student_id": null,
+   "target_type": "knowledge_node",
+   "target_id": "kp-radical",
+   "conclusion": "「二次根式」掌握度偏低",
+   "reason": "最近一次单元测关联题正确率 45%，低于班级近三次均值 63%。",
+   "evidence_summary": "单元测第 6、10 题；周练二第 4、7 题。",
+   "compare_text": "低于同章基础题均值 13 分。",
+   "sample_count": 76,
+   "source_names": [
+    "作业记录",
+    "考试记录"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "none",
+   "suggestion": "建议下一课增加「二次根式」的表达支架与 2 道变式题，并减少重复计算题。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-18-0",
+     "source_type": "homework",
+     "source_name": "周练二",
+     "occurred_at": "2026-09-13 13:00",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": "que-b6434dd3bf7a406a8920ed0ad8e1f7bc",
+     "question_stem": "计算：a²b/(3c) × 6c²/(ab²) ÷ (a/b)。",
+     "answer_summary": "化简后未化成最简二次根式就合并",
+     "correct": false,
+     "score": 0,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-radical"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-18-1",
+     "source_type": "practice",
+     "source_name": "周练二",
+     "occurred_at": "2026-09-07 09:00",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": "que-467036f044c04deb8c92520e2a8b55c4",
+     "question_stem": "计算：√18 + √8 - √50（先化简，再合并）。",
+     "answer_summary": "化简后未化成最简二次根式就合并",
+     "correct": false,
+     "score": 1,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-radical"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-kp-radical-muldvd",
+   "scope": "class",
+   "student_id": null,
+   "target_type": "knowledge_node",
+   "target_id": "kp-radical-muldvd",
+   "conclusion": "「二次根式的乘除」掌握度偏低",
+   "reason": "最近一次单元测关联题正确率 50%，低于班级近三次均值 68%。",
+   "evidence_summary": "单元测第 7、10 题；周练二第 3、7 题。",
+   "compare_text": "低于同章基础题均值 13 分。",
+   "sample_count": 54,
+   "source_names": [
+    "作业记录",
+    "考试记录"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "none",
+   "suggestion": "建议下一课增加「二次根式的乘除」的表达支架与 2 道变式题，并减少重复计算题。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-19-0",
+     "source_type": "homework",
+     "source_name": "自主练习（函数专题）",
+     "occurred_at": "2026-09-11 17:50",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": "que-8a2f015891094cdf9947174b1ca328ad",
+     "question_stem": "计算：√18 + √8 - √50（先化简，再合并）。",
+     "answer_summary": "化简后未化成最简二次根式就合并",
+     "correct": false,
+     "score": 0,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-radical-muldvd"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-19-1",
+     "source_type": "exam",
+     "source_name": "9月单元测",
+     "occurred_at": "2026-09-03 08:30",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": "que-2b6911c261374987bf6c82759540f9a2",
+     "question_stem": "计算：√18 + √8 - √50（先化简，再合并）。",
+     "answer_summary": "化简后未化成最简二次根式就合并",
+     "correct": false,
+     "score": 2,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-radical-muldvd"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-kp-radical-addsub",
+   "scope": "class",
+   "student_id": null,
+   "target_type": "knowledge_node",
+   "target_id": "kp-radical-addsub",
+   "conclusion": "「二次根式的加减」掌握度偏低",
+   "reason": "最近一次单元测关联题正确率 42%，低于班级近三次均值 60%。",
+   "evidence_summary": "单元测第 9、10 题；周练二第 7、7 题。",
+   "compare_text": "低于同章基础题均值 14 分。",
+   "sample_count": 50,
+   "source_names": [
+    "作业记录",
+    "考试记录"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "none",
+   "suggestion": "建议下一课增加「二次根式的加减」的表达支架与 2 道变式题，并减少重复计算题。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-20-0",
+     "source_type": "homework",
+     "source_name": "周练二",
+     "occurred_at": "2026-09-10 13:40",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": "que-417873a26cf24bbf98744cf1804d1e35",
+     "question_stem": "计算：a²b/(3c) × 6c²/(ab²) ÷ (a/b)。",
+     "answer_summary": "化简后未化成最简二次根式就合并",
+     "correct": false,
+     "score": 1,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-radical-addsub"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-20-1",
+     "source_type": "exam",
+     "source_name": "9月单元测",
+     "occurred_at": "2026-08-31 09:50",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": "que-b40ecbcf0dc542ad93f723e352d3cc04",
+     "question_stem": "计算：√18 + √8 - √50（先化简，再合并）。",
+     "answer_summary": "化简后未化成最简二次根式就合并",
+     "correct": false,
+     "score": 0,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-radical-addsub"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-stu-6738633273303030-reflect_express",
+   "scope": "student",
+   "student_id": "6738633273303030",
+   "target_type": "radar_item",
+   "target_id": "reflect_express",
+   "conclusion": "陶欣的「反思表达」显著偏弱",
+   "reason": "近 30 天关联作答 3 条，正确率 58%，明显低于预期水平。",
+   "evidence_summary": "陶欣近 30 天该项 11 条证据，关联题正确率 56%。",
+   "compare_text": "低于班均 10 分，班级百分位 30%。",
+   "sample_count": 11,
+   "source_names": [
+    "9月单元测",
+    "周练二",
+    "自主练习"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "low_sample",
+   "suggestion": "建议为 陶欣 安排「反思表达」补弱微练习（3 题），并在下次作业批注中回访错因。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-21-0",
+     "source_type": "homework",
+     "source_name": "自主练习（函数专题）",
+     "occurred_at": "2026-09-14 08:10",
+     "student_id": "6738633273303030",
+     "class_id": "cls-g8-02",
+     "question_id": "que-c2152fd9f2244ac08eb756dad0b98bb6",
+     "question_stem": "写出本次周练中你放弃的题目，并说明卡在哪一步。",
+     "answer_summary": "只写“粗心”，未指明具体错误类型",
+     "correct": false,
+     "score": 1,
+     "full_score": 5,
+     "knowledge_ids": [],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-21-1",
+     "source_type": "exam",
+     "source_name": "9月单元测",
+     "occurred_at": "2026-09-15 11:00",
+     "student_id": "6738633273303030",
+     "class_id": "cls-g8-02",
+     "question_id": "que-59f74d0893414a3e9256f443355a505a",
+     "question_stem": "请用 3 句话总结本次纠错中最主要的一类错误及应对办法。",
+     "answer_summary": "只写“粗心”，未指明具体错误类型",
+     "correct": false,
+     "score": 2,
+     "full_score": 5,
+     "knowledge_ids": [],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-stu-6738633273303030-operation_reasoning",
+   "scope": "student",
+   "student_id": "6738633273303030",
+   "target_type": "radar_item",
+   "target_id": "operation_reasoning",
+   "conclusion": "陶欣的「运算推理」显著偏弱",
+   "reason": "近 30 天关联作答 6 条，正确率 48%，明显低于预期水平。",
+   "evidence_summary": "陶欣近 30 天该项 22 条证据，关联题正确率 44%。",
+   "compare_text": "低于班均 9 分，班级百分位 30%。",
+   "sample_count": 22,
+   "source_names": [
+    "9月单元测",
+    "周练二",
+    "自主练习"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "none",
+   "suggestion": "建议为 陶欣 安排「运算推理」补弱微练习（3 题），并在下次作业批注中回访错因。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-22-0",
+     "source_type": "exam",
+     "source_name": "9月单元测",
+     "occurred_at": "2026-09-03 17:20",
+     "student_id": "6738633273303030",
+     "class_id": "cls-g8-02",
+     "question_id": "que-8ee6e8babf4642a096fa26e3639723bf",
+     "question_stem": "计算：a²b/(3c) × 6c²/(ab²) ÷ (a/b)。",
+     "answer_summary": "化简后未化成最简二次根式就合并",
+     "correct": false,
+     "score": 2,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-radical-addsub",
+      "kp-fraction-calc"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-22-1",
+     "source_type": "homework",
+     "source_name": "课后作业（九月第 3 周）",
+     "occurred_at": "2026-08-23 13:20",
+     "student_id": "6738633273303030",
+     "class_id": "cls-g8-02",
+     "question_id": "q-7755",
+     "question_stem": "计算：√18 + √8 - √50（先化简，再合并）。",
+     "answer_summary": "作答正确，步骤完整",
+     "correct": true,
+     "score": 5,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-radical-addsub",
+      "kp-fraction-calc"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-stu-6738633273303031-trend_judgment",
+   "scope": "student",
+   "student_id": "6738633273303031",
+   "target_type": "radar_item",
+   "target_id": "trend_judgment",
+   "conclusion": "白霞远的「变化趋势判断」偏弱",
+   "reason": "近 30 天关联作答 4 条，正确率 64%，处于中等水平，其中 1 条失分。",
+   "evidence_summary": "白霞远近 30 天该项 14 条证据，关联题正确率 62%。",
+   "compare_text": "低于班均 6 分，班级百分位 36%。",
+   "sample_count": 14,
+   "source_names": [
+    "9月单元测",
+    "周练二",
+    "自主练习"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "low_sample",
+   "suggestion": "建议为 白霞远 安排「变化趋势判断」补弱微练习（3 题），并在下次作业批注中回访错因。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-23-0",
+     "source_type": "practice",
+     "source_name": "周练二",
+     "occurred_at": "2026-09-06 10:10",
+     "student_id": "6738633273303031",
+     "class_id": "cls-g8-02",
+     "question_id": "que-bff5ee22b1664be3aff8b2d6dcd08957",
+     "question_stem": "比较 y=0.5x 与 y=-0.5x 图像的变化趋势有何不同。",
+     "answer_summary": "忽略 k 的符号与图像升降的对应关系",
+     "correct": false,
+     "score": 1,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-function-property"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-23-1",
+     "source_type": "homework",
+     "source_name": "课后作业（九月第 3 周）",
+     "occurred_at": "2026-08-24 11:50",
+     "student_id": "6738633273303031",
+     "class_id": "cls-g8-02",
+     "question_id": "q-6844",
+     "question_stem": "比较 y=0.5x 与 y=-0.5x 图像的变化趋势有何不同。",
+     "answer_summary": "作答正确，步骤完整",
+     "correct": true,
+     "score": 5,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-function-property"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-stu-6738633273303031-function_image_reading",
+   "scope": "student",
+   "student_id": "6738633273303031",
+   "target_type": "radar_item",
+   "target_id": "function_image_reading",
+   "conclusion": "白霞远的「图像识读」偏弱",
+   "reason": "近 30 天关联作答 4 条，正确率 75%，掌握较稳固。",
+   "evidence_summary": "白霞远近 30 天该项 17 条证据，关联题正确率 68%。",
+   "compare_text": "低于班均 5 分，班级百分位 36%。",
+   "sample_count": 17,
+   "source_names": [
+    "9月单元测",
+    "周练二",
+    "自主练习"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "none",
+   "suggestion": "建议为 白霞远 安排「图像识读」补弱微练习（3 题），并在下次作业批注中回访错因。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-24-0",
+     "source_type": "exam",
+     "source_name": "9月单元测",
+     "occurred_at": "2026-09-12 11:50",
+     "student_id": "6738633273303031",
+     "class_id": "cls-g8-02",
+     "question_id": "que-3464433f5f1740c794f6f6ab111af60c",
+     "question_stem": "根据图像写出该一次函数与坐标轴的交点坐标。",
+     "answer_summary": "把直线与 y 轴交点当成与 x 轴交点读出",
+     "correct": false,
+     "score": 1,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-function-image"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-24-1",
+     "source_type": "exam",
+     "source_name": "9月单元测",
+     "occurred_at": "2026-09-10 15:00",
+     "student_id": "6738633273303031",
+     "class_id": "cls-g8-02",
+     "question_id": "que-2f17e0cb78b14908992d1ba577299476",
+     "question_stem": "读出图中两条直线的交点坐标，并判断直线 l₁ 与 x 轴交点的位置。",
+     "answer_summary": "把直线与 y 轴交点当成与 x 轴交点读出",
+     "correct": false,
+     "score": 1,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-function-image"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-stu-6738633273303032-operation_reasoning",
+   "scope": "student",
+   "student_id": "6738633273303032",
+   "target_type": "radar_item",
+   "target_id": "operation_reasoning",
+   "conclusion": "龚巧莺的「运算推理」显著偏弱",
+   "reason": "近 30 天关联作答 3 条，正确率 43%，明显低于预期水平。",
+   "evidence_summary": "龚巧莺近 30 天该项 13 条证据，关联题正确率 41%。",
+   "compare_text": "低于班均 13 分，班级百分位 40%。",
+   "sample_count": 13,
+   "source_names": [
+    "9月单元测",
+    "周练二",
+    "自主练习"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "low_sample",
+   "suggestion": "建议为 龚巧莺 安排「运算推理」补弱微练习（3 题），并在下次作业批注中回访错因。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-25-0",
+     "source_type": "practice",
+     "source_name": "自主练习（函数专题）",
+     "occurred_at": "2026-09-03 17:20",
+     "student_id": "6738633273303032",
+     "class_id": "cls-g8-02",
+     "question_id": "que-11a70e46bf854d8586930c4d7f0735c3",
+     "question_stem": "计算：a²b/(3c) × 6c²/(ab²) ÷ (a/b)。",
+     "answer_summary": "化简后未化成最简二次根式就合并",
+     "correct": false,
+     "score": 1,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-radical-addsub",
+      "kp-fraction-calc"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-25-1",
+     "source_type": "homework",
+     "source_name": "课后作业（九月第 3 周）",
+     "occurred_at": "2026-09-16 10:00",
+     "student_id": "6738633273303032",
+     "class_id": "cls-g8-02",
+     "question_id": "q-1167",
+     "question_stem": "计算：√18 + √8 - √50（先化简，再合并）。",
+     "answer_summary": "作答正确，步骤完整",
+     "correct": true,
+     "score": 5,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-radical-addsub",
+      "kp-fraction-calc"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-stu-6738633273303032-effort_level",
+   "scope": "student",
+   "student_id": "6738633273303032",
+   "target_type": "radar_item",
+   "target_id": "effort_level",
+   "conclusion": "龚巧莺的「努力程度」显著偏弱",
+   "reason": "订正完成率 63%，平均订正时长 0.9 天。",
+   "evidence_summary": "龚巧莺近 30 天该项 5 条证据，关联题正确率 60%。",
+   "compare_text": "低于班均 10 分，班级百分位 33%。",
+   "sample_count": 5,
+   "source_names": [
+    "9月单元测",
+    "周练二",
+    "自主练习"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "low_sample",
+   "suggestion": "建议为 龚巧莺 安排「努力程度」补弱微练习（3 题），并在下次作业批注中回访错因。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-26-0",
+     "source_type": "practice",
+     "source_name": "自主练习（函数专题）",
+     "occurred_at": "2026-08-26 12:40",
+     "student_id": "6738633273303032",
+     "class_id": "cls-g8-02",
+     "question_id": null,
+     "question_stem": "（行为记录）自主加练题量分布",
+     "answer_summary": "作答不完整",
+     "correct": false,
+     "score": 0,
+     "full_score": 5,
+     "knowledge_ids": [],
+     "ability_keys": [],
+     "literacy_keys": [
+      "effort_level"
+     ],
+     "process_keys": []
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-26-1",
+     "source_type": "homework",
+     "source_name": "自主练习（函数专题）",
+     "occurred_at": "2026-08-31 09:30",
+     "student_id": "6738633273303032",
+     "class_id": "cls-g8-02",
+     "question_id": null,
+     "question_stem": "（行为记录）自主加练题量分布",
+     "answer_summary": "作答不完整",
+     "correct": false,
+     "score": 0,
+     "full_score": 5,
+     "knowledge_ids": [],
+     "ability_keys": [],
+     "literacy_keys": [
+      "effort_level"
+     ],
+     "process_keys": []
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-stu-6738633273303033-reflect_express",
+   "scope": "student",
+   "student_id": "6738633273303033",
+   "target_type": "radar_item",
+   "target_id": "reflect_express",
+   "conclusion": "黄旭霞的「反思表达」偏弱",
+   "reason": "近 30 天关联作答 3 条，正确率 64%，处于中等水平，其中 1 条失分。",
+   "evidence_summary": "黄旭霞近 30 天该项 13 条证据，关联题正确率 62%。",
+   "compare_text": "低于班均 3 分，班级百分位 54%。",
+   "sample_count": 13,
+   "source_names": [
+    "9月单元测",
+    "周练二",
+    "自主练习"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "low_sample",
+   "suggestion": "建议为 黄旭霞 安排「反思表达」补弱微练习（3 题），并在下次作业批注中回访错因。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-27-0",
+     "source_type": "practice",
+     "source_name": "周练二",
+     "occurred_at": "2026-09-14 13:30",
+     "student_id": "6738633273303033",
+     "class_id": "cls-g8-02",
+     "question_id": "que-c6769ef6024b43cab343b314f059af74",
+     "question_stem": "请用 3 句话总结本次纠错中最主要的一类错误及应对办法。",
+     "answer_summary": "只写“粗心”，未指明具体错误类型",
+     "correct": false,
+     "score": 1,
+     "full_score": 5,
+     "knowledge_ids": [],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-27-1",
+     "source_type": "homework",
+     "source_name": "课后作业（九月第 3 周）",
+     "occurred_at": "2026-09-17 17:40",
+     "student_id": "6738633273303033",
+     "class_id": "cls-g8-02",
+     "question_id": "q-9727",
+     "question_stem": "写出本次周练中你放弃的题目，并说明卡在哪一步。",
+     "answer_summary": "作答正确，步骤完整",
+     "correct": true,
+     "score": 5,
+     "full_score": 5,
+     "knowledge_ids": [],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-stu-6738633273303033-memorize_understand",
+   "scope": "student",
+   "student_id": "6738633273303033",
+   "target_type": "radar_item",
+   "target_id": "memorize_understand",
+   "conclusion": "黄旭霞的「识记理解」相对偏弱",
+   "reason": "近 30 天关联作答 6 条，正确率 75%，掌握较稳固。",
+   "evidence_summary": "黄旭霞近 30 天该项 25 条证据，关联题正确率 69%。",
+   "compare_text": "低于班均 2 分，班级百分位 54%。",
+   "sample_count": 25,
+   "source_names": [
+    "9月单元测",
+    "周练二",
+    "自主练习"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "none",
+   "suggestion": "建议为 黄旭霞 安排「识记理解」补弱微练习（3 题），并在下次作业批注中回访错因。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-28-0",
+     "source_type": "exam",
+     "source_name": "9月单元测",
+     "occurred_at": "2026-09-04 15:30",
+     "student_id": "6738633273303033",
+     "class_id": "cls-g8-02",
+     "question_id": "que-6fbcf8c9a3e048deb0b5984107ca1198",
+     "question_stem": "说出最简二次根式需满足的两个条件。",
+     "answer_summary": "遗漏“分母不为 0”这一前提",
+     "correct": false,
+     "score": 2,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-function",
+      "kp-fraction-properties"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-28-1",
+     "source_type": "homework",
+     "source_name": "课后作业（九月第 3 周）",
+     "occurred_at": "2026-09-03 18:40",
+     "student_id": "6738633273303033",
+     "class_id": "cls-g8-02",
+     "question_id": "q-8573",
+     "question_stem": "分式有意义时 x 的取值范围是？",
+     "answer_summary": "作答正确，步骤完整",
+     "correct": true,
+     "score": 5,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-function",
+      "kp-fraction-properties"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-stu-6738633273303034-thinking_perspective",
+   "scope": "student",
+   "student_id": "6738633273303034",
+   "target_type": "radar_item",
+   "target_id": "thinking_perspective",
+   "conclusion": "邵浩欣的「思维角度」显著偏弱",
+   "reason": "一题多解提交 2 次。",
+   "evidence_summary": "邵浩欣近 30 天该项 5 条证据，关联题正确率 61%。",
+   "compare_text": "低于班均 8 分，班级百分位 33%。",
+   "sample_count": 5,
+   "source_names": [
+    "9月单元测",
+    "周练二",
+    "自主练习"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "low_sample",
+   "suggestion": "建议为 邵浩欣 安排「思维角度」补弱微练习（3 题），并在下次作业批注中回访错因。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-29-0",
+     "source_type": "practice",
+     "source_name": "周练二",
+     "occurred_at": "2026-09-05 09:40",
+     "student_id": "6738633273303034",
+     "class_id": "cls-g8-02",
+     "question_id": null,
+     "question_stem": "（行为记录）课堂追问“还有别的方法吗”的频次",
+     "answer_summary": "满足于单一解法，未尝试第二种思路",
+     "correct": false,
+     "score": 1,
+     "full_score": 5,
+     "knowledge_ids": [],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": [
+      "thinking_perspective"
+     ]
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-29-1",
+     "source_type": "homework",
+     "source_name": "课后作业（九月第 3 周）",
+     "occurred_at": "2026-09-12 15:00",
+     "student_id": "6738633273303034",
+     "class_id": "cls-g8-02",
+     "question_id": null,
+     "question_stem": "（行为记录）一题多解提交次数与解法差异度",
+     "answer_summary": "作答正确，步骤完整",
+     "correct": true,
+     "score": 5,
+     "full_score": 5,
+     "knowledge_ids": [],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": [
+      "thinking_perspective"
+     ]
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-stu-6738633273303034-homework_correction",
+   "scope": "student",
+   "student_id": "6738633273303034",
+   "target_type": "radar_item",
+   "target_id": "homework_correction",
+   "conclusion": "邵浩欣的「订正过程」显著偏弱",
+   "reason": "订正完成率 63%，平均订正时长 1.2 天，错因归类完整率 51%。",
+   "evidence_summary": "邵浩欣近 30 天该项 14 条证据，关联题正确率 53%。",
+   "compare_text": "低于班均 8 分，班级百分位 33%。",
+   "sample_count": 14,
+   "source_names": [
+    "9月单元测",
+    "周练二",
+    "自主练习"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "low_sample",
+   "suggestion": "建议为 邵浩欣 安排「订正过程」补弱微练习（3 题），并在下次作业批注中回访错因。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-30-0",
+     "source_type": "homework",
+     "source_name": "周练二",
+     "occurred_at": "2026-09-11 08:40",
+     "student_id": "6738633273303034",
+     "class_id": "cls-g8-02",
+     "question_id": null,
+     "question_stem": "（行为记录）错因归类填写完整率",
+     "answer_summary": "订正只抄正确答案，未写错因",
+     "correct": false,
+     "score": 1,
+     "full_score": 5,
+     "knowledge_ids": [],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": [
+      "homework_correction"
+     ]
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-30-1",
+     "source_type": "exam",
+     "source_name": "9月单元测",
+     "occurred_at": "2026-09-10 08:30",
+     "student_id": "6738633273303034",
+     "class_id": "cls-g8-02",
+     "question_id": null,
+     "question_stem": "（行为记录）作业订正次数与订正完成时长",
+     "answer_summary": "订正只抄正确答案，未写错因",
+     "correct": false,
+     "score": 1,
+     "full_score": 5,
+     "knowledge_ids": [],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": [
+      "homework_correction"
+     ]
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-stu-6738633273303035-trend_judgment",
+   "scope": "student",
+   "student_id": "6738633273303035",
+   "target_type": "radar_item",
+   "target_id": "trend_judgment",
+   "conclusion": "陆天的「变化趋势判断」偏弱",
+   "reason": "近 30 天关联作答 4 条，正确率 62%，处于中等水平，其中 2 条失分。",
+   "evidence_summary": "陆天近 30 天该项 14 条证据，关联题正确率 62%。",
+   "compare_text": "低于班均 6 分，班级百分位 36%。",
+   "sample_count": 14,
+   "source_names": [
+    "9月单元测",
+    "周练二",
+    "自主练习"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "low_sample",
+   "suggestion": "建议为 陆天 安排「变化趋势判断」补弱微练习（3 题），并在下次作业批注中回访错因。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-31-0",
+     "source_type": "exam",
+     "source_name": "9月单元测",
+     "occurred_at": "2026-09-01 14:20",
+     "student_id": "6738633273303035",
+     "class_id": "cls-g8-02",
+     "question_id": "que-d16ebf22221240048035b06ba7bd3872",
+     "question_stem": "比较 y=0.5x 与 y=-0.5x 图像的变化趋势有何不同。",
+     "answer_summary": "忽略 k 的符号与图像升降的对应关系",
+     "correct": false,
+     "score": 1,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-function-property"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-31-1",
+     "source_type": "homework",
+     "source_name": "课后作业（九月第 3 周）",
+     "occurred_at": "2026-08-28 11:40",
+     "student_id": "6738633273303035",
+     "class_id": "cls-g8-02",
+     "question_id": "q-6062",
+     "question_stem": "比较 y=0.5x 与 y=-0.5x 图像的变化趋势有何不同。",
+     "answer_summary": "作答正确，步骤完整",
+     "correct": true,
+     "score": 5,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-function-property"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-stu-6738633273303035-image_interpretation",
+   "scope": "student",
+   "student_id": "6738633273303035",
+   "target_type": "radar_item",
+   "target_id": "image_interpretation",
+   "conclusion": "陆天的「图像解释」偏弱",
+   "reason": "近 30 天关联作答 2 条，正确率 70%，处于中等水平，其中 1 条失分。",
+   "evidence_summary": "陆天近 30 天该项 9 条证据，关联题正确率 63%。",
+   "compare_text": "低于班均 5 分，班级百分位 36%。",
+   "sample_count": 9,
+   "source_names": [
+    "9月单元测",
+    "周练二",
+    "自主练习"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "low_sample",
+   "suggestion": "建议为 陆天 安排「图像解释」补弱微练习（3 题），并在下次作业批注中回访错因。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-32-0",
+     "source_type": "exam",
+     "source_name": "9月单元测",
+     "occurred_at": "2026-08-30 13:00",
+     "student_id": "6738633273303035",
+     "class_id": "cls-g8-02",
+     "question_id": "que-4785150f57d8476585e6b13d0fb009dc",
+     "question_stem": "结合图像解释：为什么水箱注水问题中直线的斜率表示注水速度？",
+     "answer_summary": "将截距误判为斜率，解释趋势时只说“变大”未指明 y 随 x",
+     "correct": false,
+     "score": 2,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-function-image",
+      "kp-function-property"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-32-1",
+     "source_type": "homework",
+     "source_name": "课后作业（九月第 3 周）",
+     "occurred_at": "2026-09-03 13:20",
+     "student_id": "6738633273303035",
+     "class_id": "cls-g8-02",
+     "question_id": "q-2045",
+     "question_stem": "已知一次函数 y=2x-1 的图像，说明 y 随 x 增大如何变化，并解释其在行程情境中的含义。",
+     "answer_summary": "作答正确，步骤完整",
+     "correct": true,
+     "score": 5,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-function-image",
+      "kp-function-property"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-stu-6738633273303036-function_image_reading",
+   "scope": "student",
+   "student_id": "6738633273303036",
+   "target_type": "radar_item",
+   "target_id": "function_image_reading",
+   "conclusion": "谭敏的「图像识读」显著偏弱",
+   "reason": "近 30 天关联作答 4 条，正确率 66%，处于中等水平，其中 1 条失分。",
+   "evidence_summary": "谭敏近 30 天该项 15 条证据，关联题正确率 64%。",
+   "compare_text": "低于班均 9 分，班级百分位 33%。",
+   "sample_count": 15,
+   "source_names": [
+    "9月单元测",
+    "周练二",
+    "自主练习"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "none",
+   "suggestion": "建议为 谭敏 安排「图像识读」补弱微练习（3 题），并在下次作业批注中回访错因。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-33-0",
+     "source_type": "homework",
+     "source_name": "周练二",
+     "occurred_at": "2026-09-06 18:20",
+     "student_id": "6738633273303036",
+     "class_id": "cls-g8-02",
+     "question_id": "que-7a0e3ed0-730d-4e82-b458-f49c4d8509f3",
+     "question_stem": "读出图中两条直线的交点坐标，并判断直线 l₁ 与 x 轴交点的位置。",
+     "answer_summary": "把直线与 y 轴交点当成与 x 轴交点读出",
+     "correct": false,
+     "score": 0,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-function-image"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-33-1",
+     "source_type": "homework",
+     "source_name": "自主练习（函数专题）",
+     "occurred_at": "2026-09-02 08:10",
+     "student_id": "6738633273303036",
+     "class_id": "cls-g8-02",
+     "question_id": "que-a209627150274b628d0bf55ca80311a2",
+     "question_stem": "读出图中两条直线的交点坐标，并判断直线 l₁ 与 x 轴交点的位置。",
+     "answer_summary": "把直线与 y 轴交点当成与 x 轴交点读出",
+     "correct": false,
+     "score": 2,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-function-image"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-stu-6738633273303036-problem_analysis",
+   "scope": "student",
+   "student_id": "6738633273303036",
+   "target_type": "radar_item",
+   "target_id": "problem_analysis",
+   "conclusion": "谭敏的「问题分析」偏弱",
+   "reason": "近 30 天关联作答 6 条，正确率 61%，明显低于预期水平。",
+   "evidence_summary": "谭敏近 30 天该项 25 条证据，关联题正确率 54%。",
+   "compare_text": "低于班均 7 分，班级百分位 40%。",
+   "sample_count": 25,
+   "source_names": [
+    "9月单元测",
+    "周练二",
+    "自主练习"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "none",
+   "suggestion": "建议为 谭敏 安排「问题分析」补弱微练习（3 题），并在下次作业批注中回访错因。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-34-0",
+     "source_type": "homework",
+     "source_name": "周练二",
+     "occurred_at": "2026-09-11 11:50",
+     "student_id": "6738633273303036",
+     "class_id": "cls-g8-02",
+     "question_id": "que-d927e83118404c6593a0f0e5286ab342",
+     "question_stem": "要证 AC=DF，已知 AB=DE、∠B=∠E，还需添加什么条件？请说明选择的判定定理。",
+     "answer_summary": "混淆 SSA 与 SAS，误用 SSA 判定全等",
+     "correct": false,
+     "score": 2,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-congruent-judge",
+      "kp-special-quad"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-34-1",
+     "source_type": "homework",
+     "source_name": "课后作业（九月第 3 周）",
+     "occurred_at": "2026-09-08 10:20",
+     "student_id": "6738633273303036",
+     "class_id": "cls-g8-02",
+     "question_id": "q-5597",
+     "question_stem": "要证 AC=DF，已知 AB=DE、∠B=∠E，还需添加什么条件？请说明选择的判定定理。",
+     "answer_summary": "作答正确，步骤完整",
+     "correct": true,
+     "score": 5,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-congruent-judge",
+      "kp-special-quad"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-stu-6738633273303036-operation_reasoning",
+   "scope": "student",
+   "student_id": "6738633273303036",
+   "target_type": "radar_item",
+   "target_id": "operation_reasoning",
+   "conclusion": "谭敏的「运算推理」偏弱",
+   "reason": "近 30 天关联作答 5 条，正确率 54%，明显低于预期水平。",
+   "evidence_summary": "谭敏近 30 天该项 18 条证据，关联题正确率 48%。",
+   "compare_text": "低于班均 5 分，班级百分位 40%。",
+   "sample_count": 18,
+   "source_names": [
+    "9月单元测",
+    "周练二",
+    "自主练习"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "none",
+   "suggestion": "建议为 谭敏 安排「运算推理」补弱微练习（3 题），并在下次作业批注中回访错因。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-35-0",
+     "source_type": "practice",
+     "source_name": "周练二",
+     "occurred_at": "2026-08-28 18:20",
+     "student_id": "6738633273303036",
+     "class_id": "cls-g8-02",
+     "question_id": "que-44ee4c7ccaeb4ff793f1c24f7605bdae",
+     "question_stem": "计算：a²b/(3c) × 6c²/(ab²) ÷ (a/b)。",
+     "answer_summary": "化简后未化成最简二次根式就合并",
+     "correct": false,
+     "score": 2,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-radical-addsub",
+      "kp-fraction-calc"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-35-1",
+     "source_type": "practice",
+     "source_name": "周练二",
+     "occurred_at": "2026-08-27 11:40",
+     "student_id": "6738633273303036",
+     "class_id": "cls-g8-02",
+     "question_id": "que-6d69ad1e88cf4215b983c5e1b12cc35a",
+     "question_stem": "计算：a²b/(3c) × 6c²/(ab²) ÷ (a/b)。",
+     "answer_summary": "化简后未化成最简二次根式就合并",
+     "correct": false,
+     "score": 2,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-radical-addsub",
+      "kp-fraction-calc"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-stu-6738633273303037-problem_analysis",
+   "scope": "student",
+   "student_id": "6738633273303037",
+   "target_type": "radar_item",
+   "target_id": "problem_analysis",
+   "conclusion": "莫玲欣的「问题分析」偏弱",
+   "reason": "近 30 天关联作答 2 条，正确率 55%，明显低于预期水平。",
+   "evidence_summary": "莫玲欣近 30 天该项 9 条证据，关联题正确率 54%。",
+   "compare_text": "低于班均 7 分，班级百分位 43%。",
+   "sample_count": 9,
+   "source_names": [
+    "9月单元测",
+    "周练二",
+    "自主练习"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "low_sample",
+   "suggestion": "建议为 莫玲欣 安排「问题分析」补弱微练习（3 题），并在下次作业批注中回访错因。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-36-0",
+     "source_type": "exam",
+     "source_name": "9月单元测",
+     "occurred_at": "2026-08-22 15:10",
+     "student_id": "6738633273303037",
+     "class_id": "cls-g8-02",
+     "question_id": "que-e7cde9792fc745e3a8f4e604d3e2c97e",
+     "question_stem": "在平行四边形 ABCD 中，对角线 AC、BD 交于 O，给出能判定其为矩形的条件并证明。",
+     "answer_summary": "混淆 SSA 与 SAS，误用 SSA 判定全等",
+     "correct": false,
+     "score": 0,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-congruent-judge",
+      "kp-special-quad"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-36-1",
+     "source_type": "homework",
+     "source_name": "课后作业（九月第 3 周）",
+     "occurred_at": "2026-09-14 14:50",
+     "student_id": "6738633273303037",
+     "class_id": "cls-g8-02",
+     "question_id": "q-7077",
+     "question_stem": "在平行四边形 ABCD 中，对角线 AC、BD 交于 O，给出能判定其为矩形的条件并证明。",
+     "answer_summary": "作答正确，步骤完整",
+     "correct": true,
+     "score": 5,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-congruent-judge",
+      "kp-special-quad"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-stu-6738633273303037-homework_process",
+   "scope": "student",
+   "student_id": "6738633273303037",
+   "target_type": "radar_item",
+   "target_id": "homework_process",
+   "conclusion": "莫玲欣的「作业完成过程」偏弱",
+   "reason": "平均提交间隔 1.1 天，中途退出重做 0 次。",
+   "evidence_summary": "莫玲欣近 30 天该项 12 条证据，关联题正确率 59%。",
+   "compare_text": "低于班均 7 分，班级百分位 40%。",
+   "sample_count": 12,
+   "source_names": [
+    "9月单元测",
+    "周练二",
+    "自主练习"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "low_sample",
+   "suggestion": "建议为 莫玲欣 安排「作业完成过程」补弱微练习（3 题），并在下次作业批注中回访错因。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-37-0",
+     "source_type": "exam",
+     "source_name": "9月单元测",
+     "occurred_at": "2026-09-05 10:00",
+     "student_id": "6738633273303037",
+     "class_id": "cls-g8-02",
+     "question_id": null,
+     "question_stem": "（行为记录）作业中途退出重做次数（人机交互）",
+     "answer_summary": "提交前未检查，空题直接提交",
+     "correct": false,
+     "score": 0,
+     "full_score": 5,
+     "knowledge_ids": [],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": [
+      "homework_process"
+     ]
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-37-1",
+     "source_type": "homework",
+     "source_name": "课后作业（九月第 3 周）",
+     "occurred_at": "2026-09-08 14:40",
+     "student_id": "6738633273303037",
+     "class_id": "cls-g8-02",
+     "question_id": null,
+     "question_stem": "（行为记录）作业中途退出重做次数（人机交互）",
+     "answer_summary": "作答正确，步骤完整",
+     "correct": true,
+     "score": 5,
+     "full_score": 5,
+     "knowledge_ids": [],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": [
+      "homework_process"
+     ]
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-stu-6738633273303038-class_participation",
+   "scope": "student",
+   "student_id": "6738633273303038",
+   "target_type": "radar_item",
+   "target_id": "class_participation",
+   "conclusion": "熊华的「课堂参与」显著偏弱",
+   "reason": "近 30 天课堂互动 4 次（抢答/投票/演示）。",
+   "evidence_summary": "熊华近 30 天该项 6 条证据，关联题正确率 61%。",
+   "compare_text": "低于班均 10 分，班级百分位 30%。",
+   "sample_count": 6,
+   "source_names": [
+    "9月单元测",
+    "周练二",
+    "自主练习"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "low_sample",
+   "suggestion": "建议为 熊华 安排「课堂参与」补弱微练习（3 题），并在下次作业批注中回访错因。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-38-0",
+     "source_type": "exam",
+     "source_name": "9月单元测",
+     "occurred_at": "2026-08-23 12:50",
+     "student_id": "6738633273303038",
+     "class_id": "cls-g8-02",
+     "question_id": null,
+     "question_stem": "（行为记录）课堂学案当堂完成率",
+     "answer_summary": "整节课无主动互动记录",
+     "correct": false,
+     "score": 1,
+     "full_score": 5,
+     "knowledge_ids": [],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": [
+      "class_participation"
+     ]
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-38-1",
+     "source_type": "practice",
+     "source_name": "周练二",
+     "occurred_at": "2026-09-04 14:50",
+     "student_id": "6738633273303038",
+     "class_id": "cls-g8-02",
+     "question_id": null,
+     "question_stem": "（行为记录）课堂互动次数：抢答、投票、上台演示",
+     "answer_summary": "整节课无主动互动记录",
+     "correct": false,
+     "score": 0,
+     "full_score": 5,
+     "knowledge_ids": [],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": [
+      "class_participation"
+     ]
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-stu-6738633273303038-function_image_reading",
+   "scope": "student",
+   "student_id": "6738633273303038",
+   "target_type": "radar_item",
+   "target_id": "function_image_reading",
+   "conclusion": "熊华的「图像识读」显著偏弱",
+   "reason": "近 30 天关联作答 6 条，正确率 68%，处于中等水平，其中 2 条失分。",
+   "evidence_summary": "熊华近 30 天该项 23 条证据，关联题正确率 65%。",
+   "compare_text": "低于班均 8 分，班级百分位 33%。",
+   "sample_count": 23,
+   "source_names": [
+    "9月单元测",
+    "周练二",
+    "自主练习"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "none",
+   "suggestion": "建议为 熊华 安排「图像识读」补弱微练习（3 题），并在下次作业批注中回访错因。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-39-0",
+     "source_type": "practice",
+     "source_name": "自主练习（函数专题）",
+     "occurred_at": "2026-09-14 15:10",
+     "student_id": "6738633273303038",
+     "class_id": "cls-g8-02",
+     "question_id": "que-36044f1ab1e64ba190bc6a123373e27c",
+     "question_stem": "读出图中两条直线的交点坐标，并判断直线 l₁ 与 x 轴交点的位置。",
+     "answer_summary": "把直线与 y 轴交点当成与 x 轴交点读出",
+     "correct": false,
+     "score": 1,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-function-image"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-39-1",
+     "source_type": "homework",
+     "source_name": "课后作业（九月第 3 周）",
+     "occurred_at": "2026-09-15 13:20",
+     "student_id": "6738633273303038",
+     "class_id": "cls-g8-02",
+     "question_id": "q-5316",
+     "question_stem": "根据图像写出该一次函数与坐标轴的交点坐标。",
+     "answer_summary": "作答正确，步骤完整",
+     "correct": true,
+     "score": 5,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-function-image"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-stu-6738633273303039-learning_attitude",
+   "scope": "student",
+   "student_id": "6738633273303039",
+   "target_type": "radar_item",
+   "target_id": "learning_attitude",
+   "conclusion": "黎浩的「学习态度」显著偏弱",
+   "reason": "近 30 天作业按时提交率 72%，学案带齐率 69%。",
+   "evidence_summary": "黎浩近 30 天该项 4 条证据，关联题正确率 59%。",
+   "compare_text": "低于班均 8 分，班级百分位 36%。",
+   "sample_count": 4,
+   "source_names": [
+    "9月单元测",
+    "周练二",
+    "自主练习"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "low_sample",
+   "suggestion": "建议为 黎浩 安排「学习态度」补弱微练习（3 题），并在下次作业批注中回访错因。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-40-0",
+     "source_type": "exam",
+     "source_name": "9月单元测",
+     "occurred_at": "2026-09-15 11:50",
+     "student_id": "6738633273303039",
+     "class_id": "cls-g8-02",
+     "question_id": null,
+     "question_stem": "（行为记录）课堂学案带齐与笔记完成情况",
+     "answer_summary": "作答不完整",
+     "correct": false,
+     "score": 1,
+     "full_score": 5,
+     "knowledge_ids": [],
+     "ability_keys": [],
+     "literacy_keys": [
+      "learning_attitude"
+     ],
+     "process_keys": []
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-40-1",
+     "source_type": "homework",
+     "source_name": "课后作业（九月第 3 周）",
+     "occurred_at": "2026-09-13 14:20",
+     "student_id": "6738633273303039",
+     "class_id": "cls-g8-02",
+     "question_id": null,
+     "question_stem": "（行为记录）课堂学案带齐与笔记完成情况",
+     "answer_summary": "作答正确，步骤完整",
+     "correct": true,
+     "score": 5,
+     "full_score": 5,
+     "knowledge_ids": [],
+     "ability_keys": [],
+     "literacy_keys": [
+      "learning_attitude"
+     ],
+     "process_keys": []
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-stu-6738633273303039-problem_analysis",
+   "scope": "student",
+   "student_id": "6738633273303039",
+   "target_type": "radar_item",
+   "target_id": "problem_analysis",
+   "conclusion": "黎浩的「问题分析」偏弱",
+   "reason": "近 30 天关联作答 6 条，正确率 55%，明显低于预期水平。",
+   "evidence_summary": "黎浩近 30 天该项 24 条证据，关联题正确率 54%。",
+   "compare_text": "低于班均 7 分，班级百分位 40%。",
+   "sample_count": 24,
+   "source_names": [
+    "9月单元测",
+    "周练二",
+    "自主练习"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "none",
+   "suggestion": "建议为 黎浩 安排「问题分析」补弱微练习（3 题），并在下次作业批注中回访错因。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-41-0",
+     "source_type": "homework",
+     "source_name": "周练二",
+     "occurred_at": "2026-08-27 17:20",
+     "student_id": "6738633273303039",
+     "class_id": "cls-g8-02",
+     "question_id": "que-7f356aa5f70b41c3b29e1eef21e2cea3",
+     "question_stem": "要证 AC=DF，已知 AB=DE、∠B=∠E，还需添加什么条件？请说明选择的判定定理。",
+     "answer_summary": "混淆 SSA 与 SAS，误用 SSA 判定全等",
+     "correct": false,
+     "score": 0,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-congruent-judge",
+      "kp-special-quad"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    },
+    {
+     "evidence_id": "ev-cls-g8-02-41-1",
+     "source_type": "homework",
+     "source_name": "课后作业（九月第 3 周）",
+     "occurred_at": "2026-08-22 11:40",
+     "student_id": "6738633273303039",
+     "class_id": "cls-g8-02",
+     "question_id": "q-2239",
+     "question_stem": "在平行四边形 ABCD 中，对角线 AC、BD 交于 O，给出能判定其为矩形的条件并证明。",
+     "answer_summary": "作答正确，步骤完整",
+     "correct": true,
+     "score": 5,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-congruent-judge",
+      "kp-special-quad"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-rec-homework-cls-g8-02",
+   "scope": "class",
+   "student_id": null,
+   "target_type": "recommendation",
+   "target_id": "rec-homework-cls-g8-02",
+   "conclusion": "下次作业建议：减重复、补短板",
+   "reason": "「因式分解」掌握度 49（待巩固），而已掌握章节的重复题占比仍约 26%。",
+   "evidence_summary": "近 2 周作业共 24 题中，与「因式分解」关联的仅 2 题。",
+   "compare_text": "同类班级（1 班）同知识点作业关联题为 6 题。",
+   "sample_count": 49,
+   "source_names": [
+    "课后作业",
+    "9月单元测"
+   ],
+   "time_range_text": "近 14 天",
+   "warning_type": "none",
+   "suggestion": "下次作业：删去 2 道已掌握的重复计算题，加入 3 道「因式分解」变式题（1 基础 + 1 图像/情境 + 1 综合）。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-42-0",
+     "source_type": "exam",
+     "source_name": "9月单元测",
+     "occurred_at": "2026-09-11 10:40",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": "que-a388be6e838e4b0ca348e97cf2dd2b34",
+     "question_stem": "计算：√18 + √8 - √50（先化简，再合并）。",
+     "answer_summary": "化简后未化成最简二次根式就合并",
+     "correct": false,
+     "score": 1,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-factorization"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    }
+   ]
+  },
+  {
+   "explanation_id": "exp-rec-group-cls-g8-02",
+   "scope": "class",
+   "student_id": null,
+   "target_type": "recommendation",
+   "target_id": "rec-group-cls-g8-02",
+   "conclusion": "分层建议：过程表现偏弱学生优先跟进订正闭环",
+   "reason": "过程画像中「订正过程」班级均分 67，为过程维度最低项。",
+   "evidence_summary": "近 30 天约 1/3 学生的订正记录存在“只抄答案、无错因”现象。",
+   "compare_text": "与 1 班相比低约 17 分。",
+   "sample_count": 210,
+   "source_names": [
+    "课后作业",
+    "人机交互"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "none",
+   "suggestion": "对订正薄弱学生启用“错因归类—重做—3 日复测”闭环单，先在画像偏弱的 10 人小组试行两周。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-02-43-0",
+     "source_type": "practice",
+     "source_name": "周练二",
+     "occurred_at": "2026-08-31 09:10",
+     "student_id": null,
+     "class_id": "cls-g8-02",
+     "question_id": null,
+     "question_stem": "（行为记录）作业订正次数与订正完成时长",
+     "answer_summary": "订正只抄正确答案，未写错因",
+     "correct": false,
+     "score": 1,
+     "full_score": 5,
+     "knowledge_ids": [],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": [
+      "homework_correction"
+     ]
+    }
+   ]
+  }
+ ]
+}

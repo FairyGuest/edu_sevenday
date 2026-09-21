@@ -1,0 +1,427 @@
+{
+ "scope": "class",
+ "teacher_id": "t-001",
+ "teacher_name": "演示教师",
+ "class_id": "cls-g8-01",
+ "class_name": "八年级(1)班",
+ "grade": "g8",
+ "subject": "数学",
+ "snapshot_id": "snap-20260918-cls-g8-01",
+ "latest_snapshot_at": "2026-09-18 18:30",
+ "time_window": {
+  "preset": "month",
+  "start_date": "2026-08-18",
+  "end_date": "2026-09-18"
+ },
+ "sources": [
+  "作业记录",
+  "考试记录",
+  "课堂互动",
+  "人机交互",
+  "自主练习"
+ ],
+ "dimensions": [
+  {
+   "dimension_key": "knowledge",
+   "dimension_name": "知识点画像",
+   "score": 81,
+   "class_avg": null,
+   "rank_pct": null,
+   "sample_count": 5355,
+   "evidence_strength": "sufficient",
+   "explanation": "知识点画像总体良好（81 分），各指标均处于较熟练区间，可维持现有教学节奏。",
+   "suggestion": "对订正环节实行“错因归类—重做—3 日后复测”的闭环跟踪。",
+   "radar_items": [
+    {
+     "key": "func_concept",
+     "name": "函数概念理解",
+     "value": 87,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 1230,
+     "evidence_strength": "sufficient",
+     "explanation": "近 30 天关联作答 308 条，正确率 86%，掌握较稳固。",
+     "related_knowledge_ids": [
+      "kp-function"
+     ],
+     "related_goal_ids": [
+      "goal-1"
+     ]
+    },
+    {
+     "key": "coordinate_reading",
+     "name": "坐标系读图",
+     "value": 86,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 1245,
+     "evidence_strength": "sufficient",
+     "explanation": "近 30 天关联作答 311 条，正确率 79%，掌握较稳固。",
+     "related_knowledge_ids": [
+      "kp-coordinate"
+     ],
+     "related_goal_ids": [
+      "goal-2"
+     ]
+    },
+    {
+     "key": "function_image_reading",
+     "name": "图像识读",
+     "value": 82,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 1005,
+     "evidence_strength": "sufficient",
+     "explanation": "近 30 天关联作答 251 条，正确率 77%，掌握较稳固。",
+     "related_knowledge_ids": [
+      "kp-function-image"
+     ],
+     "related_goal_ids": [
+      "goal-2"
+     ]
+    },
+    {
+     "key": "image_interpretation",
+     "name": "图像解释",
+     "value": 82,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 540,
+     "evidence_strength": "sufficient",
+     "explanation": "近 30 天关联作答 135 条，正确率 78%，掌握较稳固。",
+     "related_knowledge_ids": [
+      "kp-function-image",
+      "kp-function-property"
+     ],
+     "related_goal_ids": [
+      "goal-2"
+     ]
+    },
+    {
+     "key": "trend_judgment",
+     "name": "变化趋势判断",
+     "value": 78,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 495,
+     "evidence_strength": "sufficient",
+     "explanation": "近 30 天关联作答 124 条，正确率 77%，掌握较稳固。",
+     "related_knowledge_ids": [
+      "kp-function-property"
+     ],
+     "related_goal_ids": [
+      "goal-2"
+     ]
+    },
+    {
+     "key": "real_world_modeling",
+     "name": "实际问题建模",
+     "value": 73,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 840,
+     "evidence_strength": "sufficient",
+     "explanation": "近 30 天关联作答 210 条，正确率 68%，处于中等水平，其中 67 条失分。",
+     "related_knowledge_ids": [
+      "kp-function-application"
+     ],
+     "related_goal_ids": [
+      "goal-5"
+     ]
+    }
+   ]
+  },
+  {
+   "dimension_key": "ability",
+   "dimension_name": "能力画像",
+   "score": 80,
+   "class_avg": null,
+   "rank_pct": null,
+   "sample_count": 6225,
+   "evidence_strength": "sufficient",
+   "explanation": "能力画像总体良好（80 分），各指标均处于较熟练区间，可维持现有教学节奏。",
+   "suggestion": "对订正环节实行“错因归类—重做—3 日后复测”的闭环跟踪。",
+   "radar_items": [
+    {
+     "key": "memorize_understand",
+     "name": "识记理解",
+     "value": 80,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 750,
+     "evidence_strength": "sufficient",
+     "explanation": "近 30 天关联作答 188 条，正确率 75%，掌握较稳固。",
+     "related_knowledge_ids": [
+      "kp-function",
+      "kp-fraction-properties"
+     ],
+     "related_goal_ids": [
+      "goal-1"
+     ]
+    },
+    {
+     "key": "representation_transfer",
+     "name": "表征转换",
+     "value": 80,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 990,
+     "evidence_strength": "sufficient",
+     "explanation": "近 30 天关联作答 248 条，正确率 75%，掌握较稳固。",
+     "related_knowledge_ids": [
+      "kp-function-image",
+      "kp-coordinate"
+     ],
+     "related_goal_ids": [
+      "goal-2"
+     ]
+    },
+    {
+     "key": "operation_reasoning",
+     "name": "运算推理",
+     "value": 84,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 1320,
+     "evidence_strength": "sufficient",
+     "explanation": "近 30 天关联作答 330 条，正确率 79%，掌握较稳固。",
+     "related_knowledge_ids": [
+      "kp-radical-addsub",
+      "kp-fraction-calc"
+     ],
+     "related_goal_ids": [
+      "goal-3"
+     ]
+    },
+    {
+     "key": "problem_analysis",
+     "name": "问题分析",
+     "value": 80,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 885,
+     "evidence_strength": "sufficient",
+     "explanation": "近 30 天关联作答 221 条，正确率 78%，掌握较稳固。",
+     "related_knowledge_ids": [
+      "kp-congruent-judge",
+      "kp-special-quad"
+     ],
+     "related_goal_ids": [
+      "goal-4"
+     ]
+    },
+    {
+     "key": "transfer_apply",
+     "name": "迁移应用",
+     "value": 76,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 1170,
+     "evidence_strength": "sufficient",
+     "explanation": "近 30 天关联作答 293 条，正确率 75%，掌握较稳固。",
+     "related_knowledge_ids": [
+      "kp-function-application"
+     ],
+     "related_goal_ids": [
+      "goal-5"
+     ]
+    },
+    {
+     "key": "reflect_express",
+     "name": "反思表达",
+     "value": 79,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 1110,
+     "evidence_strength": "sufficient",
+     "explanation": "近 30 天关联作答 278 条，正确率 75%，掌握较稳固。",
+     "related_knowledge_ids": [],
+     "related_goal_ids": [
+      "goal-6"
+     ]
+    }
+   ]
+  },
+  {
+   "dimension_key": "literacy",
+   "dimension_name": "素养画像",
+   "score": 80,
+   "class_avg": null,
+   "rank_pct": null,
+   "sample_count": 1965,
+   "evidence_strength": "sufficient",
+   "explanation": "素养画像总体良好（80 分），各指标均处于较熟练区间，可维持现有教学节奏。",
+   "suggestion": "在单元小结课增加 5 分钟自我反思环节，补充非智力因素的证据采集。",
+   "radar_items": [
+    {
+     "key": "learning_attitude",
+     "name": "学习态度",
+     "value": 79,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 495,
+     "evidence_strength": "sufficient",
+     "explanation": "近 30 天作业按时提交率 85%，学案带齐率 82%。",
+     "related_knowledge_ids": [],
+     "related_goal_ids": [
+      "goal-6"
+     ]
+    },
+    {
+     "key": "learning_interest",
+     "name": "学习兴趣",
+     "value": 83,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 195,
+     "evidence_strength": "sufficient",
+     "explanation": "挑战题参与率 65%，课后主动提问 5 次。",
+     "related_knowledge_ids": [],
+     "related_goal_ids": []
+    },
+    {
+     "key": "learning_motivation",
+     "name": "学习动机",
+     "value": 78,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 240,
+     "evidence_strength": "sufficient",
+     "explanation": "自主练习启动 12 次，目标卡完成率 73%。",
+     "related_knowledge_ids": [],
+     "related_goal_ids": []
+    },
+    {
+     "key": "effort_level",
+     "name": "努力程度",
+     "value": 79,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 360,
+     "evidence_strength": "sufficient",
+     "explanation": "订正完成率 75%，平均订正时长 0.7 天。",
+     "related_knowledge_ids": [],
+     "related_goal_ids": [
+      "goal-6"
+     ]
+    },
+    {
+     "key": "self_efficacy",
+     "name": "自我效能",
+     "value": 80,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 180,
+     "evidence_strength": "sufficient",
+     "explanation": "单元反思自评均分 8.0/10，难题独立完成率 66%。",
+     "related_knowledge_ids": [],
+     "related_goal_ids": []
+    },
+    {
+     "key": "value_formation",
+     "name": "价值观养成",
+     "value": 82,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 495,
+     "evidence_strength": "sufficient",
+     "explanation": "小组互评“诚信/助人”好评率 76%，反思中主动谈及意义 3 次。",
+     "related_knowledge_ids": [],
+     "related_goal_ids": []
+    }
+   ]
+  },
+  {
+   "dimension_key": "process",
+   "dimension_name": "学习过程表现画像",
+   "score": 83,
+   "class_avg": null,
+   "rank_pct": null,
+   "sample_count": 3150,
+   "evidence_strength": "sufficient",
+   "explanation": "学习过程表现画像总体良好（83 分），各指标均处于较熟练区间，可维持现有教学节奏。",
+   "suggestion": "对订正环节实行“错因归类—重做—3 日后复测”的闭环跟踪。",
+   "radar_items": [
+    {
+     "key": "class_participation",
+     "name": "课堂参与",
+     "value": 87,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 735,
+     "evidence_strength": "sufficient",
+     "explanation": "近 30 天课堂互动 13 次（抢答/投票/演示）。",
+     "related_knowledge_ids": [],
+     "related_goal_ids": []
+    },
+    {
+     "key": "listening_speaking",
+     "name": "倾听与发言",
+     "value": 78,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 510,
+     "evidence_strength": "sufficient",
+     "explanation": "主动发言 4 次，复述他人观点 4 次。",
+     "related_knowledge_ids": [],
+     "related_goal_ids": []
+    },
+    {
+     "key": "cooperation",
+     "name": "合作表现",
+     "value": 83,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 420,
+     "evidence_strength": "sufficient",
+     "explanation": "小组任务贡献占比 73%，组内互评 A 档。",
+     "related_knowledge_ids": [],
+     "related_goal_ids": []
+    },
+    {
+     "key": "thinking_perspective",
+     "name": "思维角度",
+     "value": 82,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 510,
+     "evidence_strength": "sufficient",
+     "explanation": "一题多解提交 3 次。",
+     "related_knowledge_ids": [],
+     "related_goal_ids": [
+      "goal-4"
+     ]
+    },
+    {
+     "key": "homework_process",
+     "name": "作业完成过程",
+     "value": 87,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 435,
+     "evidence_strength": "sufficient",
+     "explanation": "平均提交间隔 0.6 天，中途退出重做 2 次。",
+     "related_knowledge_ids": [],
+     "related_goal_ids": [
+      "goal-6"
+     ]
+    },
+    {
+     "key": "homework_correction",
+     "name": "订正过程",
+     "value": 80,
+     "class_avg": null,
+     "max": 100,
+     "sample_count": 540,
+     "evidence_strength": "sufficient",
+     "explanation": "订正完成率 84%，平均订正时长 0.8 天，错因归类完整率 72%。",
+     "related_knowledge_ids": [],
+     "related_goal_ids": [
+      "goal-6"
+     ]
+    }
+   ]
+  }
+ ],
+ "note": "班级四维画像（聚合口径）：整体较好：待巩固占比较低"
+}

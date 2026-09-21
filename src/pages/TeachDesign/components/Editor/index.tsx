@@ -14,7 +14,7 @@ import { ButtonMenu } from "./MenuPlugin";
 import { ZYIcon } from "@/components";
 import { cogUrl } from "@/utils/host";
 import { getStorageToken } from "@/utils";
-import renderMathInElement from 'katex/dist/contrib/auto-render';
+import renderMathInElement from "katex/dist/contrib/auto-render";
 import "katex/dist/katex.min.css";
 
 import "@wangeditor-next/editor/dist/css/style.css"; // 引入 css
@@ -82,13 +82,13 @@ const MyEditor = (props: any) => {
   useEffect(() => {
     renderMathInElement(editorRef.current, {
       delimiters: [
-        { left: '$$', right: '$$', display: true },
-        { left: '$', right: '$', display: false },
-        { left: '\\(', right: '\\)', display: false },
-        { left: '\\[', right: '\\]', display: true }
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true },
       ],
       throwOnError: false,
-    })
+    });
   }, [html]);
 
   // 及时销毁 editor ，重要！
@@ -385,29 +385,28 @@ const MyEditor = (props: any) => {
           )}
         </div>
         <div className="editor-ref" ref={editorRef}>
-
-        <Editor
-          mode="default"
-          className="editor-content"
-          defaultConfig={editorConfig}
-          value={html}
-          onCreated={setEditor}
-          onChange={(editor) => {
-            setHtml(editor.getHtml());
-            const catalogData = editor
-              .getElemsByTypePrefix("header")
-              .map((header) => {
-                const { id, type } = header;
-                return (
-                  <div key={id} attr-id={id} type={type}>
-                    {SlateNode.string(header)}
-                  </div>
-                );
-              });
-            setCataloagData(catalogData);
-            handleCreated(editor);
-          }}
-        />
+          <Editor
+            mode="default"
+            className="editor-content"
+            defaultConfig={editorConfig}
+            value={html}
+            onCreated={setEditor}
+            onChange={(editor) => {
+              setHtml(editor.getHtml());
+              const catalogData = editor
+                .getElemsByTypePrefix("header")
+                .map((header) => {
+                  const { id, type } = header;
+                  return (
+                    <div key={id} attr-id={id} type={type}>
+                      {SlateNode.string(header)}
+                    </div>
+                  );
+                });
+              setCataloagData(catalogData);
+              handleCreated(editor);
+            }}
+          />
         </div>
       </div>
     </div>

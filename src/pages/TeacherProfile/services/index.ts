@@ -5,6 +5,7 @@ import { createReadCache } from "@/utils/readCache";
 const reads = createReadCache();
 
 const api: any = {
+  portraitsUrl: `${cogUrl}/teacher/portraits`,
   classesUrl: `${cogUrl}/teacher/classes`, // 班级列表
   classProfileUrl: `${cogUrl}/teacher/profile/class`, // 班级画像（sources 勾选后重算）
   studentProfileUrl: `${cogUrl}/teacher/profile/student`, // 个人画像

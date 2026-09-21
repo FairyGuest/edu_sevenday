@@ -2,7 +2,12 @@ import { useState, useImperativeHandle } from "react";
 import { Button, Modal, Upload, Progress, message } from "antd";
 import { ZYIcon } from "@/components";
 // import { cogUrl } from "@/utils/host";
-import { getStorageToken, handleName, bytesToSize, addNewTracking } from "@/utils";
+import {
+  getStorageToken,
+  handleName,
+  bytesToSize,
+  addNewTracking,
+} from "@/utils";
 import { postDataService, cogUrl } from "../../services";
 
 import "./index.less";
@@ -13,10 +18,20 @@ const DraggerUploadFile = (props: any) => {
   const { onRef, dataList = [], setDataList } = props;
   const [isModalOpen, setIsModalOpen] = useState(false); // 上传弹窗
   const [batchList, setBatchList] = useState<any[]>([]); // 文件列表
-  const [loading, setLoading] = useState(false);  // 上传loading
+  const [loading, setLoading] = useState(false); // 上传loading
 
   const MAX_UPLOAD_FILE_NUMBER = 10 - dataList.length;
-  const fileType = ["pdf", "doc", "docx", "pptx", "txt", "md", "jpg", "jpeg", "png"];
+  const fileType = [
+    "pdf",
+    "doc",
+    "docx",
+    "pptx",
+    "txt",
+    "md",
+    "jpg",
+    "jpeg",
+    "png",
+  ];
 
   // 父掉子函数
   useImperativeHandle(onRef, () => ({
@@ -43,7 +58,9 @@ const DraggerUploadFile = (props: any) => {
         return Upload.LIST_IGNORE;
       }
       if (fileList.length > MAX_UPLOAD_FILE_NUMBER) {
-        message.error(`最多上传 10 个文件, 还可以上传 ${MAX_UPLOAD_FILE_NUMBER} 个文件`);
+        message.error(
+          `最多上传 10 个文件, 还可以上传 ${MAX_UPLOAD_FILE_NUMBER} 个文件`,
+        );
         return Upload.LIST_IGNORE;
       }
       if (!isLt20M) {
@@ -138,7 +155,9 @@ const DraggerUploadFile = (props: any) => {
   };
   // 上传个数处理展示
   const handleCheck = () => {
-    const uploadArr = batchList.filter((item: any) => item.status === "uploading");
+    const uploadArr = batchList.filter(
+      (item: any) => item.status === "uploading",
+    );
     const doneArr = batchList.filter((item: any) => item.status === "done");
     const errorArr = batchList.filter((item: any) => item.status === "error");
 
@@ -193,7 +212,7 @@ const DraggerUploadFile = (props: any) => {
     //   ct: "teaching_design_home_upload_attachment",
     //   extra: { attach_num: doneArr.length },
     // });
-  }
+  };
 
   return (
     <>
@@ -207,7 +226,7 @@ const DraggerUploadFile = (props: any) => {
           onOk={handleOk}
           onCancel={handleCancel}
           confirmLoading={loading}
-          cancelButtonProps={{disabled: loading}}
+          cancelButtonProps={{ disabled: loading }}
         >
           <div className="upload_detail">
             <div className="main_content">

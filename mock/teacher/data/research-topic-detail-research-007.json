@@ -1,0 +1,63 @@
+{
+ "topic": {
+  "topic_id": "research-007",
+  "title": "一次函数实际应用（建模）得分低：情境素材从哪里找？",
+  "content": "三个班的「实际问题建模」普遍只有 60-75，均未达到学期目标。学生见到“套餐、出租车、弹簧”之外的情境就懵。大家平时从哪里收集真实情境素材？",
+  "author_id": "t-008",
+  "author_name": "陈老师",
+  "subject": "数学",
+  "grade": "g8",
+  "class_scope": [
+   "cls-g8-01",
+   "cls-g8-02",
+   "cls-g8-03"
+  ],
+  "related_knowledge_ids": [
+   "kp-function-application"
+  ],
+  "related_dimension_keys": [
+   "knowledge",
+   "ability"
+  ],
+  "evidence_summary": "建模题失分中 47% 是“未能建立函数关系”，31% 是“未回答实际问题问的量”。",
+  "status": "discussing",
+  "tags": [
+   "建模",
+   "情境素材"
+  ],
+  "created_at": "2026-09-16 08:50"
+ },
+ "replies": [
+  {
+   "reply_id": "reply-007-01",
+   "topic_id": "research-007",
+   "author_id": "t-004",
+   "author_name": "吴老师",
+   "content": "共享单车计费、奶茶会员卡、视频网站会员价，这三个学生自带经验，建立关系的成功率高。我整理了一个 12 情境的小库，放教研共享盘了。",
+   "evidence_refs": [],
+   "created_at": "2026-09-16 09:48",
+   "liked_count": 7
+  },
+  {
+   "reply_id": "reply-007-02",
+   "topic_id": "research-007",
+   "author_id": "t-002",
+   "author_name": "李老师",
+   "content": "关键是审题环节让学生自己圈“不变量/变化量/起始量”，圈对了关系式就出来一半。",
+   "evidence_refs": [],
+   "created_at": "2026-09-16 10:24",
+   "liked_count": 5
+  },
+  {
+   "reply_id": "reply-007-03",
+   "topic_id": "research-007",
+   "author_id": "t-006",
+   "author_name": "王老师",
+   "content": "提醒注意和第 19 章目标（goal-5）对齐：建模题库建好后，最好在图谱上反哺「实际问题与一次函数」节点的样本量，现在 3 班这个节点证据还偏少。",
+   "evidence_refs": [],
+   "created_at": "2026-09-16 11:55",
+   "liked_count": 4
+  }
+ ],
+ "strategies": []
+}

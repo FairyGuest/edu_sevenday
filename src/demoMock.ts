@@ -11,13 +11,17 @@ import teachPlan from "./demo-mock/teachPlan";
 import enhance from "./demo-mock/teacher/enhance";
 import teacherImport from "./demo-mock/teacher/import";
 import profile from "./demo-mock/teacher/profile";
+import portraits from "./demo-mock/teacher/portraits";
+import research from "./demo-mock/teacher/research";
 import recommend from "./demo-mock/teacher/recommend";
 import eduAuth from "./demo-mock/web/eduAuth";
 import resourceSearch from "./demo-mock/web/resourceSearch";
 import suggestions from "./demo-mock/teacher/suggestions";
 import kgraph from "./demo-mock/teacher/kgraph";
+import homeworkFlow from "./demo-mock/teacher/homeworkFlow";
 import assistant from "./demo-mock/assistant";
 import workspace from "./demo-mock/web/workspace";
+import materials from "./demo-mock/teacher/materials";
 
 const tables = [
   aiGuide,
@@ -27,13 +31,17 @@ const tables = [
   enhance,
   teacherImport,
   profile,
+  portraits,
+  research,
   recommend,
   eduAuth,
   resourceSearch,
   suggestions,
   kgraph,
+  homeworkFlow,
   assistant,
   workspace,
+  materials,
 ];
 
 interface CompiledRoute {
@@ -57,7 +65,12 @@ function compile(key: string, value: any): CompiledRoute | null {
       return seg.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     })
     .join("/");
-  return { method: m[1], regex: new RegExp(`^${pattern}/?$`), keys, handler: value };
+  return {
+    method: m[1],
+    regex: new RegExp(`^${pattern}/?$`),
+    keys,
+    handler: value,
+  };
 }
 
 const compiled: CompiledRoute[] = [];
@@ -82,10 +95,16 @@ function matchRoute(method: string, pathname: string) {
 }
 
 function createRes(
-  onDone: (status: number, bodyText: string | null, headers: Record<string, string>) => void,
+  onDone: (
+    status: number,
+    bodyText: string | null,
+    headers: Record<string, string>,
+  ) => void,
 ) {
   let status = 200;
-  const headers: Record<string, string> = { "Content-Type": "application/json" };
+  const headers: Record<string, string> = {
+    "Content-Type": "application/json",
+  };
   const chunks: string[] = [];
   let finished = false;
   const finish = (bodyText: string | null) => {
@@ -126,7 +145,8 @@ function createRes(
       return true;
     },
     end(chunk?: any) {
-      if (chunk != null) chunks.push(typeof chunk === "string" ? chunk : String(chunk));
+      if (chunk != null)
+        chunks.push(typeof chunk === "string" ? chunk : String(chunk));
       finish(chunks.join(""));
       return res;
     },
@@ -145,9 +165,15 @@ export function installDemoMock() {
   const origFetch = window.fetch.bind(window);
   window.fetch = async (input: any, init?: any) => {
     const url =
-      typeof input === "string" ? input : input instanceof Request ? input.url : String(input);
+      typeof input === "string"
+        ? input
+        : input instanceof Request
+          ? input.url
+          : String(input);
     const method = String(
-      init?.method ?? (input instanceof Request ? input.method : "GET") ?? "GET",
+      init?.method ??
+        (input instanceof Request ? input.method : "GET") ??
+        "GET",
     ).toUpperCase();
     let parsed: URL;
     try {
@@ -156,7 +182,8 @@ export function installDemoMock() {
       return origFetch(input, init);
     }
 
-    if (parsed.pathname === "/api/assistant/model") return origFetch(input, init);
+    if (parsed.pathname === "/api/assistant/model")
+      return origFetch(input, init);
     const hit = matchRoute(method, parsed.pathname);
     if (!hit) {
       if (parsed.pathname.startsWith("/api")) {
@@ -187,7 +214,11 @@ export function installDemoMock() {
       body = Object.fromEntries(rawBody as any);
     } else if (rawBody) {
       body = rawBody;
-    } else if (input instanceof Request && method !== "GET" && method !== "HEAD") {
+    } else if (
+      input instanceof Request &&
+      method !== "GET" &&
+      method !== "HEAD"
+    ) {
       try {
         body = await input.clone().json();
       } catch {
@@ -201,12 +232,17 @@ export function installDemoMock() {
       query: Object.fromEntries(parsed.searchParams as any),
       body,
       params: hit.params,
-      headers: Object.fromEntries(new Headers(init?.headers ?? (input instanceof Request ? input.headers : {}))),
+      headers: Object.fromEntries(
+        new Headers(
+          init?.headers ?? (input instanceof Request ? input.headers : {}),
+        ),
+      ),
     };
 
     return new Promise<Response>((resolve, reject) => {
       let settled = false;
-      const signal = init?.signal ?? (input instanceof Request ? input.signal : undefined);
+      const signal =
+        init?.signal ?? (input instanceof Request ? input.signal : undefined);
       const cleanup = () => {
         clearTimeout(timer);
         signal?.removeEventListener("abort", abort);
@@ -221,9 +257,18 @@ export function installDemoMock() {
         if (settled) return;
         settled = true;
         cleanup();
-        resolve(jsonResponse(504, { code: 504, success: false, msg: "demo mock timeout" }));
+        resolve(
+          jsonResponse(504, {
+            code: 504,
+            success: false,
+            msg: "demo mock timeout",
+          }),
+        );
       }, 10000);
-      if (signal?.aborted) { abort(); return; }
+      if (signal?.aborted) {
+        abort();
+        return;
+      }
       signal?.addEventListener("abort", abort, { once: true });
       const res = createRes((status, bodyText, headers) => {
         if (settled) return;
@@ -232,11 +277,16 @@ export function installDemoMock() {
         resolve(new Response(bodyText, { status, headers }));
       });
       const fail = (err: any) => {
-        console.error(`[demoMock] handler 执行出错: ${method} ${parsed.pathname}`, err);
+        console.error(
+          `[demoMock] handler 执行出错: ${method} ${parsed.pathname}`,
+          err,
+        );
         if (!settled) {
           settled = true;
           cleanup();
-          resolve(jsonResponse(500, { code: 500, success: false, msg: String(err) }));
+          resolve(
+            jsonResponse(500, { code: 500, success: false, msg: String(err) }),
+          );
         }
       };
       try {

@@ -12,8 +12,20 @@ import "./index.less";
 const { TextArea } = Input;
 const { confirm } = Modal;
 const DialogInput = (props: any) => {
-  const { loading, inputValue, setInputValue, fileList, setFileList, onPublishClick, disabled = false, leftWidth = 500, teachDesginModel, planDetail, detailData} = props;
-  const { planSseLoading,evaluateSseLoading } = teachDesginModel;
+  const {
+    loading,
+    inputValue,
+    setInputValue,
+    fileList,
+    setFileList,
+    onPublishClick,
+    disabled = false,
+    leftWidth = 500,
+    teachDesginModel,
+    planDetail,
+    detailData,
+  } = props;
+  const { planSseLoading, evaluateSseLoading } = teachDesginModel;
 
   const uploadFileRef = useRef<any>(null); // 上传文件ref
   const [courseUpOpen, setCourseUpOpen] = useState(false); // 弹窗是否显示
@@ -33,31 +45,33 @@ const DialogInput = (props: any) => {
     setFileList(newFileList);
   };
 
-    // 输入框回车事件
-    const handleKeyDown = (event: any) => {
-      if (event.key == "Enter") {
-        // 换行实现
-        // if (event.shiftKey || event.ctrlKey || event.metaKey || event.altKey) {
-        //   return;
-        // }
-        // 阻止默认的换行行为
-        event.preventDefault();
-        onPublishClick?.()
-      }
+  // 输入框回车事件
+  const handleKeyDown = (event: any) => {
+    if (event.key == "Enter") {
+      // 换行实现
+      // if (event.shiftKey || event.ctrlKey || event.metaKey || event.altKey) {
+      //   return;
+      // }
+      // 阻止默认的换行行为
+      event.preventDefault();
+      onPublishClick?.();
     }
-
+  };
 
   return (
     <div className="dialog-input">
       <div className="dialog-input-content">
         {fileList?.length > 0 && (
-          <div className="dialog-input-attch" style={{ maxWidth: `${leftWidth}px` }}>
+          <div
+            className="dialog-input-attch"
+            style={{ maxWidth: `${leftWidth}px` }}
+          >
             <AttachList fileList={fileList} fileDelete={tagsDelete} />
           </div>
         )}
         <TextArea
           autoSize={{ minRows: 2, maxRows: 2 }}
-          style={{fontSize:'15px'}}
+          style={{ fontSize: "15px" }}
           placeholder="对生成的教案，您有哪些修改或优化建议呢？例如增加课堂提问、增加分层任务、完善评价环节等。"
           variant="borderless"
           value={inputValue}
@@ -89,18 +103,18 @@ const DialogInput = (props: any) => {
             </Dropdown>
           </div>
           <div className="icon_box_css">
-            {(planSseLoading || !inputValue) ? <div className="icon_box_disabled">
-              <ZYIcon
-                type="send"
-                size={20}
-              />
-            </div>
-              : <div className='icon_box'
+            {planSseLoading || !inputValue ? (
+              <div className="icon_box_disabled">
+                <ZYIcon type="send" size={20} />
+              </div>
+            ) : (
+              <div
+                className="icon_box"
                 // style={{
                 //   background: inputValue ? '#1C6CFF' : '#EDF4FF',
                 //   color: inputValue ? '#ffffff' : '#A8C8FF'
                 // }}
-                >
+              >
                 <ZYIcon
                   type="send"
                   size={20}
@@ -109,12 +123,11 @@ const DialogInput = (props: any) => {
                     //   message.warning('教案评估中,请稍后...')
                     //   return
                     // }
-                    onPublishClick?.()
+                    onPublishClick?.();
                   }}
                 />
-              </div>}
-
-
+              </div>
+            )}
           </div>
         </div>
       </div>

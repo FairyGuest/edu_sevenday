@@ -1,5 +1,14 @@
 import { useState, useEffect } from "react";
-import { Empty, Modal, Form, Input, Skeleton, Dropdown, Button, Tooltip } from "antd";
+import {
+  Empty,
+  Modal,
+  Form,
+  Input,
+  Skeleton,
+  Dropdown,
+  Button,
+  Tooltip,
+} from "antd";
 import { useDispatch, useRequest, history } from "@umijs/max";
 import ZYIcon from "@/components/ZYIcon";
 import Tracker from "@/components/Tracker";
@@ -59,11 +68,22 @@ const HistoryList = (props: any) => {
   const goDetail = async (item: any) => {
     await dispatch({
       type: "teachDesginModel/setData",
-      payload: { planParams: { ...item, type: item.type === "课时教案" ? 1 : item.type === "单元教案" ? 2 : item.type } },
+      payload: {
+        collapse: true,
+        planParams: {
+          ...item,
+          type:
+            item.type === "课时教案"
+              ? 1
+              : item.type === "单元教案"
+                ? 2
+                : item.type,
+        },
+      },
     });
-    if(item?.type == 1 || item?.type === "课时教案"){
+    if (item?.type == 1 || item?.type === "课时教案") {
       history.push("/design/hour");
-    }else {
+    } else {
       history.push("/design/unit");
     }
   };
@@ -123,41 +143,41 @@ const HistoryList = (props: any) => {
       //     },
       //   }}
       // >
-        <div className="list-item" key={item.id} onClick={() => goDetail(item)}>
-          {item?.type == 2 || item?.type === "单元教案" ? (
-            <div className="list-item-type unit">单元</div>
-          ) : (
-            <div className="list-item-type">课时</div>
-          )}
-          <div className="list-item-content">
-            <Tooltip title={item?.title}>
-              <div className="title">{item?.title}</div>
-            </Tooltip>
-            <div className="desc">
-              {item?.class_type}
-              {item?.type === 2 ? (
-                <span className="course_num">{item?.course_num}课时</span>
-              ) : null}
-            </div>
+      <div className="list-item" key={item.id} onClick={() => goDetail(item)}>
+        {item?.type == 2 || item?.type === "单元教案" ? (
+          <div className="list-item-type unit">单元</div>
+        ) : (
+          <div className="list-item-type">课时</div>
+        )}
+        <div className="list-item-content">
+          <Tooltip title={item?.title}>
+            <div className="title">{item?.title}</div>
+          </Tooltip>
+          <div className="desc">
+            {item?.class_type}
+            {item?.type === 2 ? (
+              <span className="course_num">{item?.course_num}课时</span>
+            ) : null}
           </div>
-          <Dropdown
-            placement="bottom"
-            overlayClassName="menu-icon"
-            menu={{
-              items: [
-                { key: "rename", label: "重命名" },
-                { key: "delete", label: "删除" },
-              ],
-              onClick: (e: any) => menuClick(e, item),
-            }}
-          >
-            <Button
-              type="text"
-              icon={<MoreOutlined />}
-              className="list-item-btn"
-            />
-          </Dropdown>
         </div>
+        <Dropdown
+          placement="bottom"
+          overlayClassName="menu-icon"
+          menu={{
+            items: [
+              { key: "rename", label: "重命名" },
+              { key: "delete", label: "删除" },
+            ],
+            onClick: (e: any) => menuClick(e, item),
+          }}
+        >
+          <Button
+            type="text"
+            icon={<MoreOutlined />}
+            className="list-item-btn"
+          />
+        </Dropdown>
+      </div>
       // </Tracker>
     ));
   };

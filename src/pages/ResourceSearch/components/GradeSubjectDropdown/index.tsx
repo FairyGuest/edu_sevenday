@@ -1,16 +1,18 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Dropdown, Flex, Tabs } from 'antd';
-import { useSelector } from 'umi';
-import { useHeader } from '../../hooks/useHeader';
-import stageSubjectData from '../../enums/stageSubjectList.json';
-import './index.less';
+import React, { useEffect, useRef, useState } from "react";
+import { Dropdown, Flex, Tabs } from "antd";
+import { useSelector } from "umi";
+import { useHeader } from "../../hooks/useHeader";
+import stageSubjectData from "../../enums/stageSubjectList.json";
+import "./index.less";
 import ZYIcon from "@/components/ZYIcon";
 
 const GRADE_SUBJECT_OPTIONS = stageSubjectData.stage_subject_list;
 
 const GradeSubjectDropdown: React.FC = () => {
   // 从models获取数据
-  const { gradeName, subjectName } = useSelector((state: any) => state.resourceSearchModel);
+  const { gradeName, subjectName } = useSelector(
+    (state: any) => state.resourceSearchModel,
+  );
 
   // 从hooks获取状态变更操作
   const { onSubjectChange } = useHeader();
@@ -22,7 +24,9 @@ const GradeSubjectDropdown: React.FC = () => {
   const gradeSubjectOptions = GRADE_SUBJECT_OPTIONS;
 
   // 获取当前学段的学科列表
-  const currentGradeData = gradeSubjectOptions.find((item: any) => item.stage_name === tempGradeLevel);
+  const currentGradeData = gradeSubjectOptions.find(
+    (item: any) => item.stage_name === tempGradeLevel,
+  );
   const subjects = currentGradeData?.subject_list || [];
 
   useEffect(() => {
@@ -34,7 +38,11 @@ const GradeSubjectDropdown: React.FC = () => {
   };
 
   const handleSubjectClick = (subjectNametab: string) => {
-    if (!subjectNametab || subjectNametab == subjectName && tempGradeLevel == gradeName) return;
+    if (
+      !subjectNametab ||
+      (subjectNametab == subjectName && tempGradeLevel == gradeName)
+    )
+      return;
     const nextGradeLevel = tempGradeLevel || gradeName;
     setSelectedLabel(`${nextGradeLevel || ""}${subjectNametab}`);
     onSubjectChange(subjectNametab, nextGradeLevel);
@@ -49,7 +57,10 @@ const GradeSubjectDropdown: React.FC = () => {
   };
 
   const dropdownContent = (
-    <div className="grade-subject-dropdown-content" style={{ width: triggerRef.current?.offsetWidth || 'auto' }}>
+    <div
+      className="grade-subject-dropdown-content"
+      style={{ width: triggerRef.current?.offsetWidth || "auto" }}
+    >
       {/* 学段选择 */}
       <Tabs
         activeKey={tempGradeLevel}
@@ -66,7 +77,7 @@ const GradeSubjectDropdown: React.FC = () => {
         {subjects.map((subjectItem: any) => (
           <div
             key={subjectItem.name}
-            className={`subject-item ${subjectName === subjectItem.name && gradeName === tempGradeLevel ? 'active' : ''}`}
+            className={`subject-item ${subjectName === subjectItem.name && gradeName === tempGradeLevel ? "active" : ""}`}
             onClick={() => handleSubjectClick(subjectItem.name)}
           >
             {subjectItem.name}
@@ -81,15 +92,20 @@ const GradeSubjectDropdown: React.FC = () => {
       open={open}
       onOpenChange={handleOpenChange}
       popupRender={() => dropdownContent}
-      trigger={['click']}
+      trigger={["click"]}
       placement="bottomLeft"
     >
-      <Flex className="grade-subject-dropdown-trigger" align="center" gap={6} ref={triggerRef}>
-        <ZYIcon type="jiaocai" size={14} color='#475069'/>
+      <Flex
+        className="grade-subject-dropdown-trigger"
+        align="center"
+        gap={6}
+        ref={triggerRef}
+      >
+        <ZYIcon type="jiaocai" size={14} color="#475069" />
         <span className="trigger-text">
           {selectedLabel || `${gradeName || ""}${subjectName || ""}`}
         </span>
-        <ZYIcon type="xiajiantou" size={16} color='#64748B'/>
+        <ZYIcon type="xiajiantou" size={16} color="#64748B" />
       </Flex>
     </Dropdown>
   );

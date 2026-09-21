@@ -1,6 +1,18 @@
 import { useState, useEffect, useImperativeHandle, useMemo } from "react";
 import { useDispatch, useSelector } from "@umijs/max";
-import { Form, Button, Row, Col, Input, message, Modal, TreeSelect, DatePicker, Cascader, Select } from "antd";
+import {
+  Form,
+  Button,
+  Row,
+  Col,
+  Input,
+  message,
+  Modal,
+  TreeSelect,
+  DatePicker,
+  Cascader,
+  Select,
+} from "antd";
 import { getOrgId } from "@/utils";
 import dayjs from "dayjs";
 
@@ -10,15 +22,17 @@ const PushToClassModal = ({
   onRef,
   paperId,
   title,
-  refreshListFn=()=>{}
+  refreshListFn = () => {},
 }: {
-  onRef: React.RefObject<any>,
-  paperId: string,
-  title: string,
-  refreshListFn?:()=>void 
+  onRef: React.RefObject<any>;
+  paperId: string;
+  title: string;
+  refreshListFn?: () => void;
 }) => {
   const dispatch = useDispatch();
-  const { gradeName, subjectName } = useSelector((state: any) => state.resourceSearchModel);
+  const { gradeName, subjectName } = useSelector(
+    (state: any) => state.resourceSearchModel,
+  );
   // const [modal, contextHolder] = Modal.useModal();
   const [form] = Form.useForm();
   const [open, setOpen] = useState(false);
@@ -28,7 +42,8 @@ const PushToClassModal = ({
   const [userIdsData, setUserIdsData] = useState<any>([]); // 勾选用户数组 用于提交
   const [treeData, setTreeData] = useState([]);
   const [checkedIds, setCheckedIds] = useState<(string | number)[][]>([]);
-  const [groupSubStudentListOption, setGroupSubStudentListOption] = useState<any>([]);
+  const [groupSubStudentListOption, setGroupSubStudentListOption] =
+    useState<any>([]);
   const courseId = Form.useWatch("course_id", form);
 
   useEffect(() => {
@@ -57,9 +72,9 @@ const PushToClassModal = ({
 
   useImperativeHandle(onRef, () => ({
     openModal: () => {
-      setOpen(true)
-    }
-  }))
+      setOpen(true);
+    },
+  }));
 
   //初始化
   const init = () => {
@@ -84,10 +99,12 @@ const PushToClassModal = ({
       },
     });
     if (code === 200) {
-      setCourseOptions(data?.map((item: any) => ({
-        label: item.title,
-        value: item.id,
-      })));
+      setCourseOptions(
+        data?.map((item: any) => ({
+          label: item.title,
+          value: item.id,
+        })),
+      );
     }
   };
 
@@ -233,7 +250,7 @@ const PushToClassModal = ({
     setLoading(true);
     let json_data = {
       paper_id: paperId,
-      exam_id: '',
+      exam_id: "",
       title: values?.title,
       // class_ids: values?.class_ids,
       course_id: values?.course_id,
@@ -358,9 +375,9 @@ const PushToClassModal = ({
   };
 
   const onFinish = async (values: any) => {
-    if(userIdsData?.length > 1000){
-      message.warning('单次作业发布最多支持1000人，请减少人数后重试')
-      return
+    if (userIdsData?.length > 1000) {
+      message.warning("单次作业发布最多支持1000人，请减少人数后重试");
+      return;
     }
     publishToClassFn(values);
   };
@@ -502,10 +519,20 @@ const PushToClassModal = ({
             </Form.Item>
             <Form.Item label="已选预览">
               <>
-                <div className={userIdsData?.length > 1000 ? 'push_selected_preview_css' : `push_selected_preview_box_css`}>
+                <div
+                  className={
+                    userIdsData?.length > 1000
+                      ? "push_selected_preview_css"
+                      : `push_selected_preview_box_css`
+                  }
+                >
                   {renderOutline(displayTree)}
                 </div>
-                {userIdsData?.length > 1000 && <span className="push_selected_preview_box_text">单次作业发布最多支持1000人，请减少人数后重试</span>}
+                {userIdsData?.length > 1000 && (
+                  <span className="push_selected_preview_box_text">
+                    单次作业发布最多支持1000人，请减少人数后重试
+                  </span>
+                )}
               </>
             </Form.Item>
           </Form>

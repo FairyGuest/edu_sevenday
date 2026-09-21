@@ -1,12 +1,15 @@
 import { IButtonMenu, IDomEditor } from "@wangeditor-next/editor";
 
 export class ButtonMenu implements IButtonMenu {
-/**
- * 构造函数，用于创建菜单实例
- * @param title 自定义菜单标题
- * @param tag 菜单标签类型，默认为"button"
- */
-  constructor(public title: string, public tag: string = "button") {
+  /**
+   * 构造函数，用于创建菜单实例
+   * @param title 自定义菜单标题
+   * @param tag 菜单标签类型，默认为"button"
+   */
+  constructor(
+    public title: string,
+    public tag: string = "button",
+  ) {
     this.title = title; // 自定义菜单标题
     this.tag = "button";
   }

@@ -12,7 +12,7 @@ export const useRight = () => {
     filters,
     filterOptions,
     pagination,
-    treeAllKeyIdList
+    treeAllKeyIdList,
   } = useSelector((state: any) => state.resourceSearchModel);
   const { xkwStageName = "", xkwSubjectName = "" } = useSelector(
     (state: any) => state.settingTopicModel,
@@ -24,17 +24,17 @@ export const useRight = () => {
       const value = filters[key];
       if (Array.isArray(value) && value.includes("all")) {
         // gradeSemesters 字段如果是"all"，传空字符串给接口
-        if (key === 'gradeSemesters') {
-          acc[key] = '';
+        if (key === "gradeSemesters") {
+          acc[key] = "";
         } else {
           acc[key] = []; // 其他字段如果包含"all"，传空数组给接口
         }
       } else if (Array.isArray(value)) {
         // 根据字段类型决定提取 id 还是 name
-        if (key === 'uses') {
+        if (key === "uses") {
           // uses 字段传 id
           acc[key] = value;
-        } else if (key === 'gradeSemesters') {
+        } else if (key === "gradeSemesters") {
           // gradeSemesters 字段传单个字符串值
           const options = filterOptions[key] || [];
           const firstValue = value[0];
@@ -56,56 +56,78 @@ export const useRight = () => {
   };
 
   // 加载试题列表
-  const loadQuestionList = async (knowledgeKeys: any[], chapterKeys: any[], pageNum: number, pageSize?: number) => {
+  const loadQuestionList = async (
+    knowledgeKeys: any[],
+    chapterKeys: any[],
+    pageNum: number,
+    pageSize?: number,
+  ) => {
     // 知识点筛选：优先使用传入的参数，否则从状态中获取
-    const knowledgeFilter = knowledgeKeys !== undefined
-      ? (knowledgeKeys.length > 0 ? knowledgeKeys : undefined)
-      : (checkedKnowledge.length > 0 ? checkedKnowledge : undefined);
+    const knowledgeFilter =
+      knowledgeKeys !== undefined
+        ? knowledgeKeys.length > 0
+          ? knowledgeKeys
+          : undefined
+        : checkedKnowledge.length > 0
+          ? checkedKnowledge
+          : undefined;
     // 章节筛选：优先使用传入的参数，否则从状态中获取
-    const chapterFilter = chapterKeys !== undefined
-      ? (chapterKeys.length > 0 ? chapterKeys : undefined)
-      : (checkedChapter.length > 0 ? checkedChapter : undefined);
+    const chapterFilter =
+      chapterKeys !== undefined
+        ? chapterKeys.length > 0
+          ? chapterKeys
+          : undefined
+        : checkedChapter.length > 0
+          ? checkedChapter
+          : undefined;
 
     const processedFilters = processFilters();
 
     // // 根据activeTab选择不同的API
-    const apiUrl = activeTab === "personal" ? "getQuestionPersonalPage" : "postGlobalQuestions";
+    const apiUrl =
+      activeTab === "personal"
+        ? "getQuestionPersonalPage"
+        : "postGlobalQuestions";
 
-    let requestPayload: any = activeTab === "personal" ? {
-      current: pageNum || pagination.current,
-      size: pageSize || pagination.pageSize,
-      difficulty: processedFilters.difficulties,
-      question_type: processedFilters.questionTypes,
-      ability: processedFilters.abilities,
-      literacy: processedFilters.literacies,
-      subject_name: xkwSubjectName,
-      stage_name: xkwStageName,
-      // catalogue_list: checkedChapter?.length > 0 ? checkedChapter : chapterKeys,
-      catalogue_list: chapterKeys?.length > 0 ? chapterKeys : treeAllKeyIdList,
-      kg_list: [] // 知识点
-    } : {
-      current: pageNum || pagination.current,
-      size: pageSize || pagination.pageSize,
-      stage_name: gradeName,
-      subject_name: subjectName,
-      // 知识点/章节
-      // catalogue_list: chapterFilter,
-      kg_list: knowledgeFilter,
-      // 筛选
-      question_type: processedFilters.questionTypes,
-      use_type: processedFilters.uses,
-      difficulties: processedFilters.difficulties,
-      year: processedFilters.years,
-      grade_name: processedFilters.gradeSemesters,
-      scene: processedFilters.scenes,
-      province: processedFilters.regions,
-      city: processedFilters.cities, // v2.0-L3 省市二级（市级）
-      textbook_version: processedFilters.textbook_versions, // v2.0-L2 教材版本
-      ability: processedFilters.abilities,
-      literacy: processedFilters.literacies,
-      keyword: searchText,
-      bank_source: 1
-    };
+    let requestPayload: any =
+      activeTab === "personal"
+        ? {
+            current: pageNum || pagination.current,
+            size: pageSize || pagination.pageSize,
+            difficulty: processedFilters.difficulties,
+            question_type: processedFilters.questionTypes,
+            ability: processedFilters.abilities,
+            literacy: processedFilters.literacies,
+            subject_name: xkwSubjectName,
+            stage_name: xkwStageName,
+            // catalogue_list: checkedChapter?.length > 0 ? checkedChapter : chapterKeys,
+            catalogue_list:
+              chapterKeys?.length > 0 ? chapterKeys : treeAllKeyIdList,
+            kg_list: knowledgeFilter, // 知识图谱筛选（与公共题库同源）
+          }
+        : {
+            current: pageNum || pagination.current,
+            size: pageSize || pagination.pageSize,
+            stage_name: gradeName,
+            subject_name: subjectName,
+            // 知识点/章节
+            // catalogue_list: chapterFilter,
+            kg_list: knowledgeFilter,
+            // 筛选
+            question_type: processedFilters.questionTypes,
+            use_type: processedFilters.uses,
+            difficulties: processedFilters.difficulties,
+            year: processedFilters.years,
+            grade_name: processedFilters.gradeSemesters,
+            scene: processedFilters.scenes,
+            province: processedFilters.regions,
+            city: processedFilters.cities, // v2.0-L3 省市二级（市级）
+            textbook_version: processedFilters.textbook_versions, // v2.0-L2 教材版本
+            ability: processedFilters.abilities,
+            literacy: processedFilters.literacies,
+            keyword: searchText,
+            bank_source: 1,
+          };
 
     const result: any = await dispatch({
       type: "resourceSearchModel/getLatestQuestions",
@@ -116,7 +138,7 @@ export const useRight = () => {
 
     if (result?.code === 200 && !result?.skipped) {
       // 滚动到顶部
-      const listPanel = document.querySelector('.list-panel');
+      const listPanel = document.querySelector(".list-panel");
       if (listPanel) {
         listPanel.scrollTo({ top: 0 }); //behavior: 'smooth'
       }
@@ -129,8 +151,8 @@ export const useRight = () => {
       type: "resourceSearchModel/setData",
       payload: {
         searchText: value,
-        pagination: { ...pagination, current: 1 }
-      }
+        pagination: { ...pagination, current: 1 },
+      },
     });
     // The page effect reads the committed keyword and starts the request.
   };
@@ -141,8 +163,8 @@ export const useRight = () => {
       type: "resourceSearchModel/setData",
       payload: {
         filters: { ...filters, [key]: value },
-        pagination: { ...pagination, current: 1 }
-      }
+        pagination: { ...pagination, current: 1 },
+      },
     });
   };
 
@@ -161,11 +183,11 @@ export const useRight = () => {
           years: ["all"],
           regions: ["all"],
           gradeSemesters: ["all"], // 学期改为单选，但仍保持数组格式以兼容现有逻辑
-          searchText: ""
+          searchText: "",
         },
         searchText: "",
-        pagination: { ...pagination, current: 1 }
-      }
+        pagination: { ...pagination, current: 1 },
+      },
     });
   };
 
@@ -177,8 +199,8 @@ export const useRight = () => {
     dispatch({
       type: "resourceSearchModel/setData",
       payload: {
-        pagination: { ...pagination, current: page, pageSize }
-      }
+        pagination: { ...pagination, current: page, pageSize },
+      },
     });
 
     // // 滚动到顶部
@@ -186,7 +208,7 @@ export const useRight = () => {
     // if (listPanel) {
     //   listPanel.scrollTo({ top: 0 }); //behavior: 'smooth'
     // }
-    loadQuestionList(checkedKnowledge, checkedChapter, page, pageSize)
+    loadQuestionList(checkedKnowledge, checkedChapter, page, pageSize);
   };
 
   return {
@@ -194,6 +216,6 @@ export const useRight = () => {
     onSearch,
     onFilterChange,
     onClearAllFilters,
-    onPageChange
+    onPageChange,
   };
 };

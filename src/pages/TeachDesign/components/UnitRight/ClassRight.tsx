@@ -18,7 +18,13 @@ import {
 import MarkdownRender from "@/components/MarkdownRender";
 import MarkdownRenderToc from "@/components/MarkdownRender/showToc";
 import { ZYIcon } from "@/components";
-import { str2json, scrollTop, stopSSE, addNewTracking, getOrgId } from "@/utils";
+import {
+  str2json,
+  scrollTop,
+  stopSSE,
+  addNewTracking,
+  getOrgId,
+} from "@/utils";
 import useQuestionActions from "@/pages/TeachDesign/hooks/EditTeach";
 
 import "./ClassRight.less";
@@ -42,7 +48,9 @@ const ClassRight = (props: any) => {
     fullScreen,
     setFullScreen,
   } = props;
-  const { planParams, childPlanLoading, leftChatLoading } = useSelector((state: any) => state.teachDesginModel); // 单元教案参数
+  const { planParams, childPlanLoading, leftChatLoading } = useSelector(
+    (state: any) => state.teachDesginModel,
+  ); // 单元教案参数
   const dispatch = useDispatch();
   const { confirm } = Modal;
   const [form] = Form.useForm();
@@ -289,7 +297,9 @@ const ClassRight = (props: any) => {
   const onStudyPlan = () => {
     if (detailData?.study_info) {
       setStep(3);
-      const findPlan = studyPlanList.filter((i: any) => i.plan_id === detailData?.id);
+      const findPlan = studyPlanList.filter(
+        (i: any) => i.plan_id === detailData?.id,
+      );
       setCurrStudy(findPlan[0] || {});
     } else {
       confirm({
@@ -308,7 +318,9 @@ const ClassRight = (props: any) => {
         cancelText: "暂不生成",
         onOk: () => {
           setStep(3);
-          const findPlan = studyPlanList.filter((i: any) => i.plan_id === detailData?.id);
+          const findPlan = studyPlanList.filter(
+            (i: any) => i.plan_id === detailData?.id,
+          );
           setCurrStudy(findPlan[0] || {});
           // addNewTracking({
           //   bt: "cl",
@@ -621,8 +633,12 @@ const ClassRight = (props: any) => {
           <div className="create-content" ref={contentRef}>
             <div className="create-content-header">
               <ZYIcon className="icon" type="jiaoan" />
-              <div className="title">{detailData?.title || itemData?.title || ""}</div>
-              {detailData?.version && <div className="version">{detailData?.version}</div>}
+              <div className="title">
+                {detailData?.title || itemData?.title || ""}
+              </div>
+              {detailData?.version && (
+                <div className="version">{detailData?.version}</div>
+              )}
             </div>
             <div className="create-content-wrapper">
               <div
@@ -635,7 +651,9 @@ const ClassRight = (props: any) => {
                 ) : (
                   <>
                     <div className="think-title">
-                      <div>{thinkCreating ? "深度思考中..." : "已完成思考"}</div>
+                      <div>
+                        {thinkCreating ? "深度思考中..." : "已完成思考"}
+                      </div>
                       <div
                         className="think-expand"
                         onClick={() => setThinkExpand(!thinkExpand)}

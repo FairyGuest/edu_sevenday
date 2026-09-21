@@ -6,6 +6,7 @@ import { ZYIcon } from "@/components";
 import "./index.less";
 import Tracker from "@/components/Tracker";
 import { addNewTracking } from "@/utils";
+import { ImportOutlined } from "@ant-design/icons";
 
 const ClassStudyInfo = (props: any) => {
   const { params, detailData, setDetailData } = props;
@@ -129,6 +130,33 @@ const ClassStudyInfo = (props: any) => {
         maskClosable={false}
         onCancel={closeModal}
         onOk={handleOk}
+        footer={
+          <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
+            <Button
+              type="link"
+              aria-label="导入班级学情"
+              icon={<ImportOutlined />}
+              style={{ marginRight: "auto", paddingLeft: 0 }}
+              onClick={() => {
+                closeModal();
+                dispatch({
+                  type: "teachDesginModel/updateState",
+                  res: { importClassOpen: true },
+                });
+              }}
+            >
+              导入班级学情
+            </Button>
+            <Button onClick={closeModal}>取消</Button>
+            <Button
+              type="primary"
+              disabled={!classInfo?.classType}
+              onClick={handleOk}
+            >
+              确定
+            </Button>
+          </div>
+        }
       >
         <div className="study-info">
           {learnInfo.map((learning: any) => (
@@ -150,7 +178,11 @@ const ClassStudyInfo = (props: any) => {
                         placement="bottom"
                         mouseEnterDelay={0.5}
                         classNames={{ root: "custom-tooltip" }}
-                        title={tooltipFun(level.tips, learning.title, level.title)}
+                        title={tooltipFun(
+                          level.tips,
+                          learning.title,
+                          level.title,
+                        )}
                       >
                         <div className="tooltip-icon">
                           <ZYIcon type={"xinxi"} />

@@ -1,0 +1,78 @@
+{
+ "topic": {
+  "topic_id": "research-006",
+  "title": "作业订正流于形式：订正闭环记录单的落地效果",
+  "content": "3 班订正过程读数不足 65，是过程维度最低项。抽查发现相当比例学生订正就是抄一遍正确答案。上月试行了“错因归类—重做—3 日复测”闭环单，汇报一下效果，也请大家提问题。",
+  "author_id": "t-007",
+  "author_name": "冯老师",
+  "subject": "数学",
+  "grade": "g8",
+  "class_scope": [
+   "cls-g8-03"
+  ],
+  "related_knowledge_ids": [],
+  "related_dimension_keys": [
+   "process"
+  ],
+  "evidence_summary": "闭环单试行 3 周：订正含错因归类的比例从 35% 提升到 78%，同类错误复现率下降约一半。",
+  "status": "used_in_plan",
+  "tags": [
+   "订正",
+   "过程画像"
+  ],
+  "created_at": "2026-09-05 15:00"
+ },
+ "replies": [
+  {
+   "reply_id": "reply-006-01",
+   "topic_id": "research-006",
+   "author_id": "t-006",
+   "author_name": "王老师",
+   "content": "数据挺有说服力。问一个操作问题：3 日复测的题从哪来？老师自己出卷负担会不会太大？",
+   "evidence_refs": [],
+   "created_at": "2026-09-05 16:09",
+   "liked_count": 4
+  },
+  {
+   "reply_id": "reply-006-02",
+   "topic_id": "research-006",
+   "author_id": "t-007",
+   "author_name": "冯老师",
+   "content": "复测题直接从画像的“关联错题”里选，2 道就够，学生互批。前两周我盯着做，之后课代表就能维持。",
+   "evidence_refs": [],
+   "created_at": "2026-09-05 17:07",
+   "liked_count": 6
+  },
+  {
+   "reply_id": "reply-006-03",
+   "topic_id": "research-006",
+   "author_id": "t-003",
+   "author_name": "周老师",
+   "content": "错因归类的类目建议统一成四类：概念不清/看错题意/算错/表达不全，不然学生自己编类目又变成抄写。",
+   "evidence_refs": [],
+   "created_at": "2026-09-05 18:05",
+   "liked_count": 7
+  },
+  {
+   "reply_id": "reply-006-04",
+   "topic_id": "research-006",
+   "author_id": "t-002",
+   "author_name": "李老师",
+   "content": "这个闭环单已经引用到我的作业讲评课教案，配合“运算三步自查单”使用，暂时没发现冲突。",
+   "evidence_refs": [],
+   "created_at": "2026-09-05 18:08",
+   "liked_count": 5
+  }
+ ],
+ "strategies": [
+  {
+   "strategy_id": "strategy-006",
+   "topic_id": "research-006",
+   "title": "订正闭环记录单（错因归类—重做—3 日复测）",
+   "content": "每道错题填写：① 错因四选一（概念/审题/计算/表达）；② 不看答案重做；③ 3 天后完成 2 道关联复测题（从画像关联错题自动推荐）。连续两次复测全对即销号。",
+   "applicable_scene": "数学日常作业与测验讲评",
+   "evidence_summary": "含错因订正占比 35%→78%，同类错误三周复现率 52%→27%。",
+   "can_apply_to_plan": true
+  }
+ ]
+}

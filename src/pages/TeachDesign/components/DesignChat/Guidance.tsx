@@ -28,7 +28,7 @@ const Guidance = (props: any) => {
 
   useEffect(() => {
     // 生成流程中（无论是否已有教案id）都提供快捷指令，便于自然语言修改
-    if (!planParams) return
+    if (!planParams) return;
     getPromptTempList();
   }, [planParams]);
 
@@ -59,8 +59,8 @@ const Guidance = (props: any) => {
     setCanScrollLeft(container.scrollLeft > 0);
     setCanScrollRight(
       container.scrollWidth > container.clientWidth &&
-      Math.ceil(container.scrollLeft + container.clientWidth) <
-      container.scrollWidth,
+        Math.ceil(container.scrollLeft + container.clientWidth) <
+          container.scrollWidth,
     );
   };
 
@@ -82,7 +82,11 @@ const Guidance = (props: any) => {
   // tooltip 提示
   const tooltipFun = (params: Array<any>) =>
     params.map((item: any) => (
-      <div key={item.title} className="prompt-item" onClick={() => setInputValue(item?.promptText)}>
+      <div
+        key={item.title}
+        className="prompt-item"
+        onClick={() => setInputValue(item?.promptText)}
+      >
         <ZYIcon className="prompt-icon" type="tishi1" />
         <div className="content">{item?.promptText}</div>
       </div>
@@ -100,7 +104,7 @@ const Guidance = (props: any) => {
             <Button
               size="small"
               type="link"
-              style={{ background: '#FCFCFF' }}
+              style={{ background: "#FCFCFF" }}
               icon={<ZYIcon type="zuo" />}
               onClick={() => handleScroll("left")}
             />
@@ -108,7 +112,15 @@ const Guidance = (props: any) => {
         )}
 
         <Tooltip title="系统整合全部建议与修改内容，生成完整定稿版教学设计">
-          <Button color="primary" className="icon_box_create" icon={<ZYIcon type="dinggao" />} disabled={planSseLoading} onClick={finalizeFn}>生成定稿</Button>
+          <Button
+            color="primary"
+            className="icon_box_create"
+            icon={<ZYIcon type="dinggao" />}
+            disabled={planSseLoading}
+            onClick={finalizeFn}
+          >
+            生成定稿
+          </Button>
         </Tooltip>
         <div className="divider"></div>
         {promptTempList?.map((item: any, index: number) => (
@@ -129,7 +141,7 @@ const Guidance = (props: any) => {
             <Button
               size="small"
               type="link"
-              style={{ background: '#FCFCFF' }}
+              style={{ background: "#FCFCFF" }}
               icon={<ZYIcon type="you" />}
               onClick={() => handleScroll("right")}
             />

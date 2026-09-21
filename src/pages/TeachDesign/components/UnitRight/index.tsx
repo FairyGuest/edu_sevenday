@@ -16,11 +16,20 @@ import {
   message,
 } from "antd";
 import MarkdownRender from "@/components/MarkdownRender";
-import MarkdownRenderToc, { MarkdownTocGroup } from "@/components/MarkdownRender/showToc";
+import MarkdownRenderToc, {
+  MarkdownTocGroup,
+} from "@/components/MarkdownRender/showToc";
 import { ZYIcon } from "@/components";
 import PlanViewer from "../PlanViewer";
+import AssignHomeworkButton from "../PlanViewer/AssignHomeworkButton";
 import { publishPlanHomework } from "../PlanViewer/publishHomework";
-import { str2json, scrollTop, stopSSE, addNewTracking, getOrgId } from "@/utils";
+import {
+  str2json,
+  scrollTop,
+  stopSSE,
+  addNewTracking,
+  getOrgId,
+} from "@/utils";
 import UnitTable from "../UnitTable";
 import useQuestionActions from "@/pages/TeachDesign/hooks/EditTeach";
 
@@ -50,7 +59,8 @@ const UnitRight = (props: any) => {
   // v2.0 查看教案（课件预览）浮层：设计页「生成课件」进入，查看态可布置作业 / 查看评估结果
   const [viewerOpen, setViewerOpen] = useState<boolean>(false);
   // 目录侧栏：全屏或右栏足够宽时展示（参考设计稿默认带目录，窄栏时隐藏避免挤压正文）
-  const tocVisible = fullScreen || (typeof rightWidth === "number" && rightWidth >= 720);
+  const tocVisible =
+    fullScreen || (typeof rightWidth === "number" && rightWidth >= 720);
   const thinkRef = useRef<HTMLDivElement>(null); // 思考内容
   const contentRef = useRef<HTMLDivElement>(null); // 创建内容
   const teachPlanRef = useRef<HTMLDivElement>(null); // 教案内容
@@ -234,8 +244,13 @@ const UnitRight = (props: any) => {
   };
   // 布置作业：将教案习题注入试卷（参考设计稿：教案预览工具栏提供布置入口）
   const assignHomeworkFromPlan = async (classId: string) => {
-    const data = await publishPlanHomework(classId, detailData?.title || planParams?.title || planParams?.chapter_name || "");
-    message.success(`已发布教案中的 ${data.n_questions} 道习题，可到「作业下发」查看`);
+    const data = await publishPlanHomework(
+      classId,
+      detailData?.title || planParams?.title || planParams?.chapter_name || "",
+    );
+    message.success(
+      `已发布教案中的 ${data.n_questions} 道习题，可到「作业下发」查看`,
+    );
   };
 
   // 发起评估点击事件
@@ -303,7 +318,7 @@ const UnitRight = (props: any) => {
         collapseBtn?.click();
       }, 100);
     }
-  }
+  };
   // 编辑按钮点击事件
   const onEditClick = () => {
     confirm({
@@ -315,7 +330,7 @@ const UnitRight = (props: any) => {
         </span>
       ),
       okText: "是，进入人工编辑", // 确认按钮文字
-      cancelText: '否',
+      cancelText: "否",
       onOk: () => {
         toggleQuestionFavorite(detailData?.id, "teach_plan");
         // addNewTracking({
@@ -405,6 +420,21 @@ const UnitRight = (props: any) => {
 
   return (
     <div className="unit-right">
+      <AssignHomeworkButton
+        visible={
+          !isEmpty &&
+          !!(teachPlanContent || detailData?.plan_content) &&
+          !viewerOpen
+        }
+        disabled={planSseLoading || leftChatLoading}
+        planId={planParams?.id || detailData?.id}
+        docTitle={detailData?.title || planParams?.title || "单元教案"}
+        defaultClassId={
+          planParams?.class_id ??
+          (detailData?.id === planParams?.id ? detailData?.class_id : "")
+        }
+        onPublish={assignHomeworkFromPlan}
+      />
       {!isEmpty && (
         <div className="create-container">
           <div className="create-header">
@@ -458,7 +488,7 @@ const UnitRight = (props: any) => {
                       <Button
                         color="primary"
                         variant="solid"
-                        onClick={() => onEvaluateClick("") }
+                        onClick={() => onEvaluateClick("")}
                         disabled={planSseLoading || leftChatLoading}
                         className="evaluate-btn"
                         icon={<ZYIcon type="evaluate" />}
@@ -549,9 +579,12 @@ const UnitRight = (props: any) => {
             <div className="create-content-header">
               <ZYIcon className="icon" type="jiaoan" />
               <div className="title">
-                单元教案：《{detailData?.title || planParams?.title || ""}》单元整体教学设计
+                单元教案：《{detailData?.title || planParams?.title || ""}
+                》单元整体教学设计
               </div>
-              {detailData?.version && <div className="version">{detailData?.version}</div>}
+              {detailData?.version && (
+                <div className="version">{detailData?.version}</div>
+              )}
             </div>
             <div className="create-content-wrapper">
               <div
@@ -564,7 +597,9 @@ const UnitRight = (props: any) => {
                 ) : (
                   <>
                     <div className="think-title">
-                      <div>{thinkCreating ? "深度思考中..." : "已完成思考"}</div>
+                      <div>
+                        {thinkCreating ? "深度思考中..." : "已完成思考"}
+                      </div>
                       <div
                         className="think-expand"
                         onClick={() => setThinkExpand(!thinkExpand)}
@@ -708,12 +743,21 @@ const UnitRight = (props: any) => {
         onEvaluate={() => onEvaluateClick("")}
         onOpenReport={() => {
           const id = detailData?.id || planParams?.id;
-          if (id) window.open(history.createHref({ pathname: "/evaluateReport", search: `?id=${encodeURIComponent(id)}` }));
+          if (id)
+            window.open(
+              history.createHref({
+                pathname: "/evaluateReport",
+                search: `?id=${encodeURIComponent(id)}`,
+              }),
+            );
         }}
         onDownload={onDownloadClick}
         onAssignHomework={assignHomeworkFromPlan}
         planId={planParams?.id || detailData?.id}
-        defaultClassId={planParams?.class_id ?? (detailData?.id === planParams?.id ? detailData?.class_id : "")}
+        defaultClassId={
+          planParams?.class_id ??
+          (detailData?.id === planParams?.id ? detailData?.class_id : "")
+        }
         assignDisabled={planSseLoading}
       />
     </div>
