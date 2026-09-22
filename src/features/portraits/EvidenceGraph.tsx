@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { Empty, Select, Button, Tag, Tooltip } from "antd";
+import { Empty, Select, Button, Tag, Tooltip, Segmented } from "antd";
 import { ReloadOutlined, CommentOutlined } from "@ant-design/icons";
 import { history } from "@umijs/max";
 import KnowledgeGraph from "@/pages/TeacherProfile/components/KnowledgeGraph";
@@ -18,21 +18,45 @@ export default function EvidenceGraph({
   data,
   scope,
   classId,
+  currentGraph,
+  onEvidence,
 }: {
   data: any;
   scope: Scope;
   classId: string;
+  currentGraph?: any;
+  onEvidence?: (node: any) => void;
 }) {
   const [filter, setFilter] = useState(DEFAULT_GRAPH_FILTER);
   const [selected, setSelected] = useState("");
+  const [subgraph, setSubgraph] = useState(false);
   const view = useMemo(
-    () => graphView(data, scope, filter),
-    [data, scope, filter],
+    () => {
+      if (!currentGraph) return graphView(data, scope, filter);
+      const relationKey = { ability: "ability_keys", literacy: "literacy_keys", process: "process_keys" }[filter.dimension];
+      const nodes = list(currentGraph.nodes).filter((n) =>
+        (!relationKey || list(n[relationKey]).length > 0) &&
+        (!filter.mastery || n.mastery_band === filter.mastery) &&
+        (!filter.strength || n.evidence_strength === filter.strength) &&
+        (!filter.goal || list(n.goal_ids).includes(filter.goal)),
+      );
+      const ids = new Set(nodes.map((n) => n.node_id));
+      return { nodes, edges: list(currentGraph.edges).filter((e) => ids.has(e.source) && ids.has(e.target)), complete: true };
+    },
+    [data, scope, filter, currentGraph],
   );
   const node = view.nodes.find((n) => n.node_id === selected) || view.nodes[0];
+  const visible = useMemo(() => {
+    if (!subgraph || !node) return view;
+    const ids = new Set([node.node_id]);
+    view.edges.forEach((e) => {
+      if (e.source === node.node_id || e.target === node.node_id) { ids.add(e.source); ids.add(e.target); }
+    });
+    return { ...view, nodes: view.nodes.filter((n) => ids.has(n.node_id)), edges: view.edges.filter((e) => ids.has(e.source) && ids.has(e.target)) };
+  }, [view, subgraph, node]);
   const graph = useMemo(
     () => ({
-      nodes: view.nodes.map((n) => ({
+      nodes: visible.nodes.map((n) => ({
         id: n.name,
         chapter: n.chapter,
         level: n.level,
@@ -49,13 +73,13 @@ export default function EvidenceGraph({
                 ? "#6294c8"
                 : "#329c80",
       })),
-      edges: view.edges.map((e) => ({
+      edges: visible.edges.map((e) => ({
         src: view.nodes.find((n) => n.node_id === e.source)?.name,
         tgt: view.nodes.find((n) => n.node_id === e.target)?.name,
         kind: e.relation_type,
       })),
     }),
-    [view],
+    [visible],
   );
   const change = (key: string, value: string) => {
     setFilter((f) => ({ ...f, [key]: value || "" }));
@@ -66,6 +90,7 @@ export default function EvidenceGraph({
       <div className="portrait-heading">
         <h3>知识图谱与证据</h3>
         <span>{view.nodes.length} 个知识点</span>
+        {currentGraph && <Segmented size="small" aria-label="知识子图范围" value={subgraph ? "subgraph" : "all"} onChange={(v) => setSubgraph(v === "subgraph")} options={[{ label: "全部知识点", value: "all" }, { label: "关联子图", value: "subgraph" }]} />}
       </div>
       <div className="evidence-filters">
         <label>
@@ -114,7 +139,7 @@ export default function EvidenceGraph({
             value={filter.goal || undefined}
             allowClear
             placeholder="全部目标"
-            options={list(data?.graph?.filters?.goals).map((g) => ({
+            options={list((currentGraph || data?.graph)?.filters?.goals).map((g) => ({
               value: g.goal_id,
               label: g.name,
             }))}
@@ -128,12 +153,13 @@ export default function EvidenceGraph({
             onClick={() => {
               setFilter(DEFAULT_GRAPH_FILTER);
               setSelected("");
+              setSubgraph(false);
             }}
           />
         </Tooltip>
       </div>
       <p className="portrait-scope">
-        {view.complete
+        {currentGraph || data?.snapshot?.statistic_mode === "observations" ? "当前日期、章节与来源范围内的知识任务得分率；无记录节点不赋分。L1~L4 为任务要求层次，并非学生等级。" : view.complete
           ? "显示当前快照内的知识点及其关联证据。"
           : "仅显示当前时间与来源条件命中的证据；掌握度等待完整数据更新。"}
         {filter.dimension !== "knowledge" &&
@@ -147,6 +173,7 @@ export default function EvidenceGraph({
                 <KnowledgeGraph
                   graph={graph as any}
                   height={470}
+                  selectedNode={currentGraph ? node?.name : undefined}
                   onNodeClick={(name) =>
                     setSelected(
                       view.nodes.find((n) => n.name === name)?.node_id || "",
@@ -173,6 +200,7 @@ export default function EvidenceGraph({
                 </p>
               )}
               <EvidenceList evidence={node.evidence.slice(0, 3)} />
+              {onEvidence && <Button type="link" disabled={!node.sample_count} onClick={() => onEvidence(node)}>查看全部任务证据</Button>}
               {node.complete &&
               node.evidence.length > 0 &&
               node.explanations.find((e: any) => e.suggestion)?.suggestion ? (

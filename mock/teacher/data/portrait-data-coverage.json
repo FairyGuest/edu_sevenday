@@ -1,15 +1,2085 @@
 {
- "schema_version": "portrait-coverage-v1",
- "demo_as_of": "2026-09-20",
+ "schema_version": "portrait-coverage-v2",
+ "demo_as_of": "2026-09-22",
  "timezone": "Asia/Shanghai",
- "aggregation_version": "portrait-v1",
+ "aggregation_version": "portrait-v2",
+ "real_max_event_date": {
+  "cls-g8-01": "2026-09-22",
+  "cls-g8-02": "2026-09-22",
+  "cls-g8-03": "2026-09-22"
+ },
+ "demo_students": {
+  "cls-g8-01": [
+   "6738633173303030",
+   "6738633173303037",
+   "6738633173303035"
+  ],
+  "cls-g8-02": [
+   "6738633273303036",
+   "6738633273303032",
+   "6738633273303038"
+  ],
+  "cls-g8-03": [
+   "947bb83daabc33cf",
+   "358f22c0c0bb9d3a",
+   "aa18e927903a0918"
+  ]
+ },
+ "demo_students_note": "每班 3 名正常完整演示学生（覆盖各节与三个预设窗口）；个人页默认学生不得取边界样例。",
+ "boundary_samples": [
+  {
+   "type": "缺勤",
+   "class_id": "cls-g8-02",
+   "student_id": "（见 class-students-cls-g8-02.json 第31人）",
+   "reason": "九月病假全月缺勤：所有节/窗口无数据，合法空态"
+  },
+  {
+   "type": "转入",
+   "class_id": "cls-g8-01",
+   "student_id": "（名册末位）",
+   "reason": "09-07 转入：此前无本校数据"
+  },
+  {
+   "type": "单测缺考",
+   "class_id": "cls-g8-03",
+   "reason": "09-15 单元测缺考：该 exam 事件 valid=false"
+  },
+  {
+   "type": "未来事件",
+   "class_id": "cls-g8-03",
+   "reason": "1 条 occurred_at 晚于基准日的冲正样例：valid=false 不进统计"
+  },
+  {
+   "type": "笼统反思",
+   "class_id": "cls-g8-03",
+   "reason": "1 条未指明章节的反思单：保留 unmapped，不猜归属"
+  },
+  {
+   "type": "零点/末秒提交",
+   "reason": "g8-02 前测 00:05、g8-01 反思 23:55 各 1 条边界时间样例"
+  },
+  {
+   "type": "周末无课堂",
+   "reason": "周六日仅自主练习；课堂/考试来源在周末窗口为合理空态"
+  },
+  {
+   "type": "对照教材无数据",
+   "reason": "demo-math-g8-vol1-alt-v1（北师大演示册）全部节无观测：跨教材空态"
+  },
+  {
+   "type": "来源不适用",
+   "reason": "value_formation 无允许来源：所有窗口 null（区别于 0 分）"
+  }
+ ],
+ "section_coverage": [
+  {
+   "class_id": "cls-g8-01",
+   "section_id": "demo-sec-radical-01",
+   "window": "7d",
+   "n_events": 61,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 5,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "classroom": 14,
+    "homework": 45,
+    "practice": 2
+   }
+  },
+  {
+   "class_id": "cls-g8-01",
+   "section_id": "demo-sec-radical-01",
+   "window": "1m",
+   "n_events": 61,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 5,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "classroom": 14,
+    "homework": 45,
+    "practice": 2
+   }
+  },
+  {
+   "class_id": "cls-g8-01",
+   "section_id": "demo-sec-radical-01",
+   "window": "3m",
+   "n_events": 105,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 5,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "homework": 89,
+    "classroom": 14,
+    "practice": 2
+   }
+  },
+  {
+   "class_id": "cls-g8-01",
+   "section_id": "demo-sec-radical-02",
+   "window": "7d",
+   "n_events": 61,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 5,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "classroom": 14,
+    "homework": 45,
+    "practice": 2
+   }
+  },
+  {
+   "class_id": "cls-g8-01",
+   "section_id": "demo-sec-radical-02",
+   "window": "1m",
+   "n_events": 61,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 5,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "classroom": 14,
+    "homework": 45,
+    "practice": 2
+   }
+  },
+  {
+   "class_id": "cls-g8-01",
+   "section_id": "demo-sec-radical-02",
+   "window": "3m",
+   "n_events": 105,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 5,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "homework": 89,
+    "classroom": 14,
+    "practice": 2
+   }
+  },
+  {
+   "class_id": "cls-g8-01",
+   "section_id": "demo-sec-radical-03",
+   "window": "7d",
+   "n_events": 105,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 4,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "classroom": 14,
+    "homework": 45,
+    "practice": 1,
+    "exam": 45
+   }
+  },
+  {
+   "class_id": "cls-g8-01",
+   "section_id": "demo-sec-radical-03",
+   "window": "1m",
+   "n_events": 158,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 4,
+    "literacy": 4,
+    "process": 4
+   },
+   "by_source": {
+    "practice": 9,
+    "exam": 90,
+    "classroom": 14,
+    "homework": 45
+   }
+  },
+  {
+   "class_id": "cls-g8-01",
+   "section_id": "demo-sec-radical-03",
+   "window": "3m",
+   "n_events": 272,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 4,
+    "literacy": 4,
+    "process": 4
+   },
+   "by_source": {
+    "homework": 89,
+    "exam": 134,
+    "practice": 35,
+    "classroom": 14
+   }
+  },
+  {
+   "class_id": "cls-g8-01",
+   "section_id": "demo-sec-pythagoras-01",
+   "window": "7d",
+   "n_events": 105,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 4,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "classroom": 14,
+    "homework": 45,
+    "practice": 1,
+    "exam": 45
+   }
+  },
+  {
+   "class_id": "cls-g8-01",
+   "section_id": "demo-sec-pythagoras-01",
+   "window": "1m",
+   "n_events": 105,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 4,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "classroom": 14,
+    "homework": 45,
+    "practice": 1,
+    "exam": 45
+   }
+  },
+  {
+   "class_id": "cls-g8-01",
+   "section_id": "demo-sec-pythagoras-01",
+   "window": "3m",
+   "n_events": 193,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 4,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "homework": 89,
+    "exam": 89,
+    "classroom": 14,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-01",
+   "section_id": "demo-sec-pythagoras-02",
+   "window": "7d",
+   "n_events": 60,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 4,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "classroom": 14,
+    "homework": 45,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-01",
+   "section_id": "demo-sec-pythagoras-02",
+   "window": "1m",
+   "n_events": 60,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 4,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "classroom": 14,
+    "homework": 45,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-01",
+   "section_id": "demo-sec-pythagoras-02",
+   "window": "3m",
+   "n_events": 60,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 4,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "classroom": 14,
+    "homework": 45,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-01",
+   "section_id": "demo-sec-quad-01",
+   "window": "7d",
+   "n_events": 104,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 3,
+    "literacy": 3,
+    "process": 3
+   },
+   "by_source": {
+    "classroom": 13,
+    "homework": 45,
+    "exam": 45,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-01",
+   "section_id": "demo-sec-quad-01",
+   "window": "1m",
+   "n_events": 104,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 3,
+    "literacy": 3,
+    "process": 3
+   },
+   "by_source": {
+    "classroom": 13,
+    "homework": 45,
+    "exam": 45,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-01",
+   "section_id": "demo-sec-quad-01",
+   "window": "3m",
+   "n_events": 104,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 3,
+    "literacy": 3,
+    "process": 3
+   },
+   "by_source": {
+    "classroom": 13,
+    "homework": 45,
+    "exam": 45,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-01",
+   "section_id": "demo-sec-quad-02",
+   "window": "7d",
+   "n_events": 59,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 3,
+    "literacy": 3,
+    "process": 3
+   },
+   "by_source": {
+    "classroom": 13,
+    "homework": 45,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-01",
+   "section_id": "demo-sec-quad-02",
+   "window": "1m",
+   "n_events": 59,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 3,
+    "literacy": 3,
+    "process": 3
+   },
+   "by_source": {
+    "classroom": 13,
+    "homework": 45,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-01",
+   "section_id": "demo-sec-quad-02",
+   "window": "3m",
+   "n_events": 147,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 4,
+    "literacy": 3,
+    "process": 3
+   },
+   "by_source": {
+    "homework": 89,
+    "exam": 44,
+    "classroom": 13,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-01",
+   "section_id": "demo-sec-function-01",
+   "window": "7d",
+   "n_events": 58,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 3,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "homework": 45,
+    "practice": 1,
+    "classroom": 12
+   }
+  },
+  {
+   "class_id": "cls-g8-01",
+   "section_id": "demo-sec-function-01",
+   "window": "1m",
+   "n_events": 147,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 4,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "homework": 89,
+    "exam": 45,
+    "practice": 1,
+    "classroom": 12
+   }
+  },
+  {
+   "class_id": "cls-g8-01",
+   "section_id": "demo-sec-function-01",
+   "window": "3m",
+   "n_events": 235,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 5,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "exam": 89,
+    "homework": 133,
+    "practice": 1,
+    "classroom": 12
+   }
+  },
+  {
+   "class_id": "cls-g8-01",
+   "section_id": "demo-sec-function-02",
+   "window": "7d",
+   "n_events": 284,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 3,
+    "literacy": 5,
+    "process": 5
+   },
+   "by_source": {
+    "classroom": 38,
+    "homework": 132,
+    "ai_tutor": 5,
+    "practice": 19,
+    "exam": 90
+   }
+  },
+  {
+   "class_id": "cls-g8-01",
+   "section_id": "demo-sec-function-02",
+   "window": "1m",
+   "n_events": 692,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 5,
+    "literacy": 5,
+    "process": 5
+   },
+   "by_source": {
+    "practice": 112,
+    "homework": 306,
+    "classroom": 74,
+    "exam": 180,
+    "ai_tutor": 20
+   }
+  },
+  {
+   "class_id": "cls-g8-01",
+   "section_id": "demo-sec-function-02",
+   "window": "3m",
+   "n_events": 879,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 6,
+    "literacy": 5,
+    "process": 5
+   },
+   "by_source": {
+    "homework": 350,
+    "exam": 224,
+    "practice": 172,
+    "ai_tutor": 59,
+    "classroom": 74
+   }
+  },
+  {
+   "class_id": "cls-g8-01",
+   "section_id": "demo-sec-function-03",
+   "window": "7d",
+   "n_events": 145,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 4,
+    "literacy": 4,
+    "process": 5
+   },
+   "by_source": {
+    "homework": 87,
+    "exam": 45,
+    "practice": 1,
+    "classroom": 12
+   }
+  },
+  {
+   "class_id": "cls-g8-01",
+   "section_id": "demo-sec-function-03",
+   "window": "1m",
+   "n_events": 190,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 6,
+    "literacy": 4,
+    "process": 5
+   },
+   "by_source": {
+    "exam": 90,
+    "homework": 87,
+    "practice": 1,
+    "classroom": 12
+   }
+  },
+  {
+   "class_id": "cls-g8-01",
+   "section_id": "demo-sec-function-03",
+   "window": "3m",
+   "n_events": 190,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 6,
+    "literacy": 4,
+    "process": 5
+   },
+   "by_source": {
+    "exam": 90,
+    "homework": 87,
+    "practice": 1,
+    "classroom": 12
+   }
+  },
+  {
+   "class_id": "cls-g8-01",
+   "section_id": "demo-sec-data-01",
+   "window": "7d",
+   "n_events": 103,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 3,
+    "literacy": 4,
+    "process": 3
+   },
+   "by_source": {
+    "practice": 46,
+    "classroom": 12,
+    "homework": 45
+   }
+  },
+  {
+   "class_id": "cls-g8-01",
+   "section_id": "demo-sec-data-01",
+   "window": "1m",
+   "n_events": 103,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 3,
+    "literacy": 4,
+    "process": 3
+   },
+   "by_source": {
+    "practice": 46,
+    "classroom": 12,
+    "homework": 45
+   }
+  },
+  {
+   "class_id": "cls-g8-01",
+   "section_id": "demo-sec-data-01",
+   "window": "3m",
+   "n_events": 140,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 3,
+    "literacy": 4,
+    "process": 3
+   },
+   "by_source": {
+    "practice": 83,
+    "classroom": 12,
+    "homework": 45
+   }
+  },
+  {
+   "class_id": "cls-g8-01",
+   "section_id": "demo-sec-data-02",
+   "window": "7d",
+   "n_events": 58,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 3,
+    "literacy": 3,
+    "process": 3
+   },
+   "by_source": {
+    "practice": 46,
+    "classroom": 12
+   }
+  },
+  {
+   "class_id": "cls-g8-01",
+   "section_id": "demo-sec-data-02",
+   "window": "1m",
+   "n_events": 58,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 3,
+    "literacy": 3,
+    "process": 3
+   },
+   "by_source": {
+    "practice": 46,
+    "classroom": 12
+   }
+  },
+  {
+   "class_id": "cls-g8-01",
+   "section_id": "demo-sec-data-02",
+   "window": "3m",
+   "n_events": 58,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 3,
+    "literacy": 3,
+    "process": 3
+   },
+   "by_source": {
+    "practice": 46,
+    "classroom": 12
+   }
+  },
+  {
+   "class_id": "cls-g8-02",
+   "section_id": "demo-sec-radical-01",
+   "window": "7d",
+   "n_events": 59,
+   "knowledge_students": 44,
+   "n_students": 44,
+   "metrics": {
+    "ability": 5,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "classroom": 13,
+    "homework": 44,
+    "practice": 2
+   }
+  },
+  {
+   "class_id": "cls-g8-02",
+   "section_id": "demo-sec-radical-01",
+   "window": "1m",
+   "n_events": 59,
+   "knowledge_students": 44,
+   "n_students": 44,
+   "metrics": {
+    "ability": 5,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "classroom": 13,
+    "homework": 44,
+    "practice": 2
+   }
+  },
+  {
+   "class_id": "cls-g8-02",
+   "section_id": "demo-sec-radical-01",
+   "window": "3m",
+   "n_events": 104,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 5,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "homework": 89,
+    "classroom": 13,
+    "practice": 2
+   }
+  },
+  {
+   "class_id": "cls-g8-02",
+   "section_id": "demo-sec-radical-02",
+   "window": "7d",
+   "n_events": 58,
+   "knowledge_students": 44,
+   "n_students": 44,
+   "metrics": {
+    "ability": 5,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "classroom": 13,
+    "homework": 44,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-02",
+   "section_id": "demo-sec-radical-02",
+   "window": "1m",
+   "n_events": 58,
+   "knowledge_students": 44,
+   "n_students": 44,
+   "metrics": {
+    "ability": 5,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "classroom": 13,
+    "homework": 44,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-02",
+   "section_id": "demo-sec-radical-02",
+   "window": "3m",
+   "n_events": 102,
+   "knowledge_students": 44,
+   "n_students": 44,
+   "metrics": {
+    "ability": 5,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "homework": 88,
+    "classroom": 13,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-02",
+   "section_id": "demo-sec-radical-03",
+   "window": "7d",
+   "n_events": 112,
+   "knowledge_students": 44,
+   "n_students": 44,
+   "metrics": {
+    "ability": 4,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "classroom": 13,
+    "ai_tutor": 10,
+    "homework": 44,
+    "exam": 44,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-02",
+   "section_id": "demo-sec-radical-03",
+   "window": "1m",
+   "n_events": 214,
+   "knowledge_students": 44,
+   "n_students": 44,
+   "metrics": {
+    "ability": 4,
+    "literacy": 5,
+    "process": 5
+   },
+   "by_source": {
+    "practice": 6,
+    "exam": 88,
+    "homework": 87,
+    "ai_tutor": 20,
+    "classroom": 13
+   }
+  },
+  {
+   "class_id": "cls-g8-02",
+   "section_id": "demo-sec-radical-03",
+   "window": "3m",
+   "n_events": 339,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 4,
+    "literacy": 5,
+    "process": 5
+   },
+   "by_source": {
+    "homework": 132,
+    "exam": 133,
+    "practice": 41,
+    "ai_tutor": 20,
+    "classroom": 13
+   }
+  },
+  {
+   "class_id": "cls-g8-02",
+   "section_id": "demo-sec-pythagoras-01",
+   "window": "7d",
+   "n_events": 102,
+   "knowledge_students": 44,
+   "n_students": 44,
+   "metrics": {
+    "ability": 4,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "classroom": 13,
+    "homework": 44,
+    "practice": 1,
+    "exam": 44
+   }
+  },
+  {
+   "class_id": "cls-g8-02",
+   "section_id": "demo-sec-pythagoras-01",
+   "window": "1m",
+   "n_events": 102,
+   "knowledge_students": 44,
+   "n_students": 44,
+   "metrics": {
+    "ability": 4,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "classroom": 13,
+    "homework": 44,
+    "practice": 1,
+    "exam": 44
+   }
+  },
+  {
+   "class_id": "cls-g8-02",
+   "section_id": "demo-sec-pythagoras-01",
+   "window": "3m",
+   "n_events": 192,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 4,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "homework": 89,
+    "exam": 89,
+    "classroom": 13,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-02",
+   "section_id": "demo-sec-pythagoras-02",
+   "window": "7d",
+   "n_events": 58,
+   "knowledge_students": 44,
+   "n_students": 44,
+   "metrics": {
+    "ability": 4,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "classroom": 13,
+    "homework": 44,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-02",
+   "section_id": "demo-sec-pythagoras-02",
+   "window": "1m",
+   "n_events": 58,
+   "knowledge_students": 44,
+   "n_students": 44,
+   "metrics": {
+    "ability": 4,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "classroom": 13,
+    "homework": 44,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-02",
+   "section_id": "demo-sec-pythagoras-02",
+   "window": "3m",
+   "n_events": 58,
+   "knowledge_students": 44,
+   "n_students": 44,
+   "metrics": {
+    "ability": 4,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "classroom": 13,
+    "homework": 44,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-02",
+   "section_id": "demo-sec-quad-01",
+   "window": "7d",
+   "n_events": 102,
+   "knowledge_students": 44,
+   "n_students": 44,
+   "metrics": {
+    "ability": 3,
+    "literacy": 3,
+    "process": 3
+   },
+   "by_source": {
+    "classroom": 13,
+    "homework": 44,
+    "practice": 1,
+    "exam": 44
+   }
+  },
+  {
+   "class_id": "cls-g8-02",
+   "section_id": "demo-sec-quad-01",
+   "window": "1m",
+   "n_events": 102,
+   "knowledge_students": 44,
+   "n_students": 44,
+   "metrics": {
+    "ability": 3,
+    "literacy": 3,
+    "process": 3
+   },
+   "by_source": {
+    "classroom": 13,
+    "homework": 44,
+    "practice": 1,
+    "exam": 44
+   }
+  },
+  {
+   "class_id": "cls-g8-02",
+   "section_id": "demo-sec-quad-01",
+   "window": "3m",
+   "n_events": 102,
+   "knowledge_students": 44,
+   "n_students": 44,
+   "metrics": {
+    "ability": 3,
+    "literacy": 3,
+    "process": 3
+   },
+   "by_source": {
+    "classroom": 13,
+    "homework": 44,
+    "practice": 1,
+    "exam": 44
+   }
+  },
+  {
+   "class_id": "cls-g8-02",
+   "section_id": "demo-sec-quad-02",
+   "window": "7d",
+   "n_events": 58,
+   "knowledge_students": 44,
+   "n_students": 44,
+   "metrics": {
+    "ability": 3,
+    "literacy": 3,
+    "process": 3
+   },
+   "by_source": {
+    "classroom": 13,
+    "homework": 44,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-02",
+   "section_id": "demo-sec-quad-02",
+   "window": "1m",
+   "n_events": 58,
+   "knowledge_students": 44,
+   "n_students": 44,
+   "metrics": {
+    "ability": 3,
+    "literacy": 3,
+    "process": 3
+   },
+   "by_source": {
+    "classroom": 13,
+    "homework": 44,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-02",
+   "section_id": "demo-sec-quad-02",
+   "window": "3m",
+   "n_events": 148,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 4,
+    "literacy": 3,
+    "process": 3
+   },
+   "by_source": {
+    "homework": 89,
+    "exam": 45,
+    "classroom": 13,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-02",
+   "section_id": "demo-sec-function-01",
+   "window": "7d",
+   "n_events": 57,
+   "knowledge_students": 44,
+   "n_students": 44,
+   "metrics": {
+    "ability": 3,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "homework": 44,
+    "classroom": 12,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-02",
+   "section_id": "demo-sec-function-01",
+   "window": "1m",
+   "n_events": 145,
+   "knowledge_students": 44,
+   "n_students": 44,
+   "metrics": {
+    "ability": 4,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "homework": 88,
+    "exam": 44,
+    "classroom": 12,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-02",
+   "section_id": "demo-sec-function-01",
+   "window": "3m",
+   "n_events": 234,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 5,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "exam": 89,
+    "homework": 132,
+    "classroom": 12,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-02",
+   "section_id": "demo-sec-function-02",
+   "window": "7d",
+   "n_events": 318,
+   "knowledge_students": 44,
+   "n_students": 44,
+   "metrics": {
+    "ability": 3,
+    "literacy": 5,
+    "process": 5
+   },
+   "by_source": {
+    "classroom": 37,
+    "homework": 168,
+    "practice": 25,
+    "exam": 88
+   }
+  },
+  {
+   "class_id": "cls-g8-02",
+   "section_id": "demo-sec-function-02",
+   "window": "1m",
+   "n_events": 656,
+   "knowledge_students": 44,
+   "n_students": 44,
+   "metrics": {
+    "ability": 5,
+    "literacy": 5,
+    "process": 5
+   },
+   "by_source": {
+    "practice": 108,
+    "homework": 300,
+    "classroom": 72,
+    "exam": 176
+   }
+  },
+  {
+   "class_id": "cls-g8-02",
+   "section_id": "demo-sec-function-02",
+   "window": "3m",
+   "n_events": 834,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 6,
+    "literacy": 5,
+    "process": 5
+   },
+   "by_source": {
+    "homework": 345,
+    "exam": 221,
+    "practice": 163,
+    "ai_tutor": 33,
+    "classroom": 72
+   }
+  },
+  {
+   "class_id": "cls-g8-02",
+   "section_id": "demo-sec-function-03",
+   "window": "7d",
+   "n_events": 101,
+   "knowledge_students": 44,
+   "n_students": 44,
+   "metrics": {
+    "ability": 4,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "exam": 44,
+    "classroom": 12,
+    "homework": 44,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-02",
+   "section_id": "demo-sec-function-03",
+   "window": "1m",
+   "n_events": 145,
+   "knowledge_students": 44,
+   "n_students": 44,
+   "metrics": {
+    "ability": 6,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "exam": 88,
+    "classroom": 12,
+    "homework": 44,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-02",
+   "section_id": "demo-sec-function-03",
+   "window": "3m",
+   "n_events": 145,
+   "knowledge_students": 44,
+   "n_students": 44,
+   "metrics": {
+    "ability": 6,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "exam": 88,
+    "classroom": 12,
+    "homework": 44,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-02",
+   "section_id": "demo-sec-data-01",
+   "window": "7d",
+   "n_events": 101,
+   "knowledge_students": 44,
+   "n_students": 44,
+   "metrics": {
+    "ability": 3,
+    "literacy": 4,
+    "process": 3
+   },
+   "by_source": {
+    "practice": 45,
+    "classroom": 12,
+    "homework": 44
+   }
+  },
+  {
+   "class_id": "cls-g8-02",
+   "section_id": "demo-sec-data-01",
+   "window": "1m",
+   "n_events": 101,
+   "knowledge_students": 44,
+   "n_students": 44,
+   "metrics": {
+    "ability": 3,
+    "literacy": 4,
+    "process": 3
+   },
+   "by_source": {
+    "practice": 45,
+    "classroom": 12,
+    "homework": 44
+   }
+  },
+  {
+   "class_id": "cls-g8-02",
+   "section_id": "demo-sec-data-01",
+   "window": "3m",
+   "n_events": 141,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 3,
+    "literacy": 4,
+    "process": 3
+   },
+   "by_source": {
+    "practice": 85,
+    "classroom": 12,
+    "homework": 44
+   }
+  },
+  {
+   "class_id": "cls-g8-02",
+   "section_id": "demo-sec-data-02",
+   "window": "7d",
+   "n_events": 57,
+   "knowledge_students": 44,
+   "n_students": 44,
+   "metrics": {
+    "ability": 3,
+    "literacy": 3,
+    "process": 3
+   },
+   "by_source": {
+    "practice": 45,
+    "classroom": 12
+   }
+  },
+  {
+   "class_id": "cls-g8-02",
+   "section_id": "demo-sec-data-02",
+   "window": "1m",
+   "n_events": 57,
+   "knowledge_students": 44,
+   "n_students": 44,
+   "metrics": {
+    "ability": 3,
+    "literacy": 3,
+    "process": 3
+   },
+   "by_source": {
+    "practice": 45,
+    "classroom": 12
+   }
+  },
+  {
+   "class_id": "cls-g8-02",
+   "section_id": "demo-sec-data-02",
+   "window": "3m",
+   "n_events": 57,
+   "knowledge_students": 44,
+   "n_students": 44,
+   "metrics": {
+    "ability": 3,
+    "literacy": 3,
+    "process": 3
+   },
+   "by_source": {
+    "practice": 45,
+    "classroom": 12
+   }
+  },
+  {
+   "class_id": "cls-g8-03",
+   "section_id": "demo-sec-radical-01",
+   "window": "7d",
+   "n_events": 61,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 5,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "classroom": 14,
+    "homework": 45,
+    "practice": 2
+   }
+  },
+  {
+   "class_id": "cls-g8-03",
+   "section_id": "demo-sec-radical-01",
+   "window": "1m",
+   "n_events": 61,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 5,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "classroom": 14,
+    "homework": 45,
+    "practice": 2
+   }
+  },
+  {
+   "class_id": "cls-g8-03",
+   "section_id": "demo-sec-radical-01",
+   "window": "3m",
+   "n_events": 106,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 5,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "homework": 90,
+    "classroom": 14,
+    "practice": 2
+   }
+  },
+  {
+   "class_id": "cls-g8-03",
+   "section_id": "demo-sec-radical-02",
+   "window": "7d",
+   "n_events": 60,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 5,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "classroom": 14,
+    "homework": 45,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-03",
+   "section_id": "demo-sec-radical-02",
+   "window": "1m",
+   "n_events": 60,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 5,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "classroom": 14,
+    "homework": 45,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-03",
+   "section_id": "demo-sec-radical-02",
+   "window": "3m",
+   "n_events": 105,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 5,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "homework": 90,
+    "classroom": 14,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-03",
+   "section_id": "demo-sec-radical-03",
+   "window": "7d",
+   "n_events": 105,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 4,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "classroom": 14,
+    "homework": 45,
+    "practice": 1,
+    "exam": 45
+   }
+  },
+  {
+   "class_id": "cls-g8-03",
+   "section_id": "demo-sec-radical-03",
+   "window": "1m",
+   "n_events": 162,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 4,
+    "literacy": 4,
+    "process": 4
+   },
+   "by_source": {
+    "practice": 13,
+    "exam": 90,
+    "classroom": 14,
+    "homework": 45
+   }
+  },
+  {
+   "class_id": "cls-g8-03",
+   "section_id": "demo-sec-radical-03",
+   "window": "3m",
+   "n_events": 279,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 4,
+    "literacy": 4,
+    "process": 4
+   },
+   "by_source": {
+    "homework": 90,
+    "exam": 135,
+    "practice": 40,
+    "classroom": 14
+   }
+  },
+  {
+   "class_id": "cls-g8-03",
+   "section_id": "demo-sec-pythagoras-01",
+   "window": "7d",
+   "n_events": 105,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 4,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "classroom": 14,
+    "homework": 45,
+    "exam": 45,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-03",
+   "section_id": "demo-sec-pythagoras-01",
+   "window": "1m",
+   "n_events": 105,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 4,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "classroom": 14,
+    "homework": 45,
+    "exam": 45,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-03",
+   "section_id": "demo-sec-pythagoras-01",
+   "window": "3m",
+   "n_events": 195,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 4,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "homework": 90,
+    "exam": 90,
+    "classroom": 14,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-03",
+   "section_id": "demo-sec-pythagoras-02",
+   "window": "7d",
+   "n_events": 60,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 4,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "classroom": 14,
+    "homework": 45,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-03",
+   "section_id": "demo-sec-pythagoras-02",
+   "window": "1m",
+   "n_events": 60,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 4,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "classroom": 14,
+    "homework": 45,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-03",
+   "section_id": "demo-sec-pythagoras-02",
+   "window": "3m",
+   "n_events": 60,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 4,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "classroom": 14,
+    "homework": 45,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-03",
+   "section_id": "demo-sec-quad-01",
+   "window": "7d",
+   "n_events": 104,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 3,
+    "literacy": 3,
+    "process": 3
+   },
+   "by_source": {
+    "classroom": 13,
+    "homework": 45,
+    "practice": 1,
+    "exam": 45
+   }
+  },
+  {
+   "class_id": "cls-g8-03",
+   "section_id": "demo-sec-quad-01",
+   "window": "1m",
+   "n_events": 104,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 3,
+    "literacy": 3,
+    "process": 3
+   },
+   "by_source": {
+    "classroom": 13,
+    "homework": 45,
+    "practice": 1,
+    "exam": 45
+   }
+  },
+  {
+   "class_id": "cls-g8-03",
+   "section_id": "demo-sec-quad-01",
+   "window": "3m",
+   "n_events": 104,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 3,
+    "literacy": 3,
+    "process": 3
+   },
+   "by_source": {
+    "classroom": 13,
+    "homework": 45,
+    "practice": 1,
+    "exam": 45
+   }
+  },
+  {
+   "class_id": "cls-g8-03",
+   "section_id": "demo-sec-quad-02",
+   "window": "7d",
+   "n_events": 59,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 3,
+    "literacy": 3,
+    "process": 3
+   },
+   "by_source": {
+    "classroom": 13,
+    "homework": 45,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-03",
+   "section_id": "demo-sec-quad-02",
+   "window": "1m",
+   "n_events": 59,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 3,
+    "literacy": 3,
+    "process": 3
+   },
+   "by_source": {
+    "classroom": 13,
+    "homework": 45,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-03",
+   "section_id": "demo-sec-quad-02",
+   "window": "3m",
+   "n_events": 149,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 4,
+    "literacy": 3,
+    "process": 3
+   },
+   "by_source": {
+    "homework": 90,
+    "exam": 45,
+    "classroom": 13,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-03",
+   "section_id": "demo-sec-function-01",
+   "window": "7d",
+   "n_events": 58,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 3,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "homework": 45,
+    "classroom": 12,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-03",
+   "section_id": "demo-sec-function-01",
+   "window": "1m",
+   "n_events": 147,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 4,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "homework": 90,
+    "exam": 44,
+    "classroom": 12,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-03",
+   "section_id": "demo-sec-function-01",
+   "window": "3m",
+   "n_events": 237,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 5,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "exam": 89,
+    "homework": 135,
+    "classroom": 12,
+    "practice": 1
+   }
+  },
+  {
+   "class_id": "cls-g8-03",
+   "section_id": "demo-sec-function-02",
+   "window": "7d",
+   "n_events": 336,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 3,
+    "literacy": 5,
+    "process": 5
+   },
+   "by_source": {
+    "classroom": 38,
+    "homework": 169,
+    "ai_tutor": 15,
+    "practice": 24,
+    "exam": 90
+   }
+  },
+  {
+   "class_id": "cls-g8-03",
+   "section_id": "demo-sec-function-02",
+   "window": "1m",
+   "n_events": 742,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 5,
+    "literacy": 5,
+    "process": 5
+   },
+   "by_source": {
+    "practice": 113,
+    "homework": 344,
+    "classroom": 74,
+    "exam": 179,
+    "ai_tutor": 32
+   }
+  },
+  {
+   "class_id": "cls-g8-03",
+   "section_id": "demo-sec-function-02",
+   "window": "3m",
+   "n_events": 925,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 6,
+    "literacy": 5,
+    "process": 5
+   },
+   "by_source": {
+    "homework": 389,
+    "exam": 224,
+    "practice": 171,
+    "ai_tutor": 67,
+    "classroom": 74
+   }
+  },
+  {
+   "class_id": "cls-g8-03",
+   "section_id": "demo-sec-function-03",
+   "window": "7d",
+   "n_events": 103,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 4,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "exam": 45,
+    "practice": 1,
+    "classroom": 12,
+    "homework": 45
+   }
+  },
+  {
+   "class_id": "cls-g8-03",
+   "section_id": "demo-sec-function-03",
+   "window": "1m",
+   "n_events": 147,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 6,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "exam": 89,
+    "practice": 1,
+    "classroom": 12,
+    "homework": 45
+   }
+  },
+  {
+   "class_id": "cls-g8-03",
+   "section_id": "demo-sec-function-03",
+   "window": "3m",
+   "n_events": 147,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 6,
+    "literacy": 3,
+    "process": 4
+   },
+   "by_source": {
+    "exam": 89,
+    "practice": 1,
+    "classroom": 12,
+    "homework": 45
+   }
+  },
+  {
+   "class_id": "cls-g8-03",
+   "section_id": "demo-sec-data-01",
+   "window": "7d",
+   "n_events": 103,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 3,
+    "literacy": 4,
+    "process": 3
+   },
+   "by_source": {
+    "practice": 46,
+    "classroom": 12,
+    "homework": 45
+   }
+  },
+  {
+   "class_id": "cls-g8-03",
+   "section_id": "demo-sec-data-01",
+   "window": "1m",
+   "n_events": 103,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 3,
+    "literacy": 4,
+    "process": 3
+   },
+   "by_source": {
+    "practice": 46,
+    "classroom": 12,
+    "homework": 45
+   }
+  },
+  {
+   "class_id": "cls-g8-03",
+   "section_id": "demo-sec-data-01",
+   "window": "3m",
+   "n_events": 141,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 3,
+    "literacy": 4,
+    "process": 3
+   },
+   "by_source": {
+    "practice": 84,
+    "classroom": 12,
+    "homework": 45
+   }
+  },
+  {
+   "class_id": "cls-g8-03",
+   "section_id": "demo-sec-data-02",
+   "window": "7d",
+   "n_events": 58,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 3,
+    "literacy": 3,
+    "process": 3
+   },
+   "by_source": {
+    "practice": 46,
+    "classroom": 12
+   }
+  },
+  {
+   "class_id": "cls-g8-03",
+   "section_id": "demo-sec-data-02",
+   "window": "1m",
+   "n_events": 58,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 3,
+    "literacy": 3,
+    "process": 3
+   },
+   "by_source": {
+    "practice": 46,
+    "classroom": 12
+   }
+  },
+  {
+   "class_id": "cls-g8-03",
+   "section_id": "demo-sec-data-02",
+   "window": "3m",
+   "n_events": 58,
+   "knowledge_students": 45,
+   "n_students": 45,
+   "metrics": {
+    "ability": 3,
+    "literacy": 3,
+    "process": 3
+   },
+   "by_source": {
+    "practice": 46,
+    "classroom": 12
+   }
+  }
+ ],
+ "section_coverage_note": "节×(近7天/1月/3月)×班矩阵：knowledge_students 为该节该窗知识观测覆盖人数；metrics 为各维有效指标数；by_source 为各来源事件数。覆盖门槛见补齐清单 §2.1。",
  "class_ids": [
   "cls-g8-01",
   "cls-g8-02",
   "cls-g8-03"
  ],
  "start_date": "2026-06-20",
- "end_date": "2026-09-20",
+ "end_date": "2026-09-22",
  "expected_students": 135,
  "covered_students": 135,
  "missing_students": [],
@@ -113,7 +2183,7 @@
   },
   {
    "class_id": "cls-g8-01",
-   "student_id": "6738633173303034",
+   "student_id": "6738633173303033",
    "metric_key": "self_efficacy",
    "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
   },
@@ -131,12 +2201,6 @@
   },
   {
    "class_id": "cls-g8-01",
-   "student_id": "6738633173303037",
-   "metric_key": "self_efficacy",
-   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
-  },
-  {
-   "class_id": "cls-g8-01",
    "student_id": "6738633173303038",
    "metric_key": "self_efficacy",
    "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
@@ -149,19 +2213,25 @@
   },
   {
    "class_id": "cls-g8-01",
-   "student_id": "6738633173303130",
-   "metric_key": "self_efficacy",
-   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
-  },
-  {
-   "class_id": "cls-g8-01",
    "student_id": "6738633173303131",
    "metric_key": "self_efficacy",
    "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
   },
   {
    "class_id": "cls-g8-01",
-   "student_id": "6738633173303134",
+   "student_id": "6738633173303132",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "student_id": "6738633173303133",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "student_id": "6738633173303135",
    "metric_key": "self_efficacy",
    "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
   },
@@ -173,7 +2243,7 @@
   },
   {
    "class_id": "cls-g8-01",
-   "student_id": "6738633173303137",
+   "student_id": "6738633173303138",
    "metric_key": "self_efficacy",
    "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
   },
@@ -185,13 +2255,25 @@
   },
   {
    "class_id": "cls-g8-01",
+   "student_id": "6738633173303231",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-01",
    "student_id": "6738633173303232",
    "metric_key": "self_efficacy",
    "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
   },
   {
    "class_id": "cls-g8-01",
-   "student_id": "6738633173303234",
+   "student_id": "6738633173303233",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "student_id": "6738633173303235",
    "metric_key": "self_efficacy",
    "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
   },
@@ -203,19 +2285,13 @@
   },
   {
    "class_id": "cls-g8-01",
-   "student_id": "6738633173303237",
+   "student_id": "6738633173303238",
    "metric_key": "self_efficacy",
    "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
   },
   {
    "class_id": "cls-g8-01",
    "student_id": "6738633173303239",
-   "metric_key": "self_efficacy",
-   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
-  },
-  {
-   "class_id": "cls-g8-01",
-   "student_id": "6738633173303330",
    "metric_key": "self_efficacy",
    "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
   },
@@ -251,25 +2327,31 @@
   },
   {
    "class_id": "cls-g8-01",
-   "student_id": "6738633173303337",
-   "metric_key": "self_efficacy",
-   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
-  },
-  {
-   "class_id": "cls-g8-01",
    "student_id": "6738633173303338",
    "metric_key": "self_efficacy",
    "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
   },
   {
    "class_id": "cls-g8-01",
-   "student_id": "6738633173303430",
+   "student_id": "6738633173303339",
    "metric_key": "self_efficacy",
    "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
   },
   {
    "class_id": "cls-g8-01",
-   "student_id": "6738633173303434",
+   "student_id": "6738633173303431",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "student_id": "6738633173303432",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-01",
+   "student_id": "6738633173303433",
    "metric_key": "self_efficacy",
    "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
   },
@@ -293,31 +2375,31 @@
   },
   {
    "class_id": "cls-g8-02",
-   "student_id": "6738633273303033",
-   "metric_key": "self_efficacy",
-   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
-  },
-  {
-   "class_id": "cls-g8-02",
    "student_id": "6738633273303034",
    "metric_key": "self_efficacy",
    "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
   },
   {
    "class_id": "cls-g8-02",
-   "student_id": "6738633273303037",
+   "student_id": "6738633273303035",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "student_id": "6738633273303036",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "student_id": "6738633273303038",
    "metric_key": "self_efficacy",
    "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
   },
   {
    "class_id": "cls-g8-02",
    "student_id": "6738633273303039",
-   "metric_key": "self_efficacy",
-   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
-  },
-  {
-   "class_id": "cls-g8-02",
-   "student_id": "6738633273303130",
    "metric_key": "self_efficacy",
    "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
   },
@@ -353,13 +2435,13 @@
   },
   {
    "class_id": "cls-g8-02",
-   "student_id": "6738633273303137",
+   "student_id": "6738633273303138",
    "metric_key": "self_efficacy",
    "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
   },
   {
    "class_id": "cls-g8-02",
-   "student_id": "6738633273303230",
+   "student_id": "6738633273303139",
    "metric_key": "self_efficacy",
    "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
   },
@@ -377,13 +2459,19 @@
   },
   {
    "class_id": "cls-g8-02",
-   "student_id": "6738633273303233",
+   "student_id": "6738633273303234",
    "metric_key": "self_efficacy",
    "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
   },
   {
    "class_id": "cls-g8-02",
-   "student_id": "6738633273303234",
+   "student_id": "6738633273303235",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "student_id": "6738633273303236",
    "metric_key": "self_efficacy",
    "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
   },
@@ -419,12 +2507,6 @@
   },
   {
    "class_id": "cls-g8-02",
-   "student_id": "6738633273303333",
-   "metric_key": "self_efficacy",
-   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
-  },
-  {
-   "class_id": "cls-g8-02",
    "student_id": "6738633273303334",
    "metric_key": "self_efficacy",
    "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
@@ -449,7 +2531,13 @@
   },
   {
    "class_id": "cls-g8-02",
-   "student_id": "6738633273303430",
+   "student_id": "6738633273303339",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-02",
+   "student_id": "6738633273303431",
    "metric_key": "self_efficacy",
    "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
   },
@@ -461,7 +2549,7 @@
   },
   {
    "class_id": "cls-g8-02",
-   "student_id": "6738633273303433",
+   "student_id": "6738633273303434",
    "metric_key": "self_efficacy",
    "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
   },
@@ -470,6 +2558,12 @@
    "student_id": null,
    "metric_key": "value_formation",
    "reason": "无已接入证据来源（小组互评待设计），所有窗口均为 null"
+  },
+  {
+   "class_id": "cls-g8-03",
+   "student_id": "883ab5554975ea82",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
   },
   {
    "class_id": "cls-g8-03",
@@ -485,7 +2579,7 @@
   },
   {
    "class_id": "cls-g8-03",
-   "student_id": "e285baf106ac2747",
+   "student_id": "8dcf5f76483436c3",
    "metric_key": "self_efficacy",
    "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
   },
@@ -497,13 +2591,19 @@
   },
   {
    "class_id": "cls-g8-03",
+   "student_id": "358f22c0c0bb9d3a",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-03",
    "student_id": "6c4898082f92b9af",
    "metric_key": "self_efficacy",
    "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
   },
   {
    "class_id": "cls-g8-03",
-   "student_id": "35be72f89ba8cd58",
+   "student_id": "2bfbc5fb6c6f1c5a",
    "metric_key": "self_efficacy",
    "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
   },
@@ -527,12 +2627,6 @@
   },
   {
    "class_id": "cls-g8-03",
-   "student_id": "df5c55a79f94865b",
-   "metric_key": "self_efficacy",
-   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
-  },
-  {
-   "class_id": "cls-g8-03",
    "student_id": "3f913e2f549f9c8f",
    "metric_key": "self_efficacy",
    "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
@@ -551,13 +2645,19 @@
   },
   {
    "class_id": "cls-g8-03",
-   "student_id": "d465b44049b2138d",
+   "student_id": "a3a4c5ad7257c67b",
    "metric_key": "self_efficacy",
    "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
   },
   {
    "class_id": "cls-g8-03",
-   "student_id": "d0bee916ab9e7fb0",
+   "student_id": "d14cc66bb6b6e62e",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-03",
+   "student_id": "ebafc6361d5e0043",
    "metric_key": "self_efficacy",
    "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
   },
@@ -569,13 +2669,19 @@
   },
   {
    "class_id": "cls-g8-03",
-   "student_id": "8009419ca70611cd",
+   "student_id": "744167e47289e96e",
    "metric_key": "self_efficacy",
    "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
   },
   {
    "class_id": "cls-g8-03",
-   "student_id": "5c3b87411787a1d7",
+   "student_id": "9d4c7146ad0fa01f",
+   "metric_key": "self_efficacy",
+   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
+  },
+  {
+   "class_id": "cls-g8-03",
+   "student_id": "8009419ca70611cd",
    "metric_key": "self_efficacy",
    "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
   },
@@ -600,12 +2706,6 @@
   {
    "class_id": "cls-g8-03",
    "student_id": "6853638ac65f20c8",
-   "metric_key": "self_efficacy",
-   "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
-  },
-  {
-   "class_id": "cls-g8-03",
-   "student_id": "f8222fae945c55f4",
    "metric_key": "self_efficacy",
    "reason": "未提交学习反思单，自我效能缺测（不从正确率推断）"
   },
@@ -650,150 +2750,149 @@
   {
    "class_id": "cls-g8-01",
    "source_type": "homework",
-   "n_events": 524,
-   "n_valid": 524,
+   "n_events": 1104,
+   "n_valid": 1104,
    "earliest_date": "2026-06-22",
-   "latest_date": "2026-09-16",
+   "latest_date": "2026-09-22",
    "n_students": 45
   },
   {
    "class_id": "cls-g8-01",
    "source_type": "exam",
-   "n_events": 223,
-   "n_valid": 223,
+   "n_events": 403,
+   "n_valid": 403,
    "earliest_date": "2026-06-29",
-   "latest_date": "2026-09-18",
+   "latest_date": "2026-09-22",
    "n_students": 45
   },
   {
    "class_id": "cls-g8-01",
    "source_type": "classroom",
-   "n_events": 114,
-   "n_valid": 113,
+   "n_events": 177,
+   "n_valid": 176,
    "earliest_date": "2026-06-24",
-   "latest_date": "2026-09-18",
+   "latest_date": "2026-09-22",
    "n_students": 45
   },
   {
    "class_id": "cls-g8-01",
    "source_type": "ai_tutor",
-   "n_events": 58,
-   "n_valid": 58,
+   "n_events": 59,
+   "n_valid": 59,
+   "earliest_date": "2026-07-15",
+   "latest_date": "2026-09-18",
+   "n_students": 41
+  },
+  {
+   "class_id": "cls-g8-01",
+   "source_type": "practice",
+   "n_events": 346,
+   "n_valid": 346,
+   "earliest_date": "2026-06-28",
+   "latest_date": "2026-09-22",
+   "n_students": 45
+  },
+  {
+   "class_id": "cls-g8-02",
+   "source_type": "homework",
+   "n_events": 1097,
+   "n_valid": 1097,
+   "earliest_date": "2026-06-22",
+   "latest_date": "2026-09-22",
+   "n_students": 45
+  },
+  {
+   "class_id": "cls-g8-02",
+   "source_type": "exam",
+   "n_events": 397,
+   "n_valid": 397,
+   "earliest_date": "2026-06-29",
+   "latest_date": "2026-09-22",
+   "n_students": 45
+  },
+  {
+   "class_id": "cls-g8-02",
+   "source_type": "classroom",
+   "n_events": 172,
+   "n_valid": 172,
+   "earliest_date": "2026-06-24",
+   "latest_date": "2026-09-22",
+   "n_students": 45
+  },
+  {
+   "class_id": "cls-g8-02",
+   "source_type": "ai_tutor",
+   "n_events": 54,
+   "n_valid": 53,
    "earliest_date": "2026-07-15",
    "latest_date": "2026-09-18",
    "n_students": 37
   },
   {
-   "class_id": "cls-g8-01",
-   "source_type": "practice",
-   "n_events": 225,
-   "n_valid": 225,
-   "earliest_date": "2026-07-12",
-   "latest_date": "2026-09-20",
-   "n_students": 45
-  },
-  {
-   "class_id": "cls-g8-02",
-   "source_type": "homework",
-   "n_events": 522,
-   "n_valid": 522,
-   "earliest_date": "2026-06-22",
-   "latest_date": "2026-09-16",
-   "n_students": 45
-  },
-  {
-   "class_id": "cls-g8-02",
-   "source_type": "exam",
-   "n_events": 221,
-   "n_valid": 221,
-   "earliest_date": "2026-06-29",
-   "latest_date": "2026-09-18",
-   "n_students": 45
-  },
-  {
-   "class_id": "cls-g8-02",
-   "source_type": "classroom",
-   "n_events": 110,
-   "n_valid": 110,
-   "earliest_date": "2026-06-24",
-   "latest_date": "2026-09-18",
-   "n_students": 45
-  },
-  {
-   "class_id": "cls-g8-02",
-   "source_type": "ai_tutor",
-   "n_events": 58,
-   "n_valid": 57,
-   "earliest_date": "2026-07-16",
-   "latest_date": "2026-09-18",
-   "n_students": 39
-  },
-  {
    "class_id": "cls-g8-02",
    "source_type": "practice",
-   "n_events": 221,
-   "n_valid": 221,
-   "earliest_date": "2026-07-12",
-   "latest_date": "2026-09-20",
+   "n_events": 343,
+   "n_valid": 343,
+   "earliest_date": "2026-06-28",
+   "latest_date": "2026-09-22",
    "n_students": 45
   },
   {
    "class_id": "cls-g8-03",
    "source_type": "homework",
-   "n_events": 531,
-   "n_valid": 531,
+   "n_events": 1109,
+   "n_valid": 1109,
    "earliest_date": "2026-06-22",
-   "latest_date": "2026-09-16",
+   "latest_date": "2026-09-22",
    "n_students": 45
   },
   {
    "class_id": "cls-g8-03",
    "source_type": "exam",
-   "n_events": 225,
-   "n_valid": 224,
+   "n_events": 405,
+   "n_valid": 404,
    "earliest_date": "2026-06-29",
-   "latest_date": "2026-09-18",
+   "latest_date": "2026-09-22",
    "n_students": 45
   },
   {
    "class_id": "cls-g8-03",
    "source_type": "classroom",
-   "n_events": 113,
-   "n_valid": 113,
+   "n_events": 176,
+   "n_valid": 176,
    "earliest_date": "2026-06-24",
-   "latest_date": "2026-09-18",
+   "latest_date": "2026-09-22",
    "n_students": 45
   },
   {
    "class_id": "cls-g8-03",
    "source_type": "ai_tutor",
-   "n_events": 69,
-   "n_valid": 69,
-   "earliest_date": "2026-07-16",
+   "n_events": 67,
+   "n_valid": 67,
+   "earliest_date": "2026-07-15",
    "latest_date": "2026-09-18",
-   "n_students": 43
+   "n_students": 42
   },
   {
    "class_id": "cls-g8-03",
    "source_type": "practice",
-   "n_events": 229,
-   "n_valid": 229,
-   "earliest_date": "2026-07-12",
-   "latest_date": "2026-09-20",
+   "n_events": 352,
+   "n_valid": 351,
+   "earliest_date": "2026-06-28",
+   "latest_date": "2026-09-22",
    "n_students": 45
   }
  ],
  "aggregation_rules": [
-  "筛选班级、日期、来源、valid=true 后按 evidence_id 去重，同 ID 冲突内容应报错",
-  "个人指标 = 100×SUM(earned)/SUM(possible)，显示时才四舍五入",
-  "个人维度 = 有效指标等权均值；有效指标不足 3 个时维度为 null（保留已观测指标）",
-  "班级指标 = 有效学生个人指标均值；班级维度 = 有效学生维度均值；均返回有效人数",
-  "class_avg 必须取相同日期/来源/规则下的班级值",
-  "知识节点掌握度由 knowledge_results 计算，班级节点取有效学生均值",
-  "指标 sample_count = 支撑事件的去重数；维度 sample_count = 关联事件去重并集",
-  "有效学生数、事件数、量表分母是三个不同数字，需分别返回",
-  "同口径下解释/颜色/雷达/建议一致，建议可追溯 ≥1 条有效证据",
-  "部分日期未采集 ≠ 当天零活动 ≠ 覆盖整个请求区间"
+  "【口径 portrait-v2，与当前画像页一致】筛选班级、日期、来源、valid=true 后按 evidence_id 去重，同 ID 冲突内容应报错",
+  "个人指标读数 = 100×有效 earned 总和 / 有效 possible 总和（量表分母汇总，不是事件数），显示时才四舍五入",
+  "个人维度读数 = 该维度有效记录的 earned/possible 汇总（能力/素养/过程取 measurements；知识维度只取 knowledge_results）",
+  "班级读数 = 有证据学生的未舍入个人读数均值，最后再舍入；缺测学生不进分母（不是全班 earned/possible 混算）",
+  "雷达成图门槛：≥3 个有效轴才画图；1～2 轴仍返回得分/分布/证据，不得当零分或无数据",
+  "知识节点/分布/子图读数使用 knowledge_results；仅 measurements 中的知识类指标不形成节点得分",
+  "sample_count 按 evidence_id 去重；跨节聚合、来源合并、重传不重复计数",
+  "class_avg 必须取相同日期/来源/规则下班级值；同口径解释/颜色/建议一致且可追溯 ≥1 条有效证据",
+  "合法 0 分、未知/未采集、量规未审、证据冲突分别保留，不相互替代；部分日期未采集 ≠ 当天零活动"
  ],
  "notes": [
   "暑假（07-04~08-31）与周末无课堂/考试活动，属学校日历无活动，非数据缺失。",

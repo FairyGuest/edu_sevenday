@@ -1,4 +1,5 @@
 import { requestJson } from "@/utils/request";
+import { presentRecord } from "./presentation";
 import { message } from "antd";
 import { fetchEventSource } from "@microsoft/fetch-event-source";
 import {
@@ -600,7 +601,7 @@ export const latexReplace = (param: any) => {
 //  获取用户信息
 export const getUserInfo = (key = "id") => {
   const local = localStorage.getItem("userInfo") || "{}";
-  const shopInfo = JSON.parse(local);
+  const shopInfo = presentRecord(JSON.parse(local));
   if (key) {
     return shopInfo[key];
   }
@@ -1138,7 +1139,7 @@ export const getOrgId = (key = "id") => {
   if (!localVal) {
     history.push("/login");
   }
-  let curOrg = JSON.parse(localStorage.getItem("curOrg") || "{}");
+  let curOrg = presentRecord(JSON.parse(localStorage.getItem("curOrg") || "{}"));
 
   return curOrg[key];
 };

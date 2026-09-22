@@ -6,7 +6,8 @@ import {
   useRef,
   useState,
 } from "react";
-import { Form, Input, message, DatePicker, Cascader, Select, Tag } from "antd";
+import { Form, Input, message, DatePicker, Cascader, Select, Tag, Button } from "antd";
+import { FileSearchOutlined } from "@ant-design/icons";
 import dayjs from "dayjs";
 import { useDispatch, useSelector } from "@umijs/max";
 import { history } from "umi";
@@ -567,6 +568,7 @@ const PublishExamForm = ({
     return (
       <div className="setting_homework_publish_box">
         <div className="exam_detail_view">
+          <Button icon={<FileSearchOutlined />} onClick={() => history.push(`/homework?${new URLSearchParams({ sub: "diagnostics", homework_id: String(detailData?.homework_id || examId || "") })}`)}>查看作答错因</Button>
           <div className="exam_detail_item">
             <span className="exam_detail_item_title">试卷:</span>
             <span className="exam_detail_item_content">

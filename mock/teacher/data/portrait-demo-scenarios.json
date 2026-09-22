@@ -1,0 +1,204 @@
+{
+ "schema_version": "portrait-demo-scenarios-v1",
+ "data_version": "demo-v1",
+ "is_demo": true,
+ "demo_reference_date": "2026-09-22",
+ "note": "正常与边界演示路线配置（验收用，不要求新 UI）；evidence_ids 为当前数据中的真实样例（重生成后仍可按条件检索）。",
+ "normal_routes": [
+  {
+   "id": "route-home",
+   "title": "首页进入学情",
+   "url_condition": {
+    "date": "默认近1月",
+    "scope": "全部章节",
+    "source": "全部"
+   },
+   "expect": "三班均有画像、分布、趋势、来源和证据"
+  },
+  {
+   "id": "route-chapter-switch",
+   "title": "依次切换 5 章",
+   "url_condition": {
+    "chapter": [
+     "demo-ch-radical",
+     "demo-ch-pythagoras",
+     "demo-ch-quad",
+     "demo-ch-function",
+     "demo-ch-data"
+    ]
+   },
+   "expect": "读数与知识节点对应本章，不回填其他章分数"
+  },
+  {
+   "id": "route-section-switch",
+   "title": "依次切换 12 节",
+   "url_condition": {
+    "section": [
+     "demo-sec-radical-01",
+     "demo-sec-radical-02",
+     "demo-sec-radical-03",
+     "demo-sec-pythagoras-01",
+     "demo-sec-pythagoras-02",
+     "demo-sec-quad-01",
+     "demo-sec-quad-02",
+     "demo-sec-function-01",
+     "demo-sec-function-02",
+     "demo-sec-function-03",
+     "demo-sec-data-01",
+     "demo-sec-data-02"
+    ]
+   },
+   "expect": "节级有效任务与四维观察；1～2 知识轴不得误报「无数据」",
+   "sample_evidence": [
+    "pev-g803-1530-77c78a",
+    "pev-g803-1530-c7f15f",
+    "pev-g803-1530-b0fd70"
+   ]
+  },
+  {
+   "id": "route-date-switch",
+   "title": "近7天/1月/3月",
+   "url_condition": {
+    "date": [
+     "7d",
+     "1m",
+     "3m"
+    ]
+   },
+   "expect": "样本数、实际日期与变化叙事对得上（09-16~22 为复习周）"
+  },
+  {
+   "id": "route-cross-filter",
+   "title": "章/节+日期+来源交叉",
+   "url_condition": {
+    "source_combos": [
+     "全部",
+     "作业+考试",
+     "课堂+人机交互",
+     "单一来源×5"
+    ]
+   },
+   "expect": "条件全部生效、去重正确；单一来源缺某维度为合理空态"
+  },
+  {
+   "id": "route-clear-refresh",
+   "title": "清除与刷新",
+   "url_condition": {},
+   "expect": "清日期保留章节；不限日期不自动回默认3个月"
+  },
+  {
+   "id": "route-person-normal",
+   "title": "班级→个人（正常）",
+   "students": [
+    "6738633173303030",
+    "358f22c0c0bb9d3a"
+   ],
+   "expect": "个人证据与同范围班均一致，不借用班级分数"
+  },
+  {
+   "id": "route-person-improving",
+   "title": "班级→个人（改善）",
+   "students": [
+    "947bb83daabc33cf"
+   ],
+   "expect": "case-01 关闭轨迹可讲（fu-01）"
+  },
+  {
+   "id": "route-person-support",
+   "title": "班级→个人（待支持）",
+   "students": [
+    "6738633173303037",
+    "2bfbc5fb6c6f1c5a"
+   ],
+   "expect": "待补证/媒介边界不伪装成已解决"
+  },
+  {
+   "id": "route-random-student",
+   "title": "普通学生随机抽查",
+   "expect": "非主讲学生至少有当前范围知识任务（每班每节知识覆盖≥40人）"
+  },
+  {
+   "id": "route-source-process",
+   "title": "五来源过程查看",
+   "expect": "来源切换时活动名/日期/指标/分子分母随之切换，未选来源不混入"
+  },
+  {
+   "id": "route-design-inject",
+   "title": "教学设计注入",
+   "expect": "保留 class/student/date/chapter/source 上下文"
+  }
+ ],
+ "boundary_routes": [
+  {
+   "id": "bnd-sick",
+   "title": "缺勤学生",
+   "class_id": "cls-g8-02",
+   "student_ref": "名册第31人",
+   "expect_empty_reason": "九月病假：合法空态不补零"
+  },
+  {
+   "id": "bnd-transfer",
+   "title": "转入学生早期",
+   "class_id": "cls-g8-01",
+   "student_ref": "名册末位",
+   "expect_empty_reason": "09-07 前无本校数据"
+  },
+  {
+   "id": "bnd-unit-absent",
+   "title": "单元测缺考",
+   "class_id": "cls-g8-03",
+   "expect": "该考试事件 valid=false，不进统计"
+  },
+  {
+   "id": "bnd-future",
+   "title": "未来日期事件",
+   "class_id": "cls-g8-03",
+   "expect": "occurred_at 晚于基准日：invalid 保留原因"
+  },
+  {
+   "id": "bnd-generic-reflection",
+   "title": "笼统反思",
+   "class_id": "cls-g8-03",
+   "expect": "unmapped：归属无法确认，不猜节"
+  },
+  {
+   "id": "bnd-midnight",
+   "title": "零点/末秒提交",
+   "expect": "00:05 与 23:55 各一条，正常统计"
+  },
+  {
+   "id": "bnd-weekend",
+   "title": "周末窗口课堂来源",
+   "expect_empty_reason": "无课日课堂/考试为空：按来源呈现合理空态"
+  },
+  {
+   "id": "bnd-alt-textbook",
+   "title": "对照教材节",
+   "scope": "demo-math-g8-vol1-alt-v1",
+   "expect_empty_reason": "北师大演示册无观测：跨教材空态"
+  },
+  {
+   "id": "bnd-source-na",
+   "title": "来源不适用",
+   "metric": "value_formation",
+   "expect_empty_reason": "无允许来源：null 区别于 0 分"
+  },
+  {
+   "id": "bnd-cross-class",
+   "title": "跨班学生 ID",
+   "ref": "diagnostic-attempts at-045",
+   "expect": "scope_valid=false 剔除不删"
+  },
+  {
+   "id": "bnd-invalid-section",
+   "title": "非法节 ID",
+   "ref": "diagnostic-attempts at-046",
+   "expect": "课程维度筛选不生效，原数据保留"
+  },
+  {
+   "id": "bnd-low-sample",
+   "title": "低样本/未审/冲突",
+   "expect": "有样本不下强结论；审核状态不因原文到位改 approved"
+  }
+ ]
+}

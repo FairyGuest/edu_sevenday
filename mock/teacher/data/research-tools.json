@@ -1,0 +1,164 @@
+{
+ "schema_version": "research-tools-v1",
+ "data_version": "demo-v1",
+ "is_demo": true,
+ "demo_reference_date": "2026-09-22",
+ "note": "教研工具 Tab 样例（共备/课例研讨/量规评议）；原论坛 10 议题保留在 research-topics.json，forum_link 指向。",
+ "forum_link": {
+  "file": "research-topics.json",
+  "topic_count": 10,
+  "note": "论坛数据不复制、不丢弃"
+ },
+ "tools": [
+  {
+   "tool_id": "tool-co-prep",
+   "name": "单元共备",
+   "examples": [
+    {
+     "example_id": "cp-01",
+     "title": "16.3 二次根式加减 · 共备记录",
+     "unit_id": "demo-unit-radical",
+     "lesson_id": "demo-lesson-rad-02",
+     "agenda": [
+      "错例定位（√18+√8=√26）",
+      "三步自查单文本定稿",
+      "分层作业分工"
+     ],
+     "participants": [
+      "t-001",
+      "t-003",
+      "t-005"
+     ],
+     "decisions": [
+      "自查单贴作业本首页",
+      "基础/标准/挑战三层题量 3:2:1"
+     ],
+     "created_at": "2026-09-12 16:30",
+     "preview": {
+      "lines": [
+       "主持人：李老师",
+       "争议点：挑战层是否引入双重根式 → 表决保留为选做"
+      ]
+     }
+    },
+    {
+     "example_id": "cp-02",
+     "title": "19.3 选择方案 · 共备议程",
+     "unit_id": "demo-unit-linear-app",
+     "lesson_id": "demo-lesson-lin-01",
+     "agenda": [
+      "情境过桥（会员卡先讲）",
+      "图像决策四步板书",
+      "弹簧任务材料预约确认"
+     ],
+     "participants": [
+      "t-001",
+      "t-002",
+      "t-004"
+     ],
+     "decisions": [
+      "砝码缺材料时启用演示视频（demo-scn-spring 边界）"
+     ],
+     "created_at": "2026-09-17 10:00",
+     "preview": {
+      "lines": [
+       "待办：体育组借标杆；预约实验室"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "tool_id": "tool-lesson-study",
+   "name": "课例研讨",
+   "examples": [
+    {
+     "example_id": "ls-01",
+     "title": "图像解释支架课 · 课后研讨",
+     "lesson_id": "demo-lesson-lin-01",
+     "topic_id": "research-001",
+     "records": [
+      "口头三步表达完整率 9/14（支架句式撤除后）",
+      "黄明静小组内完成两轮表达（见观测 chapter_only 记录）"
+     ],
+     "follow_ups": [
+      "下轮保留半支架两题"
+     ],
+     "created_at": "2026-09-16 17:00",
+     "preview": {
+      "lines": [
+       "观察员：周老师",
+       "改进点：实际意义环节给反例"
+      ]
+     }
+    },
+    {
+     "example_id": "ls-02",
+     "title": "根式运算讲评课 · 课例记录",
+     "lesson_id": "demo-lesson-rad-02",
+     "records": [
+      "自查单使用率 12/14",
+      "谭敏同类错误复现（见 diagnostic-cases case-04）"
+     ],
+     "follow_ups": [
+      "错因归类四选一模板上线"
+     ],
+     "created_at": "2026-09-13 15:00",
+     "preview": {
+      "lines": [
+       "记录人：吴老师"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "tool_id": "tool-rubric-review",
+   "name": "量规评议",
+   "examples": [
+    {
+     "example_id": "rr-01",
+     "title": "demo-rubric-expression-v1 试评评议",
+     "rubric_id": "demo-rubric-expression-v1",
+     "records": [
+      "两评分者 6/8 一致，分歧集中 level 2-3",
+      "决议：补边界锚例后二轮试评"
+     ],
+     "participants": [
+      "t-001",
+      "t-002"
+     ],
+     "created_at": "2026-09-16 11:00",
+     "preview": {
+      "lines": [
+       "样例：“三步齐全但实际意义照抄题干” 定级 3（二评）"
+      ]
+     }
+    },
+    {
+     "example_id": "rr-02",
+     "title": "demo-rubric-operation-v1 待审说明",
+     "rubric_id": "demo-rubric-operation-v1",
+     "records": [
+      "该量规尚未试评（review_status=draft）",
+      "启用前需两名评分者独立试评 8 份"
+     ],
+     "participants": [],
+     "created_at": "2026-09-18 09:00",
+     "preview": {
+      "lines": [
+       "状态：未审核（边界演示）"
+      ]
+     }
+    }
+   ]
+  }
+ ],
+ "empty_states": [
+  {
+   "tool_id": "tool-co-prep",
+   "scope": "demo-lesson-hist-geo-01",
+   "reason": "历史课时未关联单元，共备记录待迁移（演示空态）"
+  }
+ ]
+}

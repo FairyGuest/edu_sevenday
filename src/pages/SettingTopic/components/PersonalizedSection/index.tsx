@@ -424,11 +424,11 @@ const PersonalizedSection = ({ classes }: { classes: any[] }) => {
                     发布
                   </Button>
                 </Tooltip>
-                <Tooltip title="验证发布器锁定：篡改名单应被拦截">
+                {new URLSearchParams(window.location.search).get("internal_tools") === "1" && <Tooltip title="验证发布器锁定：篡改名单应被拦截">
                   <Button size="small" danger onClick={() => publish(true)}>
-                    改名单发布(演示拦截)
+                    验证名单锁定
                   </Button>
-                </Tooltip>
+                </Tooltip>}
                 <Tooltip title="学生作答后按知识点聚合生成作业报告（复用学情报告字段）">
                   <Button size="small" loading={rptLoading} onClick={simulate}>
                     生成学情报告

@@ -12,7 +12,8 @@ export default {
     leftChatLoading: false, // 左侧聊天加载
     evaluateLoading: false, // 评估加载
     collapse: true, // 历史是否收起
-    type: 1, // 教育类型
+    type: 2, // 单元优先；1=课时，2=单元
+    designSupport: {},
     desginForm: {}, //首页表单
     stageList: [], // 学段学科选项
     subjectList: [], // 教材册别选项

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import LearningContent from "@/components/LearningContent";
 import ProfileRadar from "./ProfileRadar";
 import PipelineFlow from "./PipelineFlow";
 import { Alert, Button, Drawer, Empty, Skeleton, Tag, Tooltip } from "antd";
@@ -11,6 +12,8 @@ import {
   InfoCircleOutlined,
   ReloadOutlined,
   RightOutlined,
+  LeftOutlined,
+  BookOutlined,
 } from "@ant-design/icons";
 import { replacePageQuery } from "@/utils/pageQuery";
 import {
@@ -90,6 +93,28 @@ export function EvidenceList({ evidence }: { evidence: Evidence[] }) {
   );
 }
 
+function StandardEntries({ entries }: { entries: any[] }) {
+  return entries.length ? (
+    <div className="portrait-standards">
+      {entries.map((s) => (
+        <section key={s.standard_id}>
+          <h4>{s.section_path}</h4>
+          <Tag>{s.review_status === "approved" ? "已审核" : "待专家核对"}</Tag>
+          <LearningContent>{s.source_text}</LearningContent>
+          <p className="portrait-muted">
+            {s.document_title}
+            <br />
+            {s.source_file} · {s.source_anchor}
+            {s.excerpt ? " · 节选" : ""}
+          </p>
+        </section>
+      ))}
+    </div>
+  ) : (
+    <p className="portrait-muted">本指标尚无适用课标条目，保留待补依据状态。</p>
+  );
+}
+
 export default function PortraitOverview({
   data,
   scope,
@@ -107,9 +132,17 @@ export default function PortraitOverview({
     key: string;
     item?: string;
   } | null>(null);
+  const [standardsOpen, setStandardsOpen] = useState(false);
+  const [metricPages, setMetricPages] = useState<Record<string, number>>({});
+  useEffect(() => {
+    setSelected(null);
+    setStandardsOpen(false);
+    setMetricPages({});
+  }, [JSON.stringify(scope)]);
   const personal =
     data?.scope === "student" || data?.snapshot?.scope === "student";
   const snapshot = data?.snapshot;
+  const live = snapshot?.statistic_mode === "observations";
   const complete = fullSnapshot(snapshot, scope);
   const snapshotWindow = snapshot?.time_window;
   const showSnapshot = () =>
@@ -154,6 +187,17 @@ export default function PortraitOverview({
             </span>
           )}
         </div>
+        {live && (
+          <Button
+            aria-label="课标依据"
+            size="small"
+            type="text"
+            icon={<BookOutlined />}
+            onClick={() => setStandardsOpen(true)}
+          >
+            课标依据
+          </Button>
+        )}
         <Tooltip title="知识点与能力使用学科证据；素养与学习过程反映阶段性观察，不作为固定人格评价。">
           <Button
             type="text"
@@ -201,7 +245,13 @@ export default function PortraitOverview({
             </div>
           )}
           <div className="portrait-period">
-            <span>{complete ? "统计快照" : "证据范围"}</span>
+            <span>
+              {live
+                ? data?.effective_scope?.label || "全部章节"
+                : complete
+                  ? "统计快照"
+                  : "证据范围"}
+            </span>
             <time>
               {complete ? snapshotWindow.start_date : scope.start_date} 至{" "}
               {complete ? snapshotWindow.end_date : scope.end_date}
@@ -225,8 +275,14 @@ export default function PortraitOverview({
               const d = view.dimension;
               const value = view.complete ? score(d?.score) : null;
               const avg = view.complete ? score(d?.class_avg) : null;
-              const valid = view.items.filter((i) => score(i.value) !== null);
+              const pageCount = Math.max(1, Math.ceil(view.items.length / 6));
+              const page = Math.min(metricPages[meta.key] || 0, pageCount - 1);
+              // Pagination changes only the visible axes, never the full-scope score.
+              const visibleItems = view.items.slice(page * 6, (page + 1) * 6);
+              const valid = visibleItems.filter((i) => score(i.value) !== null);
               const hasChart = view.complete && valid.length >= 3;
+              const compactChart =
+                view.complete && valid.length > 0 && valid.length < 3;
               const weak = [...view.items]
                 .filter((i) => score(i.value) !== null)
                 .sort((a, b) => a.value - b.value)[0];
@@ -241,7 +297,7 @@ export default function PortraitOverview({
                   : "";
               return (
                 <article
-                  className={`portrait-dimension${hasChart ? "" : " is-incomplete"}`}
+                  className={`portrait-dimension${hasChart || compactChart ? "" : " is-incomplete"}`}
                   key={meta.key}
                   data-dimension={meta.key}
                   style={
@@ -263,44 +319,92 @@ export default function PortraitOverview({
                     <b>{value ?? "--"}</b>
                     <span>/ 100</span>
                     <span className="portrait-comparison">
-                      {compare ||
+                      {(live && !personal ? d?.reading_label : compare) ||
                         (value !== null ? "阶段性读数" : "暂无本期读数")}
                     </span>
                   </div>
-                  <div className="portrait-dimension-body">
-                    <div
-                      className="portrait-radar"
-                      data-testid={"radar-" + meta.key}
-                    >
-                      {hasChart ? (
-                        <ChartBoundary key={snapshot?.snapshot_id + meta.key}>
-                          <ProfileRadar
-                            items={valid}
-                            color={meta.color}
-                            personal={personal}
+                  <nav
+                    className="portrait-metric-pages"
+                    aria-label={`${meta.name}指标分页`}
+                  >
+                    <span aria-live="polite">
+                      {pageCount > 1
+                        ? `${page * 6 + 1}-${Math.min((page + 1) * 6, view.items.length)} / ${view.items.length} 项指标`
+                        : `${view.items.length} 项指标`}
+                    </span>
+                    {pageCount > 1 && (
+                      <div>
+                        <Tooltip title="上一组指标">
+                          <Button
+                            size="small"
+                            type="text"
+                            aria-label="上一组指标"
+                            icon={<LeftOutlined />}
+                            disabled={page === 0}
+                            onClick={() =>
+                              setMetricPages((current) => ({
+                                ...current,
+                                [meta.key]: page - 1,
+                              }))
+                            }
                           />
-                        </ChartBoundary>
-                      ) : (
-                        <div className="portrait-chart-empty">
-                          <FileSearchOutlined />
-                          <strong>
-                            {!d
-                              ? "暂无该维度数据"
-                              : view.complete
-                                ? "有效指标不足"
-                                : "尚无本期统计"}
-                          </strong>
-                          <span>
-                            {view.evidence.length
-                              ? `${view.evidence.length} 条可追溯证据`
-                              : "等待有效观测"}
-                          </span>
-                        </div>
-                      )}
-                    </div>
+                        </Tooltip>
+                        <Tooltip title="下一组指标">
+                          <Button
+                            size="small"
+                            type="text"
+                            aria-label="下一组指标"
+                            icon={<RightOutlined />}
+                            disabled={page === pageCount - 1}
+                            onClick={() =>
+                              setMetricPages((current) => ({
+                                ...current,
+                                [meta.key]: page + 1,
+                              }))
+                            }
+                          />
+                        </Tooltip>
+                      </div>
+                    )}
+                  </nav>
+                  <div
+                    className={`portrait-dimension-body${compactChart ? " is-metric-chart" : ""}`}
+                  >
+                    {!compactChart && (
+                      <div
+                        className="portrait-radar"
+                        data-testid={"radar-" + meta.key}
+                      >
+                        {hasChart ? (
+                          <ChartBoundary key={snapshot?.snapshot_id + meta.key}>
+                            <ProfileRadar
+                              items={valid}
+                              color={meta.color}
+                              personal={personal}
+                            />
+                          </ChartBoundary>
+                        ) : (
+                          <div className="portrait-chart-empty">
+                            <FileSearchOutlined />
+                            <strong>
+                              {!d
+                                ? "暂无该维度数据"
+                                : view.complete
+                                  ? "有效指标不足"
+                                  : "尚无本期统计"}
+                            </strong>
+                            <span>
+                              {view.evidence.length
+                                ? `${view.evidence.length} 条可追溯证据`
+                                : "等待有效观测"}
+                            </span>
+                          </div>
+                        )}
+                      </div>
+                    )}
                     {view.items.length > 0 && (
                       <div className="portrait-metrics">
-                        {view.items.map((item) => (
+                        {visibleItems.map((item) => (
                           <button
                             type="button"
                             key={item.key}
@@ -387,8 +491,10 @@ export default function PortraitOverview({
           </div>
           <p className="portrait-scope portrait-footnote">
             <InfoCircleOutlined />{" "}
-            素养与学习过程反映阶段性观察，不作为固定人格评价。
-            {complete && "分数为上述快照的统计值。"}
+            {live
+              ? "以上为任务与量表观察读数，非已审核素养等级；章、节、日期与来源统一筛选，缺失不计零分。"
+              : "素养与学习过程反映阶段性观察，不作为固定人格评价。"}
+            {complete && !live && "分数为上述快照的统计值。"}
           </p>
         </>
       )}
@@ -403,8 +509,39 @@ export default function PortraitOverview({
         width={520}
       >
         <div className="portrait-detail">
-          <Tag>{active?.complete ? "完整快照口径" : "筛选证据摘要"}</Tag>
+          <Tag>
+            {live
+              ? "当前范围 · 量表观察"
+              : active?.complete
+                ? "完整快照口径"
+                : "筛选证据摘要"}
+          </Tag>
           <p>{scopeLabel(scope)}</p>
+          {live && (
+            <>
+              <p>
+                {data?.effective_scope?.label} ·
+                课标映射待审核，不将旧观测量表自动转换为新框架等级。
+              </p>
+              <StandardEntries
+                entries={
+                  activeItem?.standards || active?.dimension?.standards || []
+                }
+              />
+              {activeItem?.observation_basis && (
+                <section className="portrait-suggestion">
+                  <h4>当前指标的计分依据</h4>
+                  <p>{activeItem.observation_basis.definition}</p>
+                  <p>
+                    允许来源：{activeItem.observation_basis.sources.join("、")}
+                  </p>
+                  <p>
+                    量表：{activeItem.observation_basis.rubric_ids.join("、")}
+                  </p>
+                </section>
+              )}
+            </>
+          )}
           {active?.complete && (
             <p>
               {activeItem?.explanation ||
@@ -443,6 +580,67 @@ export default function PortraitOverview({
             />
           )}
         </div>
+      </Drawer>
+      <Drawer
+        title="课标对应与审核状态"
+        open={standardsOpen}
+        onClose={() => setStandardsOpen(false)}
+        width={600}
+      >
+        <p className="portrait-muted">
+          课程内容及学业质量原文已接入；观察读数、课标对应和专业量规审核分别管理。素养雷达当前支持学习经验方面的观察，不覆盖九项核心素养的完整测量。
+        </p>
+        <h4>初中数学 · 核心素养主要表现</h4>
+        <div className="portrait-competencies">
+          {(data?.curriculum_alignment?.subject_reference?.junior || []).map(
+            (name: string) => (
+              <Tag key={name}>{name}</Tag>
+            ),
+          )}
+        </div>
+        <StandardEntries
+          entries={(data?.curriculum_alignment?.standards || []).filter(
+            (s: any) => s.standard_id === "std-core-competencies",
+          )}
+        />
+        <h4>当前内容的教学对应</h4>
+        <div className="portrait-standards">
+          {(data?.curriculum_alignment?.content_links || []).map(
+            (link: any) => (
+              <section key={link.key}>
+                <strong>{link.title}</strong>
+                <Tag>教学对应 · 待审核</Tag>
+                <p>{link.competencies.join("、")}</p>
+                <p>任务：{link.task}</p>
+                <p>所需证据：{link.evidence}</p>
+                <p className="portrait-muted">
+                  {link.source} · L{link.line}；不将对应关系直接换算为素养分数。
+                </p>
+              </section>
+            ),
+          )}
+        </div>
+        <h4>课程内容与学业质量原文</h4>
+        <StandardEntries
+          entries={(data?.curriculum_alignment?.standards || []).filter(
+            (s: any) => s.standard_id !== "std-core-competencies",
+          )}
+        />
+        <h4>学科框架指标</h4>
+        {(data?.curriculum_alignment?.framework?.indicators || []).map(
+          (i: any) => (
+            <p key={i.indicator_id}>
+              <b>{i.name}</b> ·{" "}
+              {i.status === "suspended"
+                ? "暂停评价"
+                : !i.standard_ids?.length
+                  ? "课标依据待补（awaiting_source）"
+                  : "已关联原文 · 量规待审"}
+              <br />
+              <span className="portrait-muted">{i.interpretation_limits}</span>
+            </p>
+          ),
+        )}
       </Drawer>
     </section>
   );

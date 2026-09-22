@@ -60,7 +60,7 @@ export function getPageGreeting(
         ? !!studentId && context?.data?.student_id === studentId
         : !context?.data?.student_id &&
           (tab === "kgraph"
-            ? context?.data?.graphKind === "mastery"
+            ? ["mastery", "evidence"].includes(context?.data?.graphKind)
             : tab === "profile" && !context?.data?.graphKind));
   if (pathname === "/source")
     validContext =
@@ -73,9 +73,15 @@ export function getPageGreeting(
     ...(studentId ? { student_id: studentId } : {}),
   };
   if (isAnalysis)
-    for (const field of ["start_date", "end_date", "sources", "cluster"]) {
+    for (const field of ["start_date", "end_date", "sources", "cluster", "textbook_id", "curriculum_scope_type", "curriculum_scope_id"]) {
       if (params.has(field)) data[field] = params.get(field);
     }
+  if (pathname === "/learning-analysis" && tab !== "homework") {
+    data.evaluation_status = "evidence_based_pending_review";
+    for (const field of ["curriculum_scope_id", "start_date", "end_date"]) data[field] = params.get(field) || "";
+    data.curriculum_scope_type = params.get("curriculum_scope_type") || "all";
+    data.sources = params.has("sources") ? params.get("sources") : "homework,exam,classroom,ai_tutor,practice";
+  }
   const page: AssistantPage = {
     route: pathname,
     title: "教师工作台",
@@ -159,6 +165,11 @@ export function getPageGreeting(
         }),
       ];
       if (classId) g.suggestions = { class_id: classId };
+    }
+    if (pathname === "/learning-analysis" && tab !== "homework") {
+      delete g.suggestions;
+      g.text = "这里是" + g.title + "。可查看当前章、节范围内的任务证据与课标对应；未审核的量规不生成素养等级。";
+      g.quick = [action(tab === "personal" ? "带入教学设计" : "注入班级学情到教学设计", "inject_teaching_design", { class_id: classId }), query("查看当前范围学情", "查看当前范围学情"), action("查看错因案例", "open_diagnostics", { class_id: classId, student_id: studentId })];
     }
   } else if (pathname === "/source") {
     g.key += ":" + resourceTab;

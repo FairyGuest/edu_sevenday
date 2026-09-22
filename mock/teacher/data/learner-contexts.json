@@ -1,0 +1,231 @@
+{
+ "schema_version": "learner-contexts-v1",
+ "data_version": "demo-v1",
+ "is_demo": true,
+ "demo_reference_date": "2026-09-22",
+ "source_policy": "自述（self_report）、教师观察（observation）、未知（unknown）分开记录；unknown 不虚构；不将 8 名重点学生样本冒充全班调查。",
+ "students": [
+  {
+   "student_id": "947bb83daabc33cf",
+   "name": "徐丽",
+   "class_id": "cls-g8-03",
+   "contexts": [
+    {
+     "aspect": "运算习惯",
+     "content": "订正时倾向直接抄正确答案，错因归类需教师督促",
+     "source": "observation",
+     "recorded_at": "2026-09-14",
+     "observer": "demo-teacher-t001"
+    },
+    {
+     "aspect": "生活情境经验",
+     "content": "自述“坐过出租车但没自己付过钱”，对起步价无概念",
+     "source": "self_report",
+     "recorded_at": "2026-09-17"
+    },
+    {
+     "aspect": "课后练习条件",
+     "content": "家中无固定练习时段",
+     "source": "unknown",
+     "recorded_at": null
+    }
+   ]
+  },
+  {
+   "student_id": "aa18e927903a0918",
+   "name": "黄明静",
+   "class_id": "cls-g8-03",
+   "contexts": [
+    {
+     "aspect": "课堂参与方式",
+     "content": "小组内能倾听并执行分工，回避全班发言",
+     "source": "observation",
+     "recorded_at": "2026-09-16"
+    },
+    {
+     "aspect": "图像工具经验",
+     "content": "自述“小学用过温度计折线图”，对坐标顺序仍不稳",
+     "source": "self_report",
+     "recorded_at": "2026-09-16"
+    },
+    {
+     "aspect": "课后练习条件",
+     "content": "未知",
+     "source": "unknown",
+     "recorded_at": null
+    }
+   ]
+  },
+  {
+   "student_id": "358f22c0c0bb9d3a",
+   "name": "曹婷",
+   "class_id": "cls-g8-03",
+   "contexts": [
+    {
+     "aspect": "运算习惯",
+     "content": "步骤完整规范，偶发抄写笔误；选择题常只写答案",
+     "source": "observation",
+     "recorded_at": "2026-09-15"
+    },
+    {
+     "aspect": "生活情境经验",
+     "content": "家里经营小卖部，对进价/售价/套餐情境熟悉",
+     "source": "self_report",
+     "recorded_at": "2026-09-17"
+    }
+   ]
+  },
+  {
+   "student_id": "2bfbc5fb6c6f1c5a",
+   "name": "何宁",
+   "class_id": "cls-g8-03",
+   "contexts": [
+    {
+     "aspect": "作答媒介",
+     "content": "拍照上传作业常模糊或残缺，需教师线下核对",
+     "source": "observation",
+     "recorded_at": "2026-09-12"
+    },
+    {
+     "aspect": "生活情境经验",
+     "content": "未知",
+     "source": "unknown",
+     "recorded_at": null
+    }
+   ]
+  },
+  {
+   "student_id": "6738633173303037",
+   "name": "龙昊",
+   "class_id": "cls-g8-01",
+   "contexts": [
+    {
+     "aspect": "表达方式",
+     "content": "能算对但说不清依据，口头表达简略",
+     "source": "observation",
+     "recorded_at": "2026-09-18"
+    },
+    {
+     "aspect": "生活情境经验",
+     "content": "自述常玩策略类游戏，对“方案选择”情境上手快",
+     "source": "self_report",
+     "recorded_at": "2026-09-17"
+    }
+   ]
+  },
+  {
+   "student_id": "6738633173303030",
+   "name": "彭媛",
+   "class_id": "cls-g8-01",
+   "contexts": [
+    {
+     "aspect": "运算习惯",
+     "content": "自查习惯稳定，答题卡步骤偶有跳步",
+     "source": "observation",
+     "recorded_at": "2026-09-15"
+    }
+   ]
+  },
+  {
+   "student_id": "6738633273303036",
+   "name": "谭敏",
+   "class_id": "cls-g8-02",
+   "contexts": [
+    {
+     "aspect": "努力特征",
+     "content": "订正主动、频次高，但同类错误复现",
+     "source": "observation",
+     "recorded_at": "2026-09-14"
+    },
+    {
+     "aspect": "生活情境经验",
+     "content": "自述“帮家里看过水费单”，对阶梯水价有概念",
+     "source": "self_report",
+     "recorded_at": "2026-09-17"
+    }
+   ]
+  },
+  {
+   "student_id": "6738633273303032",
+   "name": "龚巧莺",
+   "class_id": "cls-g8-02",
+   "contexts": [
+    {
+     "aspect": "运算习惯",
+     "content": "化简口径不稳定，同一题两次结果不同",
+     "source": "observation",
+     "recorded_at": "2026-09-13"
+    },
+    {
+     "aspect": "生活情境经验",
+     "content": "未知",
+     "source": "unknown",
+     "recorded_at": null
+    }
+   ]
+  }
+ ],
+ "class_summaries": [
+  {
+   "class_id": "cls-g8-01",
+   "aspects": [
+    {
+     "aspect": "整体经验",
+     "content": "多数学生有过共享单车/打车付费经验（口头调查，未全员）",
+     "source": "observation",
+     "coverage": "非全员调查，覆盖率未知"
+    }
+   ]
+  },
+  {
+   "class_id": "cls-g8-02",
+   "aspects": [
+    {
+     "aspect": "整体经验",
+     "content": "约三分之二学生见过的水费/电费账单（教师观察+零星自述）",
+     "source": "mixed",
+     "coverage": "抽样印象"
+    }
+   ]
+  },
+  {
+   "class_id": "cls-g8-03",
+   "aspects": [
+    {
+     "aspect": "整体经验",
+     "content": "方案选择类情境经验分化明显，建模课建议先过情境（见教学设计）",
+     "source": "observation",
+     "coverage": "重点学生访谈+课堂观察"
+    }
+   ]
+  }
+ ],
+ "group_tasks": [
+  {
+   "group_id": "demo-group-0301",
+   "task": "图像解释课小组互评（lesson demo-lesson-lin-01）",
+   "actor_ids": [
+    "358f22c0c0bb9d3a",
+    "aa18e927903a0918",
+    "另2名成员（演示）"
+   ],
+   "contribution_evidence_ids": [
+    "pev-g803-1040-a3a76a"
+   ],
+   "attribution": "clear",
+   "note": "曹婷的口头表达有独立事件记录，贡献可归属（ID 动态取自观测文件）"
+  },
+  {
+   "group_id": "demo-group-0302",
+   "task": "弹簧测量小组任务",
+   "actor_ids": [
+    "947bb83daabc33cf",
+    "另3名成员（演示）"
+   ],
+   "contribution_evidence_ids": [],
+   "attribution": "unknown",
+   "student_id": null,
+   "note": "仅有小组产出（数据表一张），个人贡献未知，不摊派个人等级（§6.2）"
+  }
+ ]
+}

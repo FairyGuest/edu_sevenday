@@ -1,0 +1,150 @@
+{
+ "schema_version": "design-templates-v1",
+ "data_version": "demo-v1",
+ "is_demo": true,
+ "demo_reference_date": "2026-09-22",
+ "disclaimer": "以下为演示模板结构，字段名参考海淀单元/课时模板的公开样式改编，未经合作学校认可，不称为海淀官方模板（清单 §2.3）。",
+ "templates": [
+  {
+   "template_id": "demo-unit-tpl-v1",
+   "version": "v1",
+   "adopted_by": [
+    "演示备课组"
+   ],
+   "source": "内部演示改编",
+   "type": "unit",
+   "fields": [
+    {
+     "field_id": "unit.title",
+     "label": "单元名称",
+     "required": true,
+     "order": 1,
+     "input": "text"
+    },
+    {
+     "field_id": "unit.scope",
+     "label": "课程范围（章/节）",
+     "required": true,
+     "order": 2,
+     "input": "catalog_picker"
+    },
+    {
+     "field_id": "unit.goals",
+     "label": "单元目标（可观察行为）",
+     "required": true,
+     "order": 3,
+     "input": "goal_editor"
+    },
+    {
+     "field_id": "unit.learner_analysis",
+     "label": "学情分析（引用画像/观测）",
+     "required": true,
+     "order": 4,
+     "input": "portrait_ref"
+    },
+    {
+     "field_id": "unit.scenarios",
+     "label": "情境任务",
+     "required": false,
+     "order": 5,
+     "input": "scenario_ref"
+    },
+    {
+     "field_id": "unit.assessment",
+     "label": "评价方式与量规",
+     "required": true,
+     "order": 6,
+     "input": "rubric_ref"
+    }
+   ],
+   "sample": "teaching-units.json 的 demo-unit-radical 即按本模板填写（status=confirmed 的认可样例候选）。",
+   "acceptance_note": "认可样例需教研组复核后标记；当前仅演示。"
+  },
+  {
+   "template_id": "demo-lesson-tpl-v1",
+   "version": "v1",
+   "adopted_by": [
+    "演示备课组"
+   ],
+   "source": "内部演示改编",
+   "type": "lesson",
+   "fields": [
+    {
+     "field_id": "lesson.title",
+     "label": "课时名称",
+     "required": true,
+     "order": 1,
+     "input": "text"
+    },
+    {
+     "field_id": "lesson.unit_ref",
+     "label": "所属单元",
+     "required": true,
+     "order": 2,
+     "input": "unit_ref"
+    },
+    {
+     "field_id": "lesson.goals",
+     "label": "课时目标",
+     "required": true,
+     "order": 3,
+     "input": "goal_editor"
+    },
+    {
+     "field_id": "lesson.tasks",
+     "label": "任务链（含支架）",
+     "required": true,
+     "order": 4,
+     "input": "task_editor"
+    },
+    {
+     "field_id": "lesson.questions",
+     "label": "例题/作业题（白名单）",
+     "required": true,
+     "order": 5,
+     "input": "question_ref"
+    },
+    {
+     "field_id": "lesson.reflection",
+     "label": "课后反思",
+     "required": false,
+     "order": 6,
+     "input": "textarea"
+    }
+   ],
+   "sample": "design-workflows.json 各课时草稿按本模板分步生成。"
+  }
+ ],
+ "field_mappings": [
+  {
+   "template_field_id": "unit.scope",
+   "step_key": "scope",
+   "data_path": "teaching-units.units[].scope",
+   "missing_handling": "必填，缺失则工作流不可确认"
+  },
+  {
+   "template_field_id": "unit.goals",
+   "step_key": "goals",
+   "data_path": "teaching-units.units[].unit_goals",
+   "missing_handling": "至少 1 条可观察行为"
+  },
+  {
+   "template_field_id": "unit.learner_analysis",
+   "step_key": "analysis",
+   "data_path": "design-workflows.lessons[].steps.analysis.draft",
+   "missing_handling": "可引用画像读数，未引用时提示但不阻断"
+  },
+  {
+   "template_field_id": "unit.assessment",
+   "step_key": "assessment",
+   "data_path": "design-workflows.lessons[].steps.assessment.draft",
+   "missing_handling": "须引用 assessment-rubrics 的 rubric_id"
+  },
+  {
+   "template_field_id": "lesson.questions",
+   "step_key": "questions",
+   "data_path": "design-workflows.lessons[].steps.questions.draft",
+   "missing_handling": "仅可引用白名单题目（diagnostic-attempts.questions）"
+  }
+ ]
+}

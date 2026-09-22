@@ -137,7 +137,7 @@ export function MaterialPreview({
             <span>
               {gradeLabels[item.grade]} · {item.subject}
             </span>
-            {item.is_demo && <Tag>示例数据</Tag>}
+            
           </div>
           <LearningContent>{item.summary}</LearningContent>
           {(item.preview || []).map((section, index) => (
@@ -172,7 +172,7 @@ export function MaterialItems({
           <div className="material-meta">
             {item.type === "plans" ? <BookOutlined /> : <DesktopOutlined />}
             <span>{item.format}</span>
-            {item.is_demo && <Tag>示例</Tag>}
+            
           </div>
           <button className="material-title" onClick={() => onPreview(item)}>
             {item.title}

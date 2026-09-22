@@ -703,6 +703,99 @@
     "thinking_perspective"
    ],
    "explanation": "关联题正确率 72%，掌握较稳固，可作为后续综合题的支撑知识点。"
+  },
+  {
+   "node_id": "kp-pythagoras-inverse",
+   "name": "勾股定理的逆定理",
+   "chapter": "第17章 勾股定理",
+   "level": "L3",
+   "cluster": "geo",
+   "mastery": 80,
+   "mastery_band": "较熟练",
+   "sample_count": 50,
+   "evidence_strength": "sufficient",
+   "evidence_strength_label": "样本充足",
+   "sources": [
+    "作业记录",
+    "考试记录",
+    "课堂互动"
+   ],
+   "goal_ids": [
+    "goal-4"
+   ],
+   "ability_keys": [
+    "problem_analysis",
+    "representation_transfer"
+   ],
+   "literacy_keys": [
+    "learning_interest"
+   ],
+   "process_keys": [
+    "class_participation"
+   ],
+   "explanation": "关联题正确率 70%，掌握较稳固，可作为后续综合题的支撑知识点。"
+  },
+  {
+   "node_id": "kp-data-central-tendency",
+   "name": "数据的集中趋势",
+   "chapter": "第20章 数据的分析",
+   "level": "L2",
+   "cluster": "data",
+   "mastery": 79,
+   "mastery_band": "较熟练",
+   "sample_count": 74,
+   "evidence_strength": "sufficient",
+   "evidence_strength_label": "样本充足",
+   "sources": [
+    "作业记录",
+    "考试记录",
+    "人机交互"
+   ],
+   "goal_ids": [
+    "goal-2"
+   ],
+   "ability_keys": [
+    "problem_analysis",
+    "memorize_understand"
+   ],
+   "literacy_keys": [
+    "learning_motivation"
+   ],
+   "process_keys": [
+    "thinking_perspective"
+   ],
+   "explanation": "关联题正确率 70%，掌握较稳固，可作为后续综合题的支撑知识点。"
+  },
+  {
+   "node_id": "kp-data-dispersion",
+   "name": "数据的离散程度",
+   "chapter": "第20章 数据的分析",
+   "level": "L3",
+   "cluster": "data",
+   "mastery": 73,
+   "mastery_band": "较熟练",
+   "sample_count": 19,
+   "evidence_strength": "sufficient",
+   "evidence_strength_label": "样本充足",
+   "sources": [
+    "作业记录",
+    "考试记录",
+    "人机交互"
+   ],
+   "goal_ids": [
+    "goal-2"
+   ],
+   "ability_keys": [
+    "problem_analysis",
+    "memorize_understand"
+   ],
+   "literacy_keys": [
+    "learning_motivation"
+   ],
+   "process_keys": [
+    "thinking_perspective"
+   ],
+   "explanation": "关联题正确率 61%，掌握较稳固，可作为后续综合题的支撑知识点。"
   }
  ],
  "edges": [
@@ -840,18 +933,39 @@
    "edge_id": "edge-cls-g8-01-19"
   },
   {
+   "source": "kp-pythagoras",
+   "target": "kp-pythagoras-inverse",
+   "relation_type": "prerequisite",
+   "explanation": "先掌握勾股定理（由角定边），再学逆定理（由边定角），条件与结论互换。",
+   "edge_id": "edge-cls-g8-01-20"
+  },
+  {
+   "source": "kp-data-central-tendency",
+   "target": "kp-data-dispersion",
+   "relation_type": "prerequisite",
+   "explanation": "先用集中趋势刻画整体水平，再比较离散程度，两者结合才能完整描述数据。",
+   "edge_id": "edge-cls-g8-01-21"
+  },
+  {
+   "source": "kp-function-application",
+   "target": "kp-data-central-tendency",
+   "relation_type": "ability_related",
+   "explanation": "两节点共同指向「问题分析」能力：方案比较常需平均数等统计量支撑论证。",
+   "edge_id": "edge-cls-g8-01-22"
+  },
+  {
    "source": "kp-factorization",
    "target": "kp-congruent-judge",
    "relation_type": "ability_related",
    "explanation": "两节点共同指向「问题分析」能力：都需要先辨结构、再选定理/方法。",
-   "edge_id": "edge-cls-g8-01-20"
+   "edge_id": "edge-cls-g8-01-23"
   }
  ],
  "stats": {
-  "n_nodes": 20,
-  "n_edges": 20,
+  "n_nodes": 23,
+  "n_edges": 23,
   "by_band": {
-   "较熟练": 15,
+   "较熟练": 18,
    "已掌握": 4,
    "证据不足": 1
   },

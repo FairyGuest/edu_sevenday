@@ -1552,17 +1552,17 @@
    "target_type": "recommendation",
    "target_id": "rec-homework-cls-g8-01",
    "conclusion": "下次作业建议：减重复、补短板",
-   "reason": "「因式分解」掌握度 77（较熟练），而已掌握章节的重复题占比仍约 31%。",
-   "evidence_summary": "近 2 周作业共 24 题中，与「因式分解」关联的仅 4 题。",
+   "reason": "「数据的离散程度」掌握度 73（较熟练），而已掌握章节的重复题占比仍约 31%。",
+   "evidence_summary": "近 2 周作业共 24 题中，与「数据的离散程度」关联的仅 4 题。",
    "compare_text": "同类班级（1 班）同知识点作业关联题为 6 题。",
-   "sample_count": 32,
+   "sample_count": 19,
    "source_names": [
     "课后作业",
     "9月单元测"
    ],
    "time_range_text": "近 14 天",
    "warning_type": "none",
-   "suggestion": "下次作业：删去 2 道已掌握的重复计算题，加入 3 道「因式分解」变式题（1 基础 + 1 图像/情境 + 1 综合）。",
+   "suggestion": "下次作业：删去 2 道已掌握的重复计算题，加入 3 道「数据的离散程度」变式题（1 基础 + 1 图像/情境 + 1 综合）。",
    "evidence": [
     {
      "evidence_id": "ev-cls-g8-01-26-0",
@@ -1572,13 +1572,13 @@
      "student_id": null,
      "class_id": "cls-g8-01",
      "question_id": "que-d276572fe27e4a3181cf012d0f25af34",
-     "question_stem": "计算：a²b/(3c) × 6c²/(ab²) ÷ (a/b)。",
-     "answer_summary": "化简后未化成最简二次根式就合并",
+     "question_stem": "结合图像解释：为什么水箱注水问题中直线的斜率表示注水速度？",
+     "answer_summary": "将截距误判为斜率，解释趋势时只说“变大”未指明 y 随 x",
      "correct": false,
      "score": 1,
      "full_score": 5,
      "knowledge_ids": [
-      "kp-factorization"
+      "kp-data-dispersion"
      ],
      "ability_keys": [],
      "literacy_keys": [],

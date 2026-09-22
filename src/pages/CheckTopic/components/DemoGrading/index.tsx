@@ -346,7 +346,7 @@ const DemoGrading = () => {
                   type="warning"
                   showIcon
                   style={{ marginBottom: 12 }}
-                  message="该学生尚未提交，无作答可批改；可在「下发与回收」工作台催交或演示代交。"
+                  message="该学生尚未提交，无作答可批改；可在「下发与回收」工作台催交。"
                 />
               )}
 

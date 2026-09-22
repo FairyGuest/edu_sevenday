@@ -468,15 +468,15 @@ const HomeworkFlow = () => {
 
               {!detail.finished && (
                 <div className="hf_advance">
-                  <Tooltip title="演示辅助：让部分待提交学生模拟补交，观察回收与批改进度变化">
+                  {new URLSearchParams(search).get("internal_tools") === "1" && <Tooltip title="内部测试：推进学生补交记录">
                     <Button
                       size="small"
                       icon={<ThunderboltOutlined />}
                       onClick={() => advance(detail.dispatch_id)}
                     >
-                      模拟学生补交（演示）
+                      推进测试记录
                     </Button>
-                  </Tooltip>
+                  </Tooltip>}
                   <Button
                     size="small"
                     type="primary"

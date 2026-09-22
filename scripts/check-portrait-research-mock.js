@@ -23,7 +23,7 @@ for (const c of CLS) {
   ok(stu.students.length >= 8 && stu.students.length <= 12, `${c} 学生数 ${stu.students.length} 在 8-12`);
   ok(stu.students.every((s) => s.dimensions.length === 4 && s.dimensions.every((d) => d.radar_items.length === 6)), `${c} 每生四维×6项`);
   ok(stu.students.every((s) => s.dimensions.every((d) => d.class_avg != null && d.rank_pct != null)), `${c} 学生维度带班均+百分位`);
-  ok(g.nodes.length >= 12 && g.nodes.length <= 20, `${c} 图谱节点 ${g.nodes.length} 在 12-20`);
+  ok(g.nodes.length >= 12 && g.nodes.length <= 25, `${c} 图谱节点 ${g.nodes.length} 在 12-25（复习周新增逆定理/数据节点）`);
   ok(g.edges.length > 0 && g.edges.every((e) => e.relation_type && e.explanation), `${c} 图谱边 ${g.edges.length} 条且类型/解释齐`);
   ok(["time_windows", "sources", "dimension_types", "mastery_bands", "evidence_strengths", "goals"].every((k) => g.filters[k] && g.filters[k].length), `${c} 筛选项枚举齐备`);
   ok(!JSON.stringify([cls, stu, exp, g]).includes("NaN"), `${c} 无 NaN 文本`);

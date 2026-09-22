@@ -1,0 +1,190 @@
+{
+ "schema_version": "curriculum-catalog-v1",
+ "data_version": "demo-v1",
+ "is_demo": true,
+ "demo_reference_date": "2026-09-22",
+ "subject": {
+  "subject_id": "math",
+  "name": "初中数学",
+  "stage": "初中"
+ },
+ "textbooks": [
+  {
+   "textbook_id": "demo-math-g8-vol2-v1",
+   "name": "人教版初中数学八年级下册（演示口径）",
+   "publisher": "人民教育出版社",
+   "edition_year": "2012课标版",
+   "grade": "g8",
+   "volume": "下册",
+   "review_status": "in_review",
+   "source_note": "章节顺序与页码锚点参考 graph4rec 教材图谱（人教版数学八年级下册_graph.ttl）；页码为图谱标注的近似锚点，待教师按实际教材核对后方可作权威目录。",
+   "chapters": [
+    {
+     "chapter_id": "demo-ch-radical",
+     "no": "第16章",
+     "title": "二次根式",
+     "order": 1,
+     "source_pages": "pp.2-20",
+     "sections": [
+      {
+       "section_id": "demo-sec-radical-01",
+       "no": "16.1",
+       "title": "二次根式的概念与性质",
+       "order": 1,
+       "source_pages": "pp.2-8"
+      },
+      {
+       "section_id": "demo-sec-radical-02",
+       "no": "16.2",
+       "title": "二次根式的乘除",
+       "order": 2,
+       "source_pages": "pp.9-15"
+      },
+      {
+       "section_id": "demo-sec-radical-03",
+       "no": "16.3",
+       "title": "二次根式的加减",
+       "order": 3,
+       "source_pages": "pp.16-20"
+      }
+     ]
+    },
+    {
+     "chapter_id": "demo-ch-pythagoras",
+     "no": "第17章",
+     "title": "勾股定理",
+     "order": 2,
+     "source_pages": "pp.22-44",
+     "sections": [
+      {
+       "section_id": "demo-sec-pythagoras-01",
+       "no": "17.1",
+       "title": "探索勾股定理",
+       "order": 1,
+       "source_pages": "pp.22-33"
+      },
+      {
+       "section_id": "demo-sec-pythagoras-02",
+       "no": "17.2",
+       "title": "勾股定理的逆定理",
+       "order": 2,
+       "source_pages": "pp.34-44",
+       "coverage_note": "复习周补齐节级数据（09-16 复习课+09-18 复习单）；节空态演示已迁移至边界样例（见 portrait-data-coverage boundary_samples）"
+      }
+     ]
+    },
+    {
+     "chapter_id": "demo-ch-quad",
+     "no": "第18章",
+     "title": "平行四边形",
+     "order": 3,
+     "source_pages": "pp.46-70",
+     "sections": [
+      {
+       "section_id": "demo-sec-quad-01",
+       "no": "18.1",
+       "title": "平行四边形",
+       "order": 1,
+       "source_pages": "pp.46-58"
+      },
+      {
+       "section_id": "demo-sec-quad-02",
+       "no": "18.2",
+       "title": "特殊的平行四边形",
+       "order": 2,
+       "source_pages": "pp.59-70"
+      }
+     ]
+    },
+    {
+     "chapter_id": "demo-ch-function",
+     "no": "第19章",
+     "title": "一次函数",
+     "order": 4,
+     "source_pages": "pp.73-112",
+     "sections": [
+      {
+       "section_id": "demo-sec-function-01",
+       "no": "19.1",
+       "title": "函数",
+       "order": 1,
+       "source_pages": "pp.73-76"
+      },
+      {
+       "section_id": "demo-sec-function-02",
+       "no": "19.2",
+       "title": "一次函数的图像与性质",
+       "order": 2,
+       "source_pages": "pp.77-109"
+      },
+      {
+       "section_id": "demo-sec-function-03",
+       "no": "19.3",
+       "title": "课题学习·选择方案",
+       "order": 3,
+       "source_pages": "pp.110-112"
+      }
+     ]
+    },
+    {
+     "chapter_id": "demo-ch-data",
+     "no": "第20章",
+     "title": "数据的分析",
+     "order": 5,
+     "source_pages": "pp.113-134",
+     "sections": [
+      {
+       "section_id": "demo-sec-data-01",
+       "no": "20.1",
+       "title": "数据的集中趋势",
+       "order": 1,
+       "source_pages": "pp.113-125",
+       "coverage_note": "09-19 前测（标注采集）+09-22 起始课+当晚作业；节级数据自 09-22 起补齐"
+      },
+      {
+       "section_id": "demo-sec-data-02",
+       "no": "20.2",
+       "title": "数据的波动程度",
+       "order": 2,
+       "source_pages": "pp.126-134",
+       "coverage_note": "09-20 波动直觉经验调查（标注采集，方差未教）+09-22 课堂经验讨论；正式新授自 09-24 起（滚动日程）"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "textbook_id": "demo-math-g8-vol1-alt-v1",
+   "name": "北师大版初中数学八年级上册（演示对照）",
+   "publisher": "北京师范大学出版社",
+   "edition_year": "2012课标版",
+   "grade": "g8",
+   "volume": "上册",
+   "review_status": "draft",
+   "source_note": "仅用于「同名不同教材节点」边界演示，未作为主演示目录。",
+   "chapters": [
+    {
+     "chapter_id": "demo-alt-ch-real",
+     "no": "第2章",
+     "title": "实数",
+     "order": 1,
+     "source_pages": "pp.35-50",
+     "sections": [
+      {
+       "section_id": "demo-alt-sec-real-07",
+       "no": "7",
+       "title": "二次根式",
+       "order": 7,
+       "source_pages": "pp.45-50",
+       "name_collision_note": "节名「二次根式」与主演示教材第16章同名但非同一节点，属于不同 textbook_id 命名空间"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "notes": [
+  "教材目录为演示候选（is_demo），教师确认前不得宣称权威；页码锚点来自 graph4rec 教材图谱。",
+  "demo-sec-pythagoras-02 / demo-sec-quad-02 / demo-sec-data-02 故意不配作答与观测数据，供空态与覆盖率演示。"
+ ]
+}

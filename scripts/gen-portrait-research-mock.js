@@ -172,16 +172,19 @@ const NODE_DEFS = [
   { id: "kp-function-image", name: "一次函数图像", chapter: "第19章 一次函数", level: "L2", cluster: "function" },
   { id: "kp-function-property", name: "一次函数的图象和性质", chapter: "第19章 一次函数", level: "L4", cluster: "function" },
   { id: "kp-function-application", name: "实际问题与一次函数", chapter: "第19章 一次函数", level: "L4", cluster: "function" },
+  { id: "kp-pythagoras-inverse", name: "勾股定理的逆定理", chapter: "第17章 勾股定理", level: "L3", cluster: "geo" },
+  { id: "kp-data-central-tendency", name: "数据的集中趋势", chapter: "第20章 数据的分析", level: "L2", cluster: "data" },
+  { id: "kp-data-dispersion", name: "数据的离散程度", chapter: "第20章 数据的分析", level: "L3", cluster: "data" },
 ];
 const CLUSTER_PROFILE = {
-  "cls-g8-01": { base: 80, delta: { function: -3, calc: 2, geo: 4 }, lowSample: ["kp-pythagoras"] },
-  "cls-g8-02": { base: 73, delta: { function: -4, calc: -19, geo: 1 }, lowSample: ["kp-fraction"] },
-  "cls-g8-03": { base: 71, delta: { function: -21, calc: -8, geo: -2 }, lowSample: ["kp-parallelogram"] },
+  "cls-g8-01": { base: 80, delta: { function: -3, calc: 2, geo: 4, data: -6 }, lowSample: ["kp-pythagoras"] },
+  "cls-g8-02": { base: 73, delta: { function: -4, calc: -19, geo: 1, data: -9 }, lowSample: ["kp-fraction"] },
+  "cls-g8-03": { base: 71, delta: { function: -21, calc: -8, geo: -2, data: -11 }, lowSample: ["kp-parallelogram"] },
 };
-const ABILITY_OF = { calc: ["operation_reasoning", "memorize_understand"], geo: ["problem_analysis", "representation_transfer"], function: ["representation_transfer", "transfer_apply"] };
-const LITERACY_OF = { calc: ["effort_level"], geo: ["learning_interest"], function: ["learning_motivation"] };
-const PROCESS_OF = { calc: ["homework_process", "homework_correction"], geo: ["class_participation"], function: ["thinking_perspective"] };
-const GOAL_OF = { calc: ["goal-3"], geo: ["goal-4"], function: ["goal-2", "goal-5"] };
+const ABILITY_OF = { calc: ["operation_reasoning", "memorize_understand"], geo: ["problem_analysis", "representation_transfer"], function: ["representation_transfer", "transfer_apply"], data: ["problem_analysis", "memorize_understand"] };
+const LITERACY_OF = { calc: ["effort_level"], geo: ["learning_interest"], function: ["learning_motivation"], data: ["learning_motivation"] };
+const PROCESS_OF = { calc: ["homework_process", "homework_correction"], geo: ["class_participation"], function: ["thinking_perspective"], data: ["thinking_perspective"] };
+const GOAL_OF = { calc: ["goal-3"], geo: ["goal-4"], function: ["goal-2", "goal-5"], data: ["goal-2"] };
 
 const EDGE_DEFS = [
   { s: "kp-coordinate", t: "kp-function", type: "prerequisite", exp: "坐标系读图是理解函数图像的前置知识。" },
@@ -203,6 +206,9 @@ const EDGE_DEFS = [
   { s: "kp-radical-addsub", t: "kp-fraction-calc", type: "ability_related", exp: "两节点共同指向「运算推理」能力：化简—通分—合并的程序性步骤同构。" },
   { s: "kp-function-image", t: "kp-axisymmetry", type: "ability_related", exp: "两节点共同指向「表征转换」能力：图像的对称性与变换均需图形—符号互译。" },
   { s: "kp-function-application", t: "kp-pythagoras", type: "ability_related", exp: "两节点共同指向「迁移应用」能力：在真实情境中选模、建模并检验。" },
+  { s: "kp-pythagoras", t: "kp-pythagoras-inverse", type: "prerequisite", exp: "先掌握勾股定理（由角定边），再学逆定理（由边定角），条件与结论互换。" },
+  { s: "kp-data-central-tendency", t: "kp-data-dispersion", type: "prerequisite", exp: "先用集中趋势刻画整体水平，再比较离散程度，两者结合才能完整描述数据。" },
+  { s: "kp-function-application", t: "kp-data-central-tendency", type: "ability_related", exp: "两节点共同指向「问题分析」能力：方案比较常需平均数等统计量支撑论证。" },
   { s: "kp-factorization", t: "kp-congruent-judge", type: "ability_related", exp: "两节点共同指向「问题分析」能力：都需要先辨结构、再选定理/方法。" },
 ];
 
@@ -913,6 +919,7 @@ function main() {
   const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf-8"));
   const generated = fs.readdirSync(DATA).filter((f) => f.endsWith(".json") && f !== "manifest.json").sort();
   manifest.files = generated;
+  manifest.class_ids = classes.classes.map((c) => c.class_id); // 与 classes.json 主班级清单保持一致
   manifest.generated_at = "2026-09-20";
   manifest.note = "教师端 mock fixture：3 班差异化画像 + 真实题库题干 + 逐生个性化卷 + 教案/个人题库 + 四维画像/解释性提示/知识图谱筛选/校本教研（2026-09-20 清单）";
   fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 1) + "\n", "utf-8");

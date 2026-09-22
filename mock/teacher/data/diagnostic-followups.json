@@ -1,0 +1,87 @@
+{
+ "schema_version": "diagnostic-followups-v1",
+ "data_version": "demo-v1",
+ "is_demo": true,
+ "demo_reference_date": "2026-09-22",
+ "followups": [
+  {
+   "followup_id": "fu-01",
+   "case_id": "case-01",
+   "intervention_id": "iv-01",
+   "followup_attempt_ids": [
+    "at-003",
+    "at-024"
+   ],
+   "target_outcomes": [
+    "迁移题分类正确",
+    "能口头说明范围条件依据"
+   ],
+   "observed_change": "已达成：tran-r8-07 分类正确并说明“距离非负”（at-003）；三类取值辨识通过（at-024）。",
+   "next_action": "stop",
+   "stop_reason": "reached_standard",
+   "recorded_at": "2026-09-20 10:00"
+  },
+  {
+   "followup_id": "fu-02",
+   "case_id": "case-04",
+   "intervention_id": "iv-04",
+   "followup_attempt_ids": [
+    "at-014"
+   ],
+   "target_outcomes": [
+    "独立作业运算题零程序性错误"
+   ],
+   "observed_change": "未改善：tran-r8-01 复测展开计算漏项（at-014）；辨识题（at-025/at-026）此前已通过。",
+   "next_action": "adjust_support",
+   "adjust_detail": "加错因归类四选一模板 + 隔日两题短练，一周后同型复测。",
+   "recorded_at": "2026-09-20 10:05"
+  },
+  {
+   "followup_id": "fu-03",
+   "case_id": "case-02",
+   "intervention_id": "iv-02",
+   "followup_attempt_ids": [],
+   "target_outcomes": [
+    "两情境迁移题正确处理固定条件"
+   ],
+   "observed_change": "未完成：学生请假，复测未做。",
+   "next_action": "collect_evidence",
+   "collect_detail": "返校后补做 tran-r8-04 变式一道（已留卷）。",
+   "recorded_at": "2026-09-20 10:10"
+  },
+  {
+   "followup_id": "fu-04",
+   "case_id": "case-06",
+   "intervention_id": "iv-05",
+   "followup_attempt_ids": [
+    "at-018",
+    "at-051"
+   ],
+   "target_outcomes": [
+    "无图像条件下判断增减性并写依据"
+   ],
+   "observed_change": "证据收集完成：09-21 纯解析式复测（at-051）仍错且 k 符号与方向对应混乱，与首测答对（at-017）的冲突仍存在；已提交教师复核，维持待补证。",
+   "next_action": "collect_evidence",
+   "collect_detail": "已完成纯解析式判断（at-051）；下一步由教师复核证据链后决定是否立案例。",
+   "recorded_at": "2026-09-22 10:15",
+   "note": "§8 边界：答对但无依据 + 证据冲突。"
+  },
+  {
+   "followup_id": "fu-05",
+   "case_id": "case-08",
+   "intervention_id": "iv-02",
+   "followup_attempt_ids": [
+    "at-033",
+    "at-032",
+    "at-054"
+   ],
+   "target_outcomes": [
+    "条件意识跨情境迁移"
+   ],
+   "observed_change": "改善推进：纯费用情境辨识通过（at-033）；调整支持后 09-22 复测（at-054）量程边界意识已建立。",
+   "next_action": "adjust_support",
+   "adjust_detail": "iv-02 再观察一轮（量程已稳，巩固固定条件类情境），连续两周稳定后停止。",
+   "recorded_at": "2026-09-22 10:20"
+  }
+ ]
+}

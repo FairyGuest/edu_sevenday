@@ -4,7 +4,7 @@ import dayjs, { Dayjs } from "dayjs";
 import { getDataService } from "@/pages/TeacherProfile/services";
 import { defaultDateRange } from "@/pages/TeacherProfile/components/DatePresetGroup";
 import { replacePageQuery } from "@/utils/pageQuery";
-import { SOURCES, Scope } from "./domain";
+import { SOURCES, SOURCE_NAMES, Scope } from "./domain";
 
 export function useProfileScope() {
   const location = useLocation();
@@ -18,20 +18,44 @@ export function useProfileScope() {
   const end = parse("end_date", defaults[1]).format("YYYY-MM-DD");
   const selected = (q.get("sources") || "")
     .split(",")
+    .map((s) => SOURCE_NAMES[s] || s)
     .filter((s) => SOURCES.includes(s));
-  const sourceKey = (selected.length ? selected : SOURCES).join(",");
-  const sources = useMemo(() => sourceKey.split(","), [sourceKey]);
-  const dateRange = useMemo<[Dayjs, Dayjs]>(
-    () => (start <= end ? [dayjs(start), dayjs(end)] : defaults),
-    [start, end],
+  const sourceKey = (
+    q.get("sources") === "none" ? [] : selected.length ? selected : SOURCES
+  ).join(",");
+  const sources = useMemo(
+    () => sourceKey.split(",").filter(Boolean),
+    [sourceKey],
+  );
+  const textbook_id = q.get("textbook_id") || "";
+  const curriculum_scope_type = q.get("curriculum_scope_type") || "all";
+  const curriculum_scope_id = q.get("curriculum_scope_id") || "";
+  const allDates = q.get("date_all") === "1";
+  const dateRange = useMemo<[Dayjs | null, Dayjs | null]>(
+    () =>
+      allDates
+        ? [null, null]
+        : start <= end
+          ? [dayjs(start), dayjs(end)]
+          : defaults,
+    [start, end, allDates],
   );
   const scope: Scope = useMemo(
     () => ({
-      start_date: dateRange[0].format("YYYY-MM-DD"),
-      end_date: dateRange[1].format("YYYY-MM-DD"),
+      start_date: dateRange[0]?.format("YYYY-MM-DD") || "",
+      end_date: dateRange[1]?.format("YYYY-MM-DD") || "",
       sources,
+      textbook_id,
+      curriculum_scope_type,
+      curriculum_scope_id,
     }),
-    [dateRange, sources],
+    [
+      dateRange,
+      sources,
+      textbook_id,
+      curriculum_scope_type,
+      curriculum_scope_id,
+    ],
   );
   const setSources = (next: string[]) => {
     if (next.length) replacePageQuery({ sources: next.join(",") });
@@ -40,12 +64,24 @@ export function useProfileScope() {
     replacePageQuery({
       start_date: dates?.[0]?.format("YYYY-MM-DD") || null,
       end_date: dates?.[1]?.format("YYYY-MM-DD") || null,
+      date_all: !dates?.[0] && !dates?.[1] ? "1" : null,
     });
   return { sources, dateRange, scope, setSources, setDateRange };
 }
 
-export function usePortrait(classId: string, studentId = "") {
-  const key = classId + ":" + studentId;
+export function usePortrait(classId: string, studentId = "", scope?: Scope) {
+  const params = {
+    class_id: classId,
+    ...(studentId ? { student_id: studentId } : {}),
+    ...(scope
+      ? {
+          ...scope,
+          sources: scope.sources.join(",") || "none",
+          statistics: "observations",
+        }
+      : {}),
+  };
+  const key = JSON.stringify(params);
   const [state, setState] = useState<{
     key: string;
     data?: any;
@@ -57,10 +93,7 @@ export function usePortrait(classId: string, studentId = "") {
     let alive = true;
     if (!classId) return;
     setState({ key, loading: true });
-    getDataService(
-      { class_id: classId, ...(studentId ? { student_id: studentId } : {}) },
-      "portraitsUrl",
-    )
+    getDataService(params, "portraitsUrl")
       .then((result) => {
         if (!alive) return;
         setState(

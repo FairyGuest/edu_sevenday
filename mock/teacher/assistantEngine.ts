@@ -1,4 +1,5 @@
 import { readTeacherFixture as read } from "./fixtures";
+import { profile as scopedLearningProfile } from "./teachingSupport";
 import {
   SOURCES,
   Scope,
@@ -551,6 +552,15 @@ export function assistantConversation(body: any): any {
     let m = String(body.message || "")
       .trim()
       .slice(0, 4000);
+    if (body.page?.data?.evaluation_status === "evidence_based_pending_review" && (body.page_command === true || /当前|本页|本班|所选/.test(m)) && /学情|画像|素养|能力|证据|图谱|注入|带入/.test(m)) {
+      const scope = body.page.data;
+      const p = scopedLearningProfile(scope);
+      s.class_id = p.effective_scope.class_id;
+      s.students = p.effective_scope.student_id ? roster(s.class_id).filter(x => x.student_id === p.effective_scope.student_id) : [];
+      s.scope = normalizeScope(scope);
+      if (/注入|带入/.test(m) && !/不要|不必|不需要|先不|暂不|别|取消|怎么|如何|是否/.test(m)) return result("已准备当前课程范围的学情依据。", [], { auto_action: { key: "inject_teaching_design", params: p.effective_scope } });
+      return result(`${p.effective_scope.label}：有效记录 ${p.coverage.events} 条，覆盖 ${p.coverage.students}/${p.coverage.total_students} 名学生。\n\n${p.knowledge.map((k: any) => `${k.name}：任务得分率 ${k.value}%，${k.events} 条记录`).join('；')}\n\n任务得分率不是素养等级。未审核的量规、缺失或冲突证据均不产生能力定级；错因需要结合步骤、反向证据及教师复核。`, [], { model_context: { scope: p.effective_scope, knowledge: p.knowledge, evaluation_limits: "仅描述当前任务证据，不由正确率推断素养或人格" } });
+    }
     // A greeting shortcut deliberately targets its page snapshot. Ordinary chat
     // keeps conversational references even after navigation.
     if (body.page_command === true) {

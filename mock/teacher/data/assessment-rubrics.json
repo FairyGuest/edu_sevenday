@@ -1,0 +1,304 @@
+{
+ "schema_version": "assessment-rubrics-v1",
+ "data_version": "demo-v1",
+ "is_demo": true,
+ "demo_reference_date": "2026-09-22",
+ "threshold_note": "本文件所有等级与阈值均为 demo_only 演示口径，未经评分者间一致性检验，不得作为正式评价标准。",
+ "rubrics": [
+  {
+   "rubric_id": "demo-rubric-expression-v1",
+   "version": "v1",
+   "indicator_id": "demo-ind-graph-expression",
+   "subject_id": "math",
+   "grades": [
+    "g8"
+   ],
+   "task_conditions": "一次函数图像解释任务（口头或书面），支架句式已撤除",
+   "forbidden_extrapolation": "不得据表达质量推断学习态度或动机",
+   "levels": [
+    {
+     "level": 0,
+     "description": "未能描述图像",
+     "observable": "未开口或只重复题目语言"
+    },
+    {
+     "level": 1,
+     "description": "读出孤立数据点",
+     "observable": "只报交点/端点坐标"
+    },
+    {
+     "level": 2,
+     "description": "点与趋势部分到位",
+     "observable": "能读关键点并说出变化方向，实际意义缺失或错误"
+    },
+    {
+     "level": 3,
+     "description": "结构完整",
+     "observable": "点—线—趋势齐全，实际意义基本准确"
+    },
+    {
+     "level": 4,
+     "description": "完整且联系情境",
+     "observable": "三步齐全并主动联系情境解释斜率/截距含义"
+    }
+   ],
+   "anchors": {
+    "positive": [
+     {
+      "desc": "“因为 k<0，所以 y 随 x 增大而减小；在注水情境里表示放水速度为 3 升/分。”",
+      "level": 4
+     }
+    ],
+    "negative": [
+     {
+      "desc": "“图像是往下的。”（未指明 y 随 x、未联系情境）",
+      "level": 1
+     }
+    ],
+    "boundary": [
+     {
+      "desc": "三步齐全但“实际意义”照抄题干未作解释",
+      "level": 3,
+      "note": "边界样例：介于 2 与 3 之间取 3，需二评"
+     }
+    ]
+   },
+   "evidence_required": [
+    "课堂口头记录或书面作答"
+   ],
+   "missing_evidence_rule": "无记录则该次任务不计等级",
+   "conflict_rule": "口头与书面矛盾时取书面并记录分歧",
+   "review_status": "in_review",
+   "author": "demo-teacher-t001",
+   "review_records": [
+    {
+     "reviewer_id": "demo-teacher-t002",
+     "reviewed_at": "2026-09-15",
+     "result": "建议补充 level 2 与 3 的区分锚例",
+     "agreed_level": null
+    },
+    {
+     "reviewer_id": "demo-teacher-t001",
+     "reviewed_at": "2026-09-16",
+     "result": "已补边界锚例，待第二轮试评",
+     "agreed_level": null
+    }
+   ],
+   "trial_scoring": {
+    "task": "demo 图像解释口头任务",
+    "raters": 2,
+    "items": 8,
+    "agreement_note": "两评分者 6/8 一致；分歧集中于 level 2-3 边界（见 boundary 锚例）。演示记录，非心理测量结论。"
+   },
+   "anchor_source": "合成演示样例",
+   "is_demo": true
+  },
+  {
+   "rubric_id": "demo-rubric-operation-v1",
+   "version": "v1",
+   "indicator_id": "demo-ind-operation",
+   "subject_id": "math",
+   "grades": [
+    "g8"
+   ],
+   "task_conditions": "二次根式化简与加减（3-4 项混合）",
+   "forbidden_extrapolation": "不得据运算错误推断智力或能力上限",
+   "levels": [
+    {
+     "level": 0,
+     "description": "未作答或全错",
+     "observable": "空白或法则性错误（如根号直接相加）"
+    },
+    {
+     "level": 1,
+     "description": "化简部分正确",
+     "observable": "能化简个别根式，未完成合并"
+    },
+    {
+     "level": 2,
+     "description": "化简正确、合并出错",
+     "observable": "最简形式正确但合并时符号或系数错"
+    },
+    {
+     "level": 3,
+     "description": "结果正确依据不全",
+     "observable": "答案正确但未写关键步骤依据"
+    },
+    {
+     "level": 4,
+     "description": "结果与依据完整",
+     "observable": "化简—判同类—合并三步齐全且每步有依据"
+    }
+   ],
+   "anchors": {
+    "positive": [
+     {
+      "desc": "√18+√8 = 3√2+2√2 = 5√2（合并同类项）",
+      "level": 4
+     }
+    ],
+    "negative": [
+     {
+      "desc": "√18+√8 = √26",
+      "level": 0
+     }
+    ],
+    "boundary": [
+     {
+      "desc": "结果 5√2 正确但直接写“合并”未说明 3√2 与 2√2 是同类二次根式",
+      "level": 3
+     }
+    ]
+   },
+   "evidence_required": [
+    "含步骤的作答"
+   ],
+   "missing_evidence_rule": "仅答案无步骤时按 level 3 上限评并标记 needs_steps",
+   "conflict_rule": "订正后正确不回改首测等级",
+   "review_status": "draft",
+   "review_records": [],
+   "author": "demo-teacher-t001",
+   "review_note": "未审核（演示「量规未审核」边界）：启用前需至少两名评分者试评。",
+   "anchor_source": "合成演示样例",
+   "is_demo": true
+  },
+  {
+   "rubric_id": "demo-rubric-modeling-v1",
+   "version": "v1",
+   "indicator_id": "demo-ind-modeling",
+   "subject_id": "math",
+   "grades": [
+    "g8"
+   ],
+   "task_conditions": "含两种方案的实际情境建模",
+   "forbidden_extrapolation": "不得据单次建模失败推断迁移能力缺陷",
+   "levels": [
+    {
+     "level": 0,
+     "description": "未建立关系直接猜数",
+     "observable": "无函数式、无图像"
+    },
+    {
+     "level": 1,
+     "description": "建立单一关系",
+     "observable": "只列一个方案的表达式"
+    },
+    {
+     "level": 2,
+     "description": "两方案模型正确",
+     "observable": "两个解析式正确但未比较"
+    },
+    {
+     "level": 3,
+     "description": "比较但区间不完整",
+     "observable": "只答一个区间或忽略交点"
+    },
+    {
+     "level": 4,
+     "description": "完整区间决策",
+     "observable": "交点分界+三段区间+回答原问题"
+    }
+   ],
+   "anchors": {
+    "positive": [
+     {
+      "desc": "x<50 选 B，x=50 相同，x>50 选 A（配图像交点）",
+      "level": 4
+     }
+    ],
+    "negative": [
+     {
+      "desc": "答“B 更便宜”（无区间无依据）",
+      "level": 1
+     }
+    ],
+    "boundary": [
+     {
+      "desc": "区间正确但未回答原问题所问的量",
+      "level": 3
+     }
+    ]
+   },
+   "evidence_required": [
+    "建模过程与结论"
+   ],
+   "missing_evidence_rule": "仅结论无过程按 level 1 计并标记",
+   "conflict_rule": "情境经验差异参考 learner-contexts 后再定级",
+   "review_status": "draft",
+   "review_records": [],
+   "author": "demo-teacher-t001",
+   "anchor_source": "合成演示样例",
+   "is_demo": true
+  },
+  {
+   "rubric_id": "demo-rubric-correction-v1",
+   "version": "v1",
+   "indicator_id": "demo-ind-reasoning-expression",
+   "subject_id": "math",
+   "grades": [
+    "g7",
+    "g8",
+    "g9"
+   ],
+   "task_conditions": "订正说明或几何说理书写",
+   "forbidden_extrapolation": "不得据书写规范推断学习习惯总体水平",
+   "levels": [
+    {
+     "level": 0,
+     "description": "未订正",
+     "observable": "空白"
+    },
+    {
+     "level": 1,
+     "description": "仅抄答案",
+     "observable": "无错因无过程"
+    },
+    {
+     "level": 2,
+     "description": "重做无依据",
+     "observable": "过程对但引用依据缺失或错误"
+    },
+    {
+     "level": 3,
+     "description": "依据基本正确",
+     "observable": "关键步骤引用正确定理/法则"
+    },
+    {
+     "level": 4,
+     "description": "依据完整并自检",
+     "observable": "全依据+主动复测或反例检验"
+    }
+   ],
+   "anchors": {
+    "positive": [
+     {
+      "desc": "“……∴△ABC≌△DEF（SAS）”，并在订正单写明此前误用 ASA 的原因",
+      "level": 4
+     }
+    ],
+    "negative": [
+     {
+      "desc": "订正只写“粗心”",
+      "level": 1
+     }
+    ],
+    "boundary": [
+     {
+      "desc": "依据写了但定理名与条件顺序不符（SAS 写成 SSA）",
+      "level": 2
+     }
+    ]
+   },
+   "evidence_required": [
+    "订正单或说理书面"
+   ],
+   "missing_evidence_rule": "口头订正未记录时不计等级",
+   "conflict_rule": "与首测依据矛盾时记录冲突进诊断案例",
+   "review_status": "draft",
+   "review_records": [],
+   "author": "demo-teacher-t001",
+   "anchor_source": "合成演示样例",
+   "is_demo": true
+  }
+ ]
+}

@@ -176,7 +176,7 @@ const InjectPreview = ({
   return (
     <div
       className="inject_preview_card"
-      style={{ marginTop: 12, width: 800, maxWidth: "100%" }}
+      style={{ marginTop: 12, width: "100%", maxWidth: "100%" }}
     >
       <div className="inject_preview_head">
         <div className="inject_preview_title">

@@ -1,0 +1,155 @@
+{
+ "schema_version": "learning-scenarios-v1",
+ "data_version": "demo-v1",
+ "is_demo": true,
+ "demo_reference_date": "2026-09-22",
+ "scenarios": [
+  {
+   "scenario_id": "demo-scn-taxi",
+   "category": "交通出行",
+   "title": "出租车分段计费",
+   "problem": "起步价 8 元（3 公里内）+ 超出每公里 2.4 元，12 公里车费多少？",
+   "grade": "g8",
+   "section_ids": [
+    "demo-sec-function-03"
+   ],
+   "knowledge_refs": {
+    "clusters": [
+     "实际问题与一次函数"
+    ],
+    "kp_ids": [
+     "kp-function-application"
+    ]
+   },
+   "familiarity": "高（多数学生有乘车经验；徐丽等需先补起步价概念，见 learner-contexts）",
+   "materials": "计价规则卡片（无额外成本）",
+   "duration_minutes": 10,
+   "scaffold": "圈变量三问：不变量/变化量/起始值",
+   "output": "分段函数式与车费",
+   "boundary_note": null
+  },
+  {
+   "scenario_id": "demo-scn-plan",
+   "category": "通信消费",
+   "title": "两种视频会员方案选择",
+   "problem": "A 卡月费 20 元每部 3 元，B 卡无月费每部 6 元，每月看多少部时 A 更省？",
+   "grade": "g8",
+   "section_ids": [
+    "demo-sec-function-03",
+    "demo-sec-function-02"
+   ],
+   "knowledge_refs": {
+    "clusters": [
+     "实际问题与一次函数"
+    ],
+    "kp_ids": [
+     "kp-function-application"
+    ]
+   },
+   "familiarity": "中（依赖家庭订阅经验）",
+   "materials": "无",
+   "duration_minutes": 15,
+   "scaffold": "半支架：先建两式再引导画同系图像",
+   "output": "交点与三段区间决策",
+   "boundary_note": null
+  },
+  {
+   "scenario_id": "demo-scn-water",
+   "category": "生活缴费",
+   "title": "阶梯水价计算",
+   "problem": "第一阶梯 3.5 元/吨（0-12 吨），第二阶梯 5 元/吨，某月用 15 吨水费多少？",
+   "grade": "g8",
+   "section_ids": [
+    "demo-sec-function-03"
+   ],
+   "knowledge_refs": {
+    "clusters": [
+     "实际问题与一次函数"
+    ],
+    "kp_ids": [
+     "kp-function-application"
+    ]
+   },
+   "familiarity": "中（谭敏等见过账单，部分学生从未见过）",
+   "materials": "水费账单样张（需准备）",
+   "duration_minutes": 12,
+   "scaffold": "先分段画图再计算",
+   "output": "分段模型与账单核验",
+   "boundary_note": null
+  },
+  {
+   "scenario_id": "demo-scn-spring",
+   "category": "校园实践",
+   "title": "弹簧挂重测长",
+   "problem": "弹簧原长 10cm，每挂 1kg 伸长 0.5cm，挂 8kg 时多长？50kg 还适用吗？",
+   "grade": "g8",
+   "section_ids": [
+    "demo-sec-function-03"
+   ],
+   "knowledge_refs": {
+    "clusters": [
+     "实际问题与一次函数"
+    ],
+    "kp_ids": [
+     "kp-function-application"
+    ]
+   },
+   "familiarity": "高（物理直觉强）",
+   "materials": "弹簧秤与砝码（实验室借，需预约）",
+   "duration_minutes": 20,
+   "scaffold": "数据表→描点→连线三步",
+   "output": "模型、预测与适用范围讨论",
+   "boundary_note": "材料不足风险：砝码需提前一周预约，缺材料时改用演示视频（记录于教学设计）"
+  },
+  {
+   "scenario_id": "demo-scn-member",
+   "category": "消费购物",
+   "title": "奶茶店会员卡决策",
+   "problem": "卡 15 元，会员每杯省 2 元，每月买几杯回本？",
+   "grade": "g8",
+   "section_ids": [
+    "demo-sec-function-03"
+   ],
+   "knowledge_refs": {
+    "clusters": [
+     "实际问题与一次函数"
+    ],
+    "kp_ids": [
+     "kp-function-application"
+    ]
+   },
+   "familiarity": "高",
+   "materials": "无",
+   "duration_minutes": 10,
+   "scaffold": "需支架：回本=两方案相等（学生常无“相等临界”经验）",
+   "output": "临界点解释",
+   "boundary_note": "需支架情境：直接放手正确率低（见 demo-rubric-modeling-v1 试评）"
+  },
+  {
+   "scenario_id": "demo-scn-flagpole",
+   "category": "校园实践",
+   "title": "旗杆高度测量",
+   "problem": "用影长与相似（或自制测角仪）估计旗杆高度",
+   "grade": "g8",
+   "section_ids": [
+    "demo-sec-pythagoras-01",
+    "demo-sec-function-02"
+   ],
+   "knowledge_refs": {
+    "clusters": [
+     "勾股定理及其应用"
+    ],
+    "kp_ids": [
+     "kp-pythagoras"
+    ]
+   },
+   "familiarity": "中",
+   "materials": "卷尺、标杆（体育组借）；测角仪需自制",
+   "duration_minutes": 30,
+   "scaffold": "画图把实物抽象成直角三角形",
+   "output": "测量方案、数据与误差分析",
+   "boundary_note": "材料不足与天气依赖：备用方案为窗影/楼影数据（教学设计已列）"
+  }
+ ],
+ "category_summary": "覆盖交通出行/通信消费/生活缴费/校园实践/消费购物 5 类，≥3 类达标；2 个含材料不足或需支架边界说明。"
+}

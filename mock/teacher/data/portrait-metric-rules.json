@@ -1,9 +1,9 @@
 {
- "schema_version": "portrait-metric-rules-v1",
+ "schema_version": "portrait-metric-rules-v2",
  "timezone": "Asia/Shanghai",
- "generated_as_of": "2026-09-20",
+ "generated_as_of": "2026-09-22",
  "sample_caliber_note": "事件数（去重 evidence_id 计 1）、题次数（题目数量）、量表分母（SUM(possible)）是三个不同口径；指标 sample_count 一律指事件数。",
- "threshold_note": "min_sample_count / stale_after_days 为演示阈值，待业务与教研确认，不构成已验证的教育评价标准。",
+ "threshold_note": "min_sample_count / stale_after_days 为演示质量门槛（如各节各窗口≥3条证据用于成图演示），不是科学评价阈值，待业务与教研确认；不构成已验证的教育评价标准。",
  "metrics": [
   {
    "key": "func_concept",
@@ -14,7 +14,8 @@
     "homework",
     "exam",
     "practice",
-    "ai_tutor"
+    "ai_tutor",
+    "classroom"
    ],
    "rubric_ids": [
     "qa-4pt-v1"
@@ -37,7 +38,8 @@
     "homework",
     "exam",
     "practice",
-    "ai_tutor"
+    "ai_tutor",
+    "classroom"
    ],
    "rubric_ids": [
     "qa-4pt-v1"
@@ -60,7 +62,8 @@
     "homework",
     "exam",
     "practice",
-    "ai_tutor"
+    "ai_tutor",
+    "classroom"
    ],
    "rubric_ids": [
     "qa-4pt-v1"
@@ -108,7 +111,8 @@
     "homework",
     "exam",
     "practice",
-    "ai_tutor"
+    "ai_tutor",
+    "classroom"
    ],
    "rubric_ids": [
     "qa-4pt-v1"
@@ -131,7 +135,8 @@
     "homework",
     "exam",
     "practice",
-    "ai_tutor"
+    "ai_tutor",
+    "classroom"
    ],
    "rubric_ids": [
     "qa-4pt-v1"
@@ -154,7 +159,8 @@
     "homework",
     "exam",
     "practice",
-    "ai_tutor"
+    "ai_tutor",
+    "classroom"
    ],
    "rubric_ids": [
     "qa-4pt-v1"
@@ -202,7 +208,8 @@
     "homework",
     "exam",
     "practice",
-    "ai_tutor"
+    "ai_tutor",
+    "classroom"
    ],
    "rubric_ids": [
     "qa-4pt-v1"
@@ -226,7 +233,8 @@
     "homework",
     "exam",
     "practice",
-    "ai_tutor"
+    "ai_tutor",
+    "classroom"
    ],
    "rubric_ids": [
     "qa-4pt-v1"
@@ -250,7 +258,8 @@
     "homework",
     "exam",
     "practice",
-    "ai_tutor"
+    "ai_tutor",
+    "classroom"
    ],
    "rubric_ids": [
     "qa-4pt-v1"
@@ -268,14 +277,15 @@
    "key": "reflect_express",
    "name": "反思表达",
    "dimension_key": "ability",
-   "definition": "能对错误归因并以书面/口头表达改进措施。口径：个人读数 = 100×SUM(earned)/SUM(possible)，分母为量表分（题次数×每题分），样本量为去重事件数，二者不可混称。",
+   "definition": "能对错误归因并以书面/口头表达改进措施。口径：个人读数 = 100×SUM(earned)/SUM(possible)，分母为量表分（题次数×每题分），样本量为去重事件数，二者不可混称。 本指标由学习反思单（书面/口头）采集，使用反思量表计分；不得用答题对错替代。",
    "allowed_source_types": [
+    "practice",
     "homework",
     "exam",
-    "practice",
     "ai_tutor"
    ],
    "rubric_ids": [
+    "reflection-v1",
     "qa-4pt-v1"
    ],
    "related_knowledge_ids": [],

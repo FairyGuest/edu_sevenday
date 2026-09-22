@@ -6,6 +6,17 @@
 
 import { pickPlanMd, pickStudyPlanMd } from "./teachPlanContent";
 
+function withDesignContext(markdown: string, context: any) {
+  if (!context) return markdown;
+  const fields: Record<string, string> = { knowledge: "知识基础", experience: "学习经验", habits: "学习习惯", strategies: "学习策略", collaboration: "协作依据", situation: "真实问题情境", task: "任务与产出", assessment: "评价证据与达成条件" };
+  return [markdown, "## 单元定位与教学依据（教师补充）", context.unit ? `单元：${context.unit.title}；版本 ${context.unit.version || context.unit.confirmed_at || '草案'}` : "单元关联待补充",
+    context.lesson ? `课时：${context.lesson.title}；版本 ${context.lesson.version || 1}` : "",
+    ...Object.entries(fields).map(([key, label]) => `### ${label}\n\n${context[key] || '待补充，不推断学生表现'}`),
+    ...(context.content_links || []).map((l: any) => `课标对应：${l.title} · ${(l.competencies || []).join('、')}（${l.source}:${l.line}；任务对应待审核）`),
+    context.learning ? `学情范围：${context.learning.effective_scope.label}；有效证据 ${context.learning.coverage.events} 条。` : "",
+  ].filter(Boolean).join("\n\n");
+}
+
 function withResearchStrategy(markdown: string, reference: any) {
   if (!reference?.strategy_id || typeof reference.content !== "string") return markdown;
   return [markdown, "## 校本教研策略", String(reference.title || "教研策略"), reference.content,
@@ -331,7 +342,7 @@ export default {
   "POST /api/teach_plan/get_temp_teach_plan_chat": (req: any, res: any) => {
     const b = req.body || {};
     const chapterName = b.chapter_name || b.title || lastChapterName;
-    const planMd = withResearchStrategy(withGuidance(pickPlanMd(chapterName, { classType: b.class_type }), b.guidance), b.research_reference);
+    const planMd = withDesignContext(withResearchStrategy(withGuidance(pickPlanMd(chapterName, { classType: b.class_type }), b.guidance), b.research_reference), b.design_context);
     res.json({ code: 200, msg: "ok", data: [
       {
         id: "chat-init",
@@ -362,12 +373,12 @@ export default {
     if (!isChat) lastChapterName = chapterName;
     let md = pickPlanMd(chapterName, { classType: b.class_type, studyCtx: ctx || undefined });
     if (b.guidance?.modules?.length && !isChat) lastGuidance = b.guidance;
-    md = withResearchStrategy(withGuidance(md, b.guidance), b.research_reference);
+    md = withDesignContext(withResearchStrategy(withGuidance(md, b.guidance), b.research_reference), b.design_context);
     streamMarkdown(res, md, isChat, false, b);
   },
 
   "POST /api/teach_plan/single_teach_maker": (req: any, res: any) => {
-    const md = pickPlanMd(req.body?.chapter_name || lastChapterName, {});
+    const md = withDesignContext(pickPlanMd(req.body?.chapter_name || lastChapterName, {}), req.body?.design_context);
     streamMarkdown(res, md, !!(req.body?.chat || req.body?.content), false, { ...req.body, type: 1 });
   },
 

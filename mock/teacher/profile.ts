@@ -4,6 +4,7 @@
  * 仅 start:mock 模式生效（cogUrl=/api），生产构建不包含。
  */
 import { readTeacherFixture as read, findStudent, memoizeMock } from "./fixtures";
+import { livePortrait } from "./livePortrait";
 import { normalizeScope, scopedStudent } from "./assistantScope";
 import { computeDimensions, clusterLevel, applyTimeWindow, applyDateRange, TimeRange } from "./dimensions";
 
@@ -86,6 +87,10 @@ export default {
   },
 
   "GET /api/teacher/profile/class": (req: any, res: any) => {
+    if (req.query.statistics === "observations") {
+      try { return res.json({ code: 200, data: livePortrait(req.query).overview }); }
+      catch (e: any) { return res.json({ code: e.code || 500, msg: e.code ? e.message : "画像统计暂不可用", data: null }); }
+    }
     const classId = req.query.class_id || classesData()[0].class_id;
     const sources = [...new Set<string>(req.query.sources ? String(req.query.sources).split(",") : [])].sort();
     const timeRange: TimeRange = req.query.time_range === "week" ? "week" : "month";
@@ -126,6 +131,10 @@ export default {
   },
 
   "GET /api/teacher/profile/student": (req: any, res: any) => {
+    if (req.query.statistics === "observations") {
+      try { return res.json({ code: 200, data: livePortrait(req.query).student_detail }); }
+      catch (e: any) { return res.json({ code: e.code || 500, msg: e.code ? e.message : "画像统计暂不可用", data: null }); }
+    }
     const { class_id: cid, student_id: sid } = req.query;
     if (!classesData().some((c: any) => c.class_id === cid)) return res.json({ code: 404, msg: "班级不存在", data: null });
     const original = findStudent(cid, sid);
@@ -156,6 +165,10 @@ export default {
   },
 
   "GET /api/teacher/profile/student/evidence": (req: any, res: any) => {
+    if (req.query.statistics === "observations") {
+      try { return res.json({ code: 200, data: livePortrait(req.query).evidence }); }
+      catch (e: any) { return res.json({ code: e.code || 500, msg: e.code ? e.message : "画像统计暂不可用", data: [] }); }
+    }
     const { class_id: cid, student_id: sid } = req.query;
     const sources: string[] = req.query.sources ? String(req.query.sources).split(",") : [];
     const cluster = req.query.cluster || "";

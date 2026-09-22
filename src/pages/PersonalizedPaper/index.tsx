@@ -221,8 +221,10 @@ const PersonalizedPaper = (props: any) => {
             }))}
           />
           <Button size="small" onClick={() => publish(false)}>发布</Button>
-          <Button size="small" danger onClick={() => publish(true)}>改名单发布(应拒)</Button>
-          <Button size="small" onClick={simulate} loading={reportLoading}>📊 模拟→报告</Button>
+          {new URLSearchParams(window.location.search).get("internal_tools") === "1" && <>
+            <Button size="small" danger onClick={() => publish(true)}>验证名单锁定</Button>
+            <Button size="small" onClick={simulate} loading={reportLoading}>生成测试报告</Button>
+          </>}
           <Button size="small" onClick={closeLoop}>🔁 闭环</Button>
         </span>
       }>

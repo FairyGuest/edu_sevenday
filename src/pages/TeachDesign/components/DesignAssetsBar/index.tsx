@@ -1,17 +1,18 @@
 import { useState } from "react";
-import { Button, Drawer, Tag, Tooltip, message } from "antd";
+import { Button, Drawer, Tooltip, message } from "antd";
 import {
   AimOutlined,
   AppstoreOutlined,
   CheckCircleFilled,
   ThunderboltFilled,
+  DeleteOutlined,
 } from "@ant-design/icons";
 import ObjectivePanel, { type ObjectiveItem } from "../ObjectivePanel";
 import ResourceDrawerBody, { type ResourceItem } from "../ResourceDrawer";
 import "./index.less";
 
 /**
- * 设计资产入口条（放在课时/单元类型卡下方）：
+ * 备课侧栏：
  * 「教学目标」「教学资源」两个抽屉的紧凑入口 + 已选摘要 + 「注入教学设计」按钮。
  * 注入 = 将已选目标与资源追加到个性化诉求（user_require），随生成请求带入；
  * 抽屉内勾选只暂存，点注入才写入，避免双通道重复。
@@ -33,9 +34,12 @@ const DesignAssetsBar = ({
   const [injected, setInjected] = useState<{
     objectives: number;
     resources: number;
+    key: string;
   } | null>(null);
 
   const total = objectives.length + resources.length;
+  const selectionKey = JSON.stringify([objectives, resources]);
+  const changed = !!injected && injected.key !== selectionKey;
 
   const inject = () => {
     if (!total) {
@@ -70,7 +74,11 @@ const DesignAssetsBar = ({
       objectives: objectives.length,
       resources: resources.length,
     });
-    setInjected({ objectives: objectives.length, resources: resources.length });
+    setInjected({
+      objectives: objectives.length,
+      resources: resources.length,
+      key: selectionKey,
+    });
     setOpen("");
     message.success(
       `已注入教学设计：目标 ${objectives.length} 条 · 资源 ${resources.length} 项`,
@@ -79,38 +87,29 @@ const DesignAssetsBar = ({
 
   return (
     <div className="dab_bar">
-      <Tooltip title="按班级学情建议教学目标与评价量规，另附课标固定目标库">
-        <Button
-          size="large"
-          className={"dab_btn" + (objectives.length ? " dab_btn--has" : "")}
-          icon={<AimOutlined />}
-          onClick={() => setOpen("objectives")}
-        >
-          教学目标
-          {objectives.length > 0 && (
-            <span className="dab_n">{objectives.length}</span>
-          )}
-        </Button>
-      </Tooltip>
-      <Tooltip title="学情联动练习/课件页 + 量规/材料，勾选后注入设计">
-        <Button
-          size="large"
-          className={"dab_btn" + (resources.length ? " dab_btn--has" : "")}
-          icon={<AppstoreOutlined />}
-          onClick={() => setOpen("resources")}
-        >
-          教学资源
-          {resources.length > 0 && (
-            <span className="dab_n">{resources.length}</span>
-          )}
-        </Button>
-      </Tooltip>
-
-      <div className="dab_divider" />
-
+      <Button
+        className={"dab_btn" + (objectives.length ? " dab_btn--has" : "")}
+        icon={<AimOutlined />}
+        onClick={() => setOpen("objectives")}
+      >
+        教学目标{" "}
+        {objectives.length > 0 && (
+          <span className="dab_n">{objectives.length}</span>
+        )}
+      </Button>
+      <Button
+        className={"dab_btn" + (resources.length ? " dab_btn--has" : "")}
+        icon={<AppstoreOutlined />}
+        onClick={() => setOpen("resources")}
+      >
+        教学资源{" "}
+        {resources.length > 0 && (
+          <span className="dab_n">{resources.length}</span>
+        )}
+      </Button>
+      <span className="dab_divider" aria-hidden="true" />
       <Button
         type="primary"
-        size="large"
         className="dab_inject"
         icon={<ThunderboltFilled />}
         disabled={!total}
@@ -118,17 +117,25 @@ const DesignAssetsBar = ({
       >
         注入教学设计
       </Button>
-
       {injected && (
-        <Tooltip
-          title={`已注入：目标 ${injected.objectives} 条 · 资源 ${injected.resources} 项（可在下方个性化诉求中查看与修改）`}
-        >
+        <>
           <span className="dab_injected">
-            <CheckCircleFilled /> 已注入
+            <CheckCircleFilled />
+            {changed ? "待重新注入" : "已注入"}
           </span>
-        </Tooltip>
+          <Tooltip title="移除已注入的目标与资源">
+            <Button
+              type="text"
+              aria-label="移除注入"
+              icon={<DeleteOutlined />}
+              onClick={() => {
+                onInject("", { objectives: 0, resources: 0 });
+                setInjected(null);
+              }}
+            />
+          </Tooltip>
+        </>
       )}
-
       <Drawer
         title={
           <span className="dab_drawer_title">

@@ -73,7 +73,7 @@ export default function StudentProfilePanel({
     },
     {
       title: "对错", dataIndex: "correct", width: 64,
-      render: (t: boolean) => <span style={{ color: t ? "#17BE6A" : "#F63232" }}>{t ? "✓" : "✗"}</span>,
+      render: (t: boolean | null) => t == null ? <span>--</span> : <span style={{ color: t ? "#17BE6A" : "#F63232" }}>{t ? "✓" : "✗"}</span>,
     },
   ];
 
@@ -88,14 +88,14 @@ export default function StudentProfilePanel({
         <div className="pa_panel_title">
           <span className="pa_panel_name">{detail ? `${detail.name}的个人学情（${detail.display_id}）` : "个人学情"}</span>
         </div>
-        <Button size="small" icon={<ArrowLeftOutlined />} onClick={onBack}>
+        <Button aria-label="返回班级学情" size="small" icon={<ArrowLeftOutlined />} onClick={onBack}>
           返回班级学情
         </Button>
       </div>
 
       {/* ===== 筛选栏：时间窗（预设按钮组）+ 学情来源（口径同班级学情）===== */}
       <div className="pa_filter">
-        <ScopeFilters sources={sources} dateRange={dateRange} onSources={onSources} onDateRange={onDateRange} />
+        <ScopeFilters classId={classId} sources={sources} dateRange={dateRange} onSources={onSources} onDateRange={onDateRange} />
       </div>
 
       <div aria-busy={!!loading}>
@@ -114,7 +114,7 @@ export default function StudentProfilePanel({
               </div>
               <i className="ov_sep" />
               <div className="ov_cell">
-                <b className="ov_value">{detail.due_cnt}</b>
+                <b className="ov_value">{detail.due_cnt ?? "--"}</b>
                 <span className="ov_label">遗忘到期</span>
               </div>
             </div>

@@ -1,0 +1,393 @@
+{
+ "schema_version": "diagnostic-cases-v1",
+ "data_version": "demo-v1",
+ "is_demo": true,
+ "demo_reference_date": "2026-09-22",
+ "status_vocab": [
+  "suggested",
+  "needs_evidence",
+  "confirmed",
+  "rejected"
+ ],
+ "cases": [
+  {
+   "case_id": "case-01",
+   "student_id": "947bb83daabc33cf",
+   "attempt_ids": [
+    "at-001",
+    "at-002",
+    "at-003",
+    "at-024"
+   ],
+   "question_id": "diag-r8-01",
+   "candidate_causes": [
+    {
+     "cause_id": "cause-01a",
+     "type": "概念",
+     "claim": "把 √(a²)=a 当作无条件成立，忽略结果非负约定"
+    },
+    {
+     "cause_id": "cause-01b",
+     "type": "执行",
+     "claim": "本知绝对值关系，代入/记录时出错"
+    }
+   ],
+   "supporting_evidence_ids": [
+    "at-001"
+   ],
+   "counter_evidence_ids": [
+    "at-002"
+   ],
+   "alternative_explanations": [
+    "算术平方根多值理解偏差（见 case-05 曹婷）"
+   ],
+   "missing_evidence": [],
+   "confirmed_cause_ids": [
+    "cause-01a"
+   ],
+   "status": "confirmed",
+   "diagnostic_dialogue": [
+    "为什么 √9 不能取 -3？",
+    "请用 a=3、0、-3 三个值检验你写的式子。"
+   ],
+   "prerequisite_knowledge_ids": [
+    "kp-radical"
+   ],
+   "review": {
+    "reviewer_id": "demo-teacher-t001",
+    "review_reason": "at-001 步骤直接写 √(a²)=a=-3，排除记录错误；at-003 迁移复测能主动分类并说明依据。",
+    "reviewed_at": "2026-09-20 09:00",
+    "revision": 1
+   },
+   "note": "清单 §7 示范案例的教学化落地。"
+  },
+  {
+   "case_id": "case-02",
+   "student_id": "6738633273303032",
+   "attempt_ids": [
+    "at-015",
+    "at-016"
+   ],
+   "question_id": "diag-r8-06",
+   "candidate_causes": [
+    {
+     "cause_id": "cause-02a",
+     "type": "条件",
+     "claim": "忽略题给的固定/分段条件（起步价、月费），只处理变化量"
+    }
+   ],
+   "supporting_evidence_ids": [
+    "at-015",
+    "at-016"
+   ],
+   "counter_evidence_ids": [],
+   "alternative_explanations": [
+    "情境经验缺失（未打过车/未见过月费账单）"
+   ],
+   "missing_evidence": [
+    "情境经验访谈记录（learner-contexts 该生为 unknown）"
+   ],
+   "confirmed_cause_ids": [
+    "cause-02a"
+   ],
+   "status": "confirmed",
+   "diagnostic_dialogue": [
+    "起步价 8 元在你算的 28.8 元里出现了吗？",
+    "如果把“月费 20 元”遮住，两题变得一样吗？"
+   ],
+   "prerequisite_knowledge_ids": [
+    "kp-function-application"
+   ],
+   "review": {
+    "reviewer_id": "demo-teacher-t001",
+    "review_reason": "两题（diag-r8-06 / tran-r8-04）同型条件遗漏，模式稳定。",
+    "reviewed_at": "2026-09-20 09:10",
+    "revision": 1
+   }
+  },
+  {
+   "case_id": "case-03",
+   "student_id": "aa18e927903a0918",
+   "attempt_ids": [
+    "at-011"
+   ],
+   "question_id": "diag-r8-04",
+   "candidate_causes": [
+    {
+     "cause_id": "cause-03a",
+     "type": "表征",
+     "claim": "坐标轴交点的图形—符号表征错位：求 y 轴交点却执行 x=0↔y=0 反了"
+    }
+   ],
+   "supporting_evidence_ids": [
+    "at-011"
+   ],
+   "counter_evidence_ids": [],
+   "alternative_explanations": [
+    "审题跳读（“y 轴”看漏）"
+   ],
+   "missing_evidence": [
+    "口头追问记录（该生课堂沉默，需低风险提问场合）"
+   ],
+   "confirmed_cause_ids": [],
+   "status": "needs_evidence",
+   "diagnostic_dialogue": [
+    "（计划）小组内两两互说：x 轴交点怎么求？y 轴呢？"
+   ],
+   "prerequisite_knowledge_ids": [
+    "kp-function-image"
+   ],
+   "review": {
+    "reviewer_id": "demo-teacher-t001",
+    "review_reason": "单次作答不足以区分表征错位与审题跳读；等待小组互说记录。",
+    "reviewed_at": "2026-09-20 09:15",
+    "revision": 1
+   }
+  },
+  {
+   "case_id": "case-04",
+   "student_id": "6738633273303036",
+   "attempt_ids": [
+    "at-013",
+    "at-014",
+    "at-025",
+    "at-026"
+   ],
+   "question_id": "diag-r8-03",
+   "candidate_causes": [
+    {
+     "cause_id": "cause-04a",
+     "type": "策略/执行",
+     "claim": "跳过“先化简”程序直接合并（√18+√8=√26 型）"
+    },
+    {
+     "cause_id": "cause-04b",
+     "type": "前置",
+     "claim": "最简二次根式口径不稳（diag-r8-08 中 √27 化简卡壳的同源表现，见 at-023 徐丽侧对照）"
+    }
+   ],
+   "supporting_evidence_ids": [
+    "at-013"
+   ],
+   "counter_evidence_ids": [
+    "at-025",
+    "at-026"
+   ],
+   "alternative_explanations": [
+    "cause-04b：若辨识题再失败则改判前置型"
+   ],
+   "missing_evidence": [],
+   "confirmed_cause_ids": [
+    "cause-04a"
+   ],
+   "status": "confirmed",
+   "diagnostic_dialogue": [
+    "√26 大约是多少？两个加数分别大约多少？估算支持你的结果吗？"
+   ],
+   "prerequisite_knowledge_ids": [
+    "kp-radical",
+    "kp-radical-addsub"
+   ],
+   "review": {
+    "reviewer_id": "demo-teacher-t001",
+    "review_reason": "订正与辨识（at-025/at-026）通过但 tran-r8-01 复测（at-014）展开计算又错——程序已建立、执行稳定性不足，维持执行型归因并调支持强度。",
+    "reviewed_at": "2026-09-20 09:20",
+    "revision": 2
+   }
+  },
+  {
+   "case_id": "case-05",
+   "student_id": "358f22c0c0bb9d3a",
+   "attempt_ids": [
+    "at-006"
+   ],
+   "question_id": "diag-r8-01",
+   "candidate_causes": [
+    {
+     "cause_id": "cause-05a",
+     "type": "概念",
+     "claim": "认为算术平方根可取负（平方根多值与算术平方根混淆）"
+    },
+    {
+     "cause_id": "cause-05b",
+     "type": "执行",
+     "claim": "抄写/选择笔误"
+    }
+   ],
+   "supporting_evidence_ids": [
+    "at-006"
+   ],
+   "counter_evidence_ids": [],
+   "alternative_explanations": [
+    "与 case-01 同题同终答但不同候选——同题异因对照"
+   ],
+   "missing_evidence": [
+    "三类取值口头检验（与 case-01 的 at-029 同款辨识）"
+   ],
+   "confirmed_cause_ids": [],
+   "status": "needs_evidence",
+   "diagnostic_dialogue": [
+    "你写“9 的平方根是 ±3”，那 √9 的符号本身要求取哪一个？"
+   ],
+   "prerequisite_knowledge_ids": [
+    "kp-radical"
+   ],
+   "review": {
+    "reviewer_id": "demo-teacher-t001",
+    "review_reason": "at-006 步骤显示多值理解（非常规等式误用），与徐丽不同因；但仅一次作答，需辨识题补证。相同最终答案不能直接断定同因。",
+    "reviewed_at": "2026-09-20 09:25",
+    "revision": 1
+   }
+  },
+  {
+   "case_id": "case-06",
+   "student_id": "6738633173303037",
+   "attempt_ids": [
+    "at-017",
+    "at-018"
+   ],
+   "question_id": "diag-r8-05",
+   "candidate_causes": [
+    {
+     "cause_id": "cause-06a",
+     "type": "概念",
+     "claim": "k 符号—增减性对应未内化（斜率同序相减计算也不稳）"
+    }
+   ],
+   "supporting_evidence_ids": [
+    "at-018"
+   ],
+   "counter_evidence_ids": [
+    "at-017"
+   ],
+   "alternative_explanations": [
+    "首测可能靠图像直觉或猜答"
+   ],
+   "missing_evidence": [
+    "撤除图像直觉的纯解析式判断题"
+   ],
+   "confirmed_cause_ids": [],
+   "status": "needs_evidence",
+   "diagnostic_dialogue": [
+    "不给图，只看 y=-3x+6 的式子，你怎么知道它下降？"
+   ],
+   "prerequisite_knowledge_ids": [
+    "kp-function-property"
+   ],
+   "review": {
+    "reviewer_id": "demo-teacher-t001",
+    "review_reason": "证据冲突：首测答对无依据（at-017）、复测同款计算又错（at-018）。答对但无依据且原证据冲突 → 维持待补证。",
+    "reviewed_at": "2026-09-20 09:30",
+    "revision": 1
+   },
+   "note": "§8 边界：相互矛盾证据。"
+  },
+  {
+   "case_id": "case-07",
+   "student_id": "2bfbc5fb6c6f1c5a",
+   "attempt_ids": [
+    "at-009",
+    "at-010"
+   ],
+   "question_id": "diag-r8-02",
+   "candidate_causes": [
+    {
+     "cause_id": "cause-07a",
+     "type": "概念",
+     "claim": "（AI 候选）自变量取值范围概念不清"
+    }
+   ],
+   "supporting_evidence_ids": [
+    "at-009"
+   ],
+   "counter_evidence_ids": [
+    "at-010"
+   ],
+   "alternative_explanations": [
+    "作答媒介问题：拍照模糊导致无法识别，非概念错误"
+   ],
+   "missing_evidence": [],
+   "confirmed_cause_ids": [],
+   "status": "rejected",
+   "diagnostic_dialogue": [],
+   "prerequisite_knowledge_ids": [],
+   "review": {
+    "reviewer_id": "demo-teacher-t001",
+    "review_reason": "教师否决 AI 候选：at-009 本就无法识别（recognized=false），不能作为概念错误证据；at-010 线下补做一次通过，更支持媒介问题。",
+    "reviewed_at": "2026-09-20 09:35",
+    "revision": 1
+   },
+   "note": "§8 边界：教师否决 AI 候选。"
+  },
+  {
+   "case_id": "case-08",
+   "student_id": "6738633273303032",
+   "attempt_ids": [
+    "at-016",
+    "at-032"
+   ],
+   "question_id": "tran-r8-04",
+   "candidate_causes": [],
+   "supporting_evidence_ids": [
+    "at-015",
+    "at-016",
+    "at-032"
+   ],
+   "counter_evidence_ids": [
+    "at-033"
+   ],
+   "alternative_explanations": [],
+   "missing_evidence": [],
+   "confirmed_cause_ids": [
+    "cause-02a"
+   ],
+   "status": "confirmed",
+   "diagnostic_dialogue": [],
+   "prerequisite_knowledge_ids": [
+    "kp-function-application"
+   ],
+   "review": {
+    "reviewer_id": "demo-teacher-t001",
+    "review_reason": "同因异题证据：case-02 确认的“忽略固定条件”在 tran-r8-04 复现（at-016）；at-033 显示辨识已建立但物理情境（tran-r8-08，at-032）未完全迁移——归因仍为条件型，迁移范围记入 follow-up。",
+    "reviewed_at": "2026-09-20 09:40",
+    "revision": 1
+   },
+   "note": "§8 边界：同因异题。与 case-02 共享 cause-02a。"
+  },
+  {
+   "case_id": "case-09",
+   "student_id": "6738633273303032",
+   "attempt_ids": [
+    "at-057"
+   ],
+   "question_id": "tran-r8-10",
+   "candidate_causes": [
+    {
+     "cause_id": "cause-09a",
+     "type": "前置",
+     "claim": "数据观念前置缺口：以平均数相同代替稳定性判断（未学方差）"
+    }
+   ],
+   "supporting_evidence_ids": [
+    "at-057"
+   ],
+   "counter_evidence_ids": [],
+   "alternative_explanations": [
+    "前测阶段正常表现，不一定是缺陷"
+   ],
+   "missing_evidence": [
+    "20.2 单元教学完成后的同型复测"
+   ],
+   "confirmed_cause_ids": [],
+   "status": "suggested",
+   "diagnostic_dialogue": [
+    "如果甲每次都是 8 分，乙忽高忽低，你会选谁上场？为什么？"
+   ],
+   "prerequisite_knowledge_ids": [
+    "kp-data-dispersion"
+   ],
+   "review": null,
+   "note": "前测发现（09-20 经验调查）：仅 suggested，待单元教学后复测确认；不推题、不干预。"
+  }
+ ]
+}

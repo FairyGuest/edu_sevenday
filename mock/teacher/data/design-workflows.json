@@ -1,0 +1,279 @@
+{
+ "schema_version": "design-workflows-v1",
+ "data_version": "demo-v1",
+ "is_demo": true,
+ "demo_reference_date": "2026-09-22",
+ "lessons": [
+  {
+   "lesson_id": "demo-lesson-rad-01",
+   "title": "二次根式的概念与性质",
+   "unit_id": "demo-unit-radical",
+   "template_id": "demo-lesson-tpl-v1",
+   "status": "confirmed",
+   "version": 3,
+   "confirmed_at": "2026-09-11 09:00",
+   "steps": [
+    {
+     "step_key": "goals",
+     "draft": [
+      "能说明 √a 有意义条件（a≥0）并举正反例",
+      "能用三个数值检验 √(a²) 与 |a| 的关系"
+     ],
+     "status": "confirmed",
+     "dialog": [
+      {
+       "role": "ai",
+       "text": "建议补充“举反例”行为，使目标可观察。"
+      },
+      {
+       "role": "teacher",
+       "text": "采纳，加入反例例证。",
+       "confirmed": true
+      }
+     ]
+    },
+    {
+     "step_key": "analysis",
+     "draft": [
+      "画像：3 班根式概念读数偏低；观测显示概念条件遗漏类错误居多（见 portrait-observations）"
+     ],
+     "status": "confirmed"
+    },
+    {
+     "step_key": "tasks",
+     "draft": [
+      "辨析 √4/√0/√(-4)",
+      "三值代入检验 √(a²)"
+     ],
+     "status": "confirmed"
+    },
+    {
+     "step_key": "questions",
+     "draft": [
+      "diag-r8-01",
+      "diag-r8-02",
+      "disc-r8-01"
+     ],
+     "status": "confirmed"
+    },
+    {
+     "step_key": "assessment",
+     "draft": [
+      "demo-rubric-operation-v1（口算环节）"
+     ],
+     "status": "confirmed"
+    }
+   ]
+  },
+  {
+   "lesson_id": "demo-lesson-rad-02",
+   "title": "二次根式的加减（三步自查单）",
+   "unit_id": "demo-unit-radical",
+   "template_id": "demo-lesson-tpl-v1",
+   "status": "confirmed",
+   "version": 2,
+   "confirmed_at": "2026-09-12 16:30",
+   "steps": [
+    {
+     "step_key": "goals",
+     "draft": [
+      "能按化简—判同类—合并完成加减并写明依据"
+     ],
+     "status": "confirmed"
+    },
+    {
+     "step_key": "tasks",
+     "draft": [
+      "√18+√8 错例估算检验",
+      "三步自查单上墙"
+     ],
+     "status": "confirmed"
+    },
+    {
+     "step_key": "questions",
+     "draft": [
+      "diag-r8-03",
+      "diag-r8-08",
+      "disc-r8-03",
+      "disc-r8-08",
+      "tran-r8-01"
+     ],
+     "status": "confirmed"
+    },
+    {
+     "step_key": "assessment",
+     "draft": [
+      "demo-rubric-operation-v1"
+     ],
+     "status": "confirmed"
+    }
+   ]
+  },
+  {
+   "lesson_id": "demo-lesson-rad-03",
+   "title": "二次根式的乘除",
+   "unit_id": "demo-unit-radical",
+   "template_id": "demo-lesson-tpl-v1",
+   "status": "draft",
+   "version": 1,
+   "steps": [
+    {
+     "step_key": "goals",
+     "draft": [
+      "能用乘除法则化简二次根式"
+     ],
+     "status": "drafted"
+    },
+    {
+     "step_key": "questions",
+     "draft": [
+      "tran-r8-02"
+     ],
+     "status": "drafted"
+    }
+   ]
+  },
+  {
+   "lesson_id": "demo-lesson-lin-01",
+   "title": "选择方案：建模与图像决策（第 1 课时）",
+   "unit_id": "demo-unit-linear-app",
+   "template_id": "demo-lesson-tpl-v1",
+   "status": "draft",
+   "version": 2,
+   "steps": [
+    {
+     "step_key": "goals",
+     "draft": [
+      "能建立两方案费用模型",
+      "能用图像交点分区间比较"
+     ],
+     "status": "drafted"
+    },
+    {
+     "step_key": "analysis",
+     "draft": [
+      "learner-contexts：方案情境经验分化明显，先过情境再建模"
+     ],
+     "status": "drafted"
+    },
+    {
+     "step_key": "scenarios",
+     "draft": [
+      "demo-scn-plan",
+      "demo-scn-member"
+     ],
+     "status": "drafted"
+    },
+    {
+     "step_key": "questions",
+     "draft": [
+      "diag-r8-06",
+      "disc-r8-06",
+      "tran-r8-04"
+     ],
+     "status": "drafted"
+    },
+    {
+     "step_key": "assessment",
+     "draft": null,
+     "status": "drafted",
+     "generation_note": {
+      "attempts": 2,
+      "first_failure_reason": "引用的量规 rubric_id 不存在（demo-rubric-decision-v1 拼写错误）",
+      "retry_result": "改引 demo-rubric-modeling-v1 后成功",
+      "fixed_at": "2026-09-18 14:20"
+     },
+     "draft_after_retry": [
+      "demo-rubric-modeling-v1"
+     ]
+    }
+   ]
+  },
+  {
+   "lesson_id": "demo-lesson-data-01",
+   "title": "数据的集中趋势·起始课",
+   "unit_id": "demo-unit-data",
+   "template_id": "demo-lesson-tpl-v1",
+   "status": "draft",
+   "version": 1,
+   "steps": [
+    {
+     "step_key": "goals",
+     "draft": [
+      "能计算平均数、中位数、众数并说明适用情境（对应 std-stat-avg）"
+     ],
+     "status": "drafted"
+    },
+    {
+     "step_key": "analysis",
+     "draft": [
+      "learner-contexts：多数学生见过水费/电费账单（g8-02 约三分之二），异常值经验缺失"
+     ],
+     "status": "drafted"
+    },
+    {
+     "step_key": "scenarios",
+     "draft": [
+      "demo-scn-water"
+     ],
+     "status": "drafted"
+    },
+    {
+     "step_key": "questions",
+     "draft": [],
+     "status": "drafted",
+     "dialog": [
+      {
+       "role": "ai",
+       "text": "建议从题库选取平均数计算题。"
+      },
+      {
+       "role": "teacher",
+       "text": "暂缓：白名单尚未收录统计题，先以课堂活动为主（保留空数组演示待补状态）。",
+       "confirmed": true
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "lesson_id": "demo-lesson-lin-02",
+   "title": "选择方案：数据支撑与综合决策（第 2 课时）",
+   "unit_id": "demo-unit-linear-app",
+   "template_id": "demo-lesson-tpl-v1",
+   "status": "needs_review",
+   "version": 2,
+   "needs_review_reason": "上游变更：单元目标 demo-ug-lin-02 于 2026-09-19 修改（增加集中趋势论证），本课时草稿需复核后重新确认。",
+   "upstream_change": {
+    "entity": "teaching-units.demo-unit-linear-app.unit_goals[1]",
+    "changed_at": "2026-09-19",
+    "effect": "analysis/tasks 两步需重查"
+   },
+   "steps": [
+    {
+     "step_key": "goals",
+     "draft": [
+      "（待复核）原目标未含集中趋势论证"
+     ],
+     "status": "stale"
+    },
+    {
+     "step_key": "tasks",
+     "draft": [
+      "（待复核）"
+     ],
+     "status": "stale"
+    },
+    {
+     "step_key": "questions",
+     "draft": [
+      "tran-r8-04",
+      "tran-r8-08"
+     ],
+     "status": "stale"
+    }
+   ]
+  }
+ ],
+ "dialog_policy": "分步对话保留输入快照与教师回复；上游修改可追溯下游影响（见 demo-lesson-lin-02.upstream_change）。"
+}

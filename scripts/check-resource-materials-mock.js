@@ -32,7 +32,7 @@ for (const it of items) {
   }
   if (!["g7", "g8", "g9"].includes(it.grade)) bad.push(`${it.id} grade 非法`);
   if (it.subject !== "数学") bad.push(`${it.id} subject 非数学`);
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(it.updated_at) || it.updated_at > "2026-09-21") bad.push(`${it.id} updated_at 非法`);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(it.updated_at) || it.updated_at > "2026-09-22") bad.push(`${it.id} updated_at 非法`);
   if (it.is_demo !== true) bad.push(`${it.id} is_demo 应为 true`);
   if (it.file_url !== null) bad.push(`${it.id} file_url 应为 null`);
   if (!["教案内容", "课件内容示例"].includes(it.format)) bad.push(`${it.id} format 非常规`);

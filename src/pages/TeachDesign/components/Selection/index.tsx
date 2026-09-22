@@ -109,7 +109,7 @@ const Selection = (props: any) => {
         )[gradeNum];
         form.setFieldsValue({ stage: [stageName, subjectName] });
         setDvaVal({ injectClassId: cls.class_id });
-        const [books, courses, pd] = await Promise.all([
+        const [books, courses] = await Promise.all([
           getDataService(
             { xueduan: stageName, xueke: subjectName },
             "getSubjectUrl",
@@ -118,10 +118,6 @@ const Selection = (props: any) => {
             { stage: stageName, subject: subjectName },
             "getCourseType",
           ),
-          fetch(
-            `/api/teacher/profile/class?class_id=${encodeURIComponent(cls.class_id)}&sources=`,
-            { signal: controller.signal },
-          ).then((r) => r.json()),
         ]);
         if (!current()) return;
         const editions =
@@ -156,32 +152,16 @@ const Selection = (props: any) => {
         } else {
           message.info("未找到该班级对应的教材册别，请手动选择教材");
         }
-        if (pd.code !== 200) throw new Error("学情加载失败");
-        const cards = pd.data?.cards || {};
-        const weakPct = Number(cards.weak_top_pct) || 0;
-        const avg = Number(cards.recent5_avg) || 60;
-        const derived = {
-          studies_degree:
-            weakPct <= 20 ? "优秀" : weakPct <= 30 ? "中等" : "薄弱",
-          motivation_habit: avg >= 63 ? "主动" : avg >= 58 ? "一般" : "被动",
-          literacy_ability:
-            weakPct <= 20 ? "较强" : weakPct <= 30 ? "中等" : "待提升",
-          class_learning_diff:
-            weakPct <= 22
-              ? "较为均衡"
-              : weakPct <= 30
-                ? "分化一般"
-                : "分化明显",
-        };
-        const ct = await fetch("/api/teach_plan/class_type", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ subject: subjectName, ...derived }),
-          signal: controller.signal,
-        }).then((r) => r.json());
         if (current())
           setDvaVal({
-            classInfo: { ...derived, ...(ct.code === 200 ? ct.data : {}) },
+            classInfo: {
+              classType: "已带入学情依据",
+              studies_degree: "以当前范围任务证据为准",
+              motivation_habit: "待教师补充，不由成绩推断",
+              literacy_ability: "量规待审核，不由正确率换算",
+              class_learning_diff: "待结合个体证据确认",
+              content: "保留班级学情引用，学习经验、习惯和素养判断需要独立证据。",
+            },
           });
       } catch {
         if (active) message.warning("班级学情自动填充失败，请手动设置班级学情");

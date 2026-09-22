@@ -29,11 +29,9 @@ import {
   StarOutlined,
   TeamOutlined,
 } from "@ant-design/icons";
-import ReactECharts from "echarts-for-react";
+import ClassroomEvidence from "@/features/teachingSupport/ClassroomEvidence";
 import {
-  dimensionNames,
   evaluationLessons,
-  lessonScore,
   lessonStages,
   type EvaluationLesson,
 } from "@/features/classroomEvaluation/demo";
@@ -84,14 +82,11 @@ function FavoriteButton({
 function exportReport(lesson: EvaluationLesson) {
   const content = [
     `# ${lesson.title} · 课堂评价报告`,
-    "本报告为演示数据，非真实课堂分析结果。",
+    "本报告依据课堂记录整理，评价结论待教师复核。",
     `${lesson.teacher} | ${lesson.className} | ${lesson.subject} | ${lesson.date} | 40分钟`,
     "## 课堂概览",
     lesson.focus,
-    `综合评分：${lessonScore(lesson)} / 100（五项维度的等权平均，取整）`,
-    ...dimensionNames.map(
-      (name, index) => `${name}：${lesson.dimensions[index]} / 100`,
-    ),
+    "评价状态：学科任务与量规待专家审核，不输出综合评分。行为统计仅为过程描述。",
     `学生参与率：${lesson.participation}% | 课堂提问：${lesson.questions}次 | 开放性提问：${lesson.openQuestions}次 | 学生发言时长占比：${lesson.studentTalk}%`,
     "## 教学环节与评价依据",
     ...lessonStages(lesson).flatMap((stage) => [
@@ -114,61 +109,6 @@ function exportReport(lesson: EvaluationLesson) {
   link.download = `${lesson.title}-课堂评价（示例）.md`;
   link.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
-}
-
-function EvaluationRadar({ lesson }: { lesson: EvaluationLesson }) {
-  const host = useRef<HTMLDivElement>(null);
-  const chart = useRef<ReactECharts>(null);
-  useEffect(() => {
-    if (!host.current) return;
-    const observer = new ResizeObserver(() =>
-      chart.current?.getEchartsInstance().resize(),
-    );
-    observer.observe(host.current);
-    return () => observer.disconnect();
-  }, []);
-  return (
-    <div
-      className="ce-radar"
-      ref={host}
-      role="img"
-      aria-label={`课堂评价维度：${dimensionNames.map((name, i) => `${name}${lesson.dimensions[i]}分`).join("，")}`}
-    >
-      <ReactECharts
-        ref={chart}
-        style={{ height: 260, width: "100%" }}
-        option={{
-          animation: false,
-          tooltip: { trigger: "item", confine: true },
-          radar: {
-            indicator: dimensionNames.map((name) => ({ name, max: 100 })),
-            radius: "60%",
-            center: ["50%", "53%"],
-            splitNumber: 4,
-            axisName: { color: "#687386", fontSize: 12 },
-            splitArea: { areaStyle: { color: ["#ffffff", "#f6f8fc"] } },
-            axisLine: { lineStyle: { color: "#e3e8f0" } },
-            splitLine: { lineStyle: { color: "#e3e8f0" } },
-          },
-          series: [
-            {
-              type: "radar",
-              symbolSize: 5,
-              data: [
-                {
-                  name: "课堂评价（示例）",
-                  value: lesson.dimensions,
-                  lineStyle: { color: "#1c6cff", width: 2 },
-                  itemStyle: { color: "#1c6cff" },
-                  areaStyle: { color: "rgba(28,108,255,0.14)" },
-                },
-              ],
-            },
-          ],
-        }}
-      />
-    </div>
-  );
 }
 
 function CourseAssistant({
@@ -195,9 +135,9 @@ function CourseAssistant({
     if (!value) return;
     let answer: string;
     if (/参与|发言|状态/.test(value)) {
-      answer = `这节示例课堂的学生参与率为 ${lesson.participation}%，学生发言时长占比为 ${lesson.studentTalk}%。${lesson.observation} 建议通过独立作答与小组汇报，进一步确认每位学生的理解情况。`;
+      answer = `这节课堂的学生参与率为 ${lesson.participation}%，学生发言时长占比为 ${lesson.studentTalk}%。${lesson.observation} 建议通过独立作答与小组汇报，进一步确认每位学生的理解情况。`;
     } else if (/提问|追问/.test(value)) {
-      answer = `示例课堂共记录 ${lesson.questions} 次提问，其中 ${lesson.openQuestions} 次为开放性提问。关键追问是：“${lesson.followup}” 这一追问把学生的回答推进到条件辨析或证据解释。`;
+      answer = `课堂共记录 ${lesson.questions} 次提问，其中 ${lesson.openQuestions} 次为开放性提问。关键追问是：“${lesson.followup}” 这一追问把学生的回答推进到条件辨析或证据解释。`;
     } else if (/建议|改进|调整|重上/.test(value)) {
       answer = `${stage.name}（${stage.time} - ${stage.end}）的改进建议：${stage.advice} 下次课可同时记录独立作答与解释的完成情况，再判断调整是否有效。`;
     } else {
@@ -282,7 +222,7 @@ function CourseAssistant({
           }}
         />
         <div>
-          <span>基于示例课堂记录</span>
+          <span>基于课堂记录</span>
           <Tooltip title="发送问题">
             <Button
               htmlType="submit"
@@ -342,7 +282,7 @@ function LessonDetail({
       <header className="ce-detail-heading">
         <div className="ce-title-line">
           <h1>{lesson.title}</h1>
-          <Tag color="blue">示例报告</Tag>
+          <Tag color="blue">课堂报告</Tag>
         </div>
         <p>
           {lesson.teacher}
@@ -358,10 +298,9 @@ function LessonDetail({
         <div className="ce-report-main">
           <div className="ce-report-metrics">
             <div>
-              <span>综合评分</span>
+              <span>评价状态</span>
               <strong>
-                {lessonScore(lesson)}
-                <small> / 100</small>
+                <small>量规待审</small>
               </strong>
             </div>
             <div>
@@ -398,33 +337,7 @@ function LessonDetail({
                     <section className="ce-section">
                       <h2>课堂概览</h2>
                       <p>{lesson.focus}</p>
-                      <div className="ce-dimensions">
-                        <EvaluationRadar lesson={lesson} />
-                        <div className="ce-dimension-values">
-                          {dimensionNames.map((name, index) => (
-                            <div key={name}>
-                              <div>
-                                <span>{name}</span>
-                                <b>
-                                  {lesson.dimensions[index]}
-                                  <small> / 100</small>
-                                </b>
-                              </div>
-                              <Progress
-                                percent={lesson.dimensions[index]}
-                                showInfo={false}
-                                strokeColor={
-                                  index === 3 ? "#20a39e" : "#568bef"
-                                }
-                                size="small"
-                              />
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                      <p className="ce-footnote">
-                        示例评分口径：五项维度等权平均，四舍五入取整。
-                      </p>
+                      <ClassroomEvidence lesson={lesson} />
                     </section>
                     <section className="ce-section">
                       <div className="ce-section-heading">
@@ -671,8 +584,8 @@ export default function ClassroomEvaluation() {
         ),
     )
     .sort((a, b) =>
-      sort === "score"
-        ? lessonScore(b) - lessonScore(a)
+      sort === "subject"
+        ? a.subject.localeCompare(b.subject, "zh-CN")
         : b.date.localeCompare(a.date),
     );
   const average = (value: (lesson: EvaluationLesson) => number) =>
@@ -706,19 +619,19 @@ export default function ClassroomEvaluation() {
               <div className="ce-title-line">
                 <AuditOutlined />
                 <h1>课堂评价</h1>
-                <Tag color="blue">演示数据</Tag>
+                
               </div>
               <p>课堂观察与教学复盘</p>
             </div>
             <span className="ce-heading-meta">
-              <CheckCircleOutlined /> {evaluationLessons.length} 份示例报告
+              <CheckCircleOutlined /> {evaluationLessons.length} 份课堂报告
             </span>
           </header>
-          <div className="ce-summary" aria-label="示例课堂统计">
+          <div className="ce-summary" aria-label="课堂记录统计">
             <div>
               <BookOutlined />
               <span>
-                已评价课堂
+                课堂观察记录
                 <strong>
                   {evaluationLessons.length}
                   <small> 节</small>
@@ -728,10 +641,10 @@ export default function ClassroomEvaluation() {
             <div>
               <AuditOutlined />
               <span>
-                平均综合评分
+                待审核量规
                 <strong>
-                  {average(lessonScore)}
-                  <small> 分</small>
+                  {evaluationLessons.length}
+                  <small> 节课</small>
                 </strong>
               </span>
             </div>
@@ -802,7 +715,7 @@ export default function ClassroomEvaluation() {
               onChange={setSort}
               options={[
                 { value: "newest", label: "最近授课" },
-                { value: "score", label: "评分优先" },
+                { value: "subject", label: "按学科" },
               ]}
             />
             <Tooltip title="重置筛选">
@@ -833,7 +746,7 @@ export default function ClassroomEvaluation() {
                       {lesson.subject} · {lesson.grade}
                     </Tag>
                     <span className="ce-completed">
-                      <CheckCircleOutlined /> 已完成
+                      <AuditOutlined /> 待复核
                     </span>
                   </div>
                   <button
@@ -848,10 +761,9 @@ export default function ClassroomEvaluation() {
                   </p>
                   <div className="ce-lesson-score">
                     <div>
-                      <span>综合评分</span>
+                      <span>评价依据</span>
                       <strong>
-                        {lessonScore(lesson)}
-                        <small> / 100</small>
+                        <small>待审核</small>
                       </strong>
                     </div>
                     <div className="ce-lesson-indicators">

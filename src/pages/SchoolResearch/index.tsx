@@ -1,11 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { history, useLocation, useDispatch } from "@umijs/max";
-import { Alert, Avatar, Button, Drawer, Empty, Form, Input, Modal, Pagination, Select, Skeleton, Tag, message } from "antd";
+import { Alert, Avatar, Button, Drawer, Empty, Form, Input, Modal, Pagination, Select, Skeleton, Tag, Tabs, message } from "antd";
 import { ArrowLeftOutlined, BookOutlined, CommentOutlined, FileSearchOutlined, PlusOutlined, ReloadOutlined, SendOutlined } from "@ant-design/icons";
 import { replacePageQuery } from "@/utils/pageQuery";
 import { EvidenceList } from "@/features/portraits/PortraitOverview";
 import { list } from "@/features/portraits/domain";
 import { researchRead, researchWrite } from "./services";
+import { TeamOutlined, ExperimentOutlined, AuditOutlined } from "@ant-design/icons";
+import ResearchTools from "@/features/teachingSupport/ResearchTools";
 import "./index.less";
 
 const STATUS: Record<string, { label: string; color: string }> = {
@@ -16,7 +18,7 @@ const gradeName = (grade: string) => ({ g7: "七年级", g8: "八年级", g9: "�
 const time = (value: string) => value ? value.replace("T", " ").slice(0, 16) : "";
 const statusTag = (status: string) => <Tag color={STATUS[status]?.color}>{STATUS[status]?.label || "讨论中"}</Tag>;
 
-export default function SchoolResearch() {
+function ResearchForum() {
   const location = useLocation();
   const dispatch = useDispatch();
   const query = new URLSearchParams(location.search);
@@ -122,9 +124,9 @@ export default function SchoolResearch() {
     catch (e: any) { if (seq === evidenceSeq.current) setEvidenceError(e.message); }
     finally { if (seq === evidenceSeq.current) setEvidenceLoading(false); }
   };
-  return <main className="school-research">
+  return <section className="school-research">
     <header className="research-header">
-      <div><h1>校本教研</h1><span>备课组 · 教学问题与实践交流</span></div>
+      <div><h2>教研交流</h2><span>备课组 · 教学问题与实践交流</span></div>
       <Button type="primary" icon={<PlusOutlined />} onClick={() => openForm("topic")}>发起议题</Button>
     </header>
     {error && <Alert type="error" showIcon message={error} action={<Button onClick={() => setVersion(v => v + 1)}>重试</Button>} />}
@@ -162,7 +164,7 @@ export default function SchoolResearch() {
         <Pagination current={page} pageSize={8} total={filtered.length} onChange={setPage} showSizeChanger={false} />
       </div> : <Empty description="暂无匹配的教研议题" />}
     </> : <>
-      <Button type="text" className="research-back" icon={<ArrowLeftOutlined />} onClick={() => replacePageQuery({ topic: null })}>返回议题列表</Button>
+      <Button type="text" className="research-back" icon={<ArrowLeftOutlined />} onClick={() => replacePageQuery({ topic: null, tool: "forum" })}>返回议题列表</Button>
       {detailError && <Alert type="error" message={detailError} action={<Button onClick={() => setVersion(v => v + 1)}>重试</Button>} />}
       {detailLoading ? <Skeleton active paragraph={{ rows: 10 }} /> : active && <div className="research-detail">
         <section className="research-discussion">
@@ -229,5 +231,22 @@ export default function SchoolResearch() {
         <h4>{e.conclusion}</h4><p>{e.reason}</p><p>{e.evidence_summary}</p><EvidenceList evidence={list(e.evidence)} />
       </section>) : <Empty description="暂无可解析的引用证据" />}
     </Drawer>
+  </section>;
+}
+
+export default function SchoolResearch() {
+  const { search } = useLocation(), q = new URLSearchParams(search);
+  const requested = q.get("tool") || (q.has("topic") || q.has("knowledge") || q.has("class_id") ? "forum" : "co-plan");
+  useEffect(() => { if (!q.get("tool") && requested === "forum") replacePageQuery({ tool: "forum" }); }, [search]);
+  const tool = ["co-plan", "lesson-study", "rubrics", "forum"].includes(requested) ? requested : "co-plan";
+  return <main className="teaching-support ts-tool-layout">
+    <h1>校本教研</h1>
+    <Tabs activeKey={tool} onChange={key => replacePageQuery({ tool: key, topic: null })} items={[
+      { key: "co-plan", label: <><TeamOutlined /> 集体备课</> },
+      { key: "lesson-study", label: <><ExperimentOutlined /> 课例研讨</> },
+      { key: "rubrics", label: <><AuditOutlined /> 评价量规</> },
+      { key: "forum", label: <><CommentOutlined /> 教研交流</> },
+    ]} />
+    {tool === "forum" ? <ResearchForum /> : <ResearchTools key={tool} tool={tool} />}
   </main>;
 }

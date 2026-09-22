@@ -15,14 +15,16 @@ const GRID_LINE = "#D3D8E4";   // 趋势图网格线
 const shortWin = (w?: string) => (w || "").split("~")[0].replace("-", ".");
 
 /** F1.2 右列三图（Figma 设计稿范式：趋势折线 / 来源环形 / 薄弱排行） */
-function ProfileCharts({ trend, sourceMix, weakRanking, classId }: {
+function ProfileCharts({ trend, sourceMix, weakRanking, classId, scoped = false, onDetail }: {
   trend: any[]; sourceMix: any[]; weakRanking: any[]; classId?: string;
+  scoped?: boolean; onDetail?: () => void;
 }) {
   // B3 人机交互明细（来源=人机交互 的问答记录）
   const [iaOpen, setIaOpen] = useState(false);
   const [iaRows, setIaRows] = useState<any[]>([]);
   const [iaLoading, setIaLoading] = useState(false);
   const openInteractions = () => {
+    if (onDetail) { onDetail(); return; }
     setIaOpen(true); setIaLoading(true);
     fetch(`/api/teacher/interactions?class_id=${classId || ""}`)
       .then(r => r.json())
@@ -34,7 +36,7 @@ function ProfileCharts({ trend, sourceMix, weakRanking, classId }: {
     grid: { left: 34, right: 14, top: 40, bottom: 28 },
     xAxis: {
       type: "category", boundaryGap: true,
-      data: trend.map((t) => shortWin(t.window)),
+      data: trend.map((t) => scoped ? t.window.slice(5) : shortWin(t.window)),
       axisLabel: { color: TEXT_HINT, fontSize: 14 },
       axisLine: { show: false }, axisTick: { show: false },
     },
@@ -52,7 +54,7 @@ function ProfileCharts({ trend, sourceMix, weakRanking, classId }: {
       textStyle: { color: "#222222" },
       formatter: (ps: any) => {
         const i = ps[0].dataIndex;
-        return `${shortWin(trend[i]?.window)}<br/>掌握度：${trend[i]?.value ?? "—"}%`;
+        return `${scoped ? trend[i]?.window || "" : shortWin(trend[i]?.window)}<br/>${scoped ? "任务得分率" : "掌握度"}：${trend[i]?.value ?? "—"}%`;
       },
     },
     series: [{
@@ -62,7 +64,7 @@ function ProfileCharts({ trend, sourceMix, weakRanking, classId }: {
       lineStyle: { width: 2, color: "#1C6CFF" },
       label: { show: true, position: "top", distance: 6, color: "#222222", fontSize: 14 },
     }],
-  }), [trend]);
+  }), [trend, scoped]);
 
   const pieData = useMemo(() => sourceMix.filter((s) => s.n > 0), [sourceMix]);
   const srcTotal = pieData.reduce((a, b) => a + (b.n || 0), 0);
@@ -116,7 +118,7 @@ function ProfileCharts({ trend, sourceMix, weakRanking, classId }: {
     <div className="teacher_profile_charts analysis_charts">
       <div className="teacher_profile_chart_card">
         <div className="profile_chart_heading">
-          <p className="teacher_profile_chart_title">班级掌握度趋势 · 近8次评估</p>
+          <p className="teacher_profile_chart_title">{scoped ? "任务得分率趋势 · 按日" : "班级掌握度趋势 · 近8次评估"}</p>
         </div>
         <div className="profile_chart_plot">
           <ReactECharts option={lineOption} style={{ height: "100%" }} notMerge />
@@ -125,9 +127,9 @@ function ProfileCharts({ trend, sourceMix, weakRanking, classId }: {
       <div className="teacher_profile_chart_card">
         <div className="profile_chart_heading">
           <p className="teacher_profile_chart_title">数据来源构成</p>
-          <Tooltip title="查看人机交互明细">
+          <Tooltip title={scoped ? "查看当前范围证据" : "查看人机交互明细"}>
             <Button size="small" type="link" icon={<MessageOutlined />} className="ia_link"
-              aria-label="查看人机交互明细" onClick={openInteractions}>
+              aria-label={scoped ? "查看当前范围证据" : "查看人机交互明细"} onClick={openInteractions}>
               查看明细
             </Button>
           </Tooltip>

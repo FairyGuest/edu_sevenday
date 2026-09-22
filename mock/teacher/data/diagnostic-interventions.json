@@ -1,0 +1,108 @@
+{
+ "schema_version": "diagnostic-interventions-v1",
+ "data_version": "demo-v1",
+ "is_demo": true,
+ "demo_reference_date": "2026-09-22",
+ "design_rule": "每个干预包最多 1 个微活动 + 1 道辨识题 + 1 道迁移题；next_action 支持 stop/collect_evidence/adjust_support，不默认无限加题。",
+ "packs": [
+  {
+   "intervention_id": "iv-01",
+   "cause_ids": [
+    "cause-01a"
+   ],
+   "student_id": "947bb83daabc33cf",
+   "status": "completed",
+   "micro_activity": {
+    "title": "平方与算术平方根辨析（微活动）",
+    "content": "比较 3² 与 √9 的读法；用 a=3、0、-3 代入 √(a²) 与 a 各一次，口头说明何时相等。",
+    "duration_minutes": 8,
+    "format": "师生一对一/课后"
+   },
+   "discrimination_question_id": "disc-r8-01",
+   "transfer_question_id": "tran-r8-07",
+   "rationale": "针对无条件等式误用：先正反例固化“非负约定”，再用取值分类迁移。",
+   "stop_rule": "迁移题答对且能口头说明范围条件即停止（fu-01 已触发）。",
+   "linked_case_ids": [
+    "case-01"
+   ]
+  },
+  {
+   "intervention_id": "iv-02",
+   "cause_ids": [
+    "cause-02a"
+   ],
+   "student_id": "6738633273303032",
+   "status": "in_progress",
+   "micro_activity": {
+    "title": "圈条件三问（微活动）",
+    "content": "读题后先圈“固定费用/分段点/量程”，口头回答：什么不变？什么变？从哪里开始变？",
+    "duration_minutes": 6,
+    "format": "课堂随堂"
+   },
+   "discrimination_question_id": "disc-r8-06",
+   "transfer_question_id": "tran-r8-04",
+   "rationale": "条件遗漏型：建立“先圈条件再动笔”程序，辨识题已通过（at-031），迁移在物理情境待复测。",
+   "stop_rule": "两个不同情境的迁移题都正确处理固定条件后停止。",
+   "linked_case_ids": [
+    "case-02",
+    "case-08"
+   ]
+  },
+  {
+   "intervention_id": "iv-03",
+   "cause_ids": [
+    "cause-03a"
+   ],
+   "student_id": "aa18e927903a0918",
+   "status": "pending_evidence",
+   "micro_activity": null,
+   "discrimination_question_id": "disc-r8-05",
+   "transfer_question_id": "tran-r8-03",
+   "rationale": "表征型（待补证）：case-03 确认前先安排低风险小组互说，不启动完整干预。",
+   "stop_rule": "案例确认后再评估是否需要微活动。",
+   "linked_case_ids": [
+    "case-03"
+   ],
+   "note": "微活动留空的边界样例：辨识/迁移题可先备，活动待证据。"
+  },
+  {
+   "intervention_id": "iv-04",
+   "cause_ids": [
+    "cause-04a"
+   ],
+   "student_id": "6738633273303036",
+   "status": "adjusting",
+   "micro_activity": {
+    "title": "运算三步自查单（浓缩版）",
+    "content": "抄式核对→逐步写依据→回代估算；每题三步缺一退回。",
+    "duration_minutes": 10,
+    "format": "作业本首页自查单"
+   },
+   "discrimination_question_id": "disc-r8-08",
+   "transfer_question_id": "tran-r8-01",
+   "rationale": "执行型：程序已建立（辨识通过）但执行不稳，复测未改善→调支持强度（fu-02：改错因归类四选一模板+隔日两题）。",
+   "stop_rule": "连续两次独立作业运算题零程序性错误后停止。",
+   "linked_case_ids": [
+    "case-04"
+   ]
+  },
+  {
+   "intervention_id": "iv-05",
+   "cause_ids": [
+    "cause-05a",
+    "cause-06a"
+   ],
+   "status": "no_matching_intervention",
+   "micro_activity": null,
+   "discrimination_question_id": null,
+   "transfer_question_id": null,
+   "rationale": null,
+   "stop_rule": null,
+   "linked_case_ids": [
+    "case-05",
+    "case-06"
+   ],
+   "note": "§8 边界：候选错因尚未确认（needs_evidence），系统返回“暂无匹配干预”，先补证（fu-04）而非推题。"
+  }
+ ]
+}

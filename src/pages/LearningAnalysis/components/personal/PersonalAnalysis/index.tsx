@@ -17,16 +17,16 @@ const PersonalAnalysis = (props: any) => {
   const { analysisModel, teacherProfileModel } = props;
   const dispatch = useDispatch();
   const location = useLocation();
-  const profile = teacherProfileModel?.profile;
-  const students: any[] = Array.isArray(profile?.students) ? profile.students : [];
   const requestedClass = new URLSearchParams(location.search).get("class_id");
   const classId: string = analysisModel?.selectedClass?.value || "";
   const classReady = !!classId && (!requestedClass || requestedClass === classId) && !analysisModel?.classSelectionLoading;
   const [selectedId, setSelectedId] = useState<string>("");
   const selectedRef = useRef<string>("");
   const { sources, setSources, dateRange, setDateRange, scope } = useProfileScope();
-  const classPortrait = usePortrait(classReady ? classId : "");
-  const portrait = usePortrait(classReady ? classId : "", selectedId);
+  const classPortrait = usePortrait(classReady ? classId : "", "", scope);
+  const portrait = usePortrait(classReady && selectedId ? classId : "", selectedId, scope);
+  const profile = classPortrait.data?.overview;
+  const students: any[] = Array.isArray(profile?.students) ? profile.students : [];
   const query = new URLSearchParams(location.search);
   const scopeQuery = [query.get("start_date"), query.get("end_date"), query.get("sources"), query.get("cluster")].join("|");
   const [cluster, setCluster] = useState("");
@@ -59,6 +59,7 @@ const PersonalAnalysis = (props: any) => {
 
   const fetchStudent = (sid: string) => {
     const payload = {
+      ...scope, statistics: "observations",
       class_id: classId,
       student_id: sid,
       sources: sources.join(","),
@@ -128,7 +129,7 @@ const PersonalAnalysis = (props: any) => {
 
   useEffect(() => {
     if (classReady && profile?.class_id === classId && students.some((s: any) => s.student_id === selectedId)) fetchStudent(selectedId);
-  }, [selectedId, classId, classReady, profile?.class_id, sources, dateRange, cluster]);
+  }, [selectedId, classId, classReady, profile?.class_id, scope, cluster]);
 
   const selectStudent = (sid: string) => {
     if (sid === selectedRef.current) return;
@@ -142,7 +143,7 @@ const PersonalAnalysis = (props: any) => {
 
   // v2.0-I5：注册 AI 小助手页面上下文（个人学情摘要）
   useEffect(() => {
-    const d = teacherProfileModel?.studentDetail;
+    const d = portrait.data?.student_detail;
     if (!d || d.student_id !== selectedId || profile?.class_id !== classId) return;
     const lits = (d.dimensions?.literacy || [])
       .filter((l: any) => l.value != null)
@@ -165,6 +166,7 @@ const PersonalAnalysis = (props: any) => {
         title: `学情分析 · ${d.name} 的个人学情`,
         summary,
         data: {
+          ...scope, evaluation_status: "demo_observation_pending_review",
           class_id: classId,
           student_id: d.student_id,
           start_date: dateRange?.[0]?.format("YYYY-MM-DD") || "",
@@ -178,7 +180,7 @@ const PersonalAnalysis = (props: any) => {
         },
       },
     });
-  }, [teacherProfileModel?.studentDetail, selectedId, classId, sources, dateRange, cluster]);
+  }, [portrait.data, selectedId, classId, scope, cluster]);
 
   // 卸载时注销上下文
   useEffect(() => () => { dispatch({ type: "assistantModel/setPageContext", payload: null }); }, []);
@@ -205,10 +207,10 @@ const PersonalAnalysis = (props: any) => {
           scope={scope}
           classId={classId}
           onSources={setSources}
-          detail={classReady && profile?.class_id === classId && teacherProfileModel?.studentDetail?.student_id === selectedId ? teacherProfileModel.studentDetail : null}
-          evidence={teacherProfileModel?.evidenceLoading || teacherProfileModel?.evidenceError ? [] : teacherProfileModel?.evidence || []}
-          suggestions={teacherProfileModel?.studentSuggestions?.student_id === selectedId ? teacherProfileModel.studentSuggestions.suggestions : []}
-          loading={analysisModel?.classSelectionLoading || teacherProfileModel?.detailLoading || teacherProfileModel?.profileLoading}
+          detail={portrait.data?.student_detail || null}
+          evidence={portrait.data?.evidence || []}
+          suggestions={[]}
+          loading={analysisModel?.classSelectionLoading || portrait.loading || classPortrait.loading}
           sources={sources}
           dateRange={dateRange}
           onDateRange={setDateRange}

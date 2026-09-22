@@ -2,8 +2,13 @@
   display: flex;
   justify-content: space-between;
   align-items: start;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-width: 0;
 
   .ant-form {
+    flex: 1 1 460px;
+    min-width: 0;
     gap: 6px;
 
     &-item {
@@ -41,6 +46,7 @@
   }
 
   .ant-btn {
+    max-width: 100%;
     font-size: 13px;
     padding: 0 8px;
     background: transparent;

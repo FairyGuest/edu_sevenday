@@ -23,6 +23,7 @@ export const ACTION_META: {
   desc: string;
   write: boolean;
 }[] = [
+  { key: "open_diagnostics", label: "查看错因案例", desc: "查看当前班级或学生的错因证据，不自动下发练习", write: false },
   {
     key: "open_homework",
     label: "查看作业",
@@ -88,6 +89,8 @@ export async function runAction(
   const { key, params = {} } = action;
   const meta = ACTION_META.find((m) => m.key === key);
 
+  if (key === "open_diagnostics") return { ok: true, detail: "已打开错因分析", navigateTo: { pathname: "/homework", search: "?" + new URLSearchParams({ sub: "diagnostics", class_id: params.class_id || "", student_id: params.student_id || "" }).toString() } };
+
   if (key === "inject_teaching_design") {
     const cid = params.class_id || "";
     if (params.assistant_draft)
@@ -100,7 +103,7 @@ export async function runAction(
       detail: "已跳转教学设计页，班级学情已带入预览卡",
       navigateTo: {
         pathname: "/design",
-        search: `?${new URLSearchParams({ class_id: String(cid), from: "analysis" })}`,
+        search: `?${new URLSearchParams({ class_id: String(cid), from: "analysis", ...Object.fromEntries(["student_id", "subject_id", "textbook_id", "curriculum_scope_type", "curriculum_scope_id", "start_date", "end_date", "sources"].filter(k => params[k] !== undefined && params[k] !== null).map(k => [k, String(params[k])])) })}`,
       },
     };
   }

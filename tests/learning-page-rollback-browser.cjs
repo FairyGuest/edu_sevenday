@@ -1,0 +1,58 @@
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const { chromium } = require('../.temp/browser-tools/node_modules/playwright-core');
+const base = process.env.TEST_URL || 'http://localhost:8000';
+const out = '.temp/learning-page-rollback';
+fs.mkdirSync(out, { recursive: true });
+
+(async () => {
+  const browser = await chromium.launch({ channel: 'chrome', headless: true });
+  const page = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
+  const errors = [];
+  page.on('pageerror', e => errors.push(e.message));
+  page.setDefaultTimeout(30000);
+  try {
+    await page.goto(base + '/login', { timeout: 120000 });
+    await page.getByPlaceholder('请输入EID账号').fill('teacher');
+    await page.getByPlaceholder('请输入密码', { exact: true }).fill('demo123456');
+    await page.getByPlaceholder('请输入验证码').fill('1234');
+    await page.getByRole('button', { name: '立即登录' }).click();
+    await page.waitForURL(u => !u.pathname.includes('login'));
+    await page.goto(base + '/learning-analysis?class_id=cls-g8-03');
+    await page.locator('.teacher-profile-portraits .portrait-radar canvas').first().waitFor();
+    assert.equal(await page.locator('.ts-learning').count(), 0, 'new workspace is no longer mounted');
+    assert.equal(await page.locator('.portrait-radar canvas').count(), 4);
+    assert.equal(await page.getByRole('combobox', { name: '课程范围', exact: true }).count(), 0);
+    await page.locator('.ov_strip').waitFor();
+    await page.getByRole('checkbox', { name: '课堂互动', exact: true }).waitFor();
+    const scores = await page.locator('.portrait-score > b').allTextContents();
+    assert.ok(scores.every(s => Number.isFinite(Number(s)) && Number(s) <= 100), 'original snapshot scores restored');
+    await page.getByRole('button', { name: /查看依据/ }).first().click();
+    await page.getByRole('dialog').getByText('完整快照口径').waitFor();
+    await page.getByRole('dialog').locator('.ant-drawer-close').click();
+    await page.screenshot({ path: out + '/class.png' });
+    await page.locator('.analysis_distribution').getByText('知识图谱', { exact: true }).click();
+    await page.locator('.analysis_distribution .kg_svg').waitFor();
+    await page.getByRole('tab', { name: /知识图谱/ }).click();
+    await page.locator('.evidence-graph .kg_svg').waitFor();
+    assert.ok(await page.locator('.evidence-node-list button').count() > 0);
+    assert.equal(await page.getByText('关联子图', { exact: true }).count(), 0, 'legacy graph controls restored');
+    await page.getByRole('tab', { name: /个人学情/ }).click();
+    await page.locator('.pa_list_item').first().waitFor();
+    await page.locator('.pa_panel_name').filter({ hasText: '的个人学情' }).waitFor();
+    await page.locator('.portrait-radar canvas').first().waitFor();
+    assert.equal(await page.locator('.portrait-dimension').count(), 4);
+    assert.ok(new URL(page.url()).searchParams.get('student_id'));
+    await page.reload();
+    await page.locator('.pa_panel_name').filter({ hasText: '的个人学情' }).waitFor();
+    await page.getByRole('tab', { name: /班级学情/ }).click();
+    await page.locator('.teacher-profile-portraits .portrait-radar canvas').first().waitFor();
+    await page.getByRole('button', { name: '近7天', exact: true }).click();
+    await page.locator('.portrait-coverage').waitFor();
+    await page.getByRole('button', { name: '查看已有快照', exact: true }).click();
+    await page.locator('.portrait-radar canvas').first().waitFor();
+    assert.equal(await page.locator('.portrait-radar canvas').count(), 4);
+    assert.deepEqual(errors, []);
+    console.log('PASS original class/personal/graph pages, snapshot scores, evidence drawer, distribution graph, date filters and refresh; no browser exceptions');
+  } finally { await browser.close(); }
+})().catch(e => { console.error(e); process.exitCode = 1; });

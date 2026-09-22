@@ -1,11 +1,12 @@
 {
  "generated_at": "2026-09-20",
  "class_ids": [
-  "cls-g8-03",
-  "cls-g7-01",
-  "cls-g9-02"
+  "cls-g8-01",
+  "cls-g8-02",
+  "cls-g8-03"
  ],
  "files": [
+  "assessment-rubrics.json",
   "batches.json",
   "class-profile-cls-g8-01.json",
   "class-profile-cls-g8-02.json",
@@ -14,6 +15,15 @@
   "class-students-cls-g8-02.json",
   "class-students-cls-g8-03.json",
   "classes.json",
+  "curriculum-catalog.json",
+  "curriculum-links.json",
+  "curriculum-standards.json",
+  "design-templates.json",
+  "design-workflows.json",
+  "diagnostic-attempts.json",
+  "diagnostic-cases.json",
+  "diagnostic-followups.json",
+  "diagnostic-interventions.json",
   "homework-cls-g7-01.json",
   "homework-cls-g8-03.json",
   "homework-cls-g9-02.json",
@@ -22,8 +32,16 @@
   "knowledge-graph-filtered-cls-g8-02.json",
   "knowledge-graph-filtered-cls-g8-03.json",
   "knowledge.json",
+  "learner-contexts.json",
+  "learning-scenarios.json",
   "personal-bank.json",
   "plans.json",
+  "portrait-data-coverage.json",
+  "portrait-demo-scenarios.json",
+  "portrait-metric-rules.json",
+  "portrait-observations-cls-g8-01.json",
+  "portrait-observations-cls-g8-02.json",
+  "portrait-observations-cls-g8-03.json",
   "profile-dimensions-class-cls-g8-01.json",
   "profile-dimensions-class-cls-g8-02.json",
   "profile-dimensions-class-cls-g8-03.json",
@@ -34,6 +52,7 @@
   "profile-explanations-cls-g8-02.json",
   "profile-explanations-cls-g8-03.json",
   "questions.json",
+  "research-tools.json",
   "research-topic-detail-research-001.json",
   "research-topic-detail-research-002.json",
   "research-topic-detail-research-003.json",
@@ -44,7 +63,10 @@
   "research-topic-detail-research-008.json",
   "research-topic-detail-research-009.json",
   "research-topic-detail-research-010.json",
-  "research-topics.json"
+  "research-topics.json",
+  "resources.json",
+  "subject-frameworks.json",
+  "teaching-units.json"
  ],
  "note": "教师端 mock fixture：3 班差异化画像 + 真实题库题干 + 逐生个性化卷 + 教案/个人题库 + 四维画像/解释性提示/知识图谱筛选/校本教研（2026-09-20 清单）"
 }

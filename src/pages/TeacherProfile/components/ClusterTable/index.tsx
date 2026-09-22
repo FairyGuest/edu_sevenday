@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { Tooltip } from "antd";
+import { Tooltip, Empty } from "antd";
 
 const BAND_COLORS: Record<string, string> = {
   待巩固: "#F76964", 练习中: "#8EB6FE", 较熟练: "#1C6CFF", 已掌握: "#1FD479",
@@ -76,13 +76,14 @@ ${lv.desc}`} color="#fff" overlayClassName="ct_lv_tip">
 }
 
 /** F1.2 知识点掌握分布（行卡片范式，Figma 设计稿重做） */
-function ClusterTable({ rows }: { rows: any[] }) {
-  const list = rows.filter((r) => r.n_students >= 3).slice(0, 10);
+function ClusterTable({ rows, minStudents = 3, maxRows = 10, onSelect }: { rows: any[]; minStudents?: number; maxRows?: number; onSelect?: (row: any) => void }) {
+  const list = rows.filter((r) => r.n_students >= minStudents).slice(0, maxRows);
   return (
     <div className="ct_rows">
       {list.map((r) => (
-        <ClusterRow key={r.cluster} r={r} />
+        onSelect ? <button type="button" className="portrait-cluster-button" key={r.node_id || r.cluster} onClick={() => onSelect(r)}><ClusterRow r={r} /></button> : <ClusterRow key={r.cluster} r={r} />
       ))}
+      {onSelect && !list.length && <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} description="当前范围暂无知识点分布" />}
     </div>
   );
 }

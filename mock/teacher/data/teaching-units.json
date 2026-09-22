@@ -1,0 +1,153 @@
+{
+ "schema_version": "teaching-units-v1",
+ "data_version": "demo-v1",
+ "is_demo": true,
+ "demo_reference_date": "2026-09-22",
+ "units": [
+  {
+   "unit_id": "demo-unit-radical",
+   "title": "二次根式单元（章型）",
+   "textbook_id": "demo-math-g8-vol2-v1",
+   "scope": {
+    "type": "chapter",
+    "chapter_ids": [
+     "demo-ch-radical"
+    ],
+    "section_ids": [
+     "demo-sec-radical-01",
+     "demo-sec-radical-02",
+     "demo-sec-radical-03"
+    ]
+   },
+   "unit_goals": [
+    {
+     "goal_id": "demo-ug-radical-01",
+     "behavior": "能说明二次根式有意义的条件并举正反例",
+     "condition": "给定含根式的式子",
+     "output": "条件判断与例证",
+     "standard_ids": [
+      "std-shushi-8"
+     ],
+     "mapping_status": "mapped"
+    },
+    {
+     "goal_id": "demo-ug-radical-02",
+     "behavior": "能按化简—判同类—合并完成二次根式加减并写明依据",
+     "condition": "3-4 个根式混合运算",
+     "output": "完整步骤与依据",
+     "standard_ids": [
+      "std-shushi-8"
+     ],
+     "mapping_status": "mapped"
+    }
+   ],
+   "lesson_ids": [
+    "demo-lesson-rad-01",
+    "demo-lesson-rad-02",
+    "demo-lesson-rad-03"
+   ],
+   "status": "confirmed",
+   "confirmed_at": "2026-09-10 10:00",
+   "confirmed_by": "demo-teacher-t001",
+   "link_note": "与教研共识「运算三步自查单」（research-topics.json research-002）对应。"
+  },
+  {
+   "unit_id": "demo-unit-linear-app",
+   "title": "一次函数方案选择单元（跨章型）",
+   "textbook_id": "demo-math-g8-vol2-v1",
+   "scope": {
+    "type": "cross_chapter",
+    "chapter_ids": [
+     "demo-ch-function",
+     "demo-ch-radical",
+     "demo-ch-data"
+    ],
+    "section_ids": [
+     "demo-sec-function-02",
+     "demo-sec-function-03",
+     "demo-sec-radical-03",
+     "demo-sec-data-01"
+    ]
+   },
+   "unit_goals": [
+    {
+     "goal_id": "demo-ug-lin-01",
+     "behavior": "能用一次函数图像比较两种方案并分区间作出决策",
+     "condition": "给定两方案费用规则",
+     "output": "建模、图像与区间结论",
+     "standard_ids": [
+      "std-func-4",
+      "std-func-req"
+     ],
+     "mapping_status": "mapped"
+    },
+    {
+     "goal_id": "demo-ug-lin-02",
+     "behavior": "能用平均数等集中趋势量支撑方案比较的论证",
+     "condition": "方案含多次试测数据",
+     "output": "含数据依据的决策说明",
+     "standard_ids": [
+      "std-stat-avg"
+     ],
+     "mapping_status": "mapped"
+    }
+   ],
+   "lesson_ids": [
+    "demo-lesson-lin-01",
+    "demo-lesson-lin-02"
+   ],
+   "status": "draft",
+   "link_note": "跨章单元：以第19章选择方案为主，根式运算（16.3）为计算支撑、数据分析（20.1）为论证支撑。"
+  },
+  {
+   "unit_id": "demo-unit-data",
+   "title": "数据的分析起始单元（章型·草稿）",
+   "textbook_id": "demo-math-g8-vol2-v1",
+   "scope": {
+    "type": "chapter",
+    "chapter_ids": [
+     "demo-ch-data"
+    ],
+    "section_ids": [
+     "demo-sec-data-01"
+    ]
+   },
+   "unit_goals": [
+    {
+     "goal_id": "demo-ug-data-01",
+     "behavior": "能计算平均数、中位数、众数与加权平均数并说明各自适用的情境",
+     "condition": "给定一组或多组数据",
+     "output": "统计量计算与选择理由",
+     "standard_ids": [
+      "std-stat-avg"
+     ],
+     "mapping_status": "mapped"
+    },
+    {
+     "goal_id": "demo-ug-data-02",
+     "behavior": "能用集中趋势量支撑简单决策并说明局限",
+     "condition": "方案比较含异常值数据",
+     "output": "含数据依据的决策说明",
+     "standard_ids": [
+      "std-stat-avg",
+      "std-quality-3dim"
+     ],
+     "mapping_status": "mapped"
+    }
+   ],
+   "lesson_ids": [
+    "demo-lesson-data-01"
+   ],
+   "status": "draft",
+   "link_note": "2026-09-22 起始课创建的草稿单元；对应课标「抽样与数据分析」内容要求（4）。"
+  }
+ ],
+ "unlinked_lessons": [
+  {
+   "lesson_id": "demo-lesson-hist-geo-01",
+   "title": "全等三角形判定复习课（历史课时）",
+   "created_at": "2026-06-11",
+   "note": "早于单元体系创建，尚未关联，供「历史课时未关联」演示"
+  }
+ ]
+}

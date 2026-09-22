@@ -1,4 +1,5 @@
 import { readTeacherFixture } from "./fixtures";
+import { livePortrait } from "./livePortrait";
 
 const readOptional = (name: string) => {
   try {
@@ -225,6 +226,10 @@ function pipeline(
 
 export default {
   "GET /api/teacher/portraits": (req: any, res: any) => {
+    if (req.query.statistics === "observations") {
+      try { return res.json({ code: 200, data: livePortrait(req.query) }); }
+      catch (e: any) { return res.json({ code: e.code || 500, msg: e.code ? e.message : "画像统计暂不可用", data: null }); }
+    }
     const classId = String(req.query.class_id || "");
     const studentId = String(req.query.student_id || "");
     const classes = readOptional("classes.json")?.classes || [];

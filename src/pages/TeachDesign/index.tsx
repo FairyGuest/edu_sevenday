@@ -24,6 +24,9 @@ import UploadFile from "./components/UploadFile";
 import TabVideo from "./components/TabVideo";
 import GuidedFlow from "./components/GuidedFlow";
 import DesignAssetsBar from "./components/DesignAssetsBar";
+import DesignContext, {
+  designContextText,
+} from "@/features/teachingSupport/DesignContext";
 import { getOrgId, scrollTop } from "@/utils";
 import courseImg from "@/assets/course_desc.svg";
 import unitImg from "@/assets/unit_desc.svg";
@@ -40,13 +43,22 @@ const TeachDesign = (props: any) => {
   const uploadFileRef = useRef<any>(null); // 上传组件ref
   const rightRef = useRef<any>(null); // 右侧组件ref
   const requestRef = useRef<any>(null);
+  const supportRef = useRef<any>(null);
   const injectedTextRef = useRef("");
 
-  const [segValue, setSegValue] = useState(1); // 选择项
+  const [segValue, setSegValue] = useState(2); // 单元说明优先
   const [open, setOpen] = useState(false); // 抽屉显示隐藏
   const stage = Form.useWatch("stage", form); // 学段学科值
   const [userRequire, setUserRequire] = useState(""); // 个性化诉求（目标/资源注入也写入此处）
   const location = useLocation();
+  const requestedMode = new URLSearchParams(location.search).get("mode");
+  useEffect(() => {
+    if (requestedMode === "unit" || requestedMode === "lesson")
+      dispatch({
+        type: "teachDesginModel/setData",
+        payload: { type: requestedMode === "unit" ? 2 : 1 },
+      });
+  }, [requestedMode]);
   const researchQuery = new URLSearchParams(location.search);
   const researchTopic = researchQuery.get("research_topic") || "";
   const researchStrategy = researchQuery.get("research_strategy") || "";
@@ -131,6 +143,7 @@ const TeachDesign = (props: any) => {
           course_num: values.course_num || 1,
         };
         const selection = selectionRef.current?.getData();
+        const designContext = supportRef.current?.getData();
         if (!selection?.study_info?.classType) {
           message.error("请先设置班级学情");
           return;
@@ -170,6 +183,7 @@ const TeachDesign = (props: any) => {
               .filter(Boolean)
               .join("\n\n"),
             research_reference: researchRef,
+            design_context: designContext,
             org_id: getOrgId(),
             file_ids: fileList.map((item: any) => item.id),
             teach_guide: "",
@@ -180,7 +194,8 @@ const TeachDesign = (props: any) => {
       })
       .catch((error) => {
         // Form validation already marks invalid fields; do not leak a rejected promise.
-        if (!error?.errorFields) message.error("生成准备失败，请重试");
+        if (!error?.errorFields)
+          message.error(error?.message || "生成准备失败，请重试");
       });
   };
 
@@ -191,6 +206,7 @@ const TeachDesign = (props: any) => {
     const importedClasses = data.imported_class_profiles || [];
     data.user_require = [
       data.user_require,
+      designContextText(data.design_context),
       classLearningContext(importedClasses),
     ]
       .filter(Boolean)
@@ -220,6 +236,15 @@ const TeachDesign = (props: any) => {
   // 滚动到顶部
   const scrollClick = () => {
     scrollTop(rightRef);
+  };
+  const injectAssets = (text: string) => {
+    const previous = injectedTextRef.current;
+    setUserRequire((current) =>
+      previous && current.includes(previous)
+        ? current.replace(previous, text).trim()
+        : [current, text].filter(Boolean).join("\n\n"),
+    );
+    injectedTextRef.current = text;
   };
 
   return (
@@ -260,21 +285,21 @@ const TeachDesign = (props: any) => {
             <div className="right-wrapper-type">
               <button
                 type="button"
-                aria-pressed={type === 1}
-                className={`type-item ${type === 1 ? "course-active" : "course"}`}
-                onClick={() => setDvaVal({ type: 1 })}
-              >
-                <span className="type-item-img" aria-hidden="true" />
-                <span className="type-item-label">课时教学设计</span>
-              </button>
-              <button
-                type="button"
                 aria-pressed={type === 2}
                 className={`type-item ${type === 2 ? "unit-active" : "unit"}`}
                 onClick={() => setDvaVal({ type: 2 })}
               >
                 <span className="type-item-img" aria-hidden="true" />
                 <span className="type-item-label">单元教学设计</span>
+              </button>
+              <button
+                type="button"
+                aria-pressed={type === 1}
+                className={`type-item ${type === 1 ? "course-active" : "course"}`}
+                onClick={() => setDvaVal({ type: 1 })}
+              >
+                <span className="type-item-img" aria-hidden="true" />
+                <span className="type-item-label">课时教学设计</span>
               </button>
               {/* 教学反思：批改证据 → 反思 → 教研/反哺教案（反思链入口） */}
               <button
@@ -294,23 +319,6 @@ const TeachDesign = (props: any) => {
                 <span className="type-item-label">教学反思</span>
               </button>
             </div>
-            {/* 设计资产条：教学目标/教学资源两个抽屉入口 + 注入按钮（勾选后注入随生成带入） */}
-            <DesignAssetsBar
-              stage={stage}
-              onInject={(text) => {
-                  const previous = injectedTextRef.current;
-                  setUserRequire((current) =>
-                    previous && current.includes(previous)
-                      ? current.replace(previous, text)
-                      : [current, text].filter(Boolean).join("\n\n"),
-                  );
-                  injectedTextRef.current = text;
-                  requestRef.current?.focus({ cursor: "end" });
-                  requestRef.current?.resizableTextArea?.textArea?.scrollIntoView(
-                    { block: "nearest", behavior: "smooth" },
-                  );
-                }}
-            />
             <Drawer
               width={600}
               open={open}
@@ -323,8 +331,8 @@ const TeachDesign = (props: any) => {
                   value={segValue}
                   onChange={setSegValue}
                   options={[
-                    { label: "课时教学设计", value: 1 },
                     { label: "单元教学设计", value: 2 },
+                    { label: "课时教学设计", value: 1 },
                   ]}
                 />
               }
@@ -347,82 +355,94 @@ const TeachDesign = (props: any) => {
                 type={type}
                 setDvaVal={setDvaVal}
               />
-              <AttachList fileList={fileList} fileDelete={fileDelete} />
-              {researchRef && (
-                <Alert
-                  showIcon
-                  type="info"
-                  style={{ margin: "12px 0" }}
-                  message={"已引用教研策略：" + researchRef.title}
-                  description={researchRef.content}
-                  closable
-                  onClose={() => {
-                    setResearchRef(null);
-                    replacePageQuery({
-                      research_topic: null,
-                      research_strategy: null,
-                    });
-                  }}
+              <div className="design-composition">
+                <DesignContext
+                  type={type}
+                  stage={stage}
+                  chapterName={props.teachDesginModel.chapterInfo?.chapter_name}
+                  value={props.teachDesginModel.designSupport || {}}
+                  onRef={supportRef}
+                  onChange={(value: any) => setDvaVal({ designSupport: value })}
+                  onType={(next: number) => setDvaVal({ type: next })}
                 />
-              )}
-              {researchError && (
-                <Alert type="warning" message={researchError} />
-              )}
-              <TextArea
-                ref={requestRef}
-                id="design-requirements"
-                aria-label="个性化诉求"
-                autoSize={{ minRows: 3, maxRows: 11 }}
-                placeholder={`1、选择学科学段、教材版本、章节与${type === 1 ? "课堂类型" : "课时"}，并完善学情信息；
-2、若无额外内容输入，可直接生成教案，并进入“人机交互”阶段，通过与AI对话深度打磨教案(推荐)；
-3、若输入内容或上传附件，将生成AI+用户输入相结合的${type === 1 ? "课时" : "单元"}教案。`}
-                variant="borderless"
-                value={userRequire}
-                onChange={(e: any) => setUserRequire(e.target.value)}
-                // 失焦时触发
-                // onBlur={() => {
-                //   addNewTracking({
-                //     bt: "cl",
-                //     ct: "teaching_design_home_input_custom_text",
-                //     extra: {
-                //       has_custom_text: userRequire == "" ? "no" : "yes",
-                //     },
-                //   });
-                // }}
-              />
-              <div className="input-btn">
-                <Button
-                  aria-label="上传参考材料"
-                  title="上传参考材料"
-                  color="default"
-                  variant="text"
-                  disabled={fileList?.length >= 10}
-                  icon={<ZYIcon type="upload-file" size={20} />}
-                  onClick={() => {
-                    uploadFileRef.current?.onUploadOpen();
-                  }}
-                />
-                <Button
-                  aria-label="生成教案"
-                  title="生成教案"
-                  type="primary"
-                  icon={<ZYIcon type="send" size={20} />}
-                  onClick={() => {
-                    onFinish();
-                    // addNewTracking({
-                    //   bt: "cl",
-                    //   ct: type === 1 ? "lesson_plan_home_click_generate" : "unit_plan_click_generate",
-                    //   extra: {
-                    //     tab_type: type === 1 ? "lesson_tab" : "unit_tab",
-                    //     has_custom_text: userRequire == "" ? "no" : "yes",
-                    //     attach_num: fileList.length,
-                    //     school_id: getOrgId("id"),
-                    //     school_name: getOrgId("title"),
-                    //     subject_name: stage?.join("") || "",
-                    //   },
-                    // });
-                  }}
-                />
+                <div className="design-editor">
+                  <AttachList fileList={fileList} fileDelete={fileDelete} />
+                  {researchRef && (
+                    <Alert
+                      showIcon
+                      type="info"
+                      style={{ margin: "12px 0" }}
+                      message={"已引用教研策略：" + researchRef.title}
+                      description={researchRef.content}
+                      closable
+                      onClose={() => {
+                        setResearchRef(null);
+                        replacePageQuery({
+                          research_topic: null,
+                          research_strategy: null,
+                        });
+                      }}
+                    />
+                  )}
+                  {researchError && (
+                    <Alert type="warning" message={researchError} />
+                  )}
+                  <TextArea
+                    ref={requestRef}
+                    id="design-requirements"
+                    aria-label="个性化诉求"
+                    autoSize={{ minRows: 5, maxRows: 11 }}
+                    placeholder="本次备课的侧重点、课堂安排或其他要求（选填）"
+                    variant="borderless"
+                    value={userRequire}
+                    onChange={(e: any) => setUserRequire(e.target.value)}
+                    // 失焦时触发
+                    // onBlur={() => {
+                    //   addNewTracking({
+                    //     bt: "cl",
+                    //     ct: "teaching_design_home_input_custom_text",
+                    //     extra: {
+                    //       has_custom_text: userRequire == "" ? "no" : "yes",
+                    //     },
+                    //   });
+                    // }}
+                  />
+                  <DesignAssetsBar stage={stage} onInject={injectAssets} />
+                  <div className="input-btn">
+                    <Button
+                      aria-label="上传参考材料"
+                      title="上传参考材料"
+                      color="default"
+                      variant="text"
+                      disabled={fileList?.length >= 10}
+                      icon={<ZYIcon type="upload-file" size={20} />}
+                      onClick={() => {
+                        uploadFileRef.current?.onUploadOpen();
+                      }}
+                    />
+                    <Button
+                      aria-label="生成教案"
+                      title="生成教案"
+                      type="primary"
+                      icon={<ZYIcon type="send" size={20} />}
+                      onClick={() => {
+                        onFinish();
+                        // addNewTracking({
+                        //   bt: "cl",
+                        //   ct: type === 1 ? "lesson_plan_home_click_generate" : "unit_plan_click_generate",
+                        //   extra: {
+                        //     tab_type: type === 1 ? "lesson_tab" : "unit_tab",
+                        //     has_custom_text: userRequire == "" ? "no" : "yes",
+                        //     attach_num: fileList.length,
+                        //     school_id: getOrgId("id"),
+                        //     school_name: getOrgId("title"),
+                        //     subject_name: stage?.join("") || "",
+                        //   },
+                        // });
+                      }}
+                    />
+                  </div>
+                </div>
               </div>
               <GuidedFlow
                 open={guideOpen}
@@ -436,8 +456,6 @@ const TeachDesign = (props: any) => {
                 dataList={fileList}
                 setDataList={setFileList}
               />
-              {/* v2.0 调整：班级学情预览移到输入卡下方独立展示（参考设计稿） */}
-              <InjectPreview />
               {props.teachDesginModel.importClassOpen && (
                 <ImportClassDialog
                   imported={props.teachDesginModel.importedClasses || []}
@@ -458,6 +476,7 @@ const TeachDesign = (props: any) => {
               )}
             </div>
           </div>
+          <InjectPreview />
           {stage && <TabVideo form={form} scrollClick={scrollClick} />}
         </div>
       </div>

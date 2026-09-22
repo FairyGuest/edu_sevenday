@@ -1,0 +1,250 @@
+{
+ "schema_version": "curriculum-links-v1",
+ "data_version": "demo-v1",
+ "is_demo": true,
+ "demo_reference_date": "2026-09-22",
+ "namespace_note": "中文 cluster（题库/资源图谱）、kp-*（画像图谱）、demo-sec-*（课程目录）是三套命名空间；本表为唯一显式映射，禁止按名称模糊匹配或跨命名空间直连。",
+ "mapping_rules": [
+  "映射键包含 subject_id、textbook_id 与版本；同名节在不同教材下不可互换。",
+  "status=mapped 的行方可用于课程筛选与统计；unmapped 记录保留原值不猜测归属。",
+  "资源可用范围（knowledge_ids 含某节）不等于学生已学证据；已学证据以观测/作答的课程归属字段为准。"
+ ],
+ "rows": [
+  {
+   "subject_id": "math",
+   "cluster": "二次根式",
+   "kp_ids": [
+    "kp-radical"
+   ],
+   "section_id": "demo-sec-radical-01",
+   "textbook_id": "demo-math-g8-vol2-v1",
+   "status": "mapped"
+  },
+  {
+   "subject_id": "math",
+   "cluster": "二次根式及其性质",
+   "kp_ids": [],
+   "section_id": "demo-sec-radical-01",
+   "textbook_id": "demo-math-g8-vol2-v1",
+   "status": "mapped",
+   "note": "画像图谱未建该 kp 节点，仅资源侧使用中文 cluster"
+  },
+  {
+   "subject_id": "math",
+   "cluster": null,
+   "kp_ids": [
+    "kp-radical-muldvd"
+   ],
+   "section_id": "demo-sec-radical-02",
+   "textbook_id": "demo-math-g8-vol2-v1",
+   "status": "mapped",
+   "note": "题库 cluster 无「二次根式的乘除」条目（目录有节），仅 kp 侧映射"
+  },
+  {
+   "subject_id": "math",
+   "cluster": "二次根式的加法与减法",
+   "kp_ids": [
+    "kp-radical-addsub"
+   ],
+   "section_id": "demo-sec-radical-03",
+   "textbook_id": "demo-math-g8-vol2-v1",
+   "status": "mapped"
+  },
+  {
+   "subject_id": "math",
+   "cluster": "勾股定理",
+   "kp_ids": [
+    "kp-pythagoras"
+   ],
+   "section_id": "demo-sec-pythagoras-01",
+   "textbook_id": "demo-math-g8-vol2-v1",
+   "status": "mapped"
+  },
+  {
+   "subject_id": "math",
+   "cluster": "勾股定理的逆定理及其应用",
+   "kp_ids": [],
+   "section_id": "demo-sec-pythagoras-02",
+   "textbook_id": "demo-math-g8-vol2-v1",
+   "status": "mapped"
+  },
+  {
+   "subject_id": "math",
+   "cluster": null,
+   "kp_ids": [
+    "kp-parallelogram"
+   ],
+   "section_id": "demo-sec-quad-01",
+   "textbook_id": "demo-math-g8-vol2-v1",
+   "status": "mapped",
+   "note": "题库该章簇为「四边形/四边形及多边形」，节名「平行四边形」仅 kp 侧映射"
+  },
+  {
+   "subject_id": "math",
+   "cluster": "特殊的平行四边形",
+   "kp_ids": [
+    "kp-special-quad"
+   ],
+   "section_id": "demo-sec-quad-02",
+   "textbook_id": "demo-math-g8-vol2-v1",
+   "status": "mapped"
+  },
+  {
+   "subject_id": "math",
+   "cluster": "函数",
+   "kp_ids": [
+    "kp-function"
+   ],
+   "section_id": "demo-sec-function-01",
+   "textbook_id": "demo-math-g8-vol2-v1",
+   "status": "mapped"
+  },
+  {
+   "subject_id": "math",
+   "cluster": "函数的概念",
+   "kp_ids": [],
+   "section_id": "demo-sec-function-01",
+   "textbook_id": "demo-math-g8-vol2-v1",
+   "status": "mapped"
+  },
+  {
+   "subject_id": "math",
+   "cluster": "一次函数的图象和性质",
+   "kp_ids": [
+    "kp-function-image",
+    "kp-function-property"
+   ],
+   "section_id": "demo-sec-function-02",
+   "textbook_id": "demo-math-g8-vol2-v1",
+   "status": "mapped",
+   "note": "图像识读与性质归纳同属 19.2，两 kp 节点共享一节"
+  },
+  {
+   "subject_id": "math",
+   "cluster": "实际问题与一次函数",
+   "kp_ids": [
+    "kp-function-application"
+   ],
+   "section_id": "demo-sec-function-03",
+   "textbook_id": "demo-math-g8-vol2-v1",
+   "status": "mapped"
+  },
+  {
+   "subject_id": "math",
+   "cluster": "数据的集中趋势",
+   "kp_ids": [],
+   "section_id": "demo-sec-data-01",
+   "textbook_id": "demo-math-g8-vol2-v1",
+   "status": "mapped"
+  },
+  {
+   "subject_id": "math",
+   "cluster": "一次函数与方程 (组）不等式",
+   "kp_ids": [],
+   "section_ids": [
+    "demo-sec-function-02",
+    "demo-sec-function-03"
+   ],
+   "textbook_id": "demo-math-g8-vol2-v1",
+   "status": "mapped_cross_section",
+   "note": "跨节节点：同章两节均涉及"
+  },
+  {
+   "subject_id": "math",
+   "cluster": "勾股定理的逆定理及其应用",
+   "kp_ids": [
+    "kp-pythagoras-inverse"
+   ],
+   "section_id": "demo-sec-pythagoras-02",
+   "textbook_id": "demo-math-g8-vol2-v1",
+   "status": "mapped"
+  },
+  {
+   "subject_id": "math",
+   "cluster": "数据的集中趋势",
+   "kp_ids": [
+    "kp-data-central-tendency"
+   ],
+   "section_id": "demo-sec-data-01",
+   "textbook_id": "demo-math-g8-vol2-v1",
+   "status": "mapped"
+  },
+  {
+   "subject_id": "math",
+   "cluster": "数据的离散程度",
+   "kp_ids": [
+    "kp-data-dispersion"
+   ],
+   "section_id": "demo-sec-data-02",
+   "textbook_id": "demo-math-g8-vol2-v1",
+   "status": "mapped"
+  },
+  {
+   "subject_id": "math",
+   "cluster": "平面直角坐标系",
+   "kp_ids": [
+    "kp-coordinate"
+   ],
+   "section_id": null,
+   "textbook_id": null,
+   "status": "unmapped",
+   "note": "七年级前置知识，不在本册目录；待补 g7 目录后映射"
+  },
+  {
+   "subject_id": "math",
+   "cluster": "三角形全等的判定",
+   "kp_ids": [
+    "kp-congruent-judge"
+   ],
+   "section_id": null,
+   "textbook_id": null,
+   "status": "unmapped",
+   "note": "八上第12章内容，待补八上目录"
+  },
+  {
+   "subject_id": "math",
+   "cluster": "整式的乘法",
+   "kp_ids": [
+    "kp-integral-multiply"
+   ],
+   "section_id": null,
+   "textbook_id": null,
+   "status": "unmapped",
+   "note": "八上第14章内容"
+  },
+  {
+   "subject_id": "math",
+   "cluster": "分式",
+   "kp_ids": [
+    "kp-fraction",
+    "kp-fraction-properties",
+    "kp-fraction-calc"
+   ],
+   "section_id": null,
+   "textbook_id": null,
+   "status": "unmapped",
+   "note": "八上第15章内容"
+  },
+  {
+   "subject_id": "math",
+   "cluster": "轴对称",
+   "kp_ids": [
+    "kp-axisymmetry"
+   ],
+   "section_id": null,
+   "textbook_id": null,
+   "status": "unmapped",
+   "note": "八上第13章内容"
+  },
+  {
+   "subject_id": "math",
+   "cluster": "一元二次方程",
+   "kp_ids": [],
+   "section_id": null,
+   "textbook_id": null,
+   "status": "unmapped",
+   "note": "九年级内容，演示范围外"
+  }
+ ],
+ "unmapped_summary": "本演示包仅映射八下 5 章 12 节；八上/七年级/九年级簇显式 unmapped，待目录确认后补。"
+}

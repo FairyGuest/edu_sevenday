@@ -22,6 +22,7 @@ import homeworkFlow from "./demo-mock/teacher/homeworkFlow";
 import assistant from "./demo-mock/assistant";
 import workspace from "./demo-mock/web/workspace";
 import materials from "./demo-mock/teacher/materials";
+import teachingSupport from "./demo-mock/teacher/teachingSupport";
 
 const tables = [
   aiGuide,
@@ -42,6 +43,7 @@ const tables = [
   assistant,
   workspace,
   materials,
+  teachingSupport,
 ];
 
 interface CompiledRoute {
@@ -191,7 +193,7 @@ export function installDemoMock() {
         return jsonResponse(404, {
           code: 404,
           success: false,
-          msg: `demo mock 未覆盖该接口: ${method} ${parsed.pathname}`,
+          msg: `该接口暂不可用: ${method} ${parsed.pathname}`,
         });
       }
       return origFetch(input, init);
@@ -261,7 +263,7 @@ export function installDemoMock() {
           jsonResponse(504, {
             code: 504,
             success: false,
-            msg: "demo mock timeout",
+            msg: "请求超时",
           }),
         );
       }, 10000);

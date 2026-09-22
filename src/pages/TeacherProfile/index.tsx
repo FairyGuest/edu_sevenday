@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { connect } from "@umijs/max";
-import { Alert, Button, Card, message, Segmented, Skeleton, Tooltip } from "antd";
+import { Alert, Button, Card, Drawer, Pagination, message, Segmented, Skeleton, Tooltip } from "antd";
 import {
   ReloadOutlined,
   UploadOutlined,
@@ -14,7 +14,7 @@ import ClusterTable from "./components/ClusterTable";
 import ImportModal from "./components/ImportModal";
 import KnowledgeGraph from "./components/KnowledgeGraph";
 import ProfileCharts from "./components/ProfileCharts";
-import PortraitOverview from "@/features/portraits/PortraitOverview";
+import PortraitOverview, { EvidenceList } from "@/features/portraits/PortraitOverview";
 import EvidenceGraph from "@/features/portraits/EvidenceGraph";
 import ScopeFilters from "@/features/portraits/ScopeFilters";
 import { usePortrait, useProfileScope } from "@/features/portraits/hooks";
@@ -45,11 +45,15 @@ const BAND_LEGEND: [string, string, string][] = [
  */
 const TeacherProfile = (props: any) => {
   const { variant } = props; // variant: "full"(默认=版本一) | "kgraph"(版本二子页面)
-  const { classes, profile: storedProfile, loading, dispatch, analysisModel } = props;
+  const { classes, dispatch, analysisModel } = props;
   const classId = analysisModel?.selectedClass?.value || "";
-  const profile = storedProfile?.class_id === classId ? storedProfile : null;
   const { sources, setSources, dateRange, setDateRange, scope } = useProfileScope();
-  const portrait = usePortrait(classId);
+  const portrait = usePortrait(classId, "", scope);
+  const profile = portrait.data?.overview;
+  const loading = portrait.loading;
+  const [recordsOpen, setRecordsOpen] = useState(false);
+  const [recordPage, setRecordPage] = useState(1);
+  useEffect(() => { setRecordsOpen(false); setRecordPage(1); }, [scope, classId]);
   // A5 时间维度：默认近3个月（Figma 筛选栏为预设按钮组）
   const [importOpen, setImportOpen] = useState(false);  // 知识点掌握分布（版本一默认表格；版本二为"知识图谱"tab 独立子页面，这里保留快速切换）
   const [distView, setDistView] = useState<"graph" | "table">("table");
@@ -66,6 +70,7 @@ const TeacherProfile = (props: any) => {
       type: "teacherProfileModel/getLatest",
       apiUrl: "classProfileUrl",
       payload: {
+        ...scope, statistics: "observations",
         class_id: cid,
         sources: sources.join(","),
         start_date: dateRange?.[0]?.format("YYYY-MM-DD") || "",
@@ -74,7 +79,7 @@ const TeacherProfile = (props: any) => {
       mTitle: "profile",
       mLoading: "profileLoading",
     });
-  }, [classId, dateRange, sources]);
+  }, [classId, scope]);
 
   // v2.0-I5：注册 AI 小助手页面上下文（班级学情摘要，供助手问答/初始建议注入）
   useEffect(() => {
@@ -87,7 +92,7 @@ const TeacherProfile = (props: any) => {
     const weakStudents = (profile.students || []).filter((s: any) => s.status_level === "weak").length;
     const summary = [
       `${profile.class_name}（${profile.n_students} 名学生）`,
-      `掌握度均值（近5次评估）${profile.cards?.recent5_avg ?? "—"}`,
+      `当前范围任务得分率 ${profile.cards?.recent5_avg ?? "—"}`,
       lits.length ? `素养最薄弱：${lits[0].name} ${lits[0].value} 分` : "",
       weak.length ? `薄弱知识点：${weak.map((r: any) => `「${r.cluster}」待巩固 ${r.weak_pct}%`).join("、")}` : "",
       `待巩固状态学生 ${weakStudents} 名`,
@@ -102,6 +107,7 @@ const TeacherProfile = (props: any) => {
         title: variant === "kgraph" ? "学情分析 · 知识图谱" : "学情分析 · 班级学情",
         summary,
         data: {
+          ...scope, evaluation_status: "demo_observation_pending_review",
           class_id: cid,
           start_date: dateRange?.[0]?.format("YYYY-MM-DD") || "",
           end_date: dateRange?.[1]?.format("YYYY-MM-DD") || "",
@@ -120,7 +126,7 @@ const TeacherProfile = (props: any) => {
         },
       },
     });
-  }, [profile, classId, variant, dateRange, sources]);
+  }, [profile, classId, variant, scope]);
 
   // 卸载时注销上下文（切 Tab/页面后助手回退到路由兜底标题）
   useEffect(() => () => { dispatch({ type: "assistantModel/setPageContext", payload: null }); }, []);
@@ -150,6 +156,7 @@ const TeacherProfile = (props: any) => {
       type: "teacherProfileModel/getLatest",
       apiUrl: "classProfileUrl",
       payload: {
+        ...scope, statistics: "observations",
         class_id: classId,
         sources: sources.join(","),
         start_date: dateRange?.[0]?.format("YYYY-MM-DD") || "",
@@ -163,15 +170,15 @@ const TeacherProfile = (props: any) => {
   const cards = profile?.cards || {};
   const placeholder = !classId && !analysisModel?.classSelectionLoading
     ? <Alert type="info" message="暂无可查看的班级，请检查班级选择" />
-    : props.profileError
-    ? <Alert type="error" message={props.profileError} action={<Button onClick={recalc}>重试</Button>} />
+    : portrait.error
+    ? <Alert type="error" message={portrait.error} action={<Button onClick={recalc}>重试</Button>} />
     : <Card><Skeleton active paragraph={{ rows: 8 }} /></Card>;
 
   // ===== 版本二：知识图谱子页面（独立 tab 入口，只渲染图谱大图）=====
   if (variant === "kgraph") {
     return (
       <div className="teacher_profile_container">
-        <ScopeFilters sources={sources} dateRange={dateRange} onSources={setSources} onDateRange={setDateRange} />
+        <ScopeFilters classId={classId} sources={sources} dateRange={dateRange} onSources={setSources} onDateRange={setDateRange} />
         {portrait.error ? <Alert type="warning" message={portrait.error} action={<Button onClick={portrait.retry}>重试</Button>} /> : null}
         <div aria-busy={loading}>
           {profile ? (
@@ -203,10 +210,10 @@ const TeacherProfile = (props: any) => {
   return (
     <div className="teacher_profile_container teacher-profile-portraits">
       <div className="portrait-toolbar">
-          <ScopeFilters sources={sources} dateRange={dateRange} onSources={setSources} onDateRange={setDateRange} />
+          <ScopeFilters classId={classId} sources={sources} dateRange={dateRange} onSources={setSources} onDateRange={setDateRange} />
           <div className="portrait-toolbar-actions">
             <Button size="small" icon={<ExperimentOutlined />}
-              onClick={() => history.push({ pathname: '/design', search: `?class_id=${classId || classList[0]?.class_id || ''}&from=analysis` })}>
+              onClick={() => history.push({ pathname: '/design', search: '?' + new URLSearchParams({ ...scope, sources: sources.join(','), class_id: classId, from: 'analysis' } as Record<string, string>).toString() })}>
               注入教学设计
             </Button>
             <Button size="small" icon={<UploadOutlined />} onClick={() => setImportOpen(true)}>
@@ -270,12 +277,12 @@ const TeacherProfile = (props: any) => {
                   {distView === "graph" ? (
                     <KnowledgeGraph graph={profile.kgraph} />
                   ) : (
-                    <ClusterTable rows={profile.cluster_rows || []} />
+                    <ClusterTable rows={profile.cluster_rows || []} minStudents={1} />
                   )}
                 </div>
               </div>
               <div className="analysis_right">
-                <ProfileCharts trend={profile.trend || []} sourceMix={profile.source_mix || []} weakRanking={profile.weak_ranking || []} classId={classId || classList[0]?.class_id} />
+                <ProfileCharts scoped trend={profile.trend || []} sourceMix={profile.source_mix || []} weakRanking={profile.weak_ranking || []} classId={classId || classList[0]?.class_id} onDetail={() => setRecordsOpen(true)} />
               </div>
             </div>
 
@@ -298,6 +305,10 @@ const TeacherProfile = (props: any) => {
           display_id: s.display_id,
         })) || []}
       />
+      <Drawer title="当前范围作答与观察记录" open={recordsOpen} onClose={() => setRecordsOpen(false)} width={560}>
+        <EvidenceList evidence={(portrait.data?.evidence || []).slice((recordPage - 1) * 20, recordPage * 20)} />
+        <Pagination current={recordPage} pageSize={20} showSizeChanger={false} total={portrait.data?.evidence?.length || 0} onChange={setRecordPage} size="small" />
+      </Drawer>
     </div>
   );
 };

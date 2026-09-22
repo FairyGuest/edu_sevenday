@@ -5,6 +5,7 @@ import PaperCompose from "@/pages/SettingTopic/PaperCompose";
 import SettingTopic from "@/pages/SettingTopic";
 import HomeworkFlow from "@/pages/HomeworkFlow";
 import CheckTopic from "@/pages/CheckTopic";
+import Diagnostics from "@/features/teachingSupport/Diagnostics";
 import "./index.less";
 
 /**
@@ -12,7 +13,7 @@ import "./index.less";
  * 组织方式对齐学情分析（一个一级入口 + 子功能 Tab）。
  * URL：/homework?sub=compose|assign|flow|grade，其余参数（tab/dispatch_id/sid/class_id）透传给子页。
  */
-const SUB_KEYS = ["compose", "assign", "flow", "grade"] as const;
+const SUB_KEYS = ["compose", "assign", "flow", "grade", "diagnostics"] as const;
 
 const Homework = () => {
   const { search } = useLocation();
@@ -31,6 +32,7 @@ const Homework = () => {
     setActive(key);
     const next = new URLSearchParams(search);
     next.set("sub", key);
+    if (key !== "diagnostics") ["case_id", "diagnostic_status", "homework_id", "student_id"].forEach(k => next.delete(k));
     // 子 Tab 间切换时清掉只属于其他子页的定位参数
     ["dispatch_id", "sid"].forEach((k) => {
       if (key !== "flow" && key !== "grade") next.delete(k);
@@ -80,6 +82,11 @@ const Homework = () => {
                 <CheckTopic />
               </div>
             ),
+          },
+          {
+            key: "diagnostics",
+            label: "错因分析",
+            children: <div className="hw_tab_body">{active === "diagnostics" && <Diagnostics />}</div>,
           },
         ]}
       />

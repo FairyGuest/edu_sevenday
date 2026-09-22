@@ -1,3 +1,4 @@
+import { presentRecord } from "@/utils/presentation";
 import { useEffect, useState } from "react";
 import { history } from "@umijs/max";
 import {
@@ -62,7 +63,7 @@ const MODULE_SUGGESTIONS: Record<string, Todo[]> = {
     {
       id: "s-evaluation",
       level: "mid",
-      text: "复盘“勾股定理”示例课堂的提问与追问",
+      text: "复盘“勾股定理”课堂记录的提问与追问",
       to: "/classroom-evaluation?lesson=ce-001",
       suggestion: true,
     },
@@ -145,7 +146,7 @@ const HERO_ENTRIES = [
   {
     key: "analysis",
     title: "学情分析",
-    desc: "班级与个人画像统一：知识点 / 能力 / 素养 / 过程表现四维读数，每个结论可回溯证据。",
+    desc: "按单元、章与节查看班级和个人学情，对照学科课标、任务证据与评价量规。",
     subs: [
       { label: "班级学情", to: "/learning-analysis?tab=profile" },
       { label: "个人学情", to: "/learning-analysis?tab=personal" },
@@ -164,8 +165,8 @@ const HERO_ENTRIES = [
     title: "教学设计",
     desc: "以教案为主对象的一案到底设计：注入班级学情与教学目标，生成教案 / 学案，反思反哺下一轮。",
     subs: [
-      { label: "课时设计", to: "/design" },
-      { label: "单元设计", to: "/design" },
+      { label: "单元设计", to: "/design?mode=unit" },
+      { label: "课时设计", to: "/design?mode=lesson" },
       { label: "教学反思", to: "/design/reflection" },
     ],
     stats: [
@@ -191,6 +192,7 @@ const NORMAL_ENTRIES = [
       { label: "作业下发", to: "/homework?sub=assign" },
       { label: "下发与回收", to: "/homework?sub=flow" },
       { label: "作业批改", to: "/homework?sub=grade" },
+      { label: "错因分析", to: "/homework?sub=diagnostics" },
     ],
     to: "/homework",
   },
@@ -204,8 +206,10 @@ const NORMAL_ENTRIES = [
       { key: "topics", label: "议题总数" },
     ],
     subs: [
-      { label: "教研议题", to: "/school-research" },
-      { label: "发起讨论", to: "/school-research" },
+      { label: "集体备课", to: "/school-research?tool=co-plan" },
+      { label: "课例研讨", to: "/school-research?tool=lesson-study" },
+      { label: "评价量规", to: "/school-research?tool=rubrics" },
+      { label: "教研交流", to: "/school-research?tool=forum" },
     ],
     to: "/school-research",
   },
@@ -215,8 +219,7 @@ const NORMAL_ENTRIES = [
     title: "课堂评价",
     desc: "课堂观察、师生对话与提问分析，结合评价依据形成教学改进建议。",
     stats: [
-      { key: "lessons", label: "示例课堂" },
-      { key: "average", label: "示例均分" },
+      { key: "lessons", label: "课堂记录" },
     ],
     subs: [
       { label: "全部课堂", to: "/classroom-evaluation" },
@@ -249,7 +252,7 @@ const WorkbenchNav = () => {
   const [summary, setSummary] = useState<any>(null);
 
   useEffect(() => {
-    const j = (r: any) => r.json();
+    const j = (r: any) => r.json().then(presentRecord);
     fetch("/api/teacher/workbench/summary")
       .then(j)
       .then((d: any) => {

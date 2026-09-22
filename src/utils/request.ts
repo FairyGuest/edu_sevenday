@@ -3,6 +3,7 @@ import { history } from "@@/core/history";
 import { getStorageToken, getRequestParams } from "@/utils/index";
 import { cogUrl } from "@/utils/host";
 import qs from "query-string";
+import { presentRecord } from "./presentation";
 
 const inflight = new Map<string, Promise<any>>();
 
@@ -20,7 +21,7 @@ function requestKey(method: string, url: string, payload: any) {
 }
 
 function parseJSON(response: any) {
-  return response.json();
+  return response.json().then(presentRecord);
 }
 function parseBlob(response: any) {
   return response.blob();

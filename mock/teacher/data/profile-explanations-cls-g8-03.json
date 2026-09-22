@@ -2054,6 +2054,68 @@
    ]
   },
   {
+   "explanation_id": "exp-kp-data-dispersion",
+   "scope": "class",
+   "student_id": null,
+   "target_type": "knowledge_node",
+   "target_id": "kp-data-dispersion",
+   "conclusion": "「数据的离散程度」掌握度偏低",
+   "reason": "最近一次单元测关联题正确率 53%，低于班级近三次均值 71%。",
+   "evidence_summary": "单元测第 9、10 题；周练二第 6、7 题。",
+   "compare_text": "低于同章基础题均值 17 分。",
+   "sample_count": 63,
+   "source_names": [
+    "作业记录",
+    "考试记录",
+    "人机交互"
+   ],
+   "time_range_text": "近 30 天",
+   "warning_type": "none",
+   "suggestion": "建议下一课增加「数据的离散程度」的表达支架与 2 道变式题，并减少重复计算题。",
+   "evidence": [
+    {
+     "evidence_id": "ev-cls-g8-03-34-0",
+     "source_type": "homework",
+     "source_name": "周练二",
+     "occurred_at": "2026-08-22 09:40",
+     "student_id": null,
+     "class_id": "cls-g8-03",
+     "question_id": "que-e20e14e12894442ca267a750a69a7d02",
+     "question_stem": "在平行四边形 ABCD 中，对角线 AC、BD 交于 O，给出能判定其为矩形的条件并证明。",
+     "answer_summary": "混淆 SSA 与 SAS，误用 SSA 判定全等",
+     "correct": false,
+     "score": 0,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-data-dispersion"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    },
+    {
+     "evidence_id": "ev-cls-g8-03-34-1",
+     "source_type": "exam",
+     "source_name": "9月单元测",
+     "occurred_at": "2026-08-23 09:20",
+     "student_id": null,
+     "class_id": "cls-g8-03",
+     "question_id": "que-debb55e1264745a4b8705ec26c20eadf",
+     "question_stem": "要证 AC=DF，已知 AB=DE、∠B=∠E，还需添加什么条件？请说明选择的判定定理。",
+     "answer_summary": "混淆 SSA 与 SAS，误用 SSA 判定全等",
+     "correct": false,
+     "score": 2,
+     "full_score": 5,
+     "knowledge_ids": [
+      "kp-data-dispersion"
+     ],
+     "ability_keys": [],
+     "literacy_keys": [],
+     "process_keys": []
+    }
+   ]
+  },
+  {
    "explanation_id": "exp-stu-947bb83daabc33cf-homework_correction",
    "scope": "student",
    "student_id": "947bb83daabc33cf",
@@ -2074,7 +2136,7 @@
    "suggestion": "建议为 徐丽 安排「订正过程」补弱微练习（3 题），并在下次作业批注中回访错因。",
    "evidence": [
     {
-     "evidence_id": "ev-cls-g8-03-34-0",
+     "evidence_id": "ev-cls-g8-03-35-0",
      "source_type": "practice",
      "source_name": "周练二",
      "occurred_at": "2026-09-02 09:40",
@@ -2094,7 +2156,7 @@
      ]
     },
     {
-     "evidence_id": "ev-cls-g8-03-34-1",
+     "evidence_id": "ev-cls-g8-03-35-1",
      "source_type": "exam",
      "source_name": "9月单元测",
      "occurred_at": "2026-09-13 18:20",
@@ -2136,7 +2198,7 @@
    "suggestion": "建议为 徐丽 安排「学习动机」补弱微练习（3 题），并在下次作业批注中回访错因。",
    "evidence": [
     {
-     "evidence_id": "ev-cls-g8-03-35-0",
+     "evidence_id": "ev-cls-g8-03-36-0",
      "source_type": "exam",
      "source_name": "9月单元测",
      "occurred_at": "2026-09-05 14:10",
@@ -2156,7 +2218,7 @@
      "process_keys": []
     },
     {
-     "evidence_id": "ev-cls-g8-03-35-1",
+     "evidence_id": "ev-cls-g8-03-36-1",
      "source_type": "practice",
      "source_name": "周练二",
      "occurred_at": "2026-08-24 09:20",
@@ -2198,7 +2260,7 @@
    "suggestion": "建议为 李辉 安排「自我效能」补弱微练习（3 题），并在下次作业批注中回访错因。",
    "evidence": [
     {
-     "evidence_id": "ev-cls-g8-03-36-0",
+     "evidence_id": "ev-cls-g8-03-37-0",
      "source_type": "exam",
      "source_name": "9月单元测",
      "occurred_at": "2026-08-30 15:50",
@@ -2218,7 +2280,7 @@
      "process_keys": []
     },
     {
-     "evidence_id": "ev-cls-g8-03-36-1",
+     "evidence_id": "ev-cls-g8-03-37-1",
      "source_type": "homework",
      "source_name": "课后作业（九月第 3 周）",
      "occurred_at": "2026-09-02 10:20",
@@ -2260,7 +2322,7 @@
    "suggestion": "建议为 李辉 安排「图像识读」补弱微练习（3 题），并在下次作业批注中回访错因。",
    "evidence": [
     {
-     "evidence_id": "ev-cls-g8-03-37-0",
+     "evidence_id": "ev-cls-g8-03-38-0",
      "source_type": "exam",
      "source_name": "9月单元测",
      "occurred_at": "2026-08-21 15:50",
@@ -2280,7 +2342,7 @@
      "process_keys": []
     },
     {
-     "evidence_id": "ev-cls-g8-03-37-1",
+     "evidence_id": "ev-cls-g8-03-38-1",
      "source_type": "exam",
      "source_name": "9月单元测",
      "occurred_at": "2026-09-04 13:40",
@@ -2322,7 +2384,7 @@
    "suggestion": "建议为 黄明静 安排「课堂参与」补弱微练习（3 题），并在下次作业批注中回访错因。",
    "evidence": [
     {
-     "evidence_id": "ev-cls-g8-03-38-0",
+     "evidence_id": "ev-cls-g8-03-39-0",
      "source_type": "practice",
      "source_name": "自主练习（函数专题）",
      "occurred_at": "2026-09-11 08:30",
@@ -2342,7 +2404,7 @@
      ]
     },
     {
-     "evidence_id": "ev-cls-g8-03-38-1",
+     "evidence_id": "ev-cls-g8-03-39-1",
      "source_type": "homework",
      "source_name": "课后作业（九月第 3 周）",
      "occurred_at": "2026-09-02 18:40",
@@ -2384,7 +2446,7 @@
    "suggestion": "建议为 黄明静 安排「倾听与发言」补弱微练习（3 题），并在下次作业批注中回访错因。",
    "evidence": [
     {
-     "evidence_id": "ev-cls-g8-03-39-0",
+     "evidence_id": "ev-cls-g8-03-40-0",
      "source_type": "exam",
      "source_name": "9月单元测",
      "occurred_at": "2026-09-15 17:00",
@@ -2404,7 +2466,7 @@
      ]
     },
     {
-     "evidence_id": "ev-cls-g8-03-39-1",
+     "evidence_id": "ev-cls-g8-03-40-1",
      "source_type": "homework",
      "source_name": "课后作业（九月第 3 周）",
      "occurred_at": "2026-09-11 10:30",
@@ -2446,7 +2508,7 @@
    "suggestion": "建议为 梁怡 安排「合作表现」补弱微练习（3 题），并在下次作业批注中回访错因。",
    "evidence": [
     {
-     "evidence_id": "ev-cls-g8-03-40-0",
+     "evidence_id": "ev-cls-g8-03-41-0",
      "source_type": "practice",
      "source_name": "周练二",
      "occurred_at": "2026-09-03 15:00",
@@ -2466,7 +2528,7 @@
      ]
     },
     {
-     "evidence_id": "ev-cls-g8-03-40-1",
+     "evidence_id": "ev-cls-g8-03-41-1",
      "source_type": "exam",
      "source_name": "9月单元测",
      "occurred_at": "2026-08-26 08:00",
@@ -2508,7 +2570,7 @@
    "suggestion": "建议为 梁怡 安排「作业完成过程」补弱微练习（3 题），并在下次作业批注中回访错因。",
    "evidence": [
     {
-     "evidence_id": "ev-cls-g8-03-41-0",
+     "evidence_id": "ev-cls-g8-03-42-0",
      "source_type": "exam",
      "source_name": "9月单元测",
      "occurred_at": "2026-08-23 13:30",
@@ -2528,7 +2590,7 @@
      ]
     },
     {
-     "evidence_id": "ev-cls-g8-03-41-1",
+     "evidence_id": "ev-cls-g8-03-42-1",
      "source_type": "homework",
      "source_name": "周练二",
      "occurred_at": "2026-09-14 13:50",
@@ -2570,7 +2632,7 @@
    "suggestion": "建议为 孙琪明 安排「订正过程」补弱微练习（3 题），并在下次作业批注中回访错因。",
    "evidence": [
     {
-     "evidence_id": "ev-cls-g8-03-42-0",
+     "evidence_id": "ev-cls-g8-03-43-0",
      "source_type": "homework",
      "source_name": "自主练习（函数专题）",
      "occurred_at": "2026-09-15 10:20",
@@ -2590,7 +2652,7 @@
      ]
     },
     {
-     "evidence_id": "ev-cls-g8-03-42-1",
+     "evidence_id": "ev-cls-g8-03-43-1",
      "source_type": "homework",
      "source_name": "课后作业（九月第 3 周）",
      "occurred_at": "2026-09-02 09:00",
@@ -2632,7 +2694,7 @@
    "suggestion": "建议为 孙琪明 安排「学习兴趣」补弱微练习（3 题），并在下次作业批注中回访错因。",
    "evidence": [
     {
-     "evidence_id": "ev-cls-g8-03-43-0",
+     "evidence_id": "ev-cls-g8-03-44-0",
      "source_type": "practice",
      "source_name": "周练二",
      "occurred_at": "2026-09-13 16:10",
@@ -2652,7 +2714,7 @@
      "process_keys": []
     },
     {
-     "evidence_id": "ev-cls-g8-03-43-1",
+     "evidence_id": "ev-cls-g8-03-44-1",
      "source_type": "exam",
      "source_name": "9月单元测",
      "occurred_at": "2026-09-10 13:40",
@@ -2694,7 +2756,7 @@
    "suggestion": "建议为 罗勇 安排「作业完成过程」补弱微练习（3 题），并在下次作业批注中回访错因。",
    "evidence": [
     {
-     "evidence_id": "ev-cls-g8-03-44-0",
+     "evidence_id": "ev-cls-g8-03-45-0",
      "source_type": "exam",
      "source_name": "9月单元测",
      "occurred_at": "2026-09-03 17:50",
@@ -2714,7 +2776,7 @@
      ]
     },
     {
-     "evidence_id": "ev-cls-g8-03-44-1",
+     "evidence_id": "ev-cls-g8-03-45-1",
      "source_type": "homework",
      "source_name": "课后作业（九月第 3 周）",
      "occurred_at": "2026-08-25 13:10",
@@ -2756,7 +2818,7 @@
    "suggestion": "建议为 罗勇 安排「学习兴趣」补弱微练习（3 题），并在下次作业批注中回访错因。",
    "evidence": [
     {
-     "evidence_id": "ev-cls-g8-03-45-0",
+     "evidence_id": "ev-cls-g8-03-46-0",
      "source_type": "exam",
      "source_name": "9月单元测",
      "occurred_at": "2026-09-06 17:20",
@@ -2776,7 +2838,7 @@
      "process_keys": []
     },
     {
-     "evidence_id": "ev-cls-g8-03-45-1",
+     "evidence_id": "ev-cls-g8-03-46-1",
      "source_type": "homework",
      "source_name": "课后作业（九月第 3 周）",
      "occurred_at": "2026-09-14 17:30",
@@ -2818,7 +2880,7 @@
    "suggestion": "建议为 周娟 安排「订正过程」补弱微练习（3 题），并在下次作业批注中回访错因。",
    "evidence": [
     {
-     "evidence_id": "ev-cls-g8-03-46-0",
+     "evidence_id": "ev-cls-g8-03-47-0",
      "source_type": "exam",
      "source_name": "9月单元测",
      "occurred_at": "2026-08-26 15:20",
@@ -2838,7 +2900,7 @@
      ]
     },
     {
-     "evidence_id": "ev-cls-g8-03-46-1",
+     "evidence_id": "ev-cls-g8-03-47-1",
      "source_type": "homework",
      "source_name": "课后作业（九月第 3 周）",
      "occurred_at": "2026-09-06 09:50",
@@ -2880,7 +2942,7 @@
    "suggestion": "建议为 周娟 安排「作业完成过程」补弱微练习（3 题），并在下次作业批注中回访错因。",
    "evidence": [
     {
-     "evidence_id": "ev-cls-g8-03-47-0",
+     "evidence_id": "ev-cls-g8-03-48-0",
      "source_type": "exam",
      "source_name": "9月单元测",
      "occurred_at": "2026-09-08 17:20",
@@ -2900,7 +2962,7 @@
      ]
     },
     {
-     "evidence_id": "ev-cls-g8-03-47-1",
+     "evidence_id": "ev-cls-g8-03-48-1",
      "source_type": "homework",
      "source_name": "课后作业（九月第 3 周）",
      "occurred_at": "2026-09-16 17:00",
@@ -2942,7 +3004,7 @@
    "suggestion": "建议为 周娟露 安排「函数概念理解」补弱微练习（3 题），并在下次作业批注中回访错因。",
    "evidence": [
     {
-     "evidence_id": "ev-cls-g8-03-48-0",
+     "evidence_id": "ev-cls-g8-03-49-0",
      "source_type": "homework",
      "source_name": "周练二",
      "occurred_at": "2026-09-03 12:40",
@@ -2962,7 +3024,7 @@
      "process_keys": []
     },
     {
-     "evidence_id": "ev-cls-g8-03-48-1",
+     "evidence_id": "ev-cls-g8-03-49-1",
      "source_type": "homework",
      "source_name": "自主练习（函数专题）",
      "occurred_at": "2026-09-16 13:40",
@@ -3004,7 +3066,7 @@
    "suggestion": "建议为 周娟露 安排「学习动机」补弱微练习（3 题），并在下次作业批注中回访错因。",
    "evidence": [
     {
-     "evidence_id": "ev-cls-g8-03-49-0",
+     "evidence_id": "ev-cls-g8-03-50-0",
      "source_type": "exam",
      "source_name": "9月单元测",
      "occurred_at": "2026-09-01 14:50",
@@ -3024,7 +3086,7 @@
      "process_keys": []
     },
     {
-     "evidence_id": "ev-cls-g8-03-49-1",
+     "evidence_id": "ev-cls-g8-03-50-1",
      "source_type": "exam",
      "source_name": "9月单元测",
      "occurred_at": "2026-08-28 08:40",
@@ -3066,7 +3128,7 @@
    "suggestion": "建议为 曹婷 安排「运算推理」补弱微练习（3 题），并在下次作业批注中回访错因。",
    "evidence": [
     {
-     "evidence_id": "ev-cls-g8-03-50-0",
+     "evidence_id": "ev-cls-g8-03-51-0",
      "source_type": "practice",
      "source_name": "自主练习（函数专题）",
      "occurred_at": "2026-09-03 12:40",
@@ -3087,7 +3149,7 @@
      "process_keys": []
     },
     {
-     "evidence_id": "ev-cls-g8-03-50-1",
+     "evidence_id": "ev-cls-g8-03-51-1",
      "source_type": "homework",
      "source_name": "课后作业（九月第 3 周）",
      "occurred_at": "2026-09-11 14:10",
@@ -3130,7 +3192,7 @@
    "suggestion": "建议为 曹婷 安排「实际问题建模」补弱微练习（3 题），并在下次作业批注中回访错因。",
    "evidence": [
     {
-     "evidence_id": "ev-cls-g8-03-51-0",
+     "evidence_id": "ev-cls-g8-03-52-0",
      "source_type": "homework",
      "source_name": "自主练习（函数专题）",
      "occurred_at": "2026-09-02 11:30",
@@ -3150,7 +3212,7 @@
      "process_keys": []
     },
     {
-     "evidence_id": "ev-cls-g8-03-51-1",
+     "evidence_id": "ev-cls-g8-03-52-1",
      "source_type": "homework",
      "source_name": "课后作业（九月第 3 周）",
      "occurred_at": "2026-09-13 16:30",
@@ -3192,7 +3254,7 @@
    "suggestion": "建议为 马军 安排「迁移应用」补弱微练习（3 题），并在下次作业批注中回访错因。",
    "evidence": [
     {
-     "evidence_id": "ev-cls-g8-03-52-0",
+     "evidence_id": "ev-cls-g8-03-53-0",
      "source_type": "exam",
      "source_name": "9月单元测",
      "occurred_at": "2026-08-21 08:10",
@@ -3212,7 +3274,7 @@
      "process_keys": []
     },
     {
-     "evidence_id": "ev-cls-g8-03-52-1",
+     "evidence_id": "ev-cls-g8-03-53-1",
      "source_type": "exam",
      "source_name": "9月单元测",
      "occurred_at": "2026-09-04 13:40",
@@ -3254,7 +3316,7 @@
    "suggestion": "建议为 马军 安排「反思表达」补弱微练习（3 题），并在下次作业批注中回访错因。",
    "evidence": [
     {
-     "evidence_id": "ev-cls-g8-03-53-0",
+     "evidence_id": "ev-cls-g8-03-54-0",
      "source_type": "homework",
      "source_name": "自主练习（函数专题）",
      "occurred_at": "2026-09-14 17:00",
@@ -3272,7 +3334,7 @@
      "process_keys": []
     },
     {
-     "evidence_id": "ev-cls-g8-03-53-1",
+     "evidence_id": "ev-cls-g8-03-54-1",
      "source_type": "exam",
      "source_name": "9月单元测",
      "occurred_at": "2026-08-22 15:50",
@@ -3311,7 +3373,7 @@
    "suggestion": "下次作业：删去 2 道已掌握的重复计算题，加入 3 道「平面直角坐标系」变式题（1 基础 + 1 图像/情境 + 1 综合）。",
    "evidence": [
     {
-     "evidence_id": "ev-cls-g8-03-54-0",
+     "evidence_id": "ev-cls-g8-03-55-0",
      "source_type": "practice",
      "source_name": "周练二",
      "occurred_at": "2026-08-23 09:00",
@@ -3352,7 +3414,7 @@
    "suggestion": "对订正薄弱学生启用“错因归类—重做—3 日复测”闭环单，先在画像偏弱的 10 人小组试行两周。",
    "evidence": [
     {
-     "evidence_id": "ev-cls-g8-03-55-0",
+     "evidence_id": "ev-cls-g8-03-56-0",
      "source_type": "exam",
      "source_name": "9月单元测",
      "occurred_at": "2026-09-08 14:40",

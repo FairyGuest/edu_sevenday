@@ -85,4 +85,20 @@
   justify-content: space-between;
   font-size: 13px;
   color: #646e8b;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.teach-design .dab_bar {
+  border-radius: 8px;
+  padding: 10px 14px;
+  gap: 10px;
+  .dab_btn, .dab_inject { height: 40px; border-radius: 6px; padding-inline: 18px; font-size: 14px; }
+  .dab_injected { font-size: 12px; }
+}
+@media (max-width: 600px) {
+  .teach-design .dab_bar { width: 100%; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .teach-design .dab_divider { display: none; }
+  .teach-design .dab_inject { grid-column: 1 / -1; width: 100%; }
+  .teach-design .dab_btn { padding-inline: 8px; }
 }

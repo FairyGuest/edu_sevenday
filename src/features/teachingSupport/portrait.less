@@ -1,0 +1,129 @@
+.ts-learning {
+  .portrait-filterbar {
+    align-items: flex-end;
+    > label {
+      flex: 0 1 220px;
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .ant-select {
+      min-width: 0;
+    }
+    .portrait-date-filter {
+      flex: 1 1 540px;
+      max-width: 620px;
+    }
+    .portrait-date-filter .ant-picker {
+      width: auto;
+      flex: 1 1 260px;
+      min-width: 0;
+    }
+    .portrait-date-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .date_preset_group {
+      flex: 0 0 auto;
+      max-width: 100%;
+    }
+  }
+  .scoped-portrait-overview {
+    .portrait-dimension-body {
+      align-items: center;
+    }
+    .portrait-metrics {
+      max-height: 310px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding-right: 4px;
+    }
+    .portrait-metric-label {
+      font-size: 12px;
+    }
+  }
+  .scoped-portrait-distribution {
+    padding: 0;
+    margin-top: 8px;
+    .analysis_distribution {
+      min-width: 0;
+    }
+    .ct_header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .ct_header h3 {
+      margin: 0;
+    }
+    .ct_rows {
+      max-height: 800px;
+      overflow: auto;
+    }
+    .portrait-cluster-button {
+      display: block;
+      width: 100%;
+      min-width: 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      text-align: left;
+      cursor: pointer;
+    }
+    .portrait-cluster-button:hover {
+      background: #f5f9ff;
+    }
+    .portrait-cluster-button:focus-visible {
+      outline: 2px solid #2563eb;
+      outline-offset: -2px;
+    }
+    .ct_row_name,
+    .ct_row_chapter {
+      overflow-wrap: anywhere;
+      white-space: normal;
+    }
+    .ct_legend {
+      flex-wrap: wrap;
+    }
+  }
+  .portrait-active-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 4px 0 12px;
+  }
+  .evidence-graph .portrait-heading .ant-segmented {
+    margin-left: auto;
+  }
+}
+@container business-page (min-width: 960px) {
+  .ts-learning .scoped-portrait-distribution .analysis_row {
+    grid-template-columns: minmax(0, 1fr) minmax(340px, 0.85fr);
+    gap: 24px;
+  }
+  .ts-learning .scoped-portrait-distribution .analysis_distribution {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .ts-learning .scoped-portrait-distribution .analysis_right {
+    padding-left: 20px;
+    border-left: 1px solid #e5e9ef;
+  }
+}
+@media (max-width: 650px) {
+  .ts-learning .portrait-filterbar > label {
+    flex: 1 1 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+  .ts-learning .scoped-portrait-distribution .analysis_row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ts-learning .evidence-graph .portrait-heading .ant-segmented {
+    margin-left: 0;
+  }
+}

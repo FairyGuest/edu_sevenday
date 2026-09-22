@@ -149,7 +149,7 @@ const App = (props: any) => {
         // </Affix>
         <Affix offsetBottom={70}>
           <div className="affix_segmented">
-            <Tooltip placement="left" title="演示模式">
+            <Tooltip placement="left" title="全屏展示">
               <div className={"relation_container_left"}>
                 <button onClick={handleFullScreen}>
                   <ZYIcon type="airplay" style={{ fontSize: "16px" }} />

@@ -93,6 +93,7 @@ export default function PipelineFlow({
 }) {
   const [open, setOpen] = useState(true);
   const [activeSource, setActiveSource] = useState(SOURCE_ORDER[0]);
+  const live = pipeline?.statistic_mode === "observations";
   const l1 = pipeline?.l1_evidence || {},
     l2 = pipeline?.l2_observation || {},
     l3 = pipeline?.l3_dimension || {},
@@ -109,9 +110,10 @@ export default function PipelineFlow({
         students: hit.students || 0,
         share: hit.share || 0,
         ...SOURCE_PIPE[name],
+        ...pipeline?.source_descriptions?.[name],
       };
     });
-  }, [l1.sources]);
+  }, [l1.sources, pipeline?.source_descriptions]);
   const selectedSource =
     sourceStats.find((s) => s.name === activeSource) || sourceStats[0];
   const sourcePipeline = pipeline?.source_breakdown?.[selectedSource.name];
@@ -275,14 +277,20 @@ export default function PipelineFlow({
                   <p className="pf_no_data">当前来源暂无可计算指标</p>
                 )}
                 <p className="pf_no_data">
-                  指标值 = 100 × 得分合计 / 满分合计；完整画像合并全部来源。
+                  {live
+                    ? `${sourcePipeline?.l2_observation?.metrics?.[0]?.formula || "当前来源暂无有效读数"}；画像仅合并已选来源。`
+                    : "指标值 = 100 × 得分合计 / 满分合计；完整画像合并全部来源。"}
                 </p>
               </section>
             </div>
           </div>
 
           <details className="pf_calculation">
-            <summary>全部来源的汇总计算与快照核对</summary>
+            <summary>
+              {live
+                ? "当前范围的汇总计算与画像生成"
+                : "全部来源的汇总计算与快照核对"}
+            </summary>
             <div className="pf_stages">
               {/* L1 证据 */}
               <div className="pf_stage">
@@ -364,7 +372,11 @@ export default function PipelineFlow({
               <div className="pf_stage">
                 <div className="pf_stage_title">
                   {STAGE_META[2].title}
-                  <span>{STAGE_META[2].desc}</span>
+                  <span>
+                    {live
+                      ? "有效观测按维度汇总，班级取个人读数均值"
+                      : STAGE_META[2].desc}
+                  </span>
                 </div>
                 <div className="pf_stage_body">
                   <div className="pf_formula">{l3.formula}</div>
@@ -393,7 +405,9 @@ export default function PipelineFlow({
               <div className="pf_stage pf_stage--final">
                 <div className="pf_stage_title">
                   {STAGE_META[3].title}
-                  <span>{STAGE_META[3].desc}</span>
+                  <span>
+                    {live ? "当前范围重算，缺失不计零分" : STAGE_META[3].desc}
+                  </span>
                 </div>
                 <div className="pf_stage_body">
                   {(l4.dimensions || []).map((d) => (
@@ -405,7 +419,7 @@ export default function PipelineFlow({
                       >
                         {d.value ?? "—"}
                       </b>
-                      {d.snapshot_value != null && (
+                      {!live && d.snapshot_value != null && (
                         <Tooltip
                           title={`独立快照值 ${d.snapshot_value}${d.gap != null ? `，抽样偏差 ${d.gap > 0 ? "+" : ""}${d.gap}` : ""}`}
                         >

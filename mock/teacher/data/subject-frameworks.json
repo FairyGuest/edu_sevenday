@@ -1,0 +1,145 @@
+{
+ "schema_version": "subject-frameworks-v1",
+ "data_version": "demo-v1",
+ "is_demo": true,
+ "demo_reference_date": "2026-09-22",
+ "frameworks": [
+  {
+   "framework_id": "demo-math-framework-v1",
+   "version": "v1",
+   "subject_id": "math",
+   "stage_id": "junior",
+   "grade_scope": [
+    "g7",
+    "g8",
+    "g9"
+   ],
+   "standard_version": null,
+   "effective_at": "2026-09-01",
+   "status": "draft",
+   "revision_note": "演示草案框架；指标定义与阈值为合成演示，未经专家审核。",
+   "indicators": [
+    {
+     "indicator_id": "demo-ind-operation",
+     "name": "代数运算的准确与规范",
+     "definition": "在给定运算法则下完成化简与计算，并逐步写明依据。",
+     "applicable_tasks": [
+      "根式化简",
+      "根式加减",
+      "分式运算"
+     ],
+     "standard_ids": [
+      "std-shushi-8"
+     ],
+     "allowed_evidence_types": [
+      "homework",
+      "exam",
+      "practice"
+     ],
+     "rubric_ids": [
+      "demo-rubric-operation-v1"
+     ],
+     "interpretation_limits": "不推断细心程度等个性特征；仅评价本次任务表现。",
+     "status": "in_review",
+     "portrait_views": [
+      "knowledge",
+      "ability"
+     ]
+    },
+    {
+     "indicator_id": "demo-ind-graph-expression",
+     "name": "函数图像的读取与表达",
+     "definition": "从图像读取关键信息，并用点—线—趋势结构解释变化与实际意义。",
+     "applicable_tasks": [
+      "图像解释口头表达",
+      "读图题",
+      "表格-图像互译"
+     ],
+     "standard_ids": [
+      "std-func-2"
+     ],
+     "allowed_evidence_types": [
+      "classroom",
+      "exam",
+      "homework"
+     ],
+     "rubric_ids": [
+      "demo-rubric-expression-v1"
+     ],
+     "interpretation_limits": "口头表达评分仅在支架句式撤除后使用；不据单次发言定级。",
+     "status": "in_review",
+     "portrait_views": [
+      "knowledge",
+      "ability",
+      "process"
+     ]
+    },
+    {
+     "indicator_id": "demo-ind-modeling",
+     "name": "实际情境的建模与决策",
+     "definition": "从情境中识别变量关系、建立一次函数模型并分区间作出决策。",
+     "applicable_tasks": [
+      "方案选择",
+      "分段计费",
+      "弹簧测量"
+     ],
+     "standard_ids": [
+      "std-func-4",
+      "std-func-req"
+     ],
+     "allowed_evidence_types": [
+      "exam",
+      "practice",
+      "classroom"
+     ],
+     "rubric_ids": [
+      "demo-rubric-modeling-v1"
+     ],
+     "interpretation_limits": "情境经验差异影响表现，评读时结合 learner-contexts 的经验记录。",
+     "status": "draft",
+     "portrait_views": [
+      "knowledge",
+      "ability"
+     ]
+    },
+    {
+     "indicator_id": "demo-ind-reasoning-expression",
+     "name": "推理过程的表达与依据",
+     "definition": "书写或口述推理时引用正确的定理/法则作为依据。",
+     "applicable_tasks": [
+      "几何说理",
+      "订正说明"
+     ],
+     "standard_ids": [],
+     "allowed_evidence_types": [
+      "exam",
+      "homework"
+     ],
+     "rubric_ids": [
+      "demo-rubric-correction-v1"
+     ],
+     "interpretation_limits": "无证据时不给等级；未评分不等于零分。",
+     "status": "draft",
+     "mapping_status": "awaiting_source",
+     "portrait_views": [
+      "ability",
+      "process"
+     ]
+    },
+    {
+     "indicator_id": "demo-ind-collaboration",
+     "name": "小组协作贡献",
+     "definition": "小组任务中的分工完成与协作贡献。",
+     "applicable_tasks": [],
+     "standard_ids": [],
+     "allowed_evidence_types": [],
+     "rubric_ids": [],
+     "status": "suspended",
+     "interpretation_limits": "个体贡献证据来源未接入，暂不评价个人协作；小组产出不平均摊派给成员。",
+     "suspension_reason": "无可用证据来源（清单 §1 建议 B 未提供）",
+     "portrait_views": []
+    }
+   ]
+  }
+ ]
+}

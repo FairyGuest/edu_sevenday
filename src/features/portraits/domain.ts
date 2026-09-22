@@ -28,6 +28,9 @@ export interface Scope {
   start_date: string;
   end_date: string;
   sources: string[];
+  textbook_id?: string;
+  curriculum_scope_type?: string;
+  curriculum_scope_id?: string;
 }
 export interface Evidence {
   evidence_id: string;
@@ -73,6 +76,7 @@ export function matchesEvidence(e: Evidence, scope: Scope) {
   );
 }
 export function fullSnapshot(snapshot: any, scope: Scope) {
+  if (snapshot?.statistic_mode === "observations") return snapshot.curriculum_scope_type === (scope.curriculum_scope_type || "all") && snapshot.curriculum_scope_id === (scope.curriculum_scope_id || "") && snapshot.request_start === scope.start_date && snapshot.request_end === scope.end_date && [...snapshot.sources].sort().join() === [...scope.sources].sort().join();
   const window = snapshot?.time_window;
   return (
     !!window?.start_date &&
@@ -196,7 +200,7 @@ export function graphView(data: any, scope: Scope, filter: GraphFilter) {
         evidence,
         explanations,
         complete,
-        explanation: complete
+        explanation: data?.snapshot?.statistic_mode === "observations" ? node.explanation : complete
           ? personal
             ? "个人读数取关联知识点雷达指标均值；班级数据不参与个人评分。"
             : node.explanation || "当前快照未提供详细解释。"
